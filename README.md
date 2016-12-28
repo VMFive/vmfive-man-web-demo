@@ -74,4 +74,4 @@ On the page where the ad is served, insert the following tag in the `<head>` sec
 <script id="vm5ad-js-sdk" src="https://vawpro.vm5apis.com/man.js" data-mode="dfp"></script>
 ```
 
-Please note that this line must be inserted before any Google DFP or GPT tags so that the trigger listener can be initialized before DFP activate the trigger.
+**IMPORTANT: Please note that this line must be inserted *before* any Google DFP or GPT tags** so that the trigger listener can be initialized before DFP activate the trigger.
