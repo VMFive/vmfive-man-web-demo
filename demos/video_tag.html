@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script>
+        function enterFullScreen(player) {
+            if (player.requestFullscreen) {
+                player.requestFullscreen();
+            } else if (player.webkitRequestFullscreen) {
+                player.webkitRequestFullscreen();
+            } else if (player.mozRequestFullScreen) {
+                player.mozRequestFullScreen();
+            } else if (player.msRequestFullscreen) {
+                player.msRequestFullscreen();
+            } else if (player.webkitEnterFullScreen){
+                player.webkitEnterFullScreen();
+            } else {
+                return false;
+            }
+            return true;
+        }
+
+        document.onreadystatechange = function() {
+            var state = document.readyState;
+            if (state == 'interactive') {
+
+            } else if (state == 'complete') {
+                var player = document.getElementById('player');
+
+                player.src = "https://storage.googleapis.com/vmfive-man-demo-assets/video_1480391465904.mp4";
+                player.type = "video/mp4";
+                var fullscreen = document.getElementById('fullscreen');
+                fullscreen.addEventListener("click", function onClick() {
+                    enterFullScreen(player);
+                    player.play();
+                });
+            }
+        }
+    </script>
+</head>
+<body>
+<video id="player" width="640" height="360" webkit-playsinline controls autoplay>
+</video>
+<p>
+    <a id="fullscreen" href="#">fullscreen</a>
+</p>
+</body>
+</html>
