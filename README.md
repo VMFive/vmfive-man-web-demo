@@ -1,8 +1,7 @@
 #Javascript SDK整合說明文件
-- [概論]
-- [整合SDK]
-- [支援DFP]
-
+- [概論](https://github.com/VMFive/vmfive-man-web-demo/edit/gh-pages/README.md##概論)
+- [SDK整合](https://github.com/VMFive/vmfive-man-web-demo/edit/gh-pages/README.md##SDK整合)
+- [支援DFP](https://github.com/VMFive/vmfive-man-web-demo/edit/gh-pages/README.md##支援DFP)
 ##概論
 Mobile Attention Network,簡稱MAN, 是世界第一個使用注意力指標的廣告聯播網.我們提供四種廣告格式：原生廣告(Native), 置頂廣告(Top),蓋版廣告(Interstitial),以及原創的滾動全版(Impressive).本篇文章說明如何運用MAN的Javascript SDK,在行動網頁中插入以上四種廣告. 請注意MAN的廣告目前只會在行動網頁上顯示,在PC版的網頁上目前無法展示MAN的廣告.
 ##SDK整合
@@ -11,7 +10,7 @@ SDK連結 ： https://vawpro.vm5apis.com/man.js
 
 在網頁的head標籤中引入並且初始化SDK,例如以下程式碼：
 
-```javascript
+```html
 <head>
 
 <script id="vm5ad-js-sdk" src="https://vawpro.vm5apis.com/man.js" data-mode="sdk"></script>
@@ -29,13 +28,13 @@ SDK連結 ： https://vawpro.vm5apis.com/man.js
 在初始化SDK時,請先開啟測試模式(tesMode: true),確認測試廣告可以成功載入並且曝光後,**關閉測試模式(tesMode: false)**,並且**填入正確的app key**，確認廣告是否可以載入並且曝光.如果無法曝光請再次確認app key是否正確,需要小心不要填入文字編輯器可能暗藏的隱藏字元.如果仍然無法顯示廣告,請留意console是否有印出錯誤訊息,並且聯絡VM5客服人員
 
 ##載入並且展示廣告
-建立vmfive-ad-unit物件,並且填入正確的placement id和想要展示的廣告型態.請確定要插入廣告的版位(placement),並且和VM5客服人員聯絡取得對應的Placement ID, 填入不正確的Placement ID會導致廣告載入失敗. 
+建立vmfive-ad-unit元件,並且填入正確的placement id和想要展示的廣告型態.請務必確認要插入廣告的版位(placement),並且和VM5客服人員聯絡取得對應的Placement ID, 填入不正確的Placement ID會導致廣告載入失敗. 
 
 ###原生廣告 (Native)
 指定ad-type為**video-native**
 
 適合安插在文章段落間
-```
+```html
 <vmfive-ad-unit placement-id="582ad449038f454a190d4331" ad-type="video-native"></vmfive-ad-unit>
 ```
 
@@ -45,7 +44,7 @@ SDK連結 ： https://vawpro.vm5apis.com/man.js
 
 適合安插在首頁置頂
 
-```
+```html
 <vmfive-ad-unit placement-id="582ad449038f454a190d4331" ad-type="video-top"></vmfive-ad-unit>
 ```
 
@@ -55,7 +54,7 @@ SDK連結 ： https://vawpro.vm5apis.com/man.js
 
 適合安插在文章段落之間
 
-```
+```html
 <vmfive-ad-unit placement-id="582ad449038f454a190d4331" ad-type="video-impressive"></vmfive-ad-unit>
 ```
 
