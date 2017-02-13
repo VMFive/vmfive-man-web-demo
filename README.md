@@ -2,6 +2,7 @@
 - [概論](https://github.com/VMFive/vmfive-man-web-demo/edit/gh-pages/README.md##概論)
 - [SDK整合](https://github.com/VMFive/vmfive-man-web-demo/edit/gh-pages/README.md##SDK整合)
 - [支援DFP](https://github.com/VMFive/vmfive-man-web-demo/edit/gh-pages/README.md##支援DFP)
+
 ##概論
 Mobile Attention Network,簡稱MAN, 是世界第一個使用注意力指標的廣告聯播網.我們提供四種廣告格式：原生廣告(Native), 置頂廣告(Top),蓋版廣告(Interstitial),以及原創的滾動全版(Impressive).本篇文章說明如何運用MAN的Javascript SDK,在行動網頁中插入以上四種廣告. 請注意MAN的廣告目前只會在行動網頁上顯示,在PC版的網頁上目前無法展示MAN的廣告.
 ##SDK整合
