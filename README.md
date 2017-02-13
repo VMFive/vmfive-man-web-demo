@@ -4,7 +4,8 @@
 - [支援DFP](https://github.com/VMFive/vmfive-man-web-demo/edit/gh-pages/README.md##支援DFP)
 
 ##概論
-Mobile Attention Network,簡稱MAN, 是世界第一個使用注意力指標的廣告聯播網.我們提供四種廣告格式：原生廣告(Native), 置頂廣告(Top),蓋版廣告(Interstitial),以及原創的滾動全版(Impressive).本篇文章說明如何運用MAN的Javascript SDK,在行動網頁中插入以上四種廣告. 請注意MAN的廣告目前只會在行動網頁上顯示,在PC版的網頁上目前無法展示MAN的廣告.
+Mobile Attention Network,簡稱MAN, 是世界第一個使用注意力指標的廣告聯播網.我們提供四種廣告格式：原生廣告(Native), 置頂廣告(Top),蓋版廣告(Interstitial),以及原創的滾動全版(Impressive).本篇文章說明如何運用MAN的Javascript SDK,在行動網頁中插入以上四種廣告.  
+
 ##SDK整合
 ###引入SDK
 SDK連結 ： https://vawpro.vm5apis.com/man.js
@@ -26,10 +27,10 @@ SDK連結 ： https://vawpro.vm5apis.com/man.js
 在引入SDK時,請確認id設為**vm5ad-js-sdk** 且data-mode設定為
 **sdk**. 
 
-在初始化SDK時,請先開啟測試模式(tesMode: true),確認測試廣告可以成功載入並且曝光後,**關閉測試模式(tesMode: false)**,並且**填入正確的app key**，確認廣告是否可以載入並且曝光.如果無法曝光請再次確認app key是否正確,需要小心不要填入文字編輯器可能暗藏的隱藏字元.如果仍然無法顯示廣告,請留意console是否有印出錯誤訊息,並且聯絡VM5客服人員
+在初始化SDK時,請先開啟測試模式(tesMode: true),確認測試廣告可以成功載入並且曝光後,**關閉測試模式(tesMode: false)**,並且**填入正確的app key**，確認廣告是否可以載入並且曝光.如果無法曝光請再次確認app key是否正確,需要小心不要填入文字編輯器可能暗藏的隱藏字元.如果仍然無法顯示廣告,請留意console是否有印出錯誤訊息,並且聯絡VM5客服人員.
 
 ##載入並且展示廣告
-建立vmfive-ad-unit元件,並且填入正確的placement id和想要展示的廣告型態.請務必確認要插入廣告的版位(placement),並且和VM5客服人員聯絡取得對應的Placement ID, 填入不正確的Placement ID會導致廣告載入失敗. 
+建立vmfive-ad-unit元件,並且填入正確的placement id和想要展示的廣告型態.請務必確認要插入廣告的版位(placement),並且和VM5客服人員聯絡取得對應的Placement ID, 填入不正確的Placement ID會導致廣告載入失敗.另外由於影片需要時間下載,一個頁面要載兩個廣告下載有可能會卡住彼此,**我們推薦一個頁面只對應載入一個廣告**,之後會推出streaming的方案解決這個問題.
 
 ###原生廣告 (Native)
 指定ad-type為**video-native**
@@ -116,9 +117,7 @@ window.onVM5AdDFPCreativeReady = function() {
 完整[範例](https://github.com/VMFive/vmfive-man-web-demo/blob/gh-pages/demos/simple-dfp.html)
 
 **需要特別注意的是,在head中,vm5的程式碼必需放在DFP的Code之前**
-###後台
 
-
-
+**另外一頁面若要串兩個以上的 dfp, appKey 需要相同, 否則只會顯示一個(看哪個先載入就顯示哪一個）
 
 
