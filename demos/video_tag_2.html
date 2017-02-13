@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script>
+        var previousTimestamp = new Date().getTime();
+
+        function log(str) {
+            var currentTimestamp = new Date().getTime();
+            console.error(currentTimestamp, str, `+${currentTimestamp-previousTimestamp}`);
+        }
+
+        function enterFullScreen(player) {
+            if (player.requestFullscreen) {
+                player.requestFullscreen();
+            } else if (player.webkitRequestFullscreen) {
+                player.webkitRequestFullscreen();
+            } else if (player.mozRequestFullScreen) {
+                player.mozRequestFullScreen();
+            } else if (player.msRequestFullscreen) {
+                player.msRequestFullscreen();
+            } else if (player.webkitEnterFullScreen){
+                player.webkitEnterFullScreen();
+            } else {
+                return false;
+            }
+            return true;
+        }
+
+        function registerFullscreen() {
+            var fullscreenListener = (e) => {
+                const fullscreenElement = document.fullscreenElement || document.mozFullScreenElement || document.webkitFullscreenElement || document.msFullscreenElement;
+                if (fullscreenElement) {
+                    log('enter full screen');
+                } else {
+                    log('exit full screen');
+                }
+            }
+            document.addEventListener('fullscreenListener', fullscreenListener, false);
+            document.addEventListener('mozfullscreenchange', fullscreenListener, false);
+            document.addEventListener('webkitfullscreenchange', fullscreenListener, false);
+            document.addEventListener('MSFullscreenChange', fullscreenListener, false);
+        }
+
+        document.onreadystatechange = function() {
+            var state = document.readyState;
+            if (state == 'interactive') {
+
+            } else if (state == 'complete') {
+                var player = document.getElementById('player');
+
+                registerFullscreen();
+
+                player.addEventListener('canplay', function () {
+                    log('video can play');
+                });
+
+                player.addEventListener('loadedmetadata', function () {
+                    log('video loaded meta data');
+                });
+
+                player.addEventListener('play', function () {
+                    log('video played');
+                });
+
+                player.addEventListener('pause', function () {
+                    log('video paused');
+                });
+
+                player.src = "https://d2ncguv5n3524j.cloudfront.net/video480/video480.m3u8";
+                player.type = "application/x-mpegURL";
+
+                var fullscreen = document.getElementById('fullscreen');
+                fullscreen.addEventListener("click", function onClick() {
+                    enterFullScreen(player);
+                    player.play();
+
+                    setTimeout(function () {
+                        log('play command delayed');
+                        player.play();
+                    }, 5000);
+                });
+            }
+        }
+    </script>
+</head>
+<body>
+<video id="player" width="640" height="360" webkit-playsinline controls autoplay>
+</video>
+<p>
+    <a id="fullscreen" href="#">fullscreen</a>
+</p>
+</body>
+</html>

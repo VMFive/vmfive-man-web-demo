@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<!-- saved from url=(0069)https://tpc.googlesyndication.com/safeframe/1-0-5/html/container.html -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <title>SafeFrame Container</title>
+  </head>
+  <body>
+    <script>
+(function(){var b=this;var g=String.prototype.trim?function(a){return a.trim()}:function(a){return a.replace(/^[\s\xa0]+|[\s\xa0]+$/g,"")},h=function(a,c){return a<c?-1:a>c?1:0};var k;a:{var l=b.navigator;if(l){var m=l.userAgent;if(m){k=m;break a}}k=""};var ba=function(a,c){var d=aa;return Object.prototype.hasOwnProperty.call(d,a)?d[a]:d[a]=c(a)};var ca=-1!=k.indexOf("Opera"),n=-1!=k.indexOf("Trident")||-1!=k.indexOf("MSIE"),da=-1!=k.indexOf("Edge"),p=-1!=k.indexOf("Gecko")&&!(-1!=k.toLowerCase().indexOf("webkit")&&-1==k.indexOf("Edge"))&&!(-1!=k.indexOf("Trident")||-1!=k.indexOf("MSIE"))&&-1==k.indexOf("Edge"),q=-1!=k.toLowerCase().indexOf("webkit")&&-1==k.indexOf("Edge"),r=function(){var a=b.document;return a?a.documentMode:void 0},t;
+a:{var v="",w=function(){var a=k;if(p)return/rv\:([^\);]+)(\)|;)/.exec(a);if(da)return/Edge\/([\d\.]+)/.exec(a);if(n)return/\b(?:MSIE|rv)[: ]([^\);]+)(\)|;)/.exec(a);if(q)return/WebKit\/(\S+)/.exec(a);if(ca)return/(?:Version)[ \/]?(\S+)/.exec(a)}();w&&(v=w?w[1]:"");if(n){var x=r();if(null!=x&&x>parseFloat(v)){t=String(x);break a}}t=v}
+var y=t,aa={},z=function(a){return ba(a,function(){for(var c=0,d=g(String(y)).split("."),S=g(String(a)).split("."),fa=Math.max(d.length,S.length),u=0;0==c&&u<fa;u++){var e=d[u]||"",f=S[u]||"";do{e=/(\d*)(\D*)(.*)/.exec(e)||["","","",""];f=/(\d*)(\D*)(.*)/.exec(f)||["","","",""];if(0==e[0].length&&0==f[0].length)break;c=h(0==e[1].length?0:parseInt(e[1],10),0==f[1].length?0:parseInt(f[1],10))||h(0==e[2].length,0==f[2].length)||h(e[2],f[2]);e=e[3];f=f[3]}while(0==c)}return 0<=c})},A;var B=b.document;
+A=B&&n?r()||("CSS1Compat"==B.compatMode?parseInt(y,10):5):void 0;var C;if(!(C=!p&&!n)){var D;if(D=n)D=9<=Number(A);C=D}C||p&&z("1.9.1");n&&z("9");var E=p||q||n&&z(11);var F=!1,G=function(a){if(a=a.match(/[\d]+/g))a.length=3};
+(function(){if(navigator.plugins&&navigator.plugins.length){var a=navigator.plugins["Shockwave Flash"];if(a&&(F=!0,a.description)){G(a.description);return}if(navigator.plugins["Shockwave Flash 2.0"]){F=!0;return}}if(navigator.mimeTypes&&navigator.mimeTypes.length&&(a=navigator.mimeTypes["application/x-shockwave-flash"],F=!(!a||!a.enabledPlugin))){G(a.enabledPlugin.description);return}try{var c=new ActiveXObject("ShockwaveFlash.ShockwaveFlash.7");F=!0;G(c.GetVariable("$version"));return}catch(d){}try{c=
+new ActiveXObject("ShockwaveFlash.ShockwaveFlash.6");F=!0;return}catch(d){}try{c=new ActiveXObject("ShockwaveFlash.ShockwaveFlash"),F=!0,G(c.GetVariable("$version"))}catch(d){}})();var ea=/^([^;]+);(?:e:([\d,]*);)?(\d+);([\s\S]*)$/;try{var H,I=ea.exec(window.name);if(null===I)throw Error("Cannot parse serialized data");for(var J={},K=I[2]?I[2].split(","):[],L=0;L<K.length;L++)J[K[L]]=!0;var M=+I[3],N=I[4];if(M>N.length)throw Error("Cannot parse serialized data");H={c:I[1],a:J,content:N.substr(0,M),b:N.substr(M)};H.a["131968836"]&&E&&(window.name="");b.sf_={v:H.c,exp:H.a,cfg:H.b};var O=H.content,P=window;if(E){var Q=P.document;Q.open("text/html","replace");Q.write(O);Q.close()}else{var R=O,T;if(T=n&&z(7)&&!z(10)){var U=navigator.userAgent.match(/Trident\/([0-9]+.[0-9]+)/);
+T=6>(U?parseFloat(U[1]):0)}var V;if(V=T)a:{for(var W=0;W<R.length;++W)if(127<R.charCodeAt(W)){V=!0;break a}V=!1}if(V){for(var X=unescape(encodeURIComponent(R)),ga=Math.floor(X.length/2),Y=[],Z=0;Z<ga;++Z)Y[Z]=String.fromCharCode(256*X.charCodeAt(2*Z+1)+X.charCodeAt(2*Z));1==X.length%2&&(Y[ga]=X.charAt(X.length-1));R=Y.join("")}P.goog_content=R;P.location.replace("javascript:window.goog_content")}}catch(a){};})();
+    </script>
+  
+
+</body></html>
