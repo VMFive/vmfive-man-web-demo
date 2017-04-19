@@ -538,6 +538,17 @@
         left: 50%;
         z-index: 4
     }</style>
+    <style>
+        .customer-slot {
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            width: 50%;
+            height: 50%;
+            background-color: gold;
+        }
+    </style>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
     <script id="vm5ad-js-sdk" src="https://vawpro.vm5apis.com/man.js" data-mode="sdk"></script>
@@ -609,7 +620,9 @@
                             class="share-bar__link" rel="nofollow" data-reactid="42"><i class="fa fa-link"
                                                                                         data-reactid="43"></i></a><a
                             class="share-bar__next" data-reactid="44">下一篇</a></div>
-                    <vmfive-ad-unit placement-id="58f732da1768c30b316bd8e6" ad-type="video-interstitial-embedded"></vmfive-ad-unit>
+                    <div class="customer-slot">
+                        <vmfive-ad-unit placement-id="58f732da1768c30b316bd8e6" ad-type="video-interstitial-embedded"></vmfive-ad-unit>
+                    </div>
                     <div data-reactid="47"><h3 class="darsys-post-list__title" data-reactid="48"><span
                             data-reactid="49">你可能感興趣的文章</span></h3>
                         <ul class="darsys-post-list__list" data-reactid="50">
