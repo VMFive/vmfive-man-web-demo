@@ -17,9 +17,9 @@ SDK連結 ： https://vawpro.vm5apis.com/man.js
 
 <script id="vm5ad-js-sdk" src="https://vawpro.vm5apis.com/man.js" data-mode="sdk"></script>
 <script>
-	window.onVM5AdSDKReady = function() {
+  window.onVM5AdSDKReady = function() {
     VM5AdSDK.init({ appKey:'your_appkey', testMode: true });
-    };
+  };
 </script>
 
 </head>
