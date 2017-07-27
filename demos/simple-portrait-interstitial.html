@@ -10,20 +10,6 @@
     body { margin: 0; padding: 0; }
     .page-container { width: 90%; max-width: 500px; margin: 10px auto; }
   </style>
-  <style>
-    .customer-close-btn {
-      position: absolute;
-      right: 5px; top: 5px;
-      width: 40px; height: 20px;
-    }
-    .customer-mask {
-      position: absolute; left: 0; right: 0; top: 0; bottom: 0;
-      background-color: rgba(0,0,0,.7);
-    }
-    .customer-slot {
-      position: absolute; left: 30px; right: 30px; top: 30px; bottom: 30px;
-    }
-  </style>
 
   <script id="vm5ad-js-sdk" src="https://vawpro.vm5apis.com/man.js" data-mode="sdk"></script>
   <script>
@@ -34,12 +20,7 @@
 </head>
 
 <body>
-  <div class="customer-mask">
-    <div class="customer-close-btn">❌ </div>
-    <div class="customer-slot">
-      <vmfive-ad-unit placement-id="582ad4b1038f454a190d4339" ad-type="video-interstitial-embedded"></vmfive-ad-unit>
-    </div>
-  </div>
+  <vmfive-ad-unit placement-id="582ad4b1038f454a190d4339" ad-type="portraitvideo-interstitial"></vmfive-ad-unit>
 
   <div class="page-container">
     <h1>Hello World</h1>
@@ -146,13 +127,7 @@
     <p>Nobis excepturi, dignissimos consequatur architecto non possimus sequi dolor necessitatibus adipisci, exercitationem aliquid porro veritatis sit debitis officia fuga vitae voluptates voluptatem, ad voluptate nulla amet eveniet, quis quos placeat.</p>
     <p>Quis assumenda, velit in repellendus minus soluta vero, corrupti ullam animi deserunt beatae adipisci aperiam quod maiores. Nam, veritatis maxime eligendi minima id excepturi dolor debitis omnis ipsum, molestias tempore!</p>
     <p>Nesciunt fugit ab mollitia eos, doloribus, magnam, fugiat ex maiores molestias non facilis! Ullam totam blanditiis eveniet accusantium quaerat repudiandae consequatur amet nisi aliquid odio! Culpa omnis, eaque voluptatem velit.</p>
-  </div>
-  <script>
-    document.querySelector('.customer-close-btn').onclick = function() {
-      var maskEl = document.querySelector('.customer-mask');
-      maskEl.parentNode.removeChild(maskEl);
-    };
-  </script>
+  </div>  
 </body>
 
 </html>
