@@ -222,9 +222,9 @@ module.exports = function() {
 
 /***/ }),
 /* 5 */
-/***/ (function(module, exports) {
+/***/ (function(module, exports, __webpack_require__) {
 
-module.exports = "data:image/png;base64,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"
+module.exports = __webpack_require__.p + "icon_act_close.png?a69e0fb0a45c796e68167abaf16a5746";
 
 /***/ }),
 /* 6 */
@@ -685,6 +685,10 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
     placeholderImage: {
       type: String,
       required: true
+    },
+    userAttributes: {
+      type: Object,
+      required: true
     }
   },
 
@@ -711,6 +715,9 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
     },
     innerCardHeightStyle() {
       return `${this.cardHeight}px`;
+    },
+    flipCardFrontSideSelector() {
+      return this.userAttributes['flip-card-front-side-selector'];
     }
   },
 
@@ -749,16 +756,15 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
     prepareFlipCard() {
       console.warn('flip card start');
-      var container = document.getElementsByTagName('body')[0];
+      var container = document.querySelector('body');
       container.className += ' flipcard-container';
-      var originalContent = document.getElementsByClassName('page-container')[0];
+      var originalContent = document.querySelector(this.flipCardFrontSideSelector);
       originalContent.className += ' flipcard-original-content';
       var adContent = this.$el.parentNode.parentNode.parentNode;
       adContent.className += ' flipcard-ad-content';
 
       setContainerStyle(container);
-      setFlipCardStyle(originalContent);
-      setFlipCardStyle(adContent);
+      setFlipCardFrontSideStyle(originalContent);
       setFlipCardBackSideStyle(adContent);
 
       function setContainerStyle(elem) {
@@ -769,10 +775,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
         elem.style.transition = 'all 1.0s linear';
       }
 
-      function setFlipCardStyle(elem) {
-        elem.style.position = 'absolute';
-        elem.style.width = '100%';
-        elem.style.height = '100%';
+      function setFlipCardFrontSideStyle(elem) {
         elem.style.backfaceVisibility = 'hidden';
       }
 
@@ -780,6 +783,10 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
         elem.style.display = 'block';
         elem.style.transform = 'rotateY(180deg)';
         elem.style.boxSizing = 'border-box';
+        elem.style.position = 'absolute';
+        elem.style.width = '100%';
+        elem.style.height = '100%';
+        elem.style.backfaceVisibility = 'hidden';
       }
 
       console.warn('flip card done');
@@ -787,19 +794,23 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
     }
   },
 
-  watch: {
-    isPrepared() {
-      this.$emit('videoEnterViewport');
-      const containerElem = this.prepareFlipCard();
-      this.containerElem = containerElem;
+  mounted() {
+    const vm = this;
+
+    if (!this.flipCardFrontSideSelector) {
+      console.warn('flipCardFrontSideSelector is missing');
+      vm.$destroy();
+      return;
+    }
+
+    vm.$watch('isPrepared', () => {
+      vm.$emit('videoEnterViewport');
+      const containerElem = vm.prepareFlipCard();
+      vm.containerElem = containerElem;
       setTimeout(() => {
         containerElem.style.transform = 'rotateY(180deg)';
       }, 1000);
-    }
-  },
-
-  mounted() {
-    const vm = this;
+    });
 
     __WEBPACK_IMPORTED_MODULE_0_raf___default()(function checkCardSize() {
       vm.checkCardContainerSize();
