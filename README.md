@@ -15,13 +15,13 @@ SDK連結 ： https://vawpro.vm5apis.com/man.js
 ```html
 <head>
 
-<script id="vm5ad-js-sdk" src="https://vawpro.vm5apis.com/man.js" data-mode="sdk"></script>
+<script id="vm5ad-js-sdk" src="https://vawpro.vm5apis.com/man.js" data-mode="fast"></script>
 <script>
   window.onVM5AdSDKReady = function() {
     VM5AdSDK.init({ appKey:'your_appkey', testMode: true });
   };
 </script>
-
+<script src="https://man.vm5apis.com/dist/adn-web-sdk.js"></script>
 </head>
 ```
 在引入SDK時,請確認id設為**vm5ad-js-sdk** 且data-mode設定為
