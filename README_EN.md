@@ -8,20 +8,21 @@
 
 ### Insert Main Entry Point
 
-To add an Ad Unit to the page, first include the main SDK entry point in the `<head>` section of the page:
+To add an Ad Unit to the page, first include the main SDK entry point in the `<body>` section of the page:
 
 ```html
-<script id="vm5ad-js-sdk" src="https://vawpro.vm5apis.com/man.js" data-mode="sdk"></script>
+<script id="vm5ad-js-sdk" src="https://vawpro.vm5apis.com/man.js" data-mode="fast"></script>
 <script>
   window.onVM5AdSDKReady = function() {
     VM5AdSDK.init({ appKey: '580db14a4a801a2674a56f81' });
   };
 </script>
+<script src="https://man.vm5apis.com/dist/adn-web-sdk.js"></script>
 ```
 
 Some key elements here that you need to change according to your account information:
 
-1. Make sure the script element's ID is `vm5ad-js-sdk` and its `data-mode` attribute is set to `sdk`.
+1. Make sure the script element's ID is `vm5ad-js-sdk` and its `data-mode` attribute is set to `fast`.
 2. Replace `appKey` value with your valid app key.
 
 ### Insert Ad Unit
