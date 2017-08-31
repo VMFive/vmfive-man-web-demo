@@ -10,22 +10,19 @@ Mobile Attention Network,簡稱MAN, 是世界第一個使用注意力指標的�
 ### 引入SDK
 SDK連結 ： https://vawpro.vm5apis.com/man.js
 
-在網頁的head標籤中引入並且初始化SDK,例如以下程式碼：
+在網頁的body標籤中引入並且初始化SDK(請勿放在head標籤中),例如以下程式碼：
 
 ```html
-<head>
-
-<script id="vm5ad-js-sdk" src="https://vawpro.vm5apis.com/man.js" data-mode="sdk"></script>
+<script id="vm5ad-js-sdk" src="https://vawpro.vm5apis.com/man.js" data-mode="fast"></script>
 <script>
   window.onVM5AdSDKReady = function() {
     VM5AdSDK.init({ appKey:'your_appkey', testMode: true });
   };
 </script>
-
-</head>
+<script src="https://man.vm5apis.com/dist/adn-web-sdk.js"></script>
 ```
 在引入SDK時,請確認id設為**vm5ad-js-sdk** 且data-mode設定為
-**sdk**. 
+**fast**. 
 
 在初始化SDK時,請先開啟測試模式(tesMode: true),確認測試廣告可以成功載入並且曝光後,**關閉測試模式(tesMode: false)**,並且**填入正確的app key**，確認廣告是否可以載入並且曝光.如果無法曝光請再次確認app key是否正確,需要小心不要填入文字編輯器可能暗藏的隱藏字元.如果仍然無法顯示廣告,請留意console是否有印出錯誤訊息,並且聯絡VM5客服人員.
 
