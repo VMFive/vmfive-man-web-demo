@@ -539,14 +539,17 @@
         z-index: 4
     }</style>
     <style>
+        .customer-close-btn {
+          position: absolute;
+          right: 5px; top: 60px;
+          width: 40px; height: 20px;
+        }
+        .customer-mask {
+          position: absolute; left: 0; right: 0; top: 0; bottom: 0;
+          background-color: rgba(0,0,0,.7);
+        }
         .customer-slot {
-            position: absolute;
-            left: 50%;
-            top: 50%;
-            transform: translate(-50%, -50%);
-            width: 50%;
-            height: 50%;
-            background-color: gold;
+          position: absolute; left: 30px; right: 30px; top: 30px; bottom: 30px;
         }
     </style>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -554,7 +557,7 @@
     <script id="vm5ad-js-sdk" src="https://vawpro.vm5apis.com/man.js" data-mode="sdk"></script>
     <script>
     window.onVM5AdSDKReady = function() {
-      VM5AdSDK.init({ appKey: '58f732571768c30b316bd8dc' });
+      VM5AdSDK.init({ appKey: '59a636ff6ae4fadf1e262db0' });
     };
     </script>
     
@@ -579,7 +582,7 @@
                                                                                              href="https://www.dcard.tw/"
                                                                                              data-reactid="4">Dcard</a>
         </h1><a class="header__btn" href="https://www.dcard.tw/f" data-reactid="5"><i class="fa fa-bars"
-                                                                                      data-reactid="6">::before</i></a>
+                                                                                      data-reactid="6"></i></a>
             <button class="header__login-link" data-reactid="7">免費下載APP</button>
         </header>
         <div class="post__article-end" data-reactid="8">
@@ -620,8 +623,11 @@
                             class="share-bar__link" rel="nofollow" data-reactid="42"><i class="fa fa-link"
                                                                                         data-reactid="43"></i></a><a
                             class="share-bar__next" data-reactid="44">下一篇</a></div>
-                    <div class="customer-slot">
-                        <vmfive-ad-unit placement-id="58f732da1768c30b316bd8e6" ad-type="video-interstitial-embedded"></vmfive-ad-unit>
+                    <div class="customer-mask">
+                      <div class="customer-close-btn">❌ </div>
+                      <div class="customer-slot">
+                        <vmfive-ad-unit placement-id="59a638926ae4fadf1e262dd2" ad-type="video-interstitial-embedded"></vmfive-ad-unit>
+                      </div>
                     </div>
                     <div data-reactid="47"><h3 class="darsys-post-list__title" data-reactid="48"><span
                             data-reactid="49">你可能感興趣的文章</span></h3>
@@ -4307,6 +4313,12 @@
     "form": {},
     "errors": {"posts": {}}
 }</script>
+<script>
+  document.querySelector('.customer-close-btn').onclick = function() {
+    var maskEl = document.querySelector('.customer-mask');
+    maskEl.parentNode.removeChild(maskEl);
+  };
+</script>
 
 <iframe src="./Dcard_files/container(1).html" style="visibility: hidden; display: none;"></iframe>
 <iframe id="google_osd_static_frame_9199792053988" name="google_osd_static_frame"
