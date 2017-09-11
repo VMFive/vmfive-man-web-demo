@@ -1,6 +1,6 @@
 # 中文Wiki
 
-以下為進階使用方式，若您是第一次接觸VMFive Ads請直接參考Wiki中的串接說明
+此頁面為進階使用方式，若您是第一次接觸VMFive Ads請直接參考Wiki中的串接說明
 
 [中文Wiki](https://github.com/VMFive/vmfive-man-web-demo/wiki/%E9%A6%96%E9%A0%81)
 
