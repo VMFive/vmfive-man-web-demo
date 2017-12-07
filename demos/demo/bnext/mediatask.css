@@ -1,0 +1,161 @@
+﻿@charset "utf-8";
+
+@-webkit-keyframes AD2M-fade {
+0% {
+display: block;
+opacity:1;
+background-size: 100% auto;
+};
+50%{
+opacity:1;
+}
+
+100%{
+opacity:0;
+background-size: 150% auto;
+}
+}
+
+@keyframes AD2M-fade {
+0% {
+display: block;
+opacity:1;
+background-size: 100% auto;
+};
+50%{
+opacity:1;
+}
+
+100%{
+opacity:0;
+background-size: 150% auto;
+}
+}
+
+.AD2M-fade {
+-webkit-animation-name: AD2M-fade;
+animation-name: AD2M-fade;
+-webkit-animation-duration: 500ms;
+animation-duration: 500ms;
+-webkit-animation-fill-mode: both;
+animation-fill-mode: both;
+}
+
+.AD2M-task-div * {
+padding: 0;
+margin: 0;}
+.AD2M-task-div{
+position: fixed;
+left: 0;
+bottom: 0;
+z-index: 999999999;}
+.AD2M-task-img,.AD2M-task-close,.AD2M-task-open{
+height: 15.75vw;
+height: 41.666vw;
+display: inline-block;
+vertical-align: bottom;}
+.AD2M-task-close,.AD2M-task-open{
+-webkit-transition:all 100ms;
+transition:all 100ms;
+width: 0vw;
+background-color: rgba(255,255,255,.9);
+background-position: center center;
+background-repeat: no-repeat;
+background-size: contain;}
+.AD2M-task-close{
+background-image:url("task-close-1.png");
+}
+.AD2M-task-open{
+background-image:url("task-open-1.png");}
+.AD2M-task-img,.AD2M-task-resize{
+width: 50vw;}
+.AD2M-task-img{
+position: relative;}
+.AD2M-task-resize{
+-webkit-transition:all 300ms;
+transition:all 300ms;
+position: absolute;
+left:0;
+bottom: 0;}
+.AD2M-task-loaded .AD2M-task-resize{
+width: 0vw}
+div.AD2M-task-resize-open{
+width:90vw;}
+
+.AD2M-task-1200{}
+.AD2M-task-300{}
+.AD2M-task-1200 .AD2M-task-height{
+height: 26.25vw;}
+.AD2M-task-1200 .AD2M-task-logo {
+bottom:36.25vw;}
+.AD2M-task-1200 .AD2M-task-sound {
+bottom:26.25vw;}
+.AD2M-task-300 .AD2M-task-height{
+height: 41.666vw;}
+.AD2M-task-300 .AD2M-task-logo {
+bottom:41.666vw;}
+.AD2M-task-1200 div.AD2M-task-resize-open{
+height: 47.25vw;}
+.AD2M-task-300 div.AD2M-task-resize-open{
+height: 75vw;}
+
+.AD2M-task-img video{
+background-color: black;
+width: 100%;
+height: 100%;}
+.AD2M-task-img .unmuted{
+display: none;}
+.AD2M-task-img img{
+display: block;
+width: 100%;}
+.AD2M-task-img a{
+display: block;
+position: absolute;
+width: 100%;
+height: 0%;
+overflow: hidden;
+left: 0;
+bottom: 100%;
+background-color: black;
+-webkit-transition:all 300ms;
+transition:all 300ms;}
+.AD2M-task-img img{}
+.AD2M-task-ui {
+position: absolute;
+width: 10vw;
+left: 0;
+overflow: hidden;}
+.AD2M-task-ui img{
+width: 100%;}
+.AD2M-task-ui a{
+-webkit-transition:all 300ms;
+transition:all 300ms;
+position: relative;
+left: 100%;
+display: block;
+width: 10vw;
+height:10vw;
+overflow: hidden;}
+.AD2M-task-timebar{
+position: absolute;
+-webkit-transition:all 1ms;
+transition:all 1ms;
+left: 0;
+bottom: 0;
+height: 0.7vw;
+width: 0%;
+background-color:#0084ff; }
+.AD2M-task-resize-open .AD2M-task-timebar{
+height: 1vw;}
+.AD2M-task-sound a{
+background-color: rgba(255,255,255,0.9);}
+.AD2M-task-soundon{
+position: absolute;
+opacity:0;
+left: 0;
+top: 0;
+pointer-events:none;
+width: 100%;
+height: 100%;
+background:rgba(0,0,0,0.2) url("task-sound-2.png") center center no-repeat;
+background-size: 100%;}

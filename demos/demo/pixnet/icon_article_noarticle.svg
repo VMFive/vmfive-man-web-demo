@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="70px" height="70px" viewBox="0 0 70 70" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 41 (35326) - http://www.bohemiancoding.com/sketch -->
+    <title>@bounds</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <linearGradient x1="83.1790556%" y1="0%" x2="18.6735756%" y2="112.802847%" id="linearGradient-1">
+            <stop stop-color="#35A0DA" offset="0%"></stop>
+            <stop stop-color="#006AC6" offset="100%"></stop>
+        </linearGradient>
+        <circle id="path-2" cx="35" cy="34" r="34"></circle>
+        <filter x="-50%" y="-50%" width="200%" height="200%" filterUnits="objectBoundingBox" id="filter-4">
+            <feOffset dx="0" dy="1" in="SourceAlpha" result="shadowOffsetOuter1"></feOffset>
+            <feColorMatrix values="0 0 0 0 0   0 0 0 0 0.415686275   0 0 0 0 0.776470588  0 0 0 1 0" type="matrix" in="shadowOffsetOuter1"></feColorMatrix>
+        </filter>
+    </defs>
+    <g id="article" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="查無文章" transform="translate(-125.000000, -131.000000)">
+            <g id="留言icocn" transform="translate(125.000000, 131.000000)">
+                <g id="Group-3" transform="translate(8.160000, 6.675621)"></g>
+                <mask id="mask-3" fill="white">
+                    <use xlink:href="#path-2"></use>
+                </mask>
+                <g id="Oval">
+                    <use fill="black" fill-opacity="1" filter="url(#filter-4)" xlink:href="#path-2"></use>
+                    <use fill="url(#linearGradient-1)" fill-rule="evenodd" xlink:href="#path-2"></use>
+                </g>
+                <g id="note" mask="url(#mask-3)" fill="#FFFFFF">
+                    <g transform="translate(31.500000, 23.000000)">
+                        <path d="M1.74929826,14.7637146 L1.19708658,6.50232188 C1.09347331,4.89278381 1.04166667,3.73714253 1.04166667,3.03539806 C1.04166667,2.08109623 1.29186918,1.3363758 1.79168551,0.801825478 C2.29150183,0.267275159 2.94968162,0 3.7662249,0 C4.75526073,0 5.41638409,0.34263027 5.74959497,1.02612468 C6.08280585,1.71020779 6.25,2.69630006 6.25,3.98381278 C6.25,4.7426623 6.2099676,5.51328605 6.12931408,6.29509532 L5.38753721,14.7978599 C5.30688369,15.8098555 5.13439113,16.5857777 4.87005953,17.1262151 C4.60572793,17.6672412 4.16890377,17.9368713 3.55899834,17.9368713 C2.93790739,17.9368713 2.50697035,17.6754832 2.26559851,17.1521184 C2.02422667,16.6287536 1.85232282,15.833404 1.74929826,14.7637146 L1.74929826,14.7637146 Z" id="Shape"></path>
+                        <path d="M5.39341085,24.1792534 C4.91569767,24.603672 4.35949612,24.8187883 3.73158915,24.8187883 C3.08430233,24.8187883 2.51647287,24.606579 2.03197674,24.1870053 C1.54748062,23.7664627 1.30523256,23.1763464 1.30523256,22.4234394 C1.30523256,21.7528968 1.53972868,21.1850673 2.00872093,20.73061 C2.47868217,20.2732456 3.0503876,20.0416565 3.73158915,20.0416565 C4.40116279,20.0416565 4.96899225,20.2732456 5.42732558,20.73061 C5.88178295,21.1850673 6.1124031,21.7528968 6.1124031,22.4234394 C6.1124031,23.1685945 5.87403101,23.7519278 5.39341085,24.1792534 L5.39341085,24.1792534 Z" id="Path"></path>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

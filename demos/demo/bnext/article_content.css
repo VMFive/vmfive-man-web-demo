@@ -1,0 +1,617 @@
+.article_view #top_pic { max-width: 1100px;}
+
+#top_pic { margin: 2% auto; }
+
+
+.article_view .article_info .author .bg_img_sty01,
+.ad_article_view .article_info .author .bg_img_sty01{
+    width: 35px;
+    border-radius: 50%;
+    margin: -12px 5px;
+    border: 1px #ccc solid;
+    height: 35px;
+    background-color: #fff;
+    overflow: hidden;
+    display: inline-block;
+}
+.article_view .article_tags a.tag { margin: 0 5px; display: inline-block; border-bottom: 2px #ff5500 solid; }
+.article_view .article_tags a:hover {color: #ff5500;}
+.article_view h1 { 
+    font-size: 2em;
+    line-height: 1.25;
+    font-weight: bold;
+    margin: 12px 0 20px;
+    letter-spacing: -0.05em;
+}
+.article_view h2 { font-size: 30px; font-weight: bold; }
+
+.cate_box a{ 
+    display: inline-block; 
+    background-color: black; 
+    color: white; 
+    padding: 0 5px; 
+    line-height: 25px; 
+    font-size: 14px; 
+    margin-right: 5px;
+}
+
+/***前言***/
+.htmlview .article_summary {
+    margin: 5% 15% 10%;
+    border-left: 5px #000 solid;
+    padding-left: 15px;
+    font-size: 16px;
+    line-height: 1.8;
+    font-style: italic;
+    color: #666;
+}
+
+/*
+.htmlview .left .main_content p:first-child:first-letter {
+    float: left;
+    font-size: 250%;
+    margin: -8px 12px 0 0;
+    border: solid;
+    padding: 2px 12px;
+    line-height: 1.5;
+}
+
+
+.htmlview .left div:first-child + p:first-letter {
+    float: left;
+    font-size: 250%;
+    margin: -8px 12px 0 0;
+    border: solid;
+    padding: 2px 12px;
+    line-height: 1.5;
+}
+**/
+
+.htmlview .main_content {
+    /* overflow: auto; */
+}
+
+.htmlview .main_content:after {
+    display: block;
+    clear: both;
+    content: " ";
+}
+
+.htmlview .main_content > p:first-child:first-letter {
+    float: left;
+    font-size: 250%;
+    margin: -8px 12px 0 0;
+    border: solid;
+    padding: 2px 12px;
+    line-height: 1.5;
+}
+
+/* 文章 內文 css */
+.htmlview {
+    /* width: 100%; */
+    position: relative;
+}
+
+.htmlview iframe {
+    max-width: 100% !important;
+}
+
+.htmlview ul,
+.htmlview ol
+{
+    padding: 0 5%;
+    margin: 0;
+}
+
+.htmlview ul li { list-style-type: disc; }
+.htmlview ol li { list-style-type: decimal; }
+.htmlview img { max-width: 100%; }
+
+.htmlview li {
+    font-size: 18px;
+    line-height: 1.5;
+    margin: 22px 0;
+}
+
+.htmlview .main_content li{
+    margin: 10px 0;
+}
+
+.htmlview table {
+    border:5px solid #000;
+    width:100%;
+    margin-bottom: 10px;
+}
+
+.htmlview table th,
+.htmlview table td {
+    padding: 1%;
+    text-align: center;
+    vertical-align: top;
+    border: 1px solid #000;
+    word-break: break-all;
+}
+
+.htmlview table th {
+    font-weight: bold;
+}
+.htmlview table thead th {
+    vertical-align: bottom;
+}
+
+.htmlview table tr:nth-child(1) {
+    background-color: #ff5500;
+    color: #fff;
+}
+
+.htmlview em {
+    font-style: italic;
+    font-weight: normal;
+}
+
+.htmlview strong,
+.htmlview b {
+    font-style: normal;
+    font-weight: bolder;
+}
+
+.htmlview h1 {
+    font-size: 1.6em;
+    color: #ff5500;
+    line-height: 1.35;
+    font-weight: bold;
+    margin: 20px 0;
+    /*font-size: 100px;
+    color: #0083DD;
+    line-height: 1;
+    text-decoration: line-through;*/
+}
+
+.htmlview h2 {
+    font-size: 1.6em;
+    color: #ff5500;
+    line-height: 1.35;
+    font-weight: bold;
+    margin: 20px 0;
+}
+.htmlview h2 a {
+    text-decoration: none;
+    border-bottom: 5px solid #000;
+    color: #ff5500;
+    line-height: 1.6;
+}
+.htmlview h2 a:hover{
+    background-color: #fffac3;
+}
+
+.htmlview h3 {
+    font-size: 1.6em;
+    line-height: 1.35;
+    font-weight: bold;
+    color: #000;
+    margin: 20px 0;
+}
+
+.htmlview h4 {
+    border-bottom: 3px solid #000000;
+    padding-bottom: 3px;
+    font-size: 1.2em;
+    line-height: 1.35;
+    font-weight: bold;
+    display: inline-block;
+    margin: 20px 0;
+}
+.htmlview h5 {
+    font-size: 1.2em;
+    font-weight: normal;
+    color: #ff5500;
+    line-height: 1.5;
+    margin: 20px 0;
+}
+
+.htmlview h6 {
+    font-size: 1em;
+    line-height: 1.5;
+    color: #0083DD;
+    margin: 20px 0;
+}
+
+.htmlview hr {
+    border-top: solid 1px #ccc;
+}
+
+.htmlview p a, 
+.htmlview p a:visited {
+    color: #000;
+    text-decoration: none;
+    border-bottom: 2px #ff5500 solid;
+}
+
+.htmlview p a:focus,
+.htmlview p a:hover {
+    color: #ff5500;
+    border-bottom: 3px solid #000000;
+}
+
+
+.htmlview p,
+.htmlview pre,
+.htmlview pre.prettyprint,
+.htmlview blockquote
+{
+    margin: 1em 0 1.5em;
+    line-height: 1.8;
+    font-size: 18px;
+    text-align: justify;
+    word-break: break-word;
+}
+
+/* 20170608 for 微軟 AD*/
+.ad_article_view .htmlview p,
+.ad_article_view .htmlview pre,
+.ad_article_view .htmlview pre.prettyprint,
+.ad_article_view .htmlview blockquote {
+    text-align: left;
+}
+
+.htmlview pre{
+    padding: 30px;
+}
+
+.htmlview blockquote {
+    border: 0;
+    background-color: #eee;
+    padding: 5%;
+}
+
+.htmlview blockquote p {
+    margin: 0;
+}
+
+.en .htmlview p, 
+.en .htmlview pre, 
+.en .htmlview pre.prettyprint, 
+.en .htmlview blockquote {
+    margin: 10px 0 25px 0;
+    line-height: 1.3;
+    font-size: 18px;
+    /* text-align: justify; */
+    /* word-break: break-all; */
+    font-weight: 200;
+    color: #3c3c3c;
+}
+
+
+/**
+.htmlview blockquote
+{
+    padding: 24px 40px;
+    border: none;
+    border-bottom: 1px dashed #E4007E;
+    border-top: 1px dashed #E4007E;
+    background-image: url(../img/block.svg);
+    background-repeat: no-repeat;
+    background-position: 2px 10px;
+}
+.htmlview blockquote p{
+    padding: 0 !important;
+    margin: 20px !important;
+    line-height: 1.8;
+    text-align: justify;
+    font-size: 18px;
+}
+**/
+
+.htmlview video {
+    width: 100%;
+}
+
+.htmlview code {
+    padding: 0;
+    color: #777;
+    text-align: justify;
+    line-height:1.8;
+}
+
+/******table ****/
+
+.htmlview table.table {
+    border-collapse: collapse;
+    width:100%;
+    border: 2px solid #cccccc;
+}
+
+.htmlview table.table th, .htmlview table.table td {
+    border: 1px solid #cccccc;
+    padding:10px;
+    line-height: 1.5;
+    font-size: 15px;
+}
+
+.htmlview table.table.style1 tr:first-child {
+    background-color:#E4007E;
+    /* white-space: nowrap; */
+    color: #ffffff;
+    text-align:center;
+    font-weight: bold; 
+}
+
+.htmlview table.table.style2 td:first-child {
+    background-color: #E4007E;
+    /* white-space: nowrap; */
+    text-align:center;
+    font-weight: bold;
+    color: #ffffff;
+}
+
+.htmlview table.table.style3 tr:first-child, 
+.htmlview table.table.style3 td:first-child {
+    background-color:#E4007E;
+    /* white-space: nowrap; */
+    color: #ffffff;
+    text-align:center;
+    font-weight: bold;
+}
+
+
+
+/***圖說***/
+
+.htmlview .al-section.al-photo.al-s-1 {
+    text-align: center;
+    margin-bottom: 5%;
+}
+.htmlview .al-iframe figure {
+    display: block;
+    background-color: #fff;
+}
+.al-iframe figure {
+    border:0;
+}
+figure {
+    margin: 0;
+    display: inline-block;
+    padding-bottom: 15px;
+    text-align: left;
+    border-bottom: 2px #ccc solid;
+    max-width: 100%;
+}
+
+figure img { display: block; }
+
+figcaption {
+    padding:10px 0 0;
+    color: #666;
+    font-size: 15px;
+    line-height: 1.35;
+}
+figcaption:before {
+    content: "\f27a";
+    font-family: FontAwesome;
+    font-size: 1.25em;
+    margin: 0 5px;
+}
+
+figsource {
+    font-size: 13px;
+    line-height: 1.35;
+    color: #000;
+}
+
+figsource a:hover {
+   color: #000;
+}
+figsource:before {
+display: inline;
+content: '圖片來源：';
+}
+
+
+
+
+.al-section.al-photo.al-s-1 a{
+    color: #000000;
+    
+}
+.al-section.al-photo.al-s-1 a:hover{
+    color: #ff5500;
+    
+}
+
+
+.al-section.al-photo.al-s-2 {
+    width: 30%;
+    float: right;
+    margin-left: 2em;
+    margin-bottom: 2em;
+}
+
+.al-section.al-photo.al-s-3 {
+    width: 30%;
+    float: left;
+    margin-right: 2em;
+    margin-bottom: 2em;
+}    
+    
+*::selection{
+    background: #ff5500;
+    color: #fff;
+}
+
+.al-gallery {
+    margin: 5% 0;
+}  
+.htmlview .al-col-2 .image-set img{ width: 50%; vertical-align: top; display: inline-block; }
+.htmlview .al-col-3 .image-set img{width: 33.33%; vertical-align: top; display: inline-block;}
+.htmlview .al-col-4 .image-set img{width: 25%; vertical-align: top; display: inline-block;}
+
+/***名人金句***/
+
+.htmlview .essence-box {
+    margin: 10% 15%;
+    position: relative;
+}
+.htmlview .essence-box:before {
+    background-image: url("icon-06.svg");
+    background-size: 70px 70px;
+    position: absolute;
+    width: 70px;
+    height: 70px;
+    content: "";
+    left: -85px;
+    top: -25px;
+}
+.htmlview .essence-box:after {
+    background-image: url("icon-07.svg");
+    background-size: 70px 70px;
+    position: absolute;
+    width: 70px;
+    height: 70px;
+    content: "";
+    right: -75px;
+    top: -10px;
+}
+
+.htmlview .ess-description {
+    font-size: 24px;
+    line-height: 1.5;
+}
+.htmlview .ess-name {
+    font-size: 16px;
+    line-height: 2;
+    margin-top: 15px;
+    text-align: center;
+}
+.htmlview .ess-name:before {
+    content: "─── ";
+}
+
+/**數字焦點**/
+
+.htmlview .article_number_box .left_box {
+    margin: 0;
+    padding: 0;
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 18px;
+    line-height: 1.5;
+    color: #000;
+}
+.htmlview .num {
+    font-size: 4em;
+    font-family: 'Roboto Condensed', sans-serif,fantasy,"微軟正黑體";
+    font-weight: bold;
+    line-height: 1;
+}
+.htmlview .unit {
+    font-size: 30px;
+}
+.htmlview .num_grp {
+    text-align: center;
+}
+.htmlview .article_number_box .right_box {
+    margin: 0;
+    padding: 0 15px 0 0;
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 18px;
+    line-height: 1.5;
+    color: #000;
+}
+.htmlview .digi_logo .div_td.img{
+    background-color: #fff;
+    border-radius: 50%;
+    width: 50px;
+}
+.htmlview .digi_logo .div_td i {
+    font-size: 50px;
+}
+.htmlview .digi_logo .div_td.txt{
+    vertical-align: middle;
+    padding-left: 10px;
+}
+
+
+
+/***PX圖集***/
+.htmlview .px_img_box_sty01 img {
+    width: 33.3%;
+}
+
+.htmlview .image-set {
+    font-size: 0;
+    background-color: #fff;
+}
+
+.htmlview .image-set img:hover {
+    opacity: 0.8;
+}
+
+.htmlview .layout_sty01{ margin-bottom: 0;}
+
+
+
+/***tag***/
+
+.htmlview .article_tags {
+    text-align: center;
+    border-top: 5px #000 solid;
+    padding: 15px 0;
+    font-weight: bold;
+    font-size: 18px;
+}
+
+
+/****aa人物*****/
+
+.htmlview .article_aa {
+    margin: 50px 0;
+}
+
+.htmlview .aa_author {
+    border: 5px #000 solid;
+    margin: 30px 0;
+    padding: 15px;
+}
+.htmlview　.aa_author .item_text_box {
+    padding: 3%;
+}
+
+.htmlview　.aa_author .author_info .cname {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+
+.htmlview　.aa_author .author_info .title{
+    font-size: 16px;
+    line-height: 1.5;
+    color: #ff5500;
+}
+
+.htmlview　.aa_author .item_content p{
+    text-align: left;
+    font-size: 16px;
+    line-height: 1.5;
+}
+/****aa書*****/
+.htmlview　.item_sty02
+
+
+
+/****aa活動*****/
+
+.htmlview　.aa_activity .sitem_title {
+    font-size: 30px;
+    font-weight: bold;
+}
+
+
+
+
+/****外嵌****/
+#twitter-widget-0 {
+    margin: 5% auto !important;
+}

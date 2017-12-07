@@ -1,0 +1,1077 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=2.0" />
+<base href="http://udn.com" />
+<!-- favicon -->
+<link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+<link href='/favicon.ico' rel='icon' type='image/x-icon'/>
+
+<!-- for Facebook -->
+<meta property="og:title" content="聯合新聞網：觸動未來 新識力"/>
+<meta property="og:type" content="website"/>
+<meta property="og:url" content="http://udn.com/news/e404"/>
+<meta property="og:image" content="http://udn.com/static/img/UDN_BABY.png"/>
+<meta property="og:site_name" content="聯合新聞網"/>
+<meta property="og:description" content="聯合新聞網：觸動未來 新識力"/>
+<meta property="fb:admins" content="100002851642807" />
+<meta property="fb:app_id" content="680035625422678" />
+
+<!-- for Google -->
+<meta name="description" content="聯合新聞網：觸動未來 新識力" />
+<meta name="author" content="聯合新聞網" />
+<meta name="copyright" content="聯合新聞網" />
+<meta name="application-name" content="聯合新聞網" />
+
+<!-- for follow & save -->
+<meta name="date.available" content="">
+
+<link rel="canonical" href="http://udn.com/news/e404"/>
+
+<title>聯合新聞網：觸動未來 新識力</title>
+<link href="/static/css/default.css" rel="stylesheet" type="text/css">
+<link href="/static/css/1024.css" rel="stylesheet" media="(max-width: 1216px)">
+<link href="/static/css/768.css" rel="stylesheet" media="(max-width: 1016px)">
+<link href="/static/css/640.css" rel="stylesheet" media="(max-width: 766px)">
+<link href="/static/css/vote.css" rel="stylesheet" type="text/css">
+
+<!-- 改版小幫手 -->
+<!--<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css">-->
+<!--<link rel="stylesheet" href="/static/css/tooltip.css">-->
+<!-- /改版小幫手 -->
+
+<script src="/static/js/respond.min.js"></script>
+
+<script src="/static/js/jquery-1.11.1.min.js"></script>
+<script src="/static/js/jquery-migrate-1.2.1.min.js"></script>
+
+<script src="/static/js/jquery.event.drag-2.2.js"></script>
+<script src="/static/js/jquery.wookmark.min.js"></script>
+<script src="/static/js/jquery.fitvids.js"></script>
+<script src="/static/js/jquery.cookie.js"></script>
+<script src="/static/js/jquery.carouFredSel-6.2.1-packed.js"></script>
+<script src="/static/js/common.js"></script>
+<script src="/static/js/common2.js"></script>
+
+<!-- cover ad -->
+<link href="/static/css/colorbox.css" rel="stylesheet" type="text/css">
+<script src="/static/js/jquery.simplemodal-1.4.4.js"></script>
+<script src="/static/js/control.colorbox.js"></script>
+<!-- /cover ad -->
+
+<!-- send mail -->
+<!--<link href="http://j.udn.com.tw/func/css/colorbox-1.10.2.css" rel="stylesheet" type="text/css" />-->
+<!--<script src="http://func.udn.com/js/jquery.colorbox-1.10.2.min.js"></script>-->
+<script src="http://j.udn.com.tw/func/js/jquery.colorbox-1.10.2.min.js"></script>
+<!-- /send mail -->
+
+<!--- voter -->
+<script src="http://j.udn.com.tw/func/js/accept_var_min.js"></script>
+<script src="http://j.udn.com.tw/func/js/voteinit_min.js"></script>
+<!--- /voter -->
+
+
+
+<!-- google analytics -->
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-19660006-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+<!-- google analytics -->
+
+
+
+<!-- Begin comScore Tag -->
+<script>
+var _comscore = _comscore || [];
+_comscore.push({ c1: "2", c2: "7390954" });
+(function() {
+var s = document.createElement("script"), el = document.getElementsByTagName("script")[0]; s.async = true;
+s.src = (document.location.protocol == "https:" ? "https://sb" : "http://b") + ".scorecardresearch.com/beacon.js";
+el.parentNode.insertBefore(s, el);
+})();
+</script>
+<noscript>
+<img src="http://b.scorecardresearch.com/p?c1=2&c2=7390954&cv=2.0&cj=1" />
+</noscript>
+<!-- End comScore Tag -->
+
+
+<!-- Start Alexa Certify Javascript -->
+<script type="text/javascript">
+_atrk_opts = { atrk_acct:"aw0Di1a4ZP00aY", domain:"udn.com",dynamic: true};
+(function() { var as = document.createElement('script'); as.type = 'text/javascript'; as.async = true; as.src = "https://d31qbv1cthcecs.cloudfront.net/atrk.js"; var s = document.getElementsByTagName('script')[0];s.parentNode.insertBefore(as, s); })();
+</script>
+<noscript><img src="https://d5nxst8fruw4z.cloudfront.net/atrk.gif?account=aw0Di1a4ZP00aY" style="display:none" height="1" width="1" alt="" /></noscript>
+<!-- End Alexa Certify Javascript -->
+
+
+<script>
+rId = function(){
+        return null;
+}
+</script>
+
+<!-- ETU -->
+<script id="etu-recommender" type="text/javascript">
+	var atid = rId();	
+	var account = null;
+	var sLogin = GetCkValue("udnmember");
+	var erUrlPrefix = 'https://rec.udn.com/';
+	var _qevents = _qevents || [];
+ 
+	_qevents.push({
+		cid : 'udn.com-com-soft',
+		act : 'view',
+		cat : ['news','cms','','',''],
+		uid : sLogin,
+		bid : account,
+		pid : atid,
+		page :'SERVICE',
+		Rank_cat:'0',
+		Rank_pid:'0',
+		tag:[]
+	});
+
+(function() {
+		var er = document.createElement('script');
+		er.type = 'text/javascript';
+		er.async = true;
+		er.src = erUrlPrefix + 'er.js?' + (new Date().getTime());
+		var currentJs = document.getElementById('etu-recommender');
+		currentJs.parentNode.insertBefore(er, currentJs);
+	})();
+
+</script>
+</head>
+
+<body class="mag">
+
+
+<!--<div id="loading"></div>-->
+<div id="menu_mark"></div>
+<div id="container">
+
+<div id="header" class="only_web">
+
+        
+ 	<div id="header_head">
+
+    <div id="header_head_wrapper">
+    
+        <div id="header_head_fun">
+          <a href="http://udn.com" id="gohome">回聯合新聞網</a>
+          <!--<div id="sethome"><a onClick="this.style.behavior='url(#default#homepage)';this.setHomePage('http://udn.com');return false;" href="javascript:void(0);">設為首頁</a></div>-->
+          <a href="/rssfeed/lists/2" target="_blank" id="rss">RSS</a>
+          <a href="http://mobile.udn.com/" target="_blank" id="apps">Apps</a>
+          <a href="https://www.facebook.com/myudn" target="_blank" id="fans">粉絲團</a>
+          <a href="javascript:void(0);" id="family">udn family</a>
+          <a href="http://udn.com/mypage/" id="temporary">我的新聞</a><b></b>
+          <!--<a href="javascript:void(0);" id="temporary">我的新聞</a><b>12</b>-->
+        </div>
+        <!-- /#header_head_fun -->
+        
+        <div id="header_head_member">
+<script>
+		//console.log( $.cookie('udnmember') );
+	if(  typeof $.cookie('udnmember') === "undefined" ){	
+		document.write( '  <a href="http://member.udn.com/member/login.jsp?site=news&redirect=http://udn.com" id="log">登入</a> │ <a href="http://member.udn.com/member/ShowMember?site=news&redirect=http://udn.com">註冊</a>' );	
+	}else{
+		document.write(  '<a href="http://member.udn.com/member/ProcessLogout?redirect=http://udn.com" id="log">登出</a>' );	
+	}
+
+</script>		
+		
+        </div>
+        <!-- /#header_head_member --> 
+    
+    
+    
+        <div id="header_channel" class="channel">
+        <dl>
+<dt><a href='http://vision.udn.com/' target='_blank' class='channel_13_btn'><b></b>願景</a></dt>
+<dt><a href='http://money.udn.com/' target="_blank" class='channel_1_btn'><b></b>財經</a></dt>
+<dt><a href='http://fund.udn.com/' target="_blank" class='channel_2_btn'><b></b>基金</a></dt>
+<dt><a href='http://health.udn.com/' target="_blank" class='channel_17_btn'><b></b>健康</a></dt>
+<dt><a href='http://autos.udn.com/' target="_blank" class='channel_3_btn'><b></b>汽車</a></dt>
+<dt><a href='http://style.udn.com/' target="_blank" class='channel_4_btn'><b></b>時尚</a></dt>
+<dt><a href='http://nba.udn.com/' target="_blank" class='channel_14_btn'><b></b>NBA台灣</a></dt>
+<dt><a href='http://stars.udn.com/' target="_blank" class='channel_5_btn'><b></b>追星</a></dt>
+<dt><a href='http://blog.udn.com/' target="_blank" class='channel_6_btn'><b></b>部落格</a></dt>
+<dt><a href='http://reading.udn.com/' target="_blank" class='channel_7_btn'><b></b>讀書吧</a></dt>
+<dt><a href='http://novel.udn.com/' target="_blank" class='channel_16_btn'><b></b>讀小說</a></dt>
+<dt><a href='http://house.udn.com/' target="_blank" class='channel_8_btn'><b></b>房地產</a></dt>
+<dt><a href='http://udndata.com/' target="_blank" class='channel_10_btn'><b></b>知識庫</a></dt>
+<dt><a href='http://paper.udn.com/' target="_blank" class='channel_12_btn'><b></b>電子報</a></dt>
+<dt><a href="https://tickets.udn.com/" class="channel_19_btn" target="_blank"><b></b>售票網</a></dt>
+<dt><a href="http://shopping.udn.com/mall/Cc1a00.do?sid=91_udn&utm_source=udn.com&utm_medium=referral_familybar_udn&utm_term=familybar_udn&utm_campaign=20150103_UDN" class="channel_15_btn" target="_blank"><b></b>買東西</a></dt>
+<dt><a href="http://shopping.udn.com/mall/cus/gbr/Cc1g00.do?sid=91_uD&utm_source=udn.com&utm_medium=referral_familybar_uD&utm_term=familybar_uD&utm_campaign=20150103_UDN" class="channel_20_btn" target="_blank"><b></b>有設計</a></dt>
+<dt><a href="http://video.udn.com/" target='_blank' class="channel_18_btn"><b></b>影音</a></dt>        </dl>
+        </div>
+        <!-- /#header_channel -->
+
+
+    </div>
+    <!-- /#header_head_wrapper -->
+    
+</div>
+<!-- /#header_head -->
+
+<script>
+(function($)
+{
+        $.extend(
+        {
+                NV:function(name)
+                {
+                        var NV = {};
+                        var UA = navigator.userAgent.toLowerCase();
+                        try
+                        {
+                                NV.name=!-[1,]?'ie':
+                                (UA.indexOf("firefox")>0)?'firefox':
+                                (UA.indexOf("chrome")>0)?'chrome':
+                                window.opera?'opera':
+                                window.openDatabase?'safari':
+                                'unkonw';
+                        }catch(e){};
+                        try
+                        {
+                                NV.version=(NV.name=='ie')?UA.match(/msie ([\d.]+)/)[1]:
+                                (NV.name=='firefox')?UA.match(/firefox\/([\d.]+)/)[1]:
+                                (NV.name=='chrome')?UA.match(/chrome\/([\d.]+)/)[1]:
+                                (NV.name=='opera')?UA.match(/opera.([\d.]+)/)[1]:
+                                (NV.name=='safari')?UA.match(/version\/([\d.]+)/)[1]:
+                                '0';
+                        }catch(e){};
+                        switch(name)
+                        {
+                                case 'ua':
+                                case 'UA':br=UA;break;
+                                case 'name':br=NV.name;break;
+                                case 'version':br=NV.version;break;
+                                case 'shell':br=NV.shell;break;
+                                default:br=NV.name;
+                        }
+                        return br;
+                }
+        });
+})(jQuery);
+
+$(function()
+{
+        if( $.NV('name') == 'chrome' )
+        {
+                $("#sethome").html("<a href=\"javascript:void(0);\">設為首頁</a><div><b>請參考步驟設定 聯合新聞網 為首頁：</b>1. 請點選右上方的<u class=\"chrome\"></u><br>2. 選擇「設定」<br>3. 在「外觀」項目中勾選「顯示[首頁]按鈕」，接著按下「變更」<br>4. 在「開啟此頁︰」中輸入 http://udn.com/<br>5. 按下「確定」完成設定<i>x</i></div>");
+        }
+
+        if( $.NV('name') == 'firefox' )
+        {
+                $("#sethome").html("<a href=\"javascript:void(0);\">設為首頁</a><div><b>請參考步驟設定 聯合新聞網 >為首頁：</b>1. 請點選上方的<u class=\"firefox\"></u><br>2. 選擇「選項」<br>3. 在「首頁」項目中輸>入 http://udn.com/<br>4. 按下「確定」完成設定<i>x</i></div>");
+        }
+
+        if( $.NV('name') == 'chrome' || $.NV('name') == 'firefox' )
+        {
+                $("#sethome a , #sethome i").click(function(){
+                        $("#sethome div").toggle();
+                });
+        }
+});
+</script>
+
+
+<script>
+// $(window).on("load resize",function(e) {
+$(function(){
+	
+	$('#family').click(function () {
+		if( $('#family').attr('class') == 'family_toggle' ) {
+			$('.channel').removeClass('channel_toggle');
+			$('#family').removeClass('family_toggle');
+		}
+		else {
+			$('.channel').addClass('channel_toggle');
+			$('#family').addClass('family_toggle');
+		}
+	});
+
+	
+	$('#header_channel').mouseleave(function ()
+	{
+        $('.channel').removeClass('channel_toggle');
+        $('#family').removeClass('family_toggle');
+    });
+	
+	$('#temporary , #fans').mouseenter(function ()
+	{
+        $('.channel').removeClass('channel_toggle');
+        $('#family').removeClass('family_toggle');
+    });
+	
+
+	
+	$("#channel_tab a").append("<span class='hover'></span>");//添加一个标签用来和灰图重叠起来
+	$(".hover").css('opacity', 0);//先不显示
+
+	$(".hover").parent().mouseenter(
+	function(){
+		$(".hover").stop(true, true).animate({opacity: '0'} , 'fast' );
+		$(this).find(".hover").stop(true, true).animate({opacity: '1'} , 'fast' );
+	}
+	/*
+	,
+	function(){
+		$(this).find(".hover").stop(true, true).animate({opacity: '0'} , 'fast' );
+	}
+	*/
+	);		
+	
+});
+</script>
+    
+
+    <div id="header_body_wrapper">
+    
+	<!--<a href="index.html" title="回首頁" id="logo"></a>-->
+        <img id="logo" src="/static/img/svg.gif" usemap="#Map">
+        <map name="Map">
+            <area shape="rect" coords="54,15,186,50" href="http://udn.com" title="回頻道首頁">
+            <area shape="poly" coords="5,49,5,0,129,0,129,15,54,15,54,49" href="http://udn.com" title="回聯合新聞網首頁">
+        </map>
+
+
+<style>
+#logo {
+    background: url("/static/img/logo.png") no-repeat -414px 0px;
+}
+</style>
+
+        <div id="header_search">
+
+  <form action="/search/result/" method="get" name="sform1" id="sform1" onsubmit="return false;">
+    <dl class="search_type" id="search_type" value="udn">
+    </dl>
+    <!--<input name="search_type" type="hidden" id="search_type" value="udn">-->
+	<!--<input type="text" id="search_kw" name="q">-->
+	
+    <input type="text" onKeyDown="if(event.keyCode==13) chkform('sform1');" id="search_kw" class="search_kw" name="q" onFocus="document.getElementById('search_kw').style='background-image: none;';">
+	
+    <!--<input id="Keywords" type="hidden" name="Keywords">-->
+  </form>
+   
+  <a href="javascript:chkform('sform1')" id="search_submit"></a>
+ 
+</div>
+<!-- /header_search -->
+<script>
+function chkform(formName)
+{
+	
+	
+	var key = $('#'+formName).find('input[name=q]').val();
+	var flag = 'w';
+	var action = "/search/result/2/";
+	var fr = $("#search_type").val();
+	
+	if(key == '' || key == null)
+	{
+		key = $(".m_search_kw").val();
+		flag = 'm';
+	}
+
+	if(key != '')
+	{
+		if(flag == 'm')	fr = $("#m_search_type").val();
+		action += key;
+		/*
+		if(fr == "websearch")
+			action = "http://udn.com/search/";
+		else if(fr == "udndata")
+			action = "http://data.udn.com/data/Search";
+		*/
+		window.location.href = action;
+	}
+	else
+		return false;
+}
+</script>
+ 
+  </div>
+    <!-- /#header_body_wrapper -->
+	<div id="menu" class="menu">
+
+    <dl>
+      <!--<dt><a href="http://udn.com" rel="/menu/mag_menu" id="mhome" title="回聯合新聞網首頁">聯合新聞網</a></dt>-->
+      <dt><a href="/" id="mh" title="回聯合新聞網首頁"><b></b>首頁</a></dt>
+<!--
+      <dt><a href="/news/breaknews/1" id="ma" title="即時"><b></b>即時</a></dt>
+      <dt><a href="http://udn.com/NEWS/NATIONAL/" id="m2">要聞</a></dt>
+      <dt><a href="http://udn.com/NEWS/SOCIETY/" id="m3">社會</a></dt>
+      <dt><a href="http://udn.com/NEWS/DOMESTIC/" id="m4">地方</a></dt>
+      <dt><a href="http://udn.com/NEWS/MAINLAND/" id="m5">兩岸</a></dt>
+      <dt><a href="http://udn.com/NEWS/WORLD/" id="m6">全球</a></dt>
+      <dt><a href="http://udn.com/NEWS/OPINION/" id="m7">評論</a></dt>
+-->
+    <dt><a href="/news/breaknews/1" rel="/menu/breaks_main_menu/1" id="m1" style="">即時</a></dt>
+    <dt><a href="/news/cate/6638" rel="/menu/main_menu/2/6638" id="m1" style="">要聞</a></dt>
+    <dt><a href="/news/cate/6639" rel="/menu/main_menu/2/6639" id="m1" style="">社會</a></dt>
+    <dt><a href="/news/cate/6641" rel="/menu/main_menu/2/6641" id="m1" style="">地方</a></dt>
+    <dt><a href="/news/cate/6640" rel="/menu/main_menu/2/6640" id="m1" style="">兩岸</a></dt>
+    <dt><a href="/news/cate/7225" rel="/menu/main_menu/2/7225" id="m1" style="">全球</a></dt>
+    <dt><a href="/news/cate/6643" rel="/menu/main_menu/2/6643" id="m1" style="">評論</a></dt>
+    <dt><a href="/news/cate/6644" rel="/menu/main_menu/2/6644" id="m1" style="">產經</a></dt>
+    <dt><a href="/news/cate/6645" rel="/menu/main_menu/2/6645" id="m1" style="">股市</a></dt>
+    <dt><a href="/news/cate/7227" rel="/menu/main_menu/2/7227" id="m1" style="">運動</a></dt>
+    <dt><a href="/news/cate/7226" rel="/menu/main_menu/2/7226" id="m1" style="">數位</a></dt>
+    <dt><a href="/news/cate/6648" rel="/menu/main_menu/2/6648" id="m1" style="">娛樂</a></dt>
+    <dt><a href="/news/cate/6649" rel="/menu/main_menu/2/6649" id="m1" style="">生活</a></dt>
+    <dt><a href="http://health.udn.com" rel="/static/pulldownmenu/1005/1005_index.html" id="m14">健康</a></dt>
+    <dt><a href="/news/cindex/1012" rel="/menu/ch_main_menu/1012" id="m1" style="">文教</a></dt>
+    <dt><a href="/news/cindex/1013" rel="/menu/ch_main_menu/1013" id="m1" style="">旅遊</a></dt>
+    <dt><a href="/news/cindex/1014" rel="/menu/ch_main_menu/1014" id="m1" style="">閱讀</a></dt>
+    <dt><a href="/news/cindex/1015" rel="/menu/ch_main_menu/1015" id="m1" style="">雜誌</a></dt>
+    <dt class="only_1280"><a href="http://shopping.udn.com/mall/Cc1a00.do?sid=94_udn&utm_source=udn.com&utm_medium=referral_navi_udn&utm_term=navibar_udn&utm_campaign=20150103_UDN" rel="/static/pulldownmenu/shopping/index.html" id="m16">購物</a></dt>
+    </dl> 
+    
+    <a href="javascript:void(0);" class="arrow_left"></a>
+    <a href="javascript:void(0);" class="arrow_right"></a>
+
+</div>
+<!-- /.menu -->
+
+<div id="menu_sub" class="menu_sub"></div>
+<div id="mhome_sub" class="menu_sub"></div>
+
+
+
+</div>
+<!-- /#header -->
+
+
+<!-- Pulled from http://code.google.com/p/html5shiv/ -->
+<!--[if lt IE 9]>
+<script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>
+<![endif]-->
+
+<header class="only_mobile">
+<style type="text/css">
+header {
+	background: none repeat scroll 0 0 #FFFFFF;
+	min-height: 90px;
+	margin: 0 0 10px;
+	position: relative;
+	z-index: 11;
+}
+header.active {
+	margin: 0 0 10px;
+
+	position: fixed;
+	_position: absolute;
+	_top:expression(eval(document.documentElement.scrollTop));
+	
+	width: 100%;
+	top: 0;
+	
+	-webkit-box-shadow: #666 0 3px 3px;
+	-moz-box-shadow: #666 0 3px 3px;
+	box-shadow: #666 0 3px 3px;
+}
+
+#header_menu {
+  position: relative;
+}
+
+
+#header_logo {
+	display: block;
+	margin: auto;
+	width: 140px;
+	height: 50px;
+
+	background: url(/static/img/sprite.png) no-repeat 0 -2250px;
+	background: rgba(0,0,0,0) url(/static/img/logo.svg) no-repeat -428px -30px / 600px 800px;
+}
+
+
+#header_menu_btn {
+  background: #fff url("/static/img/sprite.png") no-repeat -153px -2247px;
+  float: left;
+  display: block;
+  height: 50px;
+  position: relative;
+  width: 50px; 
+}
+
+#header_menu_area {
+  background-color: #FFFFFF;
+}
+#header_tools {
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+#header_member {
+  background: url("/static/img/sprite.png") no-repeat scroll 0 -2300px;
+  display: block;
+  float: left;
+  height: 50px;
+  width: 50px;
+}
+#header_member.logout {
+  background-position:-150px -2650px;
+}
+.only_mobile #header_search_btn {
+  background: url("/static/img/sprite.png") no-repeat scroll -50px -2300px;
+  display: block;
+  float: left;
+  height: 50px;
+  width: 50px;
+  position:relative;
+  top:auto;
+}
+
+#header_menu_area.active {
+  box-shadow: 3px 3px 3px #666666;
+}
+
+#header_menu_area a {
+  background: url("/static/img/sprite.png") no-repeat  210px -2800px;
+  color: #666;
+  display: block;
+  font: bold 18px/50px "微軟正黑體",Arial,Helvetica,sans-serif;
+  letter-spacing: 1px;
+  overflow: hidden;
+  padding: 0 15px;
+}
+#header_menu_area a b {
+  background: url("/static/img/sprite.png") no-repeat -50px -2353px ;
+  display: block;
+  float: left;
+  height: 50px;
+  overflow: hidden;
+  width: 50px;
+}
+#header_menu_area a:hover {
+	color: #333;
+	background-color: #efedee;
+}
+
+#header_menu_area a#m2 b  {
+	background-position: -50px -2403px;
+}
+#header_menu_area a#m3 b  {
+	background-position: -50px -2453px;
+}
+#header_menu_area a#m4 b  {
+	background-position: -50px -2502px;
+}
+#header_menu_area a#m5 b  {
+	background-position: -50px -2553px;
+}
+#header_menu_area a#m6 b  {
+	background-position: -50px -2600px;
+}
+#header_menu_area a#m7 b  {
+	background-position: -50px -2650px;
+}
+#header_menu_area a#m8 b  {
+	background-position: -50px -2701px;
+}
+#header_menu_area a#m9 b  {
+	background-position: -50px -2752px;
+}
+#header_menu_area a#m2 b  {
+	background-position: -50px -2403px;
+}
+
+#header_menu_area a#m1:hover b  {
+	background-position: 0px -2353px;
+}
+#header_menu_area a#m2:hover b  {
+	background-position: 0px -2403px;
+}
+#header_menu_area a#m3:hover b  {
+	background-position: 0px -2453px;
+}
+#header_menu_area a#m4:hover b  {
+	background-position: 0px -2502px;
+}
+#header_menu_area a#m5:hover b  {
+	background-position: 0px -2553px;
+}
+#header_menu_area a#m6:hover b  {
+	background-position: 0px -2600px;
+}
+#header_menu_area a#m7:hover b  {
+	background-position: 0px -2650px;
+}
+#header_menu_area a#m8:hover b  {
+	background-position: 0px -2701px;
+}
+#header_menu_area a#m9:hover b  {
+	background-position: 0px -2752px;
+}
+
+
+
+
+
+
+
+#mobile_search #search_kw {
+  width: 135px;
+}
+#mobile_search {
+  position: relative;
+  right: auto;
+  top: auto;
+  padding: 10px;
+  display:none;
+}
+/* 解決浮動內容，DIV區塊高度不見問題 */
+#mobile_search:after{ content: ""; display: block; clear: both;}  
+
+</style>
+
+<link type="text/css" rel="stylesheet" href="/static/css/jquery.mmenu.css" />
+<script src="/static/js/jquery.mmenu.min.js"></script>
+<script type="text/javascript">
+$(function() {
+	if ($(document).width() > 766) $('#header_menu_area').css('display','none');
+	$('nav#header_menu_area').mmenu();
+});
+</script>
+<div id="header_menu">
+
+    <a href="#header_menu_area" id="header_menu_btn"></a>
+    
+    <nav id="header_menu_area">
+    <ul>
+<li><a href="http://udn.com">今日新聞</a></li>
+<li><a href="http://udn.com/news/photos">圖片新聞</a></li>
+<li><a href="http://udn.com/weather">生活資訊</a></li>
+<li><a href="http://opinion.udn.com">udn 專欄</a></li>
+<li><a href="http://health.udn.com">元氣網</a></li>
+<li><a href="http://nba.udn.com">NBA台灣</a></li>
+<li><a href="http://stars.udn.com">追星圖擊隊</a></li>
+<li><a href="http://theme.udn.com">時事話題</a></li>
+<li><a href="http://video.udn.com">影音網</a></li>
+<li><a href="http://oops.udn.com">Oops!新鮮事</a></li>
+<li><a href="http://blog.udn.com">部落格</a></li>
+<li><a href="http://mobile.udn.com/web/app.html">udn APP</a></li>
+<li><a href="http://udn.com/page/topic/496">網站總覽</a></li>
+<li><a href="http://udn.com/page/topic/185">服務條款</a></li><!--
+    <li><a href="javascript:void(0);" id="m1"><b></b>今日新聞</a></li>
+    <li><a href="javascript:void(0);" id="m2"><b></b>udn  鳴人堂</a></li>
+    <li><a href="javascript:void(0);" id="m3"><b></b>願景工程</a></li>
+    <li><a href="javascript:void(0);" id="m4"><b></b>生活資訊</a></li>
+    <li><a href="javascript:void(0);" id="m5"><b></b>影音新聞</a></li>
+    <li><a href="javascript:void(0);" id="m6"><b></b>精選圖輯</a></li>
+    <li><a href="javascript:void(0);" id="m7"><b></b>udn APP</a></li>
+    <li><a href="javascript:void(0);" id="m8"><b></b>設定、工具</a></li>
+    <li><a href="javascript:void(0);" id="m9"><b></b>關於 udn mobile</a></li>
+-->
+    </ul>   
+    </nav>
+    <!-- /#header_menu_area -->
+
+</div>
+<!-- /#header_menu -->
+
+<a id="header_logo" href="/"></a>
+
+<div id="header_tools">
+<script>
+		//console.log( $.cookie('udnmember') );
+	if(  typeof $.cookie('udnmember') === "undefined" ){	
+		document.write( '<a id="header_member" href="https://member.udn.com/member/login.jsp?site=m&redirect=http://udn.com"></a>' );	
+	}else{
+		document.write(  '<a id="header_member" class="logout" href="https://member.udn.com/member/ProcessLogout?site=m&redirect=http://udn.com"></a>' );	
+	}
+
+</script>	
+<a id="header_search_btn" href="javascript:void(0);"></a>
+</div>
+<!-- /#header_tools -->
+
+
+
+<div id="menu" class="menu">
+
+    <dl>
+    <dt><a href="/" id="mh" title="回聯合新聞網首頁"><b></b>首頁</a></dt>
+<!--
+    <dt><a href="/news/breaknews/1" id="ma" title="即時"><b></b>即時</a></dt>
+    <dt><a href="http://udn.com/NEWS/NATIONAL/" id="m2">要聞</a></dt>
+    <dt><a href="http://udn.com/NEWS/SOCIETY/" id="m3">社會</a></dt>
+    <dt><a href="http://udn.com/NEWS/DOMESTIC/" id="m4">地方</a></dt>
+    <dt><a href="http://udn.com/NEWS/MAINLAND/" id="m5">兩岸</a></dt>
+    <dt><a href="http://udn.com/NEWS/WORLD/" id="m6">全球</a></dt>
+    <dt><a href="http://udn.com/NEWS/OPINION/" id="m7">評論</a></dt>
+-->
+    <dt><a href="/news/breaknews/1" rel="/menu/breaks_main_menu/1" id="m1" style="">即時</a></dt>
+    <dt><a href="/news/cate/6638" rel="/menu/main_menu/2/6638" id="m1" style="">要聞</a></dt>
+    <dt><a href="/news/cate/6639" rel="/menu/main_menu/2/6639" id="m1" style="">社會</a></dt>
+    <dt><a href="/news/cate/6641" rel="/menu/main_menu/2/6641" id="m1" style="">地方</a></dt>
+    <dt><a href="/news/cate/6640" rel="/menu/main_menu/2/6640" id="m1" style="">兩岸</a></dt>
+    <dt><a href="/news/cate/7225" rel="/menu/main_menu/2/7225" id="m1" style="">全球</a></dt>
+    <dt><a href="/news/cate/6643" rel="/menu/main_menu/2/6643" id="m1" style="">評論</a></dt>
+    <dt><a href="/news/cate/6644" rel="/menu/main_menu/2/6644" id="m1" style="">產經</a></dt>
+    <dt><a href="/news/cate/6645" rel="/menu/main_menu/2/6645" id="m1" style="">股市</a></dt>
+    <dt><a href="/news/cate/7227" rel="/menu/main_menu/2/7227" id="m1" style="">運動</a></dt>
+    <dt><a href="/news/cate/7226" rel="/menu/main_menu/2/7226" id="m1" style="">數位</a></dt>
+    <dt><a href="/news/cate/6648" rel="/menu/main_menu/2/6648" id="m1" style="">娛樂</a></dt>
+    <dt><a href="/news/cate/6649" rel="/menu/main_menu/2/6649" id="m1" style="">生活</a></dt>
+    <dt><a href="http://health.udn.com" rel="/static/pulldownmenu/1005/1005_index.html" id="m14">健康</a></dt>
+    <dt><a href="/news/cindex/1012" rel="/menu/ch_main_menu/1012" id="m1" style="">文教</a></dt>
+    <dt><a href="/news/cindex/1013" rel="/menu/ch_main_menu/1013" id="m1" style="">旅遊</a></dt>
+    <dt><a href="/news/cindex/1014" rel="/menu/ch_main_menu/1014" id="m1" style="">閱讀</a></dt>
+    <dt><a href="/news/cindex/1015" rel="/menu/ch_main_menu/1015" id="m1" style="">雜誌</a></dt>
+    <dt><a href="/news/cate/7597" rel="/menu/main_menu/2/7597" id="m1" style="">親子寶貝</a></dt>
+    <dt class="only_1280"><a href="http://shopping.udn.com" rel="/static/pulldownmenu/shopping/index.html" id="m16">購物</a></dt>
+    </dl>
+    
+   
+</div>
+<!-- /#menu -->
+<script>
+$(function() {
+	var left = 0-0*54;
+	//$("#menu > dl").css("left",left);
+});
+</script>
+
+
+<div id="mobile_search">
+
+  <form action="/search/result/" method="get" name="sform1" id="sform1" onsubmit="return false;">
+	<dl class="search_type" id="m_search_type" value="udn">
+<!--
+      <dt><a href="javascript:void(0);"><span id="search_default">udn</span><div class="arrow-bottom"></div></a>
+        <dl>
+          <dt><a href="javascript:void(0);" onClick="javascript:document.getElementById('search_default').innerHTML='udn';document.getElementById('m_search_type').value='udn';document.getElementById('search_kw').style='background-image: none;';">udn</a></dt>
+          <dt><a href="javascript:void(0);" onClick="javascript:document.getElementById('search_default').innerHTML='web';document.getElementById('m_search_type').value='websearch';document.getElementById('search_kw').style='background-image: url(https://www.google.com/cse/intl/zh_TW/images/google_custom_search_watermark.gif);background-position: 0% 50%; background-repeat: no-repeat no-repeat;';">web</a></dt>
+          <dt><a href="javascript:void(0);" onClick="javascript:document.getElementById('search_default').innerHTML='歷史新聞';document.getElementById('m_search_type').value='udndata';document.getElementById('search_kw').style='background-image: none;';">歷史新聞</a></dt>
+        </dl>
+      </dt>
+-->
+    </dl>
+    <!-- <input name="search_type" type="hidden" id="m_search_type" value="udn"> -->
+    <input type="text" onKeyDown="if(event.keyCode==13) chkform();" id="search_kw" class="m_search_kw" name="q" onFocus="document.getElementById('search_kw').style='background-image: none;';">
+    <!-- <input id="Keywords" type="hidden" name="Keywords"> -->
+  </form>
+
+  <a href="javascript:chkform();" id="search_submit"></a>
+
+
+</div>
+<!-- /#mobile_search -->
+
+
+
+
+
+
+
+
+
+<script>
+$.fn.mobile_search_width = function() 
+{
+    var search_type_width = $('#mobile_search #sform1 .search_type a').outerWidth();
+    var search_submit_width = $('#search_submit').outerWidth() ;
+    var new_width = ( $(document).width() - search_type_width - search_submit_width -34 );
+    /* 手機板 搜尋框的寬度滿版 */
+    $('#mobile_search #sform1 #search_kw').css('width', new_width );
+};
+
+
+
+$(function(){
+
+    $('#header_search_btn').click(function ()
+    {
+        $('#mobile_search').toggle();
+        $(this).mobile_search_width();
+    });
+
+
+
+    if( $(document).width() <= 749 )
+    {
+        $(this).mobile_search_width();
+    }
+})
+</script>
+</header>
+<!-- /header -->
+
+	<div id="wrapper">
+		<style type="text/css">
+#e404 {
+	text-align:center;
+	padding: 0 10px;
+}
+#e404 img {
+	max-width: 100%;
+	width: auto;
+}
+</style>
+
+
+<div id="e404" class="area"><img src="/static/img/e404.gif"></div>
+<!-- /#e404 -->
+
+		
+						
+
+										
+				
+		
+				
+		
+		
+
+	</div>
+	<!-- /#wrapper -->
+
+		<div id='sitemap' class='only_web'>    <div id='sitemap_wrapper'>     <h3>網群與速覽</h3>    <dl>        <dt class='group'>
+    <b>新聞頻道</b>
+        <dl>
+		<dd><a href='http://udn.com/news/breaknews/1' target="_blank">即時</a></dd>		
+		<dd><a href='http://udn.com/news/cate/6638' target="_blank">要聞</a></dd>
+		<dd><a href='http://udn.com/news/cate/6639' target="_blank">社會</a></dd>
+		<dd><a href='http://udn.com/news/cate/6641' target="_blank">地方</a></dd>
+		<dd><a href='http://udn.com/news/cate/6640' target="_blank">兩岸</a></dd>
+		<dd><a href='http://udn.com/news/cate/7225' target="_blank">全球</a></dd>
+		<dd><a href='http://udn.com/news/cate/6643' target="_blank">評論</a></dd>
+		<dd><a href='http://udn.com/news/cate/6644' target="_blank">產經</a></dd>
+		<dd><a href='http://udn.com/news/cate/6645' target="_blank">股市</a></dd>
+    </dl>
+<dl>
+		<dd><a href='http://udn.com/news/cate/7227' target="_blank">運動</a></dd>
+		<dd><a href='http://udn.com/news/cate/7226' target="_blank">數位</a></dd>
+		<dd><a href='http://udn.com/news/cate/6648' target="_blank">娛樂</a></dd>
+		<dd><a href='http://udn.com/news/cate/6649' target="_blank">生活</a></dd>
+		<dd><a href='http://udn.com/news/cindex/1012' target="_blank">文教</a></dd>
+		<dd><a href='http://udn.com/news/cindex/1013' target="_blank">旅遊</a></dd>
+		<dd><a href='http://udn.com/news/cindex/1014' target="_blank">閱讀</a></dd>
+		<dd><a href='http://udn.com/news/cindex/1015' target="_blank">雜誌</a></dd>
+                <dd><a href='http://theme.udn.com/theme/index' target="_blank">時事</a></dd>
+</dl>
+    </dt>
+    <dt>
+    <b>新聞排行</b>
+        <dl>
+		<dd><a href='http://udn.com/rank/newest/2/0' target="_blank">最新</a></dd>
+		<dd><a href='http://udn.com/rank/pv/2' target="_blank">熱門</a></dd>
+		<dd><a href='http://udn.com/rank/share/2/0' target="_blank">分享</a></dd>
+         <!--<dd><a href='http://dignews.udn.com/forum/udnnews/votelist.jsp' target="_blank">投票</a></dd>--> 
+        </dl>
+    </dt>
+
+
+ <dt>
+    <b>健康元氣</b>
+        <dl>
+        <dd><a href='http://health.udn.com/disease/disease_list' target="_blank">疾病查詢</a></dd>
+		<dd><a href='http://health.udn.com/health/cate/5681' target="_blank">健康話題</a></dd>
+		<dd><a href='http://health.udn.com/health/cate/5680/' target="_blank">健康百科</a></dd>
+		<dd><a href='http://health.udn.com/health/cate/5683' target="_blank">癌症防治</a></dd>
+		<dd><a href='http://health.udn.com/health/cate/5684' target="_blank">運動養生</a></dd>
+		<dd><a href='http://health.udn.com/health/cate/5685' target="_blank">瘦身醫美</a></dd>
+        </dl>
+    </dt>
+    <dt>
+    <b>理財</b>
+        <dl>
+        <dd><a href='http://money.udn.com/category.php?cate_id=5594#' target="_blank">股市看盤</a></dd>
+		<dd><a href='http://money.udn.com/category.php?cate_id=5590#sub_5590_5608' target="_blank">研究報告</a></dd>
+		<dd><a href='http://fund.udn.com/' target="_blank">基金</a></dd>
+		<dd><a href='http://house.udn.com/' target="_blank">房市</a></dd>
+		<dd><a href='http://udn.com/lotto/' target="_blank">樂透</a></dd>
+		<dd><a href='http://udn.com/invoice/' target="_blank">發票</a></dd>
+
+        </dl>
+    </dt>
+    <dt>
+    <b>NBA台灣</b>
+        <dl>
+        <dd><a href='http://stars.udn.com/' target="_blank"></a></dd>
+		<dd><a href='http://tw.global.nba.com/scores/' target="_blank">比分</a></dd>
+		<dd><a href='http://tw.global.nba.com/schedule/#!/7' target="_blank">賽程</a></dd>
+		<dd><a href='http://nba.udn.com/nba/videos/' target="_blank">影音</a></dd>
+		<dd><a href='http://nba.udn.com/nba/news/' target="_blank">新聞</a></dd>
+		<dd><a href='http://nba.udn.com/nba/review/' target="_blank">球評</a></dd>
+		<dd><a href='http://nba.udn.com/photos/index/' target="_blank">圖輯</a></dd>
+		<dd><a href='http://tw.global.nba.com/standings/' target="_blank">戰績</a></dd>
+		<dd><a href='http://tw.global.nba.com/statistics/' target="_blank">數據</a></dd>
+        </dl>
+    </dt>
+    <dt>
+    <b>追星</b>
+        <dl>
+        <dd><a href='http://stars.udn.com/' target="_blank">追星總部</a></dd>
+		<dd><a href='http://stars.udn.com/stars/latest' target="_blank">最新追星</a></dd>
+		<dd><a href='http://stars.udn.com/stars/hot/' target="_blank">哈燒目標</a></dd>
+		<dd><a href='http://stars.udn.com/stars/search' target="_blank">圖擊搜查</a></dd>
+		<dd><a href='http://stars.udn.com/stars/issue' target="_blank">隊長特選</a></dd>
+		<dd><a href='http://stars.udn.com/stars/calendar' target="_blank">追星行程</a></dd>
+
+        </dl>
+    </dt>
+
+    <dt>
+    <b>車訊</b>
+        <dl>
+        <dd><a href='http://autos.udn.com/topic/car/news/article_directory.jsp?type=newsM&f_SUB_ID=45' target="_blank">國內車訊</a></dd>
+		<dd><a href='http://autos.udn.com/topic/car/news/article_directory.jsp?type=newsM&f_SUB_ID=46' target="_blank">國際車訊</a></dd>
+		<dd><a href='http://autos.udn.com/topic/car/news/article_directory.jsp?type=newsM&f_SUB_ID=48' target="_blank">試駕精選</a></dd>
+		<dd><a href='http://autos.udn.com/topic/car/news/article_directory.jsp?type=newsM&f_SUB_ID=67' target="_blank">品牌故事</a></dd>
+		<dd><a href='http://autos.udn.com/topic/car/news/article_directory.jsp?type=newsM&f_SUB_ID=68' target="_blank">DIY&amp;配件</a></dd>
+        </dl>
+    </dt>
+
+    <dt>
+    <b>style</b>
+        <dl>
+        <dd><a href='http://style.udn.com/mag/Style/subcategory.jsp?SUB_ID=17' target="_blank">名人</a></dd>
+		<dd><a href='http://style.udn.com/mag/Style/subcategory.jsp?SUB_ID=19' target="_blank">服裝</a></dd>
+		<dd><a href='http://style.udn.com/mag/Style/subcategory.jsp?SUB_ID=22' target="_blank">美妝</a></dd>
+		<dd><a href='http://style.udn.com/mag/Style/subcategory.jsp?SUB_ID=24' target="_blank">配件</a></dd>
+        </dl>
+    </dt>
+
+
+    <dt>
+    <b>影音、社群</b>
+        <dl>
+ <dd><a href='http://video.udn.com/' target="_blank">聯合影音網</a></dd>
+		<dd><a href='http://tv.udn.com/' target="_blank">udn tv</a></dd>
+        <dd><a href='http://event.udn.com/line/' target="_blank">udn Line 好友</a></dd>
+		<dd><a href='http://blog.udn.com/' target="_blank">部落格</a></dd>
+		<dd><a href='http://ipost.udn.com/' target="_blank">便利貼</a></dd>
+        </dl>
+    </dt>
+
+    <dt>
+    <b>數位閱讀</b>
+        <dl>
+        <dd><a href='http://paper.udn.com/' target="_blank">電子報</a></dd>
+		<dd><a href='http://reading.udn.com/v2/paperMain.do' target="_blank">電子報紙</a></dd>
+		<dd><a href='http://reading.udn.com/v2/bookMain.do' target="_blank">電子書</a></dd>
+		<dd><a href='http://reading.udn.com/v2/magMain.do' target="_blank">電子雜誌</a></dd>
+        </dl>
+    </dt>
+
+    <dt>
+    <b>知識庫</b>
+        <dl>
+        <dd><a href='http://udndata.com/' target="_blank">新聞全文</a></dd>
+		<dd><a href='http://udndata.com/fullpage/' target="_blank">原版報紙</a></dd>
+		<dd><a href='http://udndata.com/image' target="_blank">影像圖庫</a></dd>
+		<dd><a href='http://udndata.com/video/' target="_blank">影音知識庫</a></dd>
+		<dd><a href='http://udndata.com/store/' target="_blank">數位典藏</a></dd>
+
+        </dl>
+    </dt>
+
+    <dt>
+    <b>加值服務</b>
+        <dl>
+        <dd><a href='http://shopping.udn.com/mall/Cc1a00.do?sid=91&utm_source=udn.com&utm_medium=referral_footer_shopping&utm_term=footer_shopping&utm_campaign=20150103_UDN' target="_blank">udn shopping</a></dd>
+		<dd><a href='http://mobile.udn.com/web/index.html' target="_blank">行動網</a></dd>
+		<dd><a href='http://event.udn.com/index/index.html' target="_blank">活動特區</a></dd>
+        </dl>
+    </dt>
+
+   </dl>        </div>    <!-- /#sitemap_wrapper --></div><!-- /#sitemap --><div id='footer'><div id='footer_wrapper'>        
+    <div id='footer_wrapper_links' class='only_web'> <a href="http://event.udn.com/AD/" target="_blank">刊登網站廣告</a> ︱  
+      <a href='http://udn.com/page/topic/496' target="_blank">網站總覽</a> ︱ <a href='http://udn.com/page/topic/184' target="_blank"> 
+      FAQ</a>‧<a href='http://www.udngroup.com/2c/cservice/index2.jsp?qfile=dotcom' target="_blank">客服</a> ︱ <a href='http://udndata.com/udnauthority.html' target="_blank">新聞授權</a> ︱  
+      <a href='http://udn.com/page/topic/185' target="_blank">服務條款</a>‧<a href='http://udn.com/page/topic/495' target="_blank">著作權</a>‧<a href='http://www.udngroup.com/2c/private.jsp' target="_blank">隱私權聲明</a> ︱ <a href='http://www.udngroup.com/2c/cservice/index.jsp' target="_blank"> 
+      聯合報系</a> ︱ <a href='http://www.udngroup.com/2c/promote/orderall.jsp' target="_blank"> 
+      訂報紙</a> ︱  <a href='http://co.udn.com/CORP/' target="_blank">關於我們</a> ︱ <a href='http://co.udn.com/CORP/job.html' target="_blank"> 
+      招募夥伴</a> </div>
+    <!-- /#footer_wrapper_links -->        <b>聯合線上公司 著作權所有 &copy; udn.com All Rights Reserved.</b>    </div>    <!-- /#footer_wrapper --></div><!-- /#footer -->	<!-- /#gotop -->
+
+
+<script>
+showmore = function(channel_id,cate_id,sub_id) {
+
+	if (sub_id != '') {
+		var moreSub = $("#showmore_"+sub_id);
+		var moreId = $("#moreId_"+sub_id).attr("value");
+		moreId = parseInt(moreId)+parseInt(1);
+		var url = '/news/get_article/'+moreId+'/'+channel_id+'/'+cate_id+'/'+sub_id;
+	}
+	else {
+		var moreSub = $("#showmore_"+cate_id);
+		var moreId = $("#moreId_"+cate_id).attr("value");
+		moreId = parseInt(moreId)+parseInt(1);
+		var url = '/news/get_article/'+moreId+'/'+channel_id+'/'+cate_id;
+	}
+
+	var subDiv = moreSub.parent().find("div.category_box_list > dl");
+	var subDivBody = subDiv.html();
+
+	$.ajax({
+		url: url,
+		cache: false,
+		success: function(response) {
+			var sub_res = response.substr(0,8);
+			subDiv.html(subDivBody+response);
+			$("#moreId_"+sub_id).attr("value",moreId);
+
+			if (sub_res == '<!--N-->') moreSub.css('display','none');
+		}
+	});
+}
+
+
+$(function(){
+
+	$('#channel_tab a').mouseenter(function(){
+		var channel_tab = $(this);
+		trigger_channel_tab = setTimeout(function() {
+			$("#content").load( channel_tab.attr('rel') + '?' + (Math.random()*99999).toString() );
+			$("#channel_tab a").removeClass('active');
+			channel_tab.addClass('active');
+		}, 400);
+	});
+
+	$('#channel_tab a').mouseleave(function(){
+		clearTimeout(trigger_channel_tab); // 清除上面的延迟触发的事件
+	})
+
+});
+
+$(window).on("load",function(e) {
+	//if ( $("#ad_content").length > 0 && $(document).width() <= 768 )
+	//if ( $("#ad_content").length > 0 && $(window).width() >= 768 )
+	if ( $("#ad_content").length > 0 && $(window).width() > 766 && $(window).width() < 1016 )
+	{ 
+		$("#ad_content").css('margin', '0 0 ' + ($("#sidebar").height()+60)+ 'px' );
+		$("#sidebar").css('margin', -($("#mainbar").height()-$("#content").height()-$("#ad_content").height()-22)+ 'px 0 0' );
+	}
+});
+</script>
+
+
+
+	<div id="show_box"></div>
+	<!-- /#show_box -->
+</div>
+<!-- /#container -->
+
+<!--0.0024-->
+</body>
+</html>

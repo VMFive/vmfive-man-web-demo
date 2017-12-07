@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="35px" height="35px" viewBox="0 0 35 35" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 41.1 (35376) - http://www.bohemiancoding.com/sketch -->
+    <title>@bounds</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Symbols" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="不留言icocn">
+            <g>
+                <g id="Group-3" transform="translate(4.080000, 3.921144)"></g>
+                <circle id="Oval" stroke="#FFFFFF" stroke-width="2" cx="17.5" cy="17.5" r="14.5"></circle>
+                <path d="M20.4930332,8 L15.5069668,8 C13.585209,8 11.664523,8.73204716 10.1982851,10.1982851 C8.73204716,11.664523 8,13.585209 8,15.5069668 L8,17.1639871 C8,19.0846731 8.73204716,21.0064309 10.1982851,22.471597 C10.8360129,23.1103966 11.5702036,23.5830654 12.3429796,23.943194 L12.7181136,28.0450161 C12.7491961,28.2422294 12.8842444,28.4169346 13.0857449,28.488746 C13.2861736,28.5616292 13.5016077,28.5133976 13.6516613,28.3815648 L17.335477,24.6698821 L20.4930332,24.6698821 C22.414791,24.6698821 24.335477,23.9378349 25.8017149,22.471597 C27.266881,21.0064309 28,19.0846731 28,17.1639871 L28,15.505895 C28,13.585209 27.266881,11.664523 25.8017149,10.1982851 C24.335477,8.73204716 22.414791,8 20.4930332,8 Z" id="Combined-Shape" fill="#FFFFFF"></path>
+            </g>
+            <rect id="Rectangle-8" fill="#FFFFFF" transform="translate(17.000000, 18.500000) rotate(-45.000000) translate(-17.000000, -18.500000) " x="16" y="4" width="2" height="29"></rect>
+        </g>
+    </g>
+</svg>

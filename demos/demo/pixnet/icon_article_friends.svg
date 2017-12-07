@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="70" height="70" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <defs>
+    <linearGradient id="c" x1="83.179%" x2="18.674%" y1="0%" y2="112.803%">
+      <stop stop-color="#35A0DA" offset="0%"/>
+      <stop stop-color="#006AC6" offset="100%"/>
+    </linearGradient>
+    <circle id="a" cx="35" cy="34" r="34"/>
+    <filter id="b" width="200%" height="200%" x="-50%" y="-50%" filterUnits="objectBoundingBox">
+      <feOffset dy="1" in="SourceAlpha" result="shadowOffsetOuter1"/>
+      <feColorMatrix values="0 0 0 0 0 0 0 0 0 0.415686275 0 0 0 0 0.776470588 0 0 0 1 0" in="shadowOffsetOuter1"/>
+    </filter>
+  </defs>
+  <g fill="none" fill-rule="evenodd">
+    <mask id="d" fill="#fff">
+      <use xlink:href="#a"/>
+    </mask>
+    <use fill="#000" filter="url(#b)" xlink:href="#a"/>
+    <use fill="url(#c)" xlink:href="#a"/>
+    <g mask="url(#d)">
+      <path d="M20 20h30v30H20z" opacity=".3"/>
+      <path fill="#FFF" d="M45.928 41.65c0 3.924-4.07 6.725-4.936 7.047-.85-.322-4.92-3.123-4.92-7.047 0-1.29 1.108-2.347 2.46-2.347.826 0 1.596.386 2.056 1.057.19.258.634.258.824 0 .46-.67 1.23-1.057 2.055-1.057 1.353 0 2.46 1.057 2.46 2.347"/>
+      <path fill="#FFF" d="M39.5 34.25c2.056-1.468 3.75-2.924 3.75-5.5 0-4.348-3.526-7.874-7.875-7.874-4.35 0-7.875 3.526-7.875 7.875 0 2.577 3 5.5 3 5.5-4.21 1.314-6.75 2.843-6.75 7.25v7H35l-1.5-2.25H26V41.5c0-3.134 2.418-5.126 5.79-6.178l2.162-.674-1.842-1.316c-1.47-1.05-2.36-2.74-2.36-4.58 0-3.107 2.518-5.626 5.625-5.626S41 25.646 41 28.75c0 1.842-.89 3.532-2.36 4.582l-1.842 1.316 2.16.674c1.25.39 2.37.908 3.282 1.566.62-.412 1.364-.637 2.14-.637.215 0 .426.02.632.054C43.69 34.87 39.5 34.25 39.5 34.25z"/>
+    </g>
+  </g>
+</svg>

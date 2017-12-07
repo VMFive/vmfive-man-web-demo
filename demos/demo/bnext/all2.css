@@ -1,0 +1,31 @@
+/* line 39, ../../../resources/assets/sass/_settings.scss */
+.list_item_title {
+  font-size: 24px;
+  font-weight: bold;
+  line-height: 1.35;
+}
+
+/* line 45, ../../../resources/assets/sass/_settings.scss */
+.sitem_title {
+  font-size: 18px;
+  line-height: 1.5;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+/* line 52, ../../../resources/assets/sass/_settings.scss */
+.bitem_title {
+  font-size: 34px;
+  line-height: 1.35;
+}
+
+/* line 58, ../../../resources/assets/sass/_settings.scss */
+.item_log {
+  width: 35px;
+  height: 35px;
+}
+
+/* line 63, ../../../resources/assets/sass/_settings.scss */
+.item_note {
+  font-size: 15px;
+}

@@ -1,0 +1,24 @@
+.mib--pop-ad-cover {
+    /* 避免沒有 MIB 時，空容器顯示 */
+    display: none;
+}
+
+.mib--ad-box__icon {
+    position: absolute;
+    z-index: 1;
+    top: 0;
+    right: 0;
+    width: 18px;
+    height: 18px;
+    background: transparent url("ad-icon.png") no-repeat;
+}
+
+.mib--ad-box__icon a {
+    display: none !important;
+    padding: 0 7px;
+    line-height: 18px;
+    font-size: 12px;
+    color: #fff;
+    background: #1472b9;
+    border-radius: 2px;
+}

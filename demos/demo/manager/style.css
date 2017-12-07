@@ -1,0 +1,64 @@
+.bnextDialog {
+    height: 100%;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.78);
+    display: flex;
+    align-items: center;   
+}
+.bnextDialog .bx_wrapper {
+    margin: auto;
+    max-width: 768px;
+    background: #ffffff;
+    padding: 10px;
+    border-radius: 10px;
+    box-sizing: border-box;
+}
+.bnextDialog .bx_btn {
+    margin-bottom: 5px;
+}
+.bnextDialog .bx_btn:after {
+    content: " ";
+    display: block;
+    clear: both;
+}
+.bnextDialog .bx_btn a:hover
+{
+    cursor: pointer;
+    background-color: #cccccc;
+    color: #000000;
+    text-decoration: none;
+}
+
+.bnextDialog .bx_btn a
+{
+    display: flex;
+    align-items: center;
+    border-radius: 50%;
+    background-color: #000000;
+    font-size: 20px;
+    width: 30px;
+    height: 30px;
+    text-align: center;
+    font-style: normal !important;
+    float: right;
+    color: #ffffff;
+}
+.bnextDialog .bx_btn a i {
+    font-style: normal;
+    display: block;
+    text-align: center;
+    width: 100%;
+}
+@media (max-width: 767px) {
+    .bnextDialog .bx_wrapper {
+        width: 100%;
+        width: 100%;
+        height: 100vh;
+        overflow-y: auto;
+        overflow-x: hidden;
+        -webkit-overflow-scrolling: touch;
+    }
+    .bnextDialog .bx_wrapper img {
+        width: 100%;
+    }
+}

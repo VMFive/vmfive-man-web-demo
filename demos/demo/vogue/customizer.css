@@ -1,0 +1,35 @@
+﻿@charset "UTF-8";
+/* VOGUE Worldwide added by Jeter 20160930 */
+.location {
+  overflow: hidden;
+  width: 220px;
+}
+.location select {
+  background: transparent;
+  border: none;
+  font-size: 15px; /* changed from 16px by Sora */
+  height: 24px; /* added by Sora */
+  width: 210px;
+  color: #fff;
+  text-align: center;
+  text-align-last: center;
+}
+.location select > option {
+  text-align: center;
+  line-height: 1em;
+}
+.item.location {
+  padding-top: 10px;
+  padding-bottom: 13px; 
+}
+/* VOGUE Worldwide added by Sora */
+@media screen and (max-width: 640px) {
+	.location select {
+		padding: 0px;
+		width: 150px;
+	}
+}
+/* CTM-143 add some margin to pushdown ad */
+article div.pushdownad {
+    margin: 0.3em auto 0.6em auto;
+}

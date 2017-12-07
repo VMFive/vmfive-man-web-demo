@@ -1,0 +1,132 @@
+﻿@charset "utf-8";
+.fxW100{
+width:100%;}
+/*
+.loading{
+background:white url(../images/lightbox-ico-loading.gif) center center no-repeat;}
+.preloader{
+position:absolute;
+z-index:-1;
+left:0;
+top:0;
+width:1px;
+height:0px;
+overflow:hidden;}
+
+.Box{
+position:relative;
+z-index:1;
+max-width:640px;
+margin:0 auto;
+font-size:16px;
+line-height:30px;
+}
+.Box .grid{
+z-index:5;
+position:relative;
+width:100%;
+overflow:hidden;}
+.Box .each{
+float:left;
+width:16.666%;}
+
+.Box .each img{
+pointer-events:none;
+width:100%;}
+.canvas{
+display:block;
+vertical-align:bottom;}
+.dragBall{
+z-index:5;
+pointer-events:none;}*/
+.setMediaScrollAD2 .fxMediaBox{
+position: relative;}
+
+.fxMediaBox{
+position:fixed;
+left:0;
+bottom:0;
+width:100%;
+height:0%;
+z-index:99999999;
+overflow:hidden;
+-webkit-transition:height 0.1ms;
+transition:height 0.1ms;
+}
+.fxMediaBox2{
+position:absolute;
+z-index:1;
+left:0;
+bottom:0;
+width:100%;
+height:100%;
+overflow: hidden;}
+.fxMediaClose{
+position:absolute;
+display:inline-block;
+left:5px;
+top:50px;
+width:30px;
+opacity:1;
+z-index: 5;}
+a.fxMediaVideoCss{
+left:auto;
+top:auto;
+width:40px;
+right:5px;
+bottom:15px;}
+.fxMediaClose img{
+width:100%;}
+.fxMediaTip{
+position:absolute;
+z-index:10;
+width:100%;
+left:0;
+top:0;
+text-align:center;}
+.fxMediaIcons{
+position:absolute;
+left:5px;
+bottom:15px;
+z-index:2;}
+.fxMediaIcons a{
+display:inline-block;
+margin:0 5px;}
+.fxMediaIcons img{
+width:40px;}
+.fxMediaYoutube{
+display:block;}
+.fxMediaLink{
+display:block;
+width:100%;
+height:100%;
+background-position:center center;
+background-repeat:no-repeat;
+background-size:contain;}
+
+.fxMediaTable,.fxMediaTd{
+width:100%;
+height:100%;
+vertical-align:top;}
+
+.fxMediaSound{
+position:absolute;
+display:inline-block;
+width:40px;
+right:50px;
+bottom:20px;}
+.fxMediaSound img{
+width:100%;}
+.fxMediaTable video{
+display:block;}
+
+.fxMediaLogo{
+position: absolute;
+left: 0;
+bottom: 0;
+display: block;
+width: 20px;
+z-index: 10;}
+.fxMediaLogo img{
+width: 100%;
+vertical-align: bottom;}
