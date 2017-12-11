@@ -9,8 +9,14 @@
     .cover > div > img {
         -webkit-transition: .2s all;
         -webkit-filter: brightness(50%);
+        width: 50vw;
     }
 
+    @media screen and (min-width: 1024px) {
+        .button img.icon {
+          width: 15vw;
+        }
+    }
     @media screen and (max-width: 1024px) {
         .button {
           font-size: 100px;
@@ -19,6 +25,10 @@
         .cover > div > img {
           background-size: cover;
           width: 100vw;
+        }
+
+        .button > img.icon {
+          width: 50vw;
         }
     }
 
@@ -52,6 +62,11 @@
 
     .button > img.icon {
       /*clip-path: ellipse(60px 40px at center);*/
+      border-radius: 25px;
+    }
+
+    .media-manager div.button > img.icon {
+        background: #222;
     }
     </style>
   </head>
@@ -82,7 +97,7 @@
           </div>
         </div>
       </div>
-      <div class="pure-u-md-1-2 pure-u-lg-1-2">
+      <div class="pure-u-md-1-2 pure-u-lg-1-2 media-manager">
         <img src="manager/itscover.png" class="pure-img"/>
         <div class="center-div">
           <div class="button" onclick="javascript:window.location='manager/top.html'">
