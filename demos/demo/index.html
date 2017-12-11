@@ -14,7 +14,8 @@
 
     @media screen and (min-width: 1024px) {
         .button img.icon {
-          width: 15vw;
+          min-width: 15vw;
+          max-height: 15vw;
         }
     }
     @media screen and (max-width: 1024px) {
@@ -28,7 +29,9 @@
         }
 
         .button > img.icon {
-          width: 50vw;
+          min-width: 40vw;
+          max-width: 50vw;
+          max-height: 50vw;
         }
     }
 
@@ -63,6 +66,7 @@
     .button > img.icon {
       /*clip-path: ellipse(60px 40px at center);*/
       border-radius: 25px;
+      width: 100%;
     }
 
     .media-manager div.button > img.icon {
@@ -116,7 +120,7 @@
         <img src="pixnet/itscover.png" class="pure-img"/>
         <div class="center-div">
           <div class="button" onclick="javascript:window.location='pixnet/impressive.html'">
-            <img src="pixnet/footer-logo.svg" class="icon" />
+            <img src="pixnet/logo.png" class="icon" />
             <br />
             <span class="">Impressive</span>
           </div>
