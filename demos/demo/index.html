@@ -1,0 +1,153 @@
+<html>
+  <head>
+    <link rel="stylesheet" href="https://unpkg.com/purecss@1.0.0/build/pure-min.css" integrity="sha384-nn4HPE8lTHyVtfCBi5yW9d20FjT8BJwUXyWZT9InLYax14RDjBj46LmSztkmNP9w" crossorigin="anonymous">
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+      
+      ga('create', 'UA-105683329-2', 'auto');
+      ga('send', 'pageview');
+    </script>
+    <style>
+    .cover {
+      position: relative;
+    }
+
+    .cover > div > img {
+        -webkit-transition: .2s all;
+        -webkit-filter: brightness(50%);
+        width: 50vw;
+    }
+
+    @media screen and (max-width: 1024px) {
+        .button {
+          font-size: 100px;
+        }
+
+        .cover > div > img {
+          background-size: cover;
+          width: 100vw;
+        }
+    }
+
+    /*
+    .cover img:hover {
+        -webkit-filter: brightness(50%);
+    }
+    */
+
+    .cover > * {
+      position: relative;
+    }
+
+    .center-div {
+      margin: 0;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+
+    .button {
+        border-radius: 25px;
+        background: #fff;
+        padding: 20px;
+        text-align: center;
+        letter-spacing: 2px;
+
+        margin-bottom: 10px;
+    }
+
+    .button > img.icon {
+      /*clip-path: ellipse(60px 40px at center);*/
+      border-radius: 25px;
+      width: 100%;
+    }
+
+    .media-manager div.button > img.icon {
+        background: #222;
+    }
+    </style>
+  </head>
+  <body>
+    <div class="pure-g cover">
+      <div class="pure-u-md-1-2 pure-u-lg-1-2">
+        <img src="bnext/itscover.png" class="pure-img"/>
+        <div class="center-div">
+          <div onclick="javascript:window.location='bnext/native.html'" class="button">
+            <img src="bnext/bn-logo.svg" class="icon" />
+            <br />
+            <span class="">Native</span>
+          </div>
+          <div class="button" onclick="javascript:window.location='bnext/impressive.html'">
+            <img src="bnext/bn-logo.svg" class="icon" />
+            <br />
+            <span class="">Impressive</span>
+          </div>
+          <div class="button" onclick="javascript:window.location='bnext/interstitial.html'">
+            <img src="bnext/bn-logo.svg" class="icon" />
+            <br />
+            <span class="">Interstitial</span>
+          </div>
+          <div class="button" onclick="javascript:window.location='bnext/portrait.html'">
+            <img src="bnext/bn-logo.svg" class="icon" />
+            <br />
+            <span class="">Portrait</span>
+          </div>
+        </div>
+      </div>
+      <div class="pure-u-md-1-2 pure-u-lg-1-2 media-manager">
+        <img src="manager/itscover.png" class="pure-img"/>
+        <div class="center-div">
+          <div class="button" onclick="javascript:window.location='manager/top.html'">
+            <img src="manager/logo.png" class="icon" />
+            <br />
+            <span class="">Top</span>
+          </div>
+          <div class="button" onclick="javascript:window.location='manager/interstitial.html'">
+            <img src="manager/logo.png" class="icon" />
+            <br />
+            <span class="">Interstitial</span>
+          </div>
+        </div>
+      </div>
+      <div class="pure-u-md-1-2 pure-u-lg-1-2">
+        <img src="pixnet/itscover.png" class="pure-img"/>
+        <div class="center-div">
+          <div class="button" onclick="javascript:window.location='pixnet/impressive.html'">
+            <img src="pixnet/logo.png" class="icon" />
+            <br />
+            <span class="">Impressive</span>
+          </div>
+        </div>
+      </div>
+      <div class="pure-u-md-1-2 pure-u-lg-1-2">
+        <img src="udn/itscover.png" class="pure-img"/>
+        <div class="center-div">
+          <div class="button" onclick="javascript:window.location='udn/native.html'">
+            <img src="udn/favicon.ico" class="icon" />
+            <br />
+            <span class="">Native</span>
+          </div>
+          <div class="button" onclick="javascript:window.location='udn/impressive.html'">
+            <img src="udn/favicon.ico" class="icon" />
+            <br />
+            <span class="">Impressive</span>
+          </div>
+        </div>
+      </div>
+      <div class="pure-u-md-1-2 pure-u-lg-1-2">
+        <img src="vogue/itscover.png" class="pure-img"/>
+        <div class="center-div">
+          <div class="button" onclick="javascript:window.location='vogue/native.html'">
+            <img src="vogue/vogue_logo.svg" class="icon" />
+            <br />
+            <span class="">Native</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
