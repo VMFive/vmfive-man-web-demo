@@ -10,12 +10,6 @@
     body { margin: 0; padding: 0; }
     .page-container { width: 90%; max-width: 500px; margin: 10px auto; }
   </style>
-  <script id="vm5ad-js-sdk" src="https://vawpro.vm5apis.com/man.js" data-mode="sdk"></script>
-  <script>
-    window.onVM5AdSDKReady = function() {
-      VM5AdSDK.init({ appKey: '59a636856ae4fadf1e262daa' });
-    };
-  </script>
 </head>
 
 <body>
@@ -31,9 +25,20 @@
     <p>Aliquam est eos reprehenderit porro fuga, tempora officia eveniet rem libero quisquam ducimus veniam nulla sit laudantium accusamus reiciendis ad, tenetur impedit! Fuga porro nesciunt sequi distinctio ab qui aliquid.</p>
     <p>Architecto ex reiciendis libero consequuntur laudantium cumque illum labore sunt accusamus ullam? Recusandae dicta reprehenderit expedita, odit obcaecati perferendis, distinctio, eum eius dolorum maxime dolorem minus rem ipsam commodi quo.</p>
 
-    <p>
-      <vmfive-ad-unit placement-id="59a6371c6ae4fadf1e262db2" ad-type="video-native"></vmfive-ad-unit>
-    </p>
+    <!--
+    Application : 'simple demo 1'
+    Placement : 'native'
+    Version : 'v2.3'
+    -->
+    <script id="vm5ad-js-sdk" src="https://vawpro.vm5apis.com/man.js" data-mode="fast"></script>
+    <script>
+    window.onVM5AdSDKReady = function() {
+    VM5AdSDK.init({ appKey: '59a636856ae4fadf1e262daa' });
+    };
+    </script>
+    <script src="https://man.vm5apis.com/dist/adn-web-sdk.js"></script>
+    <vmfive-ad-unit placement-id='59a6371c6ae4fadf1e262db2' ad-type='video-native'></vmfive-ad-unit>
+
 
     <p>Fugiat, ut veniam officiis fugit quod enim, maxime iure non repudiandae harum quibusdam tenetur ipsa. In facere distinctio voluptatum incidunt hic excepturi, deserunt, repellendus, dolorum error fugit id reprehenderit, ad.</p>
     <p>Ullam reprehenderit nihil quo atque et accusantium, vel! Vel omnis atque voluptatum consequuntur vero, dolorum autem ex expedita necessitatibus, corporis laudantium accusamus sunt rem iusto voluptas enim, est impedit ut.</p>
@@ -128,7 +133,7 @@
     <p>Nobis excepturi, dignissimos consequatur architecto non possimus sequi dolor necessitatibus adipisci, exercitationem aliquid porro veritatis sit debitis officia fuga vitae voluptates voluptatem, ad voluptate nulla amet eveniet, quis quos placeat.</p>
     <p>Quis assumenda, velit in repellendus minus soluta vero, corrupti ullam animi deserunt beatae adipisci aperiam quod maiores. Nam, veritatis maxime eligendi minima id excepturi dolor debitis omnis ipsum, molestias tempore!</p>
     <p>Nesciunt fugit ab mollitia eos, doloribus, magnam, fugiat ex maiores molestias non facilis! Ullam totam blanditiis eveniet accusantium quaerat repudiandae consequatur amet nisi aliquid odio! Culpa omnis, eaque voluptatem velit.</p>
-  </div>  
+  </div>
 
 </body>
 
