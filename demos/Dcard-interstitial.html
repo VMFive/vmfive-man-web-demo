@@ -540,13 +540,7 @@
     }</style>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
-    <script id="vm5ad-js-sdk" src="https://vawpro.vm5apis.com/man.js" data-mode="sdk"></script>
-    <script>
-    window.onVM5AdSDKReady = function() {
-      VM5AdSDK.init({ appKey: '59a636ff6ae4fadf1e262db0' });
-    };
-    </script>
-    
+
 </head>
 <body>
 <div id="fb-root" class=" fb_reset">
@@ -609,7 +603,20 @@
                             class="share-bar__link" rel="nofollow" data-reactid="42"><i class="fa fa-link"
                                                                                         data-reactid="43"></i></a><a
                             class="share-bar__next" data-reactid="44">下一篇</a></div>
-                    <vmfive-ad-unit placement-id="59a638ba6ae4fadf1e262dd8" ad-type="video-interstitial"></vmfive-ad-unit>
+                            <!--
+                            Application : 'dcard demo'
+                            Placement : 'interstitial'
+                            Version : 'v2.3'
+                            -->
+                            <script id="vm5ad-js-sdk" src="https://vawpro.vm5apis.com/man.js" data-mode="fast"></script>
+                            <script>
+                            window.onVM5AdSDKReady = function() {
+                            VM5AdSDK.init({ appKey: '59a636ff6ae4fadf1e262db0' });
+                            };
+                            </script>
+                            <script src="https://man.vm5apis.com/dist/adn-web-sdk.js"></script>
+                            <vmfive-ad-unit placement-id='59a638926ae4fadf1e262dd2' ad-type='video-interstitial'></vmfive-ad-unit>
+
                     <div data-reactid="47"><h3 class="darsys-post-list__title" data-reactid="48"><span
                             data-reactid="49">你可能感興趣的文章</span></h3>
                         <ul class="darsys-post-list__list" data-reactid="50">

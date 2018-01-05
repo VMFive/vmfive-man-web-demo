@@ -22,19 +22,27 @@
       position: absolute; left: 30px; right: 30px; top: 30px; bottom: 30px;
     }
   </style>
-  <script id="vm5ad-js-sdk" src="https://vawpro.vm5apis.com/man.js" data-mode="sdk"></script>
-  <script>
-    window.onVM5AdSDKReady = function() {
-      VM5AdSDK.init({ appKey: '59a636856ae4fadf1e262daa' });
-    };
-  </script>
+  
 </head>
 
 <body>
   <div class="customer-mask">
     <div class="customer-close-btn">❌ </div>
     <div class="customer-slot">
-      <vmfive-ad-unit placement-id="59a637746ae4fadf1e262db8" ad-type="video-interstitial-embedded"></vmfive-ad-unit>
+      <!--
+      Application : 'simple demo 1'
+      Placement : 'interstitial'
+      Version : 'v2.3'
+      -->
+      <script id="vm5ad-js-sdk" src="https://vawpro.vm5apis.com/man.js" data-mode="fast"></script>
+      <script>
+      window.onVM5AdSDKReady = function() {
+      VM5AdSDK.init({ appKey: '59a636856ae4fadf1e262daa' });
+      };
+      </script>
+      <script src="https://man.vm5apis.com/dist/adn-web-sdk.js"></script>
+      <vmfive-ad-unit placement-id='59a637746ae4fadf1e262db8' ad-type='video-interstitial-embedded'></vmfive-ad-unit>
+
     </div>
   </div>
 
