@@ -18,9 +18,14 @@
     <h2>ADN Web Simple Demo</h2>
     
     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dignissimos illum nostrum impedit quidem eius cumque nam cupiditate aliquid vero reiciendis, quia assumenda ullam sapiente debitis commodi doloribus tenetur quos perferendis.</p>
-    <p>
-      <vmfive-ad-unit placement-id="582ad449038f454a190d4331" type="web_native"></vmfive-ad-unit>
-    </p>
+    <script id="vm5ad-js-sdk" src="https://vawpro.vm5apis.com/man.js" data-mode="fast"></script>
+    <script>
+      window.onVM5AdLiteReady = function() {
+        VM5AdLite.init({ appKey:'your_appkey', testMode: true });
+      };
+    </script>
+    <script src="https://man.vm5apis.com/dist/VM5AdLite.js"></script>
+    <vmfive-ad-unit placement-id="582ad449038f454a190d4331" type="web_top"></vmfive-ad-unit>
     <p>Dignissimos officia saepe modi corrupti nesciunt laborum nulla, odio qui adipisci accusantium illum a ad impedit quo perspiciatis architecto eius. Totam, labore! Veniam quis perspiciatis esse eaque est ut similique.</p>
     <p>Assumenda repudiandae officia nostrum unde laborum, tempore eos, necessitatibus tempora voluptatem tenetur pariatur, modi dignissimos ut est voluptatibus sint error? Molestias nemo laudantium quos deleniti fuga sequi impedit incidunt quia.</p>
     <p>Cum amet deleniti inventore eum consequuntur dolor totam, fuga minima omnis reiciendis sint fugit voluptatibus, molestias nisi molestiae atque ipsam quos quisquam autem ea ad corporis. Esse sunt, eaque iste!</p>
@@ -123,13 +128,6 @@
     <p>Nesciunt fugit ab mollitia eos, doloribus, magnam, fugiat ex maiores molestias non facilis! Ullam totam blanditiis eveniet accusantium quaerat repudiandae consequatur amet nisi aliquid odio! Culpa omnis, eaque voluptatem velit.</p>
   </div>
 
-  <script id="vm5ad-js-sdk" src="https://vawpro.vm5apis.com/man.js" data-mode="fast"></script>
-  <script>
-    window.onVM5AdLiteReady = function() {
-      VM5AdLite.init({ appKey:'your_appkey', testMode: true });
-    };
-  </script>
-  <script src="http://localhost:9453/dist/VM5AdLite.js"></script>
 </body>
 
 </html>
