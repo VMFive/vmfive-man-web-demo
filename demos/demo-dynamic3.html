@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<!-- saved from url=(0078)https://vm5-websdk-lite.netlify.com//demos/simple-native-with-banner-lite.html -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+  <title>VMFive ADN Web SDK Demo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no">
+  <style>
+    body { font-family: sans-serif; }
+    body { margin: 0; padding: 0; }
+    .page-container { width: 90%; max-width: 500px; margin: 10px auto; }
+  </style>
+<script type="text/javascript" src="https://man.vm5apis.com/dist/raf.js"></script>
+
+<!--
+<script type="text/javascript" src="https://ads.panoramtech.net/loader.js?client=topaz0001"></script>
+-->
+</head>
+
+<body>
+  <div class="page-container">
+
+    <h2>第五代虛擬科技／技術起家 橫跨五大領域</h2>
+    <h4>經濟日報 記者馬瑞璿／台北報導</h4>
+
+    <p>第五代虛擬科技（VMFive）以互動遊戲廣告技術起家，後又以原生影音廣告為業務主力，以技術層面分析，互動遊戲廣告技術所需技術含量較高，整體技術需橫跨虛擬化、雲端、串流、跨平台、大數據等五領域，這也是VMFive命名由來。</p>
+    <p>為什麼互動遊戲廣告需要的技術含量高？VMFive旗下的AdPlay主攻行動互動遊戲市場，行動市場必須考量連線能力、處理器架構與各廠牌手機繪圖能力，因此，主要技術領域集中在串流、虛擬化與跨平台三大領域。</p>
+
+    <vmfive-ad-unit placement-id="123" type="web_native">
+    <div id="vmfive-ad-unit">
+        <div id="vmfive-replay" class="vmfive-info-image"></div>
+        <div id="vmfive-logo" class="vmfive-info-image"></div>
+        <div id="vmfive-volume-btn" class="vmfive-info-image mute"></div>
+        <!--
+        <div id="vmfive-cta-btn">More</div>
+      -->
+        <div id="vmfive-ad-unit-finish-image"></div>
+        <div id="vmfive-finished-cta-btns">
+            <div id="vmfive-finished-cta-btn" class="vmfive-finished-btn">More</div>
+            <div id="vmfive-finished-fb-btn" class="vmfive-finished-btn">facebook</div>
+        </div>
+        </div>
+    <div id="vmfive-ad-unit-banner" type="general">
+        <div id="vmfive-content-left" class="vmfive-info" data-info-type="text" data-text-before="">
+
+        </div>
+        <div id="vmfive-content-middle" class="vmfive-info" data-info-type="text" data-text-before="">
+
+        </div>
+        <div id="vmfive-content-right" class="vmfive-info" data-info-type="weather" data-text-before="現在氣溫" data-text-after="20 °C">
+
+        </div>
+    </div>
+
+    </vmfive-ad-unit>
+
+  <style>
+  #vmfive-ad-unit {position:relative;display:block;}
+  #vmfive-ad-unit .vmfive-info-image {
+      position:absolute;z-index:1;
+      background-size:16px 16px;background-repeat:no-repeat;background-position:center;
+      cursor:pointer;
+  }
+  #vmfive-replay.vmfive-info-image {
+      background-image:url('https://man.vm5apis.com/dist/icon_act_replay.png');
+      display:none;
+      top:0;left:0;
+      width:34px;height:28px;
+  }
+  #vmfive-logo {
+      background-image:url('');
+      display:block;
+      top:0;right:0;
+      width:16px;height:16px;
+  }
+  #vmfive-cta-btn {
+      display:inline-block;
+      position:absolute;bottom:6px;right:8px;z-index:1;padding: 6.5px 13px 5px;
+      border: 1px solid rgba(255,255,255, 0.5);box-sizing: border-box;border-radius: 3px;
+      background-color: rgba(0,0,0, 0.5);
+      color: #fff;font-size:12px;font-family:'Helvetica Neue', sans-serif;
+      cursor:pointer;
+      display:block;
+  }
+  #vmfive-finished-cta-btns {
+      font-size:12px;font-family:'Helvetica Neue', sans-serif;
+      text-align:center;
+      display:none;
+      position:absolute;z-index:1;
+  }
+  #vmfive-ad-unit-finish-image {
+      background-image:url('https://d2v4tz4zvhrua.cloudfront.net/manual_uploads/20180121/uq_endcard.png');background-size:contain;background-repeat:no-repeat;
+      position:absolute;top:10%;left:15%;right z-index:1;
+      height:70%;width:70%;
+      display:none;
+  }
+  #vmfive-finished-cta-btns>.vmfive-finished-btn {
+      display:inline-block;
+      border:1px solid rgba(255,255,255, 0.5);box-sizing:border-box;border-radius:3px;
+      color:#fff;
+      padding:3px 6px;
+      background-color:rgba(0,0,0, 0.5);
+      cursor:pointer;
+  }
+  #vmfive-volume-btn {
+      width:34px;height:28px;
+      background-image:url('https://man.vm5apis.com/dist/icon_dyn_soundwave.gif');background-size:20px 20px;filter:opacity(0.5) drop-shadow(0px 0px 2px #000);
+      bottom:13px;left:2px;
+      display:block;
+  }
+  #vmfive-volume-btn.unmute {background-image:url('https://man.vm5apis.com/dist/icon_act_voice3.png');filter:none;}
+
+
+  #vmfive-ad-unit-banner {width: 100%;height: 50px;background-size: cover;}
+  #vmfive-ad-unit-banner[type="fixed"] {position: fixed;left:0;}
+  #vmfive-ad-unit-banner[position="top"] {top: 0;}
+  #vmfive-ad-unit-banner[position="bottom"] {bottom: 0;}
+  #vmfive-ad-unit-banner > .vmfive-info {
+    display:inline-block;width:25%;height:100%;
+    vertical-align: middle;
+    position: relative;
+  }
+  #vmfive-ad-unit-banner > .vmfive-info:before,
+  #vmfive-ad-unit-banner > .vmfive-info:after {
+    position: absolute;left:0;
+    word-break: break-all;overflow: hidden;
+    width: 100%;height: calc(90% - 5px);
+    margin-top: 5px;border-radius: 5px;
+  }
+  #vmfive-content-left {text-align: left;}
+  #vmfive-content-middle {text-align: center;}
+  #vmfive-content-right {text-align: center;}
+  #vmfive-content-left:before, #vmfive-content-middle:before, #vmfive-content-right:before {top:0; font-family: monospace;}
+  #vmfive-content-left:after, #vmfive-content-middle:after, #vmfive-content-right:after {bottom: -30%; font-family: monospace;}
+  #vmfive-ad-unit-banner .vmfive-info[data-info-type='text']:before {content: attr(data-text-before);}
+  #vmfive-ad-unit-banner .vmfive-info[data-info-type='text']:after {content: attr(data-text-after);}
+  #vmfive-ad-unit-banner > #vmfive-content-left:before {
+    left: 10%;
+  }
+  #vmfive-ad-unit-banner > #vmfive-content-middle {
+    width: 45%;
+  }
+  #vmfive-content-middle[data-info-type='text']:before {
+
+  }
+  #vmfive-ad-unit-banner > #vmfive-content-right:before,
+  #vmfive-ad-unit-banner > #vmfive-content-right:after {
+    left:unset;right: 0%;
+  }
+  #vmfive-content-right[data-info-type='weather']:before {
+    content: attr(data-text-before);
+    background-color: white;
+  }
+  #vmfive-content-right[data-info-type='weather']:after {
+    content: attr(data-text-after);
+  }
+  #vmfive-ad-unit-banner > .vmfive-info > img {
+    height: 40px;border-radius: 5px;
+    margin: 5px 6px 0;
+  }
+  #vmfive-ad-unit-banner > .vmfive-info > img[src=""] {display: none;}
+
+  </style>
+  <script>
+    var sc = document.createElement("script");
+    let videoFrameSize = {width: 640, height: 360};
+
+    sc.src = "https://d1v69ngg41pvl6.cloudfront.net/dist/MixPlayer.js";
+    sc.onload = function () {
+        function getElById(elId) {return document.getElementById(elId);}
+
+        const vmfiveAdUnitEl = getElById("vmfive-ad-unit");
+        const rate = vmfiveAdUnitEl.offsetWidth / videoFrameSize.width;
+        const parentElWidth = getElById('vmfive-ad-unit').parentElement.offsetWidth;
+        const currentVideoHeight = videoFrameSize.height * (parentElWidth/videoFrameSize.width);
+        //const currentVideoHeight = videoFrameSize * rate;
+
+        var source = '{"mp4": "https://d2v4tz4zvhrua.cloudfront.net/manual_uploads/20180121/uq_video360.mp4", "m3u8": "https://d2v4tz4zvhrua.cloudfront.net/production/video_1510283471507/360/m3u8/video_1510283471507.m3u8"}';
+
+        var trackings = '';
+        var width = 0;
+        var height = 0;
+        var mix = new MixPlayer(vmfiveAdUnitEl, source, trackings, width, height);
+        mix.percentageInViewPort(vmfiveAdUnitEl, 50);
+
+        mix.onPrepared = function() {
+            function isInlineVideo(videoTag) {return videoTag.tagName === 'VIDEO';}
+            function addElClickEvent(el, fn) {el.addEventListener('click', fn);}
+
+            const vm5AdVideoTag = vmfiveAdUnitEl.querySelector('video') || vmfiveAdUnitEl.querySelector('canvas');
+            width = videoFrameSize.width * rate;
+            vm5AdVideoTag.style.width = width + 'px';
+
+            if (isInlineVideo(vm5AdVideoTag)) {
+              vmfiveAdUnitEl.querySelector('video').style.height = videoFrameSize.height * rate +'px';
+              height = vmfiveAdUnitEl.querySelector('video').videoHeight;
+
+            } else {
+                height = vmfiveAdUnitEl.querySelector('canvas').height = videoFrameSize.height * rate;
+                vm5AdVideoTag.style.height = height + 'px';
+
+                vm5AdVideoTag.style.position = 'absolute';
+                vm5AdVideoTag.style.top = 'calc(50% - '+ (videoFrameSize.height * rate / 2) +'px)';
+            }
+
+            setOuterWapperHeight(videoFrameSize.height * rate);
+
+            getElById('vmfive-ad-unit-banner').style.width = vm5AdVideoTag.style.width;
+            getElById('vmfive-ad-unit-banner').style.height = videoFrameSize.width * rate * 50/320 + 'px';
+
+            addElClickEvent(getElById('vmfive-replay'), function(isInlineVideo) {
+                finishedVisibility();
+                this.player.play();
+            }.bind(this, isInlineVideo(vm5AdVideoTag)));
+
+            addElClickEvent(getElById('vmfive-volume-btn'), function(isInlineVideo) {
+                if (this.player.isMuted()) {
+                    this.player.unmute();
+                    getElById('vmfive-volume-btn').classList.add('unmute');
+                } else {
+                    this.player.mute();
+                    getElById('vmfive-volume-btn').classList.remove('unmute');
+                }
+
+            }.bind(this, isInlineVideo(vm5AdVideoTag)));
+
+            const ctaElIdList = ['vmfive-logo', 'vmfive-finished-cta-btn', 'vmfive-ad-unit-finish-image', 'vmfive-ad-unit-banner'];
+            const ctaURL = 'http://vmfive.com/';
+            const fbURL = 'https://fb.com/vmfive/';
+
+            ctaElIdList.forEach(function(elId){addElClickEvent(getElById(elId), function(){window.top.location.href = ctaURL;});});
+            addElClickEvent(vm5AdVideoTag, function(){window.top.location.href = ctaURL;});
+            addElClickEvent(getElById('vmfive-finished-fb-btn'), function(){window.top.location.href = fbURL;});
+        }
+
+        mix.onFinished = function() {
+            finishedVisibility();
+
+            const finishedButtonEl = getElById('vmfive-finished-cta-btns');
+            const finishedImage = getElById('vmfive-ad-unit-finish-image');
+            finishedButtonEl.style['top'] = (finishedImage.offsetTop + finishedImage.clientHeight)*0.75 + 'px';
+            finishedButtonEl.style['left'] = (getElById('vmfive-ad-unit').clientWidth - getElById('vmfive-finished-cta-btns').clientWidth)*0.5 + 'px';
+        }
+
+        function setOuterWapperHeight(specificHeight) {getElById('vmfive-ad-unit').style.height = specificHeight + 'px';}
+        function finishedVisibility() {
+            const vmfiveElIdList = ['vmfive-ad-unit-finish-image', 'vmfive-replay', 'vmfive-finished-cta-btns', 'vmfive-volume-btn'];
+
+            for (let index in vmfiveElIdList) {
+                let specificEl = document.getElementById(vmfiveElIdList[index]);
+                if (specificEl)
+                    specificEl.style.display = window.getComputedStyle(specificEl).display === 'block'?'none':'block';
+            }
+        }
+    }
+    document.body.appendChild(sc);
+
+
+    function getElById(elId) {return document.getElementById(elId);};
+
+    const vm5ContentLeftData = getElById('vmfive-content-left').dataset;
+    const vm5ContentMiddleData = getElById('vmfive-content-middle').dataset;
+    const vm5ContentRightData = getElById('vmfive-content-right').dataset;
+
+    var temperatures = [0, 20, 28, 35];
+    var dynamic_image_source = ['https://d2v4tz4zvhrua.cloudfront.net/manual_uploads/20180121/uq_19.jpg','https://d2v4tz4zvhrua.cloudfront.net/manual_uploads/20180121/uq_25.jpg','https://d2v4tz4zvhrua.cloudfront.net/manual_uploads/20180121/uq_30.jpg'];
+
+    function updateContent() {
+
+
+        var temperature = getTemperature(function done(responseText){
+
+            var weatherInfo = JSON.parse(responseText);
+
+            console.log(weatherInfo.temperature);
+            if (vm5ContentRightData.infoType === 'weather') {
+              vm5ContentRightData.textAfter = `${weatherInfo.temperature} °C`;
+
+              for(i=1; i<temperatures.length; i++)
+              {
+                  if (weatherInfo.temperature > temperatures[i-1] && weatherInfo.temperature <= temperatures[i]) {
+                      var urlString = 'url(' + dynamic_image_source[i-1] + ')';
+                      getElById('vmfive-ad-unit-banner').style.backgroundImage = urlString;
+
+                  }
+              }
+            }
+        })
+
+/*
+          if (vm5ContentRightData.infoType === 'weather') {
+            const now = new Date();
+            if (now.getHours() > 12)
+            {
+                vm5ContentRightData.textAfter = `下午 ${now.getHours()-12}:${now.getMinutes()}`
+            }
+            else
+            {
+                vm5ContentRightData.textAfter = `上午 ${now.getHours()}:${now.getMinutes()}`
+            }
+
+            for(i=1; i<time_interval.length; i++)
+            {
+                var current_time = now.getHours() + now.getMinutes()/60;
+                //console.log("current time: " + current_time);
+                if (current_time > time_interval[i-1] && current_time <= time_interval[i]) {
+                    var urlString = 'url(' + dynamic_image_source[i-1] + ')';
+                    getElById('vmfive-ad-unit-banner').style.backgroundImage = urlString;
+
+                }
+            }
+
+        }
+        raf(updateContent);
+        */
+    }
+
+    loadScript('https://man.vm5apis.com/dist/raf.js', function() {
+
+        raf(updateContent);
+    });
+
+    function getTemperature(callback)
+    {
+      // get position
+      var position_id = 1;
+      httpGetAsync('https://works.ioa.tw/weather/api/weathers/1.json', callback);
+    }
+
+    function loadScript(url, callback){
+
+        let script = document.createElement("script")
+        script.type = "text/javascript";
+
+        if (script.readyState){
+            script.onreadystatechange = function(){
+                if (script.readyState == "loaded" ||
+                        script.readyState == "complete"){
+                    script.onreadystatechange = null;
+                    callback();
+                }
+            };
+        } else {
+            script.onload = function(){
+                callback();
+            };
+        }
+
+        script.src = url;
+        document.getElementsByTagName("head")[0].appendChild(script);
+    }
+
+    function httpGetAsync(theUrl, callback)
+    {
+        var xmlHttp = new XMLHttpRequest();
+        xmlHttp.onreadystatechange = function() {
+            if (xmlHttp.readyState == 4 && xmlHttp.status == 200)
+                callback(xmlHttp.responseText);
+        }
+        xmlHttp.open("GET", theUrl, true); // true for asynchronous
+        xmlHttp.send(null);
+    }
+  </script>
+  <p>VMFive創辦人暨執行長丁俊宏表示，AdPlay串流到各個網址，可以在PC、NB、手機、平板等各類裝置上使用這個App。然而，這個串流體驗必須相當即時，因為所有的點擊都會在雲端上進行運算，必須在100-200毫秒內完成人機互動，這考驗著串流能力；而雲端也必須模擬手機處理器架構。目前手機處理器架構都是以ARM為主，要雲端來運算ARM架構也有些難度。此外，雖然App架設在雲端上，但最後連結的終端產品性能各有不同，必須因應不同設備去做解碼，甚至必須配合低階手機調整呈現品質，要在偵測用戶手機的同時，進行動態演算調節，在在都有技術難度。</p>
+  <p>原生影音廣告技術含量就稍微低一些，丁俊宏表示，影音廣告著重串流、API（應用程式介面）、資料定向三大類技術，串流技術必須流暢才能降低延遲，並在不到1秒內的時間把廣告載入、完成串流，讓消費者觀看廣告，同時，也要提供API讓開發商組合成需要的格式，提升體驗效果，最後，也要在龐大的廣告資料裡面分析定向受眾，未來才能精準投遞目標客群。</p>
+
+  <h3>執行長丁俊宏 來場不一樣的創業</h3>
+
+  <p>走進第五代虛擬科技（VMFive）位於南京東路上的辦公室，空間設計帶有淡淡的loft風卻讓人備感溫馨，創辦人暨執行長丁俊宏是七年級生，斯文的外表下卻帶有創業的堅定。他說，他想做點與別人不同的事。為什麼想要創業？他說，「我小時候就對科學家有憧憬，喜歡看愛因斯坦、愛迪生的故事，我也喜歡看科幻電影，喜歡回到未來、時光機的那種，創業對我來說是一種憧憬，可以做一些不一樣的事情、甚至作一些創新的東西」。</p>
+  <p>在創立VMFive前，丁俊宏已經設立過二家公司，一家公司主要作行動應用開發，另外一家公司則是做壽險軟體；當時，壽險軟體獲得許多良好迴響，但丁俊宏希望自己可以做一點走向全球的事，於是，他決定把公司交給團隊夥伴經營，自己出來開設另外一家公司，VMFive於焉誕生。</p>
+  <p>第五代虛擬科技團隊草創初期，一部分人在台北、一部分在新竹，有些人是學生、有些人是社會新鮮人，直到2014年才在台北設辦公室。「一開始，大家都沒經驗，只有我先前創立過別間公司、有一點的經驗，而且我又是CEO，所以大多以我的想法為主，創立初期，大家多少都會有意見相佐的時候，默契不見得這麼好，但到了營運中期之後，我慢慢授權經營團隊，讓大家自主發揮」，丁俊宏回憶道。</p>
+  <p>丁俊宏設定三年內在亞太地區互動遊戲廣告市場闖出一片天，他對自家的技術相當有信心，現階段目標是讓VMFive把市場做大、做好，並希望這家公司可以永續經營。</p>
+  <hr>
+  <p>文章來源：<a href="https://money.udn.com/money/story/11150/2478372">經濟日報</a></p>
+  </div>
+
+
+
+</body></html>
