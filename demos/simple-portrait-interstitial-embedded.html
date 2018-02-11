@@ -25,23 +25,24 @@
     }
   </style>
 
-  <script id="vm5ad-js-sdk" src="https://vawpro.vm5apis.com/man.js" data-mode="sdk"></script>
-  <script>
-    window.onVM5AdSDKReady = function() {
-      VM5AdSDK.init({ appKey: '580db14a4a801a2674a56f81', testMode: true });
-    };
-  </script>
 </head>
 
 <body>
   <div class="page-container">
     <h2>第五代虛擬科技／技術起家 橫跨五大領域</h2>
     <h4>經濟日報 記者馬瑞璿／台北報導</h4>
-    
+
     <div class="customer-mask">
       <div class="customer-close-btn">❌ </div>
       <div class="customer-slot">
-        <vmfive-ad-unit placement-id="582ad4b1038f454a190d4339" ad-type="portraitvideo-interstitial-embedded"></vmfive-ad-unit>
+        <script id="vm5ad-js-sdk" src="https://vawpro.vm5apis.com/man.js" data-mode="fast"></script>
+        <script>
+          window.onVM5AdLiteReady = function() {
+            VM5AdLite.init({ appKey:'5a7fda7e14d40204563c0053' });
+          };
+        </script>
+        <script src="https://man.vm5apis.com/dist/VM5AdLite.js"></script>
+        <vmfive-ad-unit placement-id="5a7fe05314d40204563c009c" type="web_interstitial"></vmfive-ad-unit>
       </div>
     </div>
 
