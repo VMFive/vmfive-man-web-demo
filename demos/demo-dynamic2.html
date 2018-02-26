@@ -140,6 +140,8 @@
     display:inline-block;width:25%;height:100%;
     vertical-align: middle;
     position: relative;
+
+    width: 30%;
   }
   #vmfive-ad-unit-banner > .vmfive-info:before,
   #vmfive-ad-unit-banner > .vmfive-info:after {
@@ -156,10 +158,14 @@
   #vmfive-ad-unit-banner .vmfive-info[data-info-type='text']:before {content: attr(data-text-before);}
   #vmfive-ad-unit-banner .vmfive-info[data-info-type='text']:after {content: attr(data-text-after);}
   #vmfive-ad-unit-banner > #vmfive-content-left:before {
+    /*
     left: 10%;
+    */
   }
   #vmfive-ad-unit-banner > #vmfive-content-middle {
+    /*
     width: 45%;
+     */
   }
   #vmfive-content-middle[data-info-type='text']:before {
 
@@ -167,6 +173,7 @@
   #vmfive-ad-unit-banner > #vmfive-content-right:before,
   #vmfive-ad-unit-banner > #vmfive-content-right:after {
     left:unset;right: 0%;
+    font-size: 1rem;
   }
   #vmfive-content-right[data-info-type='distance']:before {
     content: attr(data-text-before);
