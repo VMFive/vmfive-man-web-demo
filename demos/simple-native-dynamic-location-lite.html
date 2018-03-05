@@ -563,7 +563,8 @@
             let link_gotomap = vmfiveAdUnitDynamicResultEl.querySelector("#link_gotomap");
             link_gotomap.href = 'https://www.google.com/maps/search/' + encodeURIComponent('honda 展示中心') + '/17z';
             if (isSuccessful && nearest.item !== undefined) {
-              link_gotomap.href = 'https://www.google.com/maps/search/?api=1&query=' + nearest.item.latitude + ',' + nearest.item.longitude;
+              // link_gotomap.href = 'https://www.google.com/maps/search/?api=1&query=' + nearest.item.latitude + ',' + nearest.item.longitude;
+              link_gotomap.href = 'https://www.google.com/maps/search/?api=1&query=' + encodeURIComponent(nearest.item.name);
               address.innerHTML = nearest.item.name;
             }
           }
