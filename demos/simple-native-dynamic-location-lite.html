@@ -120,7 +120,7 @@
     #vmfive-ad-unit-dynamic-area .item {
       flex: 1;
       text-align: center;vertical-align: middle;
-      font-size: 5px;font-weight: bolder;
+      font-size: 12px;font-weight: bolder;
     }
     #vmfive-ad-unit-dynamic-area .item-2 {
       flex: 2;
@@ -544,7 +544,7 @@
             let link_gotomap = vmfiveAdUnitDynamicResultEl.querySelector("#link_gotomap");
             link_gotomap.href = 'https://www.google.com/maps/search/' + encodeURIComponent('honda 展示中心') + '/17z';
             if (nearest.item !== undefined) {
-              link_gotomap.href = 'https://www.google.com/maps/place//@' + nearest.item.latitude + ',' + nearest.item.longitude + ',17z';
+              link_gotomap.href = 'https://www.google.com/maps/search/?api=1&query=' + nearest.item.latitude + ',' + nearest.item.longitude;
               address.innerHTML = nearest.item.name;
             }
           }
