@@ -84,7 +84,7 @@
       position: relative;
       display: block;
     }
-    #vmfive-ad-unit-banner {width: 100%;position: relative;}
+    #vmfive-ad-unit-banner {width: 100%;position: relative;display: none;}
     #vmfive-ad-unit-dynamic-button, #vmfive-ad-unit-dynamic-loading, #vmfive-ad-unit-dynamic-result {
       height: 100%;
     }
@@ -207,7 +207,7 @@
     }
 
     #vmfive-ad-unit-finish-image {
-      background-image: url('https://goo.gl/k2NPmr');
+      background-image: url('https://s3-ap-northeast-1.amazonaws.com/man-cdn-resources/manual_uploads/20180301/dynamic_resources/image/honda_endcard.jpg');
       background-size: contain;
       background-repeat: no-repeat;
       position: absolute;
@@ -418,6 +418,7 @@
 
         function initBanner() {
           const vmfiveAdUnitBannerEl = getElById("vmfive-ad-unit-banner");
+          vmfiveAdUnitBannerEl.style.display = 'block';
           var bannerInfo = '{"image": "https://s3-ap-northeast-1.amazonaws.com/man-cdn-resources/manual_uploads/20180301/dynamic_resources/image/honda2.png"}';
           try {
             bannerInfo = JSON.parse(bannerInfo);
