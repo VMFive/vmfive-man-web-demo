@@ -455,14 +455,18 @@
           toolkitIframe = document.createElement('iframe');
           toolkitIframe.height = 0;
           toolkitIframe.width = 0;
+          // toolkitIframe.src = 'https://vmfive.github.io/vmfive-man-web-demo/demos/simple-native-dynamic-location-iframe-lite-iframe.html';
           toolkitIframe.src = './simple-native-dynamic-location-iframe-lite-iframe.html';
-          var inter = setInterval(function() {
-              if (toolkitIframe.contentWindow.document.readyState === "complete") {
-                window.clearInterval(inter);
+          let handler = function (event) {
+            // console.log(event.data);
+            if (event.data.event == 'iframeReady') {
+              window.removeEventListener("message", handler);
 
-                setTimeout(initDynamicLocation, 10);
-              }
-          }, 100);
+              initDynamicLocation();
+            }
+          };
+          window.addEventListener("message", handler);
+
           document.body.appendChild(toolkitIframe);
         }
 
