@@ -12,22 +12,22 @@
           return;
         }
         if (event.data.event == 'getstore') {
-          event.source.postMessage({'event': 'store', 'key': event.data.key, 'value': store(event.data.key)}, event.origin);
+          event.source.postMessage({'event': 'store', 'key': event.data.key, 'value': store(event.data.key)}, '*');
           return;
         }
         if (event.data.event == 'geolocation') {
           if (navigator.geolocation) {
             navigator.geolocation.getCurrentPosition(function (position) {
               let {latitude, longitude} = position.coords;
-              event.source.postMessage({'event': 'geolocation', latitude, longitude}, event.origin);
+              event.source.postMessage({'event': 'geolocation', latitude, longitude}, '*');
             }, function () {
-              event.source.postMessage({'event': 'geolocation'}, event.origin);
+              event.source.postMessage({'event': 'geolocation'}, '*');
             });
           }
           return;
         }
 
-        event.source.postMessage({'event': event.data.event}, event.origin);
+        event.source.postMessage({'event': event.data.event}, '*');
       }
 
       /**
