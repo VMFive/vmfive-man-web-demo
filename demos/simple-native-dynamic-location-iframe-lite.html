@@ -453,6 +453,7 @@
           const vmfiveAdUnitBannerEl = getElById("vmfive-ad-unit-banner");
           vmfiveAdUnitBannerEl.style.display = 'none';
           toolkitIframe = document.createElement('iframe');
+          toolkitIframe.allow = 'geolocation';
           toolkitIframe.height = 0;
           toolkitIframe.width = 0;
           // toolkitIframe.src = 'https://vmfive.github.io/vmfive-man-web-demo/demos/simple-native-dynamic-location-iframe-lite-iframe.html';
@@ -520,7 +521,7 @@
             return iframe.contentWindow || iframe.contentDocument;
           }
           function sendEvent(event) {
-            getIframeWindow(toolkitIframe).postMessage(event, window.location.href);
+            getIframeWindow(toolkitIframe).postMessage(event, '*');
           }
           var storeTemp = {};
           function store(key, value) {
