@@ -6,28 +6,28 @@
     <script>
 
       window.addEventListener('message', receiver, false);
-      function receiver(e) {
-        if (e.data.event == 'store') {
-          store(e.data.key, e.data.value);
+      function receiver(event) {
+        if (event.data.event == 'store') {
+          store(event.data.key, event.data.value);
           return;
         }
-        if (e.data.event == 'getstore') {
-          e.source.postMessage({'event': 'store', 'key': e.data.key, 'value': store(e.data.key)}, window.location.href);
+        if (event.data.event == 'getstore') {
+          event.source.postMessage({'event': 'store', 'key': event.data.key, 'value': store(event.data.key)}, event.origin);
           return;
         }
-        if (e.data.event == 'geolocation') {
+        if (event.data.event == 'geolocation') {
           if (navigator.geolocation) {
             navigator.geolocation.getCurrentPosition(function (position) {
               let {latitude, longitude} = position.coords;
-              e.source.postMessage({'event': 'geolocation', latitude, longitude}, window.location.href);
+              event.source.postMessage({'event': 'geolocation', latitude, longitude}, event.origin);
             }, function () {
-              e.source.postMessage({'event': 'geolocation'}, window.location.href);
+              event.source.postMessage({'event': 'geolocation'}, event.origin);
             });
           }
           return;
         }
 
-        e.source.postMessage({'event': e.data.event}, window.location.href);
+        event.source.postMessage({'event': event.data.event}, event.origin);
       }
 
       /**
@@ -156,7 +156,7 @@
         }
       };
 
-      parent.postMessage({'event': 'iframeReady'}, window.location.href);
+      parent.postMessage({'event': 'iframeReady'}, parent.location.href);
 
     </script>
   </head>
