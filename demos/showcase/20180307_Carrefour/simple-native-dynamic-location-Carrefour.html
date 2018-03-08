@@ -15,7 +15,7 @@
 <body>
   <div class="page-container">
     <div class="loading-block">
-      <h2 class="loading-wording">載入中...</h2>
+      <h2 class="loading-wording">定位中...</h2>
       <img class="loading-icon"/>
     </div>
     <div id="vmfive-ad-unit-native"></div>
@@ -515,7 +515,9 @@
 
           if (isGeolocationGpsInvalidOrTimestampTooOld()) {
             showLoading();
-            getLocation();
+            setTimeout(function() {
+              getLocation();
+            }, 1000);
           }
           else {
             updateDistance();
