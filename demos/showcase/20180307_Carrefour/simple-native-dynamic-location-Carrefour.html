@@ -147,9 +147,64 @@
 
     sc.src = "https://d1v69ngg41pvl6.cloudfront.net/dist/MixPlayer.js";
     sc.onload = function() {
+      function getParameterByName(name, url) {
+        if (!url) url = window.location.href;
+        name = name.replace(/[\[\]]/g, "\\$&");
+        var regex = new RegExp("[?&]" + name + "(=([^&#]*)|&|#|$)"),
+            results = regex.exec(url);
+        if (!results) return null;
+        if (!results[2]) return '';
+        return decodeURIComponent(results[2].replace(/\+/g, " "));
+      }
+      var trackingList = [];
+      try {
+        var params = JSON.parse(getParameterByName('params'));
+        Object.keys(params).forEach(function (key) {
+          trackingList.push({
+            'event': key,
+            'url': params[key],
+          });
+        });
+      } catch (e) {
+        console.log(e);
+      }
+
       function getElById(elId) {
         return document.getElementById(elId);
       };
+
+      const VMFIVE_LOCATION_TYPE_BY_GPS = '1';
+      const VMFIVE_LOCATION_TYPE_BY_IP = '2';
+      function findObjectByItsKeyValueInArray(array, key, value) {var result={};array.forEach(function(item, i) {result = (item[key] == value ? item : result);});return result;}
+      function doTracking(url) {var req = new XMLHttpRequest();req.open('GET', url, true);req.send();}
+      function doLocationCustomTracking(lat, lon, type, user_coordinate) {
+        user_coordinate = user_coordinate ? user_coordinate : {};
+        doSimpleCustomTracking('geo', Object.assign({
+          'lat': lat,
+          'lon': lon,
+          'locationType': type,
+        }, user_coordinate));
+      }
+      function doSimpleCustomTracking(eventSubtype, moreParams) {
+        moreParams = moreParams ? moreParams : {};
+        var tracking = findObjectByItsKeyValueInArray(trackingList, 'event', 'custom');
+        if (tracking.event) {
+          var url = tracking.url;
+          url = url.split('[eventSubtype]').join(eventSubtype);
+          url = url + '&eventDetails=' + encodeURIComponent(JSON.stringify(moreParams));
+          doTracking(url);
+        }
+      }
+      function getClickTrackingWithParams(ctaName, ctaUrl) {
+        ctaUrl = ctaUrl ? ctaUrl : '';
+        var tracking = findObjectByItsKeyValueInArray(trackingList, 'event', 'click');
+        if (tracking.event) {
+          var url = tracking.url;
+          url = url + "&ctaName=" + ctaName;
+          url = url + "&url=" + ctaUrl;
+          return url;
+        }
+      }
 
       let currentPosition = {'latitude':25.0421407, 'longitude':121.5198716};
       var xhr = new XMLHttpRequest();
@@ -159,6 +214,10 @@
           let gps = JSON.parse(jsonObject.gps);
           currentPosition.latitude = gps.position.lat;
           currentPosition.longitude = gps.position.lng;
+
+          doLocationCustomTracking(currentPosition.latitude, currentPosition.longitude, VMFIVE_LOCATION_TYPE_BY_IP, {
+            "ip" : jsonObject.ip,
+          });
         } catch (e) {
           console.log(e);
         }
@@ -204,120 +263,122 @@
           const vmfiveAdUnitBannerEl = getElById("vmfive-ad-unit-banner");
           const vmfiveAdUnitDynamicEl = vmfiveAdUnitBannerEl;
           let gpsList = '['+
-          '{"name":"高雄市建工路497號", "latitude":22.6486709, "longitude":120.3225362},'+
-          '{"name":"桃園市中壢區中北路111號", "latitude":24.956965, "longitude":121.238325},'+
-          '{"name":"台北市中正區濟南路2段46號B1", "latitude":25.0403275, "longitude":121.5308538},'+
-          '{"name":"台北市大同區重慶北路二段171號", "latitude":25.0591761, "longitude":121.5138362},'+
-          '{"name":"台北市中山區樂群三路218號", "latitude":25.0823185, "longitude":121.5580697},'+
-          '{"name":"台北市松山區三民路160號", "latitude":25.0616405, "longitude":121.5633469},'+
-          '{"name":"台北市萬華區桂林路1號", "latitude":25.037703, "longitude":121.5061818},'+
-          '{"name":"台北市信義區東興路45號B1", "latitude":25.0477518, "longitude":121.5663743},'+
-          '{"name":"台北市士林區德行西路47號", "latitude":25.1052926, "longitude":121.5225091},'+
-          '{"name":"台北市士林區中山北路七段113號", "latitude":25.1223839, "longitude":121.5316631},'+
-          '{"name":"台北市士林區忠誠路二段188號", "latitude":25.1164015, "longitude":121.5336653},'+
-          '{"name":"台北市北投區中和街366號B1", "latitude":25.1417863, "longitude":121.4995017},'+
-          '{"name":"台北市內湖區民善街88號", "latitude":25.060429, "longitude":121.575231},'+
-          '{"name":"台北市內湖區東湖路69號B1", "latitude":25.068728, "longitude":121.6149259},'+
-          '{"name":"台北市內湖區內湖路一段155號", "latitude":25.0836184, "longitude":121.5633101},'+
-          '{"name":"台北市南港區南港路二段20巷5號B1-1", "latitude":25.0545969, "longitude":121.6038518},'+
-          '{"name":"新北市板橋區三民路二段31號B1", "latitude":25.0176233, "longitude":121.4794411},'+
-          '{"name":"新北市板橋區府中路126號1樓", "latitude":25.0095442, "longitude":121.4552289},'+
-          '{"name":"新北市板橋區中正路302號", "latitude":25.020717, "longitude":121.455222},'+
-          '{"name":"新北市板橋區文化路二段313號B1", "latitude":25.0297302, "longitude":121.4718792},'+
-          '{"name":"新北市汐止區新台五路一段99號B1", "latitude":25.0619968, "longitude":121.6484837},'+
-          '{"name":"新北市新店區中興路三段1號", "latitude":24.9761049, "longitude":121.5465953},'+
-          '{"name":"新北市永和區中和路499-1號", "latitude":25.0021775, "longitude":121.5105211},'+
-          '{"name":"新北市中和區中山路二段295號B1", "latitude":25.0019983, "longitude":121.4960234},'+
-          '{"name":"新北市中和區景平路353號B1", "latitude":24.9933104, "longitude":121.5047913},'+
-          '{"name":"新北市土城區青雲路152號B1", "latitude":24.9833595, "longitude":121.4589232},'+
-          '{"name":"新北市土城區明德路一段67號", "latitude":24.9839344, "longitude":121.465558},'+
-          '{"name":"新北市樹林區大安路118號", "latitude":24.9966801, "longitude":121.4210185},'+
-          '{"name":"新北市樹林區大雅路288號B1", "latitude":24.9473384, "longitude":121.3799118},'+
-          '{"name":"新北市三重區重新路五段654號", "latitude":25.0432925, "longitude":121.4675116},'+
-          '{"name":"新北市三重區五華街282號", "latitude":25.0880018, "longitude":121.4864733},'+
-          '{"name":"新北市新莊區中平路108號B1", "latitude":25.0459248, "longitude":121.4449276},'+
-          '{"name":"新北市新莊區雙鳳路59號", "latitude":25.0274078, "longitude":121.4151165},'+
-          '{"name":"新北市新莊區中港路336號", "latitude":25.045942, "longitude":121.4520314},'+
-          '{"name":"新北市林口區文化二路一段559號B1", "latitude":25.077742, "longitude":121.3746979},'+
-          '{"name":"新北市蘆洲區光華路200號", "latitude":25.082314, "longitude":121.463751},'+
-          '{"name":"新北市淡水區中山北路二段383號", "latitude":25.1881463, "longitude":121.4435792},'+
-          '{"name":"宜蘭縣宜蘭市民權路二段38巷2號B2", "latitude":24.7533654, "longitude":121.7510887},'+
-          '{"name":"新竹市東區南大路286號", "latitude":24.7992464, "longitude":120.9721128},'+
-          '{"name":"新竹縣竹北市光明六路89號1F", "latitude":24.8269551, "longitude":121.0095013},'+
-          '{"name":"桃園市中壢區中山東路二段510號", "latitude":24.946897, "longitude":121.2457928},'+
-          '{"name":"桃園市中壢區中華路一段450號", "latitude":24.9727564, "longitude":121.253448},'+
-          '{"name":"桃園市中壢區中華路二段501號", "latitude":24.9623587, "longitude":121.2320509},'+
-          '{"name":"桃園市平鎮區坤慶路1號", "latitude":24.9026362, "longitude":121.2124509},'+
-          '{"name":"桃園市桃園區春日路1593號", "latitude":25.0241601, "longitude":121.3063351},'+
-          '{"name":"桃園市桃園區經國路369號", "latitude":25.0158516, "longitude":121.3049144},'+
-          '{"name":"桃園區南平路168號", "latitude":25.0198753, "longitude":121.3022078},'+
-          '{"name":"桃園市桃園區龍安街137號", "latitude":24.9908079, "longitude":121.2796453},'+
-          '{"name":"桃園市桃園區大興路1號", "latitude":25.0153378, "longitude":121.309597},'+
-          '{"name":"桃園市八德區介壽路一段728號B2", "latitude":24.96491, "longitude":121.2992578},'+
-          '{"name":"桃園市蘆竹區桃園街118號B1-2", "latitude":25.0480532, "longitude":121.2907203},'+
-          '{"name":"苗栗縣竹南鎮民族街106號", "latitude":24.686408, "longitude":120.8785582},'+
-          '{"name":"苗栗縣苗栗市國華路599號", "latitude":24.5737588, "longitude":120.8176455},'+
-          '{"name":"台中市東區復興路4段186號B1", "latitude":24.1361846, "longitude":120.6873678},'+
-          '{"name":"台中市大里區中興路二段309巷2號", "latitude":24.0952411, "longitude":120.6878732},'+
-          '{"name":"台中市北區崇德路一段635號", "latitude":24.1677027, "longitude":120.6849032},'+
-          '{"name":"台中市北區漢口路四段295號", "latitude":24.1673343, "longitude":120.6803619},'+
-          '{"name":"台中市北區進化路379號", "latitude":24.1546651, "longitude":120.6942262},'+
-          '{"name":"台中市北屯區昌平路一段105-1號", "latitude":24.1733065, "longitude":120.6904427},'+
-          '{"name":"台中市北屯區興安路一段288號", "latitude":24.1731911, "longitude":120.6945286},'+
-          '{"name":"台中市西屯區中清路三段436號", "latitude":24.20641, "longitude":120.652542},'+
-          '{"name":"台中市西屯區青海路二段207-18號", "latitude":24.1704719, "longitude":120.6448736},'+
-          '{"name":"台中市南屯區大墩路533號B1", "latitude":24.1496326, "longitude":120.6496563},'+
-          '{"name":"台中市南屯區文心路一段521號", "latitude":24.1539166, "longitude":120.6464058},'+
-          '{"name":"台中市南屯路二段270之1號", "latitude":24.1373559, "longitude":120.648582},'+
-          '{"name":"台中市南屯區大墩十一街730號", "latitude":24.1486048, "longitude":120.6350443},'+
-          '{"name":"台中市太平區中平七街70號", "latitude":24.1250419, "longitude":120.7194335},'+
-          '{"name":"台中市太平區新城里環中東路三段567號", "latitude":24.1563909, "longitude":120.7173981},'+
-          '{"name":"台中市豐原區成功路500號", "latitude":24.2520284, "longitude":120.7061361},'+
-          '{"name":"台中市豐原區豐南街118號", "latitude":24.2392271, "longitude":120.7148475},'+
-          '{"name":"台中市沙鹿區光華路336號", "latitude":24.2424179, "longitude":120.5652036},'+
-          '{"name":"台中市大甲區蔣公路295號", "latitude":24.347774, "longitude":120.617616},'+
-          '{"name":"彰化縣彰化市金馬路二段321號", "latitude":24.0945056, "longitude":120.5424438},'+
-          '{"name":"彰化縣員林市大同路一段455號1樓之2", "latitude":23.9652998, "longitude":120.5792181},'+
-          '{"name":"南投縣南投市三和三路21號", "latitude":23.9056661, "longitude":120.6891209},'+
-          '{"name":"南投縣草屯鎮和平里4鄰中山街210號", "latitude":23.9784152, "longitude":120.6830527},'+
-          '{"name":"南投縣埔里鎮信義路1029號", "latitude":23.9708173, "longitude":120.9571231},'+
-          '{"name":"嘉義市西區博愛路二段461號", "latitude":23.4713112, "longitude":120.4311895},'+
-          '{"name":"嘉義市東區忠孝路346巷21號", "latitude":23.4897738, "longitude":120.4554494},'+
-          '{"name":"雲林縣虎尾鎮立新街96號", "latitude":23.7049897, "longitude":120.4266946},'+
-          '{"name":"雲林縣斗六市雲林路二段297號", "latitude":23.7017443, "longitude":120.5298657},'+
-          '{"name":"台南市中西區中華西路2段16號", "latitude":22.988433, "longitude":120.1871063},'+
-          '{"name":"台南市中西區西門路一段701號1樓", "latitude":22.9879621, "longitude":120.1973583},'+
-          '{"name":"台南市東區莊敬路118號1樓", "latitude":22.9956406, "longitude":120.23301},'+
-          '{"name":"台南市東區中華東路三段277號", "latitude":22.9746406, "longitude":120.2239749},'+
-          '{"name":"台南市東區裕農路766號", "latitude":22.9888341, "longitude":120.238633},'+
-          '{"name":"台南市北區開元路501號", "latitude":23.0102471, "longitude":120.2247606},'+
-          '{"name":"台南市北區北安路一段167號", "latitude":23.0174583, "longitude":120.2085152},'+
-          '{"name":"台南市永康區中正南路358號", "latitude":23.0327968, "longitude":120.2286119},'+
-          '{"name":"台南市永康區中華二路350號B1-1-8", "latitude":23.0084944, "longitude":120.2307992},'+
-          '{"name":"台南市永康區中山南路696號", "latitude":23.0200939, "longitude":120.244606},'+
-          '{"name":"台南市仁德區中山路711號", "latitude":22.9721967, "longitude":120.246959},'+
-          '{"name":"台南市麻豆區中山路82號", "latitude":23.1838536, "longitude":120.2461857},'+
-          '{"name":"台南市新營區健康路251號", "latitude":23.3193795, "longitude":120.3119754},'+
-          '{"name":"高雄市前鎮區中華五路1111號", "latitude":22.6049796, "longitude":120.3042279},'+
-          '{"name":"高雄市前鎮區光華二路157號", "latitude":22.6112296, "longitude":120.3173268},'+
-          '{"name":"高雄市三民區大順二路849號", "latitude":22.6532304, "longitude":120.3189752},'+
-          '{"name":"高雄市三民區河東路356號", "latitude":22.633664, "longitude":120.2860821},'+
-          '{"name":"高雄市三民區澄清路635號", "latitude":22.6440444, "longitude":120.3460332},'+
-          '{"name":"高雄市三民區鼎山街259號", "latitude":22.6591948, "longitude":120.3220063},'+
-          '{"name":"高雄市楠梓區藍田路288號", "latitude":22.7275609, "longitude":120.2909423},'+
-          '{"name":"高雄市楠梓區益群路50號", "latitude":22.7245683, "longitude":120.2974027},'+
-          '{"name":"高雄市小港區宏平路411號", "latitude":22.569622, "longitude":120.358005},'+
-          '{"name":"高雄市左營區自由三路250號", "latitude":22.672941, "longitude":120.311699},'+
-          '{"name":"高雄市自由二路150號", "latitude":22.6620051, "longitude":120.3088129},'+
-          '{"name":"高雄市左營區文川路323號", "latitude":22.6846832, "longitude":120.3123957},'+
-          '{"name":"高雄市左營區南屏路369號", "latitude":22.668164, "longitude":120.299729},'+
-          '{"name":"高雄市岡山區岡山路288號", "latitude":22.7932296, "longitude":120.296036},'+
-          '{"name":"高雄市鳳山區林森路291號", "latitude":22.5963886, "longitude":120.336807},'+
-          '{"name":"高雄市鳳山區中山西路236號", "latitude":22.6282579, "longitude":120.347818},'+
-          '{"name":"屏東縣屏東市仁愛路188號", "latitude":22.6828726, "longitude":120.4979963},'+
-          '{"name":"屏東縣屏東市自由路618號", "latitude":22.6833849, "longitude":120.4829698},'+
-          '{"name":"台東縣台東市正氣路300之1號", "latitude":22.7549978, "longitude":121.1488767},'+
-          '{"name":"花蓮縣新城鄉嘉里路15號B1", "latitude":24.0156042, "longitude":121.6103365},'+
+          '{"name": "家樂福 台北濟南", "address":"台北市中正區濟南路2段46號B1", "latitude":25.0403671, "longitude":121.530579},'+
+          '{"name": "家樂福 重慶店", "address":"台北市大同區重慶北路二段171號", "latitude":25.0595646, "longitude":121.513779},'+
+          '{"name": "家樂福 大直店", "address":"台北市中山區樂群三路218號", "latitude":25.0824471, "longitude":121.558037},'+
+          '{"name": "家樂福 三民店", "address":"台北市松山區三民路160號", "latitude":25.0615635, "longitude":121.563316},'+
+          '{"name": "家樂福 桂林店", "address":"台北市萬華區桂林路1號", "latitude":25.0378418, "longitude":121.506172},'+
+          '{"name": "家樂福 東興店", "address":"台北市信義區東興路45號B1", "latitude":25.0476589, "longitude":121.566368},'+
+          '{"name": "家樂福 天母店", "address":"台北市士林區德行西路47號", "latitude":25.1052933, "longitude":121.522507},'+
+          '{"name": "家樂福 天母中北店", "address":"台北市士林區中山北路七段113號", "latitude":25.1224, "longitude":121.531647},'+
+          '{"name": "家樂福 士林忠誠", "address":"台北市士林區忠誠路二段188號", "latitude":25.1164436, "longitude":121.533073},'+
+          '{"name": "家樂福 北投店", "address":"台北市北投區中和街366號B1", "latitude":25.1417618, "longitude":121.499245},'+
+          '{"name": "家樂福 內湖東湖店", "address":"台北市內湖區東湖路69號B1", "latitude":25.0686741, "longitude":121.614441},'+
+          '{"name": "家樂福 內湖店", "address":"台北市內湖區民善街88號(民權大橋旁)", "latitude":25.06111, "longitude":121.574883},'+
+          '{"name": "家樂福 台北內湖1", "address":"台北市內湖區內湖路一段155號", "latitude":25.0836239, "longitude":121.561119},'+
+          '{"name": "家樂福 南港店", "address":"台北市南港區南港路二段20巷5號B1-1", "latitude":25.0539341, "longitude":121.605537},'+
+          '{"name": "家樂福 板橋中正店", "address":"新北市板橋區中正路302號", "latitude":25.0207176, "longitude":121.455223},'+
+          '{"name": "家樂福 府中店", "address":"新北市板橋區府中路 126 號 1 樓", "latitude":25.0095444, "longitude":121.45488},'+
+          '{"name": "家樂福 板橋店", "address":"新北市板橋區三民路二段31號B1", "latitude":25.0179768, "longitude":121.4794},'+
+          '{"name": "家樂福 板橋文化", "address":"新北市板橋區文化路二段313號B1", "latitude":25.0297356, "longitude":121.469688},'+
+          '{"name": "家樂福 汐科店", "address":"新北市汐止區新台五路一段99號B1", "latitude":25.06097, "longitude":121.646652},'+
+          '{"name": "家樂福 新店店", "address":"新北市新店區中興路三段1號", "latitude":24.97608, "longitude":121.546661},'+
+          '{"name": "家樂福 永和永安店", "address":"新北市永和區中和路499-1號", "latitude":25.0022545, "longitude":121.51059},'+
+          '{"name": "家樂福 中和店", "address":"新北市中和區中山路二段295號B1", "latitude":25.0018749, "longitude":121.4958},'+
+          '{"name": "家樂福 景安店", "address":"新北市中和區景平路353號B1", "latitude":24.99338, "longitude":121.504791},'+
+          '{"name": "家樂福 土城福益店", "address":"新北市土城區明德路一段67號", "latitude":24.98404, "longitude":121.465523},'+
+          '{"name": "家樂福 土城店", "address":"新北市土城區青雲路152號B1", "latitude":24.9834576, "longitude":121.459213},'+
+          '{"name": "家樂福 北大店", "address":"新北市樹林區大雅路288號B1", "latitude":24.94774, "longitude":121.379967},'+
+          '{"name": "家樂福 樹林店", "address":"新北市樹林區大安路118號", "latitude":24.9971485, "longitude":121.421341},'+
+          '{"name": "家樂福 蘆洲店", "address":"新北市三重區五華街282號", "latitude":25.0878754, "longitude":121.486778},'+
+          '{"name": "家樂福 重新店", "address":"新北市三重區重新路五段654號", "latitude":25.04325, "longitude":121.467766},'+
+          '{"name": "家樂福 中平店", "address":"新北市新莊區中平路108號B1", "latitude":25.0459023, "longitude":121.444931},'+
+          '{"name": "家樂福 新莊丹鳳店", "address":"新北市新莊區雙鳳路59號", "latitude":25.02726, "longitude":121.415855},'+
+          '{"name": "家樂福 新莊中港", "address":"新北市新莊區中港路336號", "latitude":25.04601, "longitude":121.451492},'+
+          '{"name": "家樂福 林口店", "address":"新北市林口區文化二路一段 559 號 B1", "latitude":25.07716, "longitude":121.374725},'+
+          '{"name": "家樂福 蘆洲光華店", "address":"新北市蘆洲區光華路200號", "latitude":25.0819626, "longitude":121.46331},'+
+          '{"name": "家樂福 淡新店", "address":"新北市淡水區中山北路二段383號", "latitude":25.1853, "longitude":121.44442},'+
+          '{"name": "家樂福 宜蘭店", "address":"宜蘭縣宜蘭市民權路二段38巷2號B2", "latitude":24.7538967, "longitude":121.75029},'+
+          '{"name": "家樂福 新竹南大店", "address":"新竹市東區南大路286號", "latitude":24.7992153, "longitude":120.971542},'+
+          '{"name": "家樂福 竹北店", "address":"新竹縣竹北市光明六路89號1F", "latitude":24.8270473, "longitude":121.009727},'+
+          '{"name": "家樂福 中壢店", "address":"桃園市中壢區中山東路二段510號", "latitude":24.9465923, "longitude":121.24617},'+
+          '{"name": "家樂福 中原店", "address":"桃園市中壢區中華路二段501號", "latitude":24.9631062, "longitude":121.233864},'+
+          '{"name": "家樂福 內壢店", "address":"桃園市中壢區中華路一段450號", "latitude":24.97177, "longitude":121.2536},'+
+          '{"name": "家樂福 中壢中北店", "address":"桃園市中壢區中北路111號", "latitude":24.9569645, "longitude":121.236137},'+
+          '{"name": "家樂福 平鎮店", "address":"桃園市平鎮區坤慶路1號", "latitude":24.9025269, "longitude":121.2119},'+
+          '{"name": "家樂福 桃園店", "address":"桃園市桃園區春日路1593號", "latitude":25.024, "longitude":121.305931},'+
+          '{"name": "家樂福 桃園大興", "address":"桃園市桃園區大興路1號", "latitude":25.0152035, "longitude":121.308449},'+
+          '{"name": "家樂福 桃園龍安店", "address":"桃園市桃園區龍安街137號", "latitude":24.99078, "longitude":121.279526},'+
+          '{"name": "家樂福 經國店", "address":"桃園市桃園區經國路369號", "latitude":25.0162029, "longitude":121.305359},'+
+          '{"name": "家樂福 桃園中正店", "address":"桃園市桃園區中正路836號", "latitude":25.0099354, "longitude":121.301346},'+
+          '{"name": "家樂福 桃園南平店", "address":"桃園市桃園區南平路168號", "latitude":25.0198746, "longitude":121.302208},'+
+          '{"name": "家樂福 八德店", "address":"桃園市八德區介壽路一段728號B2", "latitude":24.9644718, "longitude":121.300255},'+
+          '{"name": "家樂福 南竹店", "address":"桃園市蘆竹區桃園街118號B1", "latitude":25.0481, "longitude":121.2907},'+
+          '{"name": "家樂福 民族店", "address":"苗栗縣竹南鎮民族街106號", "latitude":24.68641, "longitude":120.878563},'+
+          '{"name": "家樂福 苗栗店", "address":"苗栗縣苗栗市國華路599號", "latitude":24.5741386, "longitude":120.817406},'+
+          '{"name": "家樂福 德安店", "address":"台中市東區復興路4段186號B1", "latitude":24.1366119, "longitude":120.687584},'+
+          '{"name": "家樂福 台中中清2", "address":"台中市北區中清路一段595號", "latitude":24.1695843, "longitude":120.671379},'+
+          '{"name": "家樂福 崇德店", "address":"台中市北區崇德路一段635號", "latitude":24.1678352, "longitude":120.684914},'+
+          '{"name": "家樂福 台中漢口店", "address":"台中市北區漢口路四段295號", "latitude":24.1673126, "longitude":120.680244},'+
+          '{"name": "家樂福 台中進化", "address":"台中市北區進化路379號", "latitude":24.154665, "longitude":120.692039},'+
+          '{"name": "家樂福 昌平店", "address":"台中市北屯區昌平路一段105-1號", "latitude":24.17332, "longitude":120.690331},'+
+          '{"name": "家樂福 台中興安店", "address":"台中市北屯區平田里13鄰興安路一段288號", "latitude":24.1733265, "longitude":120.69136},'+
+          '{"name": "家樂福 青海店", "address":"台中市西屯區青海路二段207-18號", "latitude":24.16967, "longitude":120.645912},'+
+          '{"name": "家樂福 中清店", "address":"台中市西屯區中清路三段436號", "latitude":24.207058, "longitude":120.6524},'+
+          '{"name": "家樂福 台中南屯店", "address":"台中市南屯區南屯路二段270之1號", "latitude":24.13734, "longitude":120.646332},'+
+          '{"name": "家樂福 大墩店", "address":"台中市南屯區大墩路533號B1", "latitude":24.1490841, "longitude":120.649536},'+
+          '{"name": "家樂福 文心店", "address":"台中市南屯區文心路一段521號", "latitude":24.15412, "longitude":120.646721},'+
+          '{"name": "家樂福 台中大墩11", "address":"台中市南屯區大墩十一街730號", "latitude":24.14861, "longitude":120.632851},'+
+          '{"name": "家樂福 太平環中店", "address":"台中市太平區新城里環中東路三段567號", "latitude":20.04561, "longitude":127.056885},'+
+          '{"name": "家樂福 太平店", "address":"台中市太平區中平七街70號", "latitude":24.1253185, "longitude":120.719765},'+
+          '{"name": "家樂福 大里內新店", "address":"台中市大里區中興路二段309巷2號", "latitude":24.0952415, "longitude":120.687874},'+
+          '{"name": "家樂福 豐南店", "address":"台中市豐原區豐南街118號", "latitude":24.24056, "longitude":120.715279},'+
+          '{"name": "家樂福 豐原店", "address":"台中市豐原區成功路500號", "latitude":24.2521, "longitude":120.706},'+
+          '{"name": "家樂福 沙鹿店", "address":"台中市沙鹿區光華路336號", "latitude":24.24243, "longitude":120.565178},'+
+          '{"name": "家樂福 大甲蔣公店", "address":"台中市大甲區蔣公路295號", "latitude":24.34784, "longitude":120.617447},'+
+          '{"name": "家樂福 彰化店", "address":"彰化縣彰化市金馬路二段321號", "latitude":24.09452, "longitude":120.542412},'+
+          '{"name": "家樂福 員林大同店", "address":"彰化縣員林市大同路一段455號1樓之2", "latitude":23.9653, "longitude":120.577026},'+
+          '{"name": "家樂福 南投店", "address":"南投縣南投市三和三路21號", "latitude":23.9059715, "longitude":120.6892},'+
+          '{"name": "家樂福 草屯店", "address":"南投縣草屯鎮和平里4鄰中山街210號", "latitude":23.97812, "longitude":120.682892},'+
+          '{"name": "家樂福 埔里店", "address":"南投縣埔里鎮信義路1029號", "latitude":23.97096, "longitude":120.956421},'+
+          '{"name": "家樂福 北門店", "address":"嘉義市東區忠忠孝路346巷21號", "latitude":23.4896755, "longitude":120.45536},'+
+          '{"name": "家樂福 嘉義店", "address":"嘉義市西區博博愛路二段461號", "latitude":23.4714279, "longitude":120.431038},'+
+          '{"name": "家樂福 虎尾店", "address":"雲林縣虎尾鎮立新街96號", "latitude":23.7051125, "longitude":120.426918},'+
+          '{"name": "家樂福 斗六店", "address":"雲林縣斗六市雲林路二段297號", "latitude":23.7019119, "longitude":120.529877},'+
+          '{"name": "家樂福 台南西門店", "address":"台南市中西區西門路一段701號1樓", "latitude":22.9879017, "longitude":120.1973},'+
+          '{"name": "家樂福 安平店", "address":"台南市中西區中華西路2段16號", "latitude":22.9882584, "longitude":120.1871},'+
+          '{"name": "家樂福 台南中華東店", "address":"台南市東區中華東路三段277號", "latitude":22.97456, "longitude":120.222595},'+
+          '{"name": "家樂福 台南裕農店", "address":"台南是東區裕農路766號", "latitude":22.9890327, "longitude":120.238136},'+
+          '{"name": "家樂福 莊敬店", "address":"台南市東區莊敬路118號1樓", "latitude":0, "longitude":0},'+
+          '{"name": "家樂福 台南開元店", "address":"台南市北區開元路501號", "latitude":23.00767, "longitude":120.220833},'+
+          '{"name": "家樂福 便利購北安店", "address":"台南市北區北安路一段167號", "latitude":23.0176144, "longitude":120.208595},'+
+          '{"name": "家樂福 永康二王店", "address":"台南市永康區中山南路696號", "latitude":23.0202084, "longitude":120.244316},'+
+          '{"name": "家樂福 中華店", "address":"台南市永康區中華二路350號B1-1-8", "latitude":23.008707, "longitude":120.231285},'+
+          '{"name": "家樂福 中正店", "address":"台南市永康區中正南路358號", "latitude":23.0328, "longitude":120.228477},'+
+          '{"name": "家樂福 仁德店", "address":"台南市仁德區中山路711號", "latitude":22.9726028, "longitude":120.247131},'+
+          '{"name": "家樂福 麻豆中山店", "address":"台南市麻豆區中山路82號", "latitude":23.1838531, "longitude":120.246185},'+
+          '{"name": "家樂福 新營店", "address":"台南市新營區健康路251號", "latitude":23.3191147, "longitude":120.311958},'+
+          '{"name": "家樂福 成功店", "address":"高雄市前鎮區中華五路1111號", "latitude":22.6059341, "longitude":120.304504},'+
+          '{"name": "家樂福 光華店", "address":"高雄市前鎮區光華二路157號", "latitude":22.611021, "longitude":120.317184},'+
+          '{"name": "家樂福 愛河店", "address":"高雄市三民區河東路356號", "latitude":22.63365, "longitude":120.286064},'+
+          '{"name": "家樂福 鼎山店", "address":"高雄市三民區大順二路849號", "latitude":22.6531773, "longitude":120.318985},'+
+          '{"name": "家樂福 三民建工店", "address":"高雄市三民區建工路497號", "latitude":22.650034, "longitude":120.3247},'+
+          '{"name": "家樂福 鼎金店", "address":"高雄市三民區鼎山街259號", "latitude":22.6593189, "longitude":120.319824},'+
+          '{"name": "家樂福 澄清店", "address":"高雄市三民區澄清路635號", "latitude":22.6438084, "longitude":120.346024},'+
+          '{"name": "家樂福 楠梓店", "address":"高雄市楠梓區藍田路288號", "latitude":22.72773, "longitude":120.290787},'+
+          '{"name": "家樂福 楠梓益群店", "address":"高雄市楠梓區益群路50號", "latitude":22.7249565, "longitude":120.296913},'+
+          '{"name": "家樂福 高雄小港店", "address":"高雄市小港區宏平路411號", "latitude":22.5697117, "longitude":120.358109},'+
+          '{"name": "家樂福 重和店", "address":"高雄市左營區文川路323號", "latitude":22.6845856, "longitude":120.3124},'+
+          '{"name": "家樂福 左營自由店", "address":"高雄市左營區自由三路250號", "latitude":22.6717968, "longitude":120.313919},'+
+          '{"name": "家樂福 左營自由二店", "address":"高雄市左營區自由二路150號", "latitude":22.66209, "longitude":120.3088},'+
+          '{"name": "家樂福 左營南屏店", "address":"高雄市左營區南屏路369號", "latitude":22.668169, "longitude":120.297539},'+
+          '{"name": "家樂福 高雄岡山店", "address":"高雄市岡山區岡山路288號", "latitude":22.79323, "longitude":120.296036},'+
+          '{"name": "家樂福 鳳山店", "address":"高雄市鳳山區中山西路236號", "latitude":22.6280975, "longitude":120.347885},'+
+          '{"name": "家樂福 五甲店", "address":"高雄市鳳山區林森路291號", "latitude":22.5963326, "longitude":120.3371},'+
+          '{"name": "家樂福 屏東店", "address":"屏東縣屏東市仁愛路188號", "latitude":22.68272, "longitude":120.497963},'+
+          '{"name": "家樂福 屏東自由店", "address":"屏東縣屏東市自由路618號", "latitude":22.68336, "longitude":120.482346},'+
+          '{"name": "家樂福 台東店", "address":"台東縣台東市正氣路300之1號", "latitude":22.7548656, "longitude":121.148888},'+
+          '{"name": "家樂福 花蓮店", "address":"花蓮縣新城鄉嘉里路15號B1", "latitude":24.0154743, "longitude":121.610611},'+
           'null'+
           ']';
           try {
@@ -368,6 +429,7 @@
               showButton();
               if (store('geolocation_gps')) {
                 currentPosition = store('geolocation_gps');
+                doLocationCustomTracking(currentPosition.latitude, currentPosition.longitude, VMFIVE_LOCATION_TYPE_BY_GPS);
               }
             }
           }
@@ -378,6 +440,8 @@
           updateDistance();
 
           addElClickEvent(vmfiveAdUnitDynamicButtonEl, function() {
+            doSimpleCustomTracking('DynamicButton');
+
             if (isGeolocationGpsInvalidOrTimestampTooOld()) {
               showLoading();
               getLocation();
@@ -399,19 +463,30 @@
                   navigator.geolocation.getCurrentPosition(function(position) {
                     clearInterval(slotNumberInterval);
 
-                    let {latitude, longitude} = position.coords;
+                    let {latitude, longitude, altitude, accuracy, altitudeAccuracy, heading, speed} = position.coords;
+                    let gpsData = {latitude, longitude, altitude, accuracy, altitudeAccuracy, heading, speed};
+
                     store('geolocation_ok', true);
-                    store('geolocation_gps', {latitude, longitude});
+                    store('geolocation_gps', gpsData);
                     store('geolocation_gps_timestamp', Date.now());
+
+                    doSimpleCustomTracking('getCurrentPositionSuccess');
+                    doLocationCustomTracking(latitude, longitude, VMFIVE_LOCATION_TYPE_BY_GPS, gpsData);
 
                     currentPosition = position.coords;
                     updateDistance();
                     if (success) {
                       success();
                     }
-                  }, function() {
+                  }, function(error) {
                     clearInterval(slotNumberInterval);
                     store('geolocation_ok', null);
+
+                    error = error ? error : {};
+                    doSimpleCustomTracking('getCurrentPositionError', {
+                      'code': error.code,
+                      'message': error.message,
+                    });
 
                     updateDistance();
                     if (failure) {
@@ -496,14 +571,15 @@
 
             let address = vmfiveAdUnitDynamicResultEl.querySelector("#address");
             let link_gotomap = vmfiveAdUnitDynamicResultEl.querySelector("#link_gotomap");
-            link_gotomap.href = 'https://www.google.com/maps/search/' + encodeURIComponent('家樂福') + '/17z';
+            let link_gotomap_cta = 'https://www.google.com/maps/search/' + encodeURIComponent('家樂福') + '/17z';
             if (isSuccessful && nearest.item !== undefined) {
               // link_gotomap.href = 'https://www.google.com/maps/search/?api=1&query=' + nearest.item.latitude + ',' + nearest.item.longitude;
-              link_gotomap.href = 'https://www.google.com/maps/search/?api=1&query=' + encodeURIComponent(nearest.item.name);
-              address.innerHTML = nearest.item.name;
+              link_gotomap_cta = 'https://www.google.com/maps/search/?api=1&query=' + encodeURIComponent(nearest.item.name + ' ' + nearest.item.address);
+              address.innerHTML = nearest.item.name + ' ' + nearest.item.address;
             }
 
             // console.log(isSuccessful);
+            link_gotomap.href = getClickTrackingWithParams('LinkToMap', encodeURIComponent(link_gotomap_cta));
             window.top.location.href = link_gotomap.href;
           }
 
