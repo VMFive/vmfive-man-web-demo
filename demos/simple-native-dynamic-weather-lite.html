@@ -36,6 +36,7 @@
         <div id="vmfive-finished-fb-btn" class="vmfive-finished-btn">Facebook</div>
       </div>
       <div id="vmfive-ad-title" class="vm5-ad-title" style="display:none;">Title</div>
+      <img src="https://vaser-track.vm5apis.com/v2/track?requestId=&event=downloaded&placementId=&campaignId=&audienceGroupId=&creativeId=&timezone=8&creativeFormat=richmedia&pixel=1&x=0">
     </div>
     <div id="vmfive-ad-unit-banner" data-set-parent-Width="false">
       <div id="vmfive-ad-unit-dynamic-area">
@@ -60,7 +61,12 @@
   <style>
     #vmfive-ad-unit-native {
       position: relative;
-      display: block;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      /* NOTE For flexbox outer parent of this element */
+      align-self: center;
     }
     #vmfive-ad-unit-banner {width: 100%;position: relative;display: none;margin-top: -.2px;}
     #vmfive-ad-unit-dynamic-button, #vmfive-ad-unit-dynamic-loading, #vmfive-ad-unit-dynamic-result {
@@ -195,6 +201,11 @@
       line-height: normal;
       width: auto;
       height: auto;
+
+      bottom: 6px;
+
+      left: 50%;
+      transform: translate(-50%, 0);
     }
 
     #vmfive-ad-unit-finish-image {
@@ -395,7 +406,15 @@
         const fullCtaURL = ctaPrefix + ctaURL;
         const fullFbURL = ctaPrefix + fbURL;
 
-        var trackings = '[track_url]';
+        var trackings = '[{"event":"view","url":"https://www.google.com?event=view"},\
+                          {"event":"impression","url":"https://www.google.com?event=impression"},\
+                          {"event":"video_percentage:0","url":"https://www.google.com?event=video_percentage:0"},\
+                          {"event":"video_percentage:25","url":"https://www.google.com?event=video_percentage:25"},\
+                          {"event":"video_percentage:50","url":"https://www.google.com?event=video_percentage:50"},\
+                          {"event":"video_percentage:75","url":"https://www.google.com?event=video_percentage:75"},\
+                          {"event":"video_percentage:100","url":"https://www.google.com?event=video_percentage:100"},\
+                          {"event":"click","url":"https://www.google.com?event=click"},\
+                          {"event":"replay","url":"https://www.google.com?event=replay"}]';
         var width = 0;
         var height = 0;
         var mix = new MixPlayer(vmfiveAdUnitEl, source, trackings, width, height);
@@ -411,23 +430,13 @@
 
           const vm5AdVideoTag = vmfiveAdUnitEl.querySelector('video') || vmfiveAdUnitEl.querySelector('canvas');
           width = videoFrameSize.width * rate;
-          vm5AdVideoTag.style.width = width + 'px';
-
-          if (isInlineVideo(vm5AdVideoTag)) {
-            vmfiveAdUnitEl.querySelector('video').height = currentVideoHeight;
-            height = vmfiveAdUnitEl.querySelector('video').videoHeight;
-
-          } else {
-            height = vmfiveAdUnitEl.querySelector('canvas').height = videoFrameSize.height * rate;
-            vm5AdVideoTag.style.height = height + 'px';
-
-            vm5AdVideoTag.style.position = 'absolute';
-            vm5AdVideoTag.style.top = 'calc(50% - ' + (videoFrameSize.height * rate / 2) + 'px)';
-          }
+          vm5AdVideoTag.style.flex = 1;
+          vm5AdVideoTag.style.minWidth = "100%";
+          vm5AdVideoTag.style.maxWidth = "100%";
+          vm5AdVideoTag.setAttribute('height', '');
+          vm5AdVideoTag.setAttribute('width', '');
 
           vmfiveAdUnitEl.style.top = VMFIVE_TOP_MARGIN + 'px';
-
-          setOuterWapperHeight(currentVideoHeight);
 
           addElClickEvent(getElById('vmfive-replay'), function(isInlineVideo) {
             this.player.play();
@@ -477,11 +486,6 @@
           hideElements(playElements);
           showElements(endElements);
           checkCtaUrlExists();
-
-          const finishedButtonEl = getElById('vmfive-finished-cta-btns');
-          const finishedImage = getElById('vmfive-ad-unit-finish-image');
-          finishedButtonEl.style['bottom'] = 6 + 'px';
-          finishedButtonEl.style['left'] = (getElById('vmfive-ad-unit-native').clientWidth - getElById('vmfive-finished-cta-btns').clientWidth) * 0.5 + 'px';
         };
 
         function initBanner() {
@@ -577,10 +581,6 @@
             getElById(elementId).style.display = 'none';
           });
         }
-
-        function setOuterWapperHeight(specificHeight) {
-          getElById('vmfive-ad-unit-native').style.height = specificHeight + 'px';
-        };
 
         function checkCtaUrlExists() {
           if (ctaURL === '' || ctaURL === undefined || ctaURL === null) {

@@ -38,13 +38,10 @@
         <div id="vmfive-ad-unit">
           <div id="vmfive-volume-btn" class="vmfive-info-image mute"></div>
         </div>
-        <div id="vmfive-ad-unit-dynamic-area">
-          <div id="vmfive-ad-unit-dynamic-button"><span id="day"></span><p>天</p></div>
-        </div>
         <div id="vmfive-logo" class="vmfive-info-image" onclick="window.open('https://vmfive.com/?utm_source=vmfive_ad_logo', '_blank')"></div>
       </div>
-      <img src="https://vaser-track.vm5apis.com/v2/track?requestId=&event=downloaded&placementId=&campaignId=&audienceGroupId=&creativeId=&timezone=8&creativeFormat=richmedia&pixel=1&x=0">
     </div>
+    <img src="https://vaser-track.vm5apis.com/v2/track?requestId=&event=downloaded&placementId=&campaignId=&audienceGroupId=&creativeId=&timezone=8&creativeFormat=richmedia&pixel=1&x=0">
     <style>
       #vmfive-overlay {
         position:fixed;top:0;left:0;bottom:0;right:0;
@@ -63,43 +60,12 @@
 
         justify-content: center;
       }
-
-      #vmfive-ad-unit-dynamic-area {
-        position: absolute;top: 50%;left: 50%;transform: translate(-50%,-50%);
-        display: flex;align-items: center;justify-content: center;vertical-align: middle;
-
-        padding: 5px 0 5px 0;height: auto;
-        min-width: 18%;
-      }
-      #vmfive-ad-unit-dynamic-button, #vmfive-ad-unit-dynamic-loading, #vmfive-ad-unit-dynamic-result {
-        border-radius: 5px;
-        padding: 5px 0 5px 0;
-        background-color: #0000;color: #fff;border-width: 1px;border-color: #fff;
-      }
-      #vmfive-ad-unit-dynamic-area #day {
-        float: left;
-      }
-      @media screen and (max-width: 375px) {
-        #vmfive-ad-unit-dynamic-area #day {
-          font-size: 40px;
-        }
-      }
-      @media screen and (min-width: 375px) {
-        #vmfive-ad-unit-dynamic-area #day {
-          font-size: 43px;
-        }
-      }
-      @media screen and (min-width: 400px) {
-        #vmfive-ad-unit-dynamic-area #day {
-          font-size: 44px;
-        }
-      }
-
       #vmfive-ad-unit {
         position: absolute;
         width: 100%;
         left: 0;
-        align-self: flex-start;
+        top: 50%;
+        transform: translate(0, -50%);
 
         display:flex;
         align-items: center;
@@ -113,7 +79,7 @@
         cursor:pointer;
       }
       #vmfive-background-image {
-        background-image:url('https://s3-ap-northeast-1.amazonaws.com/man-cdn-resources/manual_uploads/20180313/mi_res/mi_bg.png');border-radius:5px;
+        background-image:url('https://goo.gl/1hdRVL');border-radius:5px;
         background-repeat:no-repeat;background-position:center center;background-size:cover;
 
         flex: 1;
@@ -142,12 +108,6 @@
         filter:none;
       }
     </style>
-
-    <link rel="stylesheet" href="https://d1v69ngg41pvl6.cloudfront.net/dist/odometer.js/0.4.8/themes/odometer-theme-minimal.min.css" integrity="sha256-TzVR91NM2rW+l6d+XuTFNm7Q2my50dH9yJJTPYfR3bI=" crossorigin="anonymous" />
-    <link rel="stylesheet" href="https://d1v69ngg41pvl6.cloudfront.net/dist/odometer.js/0.4.8/themes/odometer-theme-default.min.css" integrity="sha256-K2yDiYk0B1WE0j4NbUVdkEYt5GYBvLwptIlUkg3RLhk=" crossorigin="anonymous" />
-    <!-- <link rel="stylesheet" href="https://d1v69ngg41pvl6.cloudfront.net/dist/odometer.js/0.4.8/themes/odometer-theme-digital.min.css" integrity="sha256-r6InZEKqM0NFLw94Nj6FFExeWrLn6biHRT0VHUpRtvM=" crossorigin="anonymous" /> -->
-    <script src="https://d1v69ngg41pvl6.cloudfront.net/dist/odometer.js/0.4.8/odometer.min.js"></script>
-
     <script>
       let sc = document.createElement("script");
       let videoFrameSize = {width: 639, height: 360};
@@ -171,20 +131,21 @@
             }
           };
 
-          const source = '{"mp4": "https://s3-ap-northeast-1.amazonaws.com/man-cdn-resources/manual_uploads/20180313/mi_res/mi_video.mp4", "m3u8": "https://s3-ap-northeast-1.amazonaws.com/man-cdn-resources/manual_uploads/20180313/mi_res/mi_video.m3u8"}';
+          const source = '{"mp4": "https://d2v4tz4zvhrua.cloudfront.net/production/video_1497513715288/360/mp4/video_1497513715288.mp4", "m3u8": "https://d2v4tz4zvhrua.cloudfront.net/production/video_1497513715288/360/m3u8/video_1497513715288.m3u8"}';
 
           const ctaInNewWindow = true;
 
           const fullCtaURL = 'https://vmfive.com/?utm_source=vmfive_ad_cta';
-          var countdownTargetDateStr = '2018/07/27'.split('/');
-          var countdownTargetDate = new Date(
-            (+countdownTargetDateStr[0]),
-            (+countdownTargetDateStr[1]) - 1,
-            (+countdownTargetDateStr[2])
-          );
 
-
-          let trackings = '[track_url]';
+          let trackings = '[{"event":"view","url":"https://www.google.com?event=view"},\
+                            {"event":"impression","url":"https://www.google.com?event=impression"},\
+                            {"event":"video_percentage:0","url":"https://www.google.com?event=video_percentage:0"},\
+                            {"event":"video_percentage:25","url":"https://www.google.com?event=video_percentage:25"},\
+                            {"event":"video_percentage:50","url":"https://www.google.com?event=video_percentage:50"},\
+                            {"event":"video_percentage:75","url":"https://www.google.com?event=video_percentage:75"},\
+                            {"event":"video_percentage:100","url":"https://www.google.com?event=video_percentage:100"},\
+                            {"event":"click","url":"https://www.google.com?event=click"},\
+                            {"event":"replay","url":"https://www.google.com?event=replay"}]';
           let width = 0;
           let height = 0;
           const marginLeftRight = 20;
@@ -208,7 +169,6 @@
               const containerHeight = "("+containerWidth+")*"+containerVHRate;
 
               width = (videoFrameSize.width * rate - marginLeftRight) * VMFIVE_SCALE;
-
               vm5AdVideoTag.style.flex = '1';
               vm5AdVideoTag.style.width = '100%';
               vm5AdVideoTag.setAttribute('height', 'none');
@@ -236,76 +196,7 @@
               vmfiveCloseEl.addEventListener('click',function(){
                   getElById('vmfive-overlay').parentElement.removeChild(getElById('vmfive-overlay'));
               });
-
-              function initDynamicInfo() {
-                const vmfiveAdUnitDynamicEl = vmfiveAdContainerEl;
-
-                const VMFIVE_DYNAMIC_INFO_TOP_STR = '';
-                const VMFIVE_DYNAMIC_INFO_TOP = isNaN(VMFIVE_DYNAMIC_INFO_TOP_STR) || VMFIVE_DYNAMIC_INFO_TOP_STR === '' ? 'unset' : ((+VMFIVE_DYNAMIC_INFO_TOP_STR) + '%');
-                const VMFIVE_DYNAMIC_INFO_BOTTOM_STR = '2';
-                const VMFIVE_DYNAMIC_INFO_BOTTOM = isNaN(VMFIVE_DYNAMIC_INFO_BOTTOM_STR) || VMFIVE_DYNAMIC_INFO_BOTTOM_STR === '' ? 'unset' : ((+VMFIVE_DYNAMIC_INFO_BOTTOM_STR) + '%');
-                const VMFIVE_DYNAMIC_INFO_LEFT_STR = '';
-                const VMFIVE_DYNAMIC_INFO_LEFT = isNaN(VMFIVE_DYNAMIC_INFO_LEFT_STR) || VMFIVE_DYNAMIC_INFO_LEFT_STR === '' ? 'unset' : ((+VMFIVE_DYNAMIC_INFO_LEFT_STR) + '%');
-                const VMFIVE_DYNAMIC_INFO_RIGHT_STR = '';
-                const VMFIVE_DYNAMIC_INFO_RIGHT = isNaN(VMFIVE_DYNAMIC_INFO_RIGHT_STR) || VMFIVE_DYNAMIC_INFO_RIGHT_STR === '' ? 'unset' : ((+VMFIVE_DYNAMIC_INFO_RIGHT_STR) + '%');
-                const VMFIVE_DYNAMIC_INFO_ANY_ABOUT_X = VMFIVE_DYNAMIC_INFO_LEFT !== 'unset' || VMFIVE_DYNAMIC_INFO_RIGHT !== 'unset';
-                const VMFIVE_DYNAMIC_INFO_ANY_ABOUT_Y = VMFIVE_DYNAMIC_INFO_TOP !== 'unset' || VMFIVE_DYNAMIC_INFO_BOTTOM !== 'unset';
-                const vmfiveAdUnitDynamicAreaEl = vmfiveAdUnitDynamicEl.querySelector('#vmfive-ad-unit-dynamic-area');
-                if (VMFIVE_DYNAMIC_INFO_ANY_ABOUT_X) {
-                  vmfiveAdUnitDynamicAreaEl.style.left = 'unset';
-                  vmfiveAdUnitDynamicAreaEl.style.transform = 'translate(0,-50%)';
-
-                  vmfiveAdUnitDynamicAreaEl.style.left = VMFIVE_DYNAMIC_INFO_LEFT;
-                  vmfiveAdUnitDynamicAreaEl.style.right = VMFIVE_DYNAMIC_INFO_RIGHT;
-                }
-                if (VMFIVE_DYNAMIC_INFO_ANY_ABOUT_Y) {
-                  vmfiveAdUnitDynamicAreaEl.style.top = 'unset';
-                  vmfiveAdUnitDynamicAreaEl.style.transform = 'translate(-50%,0)';
-
-                  vmfiveAdUnitDynamicAreaEl.style.top = VMFIVE_DYNAMIC_INFO_TOP;
-                  vmfiveAdUnitDynamicAreaEl.style.bottom = VMFIVE_DYNAMIC_INFO_BOTTOM;
-                }
-                if (VMFIVE_DYNAMIC_INFO_ANY_ABOUT_X && VMFIVE_DYNAMIC_INFO_ANY_ABOUT_Y) {
-                  vmfiveAdUnitDynamicAreaEl.style.transform = 'none';
-                }
-
-                const vmfiveAdUnitDynamicButtonEl = vmfiveAdUnitDynamicEl.querySelector('#vmfive-ad-unit-dynamic-button');
-                const dayElList = [];
-                [].forEach.call(vmfiveAdUnitDynamicEl.querySelectorAll('#day'), function (item) {
-                  dayElList.push(item);
-
-                  item.classList.add('odometer');
-                  let od = new Odometer({
-                    el: item,
-                    value: 1.25,
-
-                    // Any option (other than auto and selector) can be passed in here
-                    // format: '(d).dd',
-                    format: '(ddd)',
-                    theme: 'default'
-                  });
-                });
-
-                showButton();
-                updateInfo();
-
-                addElClickEvent(vmfiveAdUnitDynamicButtonEl, function() {
-                  // NOTE TODO CTA
-                });
-                function updateInfo() {
-                  dayElList.forEach(function (item) {
-                    const vmfiveAdUnitDyanmicInfo = item;
-                    console.log(countdownTargetDate);
-                    var interval = countdownTargetDate.getTime() - Date.now();
-                    vmfiveAdUnitDyanmicInfo.innerHTML = Math.round(interval/1000/60/60/24);
-                  });
-                }
-                function showButton() {
-                  vmfiveAdUnitDynamicButtonEl.style.display = 'flex';
-                }
-              }
-              initDynamicInfo();
-          }
+          };
 
           function addElClickEvent(el, fn) {el.addEventListener('click', fn);};
           function setClickEventToEl(vm5AdVideoTag) {
@@ -313,13 +204,7 @@
 
               ctaElIdList.forEach(function(elId){addElClickEvent(getElById(elId), onCtaClicked);});
               addElClickEvent(vm5AdVideoTag, onCtaClicked);
-          }
-          function getMarginHeightBetweenBgAndScreen() {
-            const rate = vmfiveAdUnitEl.offsetWidth / videoFrameSize.width;
-            const realVideoWidth = videoFrameSize.width * rate;
-
-            return (vmfiveAdUnitEl.parentElement.offsetHeight - realVideoWidth * 3 / 2) / 2;
-          }
+          };
       };
       document.body.appendChild(sc);
     </script>

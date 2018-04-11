@@ -29,15 +29,14 @@
       <div id="vmfive-replay" class="vmfive-info-image"></div>
       <div id="vmfive-logo" class="vmfive-info-image"></div>
       <div id="vmfive-volume-btn" class="vmfive-info-image mute"></div>
-      <div id="vmfive-cta-btn" style="display:none;">More</div>
-      <div id="vmfive-dynamic-info-cta-btn">尋找家樂福</div>
+      <div id="vmfive-cta-btn">More</div>
       <div id="vmfive-ad-unit-finish-image"></div>
       <div id="vmfive-finished-cta-btns">
-        <div id="vmfive-finished-cta-btn" class="vmfive-finished-btn" style="display:none;">More</div>
-        <div id="vmfive-finished-fb-btn" class="vmfive-finished-btn" style="display:none;">Facebook</div>
-        <div id="vmfive-finished-dynamic-info-cta-btn" class="vmfive-finished-btn">尋找家樂福</div>
+        <div id="vmfive-finished-cta-btn" class="vmfive-finished-btn">More</div>
+        <div id="vmfive-finished-fb-btn" class="vmfive-finished-btn">Facebook</div>
       </div>
       <div id="vmfive-ad-title" class="vm5-ad-title" style="display:none;">Title</div>
+      <img src="https://vaser-track.vm5apis.com/v2/track?requestId=&event=downloaded&placementId=&campaignId=&audienceGroupId=&creativeId=&timezone=8&creativeFormat=richmedia&pixel=1&x=0">
     </div>
     <div id="vmfive-ad-unit-native-banner" data-set-parent-Width="false">
     </div>
@@ -55,7 +54,12 @@
   <style>
     #vmfive-ad-unit-native {
       position: relative;
-      display: block;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      /* NOTE For flexbox outer parent of this element */
+      align-self: center;
     }
     #vmfive-ad-unit-native-banner {
       width: 100%;
@@ -108,26 +112,6 @@
       height: auto;
     }
 
-    #vmfive-dynamic-info-cta-btn {
-      display: none;
-      position: absolute;
-      bottom: 6px;
-      right: 8px;
-      z-index: 1;
-      padding: 6.5px 13px 5px;
-      border: 1px solid rgba(255, 255, 255, 0.5);
-      box-sizing: border-box;
-      border-radius: 3px;
-      background-color: rgba(0, 0, 0, 0.5);
-      color: #fff;
-      font-size: 12px;
-      font-family: 'Helvetica Neue', sans-serif;
-      cursor: pointer;
-      line-height: normal;
-      width: auto;
-      height: auto;
-    }
-
     #vmfive-finished-cta-btns {
       font-size: 12px;
       font-family: 'Helvetica Neue', sans-serif;
@@ -138,10 +122,15 @@
       line-height: normal;
       width: auto;
       height: auto;
+
+      bottom: 6px;
+
+      left: 50%;
+      transform: translate(-50%, 0);
     }
 
     #vmfive-ad-unit-finish-image {
-      /* background-image: url('https://goo.gl/k2NPmr'); */
+      background-image: url('https://goo.gl/k2NPmr');
       background-size: contain;
       background-repeat: no-repeat;
       position: absolute;
@@ -189,59 +178,9 @@
 
     sc.src = "https://d1v69ngg41pvl6.cloudfront.net/dist/MixPlayer.js";
     sc.onload = function() {
-      var trackings = '[{"event":"view","url":"https://www.google.com?event=view"},\
-                        {"event":"impression","url":"https://www.google.com?event=impression"},\
-                        {"event":"video_percentage:0","url":"https://www.google.com?event=video_percentage:0"},\
-                        {"event":"video_percentage:25","url":"https://www.google.com?event=video_percentage:25"},\
-                        {"event":"video_percentage:50","url":"https://www.google.com?event=video_percentage:50"},\
-                        {"event":"video_percentage:75","url":"https://www.google.com?event=video_percentage:75"},\
-                        {"event":"video_percentage:100","url":"https://www.google.com?event=video_percentage:100"},\
-                        {"event":"click","url":"https://vaser-track.vm5apis.com/v2/track?requestId=b392c998-1132-4f18-9c85-7aacb5b87c62&event=click&placementId=com.vm5.adntest.web-1&campaignId=5a4ca4b8f8d6994361c6a642&audienceGroupId=5a4ca5e8f8d6994361c6a646&creativeId=5aa7760427f21b3d6a5744c5&timezone=8&creativeFormat=richmedia&x=0"},\
-                        {"event":"custom","url":"https://www.google.com?event=custom"},\
-                        {"event":"replay","url":"https://www.google.com?event=replay"}]';
-      var trackingList = [];
-      try {
-        trackingList = JSON.parse(trackings);
-      } catch (e) {
-        console.log(e);
-      }
-
       function getElById(elId) {
         return document.getElementById(elId);
       };
-
-      const VMFIVE_LOCATION_TYPE_BY_GPS = '1';
-      const VMFIVE_LOCATION_TYPE_BY_IP = '2';
-      function findObjectByItsKeyValueInArray(array, key, value) {var result={};array.forEach(function(item, i) {result = (item[key] == value ? item : result);});return result;}
-      function doTracking(url) {var req = new XMLHttpRequest();req.open('GET', url, true);req.send();}
-      function doLocationCustomTracking(lat, lon, type, user_coordinate) {
-        user_coordinate = user_coordinate ? user_coordinate : {};
-        doSimpleCustomTracking('geo', Object.assign({
-          'lat': lat,
-          'lon': lon,
-          'locationType': type,
-        }, user_coordinate));
-      }
-      function doSimpleCustomTracking(eventSubtype, moreParams) {
-        moreParams = moreParams ? moreParams : {};
-        var tracking = findObjectByItsKeyValueInArray(trackingList, 'event', 'custom');
-        if (tracking.event) {
-          var url = tracking.url;
-          url = url + '&eventSubtype=' + encodeURIComponent(eventSubtype);
-          url = url + '&eventDetails=' + encodeURIComponent(JSON.stringify(moreParams));
-          doTracking(url);
-        }
-      }
-      function getClickTrackingWithParams(ctaName, ctaUrl) {
-        ctaUrl = ctaUrl ? ctaUrl : '';
-        var tracking = findObjectByItsKeyValueInArray(trackingList, 'event', 'click');
-        if (tracking.event) {
-          var url = tracking.url;
-          url = url + "&ctaName=" + ctaName;
-          url = url + "&url=" + ctaUrl;
-          return url;
-        }
-      }
 
       const isSetParentWidth = getElById("vmfive-ad-unit-native").dataset.setParentWidth === "true";
       if (isSetParentWidth) {
@@ -274,46 +213,33 @@
         }
       };
 
-      let onDynamicInfoCtaClicked = function(e) {
-        console.log("onDynamicInfoCtaClicked");
-        window.top.location.href = fullDynamicInfoURL;
-      }
+      const source = '{"mp4": "https://d2v4tz4zvhrua.cloudfront.net/production/video_1497513715288/360/mp4/video_1497513715288.mp4", "m3u8": "https://d2v4tz4zvhrua.cloudfront.net/production/video_1497513715288/360/m3u8/video_1497513715288.m3u8"}';
 
-      const source = '{"mp4": "https://s3-ap-northeast-1.amazonaws.com/man-cdn-resources/manual_uploads/20180307/carrefour_res/carrefour_360/mp4/carrefour360.mp4", "m3u8": "https://s3-ap-northeast-1.amazonaws.com/man-cdn-resources/manual_uploads/20180307/carrefour_res/carrefour_360/m3u8/carrefour360.m3u8"}';
-
-      const playElements = ['vmfive-logo', 'vmfive-volume-btn', 'vmfive-dynamic-info-cta-btn'];
+      const playElements = ['vmfive-logo', 'vmfive-cta-btn', 'vmfive-volume-btn'];
       const endElements = ['vmfive-ad-unit-finish-image', 'vmfive-replay', 'vmfive-finished-cta-btns'];
       const ctaBtns = ['vmfive-cta-btn', 'vmfive-finished-cta-btn'];
       const fbBtns = ['vmfive-finished-fb-btn'];
-      const dynamicInfoCtaBtns = ['vmfive-dynamic-info-cta-btn', 'vmfive-finished-dynamic-info-cta-btn'];
 
       const ctaInNewWindow = true;
 
       const VMFIVE_TOP_MARGIN_STR = '0';
       const VMFIVE_TOP_MARGIN = isNaN(VMFIVE_TOP_MARGIN_STR) ? 0 : (+VMFIVE_TOP_MARGIN_STR);
 
-      const ctaPrefix = 'https://vaser-track.vm5apis.com/v2/track?requestId=b392c998-1132-4f18-9c85-7aacb5b87c62&event=click&placementId=com.vm5.adntest.web-1&campaignId=5a4ca4b8f8d6994361c6a642&audienceGroupId=5a4ca5e8f8d6994361c6a646&creativeId=5aa7760427f21b3d6a5744c5&timezone=8&creativeFormat=richmedia&x=0&url=';
-      const ctaURL = '//www.carrefour.com.tw/';
+      const ctaPrefix = '';
+      const ctaURL = 'https://vmfive.com/?utm_source=vmfive_ad_cta';
       const fbURL = 'https://www.facebook.com/vmfive';
-      const dynamicInfoURL = location.href.replace(/[^/]*$/, '') + 'simple-native-dynamic-location-Carrefour.html';
       const fullCtaURL = ctaPrefix + ctaURL;
       const fullFbURL = ctaPrefix + fbURL;
-      var fullDynamicInfoURL = '';
-      function generateFullDynamicInfoURL(params) {
-        params = params ? params : {};
 
-        var clickTrackingUrl = encodeURIComponent(dynamicInfoURL);
-
-        if (dynamicInfoURL.indexOf('?') < 0) {
-          clickTrackingUrl = clickTrackingUrl + encodeURIComponent('?');
-        }
-        clickTrackingUrl = clickTrackingUrl + encodeURIComponent('&params=' + encodeURIComponent(encodeURIComponent(JSON.stringify(params))));
-        clickTrackingUrl = clickTrackingUrl + ('&ctaName=' + 'dynamic_info');
-        console.log(clickTrackingUrl);
-
-        fullDynamicInfoURL = ctaPrefix + clickTrackingUrl;
-      }
-
+      var trackings = '[{"event":"view","url":"https://www.google.com?event=view"},\
+                        {"event":"impression","url":"https://www.google.com?event=impression"},\
+                        {"event":"video_percentage:0","url":"https://www.google.com?event=video_percentage:0"},\
+                        {"event":"video_percentage:25","url":"https://www.google.com?event=video_percentage:25"},\
+                        {"event":"video_percentage:50","url":"https://www.google.com?event=video_percentage:50"},\
+                        {"event":"video_percentage:75","url":"https://www.google.com?event=video_percentage:75"},\
+                        {"event":"video_percentage:100","url":"https://www.google.com?event=video_percentage:100"},\
+                        {"event":"click","url":"https://www.google.com?event=click"},\
+                        {"event":"replay","url":"https://www.google.com?event=replay"}]';
       var width = 0;
       var height = 0;
       var mix = new MixPlayer(vmfiveAdUnitEl, source, trackings, width, height);
@@ -329,7 +255,7 @@
           el.addEventListener('click', fn);
         };
 
-        var bannerInfo = '{"image": "https://s3-ap-northeast-1.amazonaws.com/man-cdn-resources/manual_uploads/20180307/carrefour_res/carrefour_banner.png"}';
+        var bannerInfo = '{"image": "https://d2v4tz4zvhrua.cloudfront.net/production/image_1519628228226.jpg"}';
         try {
           bannerInfo = JSON.parse(bannerInfo);
           bannerInfo.height = parentElWidth * 5 / 32;
@@ -351,23 +277,13 @@
 
         const vm5AdVideoTag = vmfiveAdUnitEl.querySelector('video') || vmfiveAdUnitEl.querySelector('canvas');
         width = videoFrameSize.width * rate;
-        vm5AdVideoTag.style.width = width + 'px';
-
-        if (isInlineVideo(vm5AdVideoTag)) {
-          vmfiveAdUnitEl.querySelector('video').height = currentVideoHeight;
-          height = vmfiveAdUnitEl.querySelector('video').videoHeight;
-
-        } else {
-          height = vmfiveAdUnitEl.querySelector('canvas').height = videoFrameSize.height * rate;
-          vm5AdVideoTag.style.height = height + 'px';
-
-          vm5AdVideoTag.style.position = 'absolute';
-          vm5AdVideoTag.style.top = 'calc(50% - ' + (videoFrameSize.height * rate / 2) + 'px)';
-        }
+        vm5AdVideoTag.style.flex = 1;
+        vm5AdVideoTag.style.minWidth = "100%";
+        vm5AdVideoTag.style.maxWidth = "100%";
+        vm5AdVideoTag.setAttribute('height', '');
+        vm5AdVideoTag.setAttribute('width', '');
 
         vmfiveAdUnitEl.style.top = VMFIVE_TOP_MARGIN + 'px';
-
-        setOuterWapperHeight(currentVideoHeight);
 
         addElClickEvent(getElById('vmfive-replay'), function(isInlineVideo) {
           this.player.play();
@@ -401,27 +317,6 @@
           });
         }
 
-        if (dynamicInfoURL !== '' && dynamicInfoURL !== undefined && dynamicInfoURL !== null) {
-          addElClickEvent(getElById('vmfive-dynamic-info-cta-btn'), onDynamicInfoCtaClicked);
-          addElClickEvent(getElById('vmfive-finished-dynamic-info-cta-btn'), onDynamicInfoCtaClicked);
-
-          var customTracking = findObjectByItsKeyValueInArray(trackingList, 'event', 'custom');
-          var customTrackingUrl = '';
-          if (customTracking.event) {
-            customTrackingUrl = customTracking.url;
-          }
-          var clickTracking = findObjectByItsKeyValueInArray(trackingList, 'event', 'click');
-          var clickTrackingUrl = '';
-          if (clickTracking.event) {
-            clickTrackingUrl = clickTracking.url;
-          }
-
-          generateFullDynamicInfoURL({
-            'custom': customTrackingUrl,
-            'click': clickTrackingUrl,
-          });
-        }
-
         addElClickEvent(getElById('vmfive-logo'), function() {
           window.open('https://vmfive.com/?utm_source=vmfive_ad_logo', '_blank');
         });
@@ -439,11 +334,6 @@
         hideElements(playElements);
         showElements(endElements);
         checkCtaUrlExists();
-
-        const finishedButtonEl = getElById('vmfive-finished-cta-btns');
-        const finishedImage = getElById('vmfive-ad-unit-finish-image');
-        finishedButtonEl.style['bottom'] = 6 + 'px';
-        finishedButtonEl.style['left'] = (getElById('vmfive-ad-unit-native').clientWidth - getElById('vmfive-finished-cta-btns').clientWidth) * 0.5 + 'px';
       };
 
 
@@ -459,10 +349,6 @@
         });
       }
 
-      function setOuterWapperHeight(specificHeight) {
-        getElById('vmfive-ad-unit-native').style.height = specificHeight + 'px';
-      };
-
       function checkCtaUrlExists() {
         if (ctaURL === '' || ctaURL === undefined || ctaURL === null) {
           hideElements(ctaBtns);
@@ -471,7 +357,7 @@
         if (fbURL === '' || fbURL === undefined || fbURL === null) {
           hideElements(fbBtns);
         }
-      };
+      }
 
     };
     document.body.appendChild(sc);

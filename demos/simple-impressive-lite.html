@@ -10,25 +10,9 @@
     body { margin: 0; padding: 0; }
     .page-container { width: 90%; max-width: 500px; margin: 10px auto; }
   </style>
-
 </head>
 
 <body>
-  <!--
-  Application : 'web live demo'
-  Placement : 'top placement'
-  Version : 'v3.0beta'
-  -->
-  <script id="vm5ad-js-sdk" src="https://vawpro.vm5apis.com/man.js" data-mode="fast"></script>
-  <script>
-    window.onVM5AdLiteReady = function() {
-      VM5AdLite.init({ appKey:'582ad54a038f454a190d4344' });
-    };
-  </script>
-  <script src="https://man.vm5apis.com/dist/VM5AdLite.js"></script>
-  <vmfive-ad-unit placement-id="58b93912885b5cf777c98bf2" type="web_top"></vmfive-ad-unit>
-
-
   <div class="page-container">
     <h1>Hello World</h1>
     <h2>ADN Web Simple Demo</h2>
@@ -40,6 +24,219 @@
     <p>Sit minima cum magni, earum vel quam rerum ab iusto autem natus repellendus eligendi, officia, nobis eveniet hic laboriosam error provident exercitationem asperiores sunt magnam doloribus? Nemo sint omnis fugiat.</p>
     <p>Aliquam est eos reprehenderit porro fuga, tempora officia eveniet rem libero quisquam ducimus veniam nulla sit laudantium accusamus reiciendis ad, tenetur impedit! Fuga porro nesciunt sequi distinctio ab qui aliquid.</p>
     <p>Architecto ex reiciendis libero consequuntur laudantium cumque illum labore sunt accusamus ullam? Recusandae dicta reprehenderit expedita, odit obcaecati perferendis, distinctio, eum eius dolorum maxime dolorem minus rem ipsam commodi quo.</p>
+
+  <div id="vmfive-ad-view">
+    <div id="vmfive-ad-content">
+      <div id="vmfive-background-image"></div>
+      <div id="vmfive-ad-unit-impressive">
+        <div id="vmfive-replay" class="vmfive-info-image"></div>
+        <div id="vmfive-logo" class="vmfive-info-image"></div>
+        <div id="vmfive-volume-btn" class="vmfive-info-image mute"></div>
+        <div id="vmfive-cta-btn">More</div>
+        <div id="vmfive-ad-unit-finish-image"></div>
+        <div id="vmfive-finished-cta-btns">
+          <div id="vmfive-finished-cta-btn" class="vmfive-finished-btn">More</div>
+          <div id="vmfive-finished-fb-btn" class="vmfive-finished-btn">facebook</div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <style>
+    #vmfive-ad-view {
+        width:100%;height:100vh;overflow: hidden;
+        clip-path: inset(1px) !important;
+        -webkit-clip-path: inset(1px) !important;
+    }
+    #vmfive-ad-content {position:fixed;z-index: 1;top:0;bottom:0;}
+    #vmfive-overlay {
+        position:fixed;top:0;left:0;bottom:0;right:0;z-index: -1;
+        background-color:transparent;
+    }
+    #vmfive-ad-unit-impressive {position:relative;display:block;}
+    #vmfive-background-image {
+        position:absolute;width:100%;height:100%;
+        background-image:url('https://goo.gl/wn5pwV');border-radius:5px;
+        background-repeat:no-repeat;background-position:center center;background-size:100% auto;
+    }
+    #vmfive-ad-view .vmfive-info-image {
+        position:absolute;z-index:1;
+        background-size:16px 16px;background-repeat:no-repeat;background-position:center;
+        cursor:pointer;
+    }
+    #vmfive-replay.vmfive-info-image {
+        background-image:url('//man.vm5apis.com/dist/icon_act_replay.png');
+        display:none;
+        top:0;left:0;
+        width:34px;height:28px;
+    }
+    #vmfive-logo {
+        background-image:url('https://goo.gl/VKzV2i');
+        display:none;
+        top:0;right:0;
+        width:24px;height:24px;
+    }
+    #vmfive-cta-btn {
+        display:inline-block;
+        position:absolute;bottom:6px;right:8px;z-index:1;padding: 6.5px 13px 5px;
+        border: 1px solid rgba(255,255,255, 0.5);box-sizing: border-box;border-radius: 3px;
+        background-color: rgba(0,0,0, 0.5);
+        color: #fff;font-size:12px;font-family:'Helvetica Neue', sans-serif;
+        cursor:pointer;
+        display:none !important;
+    }
+    #vmfive-finished-cta-btns {
+        font-size:12px;font-family:'Helvetica Neue', sans-serif;
+        text-align:center;
+        display:none;
+        position:absolute;z-index:1;
+    }
+    #vmfive-ad-unit-finish-image {
+        background-image:url('https://goo.gl/k2NPmr');background-size:contain;background-repeat:no-repeat;
+        position:absolute;top:calc(50% - 60px);left:43px;z-index:1;
+        height:70%;width:70%;
+        display:none;
+    }
+    #vmfive-finished-cta-btns>.vmfive-finished-btn {
+        display:inline-block;
+        border:1px solid rgba(255,255,255, 0.5);box-sizing:border-box;border-radius:3px;
+        color:#fff;
+        padding:3px 6px;
+        background-color:rgba(0,0,0, 0.5);
+        cursor:pointer;
+    }
+    #vmfive-volume-btn {
+        width:34px;height:28px;
+        background-image:url('//man.vm5apis.com/dist/icon_dyn_soundwave.gif');background-size:20px 20px;filter:opacity(0.5) drop-shadow(0px 0px 2px #000);
+        bottom:13px;left:0;
+        display:block;
+    }
+    #vmfive-volume-btn.unmute {background-image:url('//man.vm5apis.com/dist/icon_act_voice3.png');filter:none;}
+  </style>
+  <script>
+    let sc = document.createElement("script");
+    let videoFrameSize = {width: 639, height: 360};
+
+    sc.src = "https://d1v69ngg41pvl6.cloudfront.net/dist/MixPlayer.js";
+    sc.onload = function () {
+        function getElById(elId) {return document.getElementById(elId);};
+
+        getElById('vmfive-ad-content').style.width = getElById('vmfive-ad-view').offsetWidth + 'px';
+
+        const scale = 1;
+        const vmfiveAdUnitEl = getElById('vmfive-ad-unit-impressive');
+        const vm5finishedCardEl = getElById('vmfive-ad-unit-finish-image');
+        const parentElWidth = vmfiveAdUnitEl.parentElement.offsetWidth;
+        let currentVideoHeight = videoFrameSize.height * (vmfiveAdUnitEl.parentElement.offsetWidth/videoFrameSize.width) * scale;
+        let isAdVisibility = function (e) {
+            const content = getElById('vmfive-ad-view').getBoundingClientRect();
+            return e?(e.y < content.top === false && e.y > (content.top + content.height) === false):false;
+        };
+
+        const source = '{"mp4": "https://d2v4tz4zvhrua.cloudfront.net/production/video_1497513715288/360/mp4/video_1497513715288.mp4", "m3u8": "https://d2v4tz4zvhrua.cloudfront.net/production/video_1497513715288/360/m3u8/video_1497513715288.m3u8"}';
+
+        let trackings = '[track_url]';
+        let width = 0;
+        let height = 0;
+        const mix = new MixPlayer(vmfiveAdUnitEl, source, trackings, width, height);
+        mix.percentageInViewPort(vmfiveAdUnitEl, 50);
+
+        mix.onPrepared = function() {
+            this.player.setLoop(true);
+
+            function isInlineVideo(videoTag) {return videoTag.tagName === 'VIDEO';};
+
+            const vmfiveBackgroundImageEl = getElById('vmfive-background-image');
+            const rate = vmfiveAdUnitEl.offsetWidth / videoFrameSize.width;
+            const vm5AdVideoTag = vmfiveAdUnitEl.querySelector('video') || vmfiveAdUnitEl.querySelector('canvas');
+            const that = this;
+            let isIntegerWithVideoWidth = true
+
+            width = videoFrameSize.width * rate * scale;
+            isIntegerWithVideoWidth = Math.ceil(width) === width;
+            if (!isIntegerWithVideoWidth) width = Math.floor(width);
+
+            vm5AdVideoTag.style.width = width + 'px';
+
+            if (isInlineVideo(vm5AdVideoTag)) {
+                vm5AdVideoTag.height = currentVideoHeight + (!isIntegerWithVideoWidth?1:0);
+                height = vm5AdVideoTag.videoHeight;
+
+            } else {
+                height = vm5AdVideoTag.height = videoFrameSize.height * rate;
+                vm5AdVideoTag.style.height = height + 'px';
+
+                vm5AdVideoTag.style.position = 'absolute';
+                vm5AdVideoTag.style.top = 'calc(50% - '+ (videoFrameSize.height * rate / 2) +'px)';
+            }
+
+            setOuterWapperHeight(currentVideoHeight);
+            setBackgroundImageContentBox();
+            getElById('vmfive-logo').style.display = 'block';
+
+            setInterval(function() {
+                const adViewContent = getElById('vmfive-ad-view').getBoundingClientRect();
+                const adVideoArea = getElById('vmfive-ad-unit-impressive').getBoundingClientRect();
+                const fixedPos = (adViewContent.height - videoFrameSize.height * rate * scale) / 2;
+                const top = adViewContent.top;
+                const bottom = adViewContent.bottom - (videoFrameSize.height * rate * scale);
+
+                if ((bottom < fixedPos && (adVideoArea.top + height) > adViewContent.bottom)
+                    || (fixedPos > bottom && adVideoArea.top < fixedPos))
+                    getElById('vmfive-ad-unit-impressive').style.top = bottom + 'px';
+                else if (top > fixedPos)
+                    getElById('vmfive-ad-unit-impressive').style.top = top + 'px';
+                else if (adViewContent.bottom > adVideoArea.top + adVideoArea.height && Math.abs(adVideoArea.top) > adViewContent.top)
+                    getElById('vmfive-ad-unit-impressive').style.top = fixedPos + 'px';
+            }, 10);
+
+            addElClickEvent(getElById('vmfive-replay'), function(isInlineVideo) {
+                finishedVisibility();
+            }.bind(this, isInlineVideo(vm5AdVideoTag)));
+
+            addElClickEvent(getElById('vmfive-volume-btn'), function(isInlineVideo) {
+                if (this.player.isMuted()) {
+                    this.player.unmute();
+                    getElById('vmfive-volume-btn').classList.add('unmute');
+                } else {
+                    this.player.mute();
+                    getElById('vmfive-volume-btn').classList.remove('unmute');
+                }
+
+            }.bind(this, isInlineVideo(vm5AdVideoTag)));
+
+            // Add LINK
+            setClickEventToEl(vm5AdVideoTag);
+        };
+
+        function addElClickEvent(el, fn) {el.addEventListener('click', fn);};
+        function setClickEventToEl(vm5AdVideoTag, player) {
+            const ctaElIdList = ['vmfive-logo', 'vmfive-cta-btn', 'vmfive-finished-cta-btn', 'vmfive-ad-unit-finish-image', 'vmfive-background-image'];
+            const ctaURL = 'http://vmfive.com/';
+            const fbURL = 'https://fb.com/vmfive/';
+
+            ctaElIdList.forEach(function(elId){addElClickEvent(getElById(elId), function(e){if (isAdVisibility(e)) window.top.location.href = ctaURL;});});
+            addElClickEvent(vm5AdVideoTag, function(e){if (isAdVisibility(e)) window.top.location.href = ctaURL;});
+            addElClickEvent(getElById('vmfive-finished-fb-btn'), function(e){if (isAdVisibility(e)) window.top.location.href = fbURL;});
+        };
+        function setOuterWapperHeight(specificHeight) {getElById('vmfive-ad-unit-impressive').style.height = specificHeight + 'px';};
+        function setBackgroundImageContentBox() {
+            const imgEl = getElById('vmfive-background-image');
+            const vmfiveAdUnitEl = getElById('vmfive-ad-unit-impressive');
+
+            vmfiveAdUnitEl.style.top = (vmfiveAdUnitEl.parentElement.offsetHeight - vmfiveAdUnitEl.offsetHeight)/2 + 'px';
+        };
+        function finishedVisibility() {
+            const vmfiveElIdList = ['vmfive-ad-unit-finish-image', 'vmfive-replay', 'vmfive-finished-cta-btns', 'vmfive-volume-btn'];
+
+            for (let index in vmfiveElIdList) {
+                let specificEl = document.getElementById(vmfiveElIdList[index]);
+                if (specificEl)
+                    specificEl.style.display = window.getComputedStyle(specificEl).display === 'block'?'none':'block';
+            };
+        };
+    };
+    document.body.appendChild(sc);
+  </script>
 
     <p>Fugiat, ut veniam officiis fugit quod enim, maxime iure non repudiandae harum quibusdam tenetur ipsa. In facere distinctio voluptatum incidunt hic excepturi, deserunt, repellendus, dolorum error fugit id reprehenderit, ad.</p>
     <p>Ullam reprehenderit nihil quo atque et accusantium, vel! Vel omnis atque voluptatum consequuntur vero, dolorum autem ex expedita necessitatibus, corporis laudantium accusamus sunt rem iusto voluptas enim, est impedit ut.</p>
@@ -135,8 +332,6 @@
     <p>Quis assumenda, velit in repellendus minus soluta vero, corrupti ullam animi deserunt beatae adipisci aperiam quod maiores. Nam, veritatis maxime eligendi minima id excepturi dolor debitis omnis ipsum, molestias tempore!</p>
     <p>Nesciunt fugit ab mollitia eos, doloribus, magnam, fugiat ex maiores molestias non facilis! Ullam totam blanditiis eveniet accusantium quaerat repudiandae consequatur amet nisi aliquid odio! Culpa omnis, eaque voluptatem velit.</p>
   </div>
-
-
 </body>
 
 </html>

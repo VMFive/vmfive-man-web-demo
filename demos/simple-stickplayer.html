@@ -39,6 +39,7 @@
           </div>
         </div>
         <div id="vmfive-ad-title-788a3229-3d11-47e7-b1e4-9c618d988fa7" class="vm5-ad-title" style="display:none;">VMFive AdPlay</div>
+        <img src="https://vaser-track.vm5apis.com/v2/track?requestId=&event=downloaded&placementId=&campaignId=&audienceGroupId=&creativeId=&timezone=8&creativeFormat=richmedia&pixel=1&x=0">
       </div>
       <style>
         #vmfive-ad-unit-native-788a3229-3d11-47e7-b1e4-9c618d988fa7 {
@@ -46,6 +47,12 @@
           display: none;
           width: 100%;
           padding-top: 56.25%;
+
+          align-items: center;
+          justify-content: center;
+
+          /* NOTE For flexbox outer parent of this element */
+          align-self: center;
         }
 
         #vmfive-close-788a3229-3d11-47e7-b1e4-9c618d988fa7 {
@@ -53,6 +60,7 @@
           background-repeat:no-repeat;background-position:center;background-size:20px 20px;
           width:30px;height:28px;
           z-index:1;
+          margin-right:auto;
         }
 
         .normal-player-init {
@@ -75,13 +83,14 @@
 
         .stick-player {
           width: 50%;
-          height: auto;
-          top: 70%;
+          height: 30%;
+          top: calc(100vh - 50vw * 9 /16 - 28px);
           right: 20px;
           position: fixed;
           animation-name: scale-mini;
           animation-timing-function: ease-in-out;
           animation-duration: .15s;
+          z-index: 10;
         }
 
         .normal-player #vmfive-close-788a3229-3d11-47e7-b1e4-9c618d988fa7, .normal-player-init #vmfive-close-788a3229-3d11-47e7-b1e4-9c618d988fa7 {
@@ -111,7 +120,7 @@
             position: fixed;
             width: 50%;
             height: 50%;
-            top: 70%;
+            top: calc(100vh - 50vw * 9 /16 - 28px);
             right: 20px;
           }
         }
@@ -135,7 +144,7 @@
             position: fixed;
             width: 50%;
             height: 50%;
-            top: 70%;
+            top: calc(100vh - 50vw * 9 /16 - 28px);
             right: 20px;
           }
         }
@@ -148,6 +157,12 @@
           top: 0;
           left: 0;
           display: none;
+
+          align-items: center;
+          justify-content: center;
+
+          /* NOTE For flexbox outer parent of this element */
+          align-self: center;
         }
 
         #vmfive-finished-layout-788a3229-3d11-47e7-b1e4-9c618d988fa7 {
@@ -157,6 +172,12 @@
           top: 0;
           left: 0;
           display: none;
+
+          align-items: center;
+          justify-content: center;
+
+          /* NOTE For flexbox outer parent of this element */
+          align-self: center;
         }
 
         #vmfive-ad-unit-native-788a3229-3d11-47e7-b1e4-9c618d988fa7 .vmfive-info-image {
@@ -200,6 +221,9 @@
           font-size: 12px;
           font-family: 'Helvetica Neue', sans-serif;
           cursor: pointer;
+          line-height: normal;
+          width: auto;
+          height: auto;
         }
 
         #vmfive-finished-cta-btns-788a3229-3d11-47e7-b1e4-9c618d988fa7 {
@@ -208,6 +232,14 @@
           text-align: center;
           position: absolute;
           z-index: 1;
+          line-height: normal;
+          width: auto;
+          height: auto;
+
+          bottom: 6px;
+
+          left: 50%;
+          transform: translate(-50%, 0);
         }
 
         #vmfive-ad-unit-finish-image-788a3229-3d11-47e7-b1e4-9c618d988fa7 {
@@ -272,9 +304,32 @@
           }
 
           const vm5AdUnitEl = getElById("vmfive-ad-unit-native-788a3229-3d11-47e7-b1e4-9c618d988fa7");
-          const vm5AdVideoDiv = getElById('vmfive-video-unit-788a3229-3d11-47e7-b1e4-9c618d988fa7');
-
           const source = '{"mp4": "https://d2v4tz4zvhrua.cloudfront.net/production/video_1517886127295/360/mp4/video_1517886127295.mp4", "m3u8": "https://d2v4tz4zvhrua.cloudfront.net/production/video_1517886127295/360/m3u8/video_1517886127295.m3u8"}';
+          const VMFIVE_USE_SCREEN_WIDTH = '' === 'true';
+          const vm5AdVideoDiv = getElById('vmfive-video-unit-788a3229-3d11-47e7-b1e4-9c618d988fa7');
+          if (VMFIVE_USE_SCREEN_WIDTH) {
+            vm5AdUnitEl.parentElement.style.width = screen.width + 'px';
+            vm5AdUnitEl.parentElement.style.margin = 'auto';
+          }
+
+          const ctaInNewWindow = '' === 'true';
+
+          const VMFIVE_TOP_MARGIN_STR = '';
+          const VMFIVE_TOP_MARGIN = isNaN(VMFIVE_TOP_MARGIN_STR) ? 0 : (+VMFIVE_TOP_MARGIN_STR);
+
+          const ctaPrefix = '';
+          const ctaURL = 'https://vmfive.com/?utm_source=vmfive_ad_cta';
+          const fbURL = 'https://facebook.com/vmfive';
+          const fullCtaURL = ctaPrefix + ctaURL;
+          const fullFbURL = ctaPrefix + fbURL;
+
+          let onCtaClicked = function(e) {
+            if (ctaInNewWindow) {
+              window.open(fullCtaURL, '_blank');
+            } else {
+              window.top.location.href = fullCtaURL;
+            }
+          };
 
           var vm5AdVideoTag;
           var monitor = null;
@@ -289,8 +344,9 @@
 
           mix.onPrepared = function() {
 
-            vm5AdUnitEl.style.display = 'block';
+            vm5AdUnitEl.style.display = 'flex';
             vm5AdVideoTag = vm5AdUnitEl.querySelector('video') || vm5AdUnitEl.querySelector('canvas');
+            vm5AdVideoTag.style.flex = 1;
             vm5AdVideoTag.style.width = 'auto';
             vm5AdVideoTag.style.height = 'auto';
             vm5AdVideoTag.style['max-width'] = 100 + '%';
@@ -298,6 +354,8 @@
             // vm5AdVideoTag.style.position = 'absolute';
             // vm5AdVideoTag.style.top = 0;
             // vm5AdVideoTag.style.left = 0;
+
+            vm5AdUnitEl.style.top = VMFIVE_TOP_MARGIN + 'px';
 
             addElClickEvent(getElById('vmfive-replay-788a3229-3d11-47e7-b1e4-9c618d988fa7'), function(isInlineVideo) {
               stopMoniotr = false;
@@ -316,26 +374,19 @@
 
             }.bind(this, isInlineVideo(vm5AdVideoTag)));
 
-            const ctaURL = 'https://vmfive.com/?utm_source=vmfive_ad_cta';
-            const fbURL = 'https://facebook.com/vmfive';
-
-            addElClickEvent(getElById('vmfive-cta-btn-788a3229-3d11-47e7-b1e4-9c618d988fa7'), function() {
-              window.top.location.href = ctaURL;
-            });
-            addElClickEvent(getElById('vmfive-ad-unit-finish-image-788a3229-3d11-47e7-b1e4-9c618d988fa7'), function() {
-              window.top.location.href = ctaURL;
-            });
-            addElClickEvent(getElById('vmfive-finished-cta-btn-788a3229-3d11-47e7-b1e4-9c618d988fa7'), function() {
-              window.top.location.href = ctaURL;
-            });
-            addElClickEvent(vm5AdUnitEl.querySelector('video') || vm5AdUnitEl.querySelector('canvas'), function() {
-              window.top.location.href = ctaURL;
-            });
+            addElClickEvent(getElById('vmfive-cta-btn-788a3229-3d11-47e7-b1e4-9c618d988fa7'), onCtaClicked);
+            addElClickEvent(getElById('vmfive-ad-unit-finish-image-788a3229-3d11-47e7-b1e4-9c618d988fa7'), onCtaClicked);
+            addElClickEvent(getElById('vmfive-finished-cta-btn-788a3229-3d11-47e7-b1e4-9c618d988fa7'), onCtaClicked);
+            addElClickEvent(vm5AdUnitEl.querySelector('video') || vm5AdUnitEl.querySelector('canvas'), onCtaClicked);
             addElClickEvent(getElById('vmfive-finished-fb-btn-788a3229-3d11-47e7-b1e4-9c618d988fa7'), function() {
-              window.top.location.href = fbURL;
+              if (ctaInNewWindow) {
+                window.open(fullFbURL, '_blank');
+              } else {
+                window.top.location.href = fullFbURL;
+              }
             });
             addElClickEvent(getElById('vmfive-logo-788a3229-3d11-47e7-b1e4-9c618d988fa7'), function() {
-              window.open('https://vmfive.com/?utm_source=vmfive_ad_logo', '_blank')
+              window.open('https://vmfive.com/?utm_source=vmfive_ad_logo', '_blank');
             });
             addElClickEvent(getElById('vmfive-close-788a3229-3d11-47e7-b1e4-9c618d988fa7'), function() {
               dontStickAnymore = true;
@@ -343,6 +394,9 @@
               vm5AdVideoDiv.classList.remove("stick-player");
               vm5AdVideoDiv.classList.add("normal-player");
             });
+
+            checkCtaUrlExists();
+
             stopMoniotr = false;
             startMonitor();
           };
@@ -350,7 +404,7 @@
 
             vm5AdVideoTag.style.filter = '';
             playElments();
-          }
+          };
           mix.onFinished = function() {
             stopMoniotr = true;
             if (isStick) {
@@ -360,29 +414,25 @@
             }
             vm5AdVideoTag.style.filter = 'blur(5px) opacity(0.8)';
             finishedElements();
-            const finishedButtonEl = getElById('vmfive-finished-cta-btns-788a3229-3d11-47e7-b1e4-9c618d988fa7');
-            const finishedImage = getElById('vmfive-ad-unit-finish-image-788a3229-3d11-47e7-b1e4-9c618d988fa7');
-            finishedButtonEl.style['bottom'] = 6 + 'px';
-            finishedButtonEl.style['left'] = (getElById('vmfive-ad-unit-native-788a3229-3d11-47e7-b1e4-9c618d988fa7').clientWidth - getElById('vmfive-finished-cta-btns-788a3229-3d11-47e7-b1e4-9c618d988fa7').clientWidth) * 0.5 + 'px';
           };
 
           function playElments() {
             getElById('vmfive-finished-layout-788a3229-3d11-47e7-b1e4-9c618d988fa7').style.display = 'none';
-            getElById('vmfive-play-layout-788a3229-3d11-47e7-b1e4-9c618d988fa7').style.display = 'block';
+            getElById('vmfive-play-layout-788a3229-3d11-47e7-b1e4-9c618d988fa7').style.display = 'flex';
           }
 
           function finishedElements() {
             getElById('vmfive-play-layout-788a3229-3d11-47e7-b1e4-9c618d988fa7').style.display = 'none';
-            getElById('vmfive-finished-layout-788a3229-3d11-47e7-b1e4-9c618d988fa7').style.display = 'block';
+            getElById('vmfive-finished-layout-788a3229-3d11-47e7-b1e4-9c618d988fa7').style.display = 'flex';
           }
 
           function isInlineVideo(videoTag) {
             return videoTag.tagName === 'VIDEO';
-          };
+          }
 
           function addElClickEvent(el, fn) {
             el.addEventListener('click', fn);
-          };
+          }
 
           var monitorScriptLoad = false;
           var startStick = false;
@@ -461,7 +511,7 @@
 
           function loadScript(url, callback) {
 
-            let script = document.createElement("script")
+            let script = document.createElement("script");
             script.type = "text/javascript";
 
             if (script.readyState) {
@@ -479,6 +529,17 @@
             }
             script.src = url;
             document.getElementsByTagName("head")[0].appendChild(script);
+          }
+
+          function checkCtaUrlExists() {
+            if (ctaURL === '' || ctaURL === undefined || ctaURL === null) {
+              getElById('vmfive-cta-btn-[request_id]').style.display = 'none';
+              getElById('vmfive-finished-cta-btn-[request_id]').style.display = 'none';
+            }
+
+            if (fbURL === '' || fbURL === undefined || fbURL === null) {
+              getElById('vmfive-finished-fb-btn-[request_id]').style.display = 'none';
+            }
           }
         };
         document.body.appendChild(sc);

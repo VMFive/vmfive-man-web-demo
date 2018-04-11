@@ -10,26 +10,11 @@
     body { margin: 0; padding: 0; }
     .page-container { width: 90%; max-width: 500px; margin: 10px auto; }
   </style>
-
 </head>
 
 <body>
-  <!--
-  Application : 'web live demo'
-  Placement : 'top placement'
-  Version : 'v3.0beta'
-  -->
-  <script id="vm5ad-js-sdk" src="https://vawpro.vm5apis.com/man.js" data-mode="fast"></script>
-  <script>
-    window.onVM5AdLiteReady = function() {
-      VM5AdLite.init({ appKey:'582ad54a038f454a190d4344' });
-    };
-  </script>
-  <script src="https://man.vm5apis.com/dist/VM5AdLite.js"></script>
-  <vmfive-ad-unit placement-id="58b93912885b5cf777c98bf2" type="web_top"></vmfive-ad-unit>
-
-
   <div class="page-container">
+
     <h1>Hello World</h1>
     <h2>ADN Web Simple Demo</h2>
 
@@ -40,6 +25,147 @@
     <p>Sit minima cum magni, earum vel quam rerum ab iusto autem natus repellendus eligendi, officia, nobis eveniet hic laboriosam error provident exercitationem asperiores sunt magnam doloribus? Nemo sint omnis fugiat.</p>
     <p>Aliquam est eos reprehenderit porro fuga, tempora officia eveniet rem libero quisquam ducimus veniam nulla sit laudantium accusamus reiciendis ad, tenetur impedit! Fuga porro nesciunt sequi distinctio ab qui aliquid.</p>
     <p>Architecto ex reiciendis libero consequuntur laudantium cumque illum labore sunt accusamus ullam? Recusandae dicta reprehenderit expedita, odit obcaecati perferendis, distinctio, eum eius dolorum maxime dolorem minus rem ipsam commodi quo.</p>
+
+    <div id="vmfive-ad-view">
+      <div id="vmfive-ad-content">
+        <div id="vmfive-ad-title">ADVERTISEMENT</div>
+        <div id="vmfive-background-image">
+          <div id="vmfive-logo" onclick="window.open('https://vmfive.com/?utm_source=vmfive_ad_logo', '_blank')"></div>
+        </div>
+        <div id="vmfive-ad-unit"></div>
+      </div>
+      <img src="https://vaser-track.vm5apis.com/v2/track?requestId=&event=downloaded&placementId=&campaignId=&audienceGroupId=&creativeId=&timezone=8&creativeFormat=richmedia&pixel=1&x=0">
+    </div>
+    <style>
+      #vmfive-ad-title {
+        font-size: 14px;
+        font-family: 'Helvetica Neue', sans-serif;
+        text-align: center;
+        color: #999;
+        position:absolute;width:90%;height:100%;left:5%;margin: auto;border-radius:5px;
+      }
+      #vmfive-ad-view {
+          width:100%;height:100vh;overflow: hidden;
+          clip-path: inset(1px) !important;
+          -webkit-clip-path: inset(1px) !important;
+      }
+      #vmfive-ad-content {
+        position:fixed;z-index: 1;top:0;left:0;bottom:0;right:0;
+        width:100vw;height:100vh;
+      }
+      #vmfive-ad-unit {
+        position:absolute;top:50%;left: 50%;
+        transform: translate(-50%, -50%);
+        z-index: -2;
+      }
+      #vmfive-background-image {
+          position:absolute;width:90%;height:100%;left:5%;margin: auto;border-radius:5px;
+          background-repeat:no-repeat;background-position:center center;background-size:100% auto;
+      }
+      #vmfive-logo {
+        background-image:url('data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiIHN0YW5kYWxvbmU9Im5vIj8+CjwhRE9DVFlQRSBzdmcgUFVCTElDICItLy9XM0MvL0RURCBTVkcgMS4xLy9FTiIgImh0dHA6Ly93d3cudzMub3JnL0dyYXBoaWNzL1NWRy8xLjEvRFREL3N2ZzExLmR0ZCI+CjxzdmcgdmVyc2lvbj0iMS4xIiBpZD0iTGF5ZXJfMSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgeD0iMHB4IiB5PSIwcHgiIHdpZHRoPSI1MHB4IiBoZWlnaHQ9IjUwcHgiIHZpZXdCb3g9IjAgMCA1MCA1MCIgZW5hYmxlLWJhY2tncm91bmQ9Im5ldyAwIDAgNTAgNTAiIHhtbDpzcGFjZT0icHJlc2VydmUiPiAgPGltYWdlIGlkPSJpbWFnZTAiIHdpZHRoPSI1MCIgaGVpZ2h0PSI1MCIgeD0iMCIgeT0iMCIKICAgIHhsaW5rOmhyZWY9ImRhdGE6aW1hZ2UvcG5nO2Jhc2U2NCxpVkJPUncwS0dnb0FBQUFOU1VoRVVnQUFBRElBQUFBeUNBUUFBQUMwTmtBNkFBQUFCR2RCVFVFQUFMR1BDL3hoQlFBQUFDQmpTRkpOCkFBQjZKZ0FBZ0lRQUFQb0FBQUNBNkFBQWRUQUFBT3BnQUFBNm1BQUFGM0NjdWxFOEFBQUFBbUpMUjBRQS80ZVB6TDhBQUFBSmNFaFoKY3dBQUN4TUFBQXNUQVFDYW5CZ0FBQUFIZEVsTlJRZmlBUjBVSFFUclpSVnlBQUFFNGtsRVFWUll3NzJZVzB4VFp4ekFmMTh2cDZjWApCQmtxRXh5NEN4R21qSUUzektKemlMcEZOM1ZlbGlWN1hPTE01b012eTVJdHpzZTk3bW5MbnBiNE1vM1JoWW1SNE56SUV2QUNpS0lnCmJtYW9NSzIyaGJhMFBUMm41OXNEb0lndHRGRDh2elE1MzNmTzczL3Y5LzJGWk83Rjhod1kyQUFFMk5uTUtsUWdHNllKSU1ZbG10QWwKSUNRZzdCeWtsamhtVm4yazBNcjNVaCt6aEUzVTRzZEVaQkVpc1ZETERjNk14MlFOY1dSV0VTQ1F4Rmt6YWhTQW1sVkhQUkVURmNiZApsVXdQSFEyQmtuSkhCbUliODk5azBRcm4xMWRvK2g5OVhpOEtqaG5ubkV4dGllNXlmRlpYVTZpeGZubnpsYk5Yb3lIY3M0bFlDc2lpCnhlV0ZENURrdWo1WnQ2N3N0L2FXV3hpb1dHZG1VWXFLViswSlRDUXhmSlFVSE5qeTViWmxMeEVsTmpON1VvUlZ5SEdWTFF4aloyWHAKOHRLV0c0MlhCM3pZVWJJRWVZS3dvV0VRd01hN0ZkVkx6MTA1M1IwTjRzN01jWmFwRjBPUi9nY3VKSUlFUHVZNTk5VWUyYm0ra2pnagptVlRXbEJDRlFPeFlxNUVZeitBSVF4UVhIS3ovYWxkVktSclJyRURBNCt5KzA5S1RNMkZibUdGcWlnL3QyRjlYOUFJaGpDeEE3QUxsCitNWEJxUHI0aWNBa2dFSDk4aU43UHRxUTR5Q01QbDNPVFFPUjJKU1FyN0hET1NuT0NYeW9qcjByRCsvYTlLWkZNaklyQ0ZoQWFlcTYKNmN1YmhCRkU4Yk40L3Y2TlgrK3NYa3FVV09wOFMrZnZWekcwWTYxR2t2S1FoQW13b3VqUUIxOXNYcktBa1ZTT1N3Y2ljVjM1cCsyMgpKNG1xQWdpUVlFUDU0US8zYmNoVkNaTklGeUlWNnlJV3NvZ0NWUWdrQW5HaWJWaFhrbnBFRU1lUFRkbFg4KzNlTFZWQ0VwOXNUL0tLCnQzdER4MjVxMGk1QzhVUUNLK0FZdU45MDllT2E0YVFZRTRNNGZsN00rWFRqaXFVL05RL3JXS2VIT1A3ei85Z3dwcVlIS3hLQmVxcjkKOVpLU3ZHY1RLYXhKTTk5akVaSVFGamFXM2w5MTlIZmMwME5BWUIvN0ZXUEsyN1g0ZHcyNWpzUUVVeVNtR1l3dWRHK3RYRnRoc1k0SApRN0ZOTmpjNXhNaHoxNVFaQ2FzbFpyVGRNVWRQTVJMN1NIUWtNa0dOQkRGc2E4dTIxYnhjR01WQTRNVERwZnUvWGtKTkI2SVZGWC8rClRoZ25EK09YajhiMXg3dHNFeEF4alBKWGQxUlhsY0F3WUdVK1BxM3g2b2xPTGNhazJrM1Y2b1dPZ1k2ZXZHRklva1g1MjFlK1ZhNFEKeHNDR0I1M20zdE1kL1E5UVVOTnpGMUlhR0Jna0Vza1doZHhUVzFkWm9BYUpBRG5ZNkxyWDBORjFHd3ZKaWluREE0K0pqc0F1ekdWTAppdFFCTERoeDBSOW82RGpmaTQ0RFcvTFdrZ2trQ3V1V0JhUGRkMDN6NXo5TGQrZllWTHp4aHM0ejEwSkJYTmhKZVZoUEY2SVRMMTd3CmZuVmRSWi8vbStPRzBUL1kwck43eGRsYkp5L2U4MkxETS9YTDAwS0VRQ2VXbTdkMTlaYktlWTRncitWdnJ6clppdk5VUjl2ZnZYZXgKUEYxMk00QUlFRnJZSXQrdTJsWlRraHZGRDhDZU5SZjZCb05ESTBNQm5Pa2RrYWFFSkRDTTFhL1VWMVV2amhIQVJNV0ZOM0srTzZKagp3WnArUEtmY0dDZEhQZkNlRXo4U1FUNFJzK25HcVU2dkYxZXFQSnBSVEd4V0dNYUtHN2o4YjBQNzlidFk4VHp1WjdPRGlERm5TK0s0ClVlbDlkS2I5cno0U3VETDUrRFFRM1J4ZFVIRHphT1NYcnJQWHRBaU9aeHZHYkNDMmg0SEJZTms4RFgraXNidWg4NkVQRjI1bWZETk8KRGxHR1FqK2NxMzhqb3JWYzd4c0FjbWIyOGFjaHoyYTcyalBRY3h1QmdqcXJDNnRJYlFsSWxNeXZDS2xrOUxRU202UHhoNFhZRThnRgpsRXh6ZjFxUkNCUXV3TGk3bXFtWW83RkhNNHpQVnA3SEFHZXU1Ym5NdS80SGpsUGZEcU03YVkwQUFBQWxkRVZZZEdSaGRHVTZZM0psCllYUmxBREl3TVRndE1ERXRNamxVTWpBNk1qazZNRFF0TURjNk1ERG5TYzZmQUFBQUpYUkZXSFJrWVhSbE9tMXZaR2xtZVFBeU1ERTQKTFRBeExUSTVWREl3T2pJNU9qQTBMVEEzT2pBd2xoUjJJd0FBQUFCSlJVNUVya0pnZ2c9PSIgLz4KPC9zdmc+Cg==');
+        background-repeat: no-repeat;background-size: contain;
+        top:0;right:0;margin-left: auto;
+        width:24px;height:24px;
+      }
+    </style>
+
+    <script>
+      function getElById(elId) {return document.getElementById(elId);}
+      function addElClickEvent(el, fn) {el.addEventListener('click', fn);}
+      let onCtaClicked = function(e) {
+        if (ctaInNewWindow) {
+          window.open(fullCtaURL, '_blank');
+        } else {
+          window.top.location.href = fullCtaURL;
+        }
+      };
+
+      function findObjectByItsKeyValueInArray(array, key, value) {var result={};array.forEach(function(item, i) {result = (item[key] == value ? item : result);});return result;}
+
+      const vmfiveAdViewEl = getElById('vmfive-ad-view');
+      const vmfiveAdContent = getElById('vmfive-ad-content');
+      const vmfiveTitleEl = getElById('vmfive-ad-title');
+      const vmfiveBackgroundImageEl = getElById('vmfive-background-image');
+      const vmfiveLogoEl = getElById('vmfive-logo');
+      const ctaElIdList = ['vmfive-background-image'];
+      const fullCtaURL = 'https://goo.gl/WuDjTP';
+
+      var bgImgLoader = new Image();
+      bgImgLoader.onload = function () {
+        vmfiveBackgroundImageEl.style['background-image'] = "url('https://goo.gl/1hdRVL')";
+        sendImpressionTrackEvent();
+      };
+      bgImgLoader.width = bgImgLoader.height = 0;
+      bgImgLoader.src = 'https://goo.gl/1hdRVL';
+      vmfiveAdViewEl.appendChild(bgImgLoader);
+
+      const ctaInNewWindow = false;
+
+      var hasSentImpressionEvent = false;
+      var alwaysDisplayFromTop = true;
+
+      vmfiveTitleFontSize = parseFloat(window.getComputedStyle(vmfiveTitleEl, null).getPropertyValue('font-size'));
+      vmfiveTitleEl.style.marginTop = ((vmfiveBackgroundImageEl.clientHeight - vmfiveBackgroundImageEl.clientWidth * 3 / 2) / 2 - vmfiveTitleFontSize - 10) + 'px';
+      vmfiveLogoEl.style.marginTop = ((vmfiveBackgroundImageEl.clientHeight - vmfiveBackgroundImageEl.clientWidth * 3 / 2) / 2) + 'px';
+
+      ctaElIdList.forEach(function(elId){addElClickEvent(getElById(elId), onCtaClicked);});
+      window.addEventListener('scroll', function(e) {
+        const vh = window.innerHeight || document.documentElement.clientHeight || document.body.clientHeight;
+        const availableRange = vh * .2;
+        const content = vmfiveAdViewEl.getBoundingClientRect();
+
+        if (content.top > -availableRange && content.top < availableRange) {
+          vmfiveAdContent.style.pointerEvents = "auto";
+          sendImpressionTrackEvent();
+        } else {
+          vmfiveAdContent.style.pointerEvents = "none";
+        }
+
+        if (alwaysDisplayFromTop) {
+          vmfiveAdContent.style.position = (content.bottom > 0 && content.top < 0) ? 'fixed' : 'static';
+        }
+      });
+
+      function sendImpressionTrackEvent() {
+        if (hasSentImpressionEvent) {
+          return;
+        }
+        hasSentImpressionEvent = true;
+
+        var trackingsString = '[{"event":"view","url":"https://www.google.com?event=view"},\
+                          {"event":"impression","url":"https://www.google.com?event=impression"},\
+                          {"event":"video_percentage:0","url":"https://www.google.com?event=video_percentage:0"},\
+                          {"event":"video_percentage:25","url":"https://www.google.com?event=video_percentage:25"},\
+                          {"event":"video_percentage:50","url":"https://www.google.com?event=video_percentage:50"},\
+                          {"event":"video_percentage:75","url":"https://www.google.com?event=video_percentage:75"},\
+                          {"event":"video_percentage:100","url":"https://www.google.com?event=video_percentage:100"},\
+                          {"event":"click","url":"https://www.google.com?event=click"},\
+                          {"event":"replay","url":"https://www.google.com?event=replay"}]';
+        var trackings = null;
+        try {
+          trackings = JSON.parse(trackingsString);
+        } catch(e) {
+          console.log(e);
+        }
+
+        if (!Array.isArray(trackings)) {
+          return;
+        }
+
+        var length = trackings.length;
+        if (!length) {
+          return;
+        }
+
+        var req = new XMLHttpRequest();
+        var tracking = findObjectByItsKeyValueInArray(trackings, 'event', 'impression');
+        if (tracking.event && tracking.event === 'impression') {
+          req.open('GET', tracking.url, true);
+          req.send();
+        }
+      }
+    </script>
 
     <p>Fugiat, ut veniam officiis fugit quod enim, maxime iure non repudiandae harum quibusdam tenetur ipsa. In facere distinctio voluptatum incidunt hic excepturi, deserunt, repellendus, dolorum error fugit id reprehenderit, ad.</p>
     <p>Ullam reprehenderit nihil quo atque et accusantium, vel! Vel omnis atque voluptatum consequuntur vero, dolorum autem ex expedita necessitatibus, corporis laudantium accusamus sunt rem iusto voluptas enim, est impedit ut.</p>
@@ -135,8 +261,6 @@
     <p>Quis assumenda, velit in repellendus minus soluta vero, corrupti ullam animi deserunt beatae adipisci aperiam quod maiores. Nam, veritatis maxime eligendi minima id excepturi dolor debitis omnis ipsum, molestias tempore!</p>
     <p>Nesciunt fugit ab mollitia eos, doloribus, magnam, fugiat ex maiores molestias non facilis! Ullam totam blanditiis eveniet accusantium quaerat repudiandae consequatur amet nisi aliquid odio! Culpa omnis, eaque voluptatem velit.</p>
   </div>
-
-
 </body>
 
 </html>

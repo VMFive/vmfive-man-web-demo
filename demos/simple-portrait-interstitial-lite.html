@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>VMFive ADN Web SDK Demo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no">
+  <style>
+    body { font-family: sans-serif; }
+    body { margin: 0; padding: 0; }
+    .page-container { width: 90%; max-width: 500px; margin: 10px auto; }
+  </style>
+</head>
+
+<body>
+    <div>
+        <div id="vmfive-overlay">
+            <div id="vmfive-ad-unit">
+              <div id="vmfive-replay" class="vmfive-info-image"></div>
+              <div id="vmfive-close" class="vmfive-info-image"></div>
+              <div id="vmfive-logo" class="vmfive-info-image"></div>
+              <div id="vmfive-volume-btn" class="vmfive-info-image mute"></div>
+              <div id="vmfive-cta-btn">More</div>
+          </div>
+        </div>
+        <img src="https://vaser-track.vm5apis.com/v2/track?requestId=&event=downloaded&placementId=&campaignId=&audienceGroupId=&creativeId=&timezone=8&creativeFormat=richmedia&pixel=1&x=0">
+    </div>
+    <div class="page-container">
+
+    <h1>Hello World</h1>
+    <h2>ADN Web Simple Demo</h2>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dignissimos illum nostrum impedit quidem eius cumque nam cupiditate aliquid vero reiciendis, quia assumenda ullam sapiente debitis commodi doloribus tenetur quos perferendis.</p>
+    <p>Dignissimos officia saepe modi corrupti nesciunt laborum nulla, odio qui adipisci accusantium illum a ad impedit quo perspiciatis architecto eius. Totam, labore! Veniam quis perspiciatis esse eaque est ut similique.</p>
+    <p>Assumenda repudiandae officia nostrum unde laborum, tempore eos, necessitatibus tempora voluptatem tenetur pariatur, modi dignissimos ut est voluptatibus sint error? Molestias nemo laudantium quos deleniti fuga sequi impedit incidunt quia.</p>
+    <p>Cum amet deleniti inventore eum consequuntur dolor totam, fuga minima omnis reiciendis sint fugit voluptatibus, molestias nisi molestiae atque ipsam quos quisquam autem ea ad corporis. Esse sunt, eaque iste!</p>
+    <p>Sit minima cum magni, earum vel quam rerum ab iusto autem natus repellendus eligendi, officia, nobis eveniet hic laboriosam error provident exercitationem asperiores sunt magnam doloribus? Nemo sint omnis fugiat.</p>
+    <p>Aliquam est eos reprehenderit porro fuga, tempora officia eveniet rem libero quisquam ducimus veniam nulla sit laudantium accusamus reiciendis ad, tenetur impedit! Fuga porro nesciunt sequi distinctio ab qui aliquid.</p>
+    <p>Architecto ex reiciendis libero consequuntur laudantium cumque illum labore sunt accusamus ullam? Recusandae dicta reprehenderit expedita, odit obcaecati perferendis, distinctio, eum eius dolorum maxime dolorem minus rem ipsam commodi quo.</p>
+
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dignissimos illum nostrum impedit quidem eius cumque nam cupiditate aliquid vero reiciendis, quia assumenda ullam sapiente debitis commodi doloribus tenetur quos perferendis.</p>
+    <p>Dignissimos officia saepe modi corrupti nesciunt laborum nulla, odio qui adipisci accusantium illum a ad impedit quo perspiciatis architecto eius. Totam, labore! Veniam quis perspiciatis esse eaque est ut similique.</p>
+    <p>Assumenda repudiandae officia nostrum unde laborum, tempore eos, necessitatibus tempora voluptatem tenetur pariatur, modi dignissimos ut est voluptatibus sint error? Molestias nemo laudantium quos deleniti fuga sequi impedit incidunt quia.</p>
+    <p>Cum amet deleniti inventore eum consequuntur dolor totam, fuga minima omnis reiciendis sint fugit voluptatibus, molestias nisi molestiae atque ipsam quos quisquam autem ea ad corporis. Esse sunt, eaque iste!</p>
+    <p>Sit minima cum magni, earum vel quam rerum ab iusto autem natus repellendus eligendi, officia, nobis eveniet hic laboriosam error provident exercitationem asperiores sunt magnam doloribus? Nemo sint omnis fugiat.</p>
+    <p>Aliquam est eos reprehenderit porro fuga, tempora officia eveniet rem libero quisquam ducimus veniam nulla sit laudantium accusamus reiciendis ad, tenetur impedit! Fuga porro nesciunt sequi distinctio ab qui aliquid.</p>
+    <p>Architecto ex reiciendis libero consequuntur laudantium cumque illum labore sunt accusamus ullam? Recusandae dicta reprehenderit expedita, odit obcaecati perferendis, distinctio, eum eius dolorum maxime dolorem minus rem ipsam commodi quo.</p>
+  </div>
+  <style>
+        #vmfive-overlay {
+            position:fixed;top:0;left:0;bottom:0;right:0;
+            background-color:rgba(0, 0, 0, 0.7);
+        }
+        #vmfive-ad-unit {position:relative;display:block;}
+        #vmfive-ad-unit video {position:absolute;}
+        #vmfive-close {
+            background-image:url(data:image/png;base64,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);
+            background-repeat:no-repeat;background-position:center;background-size:20px 20px;
+            width:30px;height:28px;
+            right:30px;z-index:1;
+        }
+        .vmfive-info-image {
+            position:absolute;z-index:1;
+            background-size:20px 20px;background-repeat:no-repeat;background-position:center;
+            cursor:pointer;
+        }
+        #vmfive-replay.vmfive-info-image {
+            background-image:url('/dist/icon_act_replay.png');
+            display:none;
+            top:0;left:0;
+            width:34px;height:28px;
+        }
+        #vmfive-logo {
+            background-image:url('https://goo.gl/VKzV2i');
+            display:none;
+            top:0;right:23px;
+            width:24px;height:24px;
+        }
+        #vmfive-cta-btn {
+            display:inline-block;
+            position:absolute;bottom:41px;left:0;z-index:1;padding: 6.5px 13px 5px;
+            border: 1px solid rgba(255,255,255, 0.5);box-sizing: border-box;border-radius: 3px;
+            background-color: rgba(0,0,0, 0.5);
+            color: #fff;font-size:12px;font-family:'Helvetica Neue', sans-serif;
+            cursor:pointer;
+            display:none;
+        }
+        #vmfive-volume-btn {
+            width:34px;height:28px;
+            background-image:url('/dist/icon_dyn_soundwave.gif');background-size:20px 20px;filter:opacity(0.5) drop-shadow(0px 0px 2px #000);
+            bottom:41px;left:18px;
+            display:block;
+        }
+        #vmfive-volume-btn.unmute {background-image:url('/dist/icon_act_voice3.png');filter:none;}
+
+    </style>
+
+    <!-- [track-tag-default]
+    [track-tag-nielsen]
+    [track-tag-moat]
+    [track-tag-dcm]
+    [track-tag-comscore]
+    [track-tag-sonet]
+    [track-tag-lndata]
+    [track-tag-sizmek] -->
+
+    <script>
+    let sc = document.createElement("script");
+    let videoFrameSize = {width: 360, height: 639};
+
+    sc.src = "https://d1v69ngg41pvl6.cloudfront.net/dist/MixPlayer.js";
+    sc.onload = function () {
+        function getElById(elId) {return document.getElementById(elId);}
+
+        const vmfiveAdUnitEl = getElById("vmfive-ad-unit");
+        const parentElWidth = getElById('vmfive-ad-unit').parentElement.offsetWidth;
+        const currentVideoHeight = videoFrameSize.height * (parentElWidth / videoFrameSize.width);
+
+        const source = '{"mp4": "https://storage.googleapis.com/vmfive-man-demo-assets/vertical_20170421/vertical.mp4", "m3u8": "https://storage.googleapis.com/vmfive-man-demo-assets/vertical_20170421/m3u8/vertical0.ts"}';
+
+        let trackings = '[{"event":"view","url":"https://www.google.com?event=view"},\
+                          {"event":"impression","url":"https://www.google.com?event=impression"},\
+                          {"event":"video_percentage:0","url":"https://www.google.com?event=video_percentage:0"},\
+                          {"event":"video_percentage:25","url":"https://www.google.com?event=video_percentage:25"},\
+                          {"event":"video_percentage:50","url":"https://www.google.com?event=video_percentage:50"},\
+                          {"event":"video_percentage:75","url":"https://www.google.com?event=video_percentage:75"},\
+                          {"event":"video_percentage:100","url":"https://www.google.com?event=video_percentage:100"},\
+                          {"event":"click","url":"https://www.google.com?event=click"},\
+                          {"event":"replay","url":"https://www.google.com?event=replay"}]';
+        let width = 0;
+        let height = 0;
+        const mix = new MixPlayer(vmfiveAdUnitEl, source, trackings, width, height);
+        mix.percentageInViewPort(vmfiveAdUnitEl, 50);
+
+        mix.onPrepared = function() {
+            function isInlineVideo(videoTag) {return videoTag.tagName === 'VIDEO';}
+
+            const rate = vmfiveAdUnitEl.offsetWidth / videoFrameSize.width;
+            const vm5AdVideoTag = vmfiveAdUnitEl.querySelector('video') || vmfiveAdUnitEl.querySelector('canvas');
+            const marginTopBottom = 56;
+            const marginLeftRight = 32;
+
+            width = videoFrameSize.width * rate;
+            vm5AdVideoTag.style.width = width + 'px';
+
+            if (isInlineVideo(vm5AdVideoTag)) {
+                vm5AdVideoTag.height = currentVideoHeight - marginTopBottom;
+                height = vm5AdVideoTag.videoHeight;
+                vm5AdVideoTag.style.top = (marginTopBottom / 2) + 'px'
+
+            } else {
+                height = vmfiveAdUnitEl.querySelector('canvas').height = videoFrameSize.height * rate;
+                vm5AdVideoTag.style.height = height + 'px';
+
+                vm5AdVideoTag.style.position = 'absolute';
+                vm5AdVideoTag.style.top = 'calc(50% - '+ (videoFrameSize.height * rate / 2) +'px)';
+            }
+
+            setOuterWapperHeight(currentVideoHeight);
+            setBackgroundImageContentBox();
+            getElById('vmfive-logo').style.display = 'block';
+            getElById('vmfive-logo').style.top = (currentVideoHeight - getElById('vmfive-logo').clientHeight - 13 - marginTopBottom / 2) + 'px';
+            getElById('vmfive-cta-btn').style.display = 'block';
+            getElById('vmfive-cta-btn').style.left = (width - getElById('vmfive-cta-btn').offsetWidth) / 2 + 'px';
+
+            addElClickEvent(getElById('vmfive-replay'), function(isInlineVideo) {
+                finishedVisibility();
+                this.player.play();
+            }.bind(this, isInlineVideo(vm5AdVideoTag)));
+
+            addElClickEvent(getElById('vmfive-volume-btn'), function(isInlineVideo) {
+                if (this.player.isMuted()) {
+                    this.player.unmute();
+                    getElById('vmfive-volume-btn').classList.add('unmute');
+                } else {
+                    this.player.mute();
+                    getElById('vmfive-volume-btn').classList.remove('unmute');
+                }
+
+            }.bind(this, isInlineVideo(vm5AdVideoTag)));
+
+            // Add LINK
+            setClickEventToEl(vm5AdVideoTag);
+            getElById('vmfive-close').addEventListener('click',function(){
+                getElById('vmfive-overlay').parentElement.removeChild(getElById('vmfive-overlay'));
+            });
+        }
+
+        mix.onFinished = function() {
+            // finishedVisibility();
+            this.player.play();
+        }
+
+        function addElClickEvent(el, fn) {el.addEventListener('click', fn);}
+        function setClickEventToEl(vm5AdVideoTag) {
+            const ctaElIdList = ['vmfive-logo', 'vmfive-cta-btn'];
+            const ctaURL = 'http://vmfive.com/';
+            const fbURL = 'https://fb.com/vmfive/';
+
+            ctaElIdList.forEach(function(elId){addElClickEvent(getElById(elId), function(){window.location.href = ctaURL;});});
+            addElClickEvent(vm5AdVideoTag, function(){window.location.href = ctaURL;});
+        }
+        function setOuterWapperHeight(specificHeight) {getElById('vmfive-ad-unit').style.height = specificHeight + 'px';}
+        function setBackgroundImageContentBox() {
+            const vmfiveAdUnitEl = getElById('vmfive-ad-unit');
+
+            vmfiveAdUnitEl.style.top = (vmfiveAdUnitEl.parentElement.offsetHeight - vmfiveAdUnitEl.offsetHeight)/2 + 'px';
+        }
+        function finishedVisibility() {
+            const vmfiveElIdList = ['vmfive-replay', 'vmfive-volume-btn'];
+
+            for (let index in vmfiveElIdList) {
+                let specificEl = document.getElementById(vmfiveElIdList[index]);
+                if (specificEl)
+                    specificEl.style.display = window.getComputedStyle(specificEl).display === 'block'?'none':'block';
+            }
+        }
+    }
+    document.body.appendChild(sc);
+    </script>
+</body>
+
+</html>
