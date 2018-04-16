@@ -238,6 +238,12 @@
     };
     document.body.appendChild(sc);
   </script>
+  <script>
+    document.querySelector('.customer-close-btn').onclick = function() {
+      var maskEl = document.querySelector('.customer-mask');
+      maskEl.parentNode.removeChild(maskEl);
+    };
+  </script>
 </body>
 
 </html>
