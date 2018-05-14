@@ -606,16 +606,16 @@
                     <!--
                     Application : 'dcard demo'
                     Placement : 'impressive'
-                    Version : 'v2.3'
+                    Version : 'v3.0'
                     -->
                     <script id="vm5ad-js-sdk" src="https://vawpro.vm5apis.com/man.js" data-mode="fast"></script>
-                    <script>
-                    window.onVM5AdSDKReady = function() {
-                    VM5AdSDK.init({ appKey: '59a636ff6ae4fadf1e262db0' });
-                    };
-                    </script>
-                    <script src="https://man.vm5apis.com/dist/adn-web-sdk.js"></script>
-                    <vmfive-ad-unit placement-id='59a638ba6ae4fadf1e262dd8' ad-type='video-impressive'></vmfive-ad-unit>
+                      <script>
+                        window.onVM5AdLiteReady = function() {
+                          VM5AdLite.init({ appKey:'59a636ff6ae4fadf1e262db0' });
+                        };
+                      </script>
+                    <script src="https://man.vm5apis.com/dist/VM5AdLite.js"></script>
+                    <vmfive-ad-unit placement-id="59a638ba6ae4fadf1e262dd8" type="web_impressive"></vmfive-ad-unit>
 
                     <div data-reactid="46"><h3 class="darsys-post-list__title" data-reactid="47"><span
                             data-reactid="48">你可能感興趣的文章</span></h3>
