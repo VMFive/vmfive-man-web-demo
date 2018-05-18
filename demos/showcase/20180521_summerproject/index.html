@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+
+    <link rel="stylesheet" href="https://unpkg.com/purecss@1.0.0/build/pure-min.css" integrity="sha384-nn4HPE8lTHyVtfCBi5yW9d20FjT8BJwUXyWZT9InLYax14RDjBj46LmSztkmNP9w" crossorigin="anonymous">
+
+    <style media="screen">
+    body {
+      /*
+      background: linear-gradient(to bottom, #DF5E6A, #E76B51);
+      */
+      background-image: url('img/bg_index.png');
+      background-size: 400% 100vh;
+    }
+    .page {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      height: 100vh;
+      background-image: url('img/bg_index.png');
+      background-size: 60vh 100vh;
+      background-repeat: no-repeat;
+      background-position: center 0%;
+    }
+    .group-button {
+      width: 55vh;
+      margin-top: 20vh;
+      align-self: flex-start;
+      align-content: flex-end;
+
+      height: 65vh;
+    }
+    .group-button > * {
+      height: 25%;
+
+      border-radius: 300px;
+
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .group-button > * > * {
+      height: 100%;
+      width: 100%;
+
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .group-button img {
+      /* margin: auto; */
+      width: 100%;
+    }
+    </style>
+  </head>
+  <body>
+    <div class="page">
+
+      <div class="pure-g group-button">
+        <div class="pure-u-1-2">
+          <a href="#">
+            <img class="" src="img/native.png" alt="" onclick="window.top.location.href='./simple-lite.html'">
+          </a>
+        </div>
+        <div class="pure-u-1-2">
+          <a href="#">
+            <img class="" src="img/top.png" alt="" onclick="window.top.location.href='./simple-top-lite.html'">
+          </a>
+        </div>
+        <div class="pure-u-1-2">
+          <a href="#">
+            <img class="" src="img/interstitial.png" alt="" onclick="window.top.location.href='./simple-interstitial-lite.html'">
+          </a>
+        </div>
+        <div class="pure-u-1-2">
+          <a href="#">
+            <img class="" src="img/impressive.png" alt="" onclick="window.top.location.href='./simple-impressive-alignable-lite.html'">
+          </a>
+        </div>
+        <div class="pure-u-1-2">
+          <a href="#">
+            <img class="" src="img/dynamic.png" alt="" onclick="window.top.location.href='simple-native-dynamic-countdown-lite.html'">
+          </a>
+        </div>
+        <div class="pure-u-1-2">
+          <a href="#">
+            <img class="" src="img/vertical.png" alt="" onclick="window.top.location.href='simple-portrait-interstitial-lite.html'">
+          </a>
+        </div>
+        <div class="pure-u-1-1">
+          <a href="#">
+            <img class="" src="img/carousel.png" alt="" onclick="window.top.location.href='./simple-carousel-lite.html'">
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </body>
+</html>
