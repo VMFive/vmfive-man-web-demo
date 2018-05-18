@@ -62,7 +62,7 @@
         'track_url': trackings,
 
         'image:cover': '',
-        'image:banner': 'https://d2v4tz4zvhrua.cloudfront.net/manual_uploads/20180309/dynamic_resources/image/uvi_banner.png',
+        'image:banner': 'img/native-2.png',
         'video:video1:mp4': 'https://d2v4tz4zvhrua.cloudfront.net/manual_uploads/20180516/showcase/resources/IceProducts/video.mp4',
         'video:video1:m3u8': 'https://d2v4tz4zvhrua.cloudfront.net/manual_uploads/20180516/showcase/resources/IceProducts/video.m3u8',
         'downloaded_pixel': 'https://vaser-track.vm5apis.com/v2/track?requestId=&event=downloaded&placementId=&campaignId=&audienceGroupId=&creativeId=&timezone=8&creativeFormat=richmedia&pixel=1&x=0',
@@ -92,9 +92,9 @@
           'request_id': '55667788',
           'track_url': trackings,
           'text:top_percentage': '',
-          'text:bottom_percentage': '0',
+          'text:bottom_percentage': '-20',
           'text:left_percentage': '',
-          'text:right_percentage': '0',
+          'text:right_percentage': '10',
           'text:dynamic_weather_title': '',
 
           enableUVI: false,
@@ -111,6 +111,25 @@
               let cta_prefix_url = vmfiveAdUnitContainer.config['cta_prefix_url'] + '&url=';
               let ctaURL = vmfiveAdUnitContainer.config['cta:default'];
 
+              function setupFontFamily(valueEl) {
+                let fontFamilyList = [
+                  'DIN Condensed',
+                  'Roboto Condensed',
+                ];
+                let fontFamily = '';
+                fontFamilyList.forEach(function (font) {
+                  fontFamily += '"'+font+'",';
+                });
+                valueEl.style.fontFamily = fontFamily + '""';
+              }
+
+              [].forEach.call(dynamicEl.rootView.querySelectorAll('#temperature'), function (valueEl) {
+                valueEl.style.fontSize = '2rem';
+                valueEl.style.color = '#000';
+
+                setupFontFamily(valueEl);
+              });
+
               let titleElList = dynamicEl.rootView.querySelectorAll('.title');
               [].forEach.call(titleElList, function (titleEl) {
                 [
@@ -121,7 +140,7 @@
                   },
                 ].forEach(function (condition) {
                   if (condition.matched) {
-                    titleEl.innerHTML = condition.discountText;
+                    // titleEl.innerHTML = condition.discountText;
 
                     ctaURL = encodeURIComponent(condition.discountCtaURL);
                   }
