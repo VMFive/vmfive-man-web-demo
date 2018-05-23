@@ -69,23 +69,20 @@
           display: flex;
           align-items: center;
           justify-content: center;
-
+          background-color: black;
           /* NOTE For flexbox outer parent of this element */
           align-self: center;
         }
         #vmfive-ad-content-55667788 {
             position:relative;
         }
+        #vmfive-ad-view-55667788 {
+            clear: left;
+        }
         #vmfive-ad-view-55667788 .vmfive-info-image {
             position:absolute;z-index:1;
             background-size:16px 16px;background-repeat:no-repeat;background-position:center;
             cursor:pointer;
-        }
-        #vmfive-replay-55667788.vmfive-info-image {
-            background-image:url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAAAXNSR0IArs4c6QAADHBJREFUaAWlmXtsl9UZx3/l1lJoESlQYGWldjBEKFKBwbg4GFJQZIDAhowYQhgQjBoHfywmZCMzRt1MMCFckmXOTINOAyJjgEBwmSB3BESBMcbFlvu12EIL+35e3u8vb1/6o2We5NvnXJ5zznM7zzm/t2mJ717SIku4bhoZCqq3wg5TmtF6OFx/kmqjulbwPKjRIKybmsdrISi4GaPuh++elYlvwiJ3K+a3kNCGgmm0bsVYz0IifHWIeN08psyrs1iguhjNZ8ERFDQK0ThS95h5NZS0PEJXxXAjbFsxFICPQv2uBQHqKrYkAoGo0E3UThegKGFF7AnPRSBb3ApcV18UKGJlmFcvJepSwAJEBbfQGdoE4U2pp1IAS2JhhLKgCF8pVISgDuiHxx5RNbUn7qYAwketjnAIC5oKmSEN+vr06ZMzY8aM4h49enRt165dx6ysrJbp6enNbqncuHGj4vLly+fOnDlzYt++fV8tXbp0x6ZNm05pvhW4pvq3EbAvilDsvVrDCSFrK1HhERyrIyhCg2YhMl999dW+48aNG9mpU6eeaWlpbFxnQamTJ09+uWLFir+/+OKL/6ysrESB8hDUrRBKEHL2Xq1KaLxGsfAIjrD3Ce2EQqGnMEAoee655+aUlZUdRJjvUs6dO3ds/vz587TmCGGg8LDwA6G90FJABmTBOHcYPN5BO6oAcU24NBeyhOzMzMzs1atXPzNw4MDRMYtj1cN79+7ds2PHjiPbt28vPXz48OUGKvJOZq9evXJ79+5d2K1bt4fy8vK6xOYmNGftqFGjlpSWlp7XPpeFK8JVgdDinNgTeCGlJxCec0G4ZAu5ApbvJTxaWFg44dixY19ELV5VVXV98+bNbP68eJ4SRguPCyXCYyGGi44UnhTGSfmZGzduXHn9+vWK6FqnTp061L9//1+KZ4hQLOAJvN9CQCZkixtdXbeLLU+8Y/HWQoFA2Azu3LnzRDaIbnj06NH9oeBjxYOAQwVC7EdCbwEhwCNCX4ExhCNcxg4YMGDWgQMHtkfXvHDhwsl+/fpN0fhPBMLpAaGNQAQgGyk6qUSyEnYy6AOLEnjhPmWUVsoe8zt27Nhd7aCsXbt2+ciRI5dVV1fjZh88XB0/ePATv4BY9vqEJvHdbNmyZaPGjx8/yWGlbPUfZbO5OmOnNX5RuCQ4nJxifU9o6LZGCE/MIzRu6yJgyRKlvA+jVnrnnXf+rP7xjAlYFS/B/32Bw4fFWgn3h6BOH+vC01koEn4sEF5PLViw4M2bN29We589e/ZsUD9e7Sf8UGBdQgkZk16gQnH4YCFijTQZHFqluYenTZs2W9YJvLVmzZrlY8aM+VDjHDSAda4I9gReqBTwhC8tUw4idSggPXIg05QYyrp06VLRvXt3jJFo27ZtJyWMo5988sk3apof6nuhhgdwL6619dG4v/C43JiMe8X8voYNG/5c/Vge73QV8gQsTMihPEbAMA4bU/psIHjxzvcE9uJ84IkJCtUt9sKlS5dKpQRJAU89KHQQ7AXWDTaB2gOcchTBTem6pPrIEmShhGK9avbs2UvDmMfatjoXEKkOq9u6UStF61gQHnjxFHNZxyifMmXKn8KLLZGdnZ27aNGiYRrnvGAcZENGhEfm4OYMKmEnVoIBSzWeMGHCKNGgKK+v//jjj/+rBpuiAJTDiyAIRTggLCEB4sX98MDLHOaiPGsF2Llz55n169evVjsow4cPJ2MhPEZFgaiHkx5Qf02XK5W1UNbpwYDKrZdffnmFKAJ7M1sdqzqWaxNcwzWKFWEOc/EGa7E29Nu5c+f+Q55GwUSbNm0K5JVOqloBDIyhkx5QPWiYMpB44YUXeuncwphQ/v/6o48+OqqqhcdybHyvwmtKUOJKcOAdVpX79++/oFt8T8ibUIrtrXoQFaJWoMYZMC8L4+KqoqIiDldQjhw5slUVC2/Lx8Mm5K43SaUEilzftm1bUgFlJ2RBcOMOD7ArCzo2KzMyMmAOit4pm1XhoDnmsRi8KPtdSlwJPBrg008//bcXViLJUx2hDWe25Bmw5REK4Spee+21N06cOPHBrl27/vDss8/+S33O81jI1rcA6vq/i9fw4UaG6nXr1n3jFZVKSbkW2hmI4eByIubpdIwFKVRtKF5gnEUROnCvKErGlUAQl2jdfako65NdMgVyfEuhlXC/DvJf9ZgNIqFVq1ZPnT9//pT6zwk8L4iIimSYqIEFgvgXdYzRRjlbiTpjKGvFPA9qPlVrTaX030thj6Do5VqrUaIKwGgmUxawy+AFWCsZq7E6nrIizPU6qqYs8EXBfg06dOiQIetjrOASvXr1Knt6PWhQjytggW1l5157hEkIyGIOI4eVhfBG3kysdy2eZ++yV8OhQ4e29azy8vKzqsc9zfAtK2DBbWGubh50xCW3ICHDwgjl88Bd4JuU1EqxgvbC7d7Ufy08a7N3EkOGDCn0ND2vOdDB4Q6plUkeUhZiEQRF4OC3QPv27XOaNm2arWduuh5YgQK63Kr0oKts3LhxuWi5Hl+nxW/FvIkFu5sXzGPh2ZvwBI2Li4v9CkjoUvtKfQ5b78HaSQ/gvqj1s7Zs2fJ83759x6qfjVKWK1euHC4pKZn02WefEUoI4zOTco4G4sIjNOGK8TL0hMnS5RU8q9VOLF++fLsIWQ+gCErghaCwKSFDrs0XioURehFe9bO2LvrWW29NDefmiBJ6WBNFaisIb4OxL2mzo4DFBws/e//999/2nkqdJ9X3hNBf4EbOFYgQ9kjD6lFr0IkVMhUq1JNFCyaUyrBAEBYavyXcPHv27Bfz5s37Uv1exzQ5N1LxmMMGq/u8oXizgoKClvqpmnwFb9iwYZX68a6TBR6ocQbUDjb3olaC/mSRsImtW7eWDRo0aLU6zwtnImDRaPhYUCjFFMt7H8KGJIE1+fUHmr377rtP6+blQkso+5zX96e1qjphoESNC9Ru9obegE3uKPockvf6668/pAH4zYsXUdrwQYxTx7gtjsDZAsJCs/S7eJA+UQ5VPSjvvffe2/rWdEmN6BvMHggiASFsHSvB5GCQCmXlypWHb9eCZ3a/l156qYva8KMoghJ2CIZFU4EQsbUR+L4IsrVm8axZs36lvqAcOnRo29SpU9epwSvYCtj6yQMMMxZk4XbCg8Kjwi8U75U+SLoV/6IFT7utN0r14sWLPxAfG04SnhA4gI8I3YTOQoGQH6KTaKHAIewh9BHgHymM54sEH8i8vr4NfdOzZ8+nQ54i0Xyh1gSBByhYHJCe0LKCQyoaFH1dPjtixIhlpaWlZ+ngc+H06dPH7t69e6q+IpC9sDoh4ccYmSUKeGhDjZY6sG0///zzGXrtztadEiQN4l6W/53WLhUvL2A8wEXJzV8jfNQOCh5AgNbCAwJWHM4ncVtEn8t/o75fS9jf6ol9zP3QioqKq6tWrfpb165dp4lnnPCkMEJ4TPhpCOr0jRLG5ufnP0Oq1PvmYnStixcvlo4ePRqvcg6QA0+2Fwg3QhRZCd1koeE4hoFQIj5bSIG1jRo1QrFEbm7uNP2sxDNpOTk5TfRWnyIXD2DMRVFVpRtzt36U71XqO6jvOaX6DBM8MWSA9GHDhuUOHjy4QIe0SJdUL93k6Z4LJeb1vekN/Zw8pSZP5csCHiD+78g+6ksWwojFcD+XBF4oOn78+BqsI8F3qj1cKBGIWaw45pVXXvm9vtuURS0Yr6OUyo14f7QtL5xbsmTJH7Xm4wLngosUy3cQCDcOfxMBQ9ewvtpBBwrYCygSZJQmTZpkzJkzp0DfZcr0Dd+nHt5kulS+zuS7DZ8++HqgsXoXHdQT+kK9ZubMmatPnz7tVEm8O+s47vG8nw7Jc+mN0MhhRHwBtAVuR7VGAfpRAmUJOxTOmDx5cv7EiRMfUXh0bd26dZ4+COf4YOKJa9euXdCr8rjC7KD+M7N94cKFX2seoYGggFBxnX4f2pTCiycQPqoEngAIaZdFFbCyKICS9hgU0O+5DZo3b95Ir9kGEhxh8CLCkEmwKn0I6lsWasEZd8Zh3h2WV19QLBwU65pSdztg1B8W8TjKWQl7DFpDgZBfJJgbVyCqBMrQtuBRq6cUnoWjCrhNn0FfvESVcJhZcLfjBkAIgGBRL9gbUI/Z4p6jodTFCpgj2o7WGWdB90EtJNShZ2rvmd/C2AtRYanTf0+Ciz8o3sDt+lLPgwILbOp+86EAxULGqcdNb3PX4683qAdrShavkYp6ooVLRc13T/R/Ne3YM6zKdUMAAAAASUVORK5CYII=');
-            display:none;
-            top:0;left:0;
-            width:34px;height:28px;
         }
         #vmfive-logo-55667788 {
             background-image:url('data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiIHN0YW5kYWxvbmU9Im5vIj8+CjwhRE9DVFlQRSBzdmcgUFVCTElDICItLy9XM0MvL0RURCBTVkcgMS4xLy9FTiIgImh0dHA6Ly93d3cudzMub3JnL0dyYXBoaWNzL1NWRy8xLjEvRFREL3N2ZzExLmR0ZCI+CjxzdmcgdmVyc2lvbj0iMS4xIiBpZD0iTGF5ZXJfMSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgeD0iMHB4IiB5PSIwcHgiIHdpZHRoPSI1MHB4IiBoZWlnaHQ9IjUwcHgiIHZpZXdCb3g9IjAgMCA1MCA1MCIgZW5hYmxlLWJhY2tncm91bmQ9Im5ldyAwIDAgNTAgNTAiIHhtbDpzcGFjZT0icHJlc2VydmUiPiAgPGltYWdlIGlkPSJpbWFnZTAiIHdpZHRoPSI1MCIgaGVpZ2h0PSI1MCIgeD0iMCIgeT0iMCIKICAgIHhsaW5rOmhyZWY9ImRhdGE6aW1hZ2UvcG5nO2Jhc2U2NCxpVkJPUncwS0dnb0FBQUFOU1VoRVVnQUFBRElBQUFBeUNBUUFBQUMwTmtBNkFBQUFCR2RCVFVFQUFMR1BDL3hoQlFBQUFDQmpTRkpOCkFBQjZKZ0FBZ0lRQUFQb0FBQUNBNkFBQWRUQUFBT3BnQUFBNm1BQUFGM0NjdWxFOEFBQUFBbUpMUjBRQS80ZVB6TDhBQUFBSmNFaFoKY3dBQUN4TUFBQXNUQVFDYW5CZ0FBQUFIZEVsTlJRZmlBUjBVSFFUclpSVnlBQUFFNGtsRVFWUll3NzJZVzB4VFp4ekFmMTh2cDZjWApCQmtxRXh5NEN4R21qSUUzektKemlMcEZOM1ZlbGlWN1hPTE01b012eTVJdHpzZTk3bW5MbnBiNE1vM1JoWW1SNE56SUV2QUNpS0lnCmJtYW9NSzIyaGJhMFBUMm41OXNEb0lndHRGRDh2elE1MzNmTzczL3Y5LzJGWk83Rjhod1kyQUFFMk5uTUtsUWdHNllKSU1ZbG10QWwKSUNRZzdCeWtsamhtVm4yazBNcjNVaCt6aEUzVTRzZEVaQkVpc1ZETERjNk14MlFOY1dSV0VTQ1F4Rmt6YWhTQW1sVkhQUkVURmNiZApsVXdQSFEyQmtuSkhCbUliODk5azBRcm4xMWRvK2g5OVhpOEtqaG5ubkV4dGllNXlmRlpYVTZpeGZubnpsYk5Yb3lIY3M0bFlDc2lpCnhlV0ZENURrdWo1WnQ2N3N0L2FXV3hpb1dHZG1VWXFLViswSlRDUXhmSlFVSE5qeTViWmxMeEVsTmpON1VvUlZ5SEdWTFF4aloyWHAKOHRLV0c0MlhCM3pZVWJJRWVZS3dvV0VRd01hN0ZkVkx6MTA1M1IwTjRzN01jWmFwRjBPUi9nY3VKSUlFUHVZNTk5VWUyYm0ra2pnagptVlRXbEJDRlFPeFlxNUVZeitBSVF4UVhIS3ovYWxkVktSclJyRURBNCt5KzA5S1RNMkZibUdGcWlnL3QyRjlYOUFJaGpDeEE3QUxsCitNWEJxUHI0aWNBa2dFSDk4aU43UHRxUTR5Q01QbDNPVFFPUjJKU1FyN0hET1NuT0NYeW9qcjByRCsvYTlLWkZNaklyQ0ZoQWFlcTYKNmN1YmhCRkU4Yk40L3Y2TlgrK3NYa3FVV09wOFMrZnZWekcwWTYxR2t2S1FoQW13b3VqUUIxOXNYcktBa1ZTT1N3Y2ljVjM1cCsyMgpKNG1xQWdpUVlFUDU0US8zYmNoVkNaTklGeUlWNnlJV3NvZ0NWUWdrQW5HaWJWaFhrbnBFRU1lUFRkbFg4KzNlTFZWQ0VwOXNUL0tLCnQzdER4MjVxMGk1QzhVUUNLK0FZdU45MDllT2E0YVFZRTRNNGZsN00rWFRqaXFVL05RL3JXS2VIT1A3ei85Z3dwcVlIS3hLQmVxcjkKOVpLU3ZHY1RLYXhKTTk5akVaSVFGamFXM2w5MTlIZmMwME5BWUIvN0ZXUEsyN1g0ZHcyNWpzUUVVeVNtR1l3dWRHK3RYRnRoc1k0SApRN0ZOTmpjNXhNaHoxNVFaQ2FzbFpyVGRNVWRQTVJMN1NIUWtNa0dOQkRGc2E4dTIxYnhjR01WQTRNVERwZnUvWGtKTkI2SVZGWC8rClRoZ25EK09YajhiMXg3dHNFeEF4alBKWGQxUlhsY0F3WUdVK1BxM3g2b2xPTGNhazJrM1Y2b1dPZ1k2ZXZHRklva1g1MjFlK1ZhNFEKeHNDR0I1M20zdE1kL1E5UVVOTnpGMUlhR0Jna0Vza1doZHhUVzFkWm9BYUpBRG5ZNkxyWDBORjFHd3ZKaWluREE0K0pqc0F1ekdWTAppdFFCTERoeDBSOW82RGpmaTQ0RFcvTFdrZ2trQ3V1V0JhUGRkMDN6NXo5TGQrZllWTHp4aHM0ejEwSkJYTmhKZVZoUEY2SVRMMTd3CmZuVmRSWi8vbStPRzBUL1kwck43eGRsYkp5L2U4MkxETS9YTDAwS0VRQ2VXbTdkMTlaYktlWTRncitWdnJ6clppdk5VUjl2ZnZYZXgKUEYxMk00QUlFRnJZSXQrdTJsWlRraHZGRDhDZU5SZjZCb05ESTBNQm5Pa2RrYWFFSkRDTTFhL1VWMVV2amhIQVJNV0ZOM0srTzZKagp3WnArUEtmY0dDZEhQZkNlRXo4U1FUNFJzK25HcVU2dkYxZXFQSnBSVEd4V0dNYUtHN2o4YjBQNzlidFk4VHp1WjdPRGlERm5TK0s0ClVlbDlkS2I5cno0U3VETDUrRFFRM1J4ZFVIRHphT1NYcnJQWHRBaU9aeHZHYkNDMmg0SEJZTms4RFgraXNidWg4NkVQRjI1bWZETk8KRGxHR1FqK2NxMzhqb3JWYzd4c0FjbWIyOGFjaHoyYTcyalBRY3h1QmdqcXJDNnRJYlFsSWxNeXZDS2xrOUxRU202UHhoNFhZRThnRgpsRXh6ZjFxUkNCUXV3TGk3bXFtWW83RkhNNHpQVnA3SEFHZXU1Ym5NdS80SGpsUGZEcU03YVkwQUFBQWxkRVZZZEdSaGRHVTZZM0psCllYUmxBREl3TVRndE1ERXRNamxVTWpBNk1qazZNRFF0TURjNk1ERG5TYzZmQUFBQUpYUkZXSFJrWVhSbE9tMXZaR2xtZVFBeU1ERTQKTFRBeExUSTVWREl3T2pJNU9qQTBMVEEzT2pBd2xoUjJJd0FBQUFCSlJVNUVya0pnZ2c9PSIgLz4KPC9zdmc+Cg==');
@@ -160,6 +157,8 @@
           margin-left: 3.5px;
           margin-right: 3.5px;
           width: calc(100% - 3.5px*2);
+
+          position: relative;
         }
 
         #vmfive-ad-view-55667788 .nav-controller {
@@ -233,19 +232,22 @@
         '{"mp4": "https://d2v4tz4zvhrua.cloudfront.net/manual_uploads/20180402/mothers_day_demo/resources/carousel/video4.mp4", "m3u8": "https://d2v4tz4zvhrua.cloudfront.net/manual_uploads/20180402/mothers_day_demo/resources/carousel/video4.m3u8"},'+
         '{}]';
 
-        var trackings = '[{"event":"view","url":"https://www.google.com?event=view"},\
-                          {"event":"impression","url":"https://www.google.com?event=impression"},\
-                          {"event":"video_percentage:0","url":"https://www.google.com?event=video_percentage:0"},\
-                          {"event":"video_percentage:25","url":"https://www.google.com?event=video_percentage:25"},\
-                          {"event":"video_percentage:50","url":"https://www.google.com?event=video_percentage:50"},\
-                          {"event":"video_percentage:75","url":"https://www.google.com?event=video_percentage:75"},\
-                          {"event":"video_percentage:100","url":"https://www.google.com?event=video_percentage:100"},\
-                          {"event":"click","url":"https://www.google.com?event=click"},\
-                          {"event":"replay","url":"https://www.google.com?event=replay"}]';
+        var trackings = '[{"event":"view","url":"https://vaser-track.vm5apis.com/v2/track?requestId=&placementId=&campaignId=&audienceGroupId=&creativeId=&timezone=8&creativeFormat=richmedia&pixel=1&x=0&event=view"},\
+                          {"event":"impression","url":"https://vaser-track.vm5apis.com/v2/track?requestId=&placementId=&campaignId=&audienceGroupId=&creativeId=&timezone=8&creativeFormat=richmedia&pixel=1&x=0&event=impression"},\
+                          {"event":"video_percentage:0","url":"https://vaser-track.vm5apis.com/v2/track?requestId=&placementId=&campaignId=&audienceGroupId=&creativeId=&timezone=8&creativeFormat=richmedia&pixel=1&x=0&event=video_percentage:0"},\
+                          {"event":"video_percentage:25","url":"https://vaser-track.vm5apis.com/v2/track?requestId=&placementId=&campaignId=&audienceGroupId=&creativeId=&timezone=8&creativeFormat=richmedia&pixel=1&x=0&event=video_percentage:25"},\
+                          {"event":"video_percentage:50","url":"https://vaser-track.vm5apis.com/v2/track?requestId=&placementId=&campaignId=&audienceGroupId=&creativeId=&timezone=8&creativeFormat=richmedia&pixel=1&x=0&event=video_percentage:50"},\
+                          {"event":"video_percentage:75","url":"https://vaser-track.vm5apis.com/v2/track?requestId=&placementId=&campaignId=&audienceGroupId=&creativeId=&timezone=8&creativeFormat=richmedia&pixel=1&x=0&event=video_percentage:75"},\
+                          {"event":"video_percentage:100","url":"https://vaser-track.vm5apis.com/v2/track?requestId=&placementId=&campaignId=&audienceGroupId=&creativeId=&timezone=8&creativeFormat=richmedia&pixel=1&x=0&event=video_percentage:100"},\
+                          {"event":"click","url":"https://vaser-track.vm5apis.com/v2/track?requestId=&placementId=&campaignId=&audienceGroupId=&creativeId=&timezone=8&creativeFormat=richmedia&pixel=1&x=0&event=click"},\
+                          {"event":"custom","url":"https://vaser-track.vm5apis.com/v2/track?requestId=&placementId=&campaignId=&audienceGroupId=&creativeId=&timezone=8&creativeFormat=richmedia&pixel=1&x=0&event=custom"},\
+                          {"event":"replay","url":"https://vaser-track.vm5apis.com/v2/track?requestId=&placementId=&campaignId=&audienceGroupId=&creativeId=&timezone=8&creativeFormat=richmedia&pixel=1&x=0&event=replay"}]';
 
         const ctaInNewWindow = 'true' == 'true';
         function generateOnCtaClickedByResInfo(index, type) {
-          let url = appendResInfo(fullCtaURL, index, type);
+          let ctaURL = mediaList[index].ctaURL;
+          ctaURL = ctaURL && ctaURL.trim() !== '' ? ctaPrefix + ctaURL : fullCtaURL;
+          let url = appendResInfo(ctaURL, index, type);
           return function(e) {
             if (ctaInNewWindow) {
               window.open(url, '_blank');
@@ -326,17 +328,17 @@
         addElClickEvent(vmfiveNavControllerRightEl, function(e) {
           e.preventDefault();
           e.stopPropagation();
-          slideshow.next();
+          slideshowGoNext();
         });
         addElClickEvent(vmfiveNavControllerLeftEl, function(e) {
           e.preventDefault();
           e.stopPropagation();
-          slideshow.prev();
+          slideshowGoPrev();
         });
         mediaList.forEach(function(item, index) {
           var vmfiveAdUnitEl;
           if (item.mp4 !== undefined || item.m3u8 !== undefined) {
-            vmfiveAdUnitEl = generateAdUnitEl();
+            vmfiveAdUnitEl = generateAdUnitElForVideo();
             slideshow.append(vmfiveAdUnitEl);
 
             var indicatorEl = document.createElement("span");
@@ -358,6 +360,15 @@
             img.src = item.image;
             addElClickEvent(img, generateOnCtaClickedByResInfo(index, 'image'));
             vmfiveAdUnitEl.appendChild(img);
+
+            var div = document.createElement("div");
+            div.id = "vmfive-logo-55667788";
+            div.className = "vmfive-info-image";
+            addElClickEvent(div, function() {
+              window.open('https://vmfive.com/?utm_source=vmfive_ad_logo', '_blank');
+            });
+            vmfiveAdUnitEl.appendChild(div);
+
             slideshow.append(vmfiveAdUnitEl);
 
             var indicatorEl = document.createElement("span");
@@ -432,6 +443,14 @@
             }
           });
         }
+        function slideshowGoNext() {
+          let targetIndex = (slideshow.currentSlide + 1) % (slideList.length - 1 - 1);
+          slideshow.goTo(targetIndex);
+        }
+        function slideshowGoPrev() {
+          let targetIndex = ((slideList.length - 1 - 1) + slideshow.currentSlide - 1) % (slideList.length - 1 - 1);
+          slideshow.goTo(targetIndex);
+        }
         function scheduleNextPageTimeoutObj() {
           if (nextPageTimeoutObj) {
             clearTimeout(nextPageTimeoutObj);
@@ -439,7 +458,7 @@
           nextPageTimeoutObj = setTimeout(function () {
 
             if ((! isOverTheScreen()) && getCurrentSlide(slideshow).controller ===  undefined) {
-              slideshow.next();
+              slideshowGoNext();
             }
             scheduleNextPageTimeoutObj();
           }, NEXTPAGE_SECONDS * 1000);
@@ -455,19 +474,18 @@
           return {};
         }
 
-        function generateAdUnitEl() {
+        function generateAdUnitElForVideo() {
           var vmfiveAdUnitEl = document.createElement("div");
           vmfiveAdUnitEl.id = "vmfive-ad-unit-55667788";
           vmfiveAdUnitEl.innerHTML = "";
 
           var div;
           div = document.createElement("div");
-          div.id = "vmfive-replay-55667788";
-          div.className = "vmfive-info-image";
-          vmfiveAdUnitEl.appendChild(div);
-          div = document.createElement("div");
           div.id = "vmfive-logo-55667788";
           div.className = "vmfive-info-image";
+          addElClickEvent(div, function() {
+            window.open('https://vmfive.com/?utm_source=vmfive_ad_logo', '_blank');
+          });
           vmfiveAdUnitEl.appendChild(div);
           div = document.createElement("div");
           div.id = "vmfive-volume-btn-55667788";
@@ -553,11 +571,6 @@
               vm5AdVideoTag.setAttribute('height', '');
               vm5AdVideoTag.setAttribute('width', '');
 
-              addElClickEvent(vmfiveAdUnitEl.querySelector('#vmfive-replay-55667788'), function(isInlineVideo) {
-                  finishedVisibility(false);
-                  this.player.play();
-              }.bind(this, isInlineVideo(vm5AdVideoTag)));
-
               addElClickEvent(vmfiveAdUnitEl.querySelector('#vmfive-volume-btn-55667788'), function(isInlineVideo) {
                   if (this.player.isMuted()) {
                       this.player.unmute();
@@ -592,33 +605,29 @@
           mix.onFinished = function() {
               finishedVisibility(true);
 
-              slideshow.next();
+              slideshowGoNext();
           }
 
           function finishedVisibility(isFinished) {
               /*
               const vmfiveElIdList = ['vmfive-cta-btn-55667788', 'vmfive-ad-unit-finish-image-55667788', 'vmfive-replay-55667788', 'vmfive-finished-cta-btns-55667788', 'vmfive-volume-btn-55667788'];
               */
-              const playElements = ['vmfive-logo-55667788', 'vmfive-volume-btn-55667788'];
-              const endElements = ['vmfive-replay-55667788'];
+              const playElements = ['vmfive-volume-btn-55667788'];
+              const endElements = [];
 
-              for (let index in endElements) {
-                  let specificEl = vmfiveAdUnitEl.querySelector('#'+endElements[index]);
+              endElements.forEach(function (elId) {
+                  let specificEl = vmfiveAdUnitEl.querySelector('#'+elId);
                   if (specificEl) {
-                      /*
-                      specificEl.style.display = window.getComputedStyle(specificEl).display === 'block'?'none':'block';
-                      /*/
                       specificEl.style.display = isFinished?'block':'none';
-                      //*/
                   }
-              }
+              });
 
-              for (let index in playElements) {
-                  let specificEl = vmfiveAdUnitEl.querySelector('#'+playElements[index]);
+              playElements.forEach(function (elId) {
+                  let specificEl = vmfiveAdUnitEl.querySelector('#'+elId);
                   if (specificEl) {
                       specificEl.style.display = (!isFinished)?'block':'none';
                   }
-              }
+              })
           }
           mix.finishedVisibility = finishedVisibility;
 
