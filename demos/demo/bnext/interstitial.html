@@ -70,7 +70,7 @@
     (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
     m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
     })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
-    
+
     ga('create', 'UA-105683329-2', 'auto');
     ga('send', 'pageview');
   </script>
@@ -1272,17 +1272,16 @@
                   <!--
                   Application : 'Sales Demo Application'
                   Placement : '數位時代_蓋板'
-                  Version : 'v2.3'
+                  Version : 'v3.0'
                   -->
                   <script id="vm5ad-js-sdk" src="https://vawpro.vm5apis.com/man.js" data-mode="fast"></script>
                   <script>
-                  window.onVM5AdSDKReady = function() {
-                  VM5AdSDK.init({ appKey: '5a28b009bb76aa1a64b0b490' });
-                  };
+                    window.onVM5AdLiteReady = function() {
+                      VM5AdLite.init({ appKey:'5a28b009bb76aa1a64b0b490' });
+                    };
                   </script>
-                  <script src="https://man.vm5apis.com/dist/adn-web-sdk.js"></script>
-                  <vmfive-ad-unit placement-id='5a28b150bb76aa1a64b0b4bf' ad-type='video-interstitial'></vmfive-ad-unit>
-
+                  <script src="https://man.vm5apis.com/dist/VM5AdLite.js"></script>
+                  <vmfive-ad-unit placement-id="5a28b150bb76aa1a64b0b4bf" type="web_interstitial"></vmfive-ad-unit>
 
                 </div>
                 <div title="video" id="div-gpt-ad-1507805376091-0" align="center"></div>

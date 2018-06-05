@@ -39,6 +39,7 @@
           </div>
         </div>
         <div id="vmfive-ad-title-788a3229-3d11-47e7-b1e4-9c618d988fa7" class="vm5-ad-title" style="display:none;">VMFive AdPlay</div>
+        <img class="vmfive-video-cover" src="">
         <img src="https://vaser-track.vm5apis.com/v2/track?requestId=&event=downloaded&placementId=&campaignId=&audienceGroupId=&creativeId=&timezone=8&creativeFormat=richmedia&pixel=1&x=0">
       </div>
       <style>
@@ -53,6 +54,14 @@
 
           /* NOTE For flexbox outer parent of this element */
           align-self: center;
+        }
+
+        #vmfive-ad-unit-native-788a3229-3d11-47e7-b1e4-9c618d988fa7 .vmfive-video-cover {
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: auto;
         }
 
         #vmfive-close-788a3229-3d11-47e7-b1e4-9c618d988fa7 {
@@ -317,6 +326,9 @@
           const VMFIVE_TOP_MARGIN_STR = '';
           const VMFIVE_TOP_MARGIN = isNaN(VMFIVE_TOP_MARGIN_STR) ? 0 : (+VMFIVE_TOP_MARGIN_STR);
 
+          const VMFIVE_BOTTOM_MARGIN_STR = '0';
+          const VMFIVE_BOTTOM_MARGIN = isNaN(VMFIVE_BOTTOM_MARGIN_STR) ? 0 : (+VMFIVE_BOTTOM_MARGIN_STR);
+
           const ctaPrefix = '';
           const ctaURL = 'https://vmfive.com/?utm_source=vmfive_ad_cta';
           const fbURL = 'https://facebook.com/vmfive';
@@ -342,6 +354,14 @@
 
           mix.percentageInViewPort(vm5AdVideoDiv, 50);
 
+          const vmfiveCoverImageEl = vm5AdUnitEl.querySelector('.vmfive-video-cover');
+          const coverUrl = 'https://d2v4tz4zvhrua.cloudfront.net/production/image_1521427447202.jpg';
+          if (coverUrl && coverUrl != '') {
+            vmfiveCoverImageEl.src = coverUrl;
+          } else {
+            vmfiveCoverImageEl.style.display = 'none';
+          }
+
           mix.onPrepared = function() {
 
             vm5AdUnitEl.style.display = 'flex';
@@ -356,6 +376,7 @@
             // vm5AdVideoTag.style.left = 0;
 
             vm5AdUnitEl.style.top = VMFIVE_TOP_MARGIN + 'px';
+            vm5AdUnitEl.style.marginBottom = VMFIVE_BOTTOM_MARGIN + 'px';
 
             addElClickEvent(getElById('vmfive-replay-788a3229-3d11-47e7-b1e4-9c618d988fa7'), function(isInlineVideo) {
               stopMoniotr = false;
@@ -377,6 +398,7 @@
             addElClickEvent(getElById('vmfive-cta-btn-788a3229-3d11-47e7-b1e4-9c618d988fa7'), onCtaClicked);
             addElClickEvent(getElById('vmfive-ad-unit-finish-image-788a3229-3d11-47e7-b1e4-9c618d988fa7'), onCtaClicked);
             addElClickEvent(getElById('vmfive-finished-cta-btn-788a3229-3d11-47e7-b1e4-9c618d988fa7'), onCtaClicked);
+            addElClickEvent(vmfiveCoverImageEl, onCtaClicked);
             addElClickEvent(vm5AdUnitEl.querySelector('video') || vm5AdUnitEl.querySelector('canvas'), onCtaClicked);
             addElClickEvent(getElById('vmfive-finished-fb-btn-788a3229-3d11-47e7-b1e4-9c618d988fa7'), function() {
               if (ctaInNewWindow) {
@@ -401,6 +423,7 @@
             startMonitor();
           };
           mix.onPlayed = function() {
+            vmfiveCoverImageEl.style.display = 'none';
 
             vm5AdVideoTag.style.filter = '';
             playElments();
@@ -440,6 +463,10 @@
           function startMonitor() {
             let percentageInScreen = 100;
             startStick = false;
+            function raf(callback, timeout) {
+              timeout = timeout ? +timeout : 10;
+              setTimeout(callback, timeout);
+            }
             function update() {
               if (!document.body.contains(monitor.watchItem)) {
                 return;
@@ -501,10 +528,8 @@
                 if (!monitor) {
                   monitor = scrollMonitor.create(vm5AdUnitEl);
                 }
-                loadScript('https://man.vm5apis.com/dist/raf.js', function() {
-                  monitorScriptLoad = true;
-                  raf(update);
-                });
+                monitorScriptLoad = true;
+                raf(update);
               });
             }
           }

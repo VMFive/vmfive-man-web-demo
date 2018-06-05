@@ -2674,16 +2674,16 @@ title="IMG_0340-1" src="https://pic.pimg.tw/handsome286/1431441351-2104165894_n.
           <!--
           Application : 'Sales Demo Application'
           Placement : 'Pixnet_Impressive'
-          Version : 'v2.3'
+          Version : 'v3.0'
           -->
           <script id="vm5ad-js-sdk" src="https://vawpro.vm5apis.com/man.js" data-mode="fast"></script>
-          <script>
-          window.onVM5AdSDKReady = function() {
-          VM5AdSDK.init({ appKey: '5a28b009bb76aa1a64b0b490' });
-          };
-          </script>
-          <script src="https://man.vm5apis.com/dist/adn-web-sdk.js"></script>
-          <vmfive-ad-unit placement-id='5a2a38b6aa88251c2587d208' ad-type='video-impressive' impressive-video-status="fixed"></vmfive-ad-unit>
+			    <script>
+			      window.onVM5AdLiteReady = function() {
+			        VM5AdLite.init({ appKey:'5a28b009bb76aa1a64b0b490' });
+			      };
+			    </script>
+			    <script src="https://man.vm5apis.com/dist/VM5AdLite.js"></script>
+			    <vmfive-ad-unit placement-id="5a2a38b6aa88251c2587d208" type="web_impressive"></vmfive-ad-unit>
 
           <p>&nbsp;</p>
           <div id="pix-detect-at-40-precent" style="width: 0px; height: 0px;"></div>
