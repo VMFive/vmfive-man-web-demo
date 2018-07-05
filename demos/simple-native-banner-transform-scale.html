@@ -243,14 +243,12 @@
 
     .transform-flip #vmfive-ad-unit-native {
       backface-visibility: hidden;
-      -webkit-backface-visibility: hidden;
       transform: rotateX(0deg);
       z-index: 1;
     }
 
     .transform-flip #vmfive-ad-unit-native-banner {
       backface-visibility: hidden;
-      -webkit-backface-visibility: hidden;
       z-index: 2;
       transform: rotateX(180deg);
     }
@@ -518,7 +516,7 @@
         padding: 0,                   // banner進場之後幾px開始轉場
         showRate: 0.5,                // show影片佔畫面的比例
         addGrid: false,               // 測試用對位置的線
-        transform: 'flip',            // 轉場動態
+        transform: 'scale',            // 轉場動態
         leaveTransform: true,         // 往上離場之後需不需要變回banner
         lockAfterTransform: false,    // 變影片之後是否還可以變回來
       });
