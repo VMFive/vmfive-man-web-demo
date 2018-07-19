@@ -377,6 +377,10 @@
             scheduleNextPageTimeoutObj();
           },
         });
+
+        // remove resize listener to fix the issue on iOS 10
+        window.removeEventListener('resize', slideshow.resizeHandler);
+
         var nextPageTimeoutObj = undefined;
         addElClickEvent(vmfiveNavControllerRightEl, function(e) {
           e.preventDefault();
