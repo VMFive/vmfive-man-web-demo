@@ -1,0 +1,195 @@
+=pad 
+	@media screen and (max-width: $pad)
+		@content 
+=phone 
+	@media screen and (max-width: $phone)
+		@content 
+=pc 
+	@media screen and (min-width: $phone+1)
+		@content 	
+=bgi($pic-name)
+	background-image: url("../images/#{$pic-name}")
+		
+=bg($pic-name)
+	width: image-width("../images/#{$pic-name}")
+	height: image-height("../images/#{$pic-name}")
+	background-image: url("../images/#{$pic-name}")
+=fullDiv 
+	width: 100%
+	height: 100%
+	position: absolute
+	top: 0
+	left: 0
+	overflow: hidden
+=centerBg($pic-name)
+	position: absolute 
+	top: 50%
+	left: 50%
+	margin-left: - image-width("../images/#{$pic-name}") / 2 
+	margin-top: - image-height("../images/#{$pic-name}") / 2 
+	// background-image: url("#{$pic-name}")
+=clearfix  
+	&:before  
+		content: ""  
+		display: table  
+	&:after  
+		content: ""  
+		display: table   
+		clear: both  
+	zoom: 1
+
+=coverBg
+	+background-size(cover)
+	background-position: 50% 50%
+	
+=containBg 
+	+background-size(contain)
+	background-position: 50% 50%
+	background-repeat: no-repeat	
+	
+=alphaBtn
+	cursor: pointer
+	&:hover 
+		+opacity(0.7)
+=shadowDiv 
+	+box-shadow(2px 2px 2px rgba(20%,20%,40%,0.6),4px 4px 6px rgba(20%,20%,40%,0.4),6px 6px 12px rgba(20%,20%,40%,0.4))
+//維持長寬比，內容塞在子內容content裡，設定父層的寬
+=aspect-ratio($width, $height)
+	position: relative
+	&:before
+		display: block
+		content: ""
+		width: 100%
+		padding-top: $height / $width * 100%
+	> .content
+		position: absolute
+		top: 0
+		left: 0
+		right: 0
+		bottom: 0
+=blackHoverBtn
+	cursor: pointer
+	position: relative
+	&:after 
+		content: ''
+		position: absolute
+		top: 0
+		left: 0
+		width: 100%
+		height: 100%
+		background-color: rgba(0,0,0,0.7)
+		+opacity(1)
+		+dTime
+	&:hover,&.active
+		&:after 
+			+opacity(0)
+
+=s_bd($color,$w:1px)
+	border: $w solid $color
+=dTime($d:0.6s)
+	+transition(all,$d)
+=borderBtn($color:#ccc,$borderRadius:5px)
+	+border-radius($borderRadius)
+	border: 1px solid $color
+	display: inline-block
+	vertical-align: top
+	margin-top: -4px
+	text-align: center
+	padding: 3px 15px
+	color: $color 
+	cursor: pointer
+	&:hover 
+		background-color: $color
+		color: white
+		text-decoration: none
+		color: white
+	&.active
+		background-color: $color
+		color: white
+		text-decoration: none
+		color: white
+
+=ii
+	display: inline-block
+	margin-right: 10px
+	vertical-align: text-top
+	
+=hide-text
+	text-indent: 100%
+	white-space: nowrap
+	overflow: hidden
+
+=inlineBlock_parent
+	letter-spacing: -0.31em
+	*letter-spacing: normal
+	*word-spacing: -0.43em
+	text-rendering: optimizespeed
+
+
+
+=inlineBlock
+	display: -moz-inline-stack
+	display: inline-block
+	vertical-align: top
+	zoom: 1
+	*display: inline
+	letter-spacing: normal
+	word-spacing: normal
+
+
+=bgScale100_forIE8($pic-name)
+	filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../images/#{$pic-name}', sizingMethod='scale')
+	-ms-filter: "progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../images/#{$pic-name}', sizingMethod='scale')"
+
+
+//for IE8+
+=divGoVerticalCenter_forMom
+	text-align: center
+	&:before
+		content: ''
+		display: inline-block
+		vertical-align: middle
+		height: 100%
+
+=divGoVerticalCenter_forKid
+	display: inline-block
+	vertical-align: middle
+
+	
+=btn($pic-name)
+	width: image-width("../images/#{$pic-name}")
+	height: image-height("../images/#{$pic-name}")/2
+	background: url("../images/#{$pic-name}")
+	cursor: pointer
+	&:hover
+		background-position: 0 -100%
+
+=halfDiv($width:500px,$height:500px)
+	position: absolute
+	width: $width
+	height: $height
+	left: 50%
+	top: 50%
+	margin-left: -$width/2
+	margin-top: -$height/2
+
+=initDiv($pos:absolute,$w:100%,$h:100%,$l:0%,$t:0%)
+	position: $pos
+	width: $w
+	height: $h
+	left: $l
+	top: $t
+
+.vm5ad-container-32-30
+	width: 100%
+	overflow: hidden
+	+aspect-ratio(32,30)
+
+.vm5ad-container
+	.container
+		+fullDiv
+	.bgContainer
+		+fullDiv
+	.bg
+		+fullDiv
+		+coverBg

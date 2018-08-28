@@ -1,0 +1,6 @@
+
+https://s3-ap-northeast-1.amazonaws.com/ad-demo-vmfive-com/prototype/gyro-template/video/beer.mp4
+https://s3-ap-northeast-1.amazonaws.com/ad-demo-vmfive-com/prototype/gyro-template/video/flight.mp4
+https://s3-ap-northeast-1.amazonaws.com/ad-demo-vmfive-com/prototype/gyro-template/video/heart.mp4
+https://s3-ap-northeast-1.amazonaws.com/ad-demo-vmfive-com/prototype/gyro-template/video/soda.mp4
+https://s3-ap-northeast-1.amazonaws.com/ad-demo-vmfive-com/prototype/gyro-template/video/vacuum.mp4

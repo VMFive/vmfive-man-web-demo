@@ -1,0 +1,14 @@
+https://s3-ap-northeast-1.amazonaws.com/ad-demo-vmfive-com/prototype/gyro-template/images/rolling/.DS_Store
+https://s3-ap-northeast-1.amazonaws.com/ad-demo-vmfive-com/prototype/gyro-template/images/rolling/bg.png
+https://s3-ap-northeast-1.amazonaws.com/ad-demo-vmfive-com/prototype/gyro-template/images/rolling/p01.png
+https://s3-ap-northeast-1.amazonaws.com/ad-demo-vmfive-com/prototype/gyro-template/images/rolling/p02.png
+https://s3-ap-northeast-1.amazonaws.com/ad-demo-vmfive-com/prototype/gyro-template/images/rolling/p03.png
+https://s3-ap-northeast-1.amazonaws.com/ad-demo-vmfive-com/prototype/gyro-template/images/rolling/p04.png
+https://s3-ap-northeast-1.amazonaws.com/ad-demo-vmfive-com/prototype/gyro-template/images/rolling/pp01.png
+https://s3-ap-northeast-1.amazonaws.com/ad-demo-vmfive-com/prototype/gyro-template/images/rolling/pp02-1.png
+https://s3-ap-northeast-1.amazonaws.com/ad-demo-vmfive-com/prototype/gyro-template/images/rolling/pp02-2.png
+https://s3-ap-northeast-1.amazonaws.com/ad-demo-vmfive-com/prototype/gyro-template/images/rolling/pp02.png
+https://s3-ap-northeast-1.amazonaws.com/ad-demo-vmfive-com/prototype/gyro-template/images/rolling/pp03.png
+https://s3-ap-northeast-1.amazonaws.com/ad-demo-vmfive-com/prototype/gyro-template/images/rolling/pp04.png
+https://s3-ap-northeast-1.amazonaws.com/ad-demo-vmfive-com/prototype/gyro-template/images/rolling/ppp1.png
+https://s3-ap-northeast-1.amazonaws.com/ad-demo-vmfive-com/prototype/gyro-template/images/rolling/ppp2.png
