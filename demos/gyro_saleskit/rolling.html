@@ -3,14 +3,17 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=640">
+    <meta name="viewport" content="width=640px">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp"
         crossorigin="anonymous">
 
-    <link rel="stylesheet" href="heart.css">
-    <script src="vivus.min.js"></script>
+    <link rel="stylesheet" href="rolling/rolling.css">
+    <!-- <script type="text/javascript" src="https://code.jquery.com/jquery-latest.min.js"></script> -->
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.20.3/TweenLite.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/latest/plugins/CSSPlugin.min.js"></script> -->
     <script src="TweenMax.min.js"></script>
+
 
     <title>Document</title>
     <style>
@@ -86,59 +89,42 @@
         </p>
         <div class="popAd">
             <div class="popContainer">
-                <!-- <a href="vacuum.html" class="clozBtn"></a> -->
+                <!-- <div class="clozBtn"></div> -->
+                <!-- <a href="flight.html" class="clozBtn"></a> -->
 
                 <div class="videoWrap">
-                    <video muted="true" preload="auto" src="heart.mp4" defaultMuted autoplay loop playsinline muted></video>
+                    <video muted="true" preload="auto" src="https://d2v4tz4zvhrua.cloudfront.net/manual_uploads/20180608/resources/promotion/video.mp4" defaultMuted autoplay loop playsinline muted></video>
                     <div class="video"></div>
                 </div>
-                <div class="vm5ad-shake-container">
-                    <div class="container">
-                        <div class="mainContainer">
-                            <div class="drawContainer">
-                                <div class="icon "></div>
-                                <div class="drawBox hideFirst">
-                                    <svg id="heartSVG" version="1.1" data-name="圖層 1" xmlns="http://www.w3.org/2000/svg" viewBox="-10 -10 404.57 363.41">
-
-                                        <defs>
-                                            <style>
-                                                .cls-1 {
-                                                    fill: none;
-                                                    stroke: #a9f1f0;
-                                                    stroke-linecap: round;
-                                                    stroke-linejoin: round;
-                                                    stroke-width: 20px;
-                                                    /* width: 70%; */
-                                                }
-                                            </style>
-
-                                        </defs>
-
-                                        <!-- <title>heart</title> -->
-                                        <path id='path' class="cls-1" d="M219.89,512.17s-28.22-41.5-60.22-62.17c-17.32-11.19-105-80-115-139.33S63.33,207.33,108,191s100.28,4.33,123.64,48.67c0,0,37.69-69.12,108.36-54.23s103.67,84.73,67.33,162.31-147.05,116.74-169.69,174"
-                                            transform="translate(-40.17 -180.84)" />
-
-                                    </svg>
-                                </div>
-                                <div class="endCut hideFirst"></div>
-                            </div>
-                            <div class="txtWrap">
-                                <div class="t1"></div>
-                                <div class="t2 hideFirst"></div>
-                            </div>
+                <div class="vm5ad-container vm5ad-container-32-30">
+                    <div class="container" style="background-image: url(./rolling/bg.png);">
+                        <div class="rollingThing rt1">
+                            <div class="pic"></div>
                         </div>
-
+                        <div class="rollingThing rt2">
+                            <div class="pic"></div>
+                        </div>
+                        <div class="bgContainer motion-in">
+                            <div class="bg" style="background-image: url(./rolling/p01.png);"></div>
+                        </div>
                     </div>
-                    <div class="log"></div>
                 </div>
             </div>
         </div>
+        <div class="loadimg" style='display: none;'>
+            <img src="./rolling/p02.png" alt="">
+            <img src="./rolling/p03.png" alt="">
+            <img src="./rolling/p04.png" alt="">
+            <img src="./rolling/pp02.png" alt="">
+            <img src="./rolling/pp03.png" alt="">
+            <img src="./rolling/pp04.png" alt="">
+        </div>
         <div class="btns">
-            <a href='beer.html' class="prev fas fa-chevron-circle-left" style="left: 15px;"></a>
-            <a href='snow.html' class="next fas fa-chevron-circle-right" style="right: 15px;"></a>
+            <a href='snow.html' class="prev fas fa-chevron-circle-left" style="left: 15px;"></a>
+            <!-- <a href='flight.html' class="next fas fa-chevron-circle-right" style="right: 15px;"></a> -->
         </div>
     </div>
-    <script src='heart.js'></script>
+    <script src='rolling/rolling.js'></script>
 </body>
 
 </html>
