@@ -89,18 +89,43 @@
 
       sc.src = "https://d1v69ngg41pvl6.cloudfront.net/dist/MixPlayer.js";
       sc.onload = function () {
+
+        var trackings = '[{"event":"view","url":"https://vaser-track.vm5apis.com/v2/track?requestId=&placementId=&campaignId=&audienceGroupId=&creativeId=&timezone=8&creativeFormat=richmedia&pixel=1&x=0&event=view"},\
+        {"event":"impression","url":"https://vaser-track.vm5apis.com/v2/track?requestId=&placementId=&campaignId=&audienceGroupId=&creativeId=&timezone=8&creativeFormat=richmedia&pixel=1&x=0&event=impression"},\
+        {"event":"video_percentage:0","url":"https://vaser-track.vm5apis.com/v2/track?requestId=&placementId=&campaignId=&audienceGroupId=&creativeId=&timezone=8&creativeFormat=richmedia&pixel=1&x=0&event=video_percentage:0"},\
+        {"event":"video_percentage:25","url":"https://vaser-track.vm5apis.com/v2/track?requestId=&placementId=&campaignId=&audienceGroupId=&creativeId=&timezone=8&creativeFormat=richmedia&pixel=1&x=0&event=video_percentage:25"},\
+        {"event":"video_percentage:50","url":"https://vaser-track.vm5apis.com/v2/track?requestId=&placementId=&campaignId=&audienceGroupId=&creativeId=&timezone=8&creativeFormat=richmedia&pixel=1&x=0&event=video_percentage:50"},\
+        {"event":"video_percentage:75","url":"https://vaser-track.vm5apis.com/v2/track?requestId=&placementId=&campaignId=&audienceGroupId=&creativeId=&timezone=8&creativeFormat=richmedia&pixel=1&x=0&event=video_percentage:75"},\
+        {"event":"video_percentage:100","url":"https://vaser-track.vm5apis.com/v2/track?requestId=&placementId=&campaignId=&audienceGroupId=&creativeId=&timezone=8&creativeFormat=richmedia&pixel=1&x=0&event=video_percentage:100"},\
+        {"event":"click","url":"https://vaser-track.vm5apis.com/v2/track?requestId=&placementId=&campaignId=&audienceGroupId=&creativeId=&timezone=8&creativeFormat=richmedia&pixel=1&x=0&event=click"},\
+        {"event":"custom","url":"https://vaser-track.vm5apis.com/v2/track?requestId=&placementId=&campaignId=&audienceGroupId=&creativeId=&timezone=8&creativeFormat=richmedia&pixel=1&x=0&event=custom"},\
+        {"event":"replay","url":"https://vaser-track.vm5apis.com/v2/track?requestId=&placementId=&campaignId=&audienceGroupId=&creativeId=&timezone=8&creativeFormat=richmedia&pixel=1&x=0&event=replay"}]'
+
+        var trackingList = [];
+        try {
+          trackingList = JSON.parse(trackings);
+        } catch (e) {
+          console.log(e);
+        }
+
+        function findObjectByItsKeyValueInArray(array, key, value) {var result={};array.forEach(function(item, i) {result = (item[key] == value ? item : result);});return result;}
+        function doTracking(url) {var req = new XMLHttpRequest();req.open('GET', url, true);req.send();}
+        function doSimpleCustomTracking(eventSubtype, moreParams) {
+          moreParams = moreParams ? moreParams : {};
+          var tracking = findObjectByItsKeyValueInArray(trackingList, 'event', 'custom');
+          if (tracking.event) {
+            var url = tracking.url;
+            url = url + '&eventSubtype=' + encodeURIComponent(eventSubtype);
+            url = url + '&eventDetails=' + encodeURIComponent(JSON.stringify(moreParams));
+            url = moreParams.eventValue ? url + '&eventValue=' + encodeURIComponent(moreParams.eventValue) : url;
+            doTracking(url);
+          }
+        }
+
         let vmfiveAdUnitContainer = new Interstitial({
           // el: '#vmfive-ad-unit-container',
           'request_id': '55667788',
-          'track_url': '[{"event":"view","url":"https://vaser-track.vm5apis.com/v2/track?requestId=&placementId=&campaignId=&audienceGroupId=&creativeId=&timezone=8&creativeFormat=richmedia&pixel=1&x=0&event=view"},\
-          {"event":"impression","url":"https://vaser-track.vm5apis.com/v2/track?requestId=&placementId=&campaignId=&audienceGroupId=&creativeId=&timezone=8&creativeFormat=richmedia&pixel=1&x=0&event=impression"},\
-          {"event":"video_percentage:0","url":"https://vaser-track.vm5apis.com/v2/track?requestId=&placementId=&campaignId=&audienceGroupId=&creativeId=&timezone=8&creativeFormat=richmedia&pixel=1&x=0&event=video_percentage:0"},\
-          {"event":"video_percentage:25","url":"https://vaser-track.vm5apis.com/v2/track?requestId=&placementId=&campaignId=&audienceGroupId=&creativeId=&timezone=8&creativeFormat=richmedia&pixel=1&x=0&event=video_percentage:25"},\
-          {"event":"video_percentage:50","url":"https://vaser-track.vm5apis.com/v2/track?requestId=&placementId=&campaignId=&audienceGroupId=&creativeId=&timezone=8&creativeFormat=richmedia&pixel=1&x=0&event=video_percentage:50"},\
-          {"event":"video_percentage:75","url":"https://vaser-track.vm5apis.com/v2/track?requestId=&placementId=&campaignId=&audienceGroupId=&creativeId=&timezone=8&creativeFormat=richmedia&pixel=1&x=0&event=video_percentage:75"},\
-          {"event":"video_percentage:100","url":"https://vaser-track.vm5apis.com/v2/track?requestId=&placementId=&campaignId=&audienceGroupId=&creativeId=&timezone=8&creativeFormat=richmedia&pixel=1&x=0&event=video_percentage:100"},\
-          {"event":"click","url":"https://vaser-track.vm5apis.com/v2/track?requestId=&placementId=&campaignId=&audienceGroupId=&creativeId=&timezone=8&creativeFormat=richmedia&pixel=1&x=0&event=click"},\
-          {"event":"replay","url":"https://vaser-track.vm5apis.com/v2/track?requestId=&placementId=&campaignId=&audienceGroupId=&creativeId=&timezone=8&creativeFormat=richmedia&pixel=1&x=0&event=replay"}]',
+          'track_url': trackings,
 
           'video:video1:mp4': 'https://d2v4tz4zvhrua.cloudfront.net/manual_uploads/20180830/predator/resource/videof/video.mp4',
           'video:video1:m3u8': 'https://d2v4tz4zvhrua.cloudfront.net/manual_uploads/20180830/predator/resource/videof/video.m3u8',
@@ -138,7 +163,20 @@
           ],
         });
 
-        var sceneStage = 1;
+        var sceneCtaList = [
+          '',
+          'https://www.facebook.com/foxmovies.tw/?stage=1',
+          'https://www.facebook.com/foxmovies.tw/?stage=2',
+          'https://www.facebook.com/foxmovies.tw/?stage=3',
+          'https://www.facebook.com/foxmovies.tw/?stage=4',
+        ];
+        function updateCtaUrl() {
+          vmfiveAdUnitContainer.config['cta:default'] = sceneCtaList[sceneStage];
+        }
+        var sceneStage;
+        sceneStage = 1;
+        updateCtaUrl();
+
         let motionAd = new MotionAdShake({
           el: vmfiveAdUnitContainer.bgContainer, //塞的容器
           // motionBg: 'http://d2v4tz4zvhrua.cloudfront.net/manual_uploads/20180723/images/beer/bg.png', // 背景圖
@@ -245,8 +283,13 @@
               let theHintContainerEl = motionAd.rootView.querySelector('#vmfive-hint-shake-container');
 
               if (sceneStage == 1) {
+                doSimpleCustomTracking('acceptInvitation', {
+                  eventValue: 'first',
+                });
+
                 // NOTE Interstitial
                 sceneStage = 2;
+                updateCtaUrl();
 
                 if (theHintContainerEl) {
                   theHintContainerEl.style.display = 'none'
@@ -258,6 +301,10 @@
                 // doFlake(vmfiveAdUnitContainer.bgContainer);
               } else {
                 if (sceneStage == 3) {
+                  doSimpleCustomTracking('acceptInvitation', {
+                    eventValue: 'second',
+                  });
+
                   playZoomOut();
                 }
               }
@@ -267,6 +314,8 @@
         function checkSceneStageAfterVideoFinished() {
           if (sceneStage == 2) {
             sceneStage = 3;
+            updateCtaUrl();
+
             vmfiveAdUnitContainer.bgContainer.style.backgroundImage = 'url("https://d2v4tz4zvhrua.cloudfront.net/manual_uploads/20180830/predator/scene03.png")';
 
             let theHintContainerEl = motionAd.rootView.querySelector('#vmfive-hint-shake-container');
@@ -283,6 +332,8 @@
         }
         function playZoomOut() {
           sceneStage = 4;
+          updateCtaUrl();
+
           vmfiveAdUnitContainer.bgContainer.style.backgroundImage = 'url("https://d2v4tz4zvhrua.cloudfront.net/manual_uploads/20180830/predator/scene04.png")';
 
           var tl = anime({
