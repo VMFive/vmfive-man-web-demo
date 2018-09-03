@@ -151,6 +151,7 @@
             function () {
               vmfiveAdUnitContainer.videoView.style.display = 'none';
               vmfiveAdUnitContainer.mix.handler.playOrPause(true);
+              vmfiveAdUnitContainer.mix.handler.playOrPause(false);
               vmfiveAdUnitContainer.videoView.style.marginTop = 'calc(4% + .1px)';
               vmfiveAdUnitContainer.rootView.querySelector('.vmfive-video-cover').style.display = 'none';
               vmfiveAdUnitContainer.rootView.querySelector('#vmfive-logo-' + vmfiveAdUnitContainer.config.request_id).style.display = 'none';
@@ -296,7 +297,7 @@
                 }
                 vmfiveAdUnitContainer.videoView.style.display = 'block';
                 vmfiveAdUnitContainer.mix.percentageInViewPort(vmfiveAdUnitContainer.bgContainer, 50);
-                vmfiveAdUnitContainer.mix.handler.player.seekTo(0);
+                // vmfiveAdUnitContainer.mix.handler.player.seekTo(0);
                 vmfiveAdUnitContainer.bgContainer.style.backgroundImage = 'url("https://d2v4tz4zvhrua.cloudfront.net/manual_uploads/20180830/predator/scene02.png")';
                 // doFlake(vmfiveAdUnitContainer.bgContainer);
               } else {
