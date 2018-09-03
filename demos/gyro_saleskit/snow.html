@@ -332,15 +332,37 @@
         					//   flakeList[i].timeline = anime.timeline();
         					// }
         					// flakeList[i].timeline.add({
-        					flakeList[i].animationInstance = anime({
-        						targets: "#theTargetFlake"+i,
-        						// offset: "+=50",
-        						// easing: 'linear',
-        						left: flakeList[i].posx+lftrght[i]*Math.sin(crds[i]),
-        						top: flakeList[i].posy,
-        						duration: 50,
+
+                  flakeList[i].animationInstance = anime({
+                    targets: "#theTargetFlake"+i,
+                    // offset: "+=50",
+                    // easing: 'linear',
+                    marginLeft: flakeList[i].posx+lftrght[i]*Math.sin(crds[i]),
+                    top: flakeList[i].posy,
+                    duration: 50,
                     opacity: (flakeList[i].posy > marginbottom-3*flakeSize ? (marginbottom-flakeSize - flakeList[i].posy) / flakeSize: 1),
-        					})
+                  })
+                  // if (iOSVersion() >= 11) {
+                  //   flakeList[i].animationInstance = anime({
+          				// 		targets: "#theTargetFlake"+i,
+          				// 		// offset: "+=50",
+          				// 		// easing: 'linear',
+          				// 		left: flakeList[i].posx+lftrght[i]*Math.sin(crds[i]),
+          				// 		top: flakeList[i].posy,
+          				// 		duration: 50,
+                  //     opacity: (flakeList[i].posy > marginbottom-3*flakeSize ? (marginbottom-flakeSize - flakeList[i].posy) / flakeSize: 1),
+          				// 	})
+                  // } else {
+                  //   flakeList[i].animationInstance = anime({
+          				// 		targets: "#theTargetFlake"+i,
+          				// 		// offset: "+=50",
+          				// 		// easing: 'linear',
+          				// 		marginLeft: flakeList[i].posx+lftrght[i]*Math.sin(crds[i]),
+          				// 		top: flakeList[i].posy,
+          				// 		duration: 50,
+                  //     opacity: (flakeList[i].posy > marginbottom-3*flakeSize ? (marginbottom-flakeSize - flakeList[i].posy) / flakeSize: 1),
+          				// 	})
+                  // }
         			} else {
         					flakeList[i].style.left=flakeList[i].posx+lftrght[i]*Math.sin(crds[i]);
         					flakeList[i].style.top=flakeList[i].posy
@@ -382,6 +404,26 @@
         // doFlake(vmfiveAdUnitContainer.bgContainer);
         // doFlake(vmfiveAdUnitContainer.adContainerView);
         // doFlake(vmfiveAdUnitContainer.rootView.querySelector(`#vmfive-overlay-${vmfiveAdUnitContainer.config.request_id}`));
+
+        function iOSVersion() {
+          if(window.MSStream){
+            // There is some iOS in Windows Phone...
+            // https://msdn.microsoft.com/en-us/library/hh869301(v=vs.85).aspx
+            return false;
+          }
+          var match = (navigator.appVersion).match(/OS (\d+)_(\d+)_?(\d+)?/),
+              version;
+
+          if (match !== undefined && match !== null) {
+            version = [
+              parseInt(match[1], 10),
+              parseInt(match[2], 10),
+              parseInt(match[3] || 0, 10)
+            ];
+            return parseFloat(version.join('.'));
+          }
+        }
+        return false;
       };
       document.body.appendChild(sc);
     </script>
