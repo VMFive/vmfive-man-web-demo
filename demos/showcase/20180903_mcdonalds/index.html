@@ -165,12 +165,12 @@
         });
 
         var ballList = [
-          {url:'https://d2v4tz4zvhrua.cloudfront.net/manual_uploads/20180903/mcdonalds/ball01.png',percentage: 70,},
-          {url:'https://d2v4tz4zvhrua.cloudfront.net/manual_uploads/20180903/mcdonalds/ball02.png',percentage: 50,},
-          {url:'https://d2v4tz4zvhrua.cloudfront.net/manual_uploads/20180903/mcdonalds/ball03.png',percentage: 10,},
-          {url:'https://d2v4tz4zvhrua.cloudfront.net/manual_uploads/20180903/mcdonalds/ball04.png',percentage: 30,},
-          {url:'https://d2v4tz4zvhrua.cloudfront.net/manual_uploads/20180903/mcdonalds/ball05.png',percentage: 40,},
-          {url:'https://d2v4tz4zvhrua.cloudfront.net/manual_uploads/20180903/mcdonalds/ball06.png',percentage: 80,},
+          {url:'https://d2v4tz4zvhrua.cloudfront.net/manual_uploads/20180903/mcdonalds/ball01.png',percentage: 0,angle: 94, enlarge: 1.5},
+          {url:'https://d2v4tz4zvhrua.cloudfront.net/manual_uploads/20180903/mcdonalds/ball02.png',percentage: 30,angle: 92, enlarge: 1},
+          {url:'https://d2v4tz4zvhrua.cloudfront.net/manual_uploads/20180903/mcdonalds/ball03.png',percentage: 75,angle: 84, enlarge: 1},
+          {url:'https://d2v4tz4zvhrua.cloudfront.net/manual_uploads/20180903/mcdonalds/ball04.png',percentage: 60,angle: 77, enlarge: 1},
+          {url:'https://d2v4tz4zvhrua.cloudfront.net/manual_uploads/20180903/mcdonalds/ball05.png',percentage: 35,angle: 75, enlarge: 1.2},
+          {url:'https://d2v4tz4zvhrua.cloudfront.net/manual_uploads/20180903/mcdonalds/ball06.png',percentage: 95,angle: 70, enlarge: 1},
         ];
         var sceneCtaList = [
           '',
@@ -235,7 +235,7 @@
                 img.style.position = 'absolute';
                 img.style.display = 'none';
                 img.style.left = '50%';
-                img.style.bottom = '36%';
+                img.style.bottom = '34%';
                 img.style.transform = 'translate(-50%,0%)';
                 motionAd.rootView.appendChild(img);
               }
@@ -263,6 +263,7 @@
               img.style.bottom = '50%';
               img.style.transform = 'translate(-50%,0%)';
               motionAd.rootView.appendChild(img);
+              /*
               setTimeout(function () {
                 let animation = anime({
                   // targets: '.vmfive-shake-style02',
@@ -276,6 +277,7 @@
                   duration: 500,
                 })
               }, 500);
+              */
 
               // Block Hint
               div = document.createElement('div');
@@ -300,14 +302,14 @@
               img.style.marginTop = '0%';
               div.appendChild(img);
               img = document.createElement('img');
-              img.classList.add('vmfive-shake-style02');
+              // img.classList.add('vmfive-shake-style02');
               img.src = 'https://d2v4tz4zvhrua.cloudfront.net/manual_uploads/20180903/mcdonalds/shake-text-1.png'
               img.style.width = '80%';
               img.style.height = 'auto';
               img.style.marginTop = '13%';
               div.appendChild(img);
               img = document.createElement('img');
-              img.classList.add('vmfive-shake-style02');
+              // img.classList.add('vmfive-shake-style02');
               img.src = 'https://d2v4tz4zvhrua.cloudfront.net/manual_uploads/20180903/mcdonalds/shake-text-2.png'
               img.style.width = '80%';
               img.style.height = 'auto';
@@ -408,7 +410,7 @@
             width: ['35%', '19%'],
             bottom: ['50%', '18%'],
             easing: 'linear',
-            duration: 300,
+            duration: 1000,
 
             complete: function () {
 
@@ -418,10 +420,12 @@
               var middleIndex = ballList.length / 2;
               for (var index = 0; index < ballList.length; index++) {
                 var stopAtPercentage = ballList[index].percentage / 100;//Math.random();
+                var enlarge = ballList[index].enlarge;
 
-                var angle = 90 + (index - middleIndex) * (20 / ballList.length);
+                // var angle = 90 + (index - middleIndex) * (20 / ballList.length);
+                var angle = ballList[index].angle;
                 var targetX = 40 * Math.cos(angle) * stopAtPercentage;
-                var targetY = 36 + 23 * stopAtPercentage;// * Math.sin(angle);
+                var targetY = 34 + 23 * stopAtPercentage;// * Math.sin(angle);
 
 
 
@@ -430,8 +434,8 @@
                 anime({
                   targets: targetEl,
                   left: ['50%', (50 + targetX) + "%"],
-                  bottom: ['36%', targetY + "%"],
-                  width: ['8%', (3 + 12 * stopAtPercentage) + '%'],
+                  bottom: ['34%', targetY + "%"],
+                  width: ['8%', (3 + 12 * stopAtPercentage)*enlarge + '%'],
 
                   easing: 'linear',
                   duration: stopAtPercentage * 500,
