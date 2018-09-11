@@ -55,7 +55,8 @@ html, body {
   justify-content: center;
 }
 .popAd .popContainer {
-  width: 600px;
+  width: 80%;
+  height: 80%;
   position: relative;
 }
 .popAd .popContainer .clozBtn {

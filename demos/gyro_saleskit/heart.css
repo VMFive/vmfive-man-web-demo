@@ -60,7 +60,8 @@ html, body {
   justify-content: center;
 }
 .popAd .popContainer {
-  width: 600px;
+  width: 80%;
+  height: 80%;
   position: relative;
 }
 .popAd .popContainer .clozBtn {
@@ -136,6 +137,7 @@ html, body {
 }
 .vm5ad-shake-container .container .mainContainer {
   background-image: url("heart_bg.jpg");
+  background-size: cover;
   position: relative;
   width: 100%;
   position: absolute;

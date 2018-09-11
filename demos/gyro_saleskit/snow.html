@@ -106,7 +106,7 @@
           'image:image1': 'https://d2v4tz4zvhrua.cloudfront.net/manual_uploads/20180828/snow/bg.png',
           'text:align_video': `top`,
           'text:video_top_offset_ratio': ``,
-          'text:scale': `1`,
+          'text:scale': `0.8`,
 
           videoScale: '16:9',
           videoBorderRadius: 0,
@@ -200,10 +200,64 @@
           ],
         })
 
+        function getMobileOperatingSystem() {
+          var userAgent = navigator.userAgent || navigator.vendor || window.opera;
+              // Windows Phone must come first because its UA also contains "Android"
+            if (/windows phone/i.test(userAgent)) {
+                return "Windows Phone";
+            }
+            if (/android/i.test(userAgent)) {
+                return "Android";
+            }
+            // iOS detection from: http://stackoverflow.com/a/9039885/177710
+            if (/iPad|iPhone|iPod/.test(userAgent) && !window.MSStream) {
+                return "iOS";
+            }
+            return "unknown";
+        }
+        let osPlatform = getMobileOperatingSystem();
+        function getiPhoneModelFlakeAmount() {
+          var renderer;
+
+          // Create a canvas element which can be used to retrieve information about the GPU.
+          var canvas = document.createElement("canvas");
+          if (canvas) {
+              var context = canvas.getContext("webgl") || canvas.getContext("experimental-webgl");
+              if (context) {
+                  var info = context.getExtension("WEBGL_debug_renderer_info");
+                  if (info) {
+                      renderer = context.getParameter(info.UNMASKED_RENDERER_WEBGL);
+                  }
+              }
+          }
+
+          if (renderer !== 'Apple A8 GPU' && renderer !== 'Apple A9 GPU') {
+            return 145;
+          } else {
+            return 14*2;
+          }
+        }
         // doFlake(vmfiveAdUnitContainer.bgContainer);
         function doFlake(rootView) {
         	// Set the number of flakes (more than 30 - 40 not recommended)
-        	var flakeAmount=145;
+        	var flakeAmount=14*2;
+
+          /*
+          if (osPlatform === 'Android') {
+            var ua = navigator.userAgent;
+            if( ua.indexOf("Android") >= 0 )
+            {
+              var androidversion = parseFloat(ua.slice(ua.indexOf("Android")+8));
+              if (androidversion < 2.3)
+              {
+                  // do whatever
+              }
+            }
+          }
+          */
+          if (osPlatform === 'iOS') {
+            flakeAmount = getiPhoneModelFlakeAmount();
+          }
 
         	// Set the colors for the flake. Add as many colors as you like
         	var flakeColor=["#aaaacc","#ddddFF","#ccccDD"];
