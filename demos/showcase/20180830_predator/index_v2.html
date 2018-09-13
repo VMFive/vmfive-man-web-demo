@@ -415,6 +415,10 @@
           ],
         });
         function changeScene1ToScene2() {
+          if (isAdClosed) {
+            return;
+          }
+
           if (sceneStage == 1) {
             let clickLayer = vmfiveAdUnitContainer.adContainerView.querySelector('#vmfive-click-layer');
             if (clickLayer) {
