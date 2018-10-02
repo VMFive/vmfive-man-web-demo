@@ -122,6 +122,7 @@
 
               function newIndicator({index, bottom, left}) {
                 let div;
+                let divFinger;
                 let divContainer;
                 div = document.createElement('div');
                 div.classList.add('vmfive-item-container');
@@ -132,12 +133,13 @@
                 div.style.bottom = bottom;
                 div.style.left = left;
                 div.style.transform = 'translate(-50%, 0)';
-                div.style.background = 'url(https://d2v4tz4zvhrua.cloudfront.net/manual_uploads/20180927/spiderman/click.png)';
+                // div.style.background = 'url(https://d2v4tz4zvhrua.cloudfront.net/manual_uploads/20180927/spiderman/click.png)';
                 div.style.backgroundPosition = 'center center';
                 div.style.backgroundSize = 'contain';
                 div.style.backgroundRepeat = 'no-repeat';
                 divContainer = div;
                 containerEl.appendChild(div);
+                // NOTE Item: Finger
                 div = document.createElement('img');
                 div.src = 'https://d2v4tz4zvhrua.cloudfront.net/manual_uploads/20180927/spiderman/click-finger.png'
                 div.style.height = '100%';
@@ -147,7 +149,8 @@
                 div.style.borderRadius = '50%';
 
                 var boxShadow = { size: '10' };
-                div.animation = anime({
+                divFinger = div;
+                divFinger.animation = anime({
                   targets: boxShadow,
                   size: '0',
 
@@ -157,12 +160,20 @@
 
                   duration: 500,
                   update: function() {
-                    div.style.boxShadow=
+                    divFinger.style.boxShadow=
                       0+'px '+0+'px '+
                       boxShadow.size+'px '+boxShadow.size+'px '+
                       'rgba(255,0,0,.6)';
                   }
                 });
+                divContainer.appendChild(div);
+                // NOTE Item: Word
+                div = document.createElement('img');
+                div.src = 'https://d2v4tz4zvhrua.cloudfront.net/manual_uploads/20180927/spiderman/click-word.png'
+                div.style.height = '50%';
+                div.style.position = 'absolute';
+                div.style.top = '25%';
+                div.style.right = '3%';
                 divContainer.appendChild(div);
                 return divContainer;
               }
