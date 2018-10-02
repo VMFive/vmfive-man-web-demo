@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+
+    <!-- <link rel="stylesheet" href="https://unpkg.com/purecss@1.0.0/build/pure-min.css" integrity="sha384-nn4HPE8lTHyVtfCBi5yW9d20FjT8BJwUXyWZT9InLYax14RDjBj46LmSztkmNP9w" crossorigin="anonymous"> -->
+    <script src="https://man.vm5apis.com/dist/anime.js/2.0.2/anime.min.js"></script>
+
+    <style media="screen">
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      height: 100vh;
+      width: 100vw;
+      margin: 0;
+
+      /*
+      background: linear-gradient(to bottom, #DF5E6A, #E76B51);
+      */
+      background-image: url('landing/BG.png');
+      /* background-size: 400% 100vh; */
+      background-size: 400% 400%;
+    }
+    .page {
+      position: relative;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      align-self: center;
+
+      height: calc((1000/667)*100vw);
+      width: calc((667/667)*100vw);
+      max-width: 100vw;
+      max-height: 100vh;
+      background-image: url('landing/BG.png');
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center 0%;
+    }
+    .page.hfirst {
+      height: calc(1000vh/10);
+      width: calc(667vh/10);
+    }
+    .scene {
+      display: block;
+      position: absolute;
+
+      height: 100%;
+      width: 100%;
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center 0%;
+    }
+    </style>
+  </head>
+  <body>
+    <div class="page">
+
+    </div>
+    <script type="text/javascript">
+    function checkRatio() {
+      let pageEl = document.querySelector('.page');
+      let h = window.innerHeight ? window.innerHeight : 1;
+      let w = window.innerWidth ? window.innerWidth : 1;
+      if (h/w < 1000/667) {
+        if (!pageEl.classList.contains('hfirst')) {
+          pageEl.classList.add('hfirst');
+        }
+      } else {
+        pageEl.classList.remove('hfirst');
+      }
+    }
+    window.addEventListener('resize', checkRatio);
+    checkRatio();
+    </script>
+    <script type="text/javascript">
+    // NOTE Init Scene Welcome
+    function initSceneWelcome(self) {
+      let rootView = self.el;
+      rootView.style.backgroundImage = 'url(landing/01.png)';
+
+      let startButtonEl = document.createElement('img');
+      startButtonEl.src = 'landing/BTN.png';
+      startButtonEl.classList.add('startButton');
+      startButtonEl.style.width = '60%';
+      startButtonEl.style.position = 'absolute';
+      startButtonEl.style.bottom = '5%';
+      startButtonEl.style.left = '50%';
+      startButtonEl.style.transform = 'translate(-50%, 0)';
+      // startButtonEl.style.borderRadius = '50%';
+      startButtonEl.addEventListener('click', function () {
+        if (startButtonEl.animationInstance) {
+          startButtonEl.animationInstance.pause();
+        }
+        anime({
+          targets: rootView,
+          opacity: [1, 0],
+
+          // direction: 'alternate',
+          // loop: true,
+          easing: 'linear',
+
+          duration: 500,
+
+          complete: function () {
+            showTargetScene(1);
+          }
+        });
+      });
+      startButtonEl.animationInstance = anime({
+        targets: startButtonEl,
+        loop: true,
+
+        direction: 'alternate',
+        marginLeft: ['-=5%', '0%'],
+      });
+      rootView.appendChild(startButtonEl);
+    }
+
+    // NOTE Enter Scene Welcome
+    function enterSceneWelcome(self) {
+      let rootView = self.el;
+      anime({
+        targets: rootView,
+        opacity: [0, 1],
+
+        // direction: 'alternate',
+        // loop: true,
+        easing: 'linear',
+
+        duration: 500,
+
+        complete: function () {
+          //
+        }
+      });
+    }
+    </script>
+    <script type="text/javascript">
+    // NOTE Init Scene Play
+    function initScenePlay(self) {
+      let rootView = self.el;
+      rootView.style.backgroundImage = 'url(landing/01.png)';
+
+      let startButtonEl = document.createElement('img');
+      startButtonEl.src = 'landing/BTN.png';
+      startButtonEl.classList.add('startButton');
+      startButtonEl.style.width = '60%';
+      startButtonEl.style.position = 'absolute';
+      startButtonEl.style.bottom = '5%';
+      startButtonEl.style.left = '50%';
+      startButtonEl.style.transform = 'translate(-50%, 0)';
+      // startButtonEl.style.borderRadius = '50%';
+      startButtonEl.addEventListener('click', function () {
+        if (startButtonEl.animationInstance) {
+          startButtonEl.animationInstance.pause();
+        }
+        anime({
+          targets: rootView,
+          opacity: [1, 0],
+
+          // direction: 'alternate',
+          // loop: true,
+          easing: 'linear',
+
+          duration: 500,
+
+          complete: function () {
+            showTargetScene(2);
+          }
+        });
+      });
+      startButtonEl.animationInstance = anime({
+        targets: startButtonEl,
+        loop: true,
+
+        direction: 'alternate',
+        marginLeft: ['-=5%', '0%'],
+      });
+      rootView.appendChild(startButtonEl);
+    }
+
+    // NOTE Enter Scene Play
+    function enterScenePlay(self) {
+      let rootView = self.el;
+      anime({
+        targets: rootView,
+        opacity: [0, 1],
+
+        // direction: 'alternate',
+        // loop: true,
+        easing: 'linear',
+
+        duration: 500,
+
+        complete: function () {
+          //
+        }
+      });
+    }
+    </script>
+    <script type="text/javascript">
+    // NOTE Init Scene Ending
+    function initSceneEnding(self) {
+      let rootView = self.el;
+      rootView.style.backgroundImage = 'url(landing/ending.png)';
+
+      let div;
+
+      div = document.createElement('img');
+      div.src = 'landing/圖層 6.png';
+      div.style.width = '110%';
+      div.style.position = 'absolute';
+      div.style.bottom = '5%';
+      div.style.left = '50%';
+      div.style.transform = 'translate(-50%, 0)';
+      rootView.appendChild(div);
+      div = document.createElement('img');
+      div.src = 'landing/組隊成功！ 快分享抽電影兌換券.png';
+      div.style.width = '60%';
+      div.style.position = 'absolute';
+      div.style.bottom = '60%';
+      div.style.left = '55%';
+      div.style.transform = 'translate(-50%, 0)';
+      rootView.appendChild(div);
+
+      let shareButtonEl = document.createElement('img');
+      shareButtonEl.src = 'landing/btn-share.png';
+      shareButtonEl.classList.add('shareButton');
+      shareButtonEl.style.width = '40%';
+      shareButtonEl.style.position = 'absolute';
+      shareButtonEl.style.bottom = '42%';
+      shareButtonEl.style.left = '50%';
+      shareButtonEl.style.transform = 'translate(-50%, 0)';
+      // shareButtonEl.style.borderRadius = '50%';
+      shareButtonEl.addEventListener('click', function () {
+        // if (shareButtonEl.animationInstance) {
+        //   shareButtonEl.animationInstance.pause();
+        // }
+      });
+      shareButtonEl.animationInstance = anime({
+        targets: shareButtonEl,
+        loop: true,
+
+        direction: 'alternate',
+        marginLeft: ['-=5%', '0%'],
+      });
+      rootView.appendChild(shareButtonEl);
+    }
+
+    // NOTE Enter Scene Ending
+    function enterSceneEnding(self) {
+      let rootView = self.el;
+      anime({
+        targets: rootView,
+        opacity: [0, 1],
+
+        // direction: 'alternate',
+        // loop: true,
+        easing: 'linear',
+
+        duration: 500,
+
+        complete: function () {
+          //
+        }
+      });
+    }
+    </script>
+    <script type="text/javascript">
+
+      // NOTE Entry point
+      let stageEl = document.querySelector('.page');
+      let sceneList = [
+        {
+          init: initSceneWelcome,
+          enter: enterSceneWelcome,
+        },
+        {
+          init: initScenePlay,
+          enter: enterScenePlay,
+        },
+        {
+          init: initSceneEnding,
+          enter: enterSceneEnding,
+        },
+      ];
+      function showTargetScene(index) {
+        for (var i = 0; i < sceneList.length; i++) {
+          if (i == index) {
+            sceneList[i].el.style.display = 'block';
+            sceneList[i].enter(sceneList[i]);
+          } else {
+            sceneList[i].el.style.display = 'none';
+          }
+        }
+      }
+      // NOTE Init total basis
+      function initWorld() {
+        for (var index = 0; index < sceneList.length ; index++) {
+          let sceneEl;
+          sceneEl = document.createElement('div');
+          sceneEl.classList.add('scene');
+          sceneEl.classList.add('scene'+index);
+
+          stageEl.appendChild(sceneEl);
+          sceneList[index].el = sceneEl;
+
+          sceneList[index].init(sceneList[index]);
+        }
+
+        showTargetScene(0);
+      }
+      initWorld();
+    </script>
+  </body>
+</html>
