@@ -54,6 +54,9 @@
       background-repeat: no-repeat;
       background-position: center 0%;
     }
+    .clickable {
+      cursor: pointer;
+    }
     </style>
   </head>
   <body>
@@ -85,6 +88,7 @@
       let startButtonEl = document.createElement('img');
       startButtonEl.src = 'landing/BTN.png';
       startButtonEl.classList.add('startButton');
+      startButtonEl.classList.add('clickable');
       startButtonEl.style.width = '60%';
       startButtonEl.style.position = 'absolute';
       startButtonEl.style.bottom = '5%';
@@ -157,6 +161,7 @@
         clickImageElLeft: '10%',
         personImageElTop: '50%',
         personImageElLeft: '50%',
+        personImageElWidth: '70%',
         foundImageElTop: '20%',
         foundImageElLeft: '50%',
       },
@@ -176,6 +181,7 @@
         clickImageElLeft: '91%',
         personImageElTop: '25%',
         personImageElLeft: '50%',
+        personImageElWidth: '70%',
         foundImageElTop: '60%',
         foundImageElLeft: '50%',
       },
@@ -195,6 +201,7 @@
         clickImageElLeft: '0%',
         personImageElTop: '25%',
         personImageElLeft: '50%',
+        personImageElWidth: '70%',
         foundImageElTop: '60%',
         foundImageElLeft: '50%',
       },
@@ -212,8 +219,9 @@
 
         clickImageElTop: '55%',
         clickImageElLeft: '8%',
-        personImageElTop: '80%',
-        personImageElLeft: '50%',
+        personImageElTop: '75%',
+        personImageElLeft: '55%',
+        personImageElWidth: '70%',
         foundImageElTop: '30%',
         foundImageElLeft: '50%',
       },
@@ -231,8 +239,9 @@
 
         clickImageElTop: '71%',
         clickImageElLeft: '48%',
-        personImageElTop: '80%',
+        personImageElTop: '70%',
         personImageElLeft: '50%',
+        personImageElWidth: '100%',
         foundImageElTop: '30%',
         foundImageElLeft: '50%',
       },
@@ -261,31 +270,25 @@
           opacity: [0, 1],
           easing: 'linear',
           duration: 500,
-        }).add({
-          targets: hintFindImageEl,
-          translateX: ['-50%','-50%',],
-          translateY: ['-50%','-50%',],
-          opacity: [1, 0],
-          easing: 'linear',
-          delay: 500,
-          duration: 500,
 
           complete: function () {
-            hintFindImageEl.style.display = 'none';
-
-            nextOne.clickImageEl.style.display = 'block';
-            anime({
-              targets: nextOne.clickImageEl,
-              opacity: [0, 1],
-              easing: 'linear',
-              duration: 500,
-              complete: function () {
-                //
-              },
-            })
-            ;
+            setTimeout(function () {
+              hintFindImageEl.style.display = 'none';
+            }, 2000);
           },
         });
+
+        nextOne.clickImageEl.style.display = 'block';
+        anime({
+          targets: nextOne.clickImageEl,
+          opacity: [0, 1],
+          easing: 'linear',
+          duration: 500,
+          complete: function () {
+            //
+          },
+        })
+        ;
       } else {
         showTargetScene(2);
       }
@@ -315,6 +318,7 @@
       characterStatusContainer.style.position = 'absolute';
       characterStatusContainer.style.bottom = '5%';
       characterStatusContainer.style.left = '50%';
+      characterStatusContainer.style.zIndex = 888;
       characterStatusContainer.style.transform = 'translate(-50%, 0)';
       characterStatusContainer.style.display = 'flex';
       characterStatusContainer.style.flexDirection = 'row';
@@ -336,7 +340,7 @@
         rootView.appendChild(foundImageEl);
         let personImageEl = document.createElement('img');
         personImageEl.src = character.personImage;
-        personImageEl.style.width = '70%';
+        personImageEl.style.width = character.personImageElWidth;
         personImageEl.style.position = 'absolute';
         personImageEl.style.top = character.personImageElTop;
         personImageEl.style.left = character.personImageElLeft;
@@ -349,11 +353,12 @@
         let clickImageEl = document.createElement('img');
         clickImageEl.src = character.clickImage;
         clickImageEl.style.width = '10%';
-        clickImageEl.style.maxHeight = '10%';
+        // clickImageEl.style.maxHeight = '10%';
         clickImageEl.style.position = 'absolute';
         clickImageEl.style.top = character.clickImageElTop;
         clickImageEl.style.left = character.clickImageElLeft;
         clickImageEl.style.transform = 'translate(-50%, -50%)';
+        clickImageEl.classList.add('clickable');
         clickImageEl.style.opacity = 0;
         clickImageEl.style.display = 'none';
         function handleCharacterClicked(e) {
@@ -381,16 +386,12 @@
               opacity: [0, 1],
               easing: 'linear',
               duration: 500,
-            }).add({
-              targets: [character.foundImageEl, character.personImageEl,],
-              opacity: [1, 0],
-              easing: 'linear',
-              delay: 500,
-              duration: 500,
 
               complete: function () {
-                foundImageEl.style.display = 'none';
-                personImageEl.style.display = 'none';
+                setTimeout(function () {
+                  foundImageEl.style.display = 'none';
+                  personImageEl.style.display = 'none';
+                }, 2000);
               },
             });
             // Show Status
@@ -422,7 +423,7 @@
             timeline.complete = function () {
               setTimeout(function () {
                 goNextCharacter();
-              }, 500);
+              }, 2500);
             };
           }
         }
@@ -531,10 +532,11 @@
       let shareButtonEl = document.createElement('img');
       shareButtonEl.src = 'landing/btn-share.png';
       shareButtonEl.classList.add('shareButton');
+      shareButtonEl.classList.add('clickable');
       shareButtonEl.style.width = '40%';
       shareButtonEl.style.position = 'absolute';
       shareButtonEl.style.bottom = '42%';
-      shareButtonEl.style.left = '50%';
+      shareButtonEl.style.left = '55%';
       shareButtonEl.style.transform = 'translate(-50%, 0)';
       // shareButtonEl.style.borderRadius = '50%';
       shareButtonEl.addEventListener('click', function () {
