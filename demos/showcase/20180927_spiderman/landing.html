@@ -140,47 +140,187 @@
     }
     </script>
     <script type="text/javascript">
+    let characterList = [
+      {
+        statusBase: 'url(landing/char_miles.png)',
+        statusImageList: [
+          'landing/char_miles1.png',
+          'landing/char_miles2.png',
+        ],
+        statusImageElList: [],
+        nameImage: 'landing/name_miles.png',
+        clickImage: 'landing/click_miles.png',
+        foundImage: 'landing/found_miles.png',
+      },
+      {
+        statusBase: 'url(landing/char_peter.png)',
+        statusImageList: [
+          'landing/char_peter1.png',
+          'landing/char_peter2.png',
+        ],
+        statusImageElList: [],
+        nameImage: 'landing/name_peter.png',
+        clickImage: 'landing/click_peter.png',
+        foundImage: 'landing/found_peter.png',
+      },
+      {
+        statusBase: 'url(landing/char_gwen.png)',
+        statusImageList: [
+          'landing/char_gwen1.png',
+          'landing/char_gwen2.png',
+        ],
+        statusImageElList: [],
+        nameImage: 'landing/name_gwen.png',
+        clickImage: 'landing/click_gwen.png',
+        foundImage: 'landing/found_gwen.png',
+      },
+      {
+        statusBase: 'url(landing/char_noir.png)',
+        statusImageList: [
+          'landing/char_noir1.png',
+          'landing/char_noir2.png',
+        ],
+        statusImageElList: [],
+        nameImage: 'landing/name_noir.png',
+        clickImage: 'landing/click_noir.png',
+        foundImage: 'landing/found_noir.png',
+      },
+      {
+        statusBase: 'url(landing/char_peni.png)',
+        statusImageList: [
+          'landing/char_peni1.png',
+          'landing/char_peni2.png',
+        ],
+        statusImageElList: [],
+        nameImage: 'landing/name_peni.png',
+        clickImage: 'landing/click_peni.png',
+        foundImage: 'landing/found_peni.png',
+      },
+    ];
+    function getNextOne() {
+      let lastOfUs = characterList.filter(function (item) {
+        return !item.isDone;
+      });
+      if (lastOfUs.length > 0) {
+        return lastOfUs[0];
+      }
+    }
+    function isAllCharacterFound() {
+      return getNextOne() === undefined;
+    }
+
     // NOTE Init Scene Play
     function initScenePlay(self) {
       let rootView = self.el;
-      rootView.style.backgroundImage = 'url(landing/01.png)';
+      // rootView.style.backgroundImage = 'url(landing/01.png)';
 
-      let startButtonEl = document.createElement('img');
-      startButtonEl.src = 'landing/BTN.png';
-      startButtonEl.classList.add('startButton');
-      startButtonEl.style.width = '60%';
-      startButtonEl.style.position = 'absolute';
-      startButtonEl.style.bottom = '5%';
-      startButtonEl.style.left = '50%';
-      startButtonEl.style.transform = 'translate(-50%, 0)';
-      // startButtonEl.style.borderRadius = '50%';
-      startButtonEl.addEventListener('click', function () {
-        if (startButtonEl.animationInstance) {
-          startButtonEl.animationInstance.pause();
-        }
-        anime({
-          targets: rootView,
-          opacity: [1, 0],
+      let characterStatusContainer = document.createElement('div');
+      // characterStatusContainer.src = 'landing/BTN.png';
+      characterStatusContainer.style.width = '90%';
+      characterStatusContainer.style.height = '20%';
+      characterStatusContainer.style.position = 'absolute';
+      characterStatusContainer.style.bottom = '5%';
+      characterStatusContainer.style.left = '50%';
+      characterStatusContainer.style.transform = 'translate(-50%, 0)';
+      characterStatusContainer.style.display = 'flex';
+      characterStatusContainer.style.flexDirection = 'row';
+      rootView.appendChild(characterStatusContainer);
 
-          // direction: 'alternate',
-          // loop: true,
-          easing: 'linear',
+      function newCharacter(character) {
+        let div;
 
-          duration: 500,
+        let clickImageEl = document.createElement('img');
+        clickImageEl.src = character.clickImage;
+        clickImageEl.style.width = '10%';
+        clickImageEl.style.position = 'absolute';
+        clickImageEl.style.bottom = '90%';
+        clickImageEl.style.left = '50%';
+        clickImageEl.style.transform = 'translate(-50%, 0%)';
+        clickImageEl.style.opacity = 1;
+        clickImageEl.addEventListener('click', function (e) {
+          if (!character.isDone) {
+            character.isDone = true;
 
-          complete: function () {
-            showTargetScene(2);
+            // Hide the clickable element
+            anime({
+              targets: clickImageEl,
+              opacity: [1, 0],
+              easing: 'linear',
+              duration: 500,
+              complete: function () {
+                clickImageEl.style.display = 'none';
+              },
+            })
+            // Show status
+            anime({
+              targets: character.statusBaseEl,
+              scale: [1, 1.5, 1],
+              easing: 'linear',
+              duration: 500,
+            })
+            // Show name
+            anime({
+              targets: character.nameImageEl,
+              scale: [1, 1.5, 1],
+              translateX: ['-50%'],
+              opacity: [0, 1],
+              easing: 'linear',
+              duration: 500,
+            })
+            // NOTE Lighten the character portrait.
+            let timeline = anime.timeline();
+            for (let statusImageEl of character.statusImageElList) {
+              timeline = timeline.add({
+                targets: statusImageEl,
+                opacity: [0, 1],
+                easing: 'linear',
+                duration: 500,
+              })
+            }
           }
         });
-      });
-      startButtonEl.animationInstance = anime({
-        targets: startButtonEl,
-        loop: true,
+        character.clickImageEl = clickImageEl;
+        rootView.appendChild(clickImageEl);
 
-        direction: 'alternate',
-        marginLeft: ['-=5%', '0%'],
-      });
-      rootView.appendChild(startButtonEl);
+        let statusBaseEl = document.createElement('div');
+        // statusBaseEl.src = 'landing/BTN.png';
+        statusBaseEl.style.backgroundImage = character.statusBase;
+        statusBaseEl.style.backgroundRepeat = 'no-repeat';
+        statusBaseEl.style.backgroundSize = 'contain';
+        statusBaseEl.style.backgroundPosition = 'center';
+        statusBaseEl.style.position = 'relative';
+        statusBaseEl.style.flex = 1;
+        statusBaseEl.style.height = '100%';
+        character.statusBaseEl = statusBaseEl;
+        characterStatusContainer.appendChild(statusBaseEl);
+        // NOTE Character Name
+        div = document.createElement('img');
+        div.src = character.nameImage;
+        div.style.width = '90%';
+        div.style.position = 'absolute';
+        div.style.bottom = '0%';
+        div.style.left = '50%';
+        div.style.transform = 'translate(-50%, 0%)';
+        div.style.opacity = 0;
+        character.nameImageEl = div;
+        statusBaseEl.appendChild(div);
+        // NOTE Character Status Elements
+        for (let statusImage of character.statusImageList) {
+          div = document.createElement('img');
+          div.src = statusImage;
+          div.style.width = '100%';
+          div.style.position = 'absolute';
+          div.style.top = '50%';
+          div.style.left = '50%';
+          div.style.transform = 'translate(-50%, -50%)';
+          div.style.opacity = 0;
+          character.statusImageElList.push(div);
+          statusBaseEl.appendChild(div);
+        }
+      }
+      for (let character of characterList) {
+        newCharacter(character);
+      }
     }
 
     // NOTE Enter Scene Play
@@ -212,7 +352,7 @@
 
       div = document.createElement('img');
       div.src = 'landing/圖層 6.png';
-      div.style.width = '110%';
+      div.style.width = '100%';
       div.style.position = 'absolute';
       div.style.bottom = '5%';
       div.style.left = '50%';
