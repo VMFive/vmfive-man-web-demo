@@ -150,7 +150,15 @@
         statusImageElList: [],
         nameImage: 'landing/name_miles.png',
         clickImage: 'landing/click_miles.png',
+        personImage: 'landing/miles.png',
         foundImage: 'landing/found_miles.png',
+
+        clickImageElTop: '25%',
+        clickImageElLeft: '10%',
+        personImageElTop: '50%',
+        personImageElLeft: '50%',
+        foundImageElTop: '20%',
+        foundImageElLeft: '50%',
       },
       {
         statusBase: 'url(landing/char_peter.png)',
@@ -161,7 +169,15 @@
         statusImageElList: [],
         nameImage: 'landing/name_peter.png',
         clickImage: 'landing/click_peter.png',
+        personImage: 'landing/peter.png',
         foundImage: 'landing/found_peter.png',
+
+        clickImageElTop: '0%',
+        clickImageElLeft: '91%',
+        personImageElTop: '25%',
+        personImageElLeft: '50%',
+        foundImageElTop: '60%',
+        foundImageElLeft: '50%',
       },
       {
         statusBase: 'url(landing/char_gwen.png)',
@@ -172,7 +188,15 @@
         statusImageElList: [],
         nameImage: 'landing/name_gwen.png',
         clickImage: 'landing/click_gwen.png',
+        personImage: 'landing/gwen.png',
         foundImage: 'landing/found_gwen.png',
+
+        clickImageElTop: '0%',
+        clickImageElLeft: '0%',
+        personImageElTop: '25%',
+        personImageElLeft: '50%',
+        foundImageElTop: '60%',
+        foundImageElLeft: '50%',
       },
       {
         statusBase: 'url(landing/char_noir.png)',
@@ -183,7 +207,15 @@
         statusImageElList: [],
         nameImage: 'landing/name_noir.png',
         clickImage: 'landing/click_noir.png',
+        personImage: 'landing/noir.png',
         foundImage: 'landing/found_noir.png',
+
+        clickImageElTop: '55%',
+        clickImageElLeft: '8%',
+        personImageElTop: '80%',
+        personImageElLeft: '50%',
+        foundImageElTop: '30%',
+        foundImageElLeft: '50%',
       },
       {
         statusBase: 'url(landing/char_peni.png)',
@@ -194,10 +226,18 @@
         statusImageElList: [],
         nameImage: 'landing/name_peni.png',
         clickImage: 'landing/click_peni.png',
+        personImage: 'landing/peni.png',
         foundImage: 'landing/found_peni.png',
+
+        clickImageElTop: '71%',
+        clickImageElLeft: '48%',
+        personImageElTop: '80%',
+        personImageElLeft: '50%',
+        foundImageElTop: '30%',
+        foundImageElLeft: '50%',
       },
     ];
-    function getNextOne() {
+    function getNextCharacter() {
       let lastOfUs = characterList.filter(function (item) {
         return !item.isDone;
       });
@@ -206,13 +246,67 @@
       }
     }
     function isAllCharacterFound() {
-      return getNextOne() === undefined;
+      return getNextCharacter() === undefined;
+    }
+    function goNextCharacter() {
+      let nextOne = getNextCharacter();
+      if (nextOne) {
+        let hintFindImageEl = document.querySelector('#hintFindImageEl');
+        hintFindImageEl.style.display = 'block';
+        anime.timeline().add({
+          targets: hintFindImageEl,
+          // scale: [1, 1.5, 1],
+          // translateX: ['-50%','-50%','-50%'],
+          // translateY: ['-50%','-50%','-50%'],
+          opacity: [0, 1],
+          easing: 'linear',
+          duration: 500,
+        }).add({
+          targets: hintFindImageEl,
+          translateX: ['-50%','-50%',],
+          translateY: ['-50%','-50%',],
+          opacity: [1, 0],
+          easing: 'linear',
+          delay: 500,
+          duration: 500,
+
+          complete: function () {
+            hintFindImageEl.style.display = 'none';
+
+            nextOne.clickImageEl.style.display = 'block';
+            anime({
+              targets: nextOne.clickImageEl,
+              opacity: [0, 1],
+              easing: 'linear',
+              duration: 500,
+              complete: function () {
+                //
+              },
+            })
+            ;
+          },
+        });
+      } else {
+        showTargetScene(2);
+      }
     }
 
     // NOTE Init Scene Play
     function initScenePlay(self) {
       let rootView = self.el;
       // rootView.style.backgroundImage = 'url(landing/01.png)';
+
+      let hintFindImageEl = document.createElement('img');
+      hintFindImageEl.id = 'hintFindImageEl';
+      hintFindImageEl.src = 'landing/找出隱藏城市中的蜘蛛人 組成蜘蛛人新宇宙拯救世界 .png';
+      hintFindImageEl.style.width = '70%';
+      hintFindImageEl.style.position = 'absolute';
+      hintFindImageEl.style.top = '30%';
+      hintFindImageEl.style.left = '50%';
+      hintFindImageEl.style.transform = 'translate(-50%, -50%)';
+      hintFindImageEl.style.opacity = 0;
+      hintFindImageEl.style.display = 'none';
+      rootView.appendChild(hintFindImageEl);
 
       let characterStatusContainer = document.createElement('div');
       // characterStatusContainer.src = 'landing/BTN.png';
@@ -229,15 +323,40 @@
       function newCharacter(character) {
         let div;
 
+        let foundImageEl = document.createElement('img');
+        foundImageEl.src = character.foundImage;
+        foundImageEl.style.width = '80%';
+        foundImageEl.style.position = 'absolute';
+        foundImageEl.style.top = character.foundImageElTop;
+        foundImageEl.style.left = character.foundImageElLeft;
+        foundImageEl.style.transform = 'translate(-50%, -50%)';
+        foundImageEl.style.opacity = 0;
+        foundImageEl.style.display = 'none';
+        character.foundImageEl = foundImageEl;
+        rootView.appendChild(foundImageEl);
+        let personImageEl = document.createElement('img');
+        personImageEl.src = character.personImage;
+        personImageEl.style.width = '70%';
+        personImageEl.style.position = 'absolute';
+        personImageEl.style.top = character.personImageElTop;
+        personImageEl.style.left = character.personImageElLeft;
+        personImageEl.style.transform = 'translate(-50%, -50%)';
+        personImageEl.style.opacity = 0;
+        personImageEl.style.display = 'none';
+        character.personImageEl = personImageEl;
+        rootView.appendChild(personImageEl);
+
         let clickImageEl = document.createElement('img');
         clickImageEl.src = character.clickImage;
         clickImageEl.style.width = '10%';
+        clickImageEl.style.maxHeight = '10%';
         clickImageEl.style.position = 'absolute';
-        clickImageEl.style.bottom = '90%';
-        clickImageEl.style.left = '50%';
-        clickImageEl.style.transform = 'translate(-50%, 0%)';
-        clickImageEl.style.opacity = 1;
-        clickImageEl.addEventListener('click', function (e) {
+        clickImageEl.style.top = character.clickImageElTop;
+        clickImageEl.style.left = character.clickImageElLeft;
+        clickImageEl.style.transform = 'translate(-50%, -50%)';
+        clickImageEl.style.opacity = 0;
+        clickImageEl.style.display = 'none';
+        function handleCharacterClicked(e) {
           if (!character.isDone) {
             character.isDone = true;
 
@@ -251,18 +370,41 @@
                 clickImageEl.style.display = 'none';
               },
             })
-            // Show status
+            // Show Found
+            foundImageEl.style.display = 'block';
+            personImageEl.style.display = 'block';
+            anime.timeline().add({
+              targets: [character.foundImageEl, character.personImageEl,],
+              scale: [1, 1.5, 1],
+              translateX: ['-50%','-50%','-50%'],
+              translateY: ['-50%','-50%','-50%'],
+              opacity: [0, 1],
+              easing: 'linear',
+              duration: 500,
+            }).add({
+              targets: [character.foundImageEl, character.personImageEl,],
+              opacity: [1, 0],
+              easing: 'linear',
+              delay: 500,
+              duration: 500,
+
+              complete: function () {
+                foundImageEl.style.display = 'none';
+                personImageEl.style.display = 'none';
+              },
+            });
+            // Show Status
             anime({
               targets: character.statusBaseEl,
               scale: [1, 1.5, 1],
               easing: 'linear',
               duration: 500,
             })
-            // Show name
+            // Show Name
             anime({
               targets: character.nameImageEl,
               scale: [1, 1.5, 1],
-              translateX: ['-50%'],
+              translateX: ['-50%','-50%','-50%'],
               opacity: [0, 1],
               easing: 'linear',
               duration: 500,
@@ -277,7 +419,25 @@
                 duration: 500,
               })
             }
+            timeline.complete = function () {
+              setTimeout(function () {
+                goNextCharacter();
+              }, 500);
+            };
           }
+        }
+        clickImageEl.addEventListener('click', handleCharacterClicked);
+        anime({
+          targets: clickImageEl,
+          loop: true,
+
+          // left: '40%',
+          direction: 'alternate',
+          rotate: ['15', '0'],
+
+          // update: function () {console.log(theHintEl.style.left);
+          //   // theHintEl.style.left = theHintEl.style.left;
+          // },
         });
         character.clickImageEl = clickImageEl;
         rootView.appendChild(clickImageEl);
@@ -291,6 +451,7 @@
         statusBaseEl.style.position = 'relative';
         statusBaseEl.style.flex = 1;
         statusBaseEl.style.height = '100%';
+        statusBaseEl.style.margin = '0 1% 0 1%';
         character.statusBaseEl = statusBaseEl;
         characterStatusContainer.appendChild(statusBaseEl);
         // NOTE Character Name
@@ -337,7 +498,7 @@
         duration: 500,
 
         complete: function () {
-          //
+          goNextCharacter();
         }
       });
     }
@@ -453,6 +614,9 @@
         }
 
         showTargetScene(0);
+
+        // TODO TEST
+        // showTargetScene(1);
       }
       initWorld();
     </script>
