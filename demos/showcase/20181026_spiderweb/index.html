@@ -127,23 +127,43 @@
             rootView: rootView,
     				id: 'the-renderer1',
     			});
+
+          setTimeout(function () {
+            vmfiveAdUnitContainer.bgContainer.querySelector('#the-renderer1').style.display = 'none';
+            vmfiveAdUnitContainer.bgContainer.querySelector('#the-renderer2').style.display = 'none';
+          },500);
         }
         function changeLiquidScene() {
+          vmfiveAdUnitContainer.bgContainer.querySelector('#the-renderer1').style.display = 'block';
+          vmfiveAdUnitContainer.bgContainer.querySelector('#the-renderer2').style.display = 'block';
           let tl = anime.timeline();
-          tl.add({
+          tl
+          .add({
   					targets: '#the-renderer1',
-  					opacity: 0,
-  					duration: 1000,
-  					offset: 0,
-            complete: function () {
-              vmfiveAdUnitContainer.bgContainer.backgroundImage = 'url("https://d2v4tz4zvhrua.cloudfront.net/manual_uploads/20181026/spiderweb/spiderweb2.png")';
-            },
-  				}).add({
-  					targets: '#the-renderer2',
-  					opacity: 1,
+  					opacity: [1,0],
   					duration: 1000,
   					offset: 1000,
-  				});
+            complete: function () {
+              vmfiveAdUnitContainer.bgContainer.style.backgroundImage = 'url("https://d2v4tz4zvhrua.cloudfront.net/manual_uploads/20181026/spiderweb/spiderweb2.png")';
+            },
+  				})
+          .add({
+  					targets: '#the-renderer2',
+  					opacity: [0,1],
+  					duration: 1000,
+  					offset: '-=1000',
+  				})
+          .add({
+  					targets: '#the-renderer2',
+  					opacity: [1,0],
+  					duration: 1000,
+  					offset: '-=0',
+            complete: function () {
+              vmfiveAdUnitContainer.bgContainer.querySelector('#the-renderer1').style.display = 'none';
+              vmfiveAdUnitContainer.bgContainer.querySelector('#the-renderer2').style.display = 'none';
+            },
+  				})
+          ;
         }
 
         var trackings = '[{"event":"view","url":"https://vaser-track.vm5apis.com/v2/track?requestId=&placementId=&campaignId=&audienceGroupId=&creativeId=&timezone=8&creativeFormat=richmedia&pixel=1&x=0&event=view"},\
