@@ -72,7 +72,7 @@
 		<link rel="stylesheet" type="text/css" href="https://man.vm5apis.com/dist/custom/effect/LiquidDistortion/css/component.css" />
 		<script>document.documentElement.className = 'js';</script>
     <script src="https://man.vm5apis.com/dist/custom/effect/LiquidDistortion/js/demo.js"></script>
-		<script src="https://man.vm5apis.com/dist/custom/effect/LiquidDistortion/js/pixi.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/pixi.js/4.7.1/pixi.min.js"></script>
 		<script src="https://man.vm5apis.com/dist/custom/effect/LiquidDistortion/js/main4.js"></script>
 		<script src="https://man.vm5apis.com/dist/custom/effect/LiquidDistortion/js/imagesloaded.pkgd.min.js"></script>
     <script src="https://man.vm5apis.com/dist/anime.js/2.0.2/anime.min.js"></script>
@@ -141,7 +141,7 @@
           .add({
   					targets: '#the-renderer1',
   					opacity: [1,0],
-  					duration: 1000,
+  					duration: 5000,
   					offset: 1000,
             complete: function () {
               vmfiveAdUnitContainer.bgContainer.style.backgroundImage = 'url("https://d2v4tz4zvhrua.cloudfront.net/manual_uploads/20181026/spiderweb/spiderweb2.png")';
@@ -150,8 +150,8 @@
           .add({
   					targets: '#the-renderer2',
   					opacity: [0,1],
-  					duration: 1000,
-  					offset: '-=1000',
+  					duration: 5000,
+  					offset: '-=5000',
   				})
           .add({
   					targets: '#the-renderer2',
