@@ -67,11 +67,11 @@
           'cta_prefix_url': 'https://vaser-track.vm5apis.com/v2/track?requestId=&placementId=&campaignId=&audienceGroupId=&creativeId=&timezone=8&creativeFormat=richmedia&pixel=1&x=0&event=click',
           'cta:default': 'https://vmfive.com/?utm_source=vmfive_ad_cta',
 
-          // 'text:banner_top_offset': `0`,
-          'text:banner_bottom_offset': `0`,
+          'text:banner_top_offset': `0`,
+          // 'text:banner_bottom_offset': `0`,
           'text:scale': `1`,
 
-          bannerRatio: '32:5',
+          bannerRatio: '64:15',
           enableClipPath: false,
 
           onctaclicked: [
@@ -91,16 +91,18 @@
           'request_id': vmfiveAdUnitContainer.config.request_id,
           bannerRatio: vmfiveAdUnitContainer.config.bannerRatio,
 
-          'image:front': 'https://d2v4tz4zvhrua.cloudfront.net/manual_uploads/20181018/banner_threed/cuboid-1.png',
-          'image:top': 'https://d2v4tz4zvhrua.cloudfront.net/manual_uploads/20181018/banner_threed/cuboid-2.png',
-          'image:bottom': 'https://d2v4tz4zvhrua.cloudfront.net/manual_uploads/20181018/banner_threed/cuboid-3.png',
-          'image:back': 'https://d2v4tz4zvhrua.cloudfront.net/manual_uploads/20181018/banner_threed/cuboid-4.png',
+          'image:front': 'https://d2v4tz4zvhrua.cloudfront.net/manual_uploads/20181119/resource/cuboid-1.png',
+          'image:top': 'https://d2v4tz4zvhrua.cloudfront.net/manual_uploads/20181119/resource/cuboid-2.png',
+          'image:bottom': 'https://d2v4tz4zvhrua.cloudfront.net/manual_uploads/20181119/resource/cuboid-3.png',
+          'image:back': 'https://d2v4tz4zvhrua.cloudfront.net/manual_uploads/20181119/resource/cuboid-4.png',
 
           'downloaded_pixel': 'https://vaser-track.vm5apis.com/v2/track?requestId=&event=downloaded&placementId=&campaignId=&audienceGroupId=&creativeId=&timezone=8&creativeFormat=richmedia&pixel=1&x=0',
           'text:cta_in_new_window': '',
           'dfp_url': '',
           'cta_prefix_url': 'https://vaser-track.vm5apis.com/v2/track?requestId=&placementId=&campaignId=&audienceGroupId=&creativeId=&timezone=8&creativeFormat=richmedia&pixel=1&x=0&event=click',
           'cta:default': 'https://vmfive.com/?utm_source=vmfive_ad_cta',
+
+          bannerRatio: '64:15',
 
           // onctaclicked: [
           //   vmfiveAdUnitContainer.onCtaClicked,
@@ -144,6 +146,11 @@
           }
           window.addEventListener('scroll', checkPosition);
           checkPosition();
+        }
+
+        let vmfiveCloseBtn = vmfiveAdUnitContainer.rootView.querySelector(`#vmfive-close-${vmfiveAdUnitContainer.config.request_id}`);
+        if (vmfiveCloseBtn) {
+          vmfiveCloseBtn.style.visibility = 'hidden';
         }
       };
       document.body.appendChild(sc);
