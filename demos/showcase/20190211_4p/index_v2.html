@@ -209,9 +209,7 @@
           infoImage: '',
           useFullBg: true,
           onprepared: [
-            function () {
-              motionAd.startMonitorGryo();
-            },
+            function() { setTimeout(function() { motionAd.startMonitorGryo(); }, 0); },
           ],
           onMotionStart: [
             function () {
