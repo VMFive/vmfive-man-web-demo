@@ -115,10 +115,10 @@
           el: vmfiveAdUnitContainer.adContainerView,
           'request_id': vmfiveAdUnitContainer.config.request_id,
 
-          'image:banner': 'resource/banner.png',
+          'image:banner': 'resource/banner2.gif',
           // 'image:leader': 'resource/chicken_ball_bag.png',
-          'image:leader': 'resource/chicken_ball_center.png',
-          'text:move_duration': `1500`,
+          'image:leader': 'resource/chicken_ball_center2.png',
+          'text:move_duration': `2500`,
 
           'text:rise_or_drop': `drop`,
           'text:horizontal_density_level': `9.5`,
@@ -135,17 +135,17 @@
 
           elements:
           '[{},'+
-          // '{"image": "resource/chicken_ball_top_left.png"},'+
-          '{"image": "resource/chicken_ball_bottom_left.png"},'+
-          '{"image": "resource/chicken_ball_bottom.png"},'+
-          // '{"image": "resource/chicken_ball_top_right.png"},'+
-          '{"image": "resource/chicken_ball_bottom_right.png"},'+
+          // '{"image": "resource/chicken_ball_top_left2.png"},'+
+          '{"image": "resource/chicken_ball_bottom_left2.png"},'+
+          '{"image": "resource/chicken_ball_bottom2.png"},'+
+          // '{"image": "resource/chicken_ball_top_right2.png"},'+
+          '{"image": "resource/chicken_ball_bottom_right2.png"},'+
           '{}]',
 
           fastElements:
           '[{},'+
-          '{"image": "resource/chicken_ball_top_left.png"},'+
-          '{"image": "resource/chicken_ball_top_right.png"},'+
+          '{"image": "resource/chicken_ball_top_left2.png"},'+
+          '{"image": "resource/chicken_ball_top_right2.png"},'+
           '{}]',
 
           onctaclicked: [
@@ -160,7 +160,7 @@
                 targets: vmfiveAdUnitContainer.adContainerBg,
                 top: ['0', '100%'],
                 // delay: contentEl.config.startDelay + contentEl.config.moveDuration * contentEl.bannerEnterDelayCoef,
-                delay: (contentEl.config.startDelay + contentEl.config.moveDuration * contentEl.bannerEnterDelayCoef) * 2,
+                delay: (contentEl.config.startDelay + contentEl.config.moveDuration * contentEl.bannerEnterDelayCoef) * 2.5,
                 easing: 'easeInOutSine',
               });
             },
