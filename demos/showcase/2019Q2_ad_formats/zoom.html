@@ -105,109 +105,136 @@
     </div>
   </div>
 
-  <script src="https://man.vm5apis.com/dist/anime.js/2.0.2/anime.min.js"></script>
-
+  <!-- <script src='../src/templatebuilder/TemplateBuilder.js'></script> -->
   <script>
-    var BannerContainer=function(e){function t(i){if(n[i])return n[i].exports;var o=n[i]={i:i,l:!1,exports:{}};return e[i].call(o.exports,o,o.exports,t),o.l=!0,o.exports}var n={};return t.m=e,t.c=n,t.d=function(e,n,i){t.o(e,n)||Object.defineProperty(e,n,{configurable:!1,enumerable:!0,get:i})},t.n=function(e){var n=e&&e.__esModule?function(){return e.default}:function(){return e};return t.d(n,'a',n),n},t.o=function(e,t){return Object.prototype.hasOwnProperty.call(e,t)},t.p="/dist/adformats",t(t.s=0)}([function(e,t){function n(e,t){if(!(e instanceof t))throw new TypeError("Cannot call a class as a function")}var i="function"==typeof Symbol&&"symbol"==typeof Symbol.iterator?function(e){return typeof e}:function(e){return e&&"function"==typeof Symbol&&e.constructor===Symbol&&e!==Symbol.prototype?"symbol":typeof e},o=Object.assign||function(e){for(var t=1;t<arguments.length;t++){var n=arguments[t];for(var i in n)Object.prototype.hasOwnProperty.call(n,i)&&(e[i]=n[i])}return e},a=function(){function e(e,t){for(var n=0;n<t.length;n++){var i=t[n];i.enumerable=i.enumerable||!1,i.configurable=!0,"value"in i&&(i.writable=!0),Object.defineProperty(e,i.key,i)}}return function(t,n,i){return n&&e(t.prototype,n),i&&e(t,i),t}}(),r=function(){function e(t){n(this,e);var i=t.request_id&&''!=t.request_id.trim()?t.request_id:'[request_id]';if(this.defaultConfig={el:'#vmfive-ad-unit-container-'+i,request_id:i,track_url:'[track_url]',downloaded_pixel:'[downloaded_pixel]',downloaded_impression_pixel:'[downloaded_impression_pixel]','text:cta_in_new_window':'[text:cta_in_new_window]',dfp_url:'[dfp_url]',cta_prefix_url:'[cta_prefix_url]','cta:default':'[cta:default]','text:banner_top_offset':'','text:banner_bottom_offset':'','text:scale':'[text:scale]','text:max_width':'[text:max_width]','text:embedded':'[text:embedded]','text:show_close_mode':'[text:show_close_mode]','text:height_ratio':'[text:height_ratio]','text:background_color':'[text:background_color]','text:logo_background_color':'[text:logo_background_color]','text:close_button_horizontal_alignment':'[text:close_button_horizontal_alignment]',enableClipPath:!0,enableLogo:!0,enableImpression:!0,bannerRatio:'32:5',videoBorderRadius:0,onresize:[],onprepared:[],onctaclicked:[]},this.config=o({},this.defaultConfig,t),this.config.bgColor=0===this.config['text:background_color'].length?'transparent':this.config['text:background_color'],this.config.logoBgColor=0===this.config['text:logo_background_color'].length?'transparent':this.config['text:logo_background_color'],this.config.closeBtnHorizontalAlignment=0===this.config['text:close_button_horizontal_alignment'].length?'right':this.config['text:close_button_horizontal_alignment'],this.config.el='string'==typeof this.config.el?document.querySelector(this.config.el):this.config.el,null===this.config.el)throw new Error('Something wrong with your el param');this.config.el.insertAdjacentHTML('beforeend',this.baseTemplate),this.initData=this.initData.bind(this),this.isModeBannerTop=!1;var a=this;this.data=this.initData(this.config),this.rootView=this.config.el,this.overlayView=this.rootView.querySelector('#vmfive-overlay-'+a.config.request_id),this.adContainerView=this.rootView.querySelector('#vmfive-ad-container-'+a.config.request_id),this.init()}return a(e,[{key:'initData',value:function(e){var t=e.el,n=e.bannerRatio,i=void 0,a=void 0,r=void 0;try{i=t.getBoundingClientRect().width,r=+n.split(':')[1]/+n.split(':')[0],a=i*r}catch(e){console.log(e),i=t.getBoundingClientRect().width,r=5/32,a=i*r}return o({},e,{elWidth:i,elHeight:a,viewHeight:window.innerHeight||document.documentElement.clientHeight,bannerHeight:a,bannerHeightRate:r})}},{key:'init',value:function(){function e(e){return r.rootView.querySelector('#'+e)}function t(e,t,n){var i={};return e.forEach(function(e,o){i=e[t]==n?e:i}),i}function n(e){e=e.replace('[timestamp]',Date.now());var t=document.createElement('img');t.src=e,t.style.display='none',document.body.appendChild(t)}function o(){if(window.$sf&&window.$sf.ext&&window.$sf.ext.geom&&'function'==typeof window.$sf.ext.geom&&'object'===i(window.$sf.ext.geom()))return window.$sf.ext.geom()}function a(e,t){e.addEventListener('click',t)}var r=this,c=''+r.config['text:scale'],l=isNaN(c)||0===c.length?1:+c,s=this.adContainerView,d=function(e){var t=''+r.config.dfp_url+r.config.cta_prefix_url+'&url='+r.config['cta:default'];(r.config.onctaclicked&&Array.isArray(r.config.onctaclicked)?r.config.onctaclicked:[]).forEach(function(t){'function'==typeof t&&t(r,{e:e})}),g?window.open(t,'_blank'):window.top.location.href=t};r.onCtaClicked=d;var g=''+r.config['text:cta_in_new_window']=='true';[].forEach(function(t){a(e(t),d)});var f=''+r.config['text:height_ratio'],u=isNaN(f)||0===f.length?1:+f;u>4&&(u=4);var p=r.data.bannerHeightRate*u,h="(100vw - 0px)*"+l,m="("+h+")*"+p;s.style.width="calc("+h+")",s.style.height="calc("+m+")";var v=''+r.config['text:max_width'],b=isNaN(v)||0===v.length?424:+v,y=b*this.data.bannerHeightRate*u;s.style.maxWidth=b+'px',s.style.maxHeight=y+'px',r.config.enableClipPath||s.classList.add('noclippath');var w=''+r.config['text:show_close_mode'],x=e('vmfive-close-'+r.config.request_id),A=[];try{A=JSON.parse(r.config.track_url)}catch(e){console.log(e)}var N=Date.now();r.doCloseTracking=function(){var e=t(A,'event','close');if(e.event){var i=e.url,o=Date.now(),a={landing_timestamp:N,close_timestamp:o};i=i+'&eventValue='+encodeURIComponent(o-N),i=i+'&eventDetails='+encodeURIComponent(JSON.stringify(a)),n(i)}},r.doImpression=function(){var e=document.querySelector('#vmfive-ad-unit-container-'+r.config.request_id),t=e.parentElement.parentElement.getAttribute('dfp-imp');t&&0!=t.length&&n(t);for(var i=0;i<A.length;i++){var o=A[i];if(o&&'impression'===o.event){n(o.url)}}};var I=setInterval(function(){var e=!1;if(o())try{e=o().pos.t<0}catch(e){console.log(e)}else r.adContainerView&&(e=r.adContainerView.getBoundingClientRect().top<window.innerHeight);e&&r.config.enableImpression&&(r.doImpression(),clearInterval(I))},200);x.addEventListener('click',function(){r.overlayView.parentElement.removeChild(r.overlayView),r.doCloseTracking()});var k=''+r.config['text:embedded']=='true',_=''+r.config['text:banner_top_offset'],z=isNaN(_)||0===_.length?'unset':+_,C=''+r.config['text:banner_bottom_offset'],E=isNaN(C)||0===C.length?0:+C;k&&(r.overlayView.style.position='unset',0===w.length&&(w='hidden')),r.overlayView.style.top=z+'px',isNaN(z)?r.overlayView.style.bottom=E+'px':(r.overlayView.style.bottom='unset',x.style.top='unset',x.style.bottom='0',x.style.transform='translateY(100%)',r.isModeBannerTop=!0),r.overlayView.style.visibility='unset';var B=e('vmfive-logo-'+r.config.request_id);'hidden'!==w&&(x.style.visibility='unset'),'fadein'===w?x.classList.add('fadein'):x.style.opacity='1',B.style.display=r.config.enableLogo?'block':'none',(r.config.onprepared&&Array.isArray(r.config.onprepared)?r.config.onprepared:[]).forEach(function(e){'function'==typeof e&&e(r)})}},{key:'baseTemplate',get:function(){var e=this;return'\n<div id="vmfive-overlay-'+e.config.request_id+'">\n  <div id="vmfive-ad-container-'+e.config.request_id+'">\n    <div id="vmfive-close-'+e.config.request_id+'"></div>\n    <div id="vmfive-logo-'+e.config.request_id+'" class="vmfive-info-image" onclick="window.open(\'https://adison.com.tw/?utm_source=adison_ad_logo\', \'_blank\')"></div>\n  </div>\n</div>\n<img src="'+e.config.downloaded_pixel+'" style="display:none;">\n\n<style>\n#vmfive-overlay-'+e.config.request_id+' {\n  position:fixed;\n  bottom:0;\n  right:0;\n  left:0;\n  background-color: '+e.config.bgColor+';\n  z-index: 9999999;\n  visibility:hidden;\n\n  display: flex;\n  align-items: center;\n  justify-content: center;\n}\n#vmfive-ad-container-'+e.config.request_id+' {\n  clip-path: inset(1px);\n  -webkit-clip-path: inset(1px);\n\n  position: relative;\n\n  display: flex;\n  align-items: center;\n\n  justify-content: center;\n}\n#vmfive-ad-container-'+e.config.request_id+'.noclippath {\n  clip-path: unset;\n  -webkit-clip-path: unset;\n}\n#vmfive-close-'+e.config.request_id+' {\n  background-image:url(\'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAQAAAAAYLlVAAAACXBIWXMAAA3XAAAN1wFCKJt4AAAF3mlUWHRYTUw6Y29tLmFkb2JlLnhtcAAAAAAAPD94cGFja2V0IGJlZ2luPSLvu78iIGlkPSJXNU0wTXBDZWhpSHpyZVN6TlRjemtjOWQiPz4gPHg6eG1wbWV0YSB4bWxuczp4PSJhZG9iZTpuczptZXRhLyIgeDp4bXB0az0iQWRvYmUgWE1QIENvcmUgNS42LWMxNDAgNzkuMTYwNDUxLCAyMDE3LzA1LzA2LTAxOjA4OjIxICAgICAgICAiPiA8cmRmOlJERiB4bWxuczpyZGY9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkvMDIvMjItcmRmLXN5bnRheC1ucyMiPiA8cmRmOkRlc2NyaXB0aW9uIHJkZjphYm91dD0iIiB4bWxuczp4bXA9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8iIHhtbG5zOmRjPSJodHRwOi8vcHVybC5vcmcvZGMvZWxlbWVudHMvMS4xLyIgeG1sbnM6cGhvdG9zaG9wPSJodHRwOi8vbnMuYWRvYmUuY29tL3Bob3Rvc2hvcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RFdnQ9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZUV2ZW50IyIgeG1wOkNyZWF0b3JUb29sPSJBZG9iZSBQaG90b3Nob3AgQ0MgKE1hY2ludG9zaCkiIHhtcDpDcmVhdGVEYXRlPSIyMDE4LTAxLTMwVDE3OjE0OjUxKzA4OjAwIiB4bXA6TW9kaWZ5RGF0ZT0iMjAxOC0wMS0zMFQxODoxMTozMiswODowMCIgeG1wOk1ldGFkYXRhRGF0ZT0iMjAxOC0wMS0zMFQxODoxMTozMiswODowMCIgZGM6Zm9ybWF0PSJpbWFnZS9wbmciIHBob3Rvc2hvcDpDb2xvck1vZGU9IjEiIHBob3Rvc2hvcDpJQ0NQcm9maWxlPSJEb3QgR2FpbiAyMCUiIHhtcE1NOkluc3RhbmNlSUQ9InhtcC5paWQ6NDE0ZmI2NTYtZDQ0NS00OWYwLTlhMGUtZTc4ZGU5NGUxNDY2IiB4bXBNTTpEb2N1bWVudElEPSJ4bXAuZGlkOjkwMjMwNzhmLWYyZTQtNDQ0OC05MWY4LTBhNWE0Yzg5Y2U5MCIgeG1wTU06T3JpZ2luYWxEb2N1bWVudElEPSJ4bXAuZGlkOjkwMjMwNzhmLWYyZTQtNDQ0OC05MWY4LTBhNWE0Yzg5Y2U5MCI+IDx4bXBNTTpIaXN0b3J5PiA8cmRmOlNlcT4gPHJkZjpsaSBzdEV2dDphY3Rpb249ImNyZWF0ZWQiIHN0RXZ0Omluc3RhbmNlSUQ9InhtcC5paWQ6OTAyMzA3OGYtZjJlNC00NDQ4LTkxZjgtMGE1YTRjODljZTkwIiBzdEV2dDp3aGVuPSIyMDE4LTAxLTMwVDE3OjE0OjUxKzA4OjAwIiBzdEV2dDpzb2Z0d2FyZUFnZW50PSJBZG9iZSBQaG90b3Nob3AgQ0MgKE1hY2ludG9zaCkiLz4gPHJkZjpsaSBzdEV2dDphY3Rpb249InNhdmVkIiBzdEV2dDppbnN0YW5jZUlEPSJ4bXAuaWlkOjQxNGZiNjU2LWQ0NDUtNDlmMC05YTBlLWU3OGRlOTRlMTQ2NiIgc3RFdnQ6d2hlbj0iMjAxOC0wMS0zMFQxODoxMTozMiswODowMCIgc3RFdnQ6c29mdHdhcmVBZ2VudD0iQWRvYmUgUGhvdG9zaG9wIENDIChNYWNpbnRvc2gpIiBzdEV2dDpjaGFuZ2VkPSIvIi8+IDwvcmRmOlNlcT4gPC94bXBNTTpIaXN0b3J5PiA8L3JkZjpEZXNjcmlwdGlvbj4gPC9yZGY6UkRGPiA8L3g6eG1wbWV0YT4gPD94cGFja2V0IGVuZD0iciI/PtPO3n0AAASdSURBVGiBzVlNaxVXGH7u3Iy5ihj0BoolH7QENZsWXOhOqH/AjdqCWXhBCu6ULHWl0KII7rtIE1CRNgUXAZEoXZiNEQpJBMmltFpDIGISqsI9HzPzdnEz95yZOTNzJl47vndz5tz3nOc5X+/HORUUlREcxlc4gEHU0YcaAIZ/sY5XaGIRf+DPwj1ayzHcwAIo57eAGzjWbei9GLeAjtIYx97ugO/BFWwWAg9/m7iCPR8Kfx6vtwUe/l7jfDZAJeO/EfyEbwz1fk9wEF/S5/RZpeoCvlyj1cpflWV4DqoG/d/x/Xa25hhEYjzeIX6RzfBVTpI88sknIiKffPJIrvIZfpEd4vAS7QTGisJfS3Yyxh5xkhRQlgQkH/ExZiB/rQj87VhjeY4tc/IyoXXxlvk5Bhnr5bYt/L1Is+Aon2Nbk11E/Dl2lCOI9HXPBv5udNUvM5KFwUORl1lsR9zNg7+uq7tyZjtjj8zDDHOjS3E9C/60rrpPLPEPAt+SJb4vuiVPp8Hv19X6xMuuwBMRveR9UQr7zQTmlYojn3cNnojoOXf0hZg3wTf0rTfLuglPRDQb3Y6NOPwOtNTBu8RyzM12JLjEtEPZwo4ogauK3agoYHKKiDeq74SrOnxNM53eonH1PfmMv7OyCO/kMy6Nmou6nxCoKQIXFLMz3HTy5/iwgOgXd/IWJ7jD+gXEkJgzDcM/w7U5uKAIvFBWf02YxrQrnCE52cqgEEy2Qg+wS5jma01oHuJFCH9EsTppHP9ToU2dl0ohmGzpek+Nc3BSn4MjbQI3OxX+E8P4iTZkxLOZKUThCXLD2NcTAb+jc7NNoBlWDKft/+DXaJiRpBCH937hKfPkDasN3wSAIdVsXKSur/9zK4NCAn6ilerEgnH9MA4B36kFuG+ctLBhKgUTfMZZua8vwrfAD+FHVW5kn3MTBSIqBk+0KXvUjvoRmA4/RmWuBQwmYmCzLGbjc+GJyBtVBH7TfOAJaRF8JCgUhifyTygC8w76Q3MwEGRmCW2pNHonJPzOd1XLBPwJ2ei16WMg6JT7HewOy/UKKLdxkkJReIDqSmu3o1yC68KxaA5UGrWHsjdCodd/KBs1K3jAcd1OuWYHGRdyEJutZI2lOGBhUUoEWaoKbIofd3mPXsV7jrtT3JJCIGWnzBy8D8vrZLeCU/ysa0hCq2dtKVTWldZ7B2/C8opj0TwO7+snwpICraiFf+Pgn7DczF/FBPwD74FXmAI1VflVIVNsMLpEFDdNmSELJU2xtTNKtfkJ65hNIe6MLN1xpssxUbB2x1YByXSey0lQmE4LXxMBiR6SeSkhmYiGZEaXE6eQHpIpra2QTAtKT5mDUj0gS/d4UQopQekpQ1BqEZbvFLnwMQo7C4TlFonJYz4oIOriVm5icovVBcSgeFwoMbFIzaRcYm+tUrO3cokVTc1KT04/gfS89AsKoPQrmk/gkqr0azqg9ItKoPSrWqD0y2qg9Ot6oPQHC+B/e7LZ1qOVGxykLxB9tPobyxXZ1Uertnz0Z7t8Kfnhsi2lPt0q+SiP13YZvS4jOIyvcQADsef7FTSxUPz5/j+9N5wh9XmleQAAAABJRU5ErkJggg==\');\n  position:absolute;background-repeat:no-repeat;background-position:center;background-size: contain;\n  width:24px;height:24px;visibility:hidden;opacity:0;\n  position: absolute;z-index:2;\n  top:1px;\n  '+e.config.closeBtnHorizontalAlignment+': 1px;\n  // transform: translateY(-100%);\n  cursor:pointer;\n}\n#vmfive-close-'+e.config.request_id+'.fadein {\n  -webkit-animation: fadein 3s ease-in forwards;\n  -webkit-animation-delay: 1s;\n\n  animation: fadein 3s ease-in forwards;\n  animation-delay: 1s;\n}\n#vmfive-overlay-'+e.config.request_id+' .vmfive-info-image {\n  position:absolute;z-index:2;\n  background-size:20px 20px;background-repeat:no-repeat;background-position:center;\n  cursor:pointer;\n}\n#vmfive-logo-'+e.config.request_id+' {\n  background-image:url(\'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACUAAAAlCAYAAADFniADAAAC7UlEQVRYhc3YT4iVVRjH8c+9zpgoLcxFY2gRSX8sNIZcFO2ENIxI3NkqEIkIN20MFzXQtk1MiySF2kuoURYKgiBGEEXin0UkzUAY0kCpqeN4Wpx7mTvPe/+8770XZ36bl+fhvOd8z3nOOc/zvrWUEmzBu3gKNfdfCZcxOTEx8WMtpbQFn6C+CDBR97CvllL6Ak8vNk2LLtVSSucsTsg6KdUNB2gGZ/D3EPqqjQyhkym8hX/xIL7EI4N0OIzNfaIBpPH8dtAOhwF1Pdj/DNphGahb8n6ZGnCsKZxWnERBvfbUDPZgGsvwMV7sA+gc3sNdrMVhPNSpcbeVSvigAQRz+LoPIDjWAII/caDRf2WoY/gh+J7sEypezj/hSFWo2zgYfM/izT6hduO54Pu8MU5pqFO41mKPYkLvPdhJI433R1t8M/iuClS8a17D+j6BmlqHbcH3fVmoOfwSfK8PCNTUzmD/jDtloH6zMNYr8cyQoDbKqaipWVwpAxWT6uO6J+0Hgr2iS9u6Yl68WgbqZo9Bo142D13HSz3arwp24QS2O00rgx0hozbhM5zFC9jco/1ssAuTbge1JtjTcpna7aLdXAKmqSvBHosN2g30hIX74joulhywly6ZL3NgOR4rA1VXnPVXQ4I6HuxNMlhPKHg12Cfwx4BA0zgafPEy7Qq1Fatb7Fk5TcRNWlZ38WF4fzW2V4Fajr3Bdx7vmy9BqgAdwK/Bv0eb0HWDgjcwHnxnZNiyoZzG23LF2apx7Or0Ui2lFGumVl2Tv1T+Cv5R7JBz4kYLb/yEC3JBeFwx5GNy5RmvntJQ5Nm+o006aGiVfKxX4D95FW90aDuGT+WKoaPKQJHz4X7F6qGKxvGRLitUFYocliM4pNqX8Bp5U+9U8mu8ClRTd/ANTsorV6iH5FP1PF6R76K2p2yYUK2aw+/yyt2Sc+nDeNTC0reSRuSw9PuTYxk29Dt4B6W6/AdtKelyHZNyabIUdA+TtaX4z/N/WVG1ilVDUhAAAAAASUVORK5CYII=\');\n  display:none;\n  bottom:0;right:0;\n  width:18px;height:18px;\n  background-color: '+e.config.logoBgColor+';\n}\n\n@keyframes fadein {\n  0% { opacity: 0; }\n  100% { opacity: 1; }\n}\n\n@-webkit-keyframes fadein {\n  0% { opacity: 0;}\n  100% { opacity: 1;}\n}\n</style>\n    '}}]),e}();try{e.exports=r}catch(e){}}]);
-    var Zoom=function(o){function i(e){if(n[e])return n[e].exports;var t=n[e]={i:e,l:!1,exports:{}};return o[e].call(t.exports,t,t.exports,i),t.l=!0,t.exports}var n={};return i.m=o,i.c=n,i.d=function(o,n,e){i.o(o,n)||Object.defineProperty(o,n,{configurable:!1,enumerable:!0,get:e})},i.n=function(o){var n=o&&o.__esModule?function(){return o.default}:function(){return o};return i.d(n,'a',n),n},i.o=function(o,i){return Object.prototype.hasOwnProperty.call(o,i)},i.p="/dist/components",i(i.s=0)}([function(o,i){function n(o,i,n){return i in o?Object.defineProperty(o,i,{value:n,enumerable:!0,configurable:!0,writable:!0}):o[i]=n,o}function e(o,i){if(!(o instanceof i))throw new TypeError("Cannot call a class as a function")}var t=Object.assign||function(o){for(var i=1;i<arguments.length;i++){var n=arguments[i];for(var e in n)Object.prototype.hasOwnProperty.call(n,e)&&(o[e]=n[e])}return o},r=function(){function o(o,i){for(var n=0;n<i.length;n++){var e=i[n];e.enumerable=e.enumerable||!1,e.configurable=!0,"value"in e&&(e.writable=!0),Object.defineProperty(o,e.key,e)}}return function(i,n,e){return n&&o(i.prototype,n),e&&o(i,e),i}}(),s=function(){function o(i){e(this,o);var n=i.request_id&&''!=i.request_id.trim()?i.request_id:'[request_id]';this.defaultConfig={el:'#vmfive-ad-unit-container-'+n,request_id:n,'image:background':'[image:background]','text:base_move_duration':'[text:base_move_duration]','text:enter_from':'[text:enter_from]',onresize:[],onprepared:[],onctaclicked:[],products:'[]'},this.config=t({},this.defaultConfig,i),this.config.enterFrom=0===this.config['text:enter_from'].length?'left':this.config['text:enter_from'],this.config.backgroundImage=this.config['image:background'];var r=this.config['text:base_move_duration'];if(this.config.BASE_MOVE_DURATION=isNaN(r)||0===r.length?1e3:+r,this.moveDuration=this.config.BASE_MOVE_DURATION,this.lastMoveDuration=this.config.BASE_MOVE_DURATION,this.speedLevel=1,this.config.position={fore:{top:'45%',height:'200%',side:'100%'},onShowing:{top:'35%',height:'80%',side:'30%'},aft:{top:'25%',height:'40%',side:'0%'},prepare:{top:'15%',height:'20%',side:'-20%'}},this.onShowingProductIndex=1,this.onShowingModelIndex=1,this.config.el='string'==typeof this.config.el?document.querySelector(this.config.el):this.config.el,null===this.config.el)throw new Error('Something wrong with your el param');this.init=this.init.bind(this),this.initContent=this.initContent.bind(this),this.config.el.insertAdjacentHTML('beforeend',this.contentTemplate);this.rootView=this.config.el,this.catwalkView=this.rootView.querySelector('.vmfive-catwalk-'+this.config.request_id),this.init()}return r(o,[{key:'init',value:function(){var o=this,i=o.config.products,n=[];try{n=JSON.parse(i),n=void 0!=n&&Array.isArray(n)?n:[]}catch(o){console.log(o)}o.productList=n,n.splice(n.length-1,n.length),n.splice(0,1);var e=o.catwalkView.querySelectorAll('.vmfive-model-'+o.config.request_id);o.modelList=e,e[0].src=n[n.length-1].image,e[1].src=n[0].image,e[2].src=n[(n.length+1)%n.length].image,e[3].src=n[(n.length+2)%n.length].image,e[0].classList.add('init-fore'),e[1].classList.add('init-onShowing'),e[2].classList.add('init-aft'),e[3].classList.add('init-prepare'),this.onShowingProductIndex=0,o.onShowingModelIndex=1,o.lastMove=Date.now(),o.initContent({onCtaClicked:function(i){(o.config.onctaclicked&&Array.isArray(o.config.onctaclicked)?o.config.onctaclicked:[]).forEach(function(n){'function'==typeof n&&n(o,{e:i})})}}),(o.config.onprepared&&Array.isArray(o.config.onprepared)?o.config.onprepared:[]).forEach(function(i){'function'==typeof i&&i(o)}),o.adjustMoveSpeed=function(){Date.now()-o.lastMove<o.moveDuration/2?o.speedLevel+=1:Date.now()-o.lastMove>2*o.moveDuration&&(o.speedLevel-=1),o.speedLevel=Math.max(Math.min(o.speedLevel,10),1),o.moveDuration=o.config.BASE_MOVE_DURATION/o.speedLevel},o.catwalkView.querySelector(".vmfive-dev-btn.next").addEventListener('click',function(){Date.now()-o.lastMove>o.lastMoveDuration&&o.next(),o.adjustMoveSpeed()}),o.catwalkView.querySelector(".vmfive-dev-btn.back").addEventListener('click',function(){Date.now()-o.lastMove>o.lastMoveDuration&&o.back(),o.adjustMoveSpeed()}),window.addEventListener("scroll",function(i){if(Date.now()-o.lastMove>=o.lastMoveDuration){var n=this.scrollY,e=(this.scrollX,Date.now());o.lastScrollY=o.lastScrollY?o.lastScrollY:0,o.lastScrollV=o.lastScrollV?o.lastScrollV:0,o.lastScrollTimestamp=o.lastScrollTimestamp?o.lastScrollTimestamp:e;var t=e-o.lastScrollTimestamp;if(t>0){var r=(n-o.lastScrollY)/t;1e3*(Math.abs(r)-Math.abs(o.lastScrollV))/t>=30&&e-o.lastMove>1&&(o.lastMove=e,r>0?o.next():o.back()),o.lastScrollV=r,o.lastScrollY=n,o.lastScrollTimestamp=e}}o.adjustMoveSpeed()},!1)}},{key:'initContent',value:function(o){function i(){t("forward"),r.onShowingProductIndex=(r.onShowingProductIndex+1)%r.productList.length,r.modelList[(r.onShowingModelIndex+2)%4].src=r.productList[(r.onShowingProductIndex+2)%r.productList.length].image}function e(){t("backward"),r.onShowingProductIndex=(r.onShowingProductIndex-1+r.productList.length)%r.productList.length,r.modelList[(r.onShowingModelIndex+4-1)%4].src=r.productList[(r.onShowingProductIndex-1+r.productList.length)%r.productList.length].image}function t(o){if(r.lastMoveDuration=r.moveDuration,'forward'==o){var i,e,t;anime((i={targets:r.modelList[r.onShowingModelIndex],height:[r.config.position.onShowing.height,r.config.position.fore.height],top:[r.config.position.onShowing.top,r.config.position.fore.top]},n(i,r.config.enterFrom,[r.config.position.onShowing.side,r.config.position.fore.side]),n(i,'duration',r.moveDuration),n(i,'easing',"easeOutCirc"),i)),anime((e={targets:r.modelList[(r.onShowingModelIndex+1)%4],height:[r.config.position.aft.height,r.config.position.onShowing.height],top:[r.config.position.aft.top,r.config.position.onShowing.top]},n(e,r.config.enterFrom,[r.config.position.aft.side,r.config.position.onShowing.side]),n(e,'duration',r.moveDuration),n(e,'easing',"easeOutCirc"),e)),anime((t={targets:r.modelList[(r.onShowingModelIndex+2)%4],height:[r.config.position.prepare.height,r.config.position.aft.height],top:[r.config.position.prepare.top,r.config.position.aft.top]},n(t,r.config.enterFrom,[r.config.position.prepare.side,r.config.position.aft.side]),n(t,'duration',r.moveDuration),n(t,'easing',"easeOutCirc"),t)),r.modelList[(r.onShowingModelIndex+3)%4].style.height=r.config.position.prepare.height,r.modelList[(r.onShowingModelIndex+3)%4].style.top=r.config.position.prepare.top,r.modelList[(r.onShowingModelIndex+3)%4].style[r.config.enterFrom]=r.config.position.prepare.side,r.onShowingModelIndex=(r.onShowingModelIndex+1)%4}else{var s,a,c;anime((s={targets:r.modelList[r.onShowingModelIndex],height:[r.config.position.onShowing.height,r.config.position.aft.height],top:[r.config.position.onShowing.top,r.config.position.aft.top]},n(s,r.config.enterFrom,[r.config.position.onShowing.side,r.config.position.aft.side]),n(s,'duration',r.moveDuration),n(s,'easing',"easeOutCirc"),s)),anime((a={targets:r.modelList[(r.onShowingModelIndex+1)%4],height:[r.config.position.aft.height,r.config.position.prepare.height],top:[r.config.position.aft.top,r.config.position.prepare.top]},n(a,r.config.enterFrom,[r.config.position.aft.side,r.config.position.prepare.side]),n(a,'duration',r.moveDuration),n(a,'easing',"easeOutCirc"),a)),anime((c={targets:r.modelList[(r.onShowingModelIndex+3)%4],height:[r.config.position.fore.height,r.config.position.onShowing.height],top:[r.config.position.fore.top,r.config.position.onShowing.top]},n(c,r.config.enterFrom,[r.config.position.fore.side,r.config.position.onShowing.side]),n(c,'duration',r.moveDuration),n(c,'easing',"easeOutCirc"),c)),r.modelList[(r.onShowingModelIndex+2)%4].style.height=r.config.position.fore.height,r.modelList[(r.onShowingModelIndex+2)%4].style.top=r.config.position.fore.top,r.modelList[(r.onShowingModelIndex+2)%4].style[r.config.enterFrom]=r.config.position.fore.side,r.onShowingModelIndex=(r.onShowingModelIndex-1+4)%4}r.lastMove=Date.now()}var r=this;r.catwalkView.addEventListener('click',o.onCtaClicked),r.next=i,r.back=e}},{key:'contentTemplate',get:function(){var o=this;return'\n<style>\n.reset-'+o.config.request_id+' {\n  max-width: unset !important;\n}\n.vmfive-catwalk-'+o.config.request_id+' {\n  background-image: url('+o.config.backgroundImage+');\n  background-repeat: no-repeat;\n  background-size: cover;\n  background-color: white;\n  position: absolute;\n  height: 100%;\n  width: 100%;\n  '+o.config.enterFrom+': 0;\n  overflow: hidden;\n}\n.vmfive-model-'+o.config.request_id+' {\n  position: absolute;\n  width: auto;\n}\n.vmfive-model-'+o.config.request_id+'.init-fore {\n  top: '+o.config.position.fore.top+';\n  height: '+o.config.position.fore.height+';\n  '+o.config.enterFrom+': '+o.config.position.fore.side+';\n}\n.vmfive-model-'+o.config.request_id+'.init-onShowing {\n  top: '+o.config.position.onShowing.top+';\n  height: '+o.config.position.onShowing.height+';\n  '+o.config.enterFrom+': '+o.config.position.onShowing.side+';\n}\n.vmfive-model-'+o.config.request_id+'.init-aft {\n  top: '+o.config.position.aft.top+';\n  height: '+o.config.position.aft.height+';\n  '+o.config.enterFrom+': '+o.config.position.aft.side+';\n}\n.vmfive-model-'+o.config.request_id+'.init-prepare {\n  top: '+o.config.position.prepare.top+';\n  height: '+o.config.position.prepare.height+';\n  '+o.config.enterFrom+': '+o.config.position.prepare.side+';\n}\n.vmfive-dev-btn {\n  position:absolute;\n  top:40%;\n  font-size:28px;\n  display: none;\n}\n.vmfive-dev-btn.next {\n  right:0;\n}\n.vmfive-dev-btn.back {\n  left:0;\n}\n</style>\n<div class="vmfive-catwalk-'+o.config.request_id+'">\n  <img class="vmfive-model-'+o.config.request_id+'" >\n  <img class="vmfive-model-'+o.config.request_id+'" >\n  <img class="vmfive-model-'+o.config.request_id+'" >\n  <img class="vmfive-model-'+o.config.request_id+'" >\n  <div class="vmfive-dev-btn next">></div>\n  <div class="vmfive-dev-btn back"><</div>\n</div>\n    '}}]),o}();try{o.exports=s}catch(o){}}]);
+    var TemplateBuilder=function(e){function t(r){if(n[r])return n[r].exports;var a=n[r]={i:r,l:!1,exports:{}};return e[r].call(a.exports,a,a.exports,t),a.l=!0,a.exports}var n={};return t.m=e,t.c=n,t.d=function(e,n,r){t.o(e,n)||Object.defineProperty(e,n,{configurable:!1,enumerable:!0,get:r})},t.n=function(e){var n=e&&e.__esModule?function(){return e.default}:function(){return e};return t.d(n,'a',n),n},t.o=function(e,t){return Object.prototype.hasOwnProperty.call(e,t)},t.p="/dist/adformats",t(t.s=0)}([function(e,t){function n(e,t){if(!(e instanceof t))throw new TypeError("Cannot call a class as a function")}var r=Object.assign||function(e){for(var t=1;t<arguments.length;t++){var n=arguments[t];for(var r in n)Object.prototype.hasOwnProperty.call(n,r)&&(e[r]=n[r])}return e},a=function(){function e(e,t){for(var n=0;n<t.length;n++){var r=t[n];r.enumerable=r.enumerable||!1,r.configurable=!0,"value"in r&&(r.writable=!0),Object.defineProperty(e,r.key,r)}}return function(t,n,r){return n&&e(t.prototype,n),r&&e(t,r),t}}(),i=function(){function e(t){n(this,e),this.defaultConfig={cdn:'https://d2v4tz4zvhrua.cloudfront.net/production/dist/2019-05-07-1557206750347',plugins:[],adformats:[],components:[],develop:!0,showCreateButton:!0,BaseAdUnit:[],OnBaseAdUnitPrepared:[],BaseFormatsCode:[],OnBaseComponentsCode:[],ExtraCallbacks:[]},this.config=r({},this.defaultConfig,t),this.init()}return a(e,[{key:'appendCdnScript',value:function(){var e=this,t=e.config.develop,n=t?'../src':e.config.cdn;e.config.plugins.forEach(function(e){var t=document.createElement("script");t.src=e,document.body.appendChild(t)}),e.config.adformats.forEach(function(e){e=t?e+'.js':e+'.min.js';var r=document.createElement("script");r.src=n+'/adformats/'+e,document.body.appendChild(r)}),e.config.components.forEach(function(e){e=t?e+'.js':e+'.min.js';var r=document.createElement("script");r.src=n+'/components/'+e,document.body.appendChild(r)})}},{key:'appendCustomJs',value:function(){var e=this,t=document.createElement("script");t.src="https://d1v69ngg41pvl6.cloudfront.net/dist/MixPlayer.js",t.onload=function(){var t=function e(t,r){return n(this,e),new t(r)},a={el:'#vmfive-ad-unit-container-55667788',request_id:'55667788',track_url:'[{"event":"view","url":"https://vaser-track.vm5apis.com/v2/track?requestId=&placementId=&campaignId=&audienceGroupId=&creativeId=&timezone=8&creativeFormat=richmedia&pixel=1&x=0&event=view"},                {"event":"impression","url":"https://vaser-track.vm5apis.com/v2/track?requestId=&placementId=&campaignId=&audienceGroupId=&creativeId=&timezone=8&creativeFormat=richmedia&pixel=1&x=0&event=impression"},                {"event":"video_percentage:0","url":"https://vaser-track.vm5apis.com/v2/track?requestId=&placementId=&campaignId=&audienceGroupId=&creativeId=&timezone=8&creativeFormat=richmedia&pixel=1&x=0&event=video_percentage:0"},                {"event":"video_percentage:25","url":"https://vaser-track.vm5apis.com/v2/track?requestId=&placementId=&campaignId=&audienceGroupId=&creativeId=&timezone=8&creativeFormat=richmedia&pixel=1&x=0&event=video_percentage:25"},                {"event":"video_percentage:50","url":"https://vaser-track.vm5apis.com/v2/track?requestId=&placementId=&campaignId=&audienceGroupId=&creativeId=&timezone=8&creativeFormat=richmedia&pixel=1&x=0&event=video_percentage:50"},                {"event":"video_percentage:75","url":"https://vaser-track.vm5apis.com/v2/track?requestId=&placementId=&campaignId=&audienceGroupId=&creativeId=&timezone=8&creativeFormat=richmedia&pixel=1&x=0&event=video_percentage:75"},                {"event":"video_percentage:100","url":"https://vaser-track.vm5apis.com/v2/track?requestId=&placementId=&campaignId=&audienceGroupId=&creativeId=&timezone=8&creativeFormat=richmedia&pixel=1&x=0&event=video_percentage:100"},                {"event":"click","url":"https://vaser-track.vm5apis.com/v2/track?requestId=&placementId=&campaignId=&audienceGroupId=&creativeId=&timezone=8&creativeFormat=richmedia&pixel=1&x=0&event=click"},                {"event":"close","url":"https://vaser-track.vm5apis.com/v2/track?requestId=&placementId=&campaignId=&audienceGroupId=&creativeId=&timezone=8&creativeFormat=richmedia&pixel=1&x=0&event=close"},                {"event":"replay","url":"https://vaser-track.vm5apis.com/v2/track?requestId=&placementId=&campaignId=&audienceGroupId=&creativeId=&timezone=8&creativeFormat=richmedia&pixel=1&x=0&event=replay"}]',downloaded_pixel:'https://vaser-track.vm5apis.com/v2/track?requestId=&event=downloaded&placementId=&campaignId=&audienceGroupId=&creativeId=&timezone=8&creativeFormat=richmedia&pixel=1&x=0','text:cta_in_new_window':'',dfp_url:'',cta_prefix_url:'https://vaser-track.vm5apis.com/v2/track?requestId=&placementId=&campaignId=&audienceGroupId=&creativeId=&timezone=8&creativeFormat=richmedia&pixel=1&x=0&event=click','cta:default':'https://adison.com.tw/?utm_source=adison_ad_cta','text:banner_bottom_offset':'0','text:scale':'1','text:show_close_mode':'fadein'},i=void 0;(e.config.BaseAdUnit&&Array.isArray(e.config.BaseAdUnit)?e.config.BaseAdUnit:[]).forEach(function(t){'function'==typeof t&&(i=t(e),e.config.BaseFormatsCode=t(e))});var c=r({},i.option,a);i=new t(i.adformat,c);var o={el:i.adContainerView,request_id:i.config.request_id,track_url:i.config.track_url,downloaded_pixel:i.config.downloaded_pixel,dfp_url:i.config.dfp_url,cta_prefix_url:i.config.cta_prefix_url,'cta:default':i.config['cta:default'],enableExpand:i.config.enableExpand},d=void 0;(e.config.OnBaseAdUnitPrepared&&Array.isArray(e.config.OnBaseAdUnitPrepared)?e.config.OnBaseAdUnitPrepared:[]).forEach(function(t){'function'==typeof t&&(d=t(e,i))}),void 0!==d&&d.forEach(function(n){var a=r({},n.option,o);e.config.OnBaseComponentsCode.push(n.option),new t(n.component,a)}),(e.config.ExtraCallbacks&&Array.isArray(e.config.ExtraCallbacks)?e.config.ExtraCallbacks:[]).forEach(function(t){'function'==typeof t&&t(e)})},document.body.appendChild(t)}},{key:'stringifyOption',value:function(e){return JSON.stringify(e,function(e,t){if('function'==typeof t){var n=t.toString();return n=n.replace(/\r\n/g,""),n=n.replace(/\n/g,""),'thisisforfunction'+(n=n.replace(/\s/g,""))+'thisisforfunction'}return t})}},{key:'createTemplate',value:function(e,t,n){var r=this,a=r.config.cdn,i='',c=r.stringifyOption(r.config.BaseFormatsCode.option),o=c;o=o.replace(/,\"([^(\_|\:|\")"]+)\":/g,",$1:"),o=o.replace(/:\"([^(*)"]+)\",/g,":'$1',"),i=o.replace(/(thisisforfunction")|("thisisforfunction)/g,"");var d='';r.config.components.forEach(function(e,t){var n=r.stringifyOption(r.config.OnBaseComponentsCode[t]),a=n;a=a.replace(/,\"([^(\_|\:|\")"]+)\":/g,",$1:"),a=a.replace(/:\"([^(*)"]+)\",/g,":'$1',"),a=a.replace(/(thisisforfunction")|("thisisforfunction)/g,""),d=d+'new '+e+'('+a+');'});var s='<script>\n        let sc = document.createElement("script");\n        sc.src = "https://d1v69ngg41pvl6.cloudfront.net/dist/MixPlayer.js";\n        sc.onload = function () {\n        let vmfiveAdUnitContainer = new '+r.config.adformats+'('+i+');\n        '+d+'\n        };\n        document.body.appendChild(sc);\n        <\/script>';return function(n,r){var a='';return e.forEach(function(e){a=a+'<script src=\''+e+'\'><\/script>\n'}),t.forEach(function(e){a=a+'<script src=\''+n+'/adformats/'+e+'.min.js\'><\/script>\n'}),r.forEach(function(e){a=a+'<script src=\''+n+'/components/'+e+'.min.js\'><\/script>\n'}),"<div id=\"vmfive-ad-unit-container-[request_id]\"></div>\n"+a+s}(a,n)}},{key:'createCreateButton',value:function(){function e(){template.created()}var t=document.createElement('div');t.setAttribute('style','position:fixed; top:0px; left:0px; background:red; width:30px;height:30px;'),document.body.appendChild(t),t.addEventListener('click',e,!1)}},{key:'init',value:function(){var e=this;e.appendCdnScript(),setTimeout(function(){e.appendCustomJs()},1e3),e.config.showCreateButton&&e.createCreateButton()}},{key:'created',value:function(){var e=this.createTemplate(this.config.plugins,this.config.adformats,this.config.components);e=e.replace(/>/g,'&gt;'),e=e.replace(/</g,'&lt;');var t=null;t=window.open('demo-code.html','Demo code','height=800,width=800,scrollbars=yes'),t.document.write('<figure>\n                            <pre><code class="language-pascal" style="display: inline-block;">\n                            '+e+'\n                            </code></pre></figure>')}}]),e}();try{e.exports=i}catch(e){}}]);
+    let template = new TemplateBuilder({
+      cdn: 'https://d2v4tz4zvhrua.cloudfront.net/production/dist/2019-05-30-1559194760571',
+      plugins: [
+        'https://man.vm5apis.com/dist/anime.js/3.0.1/anime.min.js',
+        'https://man.vm5apis.com/dist/raf.js'
+      ],
+      adformats: [
+        'BannerContainer',
+      ],
+      components: [
+        'Zoom', 'CloseButton'
+      ],
+      develop: false,
+      showCreateButton: false,
+      BaseAdUnit: [
+        function() {
+          return {
+            adformat : BannerContainer,
+            option : {
+              el: '#vmfive-ad-unit-container-[request_id]',
+              'request_id': '[request_id]',
+              'track_url': '[track_url]',
+              'downloaded_pixel': `[downloaded_pixel]`,
+              'downloaded_impression_pixel': `[downloaded_impression_pixel]`,
+              'text:cta_in_new_window': `[text:cta_in_new_window]`,
+              'dfp_url': `[dfp_url]`,
+              'cta_prefix_url': `[cta_prefix_url]`,
+              'cta:default': `[cta:default]`,
 
-    let sc = document.createElement("script");
+              'text:banner_z_index': `[text:banner_z_index]`,
+              'text:banner_top_offset': `[text:banner_top_offset]`,
+              'text:banner_bottom_offset': `[text:banner_bottom_offset]`,
+              'text:scale': `[text:scale]`,
+              'text:expand_scale': `[text:expand_scale]`,
+              'text:max_width': `[text:max_width]`,
 
-    sc.src = "https://d1v69ngg41pvl6.cloudfront.net/dist/MixPlayer.js";
-    sc.onload = function () {
-      let vmfiveAdUnitContainer = new BannerContainer({
-        // el: '#vmfive-ad-unit-container',
-        'request_id': '55667788',
-        'track_url': '[{"event":"view","url":"https://vaser-track.vm5apis.com/v2/track?requestId=&placementId=&campaignId=&audienceGroupId=&creativeId=&timezone=8&creativeFormat=richmedia&pixel=1&x=0&event=view"},\
-        {"event":"impression","url":"https://vaser-track.vm5apis.com/v2/track?requestId=&placementId=&campaignId=&audienceGroupId=&creativeId=&timezone=8&creativeFormat=richmedia&pixel=1&x=0&event=impression"},\
-        {"event":"video_percentage:0","url":"https://vaser-track.vm5apis.com/v2/track?requestId=&placementId=&campaignId=&audienceGroupId=&creativeId=&timezone=8&creativeFormat=richmedia&pixel=1&x=0&event=video_percentage:0"},\
-        {"event":"video_percentage:25","url":"https://vaser-track.vm5apis.com/v2/track?requestId=&placementId=&campaignId=&audienceGroupId=&creativeId=&timezone=8&creativeFormat=richmedia&pixel=1&x=0&event=video_percentage:25"},\
-        {"event":"video_percentage:50","url":"https://vaser-track.vm5apis.com/v2/track?requestId=&placementId=&campaignId=&audienceGroupId=&creativeId=&timezone=8&creativeFormat=richmedia&pixel=1&x=0&event=video_percentage:50"},\
-        {"event":"video_percentage:75","url":"https://vaser-track.vm5apis.com/v2/track?requestId=&placementId=&campaignId=&audienceGroupId=&creativeId=&timezone=8&creativeFormat=richmedia&pixel=1&x=0&event=video_percentage:75"},\
-        {"event":"video_percentage:100","url":"https://vaser-track.vm5apis.com/v2/track?requestId=&placementId=&campaignId=&audienceGroupId=&creativeId=&timezone=8&creativeFormat=richmedia&pixel=1&x=0&event=video_percentage:100"},\
-        {"event":"click","url":"https://vaser-track.vm5apis.com/v2/track?requestId=&placementId=&campaignId=&audienceGroupId=&creativeId=&timezone=8&creativeFormat=richmedia&pixel=1&x=0&event=click"},\
-        {"event":"close","url":"https://vaser-track.vm5apis.com/v2/track?requestId=&placementId=&campaignId=&audienceGroupId=&creativeId=&timezone=8&creativeFormat=richmedia&pixel=1&x=0&event=close"},\
-        {"event":"replay","url":"https://vaser-track.vm5apis.com/v2/track?requestId=&placementId=&campaignId=&audienceGroupId=&creativeId=&timezone=8&creativeFormat=richmedia&pixel=1&x=0&event=replay"}]',
+              'text:embedded': `[text:embedded]`,
+              'text:show_close_mode': `[text:show_close_mode]`,
 
-        'downloaded_pixel': 'https://vaser-track.vm5apis.com/v2/track?requestId=&event=downloaded&placementId=&campaignId=&audienceGroupId=&creativeId=&timezone=8&creativeFormat=richmedia&pixel=1&x=0',
-        'text:cta_in_new_window': '',
-        'dfp_url': '',
-        'cta_prefix_url': 'https://vaser-track.vm5apis.com/v2/track?requestId=&placementId=&campaignId=&audienceGroupId=&creativeId=&timezone=8&creativeFormat=richmedia&pixel=1&x=0&event=click',
-        'cta:default': 'https://adison.com.tw/?utm_source=adison_ad_cta',
+              'text:height_ratio': `[text:height_ratio]`,
 
-        // 'text:banner_top_offset': `0`,
-        'text:banner_bottom_offset': `0`,
-        'text:scale': `1`,
-        // 'text:max_width': ``,
+              'text:background_color': '[text:background_color]',
 
-        'text:embedded': ``,
-        'text:show_close_mode': `fadein`,
+              'text:logo_background_color': '[text:logo_background_color]',
 
-        'text:height_ratio': ``,
+              'text:close_button_horizontal_alignment': 'left',
 
-        'text:close_button_horizontal_alignment': 'left',
+              bannerRatio: '32:10',
+              videoBorderRadius: 0,
+              enableClipPath: false,
 
-        bannerRatio: '32:10',
-        videoBorderRadius: 0,
-        enableClipPath: false,
+              onctaclicked: [
+                function (comp, data) {
+                    console.log(data);
+                },
+              ],
+              onclosed: [
+                function () {
+                },
+              ],
+            }
+          };
+        }
+      ],
+      OnBaseAdUnitPrepared: [
+        // vmfiveAdUnitContainer 是容器
+        function(self, vmfiveAdUnitContainer) {
+          return [
+            {
+              component : Zoom,
+              option : {
+                el: '#vmfive-ad-container-[request_id]',
+                'request_id': '[request_id]',
+                'image:background': `https://d2v4tz4zvhrua.cloudfront.net/manual_uploads/20190528/resource/demo/zoom/bg.png`,
+                'text:base_move_duration': `1500`,
+                'text:enter_from': `left`,
+                'text:slide_from': `bottom`,
 
-        onctaclicked: [
-          function (comp, data) {
-            console.log(data);
-          },
-        ],
-        onclosed: [
-          function () {
-            console.log('closed');
-          },
-        ],
-      });
+                'cta:default': `[cta:default]`,
 
-      let contentEl = new Zoom({
-        el: vmfiveAdUnitContainer.adContainerView,
-        'request_id': vmfiveAdUnitContainer.config.request_id,
+                products:
+                '['+
+                '{"object": "https://d2v4tz4zvhrua.cloudfront.net/manual_uploads/20190528/resource/demo/zoom/SMOKE.png", "intro": "https://d2v4tz4zvhrua.cloudfront.net/manual_uploads/20190528/resource/demo/zoom/SMOKE_pic.png", "ctaURL": ""},'+
+                '{"object": "https://d2v4tz4zvhrua.cloudfront.net/manual_uploads/20190528/resource/demo/zoom/SOFT.png", "intro": "https://d2v4tz4zvhrua.cloudfront.net/manual_uploads/20190528/resource/demo/zoom/SOFT_pic.png", "ctaURL": ""},'+
+                '{"object": "https://d2v4tz4zvhrua.cloudfront.net/manual_uploads/20190528/resource/demo/zoom/TASTE.png", "intro": "https://d2v4tz4zvhrua.cloudfront.net/manual_uploads/20190528/resource/demo/zoom/TASTE_pic.png", "ctaURL": ""},'+
+                '{}]',
 
-        onctaclicked: [
-          vmfiveAdUnitContainer.onCtaClicked,
-        ],
+                onctaclicked: [
+                  function(comp, extra) {
+                    console.log(extra.ctaURL);
+                    vmfiveAdUnitContainer.config['cta:default'] = encodeURIComponent(extra.ctaURL);
+                    vmfiveAdUnitContainer.onCtaClicked();
+                  },
+                ],
+              }
+            },
+            {
+              component: CloseButton,
+              option : {
+                el: '#vmfive-ad-container-[request_id]',
+                'request_id': '[request_id]',
+                'track_url': '[track_url]',
 
-        'image:background': 'https://ad-demo.vmfive.com/demos/showcase/2019Q1_new_format/zoom/resource/road.gif',
-        'text:base_move_duration': `200`,
-        'text:enter_from': `left`,
+                'text:cta_in_new_window': `[text:cta_in_new_window]`,
+                'dfp_url': `[dfp_url]`,
+                'cta_prefix_url': `[cta_prefix_url]`,
+                'cta:default': `[cta:default]`,
 
-        products:
-        '[{},'+
-        '{"image": "https://ad-demo.vmfive.com/demos/showcase/2019Q1_new_format/zoom/resource/model_blue_car.png"},'+
-        '{"image": "https://ad-demo.vmfive.com/demos/showcase/2019Q1_new_format/zoom/resource/model_red_car.png"},'+
-        '{"image": "https://ad-demo.vmfive.com/demos/showcase/2019Q1_new_format/zoom/resource/model_white_car.png"},'+
-        '{}]',
-      });
-
-      let logoContainer = document.createElement('div');
-      logoContainer.style.height = '40%';
-      logoContainer.style.display = 'flex';
-      logoContainer.style.position = 'absolute';
-      logoContainer.style.top = 0;
-      logoContainer.style.right = '5px';
-      logoContainer.style.flexDirection = 'column';
-
-      let logoEl = document.createElement('img');
-      logoEl.src = 'https://ad-demo.vmfive.com/demos/showcase/2019Q1_new_format/zoom/resource/logo.png';
-      logoEl.style.height = '40%';
-      logoEl.style.marginLeft = 'auto';
-      logoEl.style.marginBottom = '5px';
-
-      let logoWord = document.createElement('img');
-      logoWord.src = 'https://ad-demo.vmfive.com/demos/showcase/2019Q1_new_format/zoom/resource/logo2.png';
-      logoWord.style.height = '25%';
-      logoWord.style.marginLeft = 'auto';
-
-      logoContainer.appendChild(logoEl);
-      logoContainer.appendChild(logoWord);
-
-      contentEl.catwalkView.appendChild(logoContainer);
-    };
-    document.body.appendChild(sc);
+                'text:embedded': '[text:embedded]',
+                'text:show_close_mode': 'fadein',
+                'text:close_button_horizontal_alignment': 'left',
+                closeMode: 'fate',
+                onctaclicked: [],
+                oncloseexpanded: [
+                  function() {
+                  },
+                ],
+                onclosed: [
+                  function() {
+                  },
+                ],
+              }
+            }
+          ]
+        }
+      ]
+    });
   </script>
 </body>
 
