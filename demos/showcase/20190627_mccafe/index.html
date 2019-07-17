@@ -51,9 +51,6 @@
         showCreateButton: false,
         BaseAdUnit: [
           function(self) {
-            console.log('before adformat, we need to dosomething === 1');
-          },
-          function(self) {
             return {
               adformatName: 'BannerContainer',
               refName: 'vmfiveAdUnitContainer',
@@ -82,16 +79,14 @@
             };
           },
           function(self) {
-            console.log('dosomething between adformat === 2 BannerContainer2', self.refs['vmfiveAdUnitContainer']);
-            self.refs['vmfiveAdUnitContainer'].adContainerBg.style.zIndex = '1';
-            self.refs['vmfiveAdUnitContainer'].adContainerBg.style.position = 'absolute';
-            self.refs['vmfiveAdUnitContainer'].adContainerBg.style.left = '0';
-            self.refs['vmfiveAdUnitContainer'].adContainerBg.style.top = '0';
-            self.refs['vmfiveAdUnitContainer'].adContainerBg.style.backgroundImage = 'url(https://d2v4tz4zvhrua.cloudfront.net/manual_uploads/20190627/resource/mccafe/ice_coffee.png)';
-            self.refs['vmfiveAdUnitContainer'].adContainerBg.style.backgroundSize = 'cover';
-            self.refs['vmfiveAdUnitContainer'].adContainerBg.style.backgroundRepeat = 'no-repeat';
-            self.refs['vmfiveAdUnitContainer'].adContainerBg.style.backgroundPosition = 'bottom';
-            self.refs['vmfiveAdUnitContainer'].adContainerBg.style.width = '100%';
+            let lowermostContainerBg = document.createElement('img');
+            lowermostContainerBg.src = 'https://d2v4tz4zvhrua.cloudfront.net/manual_uploads/20190627/resource/mccafe/ice_coffee.png';
+            lowermostContainerBg.style.position = 'absolute';
+            lowermostContainerBg.style.bottom = '0';
+            lowermostContainerBg.style.left = '0';
+            lowermostContainerBg.style.width = '100%';
+            lowermostContainerBg.style.display = 'none';
+            self.refs['vmfiveAdUnitContainer'].adContainerView.appendChild(lowermostContainerBg);
 
             let splashContainer = document.createElement('div');
             splashContainer.style.position = 'absolute';
@@ -101,25 +96,57 @@
             splashContainer.style.opacity = 0;
 
             let splashImg = document.createElement('img');
-            // splashImg.src = 'https://d2v4tz4zvhrua.cloudfront.net/manual_uploads/20190627/resource/mccafe/splashed_ice_coffee.png';
-            splashImg.src = 'https://d2v4tz4zvhrua.cloudfront.net/manual_uploads/20190627/resource/mccafe/splashed_ice_coffee_with_ices.png';
+            splashImg.src = 'https://d2v4tz4zvhrua.cloudfront.net/manual_uploads/20190627/resource/mccafe/splashed_ice_coffee.png';
             splashImg.style.position = 'absolute';
             splashImg.style.left = '0%';
             splashImg.style.bottom = '0%';
             splashImg.style.width = '100%';
-            splashContainer.appendChild(splashImg);
+            let iceLeft = document.createElement('img');
+            iceLeft.src = 'https://d2v4tz4zvhrua.cloudfront.net/manual_uploads/20190627/resource/mccafe/ice1.png';
+            iceLeft.style.position = 'absolute';
+            iceLeft.style.left = '47%';
+            iceLeft.style.bottom = '0%';
+            iceLeft.style.width = '36%';
+            let iceRight = document.createElement('img');
+            iceRight.src = 'https://d2v4tz4zvhrua.cloudfront.net/manual_uploads/20190627/resource/mccafe/ice2.png';
+            iceRight.style.position = 'absolute';
+            iceRight.style.left = '21%';
+            iceRight.style.bottom = '0%';
+            iceRight.style.width = '36%';
 
-            self.refs['vmfiveAdUnitContainer'].adContainerBg.appendChild(splashContainer);
+            let coffeeFront = document.createElement('img');
+            coffeeFront.src = 'https://d2v4tz4zvhrua.cloudfront.net/manual_uploads/20190627/resource/mccafe/splashed_ice_coffee_only_front.png';
+            coffeeFront.style.zIndex = '2';
+            coffeeFront.style.position = 'absolute';
+            coffeeFront.style.left = '0%';
+            coffeeFront.style.bottom = '0%';
+            coffeeFront.style.width = '100%';
+            
+            let cupFront = document.createElement('img');
+            cupFront.src = 'https://d2v4tz4zvhrua.cloudfront.net/manual_uploads/20190627/resource/mccafe/cup_front.png';
+            cupFront.style.zIndex = '3';
+            cupFront.style.position = 'absolute';
+            cupFront.style.left = '0%';
+            cupFront.style.bottom = '0%';
+            cupFront.style.width = '100%';
+
+            splashContainer.appendChild(splashImg);
+            splashContainer.appendChild(iceLeft);
+            splashContainer.appendChild(iceRight);
+            splashContainer.appendChild(coffeeFront);
+            splashContainer.appendChild(cupFront);
+            self.refs['vmfiveAdUnitContainer'].adContainerView.appendChild(splashContainer);
+
+            
 
             let preloadImg = new Image();
-            // preloadImg.src = 'https://d2v4tz4zvhrua.cloudfront.net/manual_uploads/20190627/resource/mccafe/splashed_ice_coffee.png';
-            preloadImg.src = 'https://d2v4tz4zvhrua.cloudfront.net/manual_uploads/20190627/resource/mccafe/splashed_ice_coffee_with_ices.png';
+            preloadImg.src = 'https://d2v4tz4zvhrua.cloudfront.net/manual_uploads/20190627/resource/mccafe/cup_front.png';
             if (preloadImg.complete) {
-                initFlyout();
+              initFlyout();
             } else {
-                preloadImg.onload = function() {
-                    initFlyout();
-                }
+              preloadImg.onload = function() {
+                initFlyout();
+              }
             }
             function initFlyout() {
             let contentEl = new Flyout({
@@ -127,7 +154,6 @@
                 'request_id': self.refs['vmfiveAdUnitContainer'].config.request_id,
 
                 'image:banner': 'https://d2v4tz4zvhrua.cloudfront.net/manual_uploads/20190627/resource/mccafe/banner.png',
-                // 'image:leader': 'https://d2v4tz4zvhrua.cloudfront.net/manual_uploads/20190627/resource/mccafe/transparent_1x1.png',
                 'image:leader': 'https://d2v4tz4zvhrua.cloudfront.net/manual_uploads/20190627/resource/mccafe/leader.png',
                 'text:move_duration': `2000`,
                 'text:banner_showup_delay': `1000`,
@@ -149,34 +175,53 @@
                 onflyoutstart: [
                 function() {
 
-                    let h = splashImg.getBoundingClientRect().height;
-                    // console.log(splashImg.getBoundingClientRect());
-                    // console.log(h);
-                    splashContainer.style.overflow = 'hidden';
+                    let h = cupFront.getBoundingClientRect().height;
+                    splashContainer.style.height = h;
+                    lowermostContainerBg.style.display = 'block';
 
                     anime({
                       targets: [contentEl.flyingCarpet, contentEl.fastFlyingCarpet, contentEl.fasterFlyingCarpet],
                       opacity: [1, 0],
-                      delay: (contentEl.config.startDelay + contentEl.config.moveDuration * contentEl.bannerEnterDelayCoef) * 1 + 150,
+                      delay: (contentEl.config.startDelay + contentEl.config.moveDuration * contentEl.bannerEnterDelayCoef) * 1 + 50,
                       duration: 300,
                       easing: 'easeInQuint',
                     });
-
+                    // document.querySelector('.vmfive-banner-55667788').style.display = 'none';
+                    
+                    
                     setTimeout(function() {
-                      // 製造冰塊掉在杯內的感覺：一開始把 fly_over_banner 設為 true(z-index 會被設為 1)，在這個時間點再把它改回 0
-                      contentEl.flyingCarpet.style.zIndex = 0;
-
-                      splashContainer.style.height = h + 'px';
                       splashContainer.style.opacity = 1;
-
                       anime({
-                        targets: self.refs['vmfiveAdUnitContainer'].adContainerBg,
-                        opacity: [1, 0],
-                        top: ['0', '100%'],
-                        delay: 550,
+                        targets: splashContainer,
+                        height: [h/2, h],
                         easing: 'easeInOutSine',
-                        });
-
+                      });
+                      anime({
+                        targets: iceLeft,
+                        bottom: ['0', '30%'],
+                        delay: 10,
+                        duration: 300,
+                        easing: 'easeInOutSine',
+                      });
+                      anime({
+                        targets: iceRight,
+                        bottom: ['0', '30%'],
+                        delay: 10,
+                        duration: 300,
+                        easing: 'easeInOutSine',
+                      });
+                      anime({
+                        targets: splashContainer,
+                        bottom: ['0', '-260%'],
+                        delay: 800,
+                        easing: 'easeInOutSine',
+                      });
+                      anime({
+                        targets: lowermostContainerBg,
+                        bottom: ['0', '-260%'],
+                        delay: 800,
+                        easing: 'easeInOutSine',
+                      })
                         let dynamicEl = new DynamicWeather({
                         el: contentEl.bannerView,
                         'request_id': self.refs['vmfiveAdUnitContainer'].config['request_id'],
@@ -205,52 +250,6 @@
                         ],
                       });
                     }, (contentEl.config.startDelay + contentEl.config.moveDuration * contentEl.bannerEnterDelayCoef * 0.75));
-
-                    // anime({
-                    // targets: splashContainer,
-                    // opacity: [0, 1],
-                    // height: ['30%', h + 'px'],
-                    // delay: (contentEl.config.startDelay + contentEl.config.moveDuration * contentEl.bannerEnterDelayCoef) * 1 + 100,
-                    // easing: 'easeInOutSine',
-                    // duration: 350,
-                    // complete: function() {
-                    //     anime({
-                    //     targets: self.refs['vmfiveAdUnitContainer'].adContainerBg,
-                    //     opacity: [1, 0],
-                    //     top: ['0', '100%'],
-                    //     delay: 550,
-                    //     easing: 'easeInOutSine',
-                    //     });
-                    //
-                    //     let dynamicEl = new DynamicWeather({
-                    //     el: contentEl.bannerView,
-                    //     'request_id': self.refs['vmfiveAdUnitContainer'].config['request_id'],
-                    //     'track_url':  self.refs['vmfiveAdUnitContainer'].config['track_url'],
-                    //     enableUVI: false,
-                    //     enableAQI: false,
-                    //     enablePM2Dot5: false,
-                    //     enableTemperature: true,
-                    //     enableRainfall: false,
-                    //
-                    //     'text:top_percentage': '47',
-                    //     'text:bottom_percentage': '',
-                    //     'text:left_percentage': '',
-                    //     'text:right_percentage': '10',
-                    //
-                    //     'text:dynamic_weather_title': '',
-                    //     'text:dynamic_weather_text_right': '',
-                    //
-                    //     onprepared: [
-                    //       function() {
-                    //           let tempEl = dynamicEl.rootView.querySelector('#temperature');
-                    //           tempEl.style.fontSize = '36px';
-                    //           tempEl.style.fontStyle = 'italic';
-                    //           tempEl.style.color = '#e37e24';
-                    //       },
-                    //     ],
-                    //     });
-                    // }
-                    // });
                 },
                 ],
             });
@@ -279,9 +278,6 @@
                 closeMode: 'fate'
               }
             }
-          },
-          function(self) {
-            console.log('we need to dosomething after component === 6 CloseButton', self.refs['CloseButton']);
           }
         ]
       });
