@@ -68,7 +68,7 @@ sc.onload = function () {
       'text:cta_in_new_window': '',
       'dfp_url': '',
       'cta_prefix_url': 'https://vaser-track.vm5apis.com/v2/track?requestId=&placementId=&campaignId=&audienceGroupId=&creativeId=&timezone=8&creativeFormat=richmedia&pixel=1&x=0&event=click',
-      'cta:default': 'https://www.sfworldwide.com/',
+      'cta:default': 'https://vmfive.com/?utm_source=vmfive_ad_cta',
       'text:show_close_mode': 'fadein',
       'text:banner_bottom_offset': `0`,
       'text:scale': `1`,
@@ -102,23 +102,23 @@ sc.onload = function () {
       'dfp_url': '',
       'cta_prefix_url': 'https://vaser-track.vm5apis.com/v2/track?requestId=&placementId=&campaignId=&audienceGroupId=&creativeId=&timezone=8&creativeFormat=richmedia&pixel=1&x=0&event=click',
       'cta:default': 'https://www.sfworldwide.com/',
-      'text:banner_threed_rotate_initial_delay': '4500',
+      'text:banner_threed_rotate_initial_delay': '3200',
 
       cubic: {
         front: {
-          imageURL: 'https://d2v4tz4zvhrua.cloudfront.net/manual_uploads/20190715/red/banner_960x300.png',
+          imageURL: 'https://d2v4tz4zvhrua.cloudfront.net/manual_uploads/20190715/red/banner_1_960x300.png',
           ctaURL: 'https://www.sfworldwide.com/',
         },
         bottom: {
-          imageURL: 'https://d2v4tz4zvhrua.cloudfront.net/manual_uploads/20190715/red/banner_960x300.png',
+          imageURL: 'https://d2v4tz4zvhrua.cloudfront.net/manual_uploads/20190715/red/banner_2_960x300.jpg',
           ctaURL: 'https://www.sfworldwide.com/',
         },
         back: {
-          imageURL: 'https://d2v4tz4zvhrua.cloudfront.net/manual_uploads/20190715/red/banner_960x300.png',
+          imageURL: 'https://d2v4tz4zvhrua.cloudfront.net/manual_uploads/20190715/red/banner_1_960x300.png',
           ctaURL: 'https://www.sfworldwide.com/',
         },
         top: {
-          imageURL: 'https://d2v4tz4zvhrua.cloudfront.net/manual_uploads/20190715/red/banner_960x300.png',
+          imageURL: 'https://d2v4tz4zvhrua.cloudfront.net/manual_uploads/20190715/red/banner_2_960x300.jpg',
           ctaURL: 'https://www.sfworldwide.com/',
         },
         left: {
@@ -154,18 +154,21 @@ sc.onload = function () {
     let innerHteml = `
         <div id="anime-wrap-${vmfiveAdUnitContainer.config.request_id}">
             <div class="pot">
-                <img src="https://d2v4tz4zvhrua.cloudfront.net/manual_uploads/20190715/walnut/walnut.png">
+                <img src="https://d2v4tz4zvhrua.cloudfront.net/manual_uploads/20190715/red/redbeans.png">
             </div>
             <div class="content">
-                <div class="walnut2"><img src="https://d2v4tz4zvhrua.cloudfront.net/manual_uploads/20190715/walnut/flyout_walnut2.png"></div>
-                <div class="almond1"><img src="https://d2v4tz4zvhrua.cloudfront.net/manual_uploads/20190715/walnut/flyout_almond1.png"></div>
-                <div class="seeds"><img src="https://d2v4tz4zvhrua.cloudfront.net/manual_uploads/20190715/walnut/flyout_seeds.png"></div>
+                <div class="chickpea"><img src="https://d2v4tz4zvhrua.cloudfront.net/manual_uploads/20190715/red/flyout_chickpea.png"></div>
+                <div class="redbeans"><img src="https://d2v4tz4zvhrua.cloudfront.net/manual_uploads/20190715/red/flyout_redbeans.png"></div>
+                <div class="purplerice"><img src="https://d2v4tz4zvhrua.cloudfront.net/manual_uploads/20190715/red/flyout_purplerice.png"></div>
+                <div class="nuts"><img src="https://d2v4tz4zvhrua.cloudfront.net/manual_uploads/20190715/red/flyout_pine_nuts.png"></div>
             </div>
             <div class="glassofmilk">
                 <img src="https://d2v4tz4zvhrua.cloudfront.net/manual_uploads/20190715/red/glassofmilk_red.png">
             </div>
             <div class="splashmilk">
-                <img src="https://d2v4tz4zvhrua.cloudfront.net/manual_uploads/20190715/red/splashmilk_red.png">
+                <div class="mask">
+                    <img src="https://d2v4tz4zvhrua.cloudfront.net/manual_uploads/20190715/red/splashmilk_red.png">
+                </div>
             </div>
         </div>
         <style>
@@ -189,32 +192,42 @@ sc.onload = function () {
                 left: 20%;
                 z-index: 2;
             }
-            #anime-wrap-${vmfiveAdUnitContainer.config.request_id} .content .almond1 {
-                width: 37%;
-                z-index: -1;
-                display: inline-block;
-                position: absolute;
-                left: -3%;
-                opacity: 0;
-                transform: translateY(0%) rotate(-20deg);
-                transform-origin: top right;
-            }
-            #anime-wrap-${vmfiveAdUnitContainer.config.request_id} .content .seeds {
-                width: 37%;
-                z-index: -1;
-                display: inline-block;
-                position: absolute;
-                left: 0%;
-                opacity: 0;
-                transform: translateY(0%) rotate(-20deg);
-                transform-origin: top right;
-            }
-            #anime-wrap-${vmfiveAdUnitContainer.config.request_id} .content .walnut2 {
+            #anime-wrap-${vmfiveAdUnitContainer.config.request_id} .content .chickpea {
                 width: 37%;
                 z-index: -1;
                 display: inline-block;
                 position: absolute;
                 left: 12%;
+                opacity: 0;
+                transform: translateY(0%) rotate(-20deg);
+                transform-origin: top right;
+            }
+            #anime-wrap-${vmfiveAdUnitContainer.config.request_id} .content .redbeans {
+                width: 37%;
+                z-index: -1;
+                display: inline-block;
+                position: absolute;
+                left: 6%;
+                opacity: 0;
+                transform: translateY(0%) rotate(-20deg);
+                transform-origin: top right;
+            }
+            #anime-wrap-${vmfiveAdUnitContainer.config.request_id} .content .purplerice {
+                width: 37%;
+                z-index: -1;
+                display: inline-block;
+                position: absolute;
+                left: -8%;
+                opacity: 0;
+                transform: translateY(0%) rotate(-20deg);
+                transform-origin: top right;
+            }
+            #anime-wrap-${vmfiveAdUnitContainer.config.request_id} .content .nuts {
+                width: 37%;
+                z-index: -1;
+                display: inline-block;
+                position: absolute;
+                left: 0%;
                 opacity: 0;
                 transform: translateY(0%) rotate(-20deg);
                 transform-origin: top right;
@@ -239,8 +252,19 @@ sc.onload = function () {
                 bottom: 0;
                 left: 0;
                 opacity: 0;
-                transform: translateY(100%) translateX(50%);
+                transform: translateY(0%);
                 z-index: 3;
+            }
+            #anime-wrap-${vmfiveAdUnitContainer.config.request_id} .splashmilk .mask {
+                display: inline-block;
+                position: relative;
+                overflow: hidden;
+                width: 100%;
+                height: 0;
+            }
+            #anime-wrap-${vmfiveAdUnitContainer.config.request_id} .splashmilk .mask img {
+                position: absolute;
+                bottom: 0;
             }
         </style>
     `;
@@ -253,13 +277,15 @@ sc.onload = function () {
     let potEL =  vmfiveAdUnitContainer.adContainerView.querySelector('#anime-wrap-'+vmfiveAdUnitContainer.config.request_id+' .pot');
 
     let contentEL =  vmfiveAdUnitContainer.adContainerView.querySelector('#anime-wrap-'+vmfiveAdUnitContainer.config.request_id+' .content');
-    let almond1EL =  vmfiveAdUnitContainer.adContainerView.querySelector('#anime-wrap-'+vmfiveAdUnitContainer.config.request_id+' .almond1');
-    let seedsEL =  vmfiveAdUnitContainer.adContainerView.querySelector('#anime-wrap-'+vmfiveAdUnitContainer.config.request_id+' .seeds');
-    let walnut2EL =  vmfiveAdUnitContainer.adContainerView.querySelector('#anime-wrap-'+vmfiveAdUnitContainer.config.request_id+' .walnut2');
+    let chickpeaEL =  vmfiveAdUnitContainer.adContainerView.querySelector('#anime-wrap-'+vmfiveAdUnitContainer.config.request_id+' .chickpea');
+    let redbeansEL =  vmfiveAdUnitContainer.adContainerView.querySelector('#anime-wrap-'+vmfiveAdUnitContainer.config.request_id+' .redbeans');
+    let purplericeEL =  vmfiveAdUnitContainer.adContainerView.querySelector('#anime-wrap-'+vmfiveAdUnitContainer.config.request_id+' .purplerice');
+    let nutsEL =  vmfiveAdUnitContainer.adContainerView.querySelector('#anime-wrap-'+vmfiveAdUnitContainer.config.request_id+' .nuts');
 
     let glassofmilkEL =  vmfiveAdUnitContainer.adContainerView.querySelector('#anime-wrap-'+vmfiveAdUnitContainer.config.request_id+' .glassofmilk');
     let splashmilkEL =  vmfiveAdUnitContainer.adContainerView.querySelector('#anime-wrap-'+vmfiveAdUnitContainer.config.request_id+' .splashmilk');
-    
+    let splashmilkMaskEL =  vmfiveAdUnitContainer.adContainerView.querySelector('#anime-wrap-'+vmfiveAdUnitContainer.config.request_id+' .splashmilk .mask');
+
     anime({
         targets: glassofmilkEL,
         opacity: [
@@ -297,7 +323,7 @@ sc.onload = function () {
         easing: 'easeOutQuad',
     });
     anime({
-        targets: walnut2EL,
+        targets: chickpeaEL,
         opacity: [
             { value: '0', duration: 0, delay: 1000 },
             { value: '1', duration: 10 }
@@ -313,7 +339,7 @@ sc.onload = function () {
         easing: 'linear',
     });
     anime({
-        targets: almond1EL,
+        targets: redbeansEL,
         opacity: [
             { value: '0', duration: 0, delay: 1250 },
             { value: '1', duration: 10 }
@@ -329,17 +355,33 @@ sc.onload = function () {
         easing: 'linear',
     });
     anime({
-        targets: seedsEL,
+        targets: purplericeEL,
         opacity: [
-            { value: '0', duration: 0, delay: 1600 },
+            { value: '0', duration: 0, delay: 1400 },
             { value: '1', duration: 10 }
         ],
         translateY: [
-            { value: '0%', duration: 0, delay: 1600},
+            { value: '0%', duration: 0, delay: 1400},
             { value: '100vh', duration: 1500 },
         ],
         rotate: [
-            { value: '-20deg', duration: 0, delay: 1600 },
+            { value: '-20deg', duration: 0, delay: 1400 },
+            { value: '-20deg', duration: 1500 }
+        ],
+        easing: 'linear',
+    });
+    anime({
+        targets: nutsEL,
+        opacity: [
+            { value: '0', duration: 0, delay: 1700 },
+            { value: '1', duration: 10 }
+        ],
+        translateY: [
+            { value: '0%', duration: 0, delay: 1700},
+            { value: '100vh', duration: 1500 },
+        ],
+        rotate: [
+            { value: '-20deg', duration: 0, delay: 1700 },
             { value: '-20deg', duration: 1500 }
         ],
         easing: 'linear',
@@ -353,16 +395,25 @@ sc.onload = function () {
             { value: '0', duration: 300, delay: 900 }
         ],
         translateY: [
-            { value: '100%', duration: 0, delay: 1700 },
+            { value: '0%', duration: 0, delay: 1700 },
             { value: '0', duration: 300 },
             { value: '100%', duration: 300, delay: 900 }
         ],
         easing: 'linear',
     });
+
+    anime({
+        targets: splashmilkMaskEL,
+        height: [
+            { value: '0', duration: 0, delay: 1800 },
+            { value: '71vh', duration: 600 },
+        ],
+        easing: 'linear',
+    })
     anime({
         targets: contentEl.rootView,
         translateY: [
-            { value: '100%', duration: 0, delay: 2800 },
+            { value: '100%', duration: 0, delay: 3200 },
             { value: '0', duration: 300 },
         ],
         easing: 'linear',
@@ -371,7 +422,7 @@ sc.onload = function () {
     setTimeout(function(){
         contentEl.rootView.style.display = "block";
         animeWrap.style.display = "none";
-    },2800);
+    },3200);
 }
 
 window.addEventListener('scroll', triggeredFunc, false);
