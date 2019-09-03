@@ -1,0 +1,188 @@
+<div id="vmfive-ad-unit-container-[request_id]"></div>
+<script src='https://man.vm5apis.com/dist/anime.js/3.0.1/anime.min.js'></script>
+<script src='https://d1v69ngg41pvl6.cloudfront.net/dist/odometer.js/0.4.8/odometer.min.js'></script>
+<script src='https://d2v4tz4zvhrua.cloudfront.net/production/dist/2019-06-28-1561691998782/adformats/BannerContainer.min.js'></script>
+<script src='https://d2v4tz4zvhrua.cloudfront.net/production/dist/2019-06-28-1561691998782/components/Flyout.min.js'></script>
+<script src='https://d2v4tz4zvhrua.cloudfront.net/production/dist/2019-06-28-1561691998782/components/CloseButton.min.js'></script>
+<script src='https://d2v4tz4zvhrua.cloudfront.net/production/dist/2019-06-28-1561691998782/components/DynamicWeather.min.js'></script>
+<script>
+    let sc = document.createElement("script");
+    sc.src = "https://d1v69ngg41pvl6.cloudfront.net/dist/MixPlayer.js";
+    sc.onload = function () {
+        let vmfiveAdUnitContainerEl = new BannerContainer({"request_id":'[request_id]',"track_url":'[track_url]',"downloaded_pixel":'[downloaded_pixel]',"text:cta_in_new_window":"","dfp_url":"","cta_prefix_url":'[cta_prefix_url]',"cta:default":'[cta:default]',"text:banner_bottom_offset":'0',"text:scale":'1',"text:embedded":"","text:show_close_mode":'fadein',"text:height_ratio":"", bannerRatio:'32:10',videoBorderRadius:0,enableClipPath:false});
+
+        let lowermostContainerBg = document.createElement('img'); 
+        lowermostContainerBg.src = 'https://d2v4tz4zvhrua.cloudfront.net/manual_uploads/20190627/resource/mccafe/ice_coffee.png';
+        lowermostContainerBg.style.position = 'absolute';
+        lowermostContainerBg.style.bottom = '0'; 
+        lowermostContainerBg.style.left = '0'; 
+        lowermostContainerBg.style.width = '100%';
+        lowermostContainerBg.style.display = 'none'; 
+        vmfiveAdUnitContainerEl.adContainerView.appendChild(lowermostContainerBg);
+        let splashContainer = document.createElement('div'); 
+        splashContainer.style.position = 'absolute'; 
+        splashContainer.style.bottom = '0'; 
+        splashContainer.style.left = '0'; 
+        splashContainer.style.width = '100%'; 
+        splashContainer.style.opacity = 0; 
+        let splashDiv = document.createElement('div'); 
+        splashDiv.style.width = '100%'; 
+        splashDiv.style.position = 'absolute'; 
+        splashDiv.style.bottom = '0'; 
+        splashDiv.style.left = '0'; 
+        splashDiv.style.overflow = 'hidden'; 
+        let splashImg = document.createElement('img'); 
+        splashImg.src = 'https://d2v4tz4zvhrua.cloudfront.net/manual_uploads/20190627/resource/mccafe/splashed_ice_coffee.png'; 
+        splashImg.style.position = 'absolute'; 
+        splashImg.style.left = '0%'; 
+        splashImg.style.bottom = '0%'; 
+        splashImg.style.width = '100%'; 
+        splashDiv.appendChild(splashImg); 
+        let iceLeft = document.createElement('img'); 
+        iceLeft.src = 'https://d2v4tz4zvhrua.cloudfront.net/manual_uploads/20190627/resource/mccafe/ice1.png'; 
+        iceLeft.style.position = 'absolute'; 
+        iceLeft.style.left = '47%'; 
+        iceLeft.style.bottom = '-40%'; 
+        iceLeft.style.width = '36%'; 
+        let iceRight = document.createElement('img'); 
+        iceRight.src = 'https://d2v4tz4zvhrua.cloudfront.net/manual_uploads/20190627/resource/mccafe/ice2.png'; 
+        iceRight.style.position = 'absolute'; 
+        iceRight.style.left = '21%'; 
+        iceRight.style.bottom = '-40%'; 
+        iceRight.style.width = '36%'; 
+        let coffeeFrontDiv = document.createElement('div'); 
+        coffeeFrontDiv.style.width = '100%'; 
+        coffeeFrontDiv.style.position = 'absolute'; 
+        coffeeFrontDiv.style.bottom = '0'; 
+        coffeeFrontDiv.style.left = '0'; 
+        coffeeFrontDiv.style.overflow = 'hidden'; 
+        let coffeeFront = document.createElement('img'); 
+        coffeeFront.src = 'https://d2v4tz4zvhrua.cloudfront.net/manual_uploads/20190627/resource/mccafe/splashed_ice_coffee_only_front.png'; 
+        coffeeFront.style.zIndex = '2'; 
+        coffeeFront.style.position = 'absolute'; 
+        coffeeFront.style.left = '0%'; 
+        coffeeFront.style.bottom = '0%'; 
+        coffeeFront.style.width = '100%'; 
+        coffeeFrontDiv.appendChild(coffeeFront); 
+        let cupFront = document.createElement('img'); 
+        cupFront.src = 'https://d2v4tz4zvhrua.cloudfront.net/manual_uploads/20190627/resource/mccafe/cup_front.png'; 
+        cupFront.style.zIndex = '9'; 
+        cupFront.style.position = 'absolute'; 
+        cupFront.style.left = '0%'; 
+        cupFront.style.top = '0%'; 
+        cupFront.style.width = '100%'; 
+        splashContainer.appendChild(splashDiv); 
+        splashContainer.appendChild(iceLeft); 
+        splashContainer.appendChild(iceRight);
+        splashContainer.appendChild(coffeeFrontDiv); 
+        splashContainer.appendChild(cupFront); 
+        vmfiveAdUnitContainerEl.overlayView.appendChild(splashContainer);
+
+        let Counter = 0;
+        let preloadImg = new Image();
+        let preloadImg2 = new Image();
+        let preloadImg3 = new Image();
+        let preloadImg4 = new Image();
+        preloadImg.src = 'https://d2v4tz4zvhrua.cloudfront.net/manual_uploads/20190627/resource/mccafe/cup_front.png'; 
+        preloadImg2.src = 'https://d2v4tz4zvhrua.cloudfront.net/manual_uploads/20190627/resource/mccafe/splashed_ice_coffee.png';
+        preloadImg3.src = 'https://d2v4tz4zvhrua.cloudfront.net/manual_uploads/20190627/resource/mccafe/splashed_ice_coffee_only_front.png';
+        preloadImg4.src = 'https://d2v4tz4zvhrua.cloudfront.net/manual_uploads/20190627/resource/mccafe/ice_coffee.png'; 
+        let onloadCallback = function() { 
+            Counter++; 
+            if (Counter < 4) { return; } 
+            initFlyout(); 
+        }
+        preloadImg.onload = onloadCallback;
+        preloadImg2.onload = onloadCallback;
+        preloadImg3.onload = onloadCallback;
+        preloadImg4.onload = onloadCallback;
+        function initFlyout() { 
+            let contentEl = new Flyout({ 
+                el: vmfiveAdUnitContainerEl.adContainerView, 
+                'request_id': vmfiveAdUnitContainerEl.config.request_id, 
+                'image:banner': '[image:banner]',
+                'image:leader': '[image:leader]', 
+                'text:move_duration': `2000`, 
+                'text:banner_showup_delay': `1000`,
+                 'text:rise_or_drop': `drop`, 
+                 'text:horizontal_density_level': `13`, 
+                 'text:vertical_density_level': `10`, 
+                 'text:fly_over_banner': `true`, 
+                 'text:mass_vertical_elements': 'false', 
+                 'text:mass_horizontal_elements': '', 
+                 'text:shake_elements': `false`,
+                onctaclicked: [ 
+                    function(component, extra) { 
+                        vmfiveAdUnitContainerEl.onCtaClicked(extra.e); 
+                    }, 
+                ],
+                onflyoutstart: [
+                function() { 
+                    let h = cupFront.getBoundingClientRect().height; 
+                    splashContainer.style.height = h+'px'; 
+                    lowermostContainerBg.style.display = 'block';
+                    anime({ 
+                        targets: [contentEl.flyingCarpet, contentEl.fastFlyingCarpet, contentEl.fasterFlyingCarpet], 
+                        opacity: [1, 0], 
+                        delay: (contentEl.config.startDelay + contentEl.config.moveDuration * contentEl.bannerEnterDelayCoef) * 1 + 50, 
+                        duration: 500, 
+                        easing: 'easeInQuint', 
+                    }); 
+                    setTimeout(function() {
+                        splashContainer.style.opacity = 1;
+                        anime({ 
+                            targets: splashContainer, height: [h+'px', h+'px'], easing: 'easeInOutSine',
+                        });
+                        anime({ targets: splashDiv, height: ['0%', h+'px'], easing: 'easeInOutSine', }); 
+                        anime({ targets: coffeeFrontDiv, height: ['0%', h+'px'], easing: 'easeInOutSine', }); 
+                        anime({ targets: iceLeft, bottom: ['-40%', '30%'], delay: 300, duration: 300, easing: 'easeInOutSine', }); 
+                        anime({ targets: iceRight, bottom: ['-40%', '30%'], delay: 300, duration: 300, easing: 'easeInOutSine', }); 
+                        anime({ targets: splashContainer, bottom: ['0', '-260%'], delay: 1100, easing: 'easeInOutSine', }); 
+                        anime({ targets: lowermostContainerBg, bottom: ['0', '-260%'], delay: 1100, easing: 'easeInOutSine', });
+
+                        let dynamicEl = new DynamicWeather({ 
+                            el: contentEl.bannerView, 
+                            'request_id': vmfiveAdUnitContainerEl.config['request_id'], 
+                            'track_url': vmfiveAdUnitContainerEl.config['track_url'], 
+                            enableUVI: false, 
+                            enableAQI: false, 
+                            enablePM2Dot5: false, 
+                            enableTemperature: true, 
+                            enableRainfall: false, 
+                            'text:top_percentage': '47', 
+                            'text:bottom_percentage': '', 
+                            'text:left_percentage': '', 
+                            'text:right_percentage': '10', 
+                            'text:dynamic_weather_title': '', 
+                            'text:dynamic_weather_text_right': '', 
+                            onprepared: [
+                                function() { 
+                                    let tempEl = dynamicEl.rootView.querySelector('#temperature'); 
+                                    tempEl.style.fontSize = '36px'; 
+                                    tempEl.style.fontStyle = 'italic'; 
+                                    tempEl.style.color = '#e37e24'; 
+                                },
+                            ],
+                        });
+                    }, (contentEl.config.startDelay + contentEl.config.moveDuration * contentEl.bannerEnterDelayCoef * 0.5)); 
+                },
+                ],
+            });
+        };
+        let CloseButtonEl = new CloseButton({
+            el: vmfiveAdUnitContainerEl.adContainerView,
+            "request_id":'[request_id]',
+            "track_url":'[track_url]',
+            "text:cta_in_new_window":'',
+            "dfp_url":'[dfp_url]',
+            "cta_prefix_url":'[cta_prefix_url]',
+            "cta:default":'[cta:default]',
+            "text:embedded":'',
+            "text:show_close_mode":'fadein',
+            "text:close_button_horizontal_alignment":'left',
+            "text:beautify_percent":'[text:beautify_percent]',
+            closeMode:"fate"
+        });   
+    };
+    document.body.appendChild(sc);
+</script>

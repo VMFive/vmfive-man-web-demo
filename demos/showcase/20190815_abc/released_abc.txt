@@ -1,0 +1,164 @@
+<div id="vmfive-ad-unit-container-[request_id]"></div>
+<script src='https://man.vm5apis.com/dist/anime.js/3.0.1/anime.min.js'></script>
+<script src='https://d2v4tz4zvhrua.cloudfront.net/production/dist/2019-07-12-1562915627396/adformats/BannerContainer.min.js'></script>
+<script src='https://d2v4tz4zvhrua.cloudfront.net/production/dist/2019-07-12-1562915627396/components/CloseButton.min.js'></script>
+<script>
+    let triggeredFunc = function (event) {
+    window.removeEventListener('scroll', triggeredFunc);
+        let BannerContainerEl = new BannerContainer({
+            "el": '#vmfive-ad-unit-container-[request_id]',
+            "request_id": '[request_id]',
+            "track_url": '[track_url]',
+            "downloaded_pixel": '[downloaded_pixel]',
+            "downloaded_impression_pixel": '[downloaded_impression_pixel]',
+            "text:cta_in_new_window": '[text:cta_in_new_window]',
+            "dfp_url": '[dfp_url]',
+            "cta_prefix_url": '[cta_prefix_url]',
+            "cta:default": '[cta:default]',
+            bannerRatio: '32:10',
+            videoBorderRadius: 0,
+            enableClipPath: false
+        });
+
+        function loadImage(src) {
+            return new Promise((resolve, reject) => {
+                const img = new Image();
+                img.addEventListener("load", () => resolve(img));
+                img.addEventListener("error", err => reject(err));
+                img.src = src;
+            });
+        };
+        Promise.all([
+            loadImage('https://d2v4tz4zvhrua.cloudfront.net/manual_uploads/20190819/abc/drop_all.png'),
+            loadImage('https://d2v4tz4zvhrua.cloudfront.net/manual_uploads/20190819/abc/bottom_object.png'),
+            loadImage('https://d2v4tz4zvhrua.cloudfront.net/manual_uploads/20190819/abc/car_b_1.png'),
+            loadImage('https://d2v4tz4zvhrua.cloudfront.net/manual_uploads/20190819/abc/car_b_2.png'),
+            loadImage('https://d2v4tz4zvhrua.cloudfront.net/manual_uploads/20190819/abc/banner_3.gif'),
+        ])
+            .then(function () {
+                let htmlOverlay = `
+                <style>
+                .drop-a-${BannerContainerEl.config.request_id},
+                .drop-b-${BannerContainerEl.config.request_id},
+                .car-1-${BannerContainerEl.config.request_id},
+                .car-2-${BannerContainerEl.config.request_id},
+                .banner-${BannerContainerEl.config.request_id},
+                .object-${BannerContainerEl.config.request_id} {
+                  width: 100%;
+                  height: 100%;
+                  display: inline-block;
+                  position: absolute;
+                  opacity: 0;
+                  z-index: 1;
+                  bottom: 0;
+                  font-size: 0;
+                  line-height: 0;
+                }
+                .drop-a-${BannerContainerEl.config.request_id} img,
+                .drop-b-${BannerContainerEl.config.request_id} img,
+                .car-1-${BannerContainerEl.config.request_id} img,
+                .car-2-${BannerContainerEl.config.request_id} img,
+                .banner-${BannerContainerEl.config.request_id} img,
+                .object-${BannerContainerEl.config.request_id} img {
+                  display: block;
+                  vertical-align:bottom;
+                  width: 100%;
+                  position: absolute;
+                  bottom: 0;
+                }
+                .drop-a-${BannerContainerEl.config.request_id},
+                .drop-b-${BannerContainerEl.config.request_id},
+                .object-${BannerContainerEl.config.request_id} {
+                  z-index: -1;
+                }
+                </style>
+                <div class="drop-a-${BannerContainerEl.config.request_id}">
+                  <img src="https://d2v4tz4zvhrua.cloudfront.net/manual_uploads/20190819/abc/drop_all.png">
+                </div>
+                <div class="object-${BannerContainerEl.config.request_id}">
+                  <img src="https://d2v4tz4zvhrua.cloudfront.net/manual_uploads/20190819/abc/bottom_object.png">
+                </div>`;
+                BannerContainerEl.overlayView.insertAdjacentHTML('beforeend', htmlOverlay);
+                let htmlAdConatiner = `
+                <div class="car-1-${BannerContainerEl.config.request_id}">
+                  <img src="https://d2v4tz4zvhrua.cloudfront.net/manual_uploads/20190819/abc/car_b_1.png">
+                </div>
+                <div class="car-2-${BannerContainerEl.config.request_id}">
+                  <img src="https://d2v4tz4zvhrua.cloudfront.net/manual_uploads/20190819/abc/car_b_2.png">
+                </div>
+                <div class="banner-${BannerContainerEl.config.request_id}">
+                  <img src="https://d2v4tz4zvhrua.cloudfront.net/manual_uploads/20190819/abc/banner_3.gif">
+                </div>`;
+                BannerContainerEl.adContainerView.insertAdjacentHTML('beforeend', htmlAdConatiner);
+                let dropAllEL = BannerContainerEl.overlayView.querySelector('.drop-a-' + BannerContainerEl.config.request_id);
+                let BannerEL = BannerContainerEl.adContainerView.querySelector('.banner-' + BannerContainerEl.config.request_id);
+                let car1EL = BannerContainerEl.adContainerView.querySelector('.car-1-' + BannerContainerEl.config.request_id);
+                let car2EL = BannerContainerEl.adContainerView.querySelector('.car-2-' + BannerContainerEl.config.request_id);
+                let objectEL = BannerContainerEl.overlayView.querySelector('.object-' + BannerContainerEl.config.request_id);
+                anime({
+                    targets: car2EL,
+                    opacity: [
+                        { value: '1', duration: 50, delay: 100 },
+                        { value: '0', duration: 50, delay: 2000 }
+                    ],
+                    easing: 'easeOutQuad',
+                });
+                anime({
+                    targets: dropAllEL,
+                    translateY: [
+                        { value: '-120vh', duration: 0 },
+                        { value: '50vh', duration: 2500 },
+                        { value: '100vh', duration: 1000, delay: 200 }
+                    ],
+                    opacity: [
+                        { value: '1', duration: 200, },
+                        { value: '0', duration: 200, delay: 2200 }
+                    ],
+                    easing: 'easeInSine',
+                });
+                anime({
+                    targets: car1EL,
+                    opacity: [
+                        { value: '1', duration: 50, delay: 2000 },
+                        { value: '0', duration: 50, delay: 1800 }
+                    ],
+                    easing: 'easeOutQuad',
+                });
+                anime({
+                    targets: objectEL,
+                    translateY: [
+                        { value: '30vh', duration: 0, delay: 2000 },
+                        { value: '0vh', duration: 700 },
+                        { value: '80vh', duration: 1000, delay: 1800 }
+                    ],
+                    opacity: [
+                        { value: '1', duration: 50, delay: 1700 },
+                        { value: '0', duration: 50, delay: 2100 }
+                    ],
+                    easing: 'easeOutQuad',
+                });
+                anime({
+                    targets: BannerEL,
+                    opacity: [
+                        { value: '0', delay: 3500 },
+                        { value: '1', duration: 200 },
+                    ],
+                    easing: 'easeOutQuad',
+                });
+            });
+        let CloseButtonEl = new CloseButton({
+            el: BannerContainerEl.adContainerView,
+            "request_id": '[request_id]',
+            "track_url": '[track_url]',
+            "text:cta_in_new_window": '[text:cta_in_new_window]',
+            "dfp_url": '[dfp_url]',
+            "cta_prefix_url": '[cta_prefix_url]',
+            "cta:default": '[cta:default]',
+            "text:embedded": '[text:embedded]',
+            "text:show_close_mode": '[text:show_close_mode]',
+            "text:close_button_horizontal_alignment": "left",
+            "text:beautify_percent": '[text:beautify_percent]'
+        });
+    }
+    window.addEventListener('scroll', triggeredFunc, false);
+</script>

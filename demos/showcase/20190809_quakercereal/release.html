@@ -1,0 +1,68 @@
+<div id="vmfive-ad-unit-container-[request_id]"></div>
+<script src='https://d2v4tz4zvhrua.cloudfront.net/production/dist/2019-07-29-1564386548201/adformats/BannerContainer.min.js'></script>
+<script src='https://d2v4tz4zvhrua.cloudfront.net/production/dist/2019-07-29-1564386548201/components/SwingSlider.min.js'></script>
+<script src='https://d2v4tz4zvhrua.cloudfront.net/production/dist/2019-07-29-1564386548201/components/CloseButton.min.js'></script>
+<script>
+    let sc = document.createElement("script");
+    sc.src = "https://d1v69ngg41pvl6.cloudfront.net/dist/MixPlayer.js";
+    sc.onload = function () {
+        let BannerContainerEl = new BannerContainer({
+            "el":'#vmfive-ad-unit-container-[request_id]',
+            "request_id":'[request_id]',
+            "track_url":'[track_url]',
+            "downloaded_pixel":'[downloaded_pixel]',
+            "downloaded_impression_pixel":'[downloaded_impression_pixel]',
+            "text:cta_in_new_window":'[text:cta_in_new_window]',
+            "dfp_url":'[dfp_url]',
+            "cta_prefix_url":'[cta_prefix_url]',
+            "cta:default":'[cta:default]',
+            "text:banner_z_index":'[text:banner_z_index]',
+            "text:banner_top_offset":'[text:banner_top_offset]',
+            "text:banner_bottom_offset":'[text:banner_bottom_offset]',
+            "text:scale":'[text:scale]',
+            "text:expand_scale":'[text:expand_scale]',
+            "text:max_width":'[text:max_width]',
+            "text:embedded":'[text:embedded]',
+            "text:height_ratio":'[text:height_ratio]',
+            "text:background_color":'#ffffff',
+            "text:logo_background_color":'[text:logo_background_color]',
+            bannerRatio: '32:15',
+            disableCta: true,
+            onprepared:[function (comp) { comp.adContainerView.style.height = Math.ceil(comp.adContainerView.clientHeight)+'px'; }]
+        });
+        let SwingSliderEl = new SwingSlider({
+            el: BannerContainerEl.adContainerView,
+            "request_id":'[request_id]',
+            "dfp_url": '[dfp_url]',
+            "cta_prefix_url":'[cta_prefix_url]',
+            "cta:default":'[cta_prefix_url]',
+            "text:cta_in_new_window":'[text:cta_in_new_window]',
+            "image:left":'[image:left]',
+            "image:right":'[image:right]',
+            "url:left":'[text:url_left]',
+            "url:right":'[text:url_right]',
+            "banner:delay_magin":'[banner:delay_magin]',
+            bannerScale: '48:15',
+            onprepared:[function (comp) { 
+                comp.swing.querySelector('img.left').style.height = Math.ceil(comp.swing.querySelector('img.left').clientHeight)+'px';
+                comp.swing.querySelector('img.right').style.height = Math.ceil(comp.swing.querySelector('img.right').clientHeight)+'px'; }]
+            });
+        let CloseButtonEl = new CloseButton({
+            el: BannerContainerEl.adContainerView,
+            "request_id":'[request_id]',
+            "text:cta_in_new_window":'[text:cta_in_new_window]',
+            "dfp_url":'[dfp_url]',
+            "cta_prefix_url":'[cta_prefix_url]',
+            "cta:default":'[cta:default]',
+            "text:embedded":'[text:embedded]',
+            "text:show_close_mode":'[text:show_close_mode]',
+            "text:close_button_horizontal_alignment":'[text:close_button_horizontal_alignment]',
+            "text:beautify_percent":'[text:beautify_percent]',
+            closeMode:"fate"
+        });
+        CloseButtonEl.closeEl.style.top = '4px'; 
+        CloseButtonEl.closeBeautify.style.top = '1px'; 
+        
+    };
+    document.body.appendChild(sc);
+</script>

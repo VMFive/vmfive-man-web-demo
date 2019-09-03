@@ -1,0 +1,128 @@
+<div id="vmfive-ad-unit-container-[request_id]"></div>
+<div id="vmfive-ad-unit-container-[request_id]-expand"></div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/velocity/1.0.0/velocity.min.js"></script>
+<script src="https://man.vm5apis.com/dist/hammer.js/2.0.8/hammer.min.js"></script>
+<script src="https://man.vm5apis.com/dist/jquery.hammerjs/2.0.0/jquery.hammer.js"></script>
+<script src='https://d2v4tz4zvhrua.cloudfront.net/production/dist/2019-08-22-1566455711726/adformats/BannerContainer.min.js'></script>
+<script src='https://d2v4tz4zvhrua.cloudfront.net/production/dist/2019-08-22-1566455711726/adformats/UprightAround.min.js'></script>
+<script src='https://d2v4tz4zvhrua.cloudfront.net/production/dist/2019-08-22-1566455711726/components/SwingSlider.min.js'></script>
+<script src='https://d2v4tz4zvhrua.cloudfront.net/production/dist/2019-08-22-1566455711726/components/ExpandHelper.min.js'></script>
+<script src='https://d2v4tz4zvhrua.cloudfront.net/production/dist/2019-08-22-1566455711726/components/CloseButton.min.js'></script>
+<script>
+    let sc = document.createElement("script");
+    sc.src = "https://d1v69ngg41pvl6.cloudfront.net/dist/MixPlayer.js";
+    sc.onload = function () {
+        let BannerContainerEl = new BannerContainer({
+            "el": '#vmfive-ad-unit-container-[request_id]',
+            "request_id": '[request_id]',
+            "track_url": '[track_url]',
+            "downloaded_pixel": '[downloaded_pixel]',
+            "downloaded_impression_pixel": '[downloaded_impression_pixel]',
+            "text:cta_in_new_window": '[text:cta_in_new_window]',
+            "dfp_url": '[dfp_url]',
+            "cta_prefix_url": '[cta_prefix_url]',
+            "cta:default": '[cta:default]',
+            "text:banner_z_index": '[text:banner_z_index]',
+            "text:banner_top_offset": '[text:banner_top_offset]',
+            "text:banner_bottom_offset": '[text:banner_bottom_offset]',
+            "text:scale": '[text:scale]',
+            "text:expand_scale": '[text:expand_scale]',
+            "text:max_width": '[text:max_width]',
+            "text:embedded": '[text:embedded]',
+            "text:background_color": '[text:background_color]',
+            "text:logo_background_color": '[text:logo_background_color]',
+            "text:banner_ratio": '[text:banner_ratio]',
+            enableExpand: false,
+            disableCta: true,
+            enableClipPath: false
+        });
+        let UprightAroundEl = new UprightAround({
+            "el": '#vmfive-ad-unit-container-[request_id]-expand',
+            "request_id": '[request_id]-expand',
+            "track_url": '[track_url]',
+            "downloaded_pixel": '[downloaded_pixel]',
+            "text:cta_in_new_window": '[text:cta_in_new_window]',
+            "dfp_url": "", "cta_prefix_url": '[cta_prefix_url]',
+            "cta:default": '[cta:default]',
+            "text:3rd_party_track_url": "",
+            medias:
+                '[' +
+                '{"image": "[image:around1]", "mp4": "[video:around1:mp4]"},' +
+                '{"image": "[image:around2]", "mp4": "[video:around2:mp4]"},' +
+                '{"image": "[image:around3]", "mp4": "[video:around3:mp4]"},' +
+                '{"image": "[image:around4]", "mp4": "[video:around4:mp4]"}' +
+                ']',
+            "text:view_time": '[text:view_time]',
+            videoScale: "16:9"
+        });
+        let SwingSliderEl = new SwingSlider({
+            el: BannerContainerEl.adContainerView,
+            "request_id": '[request_id]',
+            "dfp_url": '[dfp_url]',
+            "cta_prefix_url": '[cta_prefix_url]',
+            "cta:default": '[cta:default]',
+            "text:cta_in_new_window": '[text:cta_in_new_window]',
+            "image:left": '[image:left]',
+            "image:right": '[image:right]',
+            "text:url_left": '[text:url_left]',
+            "text:url_right": '[text:url_right]',
+            "text:swing_banner_count": '[text:swing_banner_count]',
+            "text:swing_banner_magin": '[text:swing_banner_magin]',
+            "text:swing_img_ratio": '[text:swing_img_ratio]',
+            enableExpand: true,
+            onprepared: [function (comp) {
+                comp.swing.querySelectorAll('img').forEach(element => {
+                    element.style.cssText += 'height: ' + Math.ceil(comp.swing.querySelector('img').clientHeight) + 'px !important;';
+                });
+            }],
+            onctaclicked: [function (comp) { UprightAroundEl.stopAllAndPlayCurrentVideo(); }]
+        });
+        let CloseButtonEl = new CloseButton({
+            el: BannerContainerEl.adContainerView,
+            "request_id": '[request_id]',
+            "track_url": '[track_url]',
+            "text:cta_in_new_window": '[text:cta_in_new_window]',
+            "dfp_url": '[dfp_url]',
+            "cta_prefix_url": '[cta_prefix_url]',
+            "cta:default": '[cta:default]',
+            "text:embedded": '[text:embedded]',
+            "text:show_close_mode": "[text:show_close_mode]",
+            "text:close_button_horizontal_alignment": '[text:close_button_horizontal_alignment]',
+            "text:beautify_percent": '[text:beautify_percent]',
+            closeMode: "fate"
+        });
+        let CloseButtonUAEl = new CloseButton({
+            el: UprightAroundEl.overlayView,
+            "request_id": '[request_id]',
+            "track_url": '[track_url]',
+            "text:cta_in_new_window": '[text:cta_in_new_window]',
+            "dfp_url": '[dfp_url]',
+            "cta_prefix_url": '[cta_prefix_url]',
+            "cta:default": '[cta:default]',
+            "text:embedded": '[text:embedded]',
+            "text:show_close_mode": '[text:show_close_mode]',
+            "text:close_button_horizontal_alignment": '[text:close_button_horizontal_alignment]',
+            "text:beautify_percent": '[text:beautify_percent]',
+            closeMode: 'fate',
+            onExpandHelperClose: [function (comp) { ExpandHelperEl.expandedVisible('hide'); ExpandHelperEl.originalVisible('show'); UprightAroundEl.aroundClearInterval(); }]
+        });
+        CloseButtonUAEl.closeEl.style.transform = "translateZ(500px)";
+        CloseButtonUAEl.closeBeautify.style.transform = "translateZ(500px)";
+
+        let ExpandHelperEl = new ExpandHelper({
+            original: BannerContainerEl,
+            expanded: UprightAroundEl,
+            onprepared: [function (comp) { comp.expandedVisible('hide'); comp.originalVisible('show'); }]
+        });
+
+        BannerContainerEl.config.onctaclicked = [
+            function () {
+                ExpandHelperEl.expandedVisible('show');
+                ExpandHelperEl.originalVisible('hide');
+                UprightAroundEl.aroundInterval();
+            }
+        ];
+    };
+    document.body.appendChild(sc);
+</script>

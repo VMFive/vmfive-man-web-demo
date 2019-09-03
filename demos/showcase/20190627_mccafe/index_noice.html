@@ -48,7 +48,7 @@
           'Flyout', 'CloseButton', 'DynamicWeather'
         ],
         develop: false,
-        showCreateButton: true,
+        showCreateButton: false,
         BaseAdUnit: [
           function(self) {
             return {
@@ -109,19 +109,6 @@
             splashImg.style.width = '100%';
             splashDiv.appendChild(splashImg);
 
-            let iceLeft = document.createElement('img');
-            iceLeft.src = 'https://d2v4tz4zvhrua.cloudfront.net/manual_uploads/20190627/resource/mccafe/ice1.png';
-            iceLeft.style.position = 'absolute';
-            iceLeft.style.left = '47%';
-            iceLeft.style.bottom = '-40%';
-            iceLeft.style.width = '36%';
-            let iceRight = document.createElement('img');
-            iceRight.src = 'https://d2v4tz4zvhrua.cloudfront.net/manual_uploads/20190627/resource/mccafe/ice2.png';
-            iceRight.style.position = 'absolute';
-            iceRight.style.left = '21%';
-            iceRight.style.bottom = '-40%';
-            iceRight.style.width = '36%';
-
             let coffeeFrontDiv = document.createElement('div');
             coffeeFrontDiv.style.width = '100%';
             coffeeFrontDiv.style.position = 'absolute';
@@ -146,11 +133,9 @@
             cupFront.style.width = '100%';
 
             splashContainer.appendChild(splashDiv);
-            splashContainer.appendChild(iceLeft);
-            splashContainer.appendChild(iceRight);
             splashContainer.appendChild(coffeeFrontDiv);
             splashContainer.appendChild(cupFront);
-            self.refs['vmfiveAdUnitContainer'].overlayView.appendChild(splashContainer);
+            self.refs['vmfiveAdUnitContainer'].adContainerView.appendChild(splashContainer);
 
             
             let Counter = 0;
@@ -229,20 +214,6 @@
                       anime({
                         targets: coffeeFrontDiv,
                         height: ['0%', h+'px'],
-                        easing: 'easeInOutSine',
-                      });
-                      anime({
-                        targets: iceLeft,
-                        bottom: ['-40%', '30%'],
-                        delay: 300,
-                        duration: 300,
-                        easing: 'easeInOutSine',
-                      });
-                      anime({
-                        targets: iceRight,
-                        bottom: ['-40%', '30%'],
-                        delay: 300,
-                        duration: 300,
                         easing: 'easeInOutSine',
                       });
                       anime({

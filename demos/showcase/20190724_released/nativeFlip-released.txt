@@ -1,0 +1,56 @@
+<div id="vmfive-ad-unit-container-[request_id]"></div>
+<script src='https://man.vm5apis.com/dist/anime.js/3.0.1/anime.min.js'></script>
+<script src='https://d2v4tz4zvhrua.cloudfront.net/production/dist/2019-07-12-1562915627396/adformats/NativeStatic.min.js'></script>
+<script src='https://d2v4tz4zvhrua.cloudfront.net/production/dist/2019-07-12-1562915627396/components/Transformer.min.js'></script>
+<script>
+    let sc = document.createElement("script");
+    sc.src = "https://d1v69ngg41pvl6.cloudfront.net/dist/MixPlayer.js";
+    sc.onload = function () {
+        let NativeStaticEl = new NativeStatic({
+            "el":'#vmfive-ad-unit-container-[request_id]',
+            "request_id":'[request_id]',
+            "track_url":'[track_url]',
+            "downloaded_pixel":'[downloaded_pixel]',
+            "downloaded_impression_pixel":'[downloaded_impression_pixel]',
+            "text:cta_in_new_window":"[text:cta_in_new_window]",
+            "dfp_url":"",
+            "cta_prefix_url":'[cta_prefix_url]',
+            "cta:default":'[cta:default]',
+            'cta:banner': '[cta:banner]',
+            "image:cover":'[image:cover]',
+            "image:banner":'[image:banner]',
+            "text:top_margin":"[text:top_margin]",
+            "text:bottom_margin":"[text:bottom_margin]",
+            "text:use_screen_width":"[text:use_screen_width]",
+            "text:dynamic_info":"[text:dynamic_info]",
+            "text:cta":"[text:cta]",
+            "text:cta_btn_horizontal_alignment":"[text:cta_btn_horizontal_alignment]",
+            "text:cta_dynamic_info":"[text:cta_dynamic_info]",
+            "text:main_title":"[text:main_title]",
+            "text:logo_vertical_position":"[text:logo_vertical_position]",
+            "text:logo_horizontal_position":"[text:logo_horizontal_position]",
+            videoScale:'16:9',
+            bannerScale:"32:5"
+        });
+        NativeStaticEl.rootView.classList.add('vm5-transform-flip'); 
+        let TransformerEl = new Transformer({
+            el: NativeStaticEl.rootView,
+            cardEl: NativeStaticEl.transformUnitView,
+            videoEl: NativeStaticEl.videoContainerView,
+            "image:transform_board":'[image:transform_board]',
+            "text:transform":'[text:transform]',
+            "text:show_rate":"[text:show_rate]",
+            "text:lock_after_transform":"[text:lock_after_transform]",
+            "text:padding":"[text:padding]",
+            "text:auto_transform":"[text:auto_transform]",
+            "text:transform_time":"[text:transform_time]",
+            "text:cta_in_new_window":"",
+            "dfp_url":"",
+            "cta_prefix_url":'[cta_prefix_url]',
+            "cta:default":'[cta:default]',
+            "cta:transform_board":"[cta:transform_board]"
+        });
+        
+    };
+    document.body.appendChild(sc);
+</script>
