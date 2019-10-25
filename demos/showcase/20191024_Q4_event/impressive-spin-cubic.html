@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>VMFive ADN Web SDK Demo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no">
+  <style>
+    body { font-family: sans-serif; }
+    body { margin: 0; padding: 0; }
+    .page-container { width: 90%; max-width: 500px; margin: 10px auto; }
+  </style>
+</head>
+
+<body>
+  <div class="page-container">
+    <h2>第五代虛擬科技／技術起家 橫跨五大領域</h2>
+    <h4>經濟日報 記者馬瑞璿／台北報導</h4>
+
+    <p>第五代虛擬科技（VMFive）以互動遊戲廣告技術起家，後又以原生影音廣告為業務主力，以技術層面分析，互動遊戲廣告技術所需技術含量較高，整體技術需橫跨虛擬化、雲端、串流、跨平台、大數據等五領域，這也是VMFive命名由來。</p>
+    <p>為什麼互動遊戲廣告需要的技術含量高？VMFive旗下的AdPlay主攻行動互動遊戲市場，行動市場必須考量連線能力、處理器架構與各廠牌手機繪圖能力，因此，主要技術領域集中在串流、虛擬化與跨平台三大領域。</p>
+    <p>VMFive創辦人暨執行長丁俊宏表示，AdPlay串流到各個網址，可以在PC、NB、手機、平板等各類裝置上使用這個App。然而，這個串流體驗必須相當即時，因為所有的點擊都會在雲端上進行運算，必須在100-200毫秒內完成人機互動，這考驗著串流能力；而雲端也必須模擬手機處理器架構。目前手機處理器架構都是以ARM為主，要雲端來運算ARM架構也有些難度。此外，雖然App架設在雲端上，但最後連結的終端產品性能各有不同，必須因應不同設備去做解碼，甚至必須配合低階手機調整呈現品質，要在偵測用戶手機的同時，進行動態演算調節，在在都有技術難度。</p>
+    <p>原生影音廣告技術含量就稍微低一些，丁俊宏表示，影音廣告著重串流、API（應用程式介面）、資料定向三大類技術，串流技術必須流暢才能降低延遲，並在不到1秒內的時間把廣告載入、完成串流，讓消費者觀看廣告，同時，也要提供API讓開發商組合成需要的格式，提升體驗效果，最後，也要在龐大的廣告資料裡面分析定向受眾，未來才能精準投遞目標客群。</p>
+
+    <div id="vmfive-ad-unit-container-55667788">
+    </div>
+
+    <script src="https://man.vm5apis.com/dist/anime.js/2.0.2/anime.min.js"></script>
+    <script src="https://man.vm5apis.com/dist/jquery/2.1.3/jquery.min.js"></script>
+    <script src="https://man.vm5apis.com/dist/hammer.js/2.0.8/hammer.min.js"></script>
+    <script src="https://man.vm5apis.com/dist/jquery.hammerjs/2.0.0/jquery.hammer.js"></script>
+    <script src="https://man.vm5apis.com/dist/raf.js" data-mode="fast"></script>
+    <style media="screen">
+    #vmfive-ad-unit-container-55667788 {
+        position: relative;
+        width: 100vw;
+        height: 100vh;
+        left: 0;
+    }
+    </style>
+    <script>
+      let sc = document.createElement("script");
+
+      sc.src = "https://d1v69ngg41pvl6.cloudfront.net/dist/MixPlayer.js";
+      sc.onload = function () {
+        var ImpressiveStatic=function(e){function t(n){if(i[n])return i[n].exports;var o=i[n]={i:n,l:!1,exports:{}};return e[n].call(o.exports,o,o.exports,t),o.l=!0,o.exports}var i={};return t.m=e,t.c=i,t.d=function(e,i,n){t.o(e,i)||Object.defineProperty(e,i,{configurable:!1,enumerable:!0,get:n})},t.n=function(e){var i=e&&e.__esModule?function(){return e.default}:function(){return e};return t.d(i,'a',i),i},t.o=function(e,t){return Object.prototype.hasOwnProperty.call(e,t)},t.p="/dist/adformats",t(t.s=0)}([function(e,t){function i(e,t){if(!(e instanceof t))throw new TypeError("Cannot call a class as a function")}var n="function"==typeof Symbol&&"symbol"==typeof Symbol.iterator?function(e){return typeof e}:function(e){return e&&"function"==typeof Symbol&&e.constructor===Symbol&&e!==Symbol.prototype?"symbol":typeof e},o=Object.assign||function(e){for(var t=1;t<arguments.length;t++){var i=arguments[t];for(var n in i)Object.prototype.hasOwnProperty.call(i,n)&&(e[n]=i[n])}return e},r=function(){function e(e,t){for(var i=0;i<t.length;i++){var n=t[i];n.enumerable=n.enumerable||!1,n.configurable=!0,"value"in n&&(n.writable=!0),Object.defineProperty(e,n.key,n)}}return function(t,i,n){return i&&e(t.prototype,i),n&&e(t,n),t}}(),a=function(){function e(t){i(this,e);t.request_id&&''!=t.request_id.trim()&&t.request_id;if(this.defaultConfig=this.constructor.getDefaultConfig(t),this.config=o({},this.defaultConfig,t),this.config.logoVerticalPosition=0===this.config['text:logo_vertical_position'].length?'bottom':this.config['text:logo_vertical_position'],this.config.logoHorizontalPosition=0===this.config['text:logo_horizontal_position'].length?'right':this.config['text:logo_horizontal_position'],this.config.el='string'==typeof this.config.el?document.querySelector(this.config.el):this.config.el,null===this.config.el)throw new Error('Something wrong with your el param');this.config.el.insertAdjacentHTML('beforeend',this.template),this.initData=this.initData.bind(this);var n=this;this.data=this.initData(this.config),this.rootView=this.config.el,this.adContainerOuterView=this.rootView.querySelector('#vmfive-ad-container-outer-'+n.config.request_id),this.adView=this.rootView.querySelector('#vmfive-ad-view-'+n.config.request_id),this.adContent=this.rootView.querySelector('#vmfive-ad-content-'+n.config.request_id),this.adContainerView=this.rootView.querySelector('#vmfive-ad-container-'+n.config.request_id),this.bgContainer=this.rootView.querySelector('#vmfive-background-image-'+n.config.request_id),this.init()}return r(e,null,[{key:'getDefaultConfig',value:function(e){e=e||{};var t=e.request_id&&''!=e.request_id.trim()?e.request_id:'[request_id]';return{el:'#vmfive-ad-unit-container-'+t,request_id:t,track_url:'[track_url]',downloaded_pixel:'[downloaded_pixel]','text:cta_in_new_window':'[text:cta_in_new_window]','text:top_margin':'[text:top_margin]',dfp_url:'[dfp_url]',cta_prefix_url:'[cta_prefix_url]','cta:default':'[cta:default]','image:image1':'[image:image1]','text:is_fixed':'true','text:scale':'[text:scale]','text:always_display_from_top':'[text:always_display_from_top]','text:richmedia_bg_url':'[text:richmedia_bg_url]',richmedia_bg_offset_top_percentage:0,'text:logo_vertical_position':'[text:logo_vertical_position]','text:logo_horizontal_position':'[text:logo_horizontal_position]','text:click_available_vh_rate':'[text:click_available_vh_rate]',backgroundScale:'2:3',onresize:[],onctaclicked:[]}}}]),r(e,[{key:'initData',value:function(e){var t=e.el,i=e.backgroundScale,n=void 0;try{t.getBoundingClientRect().width,n=+i.split(':')[1]/+i.split(':')[0]}catch(e){console.log(e),t.getBoundingClientRect().width,n=1.5}return o({},e,{viewHeight:window.innerHeight||document.documentElement.clientHeight,backgroundHeightRate:n})}},{key:'init',value:function(){function e(e){return c.rootView.querySelector('#'+e)}function t(){return window.innerHeight||document.documentElement.clientHeight||document.body.clientHeight}function i(e){e=e.replace('[timestamp]',Date.now());var t=document.createElement('img');t.src=e,t.style.display='none',document.body.appendChild(t)}function o(){var e=document.querySelector('#vmfive-ad-unit-container-'+c.config.request_id),t=e.parentElement.parentElement.getAttribute('dfp-imp');t&&0!=t.length&&i(t);for(var n=0;n<k.length;n++){var o=k[n];if(o&&'impression'===o.event){i(o.url)}}}function r(){if(window.$sf&&window.$sf.ext&&window.$sf.ext.geom&&'function'==typeof window.$sf.ext.geom&&'object'===n(window.$sf.ext.geom()))return window.$sf.ext.geom()}function a(e,t){e.addEventListener('click',t)}var c=this,l=''+c.config['text:scale'],d=isNaN(l)||0===l.length?.9:+l,s=''+c.config['text:click_available_vh_rate'],f=isNaN(s)||0===s.length?.8:+s,g=''+c.config['text:top_margin'],u=isNaN(g)?0:+g,v=''+c.config['text:top_margin_percentage'],p=(isNaN(v),c.config['text:is_fixed'],c.adContainerView),h=c.rootView,m=e('vmfive-ad-content-'+c.config.request_id),_=(e('vmfive-background-image-'+c.config.request_id),c.data.backgroundHeightRate),w="(100vw - 5vw * 2)*"+d,y="("+w+")*"+_;p.style.width="calc("+w+")",p.style.height="calc("+y+")";var x=''+c.config['text:always_display_from_top']=='true',b=(screen.height-p.clientHeight)/2;c.config.el.classList.add('vmfive-impressive-parent-style-'+c.config.request_id),c.adContainerView.style.top=u+'px',window.addEventListener('scroll',function(e){var i=t(),n=i*(1-f),o=h.getBoundingClientRect();m.style.pointerEvents=o.top>-n&&o.top<n?"auto":"none",x&&(m.style.position=o.bottom>b-u&&o.top<b?'fixed':'static')});var q=''+c.config.track_url,k=[];try{k=JSON.parse(q)}catch(e){console.log(e)}var A=setInterval(function(){var e=!1;if(r())try{e=r().pos.t<0}catch(e){console.log(e)}else h&&(e=h.getBoundingClientRect().top<window.innerHeight);e&&(o(),clearInterval(A))},200);!function(){['vmfive-background-image-'+c.config.request_id].forEach(function(t){a(e(t),c.getOnCtaClickedListener())}),c.config['text:richmedia_bg_url']?c.bgContainer.style.backgroundImage='unset':e('vmfive-background-richmedia-'+c.config.request_id).style.display='none'}(),a(e('vmfive-logo-'+c.config.request_id),function(){window.open('https://vmfive.com/?utm_source=vmfive_ad_logo','_blank')})}},{key:'getOnCtaClickedListener',value:function(){var e=this;return function(t){var i=''+e.config.dfp_url+e.config.cta_prefix_url+'&url='+e.config['cta:default'],n=''+e.config['text:cta_in_new_window']=='true';(e.config.onctaclicked&&Array.isArray(e.config.onctaclicked)?e.config.onctaclicked:[]).forEach(function(i){'function'==typeof i&&i(e,{e:t})}),n?window.open(i,'_blank'):window.top.location.href=i}}},{key:'template',get:function(){var e=this;return'\n    <div id="vmfive-ad-container-outer-'+e.config.request_id+'">\n      <div id="vmfive-ad-view-'+e.config.request_id+'">\n        <div id="vmfive-ad-content-'+e.config.request_id+'">\n          <div id="vmfive-ad-container-'+e.config.request_id+'">\n            <div id="vmfive-background-image-'+e.config.request_id+'">\n              <div id="vmfive-ad-cta-layer-'+e.config.request_id+'"></div>\n              <iframe id="vmfive-background-richmedia-'+e.config.request_id+'" src=\''+e.config["text:richmedia_bg_url"]+'\' allowtransparency=\'true\' frameBorder=\'0\'></iframe>\n            </div>\n            <div id="vmfive-logo-'+e.config.request_id+'" class="vmfive-info-image"></div>\n          </div>\n          <div id="vmfive-ad-unit-'+e.config.request_id+'">\n          </div>\n        </div>\n        <img src="'+e.config.downloaded_pixel+'" style="display:none;">\n      </div>\n    </div>\n\n    <style meida="screen">\n      .vmfive-impressive-parent-style-'+e.config.request_id+' {\n        position: relative;\n        width: 100%;\n        height: 100vh;\n        left: 0;\n      }\n    </style>\n\n    <style>\n      #vmfive-ad-view-'+e.config.request_id+' {\n          width:90vw;height:100vh;overflow: hidden;\n          clip-path: inset(1px) !important;\n          -webkit-clip-path: inset(1px) !important;\n      }\n      #vmfive-ad-content-'+e.config.request_id+' {\n          position:fixed;z-index: 1;top:0;left:0;bottom:0;right:0;\n\n          display: flex;\n          align-items: center;\n          justify-content: center;\n\n          pointer-events: none;\n      }\n      #vmfive-ad-container-'+e.config.request_id+' {\n          position: relative;\n\n          display: flex;\n          align-items: center;\n\n          justify-content: center;\n      }\n      #vmfive-ad-container-outer-'+e.config.request_id+' {\n          position: absolute;\n          width: 100%;\n          left: 0;\n\n          display:flex;\n          align-items: center;\n          justify-content: center;\n\n          z-index: 1;\n      }\n      #vmfive-background-image-'+e.config.request_id+' {\n          background-image:url(\''+e.config['image:image1']+'\');border-radius:5px;\n          background-repeat:no-repeat;background-position:center center;background-size:100% auto;\n\n          flex: 1;\n          height: 100%;\n      }\n      #vmfive-ad-cta-layer-'+e.config.request_id+' {\n        position:absolute;\n        left:0;\n        top:0;\n        height: 100%;\n        width: 100%;\n      }\n      #vmfive-background-richmedia-'+e.config.request_id+' {\n        margin-top: '+e.config.richmedia_bg_offset_top_percentage+'%;\n        background-color: transparent;\n        border-width: 0;\n        height: 100%;\n        width: 100%;\n      }\n      #vmfive-ad-view-'+e.config.request_id+' .vmfive-info-image {\n          position:absolute;z-index:1;\n          background-size:16px 16px;background-repeat:no-repeat;background-position:center;\n          cursor:pointer;\n      }\n      #vmfive-logo-'+e.config.request_id+' {\n          background-image:\n          url(\'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACUAAAAlCAYAAADFniADAAAC7UlEQVRYhc3YT4iVVRjH8c+9zpgoLcxFY2gRSX8sNIZcFO2ENIxI3NkqEIkIN20MFzXQtk1MiySF2kuoURYKgiBGEEXin0UkzUAY0kCpqeN4Wpx7mTvPe/+8770XZ36bl+fhvOd8z3nOOc/zvrWUEmzBu3gKNfdfCZcxOTEx8WMtpbQFn6C+CDBR97CvllL6Ak8vNk2LLtVSSucsTsg6KdUNB2gGZ/D3EPqqjQyhkym8hX/xIL7EI4N0OIzNfaIBpPH8dtAOhwF1Pdj/DNphGahb8n6ZGnCsKZxWnERBvfbUDPZgGsvwMV7sA+gc3sNdrMVhPNSpcbeVSvigAQRz+LoPIDjWAII/caDRf2WoY/gh+J7sEypezj/hSFWo2zgYfM/izT6hduO54Pu8MU5pqFO41mKPYkLvPdhJI433R1t8M/iuClS8a17D+j6BmlqHbcH3fVmoOfwSfK8PCNTUzmD/jDtloH6zMNYr8cyQoDbKqaipWVwpAxWT6uO6J+0Hgr2iS9u6Yl68WgbqZo9Bo142D13HSz3arwp24QS2O00rgx0hozbhM5zFC9jco/1ssAuTbge1JtjTcpna7aLdXAKmqSvBHosN2g30hIX74joulhywly6ZL3NgOR4rA1VXnPVXQ4I6HuxNMlhPKHg12Cfwx4BA0zgafPEy7Qq1Fatb7Fk5TcRNWlZ38WF4fzW2V4Fajr3Bdx7vmy9BqgAdwK/Bv0eb0HWDgjcwHnxnZNiyoZzG23LF2apx7Or0Ui2lFGumVl2Tv1T+Cv5R7JBz4kYLb/yEC3JBeFwx5GNy5RmvntJQ5Nm+o006aGiVfKxX4D95FW90aDuGT+WKoaPKQJHz4X7F6qGKxvGRLitUFYocliM4pNqX8Bp5U+9U8mu8ClRTd/ANTsorV6iH5FP1PF6R76K2p2yYUK2aw+/yyt2Sc+nDeNTC0reSRuSw9PuTYxk29Dt4B6W6/AdtKelyHZNyabIUdA+TtaX4z/N/WVG1ilVDUhAAAAAASUVORK5CYII=\');\n          '+e.config.logoVerticalPosition+': 0;\n          '+e.config.logoHorizontalPosition+': 0;\n          width:24px;height:24px;\n      }\n    </style>\n    '}}]),e}();try{e.exports=a}catch(e){}}]);
+        var BannerThreeD=function(t){function e(i){if(n[i])return n[i].exports;var a=n[i]={i:i,l:!1,exports:{}};return t[i].call(a.exports,a,a.exports,e),a.l=!0,a.exports}var n={};return e.m=t,e.c=n,e.d=function(t,n,i){e.o(t,n)||Object.defineProperty(t,n,{configurable:!1,enumerable:!0,get:i})},e.n=function(t){var n=t&&t.__esModule?function(){return t.default}:function(){return t};return e.d(n,'a',n),n},e.o=function(t,e){return Object.prototype.hasOwnProperty.call(t,e)},e.p="/dist/components",e(e.s=0)}([function(t,n){function i(t,e){if(!(t instanceof e))throw new TypeError("Cannot call a class as a function")}var a=Object.assign||function(t){for(var e=1;e<arguments.length;e++){var n=arguments[e];for(var i in n)Object.prototype.hasOwnProperty.call(n,i)&&(t[i]=n[i])}return t},o=function(){function t(t,e){for(var n=0;n<e.length;n++){var i=e[n];i.enumerable=i.enumerable||!1,i.configurable=!0,"value"in i&&(i.writable=!0),Object.defineProperty(t,i.key,i)}}return function(e,n,i){return n&&t(e.prototype,n),i&&t(e,i),e}}(),r=function(){function t(e){if(i(this,t),this.defaultConfig=this.constructor.getDefaultConfig(e),this.config=a({},this.defaultConfig,e),this.config.el='string'==typeof this.config.el?document.querySelector(this.config.el):this.config.el,null===this.config.el)throw new Error('Something wrong with your el param');this.config.el.insertAdjacentHTML('beforeend',this.contentTemplate),this.config.el.insertAdjacentHTML('beforeend',this.contentCss);var n=this;this.rootView=this.config.el.querySelector('.vmfive-container-'+n.config.request_id),this.boxView=this.rootView.querySelector('.vmfive-box-'+n.config.request_id),this.initData(),this.init()}return o(t,null,[{key:'getDefaultConfig',value:function(t){t=t||{};var e=t.request_id&&''!=t.request_id.trim()?t.request_id:'[request_id]';return{el:'#vmfive-ad-unit-container-'+e,request_id:e,track_url:'[track_url]',downloaded_pixel:'[downloaded_pixel]',downloaded_impression_pixel:'[downloaded_impression_pixel]','image:front':'[image:front]','image:bottom':'[image:bottom]','image:back':'[image:back]','image:top':'[image:top]','text:cta_in_new_window':'[text:cta_in_new_window]',dfp_url:'[dfp_url]',cta_prefix_url:'[cta_prefix_url]','cta:default':'[cta:default]','cta:front':'[cta:front]','cta:bottom':'[cta:bottom]','cta:back':'[cta:back]','cta:top':'[cta:top]','text:scale':'[text:scale]','text:banner_threed_rotate_duration':'[text:banner_threed_rotate_duration]','text:banner_threed_rotate_interval':'[text:banner_threed_rotate_interval]','text:banner_threed_rotate_initial_delay':'[text:banner_threed_rotate_initial_delay]','text:banner_threed_initial_rotate_degree':'[text:banner_threed_initial_rotate_degree]',disableTriggerByScroll:!1,cubic:{front:{el:'.front-'+e,imageURL:'[image:front]',ctaURL:'[cta:front]'},bottom:{el:'.bottom-'+e,imageURL:'[image:bottom]',ctaURL:'[cta:bottom]'},back:{el:'.back-'+e,imageURL:'[image:back]',ctaURL:'[cta:back]'},top:{el:'.top-'+e,imageURL:'[image:top]',ctaURL:'[cta:top]'},left:{el:'.left-'+e},right:{el:'.right-'+e}},heightRatio:'1',bannerRatio:'32:5',onresize:[],onprepared:[],onctaclicked:[]}}}]),o(t,[{key:'initData',value:function(){var t=this.config,e=t.el,n=t.bannerRatio,i=t.heightRatio,o=void 0,r=void 0,c=void 0,s=isNaN(i)||0===i.length?1:+i;try{o=e.getBoundingClientRect().width,c=+n.split(':')[1]/+n.split(':')[0],r=o*c*s}catch(t){console.log(t),o=e.getBoundingClientRect().width,c=5/32,r=o*c*s}this.data=a({},t,{elWidth:o,elHeight:r,viewHeight:window.innerHeight||document.documentElement.clientHeight,bannerHeight:r,bannerHeightRate:c})}},{key:'init',value:function(){function t(){return''+i.config.dfp_url+i.config.cta_prefix_url+'&url='}function n(){return''+i.config['cta:default']}var i=this,a=''+i.config['text:cta_in_new_window']=='true';for(var o in i.config.cubic){var r=document.querySelector('.'+o+'-'+i.config.request_id);!function(t,e){t.addEventListener('click',e)}(r,function(e){return function(){var i=e&&''!==e.trim()?t()+e:t()+n();a?window.open(i,'_blank'):window.top.location.href=i}}(i.config.cubic[o].ctaURL))}window.addEventListener('resize',function(){(i.config.onresize&&Array.isArray(i.config.onresize)?i.config.onresize:[]).forEach(function(t){'function'==typeof t&&t(i,{e:e})});var t=i.config.el.querySelector('.vmfive-content-css');t&&t.parentElement.removeChild(t),i.config.el.insertAdjacentHTML('beforeend',i.contentCss)}),i.config.disableTriggerByScroll||window.addEventListener("scroll",function(t){if(Date.now()-i.lastRotate>=i.VMFIVE_BANNER_THREED_ROTATE_DURATION){var e=this.scrollY,n=(this.scrollX,Date.now());i.lastScrollY=i.lastScrollY?i.lastScrollY:0,i.lastScrollV=i.lastScrollV?i.lastScrollV:0,i.lastScrollTimestamp=i.lastScrollTimestamp?i.lastScrollTimestamp:n;var a=n-i.lastScrollTimestamp;if(a>0){var o=(e-i.lastScrollY)/a;1e3*(Math.abs(o)-Math.abs(i.lastScrollV))/a>=30&&n-i.lastRotate>500&&(i.lastRotate=n,i.rotation+=o>0?90:-90,i.doRotation()),i.lastScrollV=o,i.lastScrollY=e,i.lastScrollTimestamp=n}}},!1),i.initContent({onCtaClicked:function(t){(i.config.onctaclicked&&Array.isArray(i.config.onctaclicked)?i.config.onctaclicked:[]).forEach(function(e){'function'==typeof e&&e(i,{e:t})})}}),(i.config.onprepared&&Array.isArray(i.config.onprepared)?i.config.onprepared:[]).forEach(function(t){'function'==typeof t&&t(i)})}},{key:'initContent',value:function(t){function e(){a[0].animation=anime({targets:a[0],duration:s,rotateX:n.rotation,complete:function(){}})}var n=this,i=$('.vmfive-container-'+n.config.request_id);i.on('click',t.onCtaClicked);var a=i.find('.vmfive-box-'+n.config.request_id),o=0,r=0;n.rotation=0;var c=''+n.config['text:banner_threed_rotate_duration'],s=isNaN(c)||0===c.length?1500:+c,l=''+n.config['text:banner_threed_rotate_interval'],f=isNaN(l)||0===l.length?3e3:+l,d=''+n.config['text:banner_threed_rotate_initial_delay'],u=isNaN(d)||0===d.length?1e3:+d,g=''+n.config['text:banner_threed_initial_rotate_degree'],v=isNaN(g)||0===g.length?360:+d;n.VMFIVE_BANNER_THREED_ROTATE_DURATION=s,n.doRotation=e;var m=0;raf(function t(){m=Date.now(),raf(t)}),setTimeout(function(){n.rotation=v,n.lastRotate=Date.now(),e(),n.timer=setInterval(function(){var t=Date.now()-m;Date.now()-n.lastRotate>=f&&t<500&&(n.lastRotate=Date.now(),n.rotation-=-90,e())},500)},u),i.hammer().on('panmove panstart panend',function(t){switch(t.type){case'panstart':n.isRotating=!0,n.lastRotate=Date.now(),o=i.width(),r=i.height();break;case'panmove':n.lastRotate=Date.now();var c=Math.max(Math.min(t.gesture.deltaY/r,.5),-.5);a[0].animation&&a[0].animation.pause(),a[0].style.transform='rotateX('+(n.rotation+-90*c)+'deg)';break;case'panend':n.isRotating=!1,n.lastRotate=Date.now();var c=Math.max(Math.min(t.gesture.deltaY/r,.5),-.5);c>=.25?n.rotation+=-90:c<=-.25&&(n.rotation-=-90),e()}})}},{key:'contentCss',get:function(){var t=this,e=''+t.config['text:scale'];isNaN(e);t.initData();var n=2.5*t.data.elWidth,i=2*t.data.bannerHeight*n/(t.data.bannerHeight+2*n),a=i/t.data.bannerHeight;return'\n<style class="vmfive-content-css">\n.vmfive-container-'+t.config.request_id+' {\n  float: left;\n  width: 100%;\n  height: 100%;\n  min-height: '+i+'px;\n  -webkit-perspective: '+n+'px;\n          perspective: '+n+'px;\n  -webkit-user-select: none;\n     -moz-user-select: none;\n      -ms-user-select: none;\n          user-select: none;\n  overflow: unset;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n}\n\n.vmfive-box-'+t.config.request_id+' {\n  width: calc(100% * '+a+');\n  height: calc(100%);\n\n  position: absolute;\n  -webkit-transform-style: preserve-3d;\n          transform-style: preserve-3d;\n  overflow: unset;\n}\n\n.vmfive-face-'+t.config.request_id+' {\n  border: 0px solid #666;\n  cursor: default;\n  width: 100%;\n  height: 100%;\n  position: absolute;\n  -webkit-backface-visibility: hidden;\n          backface-visibility: hidden;\n  outline: 1px solid transparent;\n  line-height: '+i+'px;\n  text-align: center;\n  font-size: 30px;\n}\n.vmfive-face-'+t.config.request_id+'.front-'+t.config.request_id+' {\n  /* background-color: #ffaaaa; */\n  background: url("'+t.config.cubic.front.imageURL+'") no-repeat center;\n  background-size: contain;\n  -webkit-transform: translate3d(0, 0, '+i/2+'px);\n          transform: translate3d(0, 0, '+i/2+'px);\n}\n.vmfive-face-'+t.config.request_id+'.top-'+t.config.request_id+' {\n  /* background-color: #aaaaff; */\n  background: url("'+t.config.cubic.top.imageURL+'") no-repeat center;\n  background-size: contain;\n  -webkit-transform: translate3d(0, -'+i/2+'px, 0) rotateX(90deg);\n          transform: translate3d(0, -'+i/2+'px, 0) rotateX(90deg);\n}\n.vmfive-face-'+t.config.request_id+'.bottom-'+t.config.request_id+' {\n  /* background-color: #aaaaff; */\n  background: url("'+t.config.cubic.bottom.imageURL+'") no-repeat center;\n  background-size: contain;\n  -webkit-transform: translate3d(0, '+i/2+'px, 0) rotateX(270deg);\n          transform: translate3d(0, '+i/2+'px, 0) rotateX(270deg);\n}\n.vmfive-face-'+t.config.request_id+'.back-'+t.config.request_id+' {\n  /* background-color: #ffaaaa; */\n  background: url("'+t.config.cubic.back.imageURL+'") no-repeat center;\n  background-size: contain;\n  -webkit-transform: translate3d(0, 0, -'+i/2+'px) rotateX(180deg);\n          transform: translate3d(0, 0, -'+i/2+'px) rotateX(180deg);\n}\n/*\n.vmfive-face-'+t.config.request_id+'.left-'+t.config.request_id+' {\n  background-color: #aaffaa;\n  background: url("'+t.config.cubic.left.imageURL+'") no-repeat center;\n  background-size: contain;\n  -webkit-transform: rotateY(-90deg) translate3d(0, 0, '+i/2+'px);\n          transform: rotateY(-90deg) translate3d(0, 0, '+i/2+'px);\n}\n.vmfive-face-'+t.config.request_id+'.right-'+t.config.request_id+' {\n  background-color: #aaffff;\n  background: url("'+t.config.cubic.right.imageURL+'") no-repeat center;\n  background-size: contain;\n  -webkit-transform: rotateY(90deg) translate3d(0, 0, '+i/2+'px);\n          transform: rotateY(90deg) translate3d(0, 0, '+i/2+'px);\n}\n*/\n</style>\n    '}},{key:'contentTemplate',get:function(){var t=this;return'\n<div class="vmfive-container-'+t.config.request_id+'">\n  <div class="vmfive-box-'+t.config.request_id+'">\n    <div class="vmfive-face-'+t.config.request_id+' front-'+t.config.request_id+'"></div>\n    <div class="vmfive-face-'+t.config.request_id+' top-'+t.config.request_id+'"></div>\n    <div class="vmfive-face-'+t.config.request_id+' back-'+t.config.request_id+'"></div>\n    <div class="vmfive-face-'+t.config.request_id+' bottom-'+t.config.request_id+'"></div>\n    <div class="vmfive-face-'+t.config.request_id+' left-'+t.config.request_id+'"></div>\n    <div class="vmfive-face-'+t.config.request_id+' right-'+t.config.request_id+'"></div>\n  </div>\n</div>\n    '}}]),t}();try{t.exports=r}catch(t){}}]);
+
+        let trackings = '[{"event":"view","url":"https://vaser-track.vm5apis.com/v2/track?requestId=&placementId=&campaignId=&audienceGroupId=&creativeId=&timezone=8&creativeFormat=richmedia&pixel=1&x=0&event=view"},\
+        {"event":"impression","url":"https://vaser-track.vm5apis.com/v2/track?requestId=&placementId=&campaignId=&audienceGroupId=&creativeId=&timezone=8&creativeFormat=richmedia&pixel=1&x=0&event=impression"},\
+        {"event":"video_percentage:0","url":"https://vaser-track.vm5apis.com/v2/track?requestId=&placementId=&campaignId=&audienceGroupId=&creativeId=&timezone=8&creativeFormat=richmedia&pixel=1&x=0&event=video_percentage:0"},\
+        {"event":"video_percentage:25","url":"https://vaser-track.vm5apis.com/v2/track?requestId=&placementId=&campaignId=&audienceGroupId=&creativeId=&timezone=8&creativeFormat=richmedia&pixel=1&x=0&event=video_percentage:25"},\
+        {"event":"video_percentage:50","url":"https://vaser-track.vm5apis.com/v2/track?requestId=&placementId=&campaignId=&audienceGroupId=&creativeId=&timezone=8&creativeFormat=richmedia&pixel=1&x=0&event=video_percentage:50"},\
+        {"event":"video_percentage:75","url":"https://vaser-track.vm5apis.com/v2/track?requestId=&placementId=&campaignId=&audienceGroupId=&creativeId=&timezone=8&creativeFormat=richmedia&pixel=1&x=0&event=video_percentage:75"},\
+        {"event":"video_percentage:100","url":"https://vaser-track.vm5apis.com/v2/track?requestId=&placementId=&campaignId=&audienceGroupId=&creativeId=&timezone=8&creativeFormat=richmedia&pixel=1&x=0&event=video_percentage:100"},\
+        {"event":"click","url":"https://vaser-track.vm5apis.com/v2/track?requestId=&placementId=&campaignId=&audienceGroupId=&creativeId=&timezone=8&creativeFormat=richmedia&pixel=1&x=0&event=click"},\
+        {"event":"custom","url":"https://vaser-track.vm5apis.com/v2/track?requestId=&placementId=&campaignId=&audienceGroupId=&creativeId=&timezone=8&creativeFormat=richmedia&pixel=1&x=0&event=custom"},\
+        {"event":"replay","url":"https://vaser-track.vm5apis.com/v2/track?requestId=&placementId=&campaignId=&audienceGroupId=&creativeId=&timezone=8&creativeFormat=richmedia&pixel=1&x=0&event=replay"}]'
+        ;
+
+        let vmfiveAdUnitContainer = new ImpressiveStatic({
+          // el: '#vmfive-ad-unit-container',
+          'request_id': '55667788',
+          'track_url': trackings,
+
+          'downloaded_pixel': 'https://vaser-track.vm5apis.com/v2/track?requestId=&event=downloaded&placementId=&campaignId=&audienceGroupId=&creativeId=&timezone=8&creativeFormat=richmedia&pixel=1&x=0',
+          'text:cta_in_new_window': '',
+          'text:top_margin_percentage': '0',
+          'dfp_url': '',
+          'cta_prefix_url': 'https://vaser-track.vm5apis.com/v2/track?requestId=&placementId=&campaignId=&audienceGroupId=&creativeId=&timezone=8&creativeFormat=richmedia&pixel=1&x=0&event=click',
+          'cta:default': 'https://vmfive.com/?utm_source=vmfive_ad_cta',
+
+          'image:image1': '',
+          'image:cover': '',
+          'image:foreground_image': '',
+          'text:align_video': '',
+          'text:is_fixed': true,
+          'text:scale': .9,
+          'text:richmedia_bg_url': '',
+
+          videoScale: '16:9',
+
+          'text:logo_vertical_position': '',
+          'text:logo_horizontal_position': '',
+
+          'text:click_available_vh_rate': '',
+
+          onctaclicked: [
+            function (comp, data) {
+              console.log(data);
+            },
+          ],
+        });
+
+        vmfiveAdUnitContainer.adContainerView.style.flexDirection = 'column';
+
+        let spinCubic1 = new BannerThreeD({
+          el: vmfiveAdUnitContainer.adContainerView,
+          'request_id': vmfiveAdUnitContainer.config.request_id+'spincubic1',
+          bannerRatio: vmfiveAdUnitContainer.config.bannerRatio,
+
+          'downloaded_pixel': 'https://vaser-track.vm5apis.com/v2/track?requestId=&event=downloaded&placementId=&campaignId=&audienceGroupId=&creativeId=&timezone=8&creativeFormat=richmedia&pixel=1&x=0',
+          'text:cta_in_new_window': '',
+          'dfp_url': '',
+          'cta_prefix_url': 'https://vaser-track.vm5apis.com/v2/track?requestId=&placementId=&campaignId=&audienceGroupId=&creativeId=&timezone=8&creativeFormat=richmedia&pixel=1&x=0&event=click',
+          'cta:default': 'https://vmfive.com/?utm_source=vmfive_ad_cta',
+
+          cubic: {
+            front: {
+              // imageURL: 'https://d2v4tz4zvhrua.cloudfront.net/manual_uploads/20181119/resource/cuboid-1.png',
+              imageURL: 'https://d2v4tz4zvhrua.cloudfront.net/production/image_1565147331136.png',
+              ctaURL: 'https://vmfive.com/?utm_source=vmfive_ad_cta&face=front',
+            },
+            bottom: {
+              // imageURL: 'https://d2v4tz4zvhrua.cloudfront.net/manual_uploads/20181119/resource/cuboid-3.png',
+              imageURL: 'https://d2v4tz4zvhrua.cloudfront.net/production/image_1565147336161.png',
+              ctaURL: 'https://vmfive.com/?utm_source=vmfive_ad_cta&face=bottom',
+            },
+            back: {
+              // imageURL: 'https://d2v4tz4zvhrua.cloudfront.net/manual_uploads/20181119/resource/cuboid-4.png',
+              imageURL: 'https://d2v4tz4zvhrua.cloudfront.net/production/image_1565147340100.png',
+              ctaURL: 'https://vmfive.com/?utm_source=vmfive_ad_cta&face=back',
+            },
+            top: {
+              // imageURL: 'https://d2v4tz4zvhrua.cloudfront.net/manual_uploads/20181119/resource/cuboid-2.png',
+              imageURL: 'https://d2v4tz4zvhrua.cloudfront.net/production/image_1565147347076.png',
+              ctaURL: 'https://vmfive.com/?utm_source=vmfive_ad_cta&face=top',
+            },
+            left: {
+              imageURL: '',
+              ctaURL: '',
+            },
+            right: {
+              imageURL: '',
+              ctaURL: '',
+            }
+          },
+
+          bannerRatio: '32:10',
+          heightRatio: '1',
+
+          'text:banner_threed_rotate_duration': '',
+          'text:banner_threed_rotate_interval': '',
+          'text:banner_threed_rotate_initial_delay': '0',
+          'text:banner_threed_initial_rotate_degree': '0',
+
+          disableTriggerByScroll: true,
+
+          onctaclicked: [
+            // vmfiveAdUnitContainer.onCtaClicked,
+            function() {
+              console.log('onclicked');
+            },
+          ],
+          onprepared: [
+            function(comp) {
+              setTimeout(function() { clearInterval(comp.timer); }, 0);
+            }
+          ]
+        });
+
+        let spinCubic2 = new BannerThreeD({
+          el: vmfiveAdUnitContainer.adContainerView,
+          'request_id': vmfiveAdUnitContainer.config.request_id+'spincubic2',
+          bannerRatio: vmfiveAdUnitContainer.config.bannerRatio,
+
+          'downloaded_pixel': 'https://vaser-track.vm5apis.com/v2/track?requestId=&event=downloaded&placementId=&campaignId=&audienceGroupId=&creativeId=&timezone=8&creativeFormat=richmedia&pixel=1&x=0',
+          'text:cta_in_new_window': '',
+          'dfp_url': '',
+          'cta_prefix_url': 'https://vaser-track.vm5apis.com/v2/track?requestId=&placementId=&campaignId=&audienceGroupId=&creativeId=&timezone=8&creativeFormat=richmedia&pixel=1&x=0&event=click',
+          'cta:default': 'https://vmfive.com/?utm_source=vmfive_ad_cta',
+
+          cubic: {
+            front: {
+              // imageURL: 'https://d2v4tz4zvhrua.cloudfront.net/manual_uploads/20181119/resource/cuboid-1.png',
+              imageURL: 'https://d2v4tz4zvhrua.cloudfront.net/production/image_1565147331136.png',
+              ctaURL: 'https://vmfive.com/?utm_source=vmfive_ad_cta&face=front',
+            },
+            bottom: {
+              // imageURL: 'https://d2v4tz4zvhrua.cloudfront.net/manual_uploads/20181119/resource/cuboid-3.png',
+              imageURL: 'https://d2v4tz4zvhrua.cloudfront.net/production/image_1565147336161.png',
+              ctaURL: 'https://vmfive.com/?utm_source=vmfive_ad_cta&face=bottom',
+            },
+            back: {
+              // imageURL: 'https://d2v4tz4zvhrua.cloudfront.net/manual_uploads/20181119/resource/cuboid-4.png',
+              imageURL: 'https://d2v4tz4zvhrua.cloudfront.net/production/image_1565147340100.png',
+              ctaURL: 'https://vmfive.com/?utm_source=vmfive_ad_cta&face=back',
+            },
+            top: {
+              // imageURL: 'https://d2v4tz4zvhrua.cloudfront.net/manual_uploads/20181119/resource/cuboid-2.png',
+              imageURL: 'https://d2v4tz4zvhrua.cloudfront.net/production/image_1565147347076.png',
+              ctaURL: 'https://vmfive.com/?utm_source=vmfive_ad_cta&face=top',
+            },
+            left: {
+              imageURL: '',
+              ctaURL: '',
+            },
+            right: {
+              imageURL: '',
+              ctaURL: '',
+            }
+          },
+
+          bannerRatio: '32:10',
+          heightRatio: '1',
+
+          'text:banner_threed_rotate_duration': '',
+          'text:banner_threed_rotate_interval': '',
+          'text:banner_threed_rotate_initial_delay': '0',
+          'text:banner_threed_initial_rotate_degree': '0',
+
+          disableTriggerByScroll: true,
+
+          onctaclicked: [
+            // vmfiveAdUnitContainer.onCtaClicked,
+            function() {
+              console.log('onclicked');
+            },
+          ],
+          onprepared: [
+            function(comp) {
+              setTimeout(function() { clearInterval(comp.timer); }, 0);
+            }
+          ]
+        });
+
+        let spinCubic3 = new BannerThreeD({
+          el: vmfiveAdUnitContainer.adContainerView,
+          'request_id': vmfiveAdUnitContainer.config.request_id+'spincubic3',
+          bannerRatio: vmfiveAdUnitContainer.config.bannerRatio,
+
+          'downloaded_pixel': 'https://vaser-track.vm5apis.com/v2/track?requestId=&event=downloaded&placementId=&campaignId=&audienceGroupId=&creativeId=&timezone=8&creativeFormat=richmedia&pixel=1&x=0',
+          'text:cta_in_new_window': '',
+          'dfp_url': '',
+          'cta_prefix_url': 'https://vaser-track.vm5apis.com/v2/track?requestId=&placementId=&campaignId=&audienceGroupId=&creativeId=&timezone=8&creativeFormat=richmedia&pixel=1&x=0&event=click',
+          'cta:default': 'https://vmfive.com/?utm_source=vmfive_ad_cta',
+
+          cubic: {
+            front: {
+              // imageURL: 'https://d2v4tz4zvhrua.cloudfront.net/manual_uploads/20181119/resource/cuboid-1.png',
+              imageURL: 'https://d2v4tz4zvhrua.cloudfront.net/production/image_1565147331136.png',
+              ctaURL: 'https://vmfive.com/?utm_source=vmfive_ad_cta&face=front',
+            },
+            bottom: {
+              // imageURL: 'https://d2v4tz4zvhrua.cloudfront.net/manual_uploads/20181119/resource/cuboid-3.png',
+              imageURL: 'https://d2v4tz4zvhrua.cloudfront.net/production/image_1565147336161.png',
+              ctaURL: 'https://vmfive.com/?utm_source=vmfive_ad_cta&face=bottom',
+            },
+            back: {
+              // imageURL: 'https://d2v4tz4zvhrua.cloudfront.net/manual_uploads/20181119/resource/cuboid-4.png',
+              imageURL: 'https://d2v4tz4zvhrua.cloudfront.net/production/image_1565147340100.png',
+              ctaURL: 'https://vmfive.com/?utm_source=vmfive_ad_cta&face=back',
+            },
+            top: {
+              // imageURL: 'https://d2v4tz4zvhrua.cloudfront.net/manual_uploads/20181119/resource/cuboid-2.png',
+              imageURL: 'https://d2v4tz4zvhrua.cloudfront.net/production/image_1565147347076.png',
+              ctaURL: 'https://vmfive.com/?utm_source=vmfive_ad_cta&face=top',
+            },
+            left: {
+              imageURL: '',
+              ctaURL: '',
+            },
+            right: {
+              imageURL: '',
+              ctaURL: '',
+            }
+          },
+
+          bannerRatio: '32:10',
+          heightRatio: '1',
+
+          'text:banner_threed_rotate_duration': '',
+          'text:banner_threed_rotate_interval': '',
+          'text:banner_threed_rotate_initial_delay': '0',
+          'text:banner_threed_initial_rotate_degree': '0',
+
+          disableTriggerByScroll: true,
+
+          onctaclicked: [
+            // vmfiveAdUnitContainer.onCtaClicked,
+            function() {
+              console.log('onclicked');
+            },
+          ],
+          onprepared: [
+            function(comp) {
+              setTimeout(function() { clearInterval(comp.timer); }, 0);
+            }
+          ]
+        });
+
+        let spinCubic4 = new BannerThreeD({
+          el: vmfiveAdUnitContainer.adContainerView,
+          'request_id': vmfiveAdUnitContainer.config.request_id+'spincubic4',
+          bannerRatio: vmfiveAdUnitContainer.config.bannerRatio,
+
+          'downloaded_pixel': 'https://vaser-track.vm5apis.com/v2/track?requestId=&event=downloaded&placementId=&campaignId=&audienceGroupId=&creativeId=&timezone=8&creativeFormat=richmedia&pixel=1&x=0',
+          'text:cta_in_new_window': '',
+          'dfp_url': '',
+          'cta_prefix_url': 'https://vaser-track.vm5apis.com/v2/track?requestId=&placementId=&campaignId=&audienceGroupId=&creativeId=&timezone=8&creativeFormat=richmedia&pixel=1&x=0&event=click',
+          'cta:default': 'https://vmfive.com/?utm_source=vmfive_ad_cta',
+
+          cubic: {
+            front: {
+              // imageURL: 'https://d2v4tz4zvhrua.cloudfront.net/manual_uploads/20181119/resource/cuboid-1.png',
+              imageURL: 'https://d2v4tz4zvhrua.cloudfront.net/production/image_1565147331136.png',
+              ctaURL: 'https://vmfive.com/?utm_source=vmfive_ad_cta&face=front',
+            },
+            bottom: {
+              // imageURL: 'https://d2v4tz4zvhrua.cloudfront.net/manual_uploads/20181119/resource/cuboid-3.png',
+              imageURL: 'https://d2v4tz4zvhrua.cloudfront.net/production/image_1565147336161.png',
+              ctaURL: 'https://vmfive.com/?utm_source=vmfive_ad_cta&face=bottom',
+            },
+            back: {
+              // imageURL: 'https://d2v4tz4zvhrua.cloudfront.net/manual_uploads/20181119/resource/cuboid-4.png',
+              imageURL: 'https://d2v4tz4zvhrua.cloudfront.net/production/image_1565147340100.png',
+              ctaURL: 'https://vmfive.com/?utm_source=vmfive_ad_cta&face=back',
+            },
+            top: {
+              // imageURL: 'https://d2v4tz4zvhrua.cloudfront.net/manual_uploads/20181119/resource/cuboid-2.png',
+              imageURL: 'https://d2v4tz4zvhrua.cloudfront.net/production/image_1565147347076.png',
+              ctaURL: 'https://vmfive.com/?utm_source=vmfive_ad_cta&face=top',
+            },
+            left: {
+              imageURL: '',
+              ctaURL: '',
+            },
+            right: {
+              imageURL: '',
+              ctaURL: '',
+            }
+          },
+
+          bannerRatio: '32:10',
+          heightRatio: '1',
+
+          'text:banner_threed_rotate_duration': '',
+          'text:banner_threed_rotate_interval': '',
+          'text:banner_threed_rotate_initial_delay': '0',
+          'text:banner_threed_initial_rotate_degree': '0',
+
+          disableTriggerByScroll: true,
+
+          onctaclicked: [
+            // vmfiveAdUnitContainer.onCtaClicked,
+            function() {
+              console.log('onclicked');
+            },
+          ],
+          onprepared: [
+            function(comp) {
+              setTimeout(function() { clearInterval(comp.timer); }, 0);
+            }
+          ]
+        });
+
+        function doWaterFallRotate() {
+          const PERIOD = 500;
+          doDelayRotate(spinCubic1, 0);
+          doDelayRotate(spinCubic2, PERIOD * 1);
+          doDelayRotate(spinCubic3, PERIOD * 2);
+          doDelayRotate(spinCubic4, PERIOD * 3);
+        }
+
+        function doDelayRotate(spinCubic, delayTime, callback) {
+          if (typeof spinCubic.doRotation === 'function') {
+            setTimeout(function() {
+              spinCubic.rotation += 90;
+              spinCubic.doRotation()
+            }, delayTime);
+          }
+        }
+
+        setInterval(function() {
+          doWaterFallRotate();
+        }, 2000);
+      };
+      document.body.appendChild(sc);
+    </script>
+
+    <h3>執行長丁俊宏 來場不一樣的創業</h3>
+
+    <p>走進第五代虛擬科技（VMFive）位於南京東路上的辦公室，空間設計帶有淡淡的loft風卻讓人備感溫馨，創辦人暨執行長丁俊宏是七年級生，斯文的外表下卻帶有創業的堅定。他說，他想做點與別人不同的事。為什麼想要創業？他說，「我小時候就對科學家有憧憬，喜歡看愛因斯坦、愛迪生的故事，我也喜歡看科幻電影，喜歡回到未來、時光機的那種，創業對我來說是一種憧憬，可以做一些不一樣的事情、甚至作一些創新的東西」。</p>
+    <p>在創立VMFive前，丁俊宏已經設立過二家公司，一家公司主要作行動應用開發，另外一家公司則是做壽險軟體；當時，壽險軟體獲得許多良好迴響，但丁俊宏希望自己可以做一點走向全球的事，於是，他決定把公司交給團隊夥伴經營，自己出來開設另外一家公司，VMFive於焉誕生。</p>
+    <p>第五代虛擬科技團隊草創初期，一部分人在台北、一部分在新竹，有些人是學生、有些人是社會新鮮人，直到2014年才在台北設辦公室。「一開始，大家都沒經驗，只有我先前創立過別間公司、有一點的經驗，而且我又是CEO，所以大多以我的想法為主，創立初期，大家多少都會有意見相佐的時候，默契不見得這麼好，但到了營運中期之後，我慢慢授權經營團隊，讓大家自主發揮」，丁俊宏回憶道。</p>
+    <p>丁俊宏設定三年內在亞太地區互動遊戲廣告市場闖出一片天，他對自家的技術相當有信心，現階段目標是讓VMFive把市場做大、做好，並希望這家公司可以永續經營。</p>
+    <hr/>
+    <p>文章來源：<a href="https://money.udn.com/money/story/11150/2478372">經濟日報</a></p>
+  </div>
+</body>
+
+</html>
