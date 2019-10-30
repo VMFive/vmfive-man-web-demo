@@ -130,7 +130,7 @@
             openningEl.style.zIndex = 1;
 
             let openningImg = document.createElement('img');
-            openningImg.src = 'https://d2v4tz4zvhrua.cloudfront.net/manual_uploads/20190701/resource/huggies/flyout_wet_wipes.png';
+            openningImg.src = '#';
             openningImg.style.position = 'absolute';
             openningImg.style.left = 0;
             openningImg.style.bottom = 0;
@@ -148,8 +148,8 @@
               option : {
                 el: self.refs['BannerContainer'].adContainerView,
                 'request_id': '[request_id]',
-                'image:banner': 'https://d2v4tz4zvhrua.cloudfront.net/manual_uploads/20190701/resource/huggies/flyout_banner.png',
-                'image:leader': 'https://d2v4tz4zvhrua.cloudfront.net/manual_uploads/20190701/resource/huggies/flyout_character.png',
+                'image:banner': '#',
+                'image:leader': 'https://d2v4tz4zvhrua.cloudfront.net/manual_uploads/20191028/resource/q4_event/spincubic_flyout%2Bspincubic/simple_spincubic_flyout.png',
                 'text:move_duration': `3000`,
                 'text:banner_showup_delay': `0`,
 
@@ -170,13 +170,14 @@
                         targets: self.refs['BannerContainer'].rootView.querySelector('.openning'),
                         opacity: [1, 0],
                         bottom: ['0', '-100%'],
-                        delay: (self.refs['Flyout'].config.startDelay + self.refs['Flyout'].config.moveDuration * self.refs['Flyout'].bannerEnterDelayCoef) * 1 + 250,
+                        // delay: (self.refs['Flyout'].config.startDelay + self.refs['Flyout'].config.moveDuration * self.refs['Flyout'].bannerEnterDelayCoef) * 1 + 250,
+                        delay: (self.refs['Flyout'].config.startDelay + self.refs['Flyout'].config.moveDuration * self.refs['Flyout'].bannerEnterDelayCoef * 0.5) * 1,
                         easing: 'easeInOutSine',
                         complete: function() {
                           anime({
                             targets: self.refs['BannerThreeD'].rootView,
                             opacity: [0, 1],
-                            delay: 550,
+                            // delay: 550,
                             easing: 'easeInOutSine',
                           });
                         }
@@ -214,19 +215,19 @@
 
                 cubic: {
                   front: {
-                    imageURL: 'https://d2v4tz4zvhrua.cloudfront.net/manual_uploads/20190701/resource/huggies/spincubic_cut1.png',
+                    imageURL: 'https://d2v4tz4zvhrua.cloudfront.net/manual_uploads/20191028/resource/q4_event/spincubic_flyout%2Bspincubic/simple_spincubic_banner_01.png',
                     ctaURL: 'https://www.niusnews.com/event/huggies2019',
                   },
                   bottom: {
-                    imageURL: 'https://d2v4tz4zvhrua.cloudfront.net/manual_uploads/20190701/resource/huggies/spincubic_cut2.png',
+                    imageURL: 'https://d2v4tz4zvhrua.cloudfront.net/manual_uploads/20191028/resource/q4_event/spincubic_flyout%2Bspincubic/simple_spincubic_banner_02.png',
                     ctaURL: 'https://www.niusnews.com/event/huggies2019',
                   },
                   back: {
-                    imageURL: 'https://d2v4tz4zvhrua.cloudfront.net/manual_uploads/20190701/resource/huggies/spincubic_cut3.png',
+                    imageURL: 'https://d2v4tz4zvhrua.cloudfront.net/manual_uploads/20191028/resource/q4_event/spincubic_flyout%2Bspincubic/simple_spincubic_banner_03.png',
                     ctaURL: 'https://www.niusnews.com/event/huggies2019',
                   },
                   top: {
-                    imageURL: 'https://d2v4tz4zvhrua.cloudfront.net/manual_uploads/20190701/resource/huggies/spincubic_cut4.png',
+                    imageURL: 'https://d2v4tz4zvhrua.cloudfront.net/manual_uploads/20191028/resource/q4_event/spincubic_flyout%2Bspincubic/simple_spincubic_banner_04.png',
                     ctaURL: 'https://www.niusnews.com/event/huggies2019',
                   },
                   left: {
