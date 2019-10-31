@@ -38,16 +38,6 @@
         </p>
 
         <div id="vmfive-ad-unit-container-55667788"></div>
-        <img src="https://ad-demo.vmfive.com/demos/showcase/20190926_olay/resource/olay_flyout0925.gif"
-            style="display: none;">
-        <img src="https://ad-demo.vmfive.com/demos/showcase/20190926_olay/resource/olay_spincubic_0926_olay_spincubic_01.gif"
-            style="display: none;">
-        <img src="https://ad-demo.vmfive.com/demos/showcase/20190926_olay/resource/olay_spincubic_0926olay_spincubic_02.gif"
-            style="display: none;">
-        <img src="https://ad-demo.vmfive.com/demos/showcase/20190926_olay/resource/olay_spincubic_0926_olay_spincubic_03.gif"
-            style="display: none;">
-        <img src="https://ad-demo.vmfive.com/demos/showcase/20190926_olay/resource/olay_spincubic_0926_olay_spincubic_04.gif"
-            style="display: none;">
 
 
         <h3>執行長丁俊宏 來場不一樣的創業</h3>
@@ -64,7 +54,7 @@
 
         <script src="https://man.vm5apis.com/dist/anime.js/3.0.1/anime.min.js"></script>
         <script src="https://man.vm5apis.com/dist/jquery/2.1.3/jquery.min.js"></script>
-        <script src="https://man.vm5apis.com/dist/hammer.js/2.0.8/hammer.min.js"></script>ｚ
+        <script src="https://man.vm5apis.com/dist/hammer.js/2.0.8/hammer.min.js"></script>
         <script src="https://man.vm5apis.com/dist/jquery.hammerjs/2.0.0/jquery.hammer.js"></script>
         <script src="https://man.vm5apis.com/dist/raf.js" data-mode="fast"></script>
         <script src="https://man.vm5apis.com/dist/libgif.js/0.0.2/libgif.min.js"></script>
@@ -76,124 +66,120 @@
 
             sc.src = "https://d1v69ngg41pvl6.cloudfront.net/dist/MixPlayer.js";
             sc.onload = function () {
+                let vmfiveAdUnitContainer = new BannerContainerBackground({
+                    // el: '#vmfive-ad-unit-container',
+                    'request_id': '55667788',
+                    'track_url': '[{"event":"view","url":"https://vaser-track.vm5apis.com/v2/track?requestId=&placementId=&campaignId=&audienceGroupId=&creativeId=&timezone=8&creativeFormat=richmedia&pixel=1&x=0&event=view"},\
+      {"event":"impression","url":"https://vaser-track.vm5apis.com/v2/track?requestId=&placementId=&campaignId=&audienceGroupId=&creativeId=&timezone=8&creativeFormat=richmedia&pixel=1&x=0&event=impression"},\
+      {"event":"video_percentage:0","url":"https://vaser-track.vm5apis.com/v2/track?requestId=&placementId=&campaignId=&audienceGroupId=&creativeId=&timezone=8&creativeFormat=richmedia&pixel=1&x=0&event=video_percentage:0"},\
+      {"event":"video_percentage:25","url":"https://vaser-track.vm5apis.com/v2/track?requestId=&placementId=&campaignId=&audienceGroupId=&creativeId=&timezone=8&creativeFormat=richmedia&pixel=1&x=0&event=video_percentage:25"},\
+      {"event":"video_percentage:50","url":"https://vaser-track.vm5apis.com/v2/track?requestId=&placementId=&campaignId=&audienceGroupId=&creativeId=&timezone=8&creativeFormat=richmedia&pixel=1&x=0&event=video_percentage:50"},\
+      {"event":"video_percentage:75","url":"https://vaser-track.vm5apis.com/v2/track?requestId=&placementId=&campaignId=&audienceGroupId=&creativeId=&timezone=8&creativeFormat=richmedia&pixel=1&x=0&event=video_percentage:75"},\
+      {"event":"video_percentage:100","url":"https://vaser-track.vm5apis.com/v2/track?requestId=&placementId=&campaignId=&audienceGroupId=&creativeId=&timezone=8&creativeFormat=richmedia&pixel=1&x=0&event=video_percentage:100"},\
+      {"event":"click","url":"https://vaser-track.vm5apis.com/v2/track?requestId=&placementId=&campaignId=&audienceGroupId=&creativeId=&timezone=8&creativeFormat=richmedia&pixel=1&x=0&event=click"},\
+      {"event":"close","url":"https://vaser-track.vm5apis.com/v2/track?requestId=&placementId=&campaignId=&audienceGroupId=&creativeId=&timezone=8&creativeFormat=richmedia&pixel=1&x=0&event=close"},\
+      {"event":"replay","url":"https://vaser-track.vm5apis.com/v2/track?requestId=&placementId=&campaignId=&audienceGroupId=&creativeId=&timezone=8&creativeFormat=richmedia&pixel=1&x=0&event=replay"}]',
+
+                    'downloaded_pixel': 'https://vaser-track.vm5apis.com/v2/track?requestId=&event=downloaded&placementId=&campaignId=&audienceGroupId=&creativeId=&timezone=8&creativeFormat=richmedia&pixel=1&x=0',
+                    'text:cta_in_new_window': '',
+                    'dfp_url': '',
+                    'cta_prefix_url': 'https://vaser-track.vm5apis.com/v2/track?requestId=&placementId=&campaignId=&audienceGroupId=&creativeId=&timezone=8&creativeFormat=richmedia&pixel=1&x=0&event=click',
+                    'cta:default': 'https://vmfive.com/?utm_source=vmfive_ad_cta',
+                    'text:banner_bottom_offset': `0`,
+                    'text:scale': `1`,
+                    'text:background_color': 'rgba(0,0,0,0.7)',
+                    'text:banner_ratio': '32:10',
+                    'image:container_background': 'https://ad-demo.vmfive.com/demos/showcase/20191030_mitsubishi/resource/mitsubishi_grand-lancer_flyout_banner.gif',
+                    'text:container_background_horizontal_alignment': '',
+
+                    videoBorderRadius: 0,
+                    enableClipPath: false,
+                    enableImpression: false,
+                    enableSwipeUp: false,
+                    disableCta: true
+                });
+
+                let closeEl = new CloseButton({
+                    el: vmfiveAdUnitContainer.adContainerView,
+                    'request_id': vmfiveAdUnitContainer.config['request_id'],
+                    'track_url': vmfiveAdUnitContainer.config['track_url'],
+
+                    'text:cta_in_new_window': `[text:cta_in_new_window]`,
+                    'dfp_url': `[dfp_url]`,
+                    'cta_prefix_url': `[cta_prefix_url]`,
+                    'cta:default': `[cta:default]`,
+
+                    'text:embedded': '[text:embedded]',
+                    'text:show_close_mode': 'fadein',
+                    'text:close_button_horizontal_alignment': 'left',
+                    'text:beautify_percent': '80',
+                    closeMode: 'fate',
+                });
+                let innerHteml = `
+        <div id="anime-wrap-${vmfiveAdUnitContainer.config.request_id}">
+            <div class="front">
+                <img src="https://ad-demo.vmfive.com/demos/showcase/20191030_mitsubishi/resource/mitsubishi_grand-lancer_flyout.gif">
+            </div>
+        </div>
+        <style>
+            #anime-wrap-${vmfiveAdUnitContainer.config.request_id} { 
+                display: none;
+            }
+            #anime-wrap-${vmfiveAdUnitContainer.config.request_id} img { 
+                width: 100%;    
+                bottom: 0;
+                position: absolute;
+            }
+            #anime-wrap-${vmfiveAdUnitContainer.config.request_id} .front {
+                position: fixed;
+                display: inline-block;
+                width: 100%;
+                right: 0;
+                bottom: 0;
+                z-index: 3;
+            }
+            
+        </style>
+    `;
+
+                vmfiveAdUnitContainer.overlayView.style.display = "none";
+                vmfiveAdUnitContainer.overlayView.style.transform = "translateY(100%)";
+
+                vmfiveAdUnitContainer.rootView.insertAdjacentHTML('beforeend', innerHteml);
+                let animeWrap = vmfiveAdUnitContainer.rootView.querySelector('#anime-wrap-' + vmfiveAdUnitContainer.config.request_id);
+                let frontEL = vmfiveAdUnitContainer.rootView.querySelector('#anime-wrap-' + vmfiveAdUnitContainer.config.request_id + ' .front');
+                let frontImgEL = vmfiveAdUnitContainer.rootView.querySelector('#anime-wrap-' + vmfiveAdUnitContainer.config.request_id + ' .front img');
+
+                var rub = new SuperGif({
+                    gif: frontImgEL,
+                    max_width: window.innerWidth,
+                    progressbar_height: 0,
+                    auto_play: false,
+                    loop_mode: false,
+                    on_end: function () {
+                        vmfiveAdUnitContainer.overlayView.style.display = "block";
+                        anime({
+                            targets: vmfiveAdUnitContainer.overlayView,
+                            translateY: [
+                                { value: '100%', duration: 0 },
+                                { value: '0', duration: 300 },
+                            ],
+                            easing: 'linear',
+                            complete: function () {
+                                animeWrap.style.display = "none";
+                            }
+                        });
+                    }
+                });
                 let triggeredFunc = function (event) {
                     window.removeEventListener('scroll', triggeredFunc);
-                    let vmfiveAdUnitContainer = new BannerContainerBackground({
-                        // el: '#vmfive-ad-unit-container',
-                        'request_id': '55667788',
-                        'track_url': '[{"event":"view","url":"https://vaser-track.vm5apis.com/v2/track?requestId=&placementId=&campaignId=&audienceGroupId=&creativeId=&timezone=8&creativeFormat=richmedia&pixel=1&x=0&event=view"},\
-        {"event":"impression","url":"https://vaser-track.vm5apis.com/v2/track?requestId=&placementId=&campaignId=&audienceGroupId=&creativeId=&timezone=8&creativeFormat=richmedia&pixel=1&x=0&event=impression"},\
-        {"event":"video_percentage:0","url":"https://vaser-track.vm5apis.com/v2/track?requestId=&placementId=&campaignId=&audienceGroupId=&creativeId=&timezone=8&creativeFormat=richmedia&pixel=1&x=0&event=video_percentage:0"},\
-        {"event":"video_percentage:25","url":"https://vaser-track.vm5apis.com/v2/track?requestId=&placementId=&campaignId=&audienceGroupId=&creativeId=&timezone=8&creativeFormat=richmedia&pixel=1&x=0&event=video_percentage:25"},\
-        {"event":"video_percentage:50","url":"https://vaser-track.vm5apis.com/v2/track?requestId=&placementId=&campaignId=&audienceGroupId=&creativeId=&timezone=8&creativeFormat=richmedia&pixel=1&x=0&event=video_percentage:50"},\
-        {"event":"video_percentage:75","url":"https://vaser-track.vm5apis.com/v2/track?requestId=&placementId=&campaignId=&audienceGroupId=&creativeId=&timezone=8&creativeFormat=richmedia&pixel=1&x=0&event=video_percentage:75"},\
-        {"event":"video_percentage:100","url":"https://vaser-track.vm5apis.com/v2/track?requestId=&placementId=&campaignId=&audienceGroupId=&creativeId=&timezone=8&creativeFormat=richmedia&pixel=1&x=0&event=video_percentage:100"},\
-        {"event":"click","url":"https://vaser-track.vm5apis.com/v2/track?requestId=&placementId=&campaignId=&audienceGroupId=&creativeId=&timezone=8&creativeFormat=richmedia&pixel=1&x=0&event=click"},\
-        {"event":"close","url":"https://vaser-track.vm5apis.com/v2/track?requestId=&placementId=&campaignId=&audienceGroupId=&creativeId=&timezone=8&creativeFormat=richmedia&pixel=1&x=0&event=close"},\
-        {"event":"replay","url":"https://vaser-track.vm5apis.com/v2/track?requestId=&placementId=&campaignId=&audienceGroupId=&creativeId=&timezone=8&creativeFormat=richmedia&pixel=1&x=0&event=replay"}]',
-
-                        'downloaded_pixel': 'https://vaser-track.vm5apis.com/v2/track?requestId=&event=downloaded&placementId=&campaignId=&audienceGroupId=&creativeId=&timezone=8&creativeFormat=richmedia&pixel=1&x=0',
-                        'text:cta_in_new_window': '',
-                        'dfp_url': '',
-                        'cta_prefix_url': 'https://vaser-track.vm5apis.com/v2/track?requestId=&placementId=&campaignId=&audienceGroupId=&creativeId=&timezone=8&creativeFormat=richmedia&pixel=1&x=0&event=click',
-                        'cta:default': 'https://www2.kfcclub.com.tw/tw/',
-                        'text:banner_bottom_offset': `0`,
-                        'text:scale': `1`,
-                        'text:background_color': 'rgba(0,0,0,0.7)',
-                        'text:banner_ratio': '32:10',
-                        'image:container_background': 'https://d2v4tz4zvhrua.cloudfront.net/manual_uploads/20191021-2/kfc_banner.gif',
-                        'text:container_background_horizontal_alignment': '',
-                        'text:swipe_up_color': '',
-
-                        videoBorderRadius: 0,
-                        enableClipPath: false,
-                        enableImpression: true,
-                        enableSwipeUp: false,
-                        disableCta: false
-                    });
-
-                    let closeEl = new CloseButton({
-                        el: vmfiveAdUnitContainer.adContainerView,
-                        'request_id': vmfiveAdUnitContainer.config['request_id'],
-                        'track_url': vmfiveAdUnitContainer.config['track_url'],
-
-                        'text:cta_in_new_window': `[text:cta_in_new_window]`,
-                        'dfp_url': `[dfp_url]`,
-                        'cta_prefix_url': `[cta_prefix_url]`,
-                        'cta:default': `[cta:default]`,
-
-                        'text:embedded': '[text:embedded]',
-                        'text:show_close_mode': 'fadein',
-                        'text:close_button_horizontal_alignment': 'left',
-                        'text:beautify_percent': '80',
-                        closeMode: 'fate',
-                    });
-                    let innerHteml = `
-            <div id="anime-wrap-${vmfiveAdUnitContainer.config.request_id}">
-                <div class="front">
-                    <img src="https://d2v4tz4zvhrua.cloudfront.net/manual_uploads/20191021-2/kfc_flyout3.gif">
-                </div>
-            </div>
-            <style>
-                #anime-wrap-${vmfiveAdUnitContainer.config.request_id} { 
-                    display: none;
+                    animeWrap.style.display = 'block';
+                    rub.play();
                 }
-                #anime-wrap-${vmfiveAdUnitContainer.config.request_id} .front {
-                    position: fixed;
-                    display: inline-block;
-                    width: 100%;
-                    right: 0;
-                    bottom: 0;
-                    z-index: 3;
-                }
-                #anime-wrap-${vmfiveAdUnitContainer.config.request_id} canvas { 
-                    width: 100%;    
-                    bottom: 0;
-                    position: absolute;
-                }
-            </style>
-        `;
 
-                    vmfiveAdUnitContainer.overlayView.style.display = "none";
-                    vmfiveAdUnitContainer.overlayView.style.transform = "translateY(100%)";
-
-                    vmfiveAdUnitContainer.rootView.insertAdjacentHTML('beforeend', innerHteml);
-                    let animeWrap = vmfiveAdUnitContainer.rootView.querySelector('#anime-wrap-' + vmfiveAdUnitContainer.config.request_id);
-                    let frontEL = vmfiveAdUnitContainer.rootView.querySelector('#anime-wrap-' + vmfiveAdUnitContainer.config.request_id + ' .front');
-                    let frontImgEL = vmfiveAdUnitContainer.rootView.querySelector('#anime-wrap-' + vmfiveAdUnitContainer.config.request_id + ' .front img');
-
-                    var rub = new SuperGif({
-                        gif: frontImgEL,
-                        max_width: window.innerWidth,
-                        progressbar_height: 0,
-                        auto_play: false,
-                        loop_mode: false,
-                        on_end: function () {
-                            vmfiveAdUnitContainer.overlayView.style.display = "block";
-                            anime({
-                                targets: vmfiveAdUnitContainer.overlayView,
-                                translateY: [
-                                    { value: '100%', duration: 0 },
-                                    { value: '0', duration: 300 },
-                                ],
-                                easing: 'linear',
-                                complete: function () {
-                                    animeWrap.style.display = "none";
-                                }
-                            });
-                        }
-                    });
-                    let triggeredFunc = function (event) {
-                        window.removeEventListener('scroll', triggeredFunc);
-                        animeWrap.style.display = 'block';
-                        rub.play();
-                    }
-
-                    rub.load_url('https://d2v4tz4zvhrua.cloudfront.net/manual_uploads/20191021-2/kfc_flyout3.gif', function () {
-                        window.addEventListener('scroll', triggeredFunc, false);
-                    });
-                };
-                window.addEventListener('scroll', triggeredFunc, false);
+                rub.load_url('https://ad-demo.vmfive.com/demos/showcase/20191030_mitsubishi/resource/mitsubishi_grand-lancer_flyout.gif', function () {
+                    window.addEventListener('scroll', triggeredFunc, false);
+                });
             };
             document.body.appendChild(sc);
         </script>
