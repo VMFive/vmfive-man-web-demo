@@ -321,10 +321,10 @@
                             'request_id': '[request_id]',
                             'text:banner_ratio': '32:15',
                             enableClipPath: false,
-                            enableImpression: false
+                            enableImpression: true
                         },
                         demoOption: {
-                            'cta:default': 'https://adison.com.tw/',
+                            'cta:default': 'https://yahoo.webgene.com.tw',
                         }
                     };
                 }
@@ -359,13 +359,13 @@
                                 '{"intro": "https://ad-demo.vmfive.com/demos/showcase/20191018_yahoo/resource/yahoo_game_left_icon_03.png", "ctaURL": "https://yahoo.webgene.com.tw"},' +
                                 '{}]',
 
-                            onctaclicked: [
-                                function (component, extra) {
-                                    console.log(extra.ctaURL);
-                                    self.refs['BannerContainer'].config['cta:default'] = encodeURIComponent(extra.ctaURL);
-                                    self.refs['BannerContainer'].onCtaClicked(extra.e);
-                                },
-                            ],
+                            // onctaclicked: [
+                            //     function (component, extra) {
+                            //         console.log(extra.ctaURL);
+                            //         self.refs['BannerContainer'].config['cta:default'] = encodeURIComponent(extra.ctaURL);
+                            //         self.refs['BannerContainer'].onCtaClicked(extra.e);
+                            //     },
+                            // ],
                         }
                     }
                 },

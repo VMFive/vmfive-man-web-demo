@@ -35,6 +35,7 @@
             videoBorderRadius: 0,
             enableExpand: false,
             disableCta: false,
+            enableImpression: true,
             onresize: [],
             onprepared: [],
             onctaclicked: [],
@@ -44,26 +45,15 @@
         let ConveyorDoubleSlideEl = new ConveyorDoubleSlide({
             el: BannerContainerEl.adContainerView,
             "request_id": '[request_id]',
-            "image:background": '[image:background]',
+            "image:background": 'https://ad-demo.vmfive.com/demos/showcase/20191018_yahoo/resource28/yahoo_game_bg.gif',
             "text:base_move_duration": '1500',
             "text:right_slide_from": 'right',
             "text:left_slide_from": 'left',
             "cta:default": '[cta:default]',
-            rightProducts:
-                '[' +
-                '{"intro": "[image:right_intro_1]", "ctaURL": "[cta:default]"},' +
-                '{"intro": "[image:right_intro_2]", "ctaURL": "[cta:default]"},' +
-                '{"intro": "[image:right_intro_3]", "ctaURL": "[cta:default]"},' +
-                '{}]',
-            leftProducts:
-                '[' +
-                '{"intro": "[image:left_intro_1]", "ctaURL": "[cta:default]"},' +
-                '{"intro": "[image:left_intro_2]", "ctaURL": "[cta:default]"},' +
-                '{"intro": "[image:left_intro_3]", "ctaURL": "[cta:default]"},' +
-                '{}]',
+            rightProducts: '[{"intro": "https://ad-demo.vmfive.com/demos/showcase/20191018_yahoo/resource21/yahoo_game_right_icon_01_1021-2.gif", "ctaURL": "[cta:default]"},{"intro": "https://ad-demo.vmfive.com/demos/showcase/20191018_yahoo/resource21/yahoo_game_right_icon_02_1021-2.gif", "ctaURL": "[cta:default]"},{"intro": "https://ad-demo.vmfive.com/demos/showcase/20191018_yahoo/resource28/yahoo_game_right_icon_03_1029.gif", "ctaURL": "[cta:default]"},{}]',
+            leftProducts: '[{"intro": "https://ad-demo.vmfive.com/demos/showcase/20191018_yahoo/resource/yahoo_game_left_icon_01.png", "ctaURL": "[cta:default]"},{"intro": "https://ad-demo.vmfive.com/demos/showcase/20191018_yahoo/resource/yahoo_game_left_icon_02.png", "ctaURL": "[cta:default]"},{"intro": "https://ad-demo.vmfive.com/demos/showcase/20191018_yahoo/resource/yahoo_game_left_icon_03.png", "ctaURL": "[cta:default]"},{}]',
             onresize: [],
             onprepared: [],
-            onctaclicked: [function (component, extra) { console.log(extra.ctaURL); BannerContainerEl.config['cta:default'] = encodeURIComponent(extra.ctaURL); BannerContainerEl.onCtaClicked(extra.e); }], "text:enter_from": 'left',
             "text:slide_from": "right"
         });
         let CloseButtonEl = new CloseButton({
