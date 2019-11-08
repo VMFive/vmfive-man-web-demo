@@ -30,7 +30,7 @@
                 onprepared: [function (comp) {
                     comp.wrap.style.backgroundColor = 'rgba(0,0,0,0)';
                     const cloundHeight = comp.swingFront.querySelector('img').clientHeight;
-                    let cloundImg = `<img src="https://ad-demo.vmfive.com/demos/showcase/20191029_yahoo/resource/s-yahoo-w.png" style="position: absolute;height:` + cloundHeight + `px;width: 300%;max-width: 300%;">`;
+                    let cloundImg = `<img src="[image:clound]" style="position: absolute;height:` + cloundHeight + `px;width: 300%;max-width: 300%;">`;
                     comp.swingFront.insertAdjacentHTML('beforeend', cloundImg);
 
                 }]
