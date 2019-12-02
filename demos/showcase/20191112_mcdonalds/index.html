@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+<!-- 三層 Panorama -->
 <html>
 
 <head>
@@ -284,8 +285,8 @@
                                     }
                                 ],
 
-                                'image:swing_front': 'https://d2v4tz4zvhrua.cloudfront.net/manual_uploads/20191112/resource/mcdonalds/2880x450_front_112101.png',
-                                'image:swing_back': 'https://d2v4tz4zvhrua.cloudfront.net/manual_uploads/20191112/resource/mcdonalds/2880x450_back_111901.jpg',
+                                'image:swing_front': 'https://d2v4tz4zvhrua.cloudfront.net/manual_uploads/20191112/resource/mcdonalds/2880x450_front_112801.png',
+                                'image:swing_back': 'https://d2v4tz4zvhrua.cloudfront.net/manual_uploads/20191112/resource/mcdonalds/2880x450_back_112801.jpg',
                                 'cta:swing_url': 'https://adison.com.tw?utm_source=adison_ad_cta',
                                 'text:swing_banner_magin': '0',
                                 'text:swing_img_ratio': '2880:450',
@@ -296,15 +297,19 @@
                                 }],
                             },
                             demoOption: {
-                                'image:swing_front': 'https://d2v4tz4zvhrua.cloudfront.net/manual_uploads/20191112/resource/mcdonalds/2880x450_front_112101.png',
-                                'image:swing_back': 'https://d2v4tz4zvhrua.cloudfront.net/manual_uploads/20191112/resource/mcdonalds/2880x450_back_111901.jpg',
+                                'image:swing_front': 'https://d2v4tz4zvhrua.cloudfront.net/manual_uploads/20191112/resource/mcdonalds/2880x450_front_112801.png',
+                                'image:swing_back': 'https://d2v4tz4zvhrua.cloudfront.net/manual_uploads/20191112/resource/mcdonalds/2880x450_back_112801.jpg',
                                 'cta:swing_url': 'https://adison.com.tw?utm_source=adison_ad_cta',
                                 'text:swing_banner_magin': '0',
                                 'text:swing_img_ratio': '2880:450',
                                 onprepared: [function (comp) {
-                                    // console.log( comp.swingFront,  comp.swingFront.querySelector('img').style.cssText, comp.swingBack.querySelector('img'));
-                                    // comp.swingFront.querySelector('img').style.cssText += 'height: ' + Math.ceil(comp.swing.querySelector('img').clientHeight) + 'px !important;';
-                                    // comp.swingBack.querySelector('img').style.cssText += 'height: ' + Math.ceil(comp.swing.querySelector('img').clientHeight) + 'px !important;';
+                                    // comp.wrap.style.backgroundColor = 'rgba(0,0,0,0)';
+                                    let logoImg = document.createElement('img');
+                                    logoImg.src = 'https://d2v4tz4zvhrua.cloudfront.net/manual_uploads/20191112/resource/mcdonalds/960x450_fixed_logo.png';
+                                    logoImg.style.position = 'absolute';
+                                    logoImg.style.height = '100%';
+                                    logoImg.style.width = '100%';
+                                    comp.wrap.insertBefore(logoImg, comp.swingFront);
                                 }],
                             }
                         }
