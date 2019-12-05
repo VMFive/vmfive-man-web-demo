@@ -1,0 +1,109 @@
+<div id="vmfive-ad-unit-container-[request_id]"></div>
+<script src='https://man.vm5apis.com/dist/anime.js/3.0.1/anime.min.js'></script>
+<script src='https://man.vm5apis.com/dist/raf.js'></script>
+<script src='https://d2v4tz4zvhrua.cloudfront.net/production/dist/2019-10-14-1571044011291/adformats/BannerContainer.min.js'></script>
+<script src='https://d2v4tz4zvhrua.cloudfront.net/production/dist/2019-10-14-1571044011291/components/ConveyorDoubleSlide.min.js'></script>
+<script src='https://d2v4tz4zvhrua.cloudfront.net/production/dist/2019-10-14-1571044011291/components/CloseButton.min.js'></script>
+<script>
+    let sc = document.createElement("script");
+    sc.src = "https://d1v69ngg41pvl6.cloudfront.net/dist/MixPlayer.js";
+    sc.onload = function () {
+        let BannerContainerEl = new BannerContainer({
+            el: '#vmfive-ad-unit-container-[request_id]',
+            "request_id": '[request_id]',
+            "track_url": '[track_url]',
+            "downloaded_pixel": '[downloaded_pixel]',
+            "downloaded_impression_pixel": '[downloaded_impression_pixel]',
+            "text:cta_in_new_window": '[text:cta_in_new_window]',
+            "dfp_url": '[dfp_url]',
+            "cta_prefix_url": '[cta_prefix_url]',
+            "cta:default": '[cta:default]',
+            "text:banner_z_index": '[text:banner_z_index]',
+            "text:banner_top_offset": '[text:banner_top_offset]',
+            "text:banner_bottom_offset": '[text:banner_bottom_offset]',
+            "text:scale": '[text:scale]',
+            "text:expand_scale": '[text:expand_scale]',
+            "text:max_width": '[text:max_width]',
+            "text:embedded": '[text:embedded]',
+            "text:background_color": '[text:background_color]',
+            "text:logo_background_color": '[text:logo_background_color]',
+            "text:logo_horizontal_alignment": '[text:logo_horizontal_alignment]',
+            "text:logo_vertical_alignment": '[text:logo_vertical_alignment]',
+            enableClipPath: false,
+            enableLogo: true,
+            enableImpression: false, "text:banner_ratio": '[text:banner_ratio]',
+            videoBorderRadius: 0,
+            enableExpand: false,
+            disableCta: false
+        });
+        let ConveyorDoubleSlideEl = new ConveyorDoubleSlide({
+            el: BannerContainerEl.adContainerView,
+            "request_id": '[request_id]',
+            "image:background": 'https://ad-demo.vmfive.com/demos/showcase/20191104_integrate/resource/integrate_frozen_conveyor_bg.gif',
+            "text:base_move_duration": '1500',
+            "text:right_slide_from": 'right',
+            "text:left_slide_from": 'left',
+            "cta:default": '[cta:default]',
+            rightProducts: 
+            '[' +
+            '{"intro": "[image:right_intro_1]", "ctaURL": "[cta:default]"},' +
+            '{"intro": "[image:right_intro_2]", "ctaURL": "[cta:default]"},' +
+            '{}]',
+            leftProducts: 
+            '[' +
+            '{"intro": "[image:left_intro_1]", "ctaURL": "[cta:default]"},' +
+            '{"intro": "[image:left_intro_2]", "ctaURL": "[cta:default]"},' +
+            '{}]',
+            onresize: [],
+            onprepared: [],
+            onctaclicked: [], "text:enter_from": 'left',
+            "text:slide_from": "right"
+        });
+        let CloseButtonEl = new CloseButton({
+            el: BannerContainerEl.adContainerView,
+            "request_id": '[request_id]',
+            "track_url": '[track_url]',
+            "text:cta_in_new_window": '[text:cta_in_new_window]',
+            "dfp_url": '[dfp_url]',
+            "cta_prefix_url": '[cta_prefix_url]',
+            "cta:default": '[cta:default]',
+            "text:embedded": '[text:embedded]',
+            "text:show_close_mode": 'fadein',
+            "text:close_button_horizontal_alignment": 'left',
+            "text:beautify_percent": '[text:beautify_percent]',
+            "text:close_out_container": '[text:close_out_container]',
+            closeMode: 'fate',
+            closeModeSecond: 6000,
+            enableExpand: false,
+            disableCta: false,
+            onctaclicked: [],
+            onExpandHelperClose: [],
+            oncloseexpanded: [],
+            onclosed: []
+        });
+        let vmfiveAdUnitContainer = BannerContainerEl; 
+        let innerHteml = `<div id="anime-wrap-${vmfiveAdUnitContainer.config.request_id}"> <div class="front"> <img src="[image:flyout_image]"> </div> </div> <style> #anime-wrap-${vmfiveAdUnitContainer.config.request_id} img { width: 100%; bottom: 0; position: absolute; } #anime-wrap-${vmfiveAdUnitContainer.config.request_id} .front { position: fixed; display: inline-block; width: 100%; right: 0; bottom: 0; z-index: 3; } </style> `; 
+        vmfiveAdUnitContainer.adContainerView.insertAdjacentHTML('beforeend', innerHteml);
+        let animeWrap = vmfiveAdUnitContainer.adContainerView.querySelector('#anime-wrap-' + vmfiveAdUnitContainer.config.request_id);
+        let frontEL = vmfiveAdUnitContainer.adContainerView.querySelector('#anime-wrap-' + vmfiveAdUnitContainer.config.request_id + ' .front'); 
+        let closeBtn = vmfiveAdUnitContainer.rootView.querySelector(`#vmfive-close-` + vmfiveAdUnitContainer.config.request_id);
+        let beautifyBtn = vmfiveAdUnitContainer.rootView.querySelector(`#vmfive-beautify-` + vmfiveAdUnitContainer.config.request_id); 
+        closeBtn.style.display = "none";
+        beautifyBtn.style.display = "none";
+        let threeDBanner = vmfiveAdUnitContainer.rootView.querySelector(`.vmfive-ad-wrapper-` + vmfiveAdUnitContainer.config.request_id); 
+        threeDBanner.style.top = '100%'; 
+
+        anime({
+            targets: frontEL, translateY: [{ value: '-100vh', duration: 0 }, { value: '200vh', duration: 2900 },], easing: 'linear', complete: function () {
+                anime({
+                    targets: threeDBanner, top: [{ value: '100%', duration: 0 }, { value: '0', duration: 400 },], easing: 'linear', complete: function () {
+                        closeBtn.style.display = "block";
+                        beautifyBtn.style.display = "block";
+                        animeWrap.style.display = "none";
+                    }
+                });
+            }
+        });
+    };
+    document.body.appendChild(sc);
+</script>

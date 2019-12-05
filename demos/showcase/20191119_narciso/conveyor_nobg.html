@@ -251,7 +251,6 @@
             </p>
 
             <div id="vmfive-ad-unit-container-55667788"></div>
-            <div id="vmfive-ad-unit-container-55667788-expand"></div>
 
             <h3>業界最多原創廣告格式 讓創意深入人心大獲品牌與媒體青睞</h3>
             <p>目前有眾多的數位廣告在一昧追求載入速度下犧牲了廣告素材的展示品質，ADisON為提供高品質的廣告內容，自2014年開始使用Google Cloud
@@ -296,163 +295,95 @@
         </div>
     </div>
 
-    <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js"></script>
-    <script src='https://man.vm5apis.com/dist/turn.js/turn.min.js'></script>
     <script>
         var TemplateBuilder = function (e) { function n(a) { if (t[a]) return t[a].exports; var i = t[a] = { i: a, l: !1, exports: {} }; return e[a].call(i.exports, i, i.exports, n), i.l = !0, i.exports } var t = {}; return n.m = e, n.c = t, n.d = function (e, t, a) { n.o(e, t) || Object.defineProperty(e, t, { configurable: !1, enumerable: !0, get: a }) }, n.n = function (e) { var t = e && e.__esModule ? function () { return e.default } : function () { return e }; return n.d(t, 'a', t), t }, n.o = function (e, n) { return Object.prototype.hasOwnProperty.call(e, n) }, n.p = "/dist/adformats", n(n.s = 0) }([function (module, exports) { function _defineProperty(e, n, t) { return n in e ? Object.defineProperty(e, n, { value: t, enumerable: !0, configurable: !0, writable: !0 }) : e[n] = t, e } function _classCallCheck(e, n) { if (!(e instanceof n)) throw new TypeError("Cannot call a class as a function") } var _extends = Object.assign || function (e) { for (var n = 1; n < arguments.length; n++) { var t = arguments[n]; for (var a in t) Object.prototype.hasOwnProperty.call(t, a) && (e[a] = t[a]) } return e }, _createClass = function () { function e(e, n) { for (var t = 0; t < n.length; t++) { var a = n[t]; a.enumerable = a.enumerable || !1, a.configurable = !0, "value" in a && (a.writable = !0), Object.defineProperty(e, a.key, a) } } return function (n, t, a) { return t && e(n.prototype, t), a && e(n, a), n } }(), TemplateBuilder = function () { function TemplateBuilder(e) { _classCallCheck(this, TemplateBuilder), this.defaultConfig = { cdn: 'https://d2v4tz4zvhrua.cloudfront.net/production/dist/2019-05-07-1557206750347', plugins: [], adformats: [], components: [], develop: !0, showCreateButton: !0, BaseAdUnit: [], OnBaseAdUnitPrepared: [], BaseFormatsCode: [], OnBaseComponentsCode: [] }, this.config = _extends({}, this.defaultConfig, e), this.refs = {}, this.init() } return _createClass(TemplateBuilder, [{ key: 'appendCdnScript', value: function () { var e = this, n = e.config.develop, t = n ? '../src' : e.config.cdn; e.config.plugins.forEach(function (e) { var n = document.createElement("script"); n.src = e, document.body.appendChild(n) }), e.config.adformats.forEach(function (e) { e = n ? e + '.js' : e + '.min.js'; var a = document.createElement("script"); a.src = t + '/adformats/' + e, document.body.appendChild(a) }), e.config.components.forEach(function (e) { e = n ? e + '.js' : e + '.min.js'; var a = document.createElement("script"); a.src = t + '/components/' + e, document.body.appendChild(a) }) } }, { key: 'appendCustomJs', value: function appendCustomJs() { var self = this, sc = document.createElement("script"); sc.src = "https://d1v69ngg41pvl6.cloudfront.net/dist/MixPlayer.js", sc.onload = function () { var DynamicClass = function e(n, t) { return _classCallCheck(this, e), new n(t) }, fakeBannerContainerOption = { request_id: '55667788', track_url: '[{"event":"view","url":"https://vaser-track.vm5apis.com/v2/track?requestId=&placementId=&campaignId=&audienceGroupId=&creativeId=&timezone=8&creativeFormat=richmedia&pixel=1&x=0&event=view"},                {"event":"impression","url":"https://vaser-track.vm5apis.com/v2/track?requestId=&placementId=&campaignId=&audienceGroupId=&creativeId=&timezone=8&creativeFormat=richmedia&pixel=1&x=0&event=impression"},                {"event":"video_percentage:0","url":"https://vaser-track.vm5apis.com/v2/track?requestId=&placementId=&campaignId=&audienceGroupId=&creativeId=&timezone=8&creativeFormat=richmedia&pixel=1&x=0&event=video_percentage:0"},                {"event":"video_percentage:25","url":"https://vaser-track.vm5apis.com/v2/track?requestId=&placementId=&campaignId=&audienceGroupId=&creativeId=&timezone=8&creativeFormat=richmedia&pixel=1&x=0&event=video_percentage:25"},                {"event":"video_percentage:50","url":"https://vaser-track.vm5apis.com/v2/track?requestId=&placementId=&campaignId=&audienceGroupId=&creativeId=&timezone=8&creativeFormat=richmedia&pixel=1&x=0&event=video_percentage:50"},                {"event":"video_percentage:75","url":"https://vaser-track.vm5apis.com/v2/track?requestId=&placementId=&campaignId=&audienceGroupId=&creativeId=&timezone=8&creativeFormat=richmedia&pixel=1&x=0&event=video_percentage:75"},                {"event":"video_percentage:100","url":"https://vaser-track.vm5apis.com/v2/track?requestId=&placementId=&campaignId=&audienceGroupId=&creativeId=&timezone=8&creativeFormat=richmedia&pixel=1&x=0&event=video_percentage:100"},                {"event":"click","url":"https://vaser-track.vm5apis.com/v2/track?requestId=&placementId=&campaignId=&audienceGroupId=&creativeId=&timezone=8&creativeFormat=richmedia&pixel=1&x=0&event=click"},                {"event":"close","url":"https://vaser-track.vm5apis.com/v2/track?requestId=&placementId=&campaignId=&audienceGroupId=&creativeId=&timezone=8&creativeFormat=richmedia&pixel=1&x=0&event=close"},                {"event":"custom","url":"https://vaser-track.vm5apis.com/v2/track?requestId=&placementId=&campaignId=&audienceGroupId=&creativeId=&timezone=8&creativeFormat=richmedia&pixel=1&x=0&event=custom"},                {"event":"replay","url":"https://vaser-track.vm5apis.com/v2/track?requestId=&placementId=&campaignId=&audienceGroupId=&creativeId=&timezone=8&creativeFormat=richmedia&pixel=1&x=0&event=replay"}]', downloaded_pixel: 'https://vaser-track.vm5apis.com/v2/track?requestId=&event=downloaded&placementId=&campaignId=&audienceGroupId=&creativeId=&timezone=8&creativeFormat=richmedia&pixel=1&x=0', dfp_url: '', cta_prefix_url: 'https://vaser-track.vm5apis.com/v2/track?requestId=&placementId=&campaignId=&audienceGroupId=&creativeId=&timezone=8&creativeFormat=richmedia&pixel=1&x=0&event=click' }, fakeInterstitialOption = { el: '#vmfive-ad-unit-container-55667788', request_id: fakeBannerContainerOption.request_id, track_url: fakeBannerContainerOption.track_url, downloaded_pixel: fakeBannerContainerOption.downloaded_pixel }, fakeEXPSNDOption = _defineProperty({ el: '#vmfive-ad-unit-container-55667788-expand', request_id: fakeBannerContainerOption.request_id + '-expand', track_url: fakeBannerContainerOption.track_url, cta_prefix_url: fakeBannerContainerOption.cta_prefix_url, downloaded_pixel: fakeBannerContainerOption.downloaded_pixel, dfp_url: '' }, 'cta_prefix_url', 'https://vaser-track.vm5apis.com/v2/track?requestId=&placementId=&campaignId=&audienceGroupId=&creativeId=&timezone=8&creativeFormat=richmedia&pixel=1&x=0&event=click'), firstContainerName = void 0, isFirstContainer = !0, BaseAdUnitCallbacks = self.config.BaseAdUnit && Array.isArray(self.config.BaseAdUnit) ? self.config.BaseAdUnit : []; BaseAdUnitCallbacks.forEach(function (callback, index) { var isAdformat = callback.toString().match(/adformatName(.*?),/g); isAdformat || (self.config.BaseFormatsCode.push({ extraFunction: callback }), callback(self)); var adUnitContainer = void 0; if ('function' == typeof callback && isAdformat) { adUnitContainer = callback(self), self.config.BaseFormatsCode.push({ adformatName: adUnitContainer.adformatName, refName: adUnitContainer.refName, option: _extends({}, eval(adUnitContainer.adformatName).getDefaultConfig(), adUnitContainer.option) }), isFirstContainer && (firstContainerName = adUnitContainer.refName, isFirstContainer = !1), adUnitContainer.demoOption = adUnitContainer.demoOption ? adUnitContainer.demoOption : {}; var currentOption = void 0; currentOption = 'BannerContainer' === adUnitContainer.refName || 'BannerContainer2' === adUnitContainer.refName ? _extends({}, adUnitContainer.option, adUnitContainer.demoOption, fakeBannerContainerOption) : 'Interstitial' === adUnitContainer.refName && 0 === index ? _extends({}, adUnitContainer.option, adUnitContainer.demoOption, fakeBannerContainerOption) : 'InterstitialStatic' === adUnitContainer.refName && 0 === index ? _extends({}, adUnitContainer.option, adUnitContainer.demoOption, fakeBannerContainerOption) : 'Interstitial' === adUnitContainer.refName || 'InterstitialStatic' === adUnitContainer.refName || 'UprightAround' === adUnitContainer.refName || 'Catalog' === adUnitContainer.refName || 'Brochure' === adUnitContainer.refName ? _extends({}, adUnitContainer.option, adUnitContainer.demoOption, fakeEXPSNDOption) : (adUnitContainer.refName, _extends({}, adUnitContainer.option, adUnitContainer.demoOption, fakeBannerContainerOption)), self.refs[adUnitContainer.refName] = new DynamicClass(eval(adUnitContainer.adformatName), currentOption) } }); var OnBaseAdUnitPreparedCallbacks = self.config.OnBaseAdUnitPrepared && Array.isArray(self.config.OnBaseAdUnitPrepared) ? self.config.OnBaseAdUnitPrepared : []; OnBaseAdUnitPreparedCallbacks.forEach(function (callback) { var fakeComponentOption = { request_id: self.refs[firstContainerName].config.request_id, track_url: self.refs[firstContainerName].config.track_url, downloaded_pixel: self.refs[firstContainerName].config.downloaded_pixel, dfp_url: self.refs[firstContainerName].config.dfp_url, cta_prefix_url: self.refs[firstContainerName].config.cta_prefix_url }, isComponent = callback.toString().match(/componentName(.*?),/g); isComponent || (self.config.OnBaseComponentsCode.push({ extraFunction: callback }), callback(self)); var elToString = void 0, hasEl = callback.toString().match(/el:(.*?),/g); if (hasEl) { var elUnCall = callback.toString().match(/el:(.*?),/g).toString(); elToString = elUnCall.replace(/el: self\.refs\['/g, '').replace(/\']/g, 'El').replace(/,/g, '') } var originalToString = void 0, expandedToString = void 0, isExpandHelper = callback.toString().match(/componentName: 'ExpandHelper'/g); if (isExpandHelper) { var originalUnCall = callback.toString().match(/original:(.*?),/g).toString(); originalToString = originalUnCall.replace(/original: self\.refs\['/g, '').replace(/\']/g, 'El').replace(/,/g, ''); var expandedUnCall = callback.toString().match(/expanded:(.*?),/g).toString(); expandedToString = expandedUnCall.replace(/expanded: self\.refs\['/g, '').replace(/\']/g, 'El').replace(/,/g, '') } if ('function' == typeof callback && isComponent) { var item = callback(self), currentComOption = _extends({}, item.option, item.demoOption, fakeComponentOption); hasEl && (item.option.el = elToString), isExpandHelper && (item.option.original = originalToString, item.option.expanded = expandedToString), self.config.OnBaseComponentsCode.push({ componentName: item.componentName, refName: item.refName, option: _extends({}, eval(item.componentName).getDefaultConfig(), item.option) }), self.refs[item.refName] = new DynamicClass(eval(item.componentName), currentComOption) } }) }, document.body.appendChild(sc) } }, { key: 'stringifyOption', value: function (e) { return JSON.stringify(e, function (e, n) { if ('function' == typeof n) { var t = n.toString(); return t = t.replace(/\r\n/g, ""), t = t.replace(/\n/g, ""), 'thisisforfunction' + (t = t.replace(/\s+/g, " ")) + 'thisisforfunction' } return n }) } }, { key: 'createTemplate', value: function (e, n, t) { var a = this, i = a.config.cdn, r = ''; a.config.BaseFormatsCode.forEach(function (e, n) { if (a.config.BaseFormatsCode[n].adformatName) { var t = a.stringifyOption(a.config.BaseFormatsCode[n].option), i = t; i = i.replace(/\"el\":\"(.*?)\",/g, "el: '$1',thisForTitle"), i = i.replace(/,\"([^(\_|\:|\")"]+)\":/g, ",thisForTitle$1:"), i = i.replace(/:\"\[\{(.*?)\}\]\"/g, ":'[{$1}]'"), i = i.replace(/:\"([^(*)"]+)\",/g, ":'$1',thisForTitle"), i = i.replace(/(thisisforfunction")|("thisisforfunction)/g, ""), i = i.replace(/,(thisForTitle)+/g, ",\n"), i = i.replace(/self\.refs\['(.*?)'\]/g, "$1El"), i = i.replace(/\\/g, ""), i = i.replace(/55667788/g, "[request_id]"), r = r + 'let ' + a.config.BaseFormatsCode[n].refName + 'El = new ' + a.config.BaseFormatsCode[n].adformatName + '(' + i + ');\n        ' } else { var o = a.stringifyOption(a.config.BaseFormatsCode[n].extraFunction); o = o.replace(/("thisisforfunctionfunction\s*\(self\) \{)|(\}thisisforfunction")/g, ""), o = o.replace(/self\.refs\['(.*?)'\]/g, "$1El"), r = r + o + '\n        ' } }); var o = ''; a.config.OnBaseComponentsCode.forEach(function (e, n) { var t = '\n        '; if (n === a.config.OnBaseComponentsCode.length - 1 && (t = ''), a.config.OnBaseComponentsCode[n].componentName) { var i = a.stringifyOption(a.config.OnBaseComponentsCode[n].option), r = i; r = r.replace(/\"el\":\"(.*?)\",/g, "\"el\": $1,thisForTitle"), r = r.replace(/,\"([^(\_|\:|\")"]+)\":/g, ",thisForTitle$1:"), r = r.replace(/{\"([^(\_|\:|\")"]+)\":/g, "{$1:"), r = r.replace(/:\"\[\{(.*?)\}\]\"/g, ":'[{$1}]'"), r = r.replace(/:\"([^(*)"]+)\",/g, ":'$1',thisForTitle"), r = r.replace(/(thisisforfunction")|("thisisforfunction)/g, ""), r = r.replace(/,(thisForTitle)+/g, ",\n"), r = r.replace(/self\.refs\['(.*?)'\]/g, "$1El"), 'ExpandHelper' === a.config.OnBaseComponentsCode[n].componentName && (r = r.replace(/original:\s*\"(.*?)\"/g, "original: $1"), r = r.replace(/original:\s*\'(.*?)\'/g, "original: $1"), r = r.replace(/expanded:\s*\"(.*?)\"/g, "expanded: $1"), r = r.replace(/expanded:\s*\'(.*?)\'/g, "expanded: $1")), r = r.replace(/\\/g, ""), r = r.replace(/55667788/g, "[request_id]"), o = o + 'let ' + a.config.OnBaseComponentsCode[n].refName + 'El = new ' + a.config.OnBaseComponentsCode[n].componentName + '(' + r + ');' + t } else { var c = a.stringifyOption(a.config.OnBaseComponentsCode[n].extraFunction); c = c.replace(/("thisisforfunctionfunction\s*\(self\) \{)|(\}thisisforfunction")/g, ""), c = c.replace(/self\.refs\['(.*?)'\]/g, "$1El"), o = o + c + t } }); var c = '<script>\n    let sc = document.createElement("script");\n    sc.src = "https://d1v69ngg41pvl6.cloudfront.net/dist/MixPlayer.js";\n    sc.onload = function () {\n        ' + r + o + '\n    };\n    document.body.appendChild(sc);\n<\/script>'; return function (t, i) { var r = '', o = ''; return r = a.config.BaseFormatsCode.length >= 2 && a.refs.Interstitial ? '<div id="vmfive-ad-unit-container-[request_id]"></div>\n<div id="vmfive-ad-unit-container-[request_id]-interstitial"></div>\n' : '<div id="vmfive-ad-unit-container-[request_id]"></div>\n', e.forEach(function (e) { o = o + '<script src=\'' + e + '\'><\/script>\n' }), n.forEach(function (e) { o = o + '<script src=\'' + t + '/adformats/' + e + '.min.js\'><\/script>\n' }), i.forEach(function (e) { o = o + '<script src=\'' + t + '/components/' + e + '.min.js\'><\/script>\n' }), r + o + c }(i, t) } }, { key: 'createCreateButton', value: function () { function e() { template.created() } var n = document.createElement('div'); n.setAttribute('style', 'position:fixed;top:50px;left:2px;background:red;color: #000;width:60px;height:30px;border-radius: 15px;line-height: 28px;text-align: center;cursor: pointer;'), n.innerHTML = 'Create', document.body.appendChild(n), n.addEventListener('click', e, !1) } }, { key: 'init', value: function () { var e = this; e.appendCdnScript(), setTimeout(function () { e.appendCustomJs() }, 1e3), e.config.showCreateButton && e.createCreateButton() } }, { key: 'created', value: function () { var e = this.createTemplate(this.config.plugins, this.config.adformats, this.config.components); e = e.replace(/>/g, '&gt;'), e = e.replace(/</g, '&lt;'); var n = null; n = window.open('demo-code.html', 'Demo code', 'height=800,width=800,scrollbars=yes'), n.document.write('<figure><pre><code class="language-pascal" style="display: inline-block;">' + e + '</code></pre></figure>') } }]), TemplateBuilder }(); try { module.exports = TemplateBuilder } catch (e) { } }]);
         let template = new TemplateBuilder({
             cdn: 'https://d2v4tz4zvhrua.cloudfront.net/production/dist/2019-10-14-1571044011291',
             plugins: [
-                'https://man.vm5apis.com/dist/hammer.js/2.0.8/hammer.min.js',
-                'https://man.vm5apis.com/dist/jquery.hammerjs/2.0.0/jquery.hammer.js'
+                'https://man.vm5apis.com/dist/anime.js/3.0.1/anime.min.js',
+                'https://man.vm5apis.com/dist/raf.js'
             ],
             adformats: [
-                'BannerContainerBackground', 'Catalog'
+                'BannerContainer',
             ],
             components: [
-                'ExpandHelper', 'CloseButton'
+                'ConveyorDoubleSlide', 'CloseButton'
             ],
             develop: false,
             showCreateButton: false,
             BaseAdUnit: [
-                    function (self) {
-                        return {
-                            adformatName: 'BannerContainerBackground',
-                            refName: 'vmfiveAdUnitContainer',
-                            option: {
-                                el: '#vmfive-ad-unit-container-55667788',
-                                videoBorderRadius: 0,
-                                enableClipPath: false,
-                                enableImpression: false,
-                                disableCta: true,
-                                enableSwipeUp: false,
-                            },
-                            demoOption: {
-                                'downloaded_pixel': 'https://vaser-track.vm5apis.com/v2/track?requestId=&event=downloaded&placementId=&campaignId=&audienceGroupId=&creativeId=&timezone=8&creativeFormat=richmedia&pixel=1&x=0',
-                                'text:cta_in_new_window': '',
-                                'dfp_url': '',
-                                'cta_prefix_url': 'https://vaser-track.vm5apis.com/v2/track?requestId=&placementId=&campaignId=&audienceGroupId=&creativeId=&timezone=8&creativeFormat=richmedia&pixel=1&x=0&event=click',
-                                'cta:default': 'https://adison.com.tw/',
-                                'text:banner_bottom_offset': `0`,
-                                'text:scale': `1`,
-                                'text:close_button_horizontal_alignment': 'left',
-                                'text:background_color': 'rgba(0,0,0,0.7)',
-                                'text:banner_ratio': '7:3',
-                                'image:container_background': 'https://ad-demo.vmfive.com/demos/showcase/2019Q3_ad_formats/resource/business/catalog/uniqlo_2019_banner.png',
-                                'text:container_background_horizontal_alignment': '',
-                                'text:swipe_up_color': 'gray',
-                            }
-                        };
-                    },
-                    function (self) {
-                        return {
-                            adformatName: 'Catalog',
-                            refName: 'Catalog',
-                            option: {
-                                el: '#vmfive-ad-unit-container-[request_id]-expand',
-                                'request_id': '[request_id]-expand',
-                                videoScale: '16:9',
-                            },
-                            demoOption: {
-                                'cta:default': `https://adison.com.tw/`,
-                                'cta:pan_view': 'https://adison.com.tw/',
-                                'text:3rd_party_track_url': '',
-                                'dfp_url': ``,
-                                medias:
-                                '['+
-                                '{"image": "https://ad-demo.vmfive.com/demos/showcase/2019Q3_ad_formats/resource/business/catalog/uniqlo_2019_expand01.png"},'+
-                                '{"image": "https://ad-demo.vmfive.com/demos/showcase/2019Q3_ad_formats/resource/business/catalog/uniqlo_2019_expand02.png"},'+
-                                '{"image": "https://ad-demo.vmfive.com/demos/showcase/2019Q3_ad_formats/resource/business/catalog/uniqlo_2019_expand03.png"},'+
-                                '{"image": "https://ad-demo.vmfive.com/demos/showcase/2019Q3_ad_formats/resource/business/catalog/uniqlo_2019_expand04.png"}'+
-                                ']',
-                            }
+                function () {
+                    return {
+                        adformatName: 'BannerContainer',
+                        refName: 'BannerContainer',
+                        option: {
+                            el: '#vmfive-ad-unit-container-55667788',
+                            'request_id': '[request_id]',
+                            'text:banner_ratio': '32:15',
+                            enableClipPath: false,
+                            enableImpression: true
+                        },
+                        demoOption: {
+                            'cta:default': 'https://adison.com.tw/',
                         }
-                    },
-                ],
-                OnBaseAdUnitPrepared: [
-                    function (self) {
-                        return {
-                            componentName: 'CloseButton',
-                            refName: 'CloseButton',
-                            option: {
-                                el: self.refs['vmfiveAdUnitContainer'].adContainerView,
-                                enableExpand: true,
-                                'cta:default': `https://adison.com.tw/`,
-                            },
-                            demoOption: {
-                                'text:close_button_horizontal_alignment': 'right',
-                                'text:beautify_percent': '80'
-                            }
+                    };
+                }
+            ],
+            OnBaseAdUnitPrepared: [
+                function (self) {
+                    return {
+                        componentName: 'ConveyorDoubleSlide',
+                        refName: 'ConveyorDoubleSlide',
+                        option: {
+                            el: self.refs['BannerContainer'].adContainerView,
+                            'request_id': '[request_id]',
+                            'image:background': ``,
+                            'text:base_move_duration': `1500`,
+                            'text:enter_from': `left`,
+                            'text:slide_from': `right`,
+
+                            'cta:default': `https://adison.com.tw/`,
+                            'text:right_slide_from': `right`,
+                            'text:left_slide_from': `left`,
+
+                            rightProducts:
+                                '[' +
+                                '{"intro": "https://ad-demo.vmfive.com/demos/showcase/20191119_narciso/conveyor_no/narciso_conveyor_r1.png"},' +
+                                '{"intro": "https://ad-demo.vmfive.com/demos/showcase/20191119_narciso/conveyor_no/narciso_conveyor_r2.png"},' +
+                                '{"intro": "https://ad-demo.vmfive.com/demos/showcase/20191119_narciso/conveyor_no/narciso_conveyor_r4.png"},' +
+                                '{"intro": "https://ad-demo.vmfive.com/demos/showcase/20191119_narciso/conveyor_no/narciso_conveyor_r3.png"},' +
+                                '{}]',
+                            leftProducts:
+                                '[' +
+                                '{"intro": "https://ad-demo.vmfive.com/demos/showcase/20191119_narciso/conveyor_no/narciso_conveyor_l1.png"},' +
+                                '{"intro": "https://ad-demo.vmfive.com/demos/showcase/20191119_narciso/conveyor_no/narciso_conveyor_l2.png"},' +
+                                '{"intro": "https://ad-demo.vmfive.com/demos/showcase/20191119_narciso/conveyor_no/narciso_conveyor_l3.png"},' +
+                                '{"intro": "https://ad-demo.vmfive.com/demos/showcase/20191119_narciso/conveyor_no/narciso_conveyor_l4.png"},' +
+                                '{}]',
                         }
-                    },
-                    function (self) {
-                        return {
-                            componentName: 'CloseButton',
-                            refName: 'CloseButtonCatalog',
-                            option: {
-                                el: self.refs['Catalog'].overlayView,
-                                'request_id': '[request_id]-expand',
-                                'cta:default': `https://adison.com.tw/`,
-                                onExpandHelperClose: [
-                                    function (comp) {
-                                        self.refs['ExpandHelper'].expandedVisible('hide');
-                                        self.refs['ExpandHelper'].originalVisible('show');
-                                    }
-                                ],
-                            },
-                            demoOption: {
-                                'text:close_button_horizontal_alignment': 'right',
-                                'text:beautify_percent': '80',
-                            }
-                        }
-                    },
-                    function(self) {
-                        self.refs['CloseButtonCatalog'].closeBeautify.style.zIndex = '99';
-                    },
-                    function (self) {
-                        return {
-                            componentName: 'ExpandHelper',
-                            refName: 'ExpandHelper',
-                            option: {
-                                'track_url': '[track_url]',
-                                original: self.refs['vmfiveAdUnitContainer'],
-                                expanded: self.refs['Catalog'],
-                                showExpandButton: true,
-                                onprepared: [
-                                    function (comp) {
-                                        comp.expandedVisible('hide');
-                                        comp.originalVisible('show');
-                                    }
-                                ]
-                            },
-                            demoOption: {
-                                'text:expand_button_horizontal_alignment': '',
-                            }
-                        }
-                    },
-                    function (self) {
-                        self.refs['vmfiveAdUnitContainer'].config.onctaclicked = [
-                            function () {
-                                self.refs['ExpandHelper'].expandedVisible('show');
-                                self.refs['ExpandHelper'].originalVisible('hide');
-                                self.refs['Catalog'].startTurnPeel();
-                            }
-                        ];
-                        self.refs['vmfiveAdUnitContainer'].config.onPanMoveUp = [
-                            function () {
-                                self.refs['ExpandHelper'].expandedVisible('show');
-                                self.refs['ExpandHelper'].originalVisible('hide');
-                                self.refs['Catalog'].startTurnPeel();
-                            }
-                        ];
-                        self.refs['ExpandHelper'].config.onctaclicked = [
-                            function () {
-                                self.refs['Catalog'].startTurnPeel();
-                            }
-                        ];
                     }
-                ]
+                },
+                function (self) {
+                    return {
+                        componentName: 'CloseButton',
+                        refName: 'CloseButton',
+                        option: {
+                            el: self.refs['BannerContainer'].adContainerView,
+                            'request_id': '[request_id]',
+                            'track_url': '[track_url]',
+
+                            'text:cta_in_new_window': `[text:cta_in_new_window]`,
+                            'dfp_url': `[dfp_url]`,
+                            'cta_prefix_url': `[cta_prefix_url]`,
+                            'cta:default': `https://adison.com.tw/`,
+
+                            'text:embedded': '[text:embedded]',
+                            'text:show_close_mode': 'fadein',
+                            'text:close_button_horizontal_alignment': 'left',
+                        }
+                    }
+                }
+            ]
         });
     </script>
 </body>
