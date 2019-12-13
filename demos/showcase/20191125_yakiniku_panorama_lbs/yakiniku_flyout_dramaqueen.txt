@@ -1,0 +1,248 @@
+<div id="vmfive-ad-unit-container-[request_id]"></div>
+<script src='https://man.vm5apis.com/dist/anime.js/3.0.1/anime.min.js'></script>
+<script src='https://man.vm5apis.com/dist/odometer.js/0.4.8/odometer.min.js'></script>
+<script src='https://d2v4tz4zvhrua.cloudfront.net/production/dist/2019-11-13-1573636062648/adformats/BannerContainer.min.js'></script>
+<script src='https://d2v4tz4zvhrua.cloudfront.net/production/dist/2019-11-13-1573636062648/components/SwingSlider.min.js'></script>
+<script src='https://d2v4tz4zvhrua.cloudfront.net/production/dist/2019-11-13-1573636062648/components/DynamicLocation.min.js'></script>
+<script src='https://d2v4tz4zvhrua.cloudfront.net/production/dist/2019-11-13-1573636062648/components/CloseButton.min.js'></script>
+<script>
+    let sc = document.createElement("script");
+    sc.src = "https://d1v69ngg41pvl6.cloudfront.net/dist/MixPlayer.js";
+    sc.onload = function () {
+        let BannerContainerEl = new BannerContainer({
+            el: '#vmfive-ad-unit-container-[request_id]',
+            "request_id": '[request_id]',
+            "track_url": '[track_url]',
+            "downloaded_pixel": '[downloaded_pixel]',
+            "downloaded_impression_pixel": '[downloaded_impression_pixel]',
+            "text:cta_in_new_window": '[text:cta_in_new_window]',
+            "dfp_url": '[dfp_url]',
+            "cta_prefix_url": '[cta_prefix_url]',
+            "cta:default": '[cta:default]',
+            "text:banner_z_index": '[text:banner_z_index]',
+            "text:banner_top_offset": '[text:banner_top_offset]',
+            "text:banner_bottom_offset": '[text:banner_bottom_offset]',
+            "text:scale": '[text:scale]',
+            "text:expand_scale": '[text:expand_scale]',
+            "text:max_width": '[text:max_width]',
+            "text:embedded": '[text:embedded]',
+            "text:background_color": '[text:background_color]',
+            "text:logo_background_color": '[text:logo_background_color]',
+            "text:logo_horizontal_alignment": '[text:logo_horizontal_alignment]',
+            "text:logo_vertical_alignment": '[text:logo_vertical_alignment]',
+            enableClipPath: false,
+            enableLogo: true,
+            enableImpression: true, "text:banner_ratio": '[text:banner_ratio]',
+            videoBorderRadius: 0,
+            enableExpand: false,
+            disableCta: true,
+            onresize: [],
+            onprepared: [],
+            onctaclicked: [],
+            onexpanded: [],
+            oncloseexpanded: []
+        });
+        let vmfivemessage1 = encodeURIComponent("聖誕跨年去哪很苦惱？😫😫 🎁乾杯幫你準備最大包！🎉 12/10 起供應聖誕跨年雙人／三人套餐，多種美味肉品一起享受✌️ 🔶嚴選澳洲和牛 🔶西班牙伊比利豬 🔶多種海鮮 ❤️快揪朋友爽吃燒肉！嗨翻年末！");
+        let vmfivemessage2 = encodeURIComponent("更多資訊這裡看：");
+        let vmfivemessage3 = encodeURIComponent("乾杯分店這裡看：");
+        let vmfiveurl1 = encodeURIComponent("https://lihi1.com/naDW1/xmasnews");
+        let vmfiveurl2 = encodeURIComponent("https://lihi1.cc/eLu20/xmasbDS");
+        let vmfivelineURL = "line://msg/text/?" + vmfivemessage1 + '%0D%0A' + vmfivemessage2 + '%0D%0A' + vmfiveurl1 + '%0D%0A' + vmfivemessage3 + '%0D%0A' + vmfiveurl2;
+        
+        let SwingSliderEl = new SwingSlider({
+            el: BannerContainerEl.adContainerView,
+            "request_id": '[request_id]',
+            "dfp_url": '[dfp_url]',
+            "cta_prefix_url": '[cta_prefix_url]',
+            "cta:default": '[cta:default]',
+            "text:cta_in_new_window": '[text:cta_in_new_window]',
+            "image:left": '[image:left]',
+            "image:right": '[image:right]',
+            "cta:url_left": vmfivelineURL,
+            "cta:url_right": '[cta:url_right]',
+            "text:swing_banner_count": '[text:swing_banner_count]',
+            "text:swing_banner_magin": '[text:swing_banner_magin]',
+            "text:swing_img_ratio": '[text:swing_img_ratio]',
+            enableExpand: false,
+            manualCountBannerPostion: true,
+            onresize: [],
+            onprepared: [function (comp) { comp.swing.querySelectorAll('img').forEach(element => { element.style.cssText += 'height: ' + Math.ceil(comp.swing.querySelector('img').clientHeight) + 'px !important;'; }); }],
+            onctaclicked: []
+        });
+        let DynamicLocationEl = new DynamicLocation({
+            el: SwingSliderEl.swing,
+            "request_id": '[request_id]',
+            "track_url": '[track_url]',
+            'text:gps_list': `
+            '{"name":"乾杯本店", "address":"台北市松山區敦化南路一段236巷17號", "latitude":25.0406471, "longitude":121.5469919},'+
+            '{"name":"乾杯中山店", "address":"台北市中山區南京西路25巷2-1號", "latitude":25.0531395, "longitude":121.5202352},'+
+            '{"name":"乾杯敦南店", "address":"台北市松山區敦化南路一段169巷5號", "latitude":25.0432966, "longitude":121.5495413},'+
+            '{"name":"乾杯信義ATT店", "address":"台北市信義區松壽路12號3樓", "latitude":25.03531, "longitude":121.5660665},'+
+            '{"name":"乾杯南港中信店", "address":"台北市南港區經貿二路186-1號2樓", "latitude":25.0585864, "longitude":121.6148449},'+
+            '{"name":"乾杯林口店", "address":"新北市林口區文化三路一段356號2樓", "latitude":25.0707347, "longitude":121.3639607},'+
+            '{"name":"乾杯板橋站", "address":"新北市板橋區縣民大道二段7號2樓", "latitude":25.0144361, "longitude":121.4638619},'+
+            '{"name":"乾杯台北總店", "address":"台北市中正區北平西路3號2樓", "latitude":25.047702, "longitude":121.5173735},'+
+            '{"name":"乾杯安和店", "address":"台北市大安區仁愛路四段345巷4弄45號", "latitude":25.0390576, "longitude":121.5511692},'+
+            '{"name":"桃園大江店", "address":"桃園市中壢區中園路二段501號B1F", "latitude":25.0015283, "longitude":121.2284747},'+
+            '{"name":"新竹晶品城店", "address":"新竹市東區林森路18號13樓", "latitude":24.8021098, "longitude":120.9704184},'+
+            '{"name":"新竹巨城店", "address":"新竹市中央路229號7樓", "latitude":24.8094861, "longitude":120.974721},'+
+            '{"name":"台中中港店", "address":"台中市西屯區台灣大道三段301號13樓", "latitude":24.1647673, "longitude":120.6434748},'+
+            '{"name":"台南安平店", "address":"台南市中西區中華西路二段16號1、2樓", "latitude":22.9884322, "longitude":120.1871107},'+
+            '{"name":"台南成功店", "address":"台南市前鋒路210號B1F", "latitude":22.9962855, "longitude":120.2143075},'+
+            '{"name":"高雄五福店", "address":"高雄市新興區五福二路262號1、2樓", "latitude":22.6235473, "longitude":120.3014068},'+
+            `,
+            'text:location_click_hint': '尋找最近的乾杯',
+            'text:location_prefix': '距離最近乾杯約',
+            'text:location_suffix': '公里',
+            'text:search_keyword': '乾杯',
+
+            "text:link_gotomap_cta": '[text:link_gotomap_cta]',
+            "text:top_percentage": '[text:top_percentage]',
+            "text:bottom_percentage": '[text:bottom_percentage]',
+            "text:left_percentage": '[text:left_percentage]',
+            "text:right_percentage": '[text:right_percentage]',
+
+            'text:default_font_size_ratio': '1',
+            'text:default_font_color': '',
+            'text:number_font_size_ratio': '',
+            'text:number_font_color': '',
+
+            "text:external_gps_list": '[text:external_gps_list]',
+            "dfp_url": '[dfp_url]',
+            "cta_prefix_url": '[cta_prefix_url]',
+            ctaMode: 'default',
+            disableCta: false,
+            onprepared: []
+        });
+        DynamicLocationEl.rootView.querySelector(`#vmfive-ad-unit-dynamic-button-${DynamicLocationEl.config.request_id}`).style.bottom = '0'; DynamicLocationEl.rootView.querySelector(`#vmfive-ad-unit-dynamic-button-${DynamicLocationEl.config.request_id}`).style.top = 'initial'; DynamicLocationEl.rootView.querySelector(`#vmfive-ad-unit-dynamic-button-${DynamicLocationEl.config.request_id}`).style.left = 'initial'; DynamicLocationEl.rootView.querySelector(`#vmfive-ad-unit-dynamic-button-${DynamicLocationEl.config.request_id}`).style.right = '-200%'; DynamicLocationEl.rootView.querySelector(`#vmfive-ad-unit-dynamic-button-${DynamicLocationEl.config.request_id}`).style.height = '24%'; DynamicLocationEl.rootView.querySelector(`#vmfive-ad-unit-dynamic-loading-${DynamicLocationEl.config.request_id}`).style.bottom = '0'; DynamicLocationEl.rootView.querySelector(`#vmfive-ad-unit-dynamic-loading-${DynamicLocationEl.config.request_id}`).style.top = 'initial'; DynamicLocationEl.rootView.querySelector(`#vmfive-ad-unit-dynamic-loading-${DynamicLocationEl.config.request_id}`).style.left = 'initial'; DynamicLocationEl.rootView.querySelector(`#vmfive-ad-unit-dynamic-loading-${DynamicLocationEl.config.request_id}`).style.right = '-200%'; DynamicLocationEl.rootView.querySelector(`#vmfive-ad-unit-dynamic-loading-${DynamicLocationEl.config.request_id}`).style.height = '24%'; DynamicLocationEl.rootView.querySelector(`#vmfive-ad-unit-dynamic-result-${DynamicLocationEl.config.request_id}`).style.bottom = '0'; DynamicLocationEl.rootView.querySelector(`#vmfive-ad-unit-dynamic-result-${DynamicLocationEl.config.request_id}`).style.top = 'initial'; DynamicLocationEl.rootView.querySelector(`#vmfive-ad-unit-dynamic-result-${DynamicLocationEl.config.request_id}`).style.left = 'initial'; DynamicLocationEl.rootView.querySelector(`#vmfive-ad-unit-dynamic-result-${DynamicLocationEl.config.request_id}`).style.right = '-200%'; DynamicLocationEl.rootView.querySelector(`#vmfive-ad-unit-dynamic-result-${DynamicLocationEl.config.request_id}`).style.height = '24%';
+        let CloseButtonEl = new CloseButton({
+            el: BannerContainerEl.adContainerView,
+            "request_id": '[request_id]',
+            "track_url": '[track_url]',
+            "text:cta_in_new_window": '[text:cta_in_new_window]',
+            "dfp_url": '[dfp_url]',
+            "cta_prefix_url": '[cta_prefix_url]',
+            "cta:default": '[cta:default]',
+            "text:embedded": '[text:embedded]',
+            "text:show_close_mode": '[text:show_close_mode]',
+            "text:close_button_horizontal_alignment": '[text:close_button_horizontal_alignment]',
+            "text:beautify_percent": '[text:beautify_percent]',
+            "text:close_out_container": '[text:close_out_container]',
+            closeMode: 'fate',
+            closeModeSecond: 6000,
+            enableExpand: false,
+            disableCta: false,
+            onctaclicked: [],
+            onExpandHelperClose: [],
+            oncloseexpanded: [],
+            onclosed: []
+        });
+        BannerContainerEl.overlayView.style.display = "none";
+        BannerContainerEl.overlayView.style.transform = "translateY(100%)";
+        let flyoutImageUrl = '[image:flyout_image_1]';
+        let flyoutImage2Url = '[image:flyout_image_2]';
+        function loadImage(src) {
+            return new Promise((resolve, reject) => {
+                const img = new Image();
+                img.addEventListener("load", () => resolve(img));
+                img.addEventListener("error", err => reject(err));
+                img.src = src;
+            });
+        };
+        Promise.all([
+            loadImage(flyoutImageUrl),
+            loadImage(flyoutImage2Url)
+        ])
+            .then(function () {
+                let innerHteml = `
+                    <div id="anime-wrap-${BannerContainerEl.config.request_id}">
+                        <div class="TopImg">
+                            <img src="${flyoutImageUrl}">
+                        </div>
+                        <div class="DownImg">
+                            <img src="${flyoutImage2Url}">
+                        </div>
+                    </div>
+                    <style>
+                        #anime-wrap-${BannerContainerEl.config.request_id} {
+                            overflow: initial !important;
+                        }
+                        #anime-wrap-${BannerContainerEl.config.request_id} .TopImg,
+                        #anime-wrap-${BannerContainerEl.config.request_id} .DownImg {
+                            position: fixed;
+                            overflow: initial !important;
+                            display: none;
+                            width: 100%;
+                            left: 0;
+                            z-index: 3;
+                        }
+                        #anime-wrap-${BannerContainerEl.config.request_id} .TopImg {
+                            top: 0;
+                        }
+                        #anime-wrap-${BannerContainerEl.config.request_id} .DownImg {
+                            bottom: 0;
+                        }
+                        #anime-wrap-${BannerContainerEl.config.request_id} .TopImg img,
+                        #anime-wrap-${BannerContainerEl.config.request_id} .DownImg img { 
+                            width: 100%;
+                            top: 0;
+                            left: 0;
+                            position: absolute;
+                        }
+                        #anime-wrap-${BannerContainerEl.config.request_id} .TopImg img {
+                            top: 0;
+                        }
+                        #anime-wrap-${BannerContainerEl.config.request_id} .DownImg img {  
+                            bottom: 0;
+                        }
+                    </style>
+                `;
+                BannerContainerEl.rootView.insertAdjacentHTML('beforeend', innerHteml);
+                let animeWrap = BannerContainerEl.rootView.querySelector('#anime-wrap-' + BannerContainerEl.config.request_id);
+                let TopEL = BannerContainerEl.rootView.querySelector('#anime-wrap-' + BannerContainerEl.config.request_id + ' .TopImg');
+                let TopImgEL = BannerContainerEl.rootView.querySelector('#anime-wrap-' + BannerContainerEl.config.request_id + ' .TopImg img');
+                let DownEL = BannerContainerEl.rootView.querySelector('#anime-wrap-' + BannerContainerEl.config.request_id + ' .DownImg');
+                let DownImgEL = BannerContainerEl.rootView.querySelector('#anime-wrap-' + BannerContainerEl.config.request_id + ' .DownImg img');
+
+                BannerContainerEl.overlayView.style.display = "block";
+                setTimeout(function () {
+                    TopEL.style.display = "inline-block";
+                    DownEL.style.display = "inline-block";
+                    const DownHeight = DownImgEL.offsetHeight;
+                    anime({
+                        targets: TopImgEL,
+                        translateY: [
+                            { value: '-100vh', duration: 0 },
+                            { value: '100vh', duration: 2800 },
+                        ],
+                        easing: 'linear'
+                    });
+                    anime({
+                        targets: DownImgEL,
+                        translateY: [
+                            { value: '0', duration: 0, delay: 2800 },
+                            { value: -DownHeight + `px`, duration: 600 },
+                            { value: -DownHeight + `px`, duration: 1000 },
+                            { value: '0', duration: 600 },
+                        ],
+                        easing: 'linear'
+                    });
+                    anime({
+                        targets: BannerContainerEl.overlayView,
+                        translateY: [
+                            { value: '100%', duration: 0, delay: 4800 },
+                            { value: '0', duration: 300 },
+                        ],
+                        easing: 'linear',
+                        complete: function () {
+                            animeWrap.style.display = "none";
+                            SwingSliderEl.startCountBannerPostion();
+                        }
+                    });
+                }, 200)
+
+            })
+            .catch(function (err) { });
+    };
+    document.body.appendChild(sc);
+</script>

@@ -1,0 +1,132 @@
+2019.11.28
+
+Type @ to insert
+
+Description
+
+* Conveyor 變體版，Slide左右進場。
+* Impression 參照 Conveyor，不能個別紀錄。
+
+Templates
+
+* *General*
+    * *Brochure*
+        * Code
+            * 
+        * Parameters
+            * Text ( text:right_slide_from )
+                * 右邊 slide 從哪個方向進入，預設為 bottom，可填 left / top / right / bottom。
+            * Text ( left_slide_from )
+                * 左邊 slide 從哪個方向進入，預設為 bottom，可填 left / top / right / bottom。
+            * *medias* 
+                * 如果想放複數個，就自行增加左右及數字。
+                * 素材數量類推
+                * '{"intro":"[image:right_intro_1]"},'+
+                * '{"intro":"[image:right_intro_2]"},'+
+                * 左邊 slide
+                * '{"intro":"[image:left_intro_2]"},'+
+* *Special Case*
+    * 
+
+Codes
+
+* *General*
+    * *ConveyorDoubleSlide*
+
+<div id="vmfive-ad-unit-container-[request_id]"></div>
+<script src='https://man.vm5apis.com/dist/anime.js/3.0.1/anime.min.js'></script>
+<script src='https://man.vm5apis.com/dist/raf.js'></script>
+<script src='https://d2v4tz4zvhrua.cloudfront.net/production/dist/2019-10-14-1571044011291/adformats/BannerContainer.min.js'></script>
+<script src='https://d2v4tz4zvhrua.cloudfront.net/production/dist/2019-10-14-1571044011291/components/ConveyorDoubleSlide.min.js'></script>
+<script src='https://d2v4tz4zvhrua.cloudfront.net/production/dist/2019-10-14-1571044011291/components/CloseButton.min.js'></script>
+<script>
+    let sc = document.createElement("script");
+    sc.src = "https://d1v69ngg41pvl6.cloudfront.net/dist/MixPlayer.js";
+    sc.onload = function () {
+        let BannerContainerEl = new BannerContainer({
+            el: '#vmfive-ad-unit-container-[request_id]',
+            "request_id": '[request_id]',
+            "track_url": '[track_url]',
+            "downloaded_pixel": '[downloaded_pixel]',
+            "downloaded_impression_pixel": '[downloaded_impression_pixel]',
+            "text:cta_in_new_window": '[text:cta_in_new_window]',
+            "dfp_url": '[dfp_url]',
+            "cta_prefix_url": '[cta_prefix_url]',
+            "cta:default": '[cta:default]',
+            "text:banner_z_index": '[text:banner_z_index]',
+            "text:banner_top_offset": '[text:banner_top_offset]',
+            "text:banner_bottom_offset": '[text:banner_bottom_offset]',
+            "text:scale": '[text:scale]',
+            "text:expand_scale": '[text:expand_scale]',
+            "text:max_width": '[text:max_width]',
+            "text:embedded": '[text:embedded]',
+            "text:background_color": '[text:background_color]',
+            "text:logo_background_color": '[text:logo_background_color]',
+            "text:logo_horizontal_alignment": '[text:logo_horizontal_alignment]',
+            "text:logo_vertical_alignment": '[text:logo_vertical_alignment]',
+            enableClipPath: false,
+            enableLogo: true,
+            enableImpression: true, "text:banner_ratio": '32:15',
+            videoBorderRadius: 0,
+            enableExpand: false,
+            disableCta: false,
+            onresize: [],
+            onprepared: [],
+            onctaclicked: [],
+            onexpanded: [],
+            oncloseexpanded: []
+        });
+        let ConveyorDoubleSlideEl = new ConveyorDoubleSlide({
+            el: BannerContainerEl.adContainerView,
+            "request_id": '[request_id]',
+            "image:background": "[image:background]", "text:base_move_duration": '[text:base_move_duration]',
+            "text:right_slide_from": '[text:right_slide_from]',
+            "text:left_slide_from": '[text:left_slide_from]',
+            "cta:default": '[cta:default]',
+            rightProducts: 
+            '[' +
+            '{"intro":"[image:right_intro_1]"},'+
+            '{"intro":"[image:right_intro_2]"},'+
+            '{"intro":"[image:right_intro_3]"},'+
+            '{"intro":"[image:right_intro_4]"},'+
+            '{}]',
+            leftProducts: 
+            '[' +
+            '{"intro":"[image:left_intro_1]"},'+
+            '{"intro":"[image:left_intro_2]"},'+
+            '{"intro":"[image:left_intro_3]"},'+
+            '{"intro":"[image:left_intro_4]"},'+
+            '{}]',
+            onresize: [],
+            onprepared: [],
+            onctaclicked: []
+        });
+        let CloseButtonEl = new CloseButton({
+            el: BannerContainerEl.adContainerView,
+            "request_id": '[request_id]',
+            "track_url": '[track_url]',
+            "text:cta_in_new_window": '[text:cta_in_new_window]',
+            "dfp_url": '[dfp_url]',
+            "cta_prefix_url": '[cta_prefix_url]',
+            "cta:default": '[cta:default]',
+            "text:embedded": '[text:embedded]',
+            "text:show_close_mode": 'fadein',
+            "text:close_button_horizontal_alignment": '[text:close_button_horizontal_alignmen]',
+            "text:beautify_percent": '[text:beautify_percent]',
+            "text:close_out_container": '[text:close_out_container]',
+            closeMode: 'fate',
+            closeModeSecond: 6000,
+            enableExpand: false,
+            disableCta: false,
+            onctaclicked: [],
+            onExpandHelperClose: [],
+            oncloseexpanded: [],
+            onclosed: []
+        });
+    };
+    document.body.appendChild(sc);
+</script>
+
+* *Special Case*
+    * 
+
