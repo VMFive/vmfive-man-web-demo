@@ -251,7 +251,7 @@
             </p>
 
             <div id="vmfive-ad-unit-container-55667788"></div>
-            <img src="https://ad-demo.vmfive.com/demos/showcase/20191127_chacha_newyear_conveyor/resources/chacha_flyout_sprite_56cut_3s-min.png" style="display:none;">
+            <img src="https://ad-demo.vmfive.com/demos/showcase/20191127_chacha_newyear_conveyor/resources/chacha_57cuts_2.5s.png" style="display:none;">
 
             <h3>業界最多原創廣告格式 讓創意深入人心大獲品牌與媒體青睞</h3>
             <p>目前有眾多的數位廣告在一昧追求載入速度下犧牲了廣告素材的展示品質，ADisON為提供高品質的廣告內容，自2014年開始使用Google Cloud
@@ -320,11 +320,11 @@
                         option: {
                             el: '#vmfive-ad-unit-container-55667788',
                             'request_id': '[request_id]',
-                            'text:banner_ratio': '32:15',
                             enableClipPath: false,
                             enableImpression: true
                         },
                         demoOption: {
+                            'text:banner_ratio': '32:15',
                             'cta:default': 'https://adison.com.tw/',
                         }
                     };
@@ -339,14 +339,14 @@
                             el: self.refs['BannerContainer'].adContainerView,
                             'request_id': '[request_id]',
                             'image:background': ``,
-                            'text:base_move_duration': `1500`,
                             'text:enter_from': `left`,
                             'text:slide_from': `right`,
-
-                            'cta:default': `https://adison.com.tw/`,
                             'text:right_slide_from': `right`,
                             'text:left_slide_from': `left`,
-
+                        },
+                        demoOption: {
+                            'text:base_move_duration': `1500`,
+                            'cta:default': `https://adison.com.tw/`,
                             rightProducts:
                                 '[' +
                                 '{"intro": "https://ad-demo.vmfive.com/demos/showcase/20191127_chacha_newyear_conveyor/resources/chachanewyear_conveyor_01_right.gif"},' +
@@ -357,9 +357,9 @@
                             leftProducts:
                                 '[' +
                                 '{"intro": "https://ad-demo.vmfive.com/demos/showcase/20191127_chacha_newyear_conveyor/resources/chachanewyear_conveyor_01_left.gif"},' +
-                                '{"intro": "https://ad-demo.vmfive.com/demos/showcase/20191127_chacha_newyear_conveyor/resources/chachanewyear_conveyor_02_left.png"},' +
-                                '{"intro": "https://ad-demo.vmfive.com/demos/showcase/20191127_chacha_newyear_conveyor/resources/chachanewyear_conveyor_03_left.png"},' +
-                                '{"intro": "https://ad-demo.vmfive.com/demos/showcase/20191127_chacha_newyear_conveyor/resources/chachanewyear_conveyor_04_left.png"},' +
+                                '{"intro": "https://ad-demo.vmfive.com/demos/showcase/20191127_chacha_newyear_conveyor/resources/chachanewyear_conveyor_02_left.gif"},' +
+                                '{"intro": "https://ad-demo.vmfive.com/demos/showcase/20191127_chacha_newyear_conveyor/resources/chachanewyear_conveyor_03_left.gif"},' +
+                                '{"intro": "https://ad-demo.vmfive.com/demos/showcase/20191127_chacha_newyear_conveyor/resources/chachanewyear_conveyor_04_left.gif"},' +
                                 '{}]',
                         }
                     }
@@ -372,7 +372,8 @@
                             el: self.refs['BannerContainer'].adContainerView,
                             'request_id': '[request_id]',
                             'track_url': '[track_url]',
-
+                        },
+                        demoOption: {
                             'text:cta_in_new_window': `[text:cta_in_new_window]`,
                             'dfp_url': `[dfp_url]`,
                             'cta_prefix_url': `[cta_prefix_url]`,
@@ -386,9 +387,9 @@
                 },
                 function (self) {
                     //===== Config =====
-                    let SpriteSheetUrl = `https://ad-demo.vmfive.com/demos/showcase/20191127_chacha_newyear_conveyor/resources/chacha_flyout_sprite_56cut_3s-min.png`;
-                    let TotalFrame = 56;
-                    let TotalAnimationDuring = 3;
+                    let SpriteSheetUrl = `https://ad-demo.vmfive.com/demos/showcase/20191127_chacha_newyear_conveyor/resources/chacha_57cuts_2.5s.png`;
+                    let TotalFrame = 57;
+                    let TotalAnimationDuring = 2.5;
                     let SpriteSheetWidth = 480;
                     let SpriteSheetHeight = 854;
                     //==================
