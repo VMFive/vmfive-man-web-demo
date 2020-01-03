@@ -251,7 +251,7 @@
             </p>
 
             <div id="vmfive-ad-unit-container-55667788"></div>
-            <img src="https://ad-demo.vmfive.com/demos/showcase/20191104_integrate/resource/integrate_frozen_flyout_snow.png"
+            <img src="https://ad-demo.vmfive.com/demos/showcase/20191205_spies_in_disguise/spies_in_disguise_flyout/spies_in_disguise_flyout_49c_3s.png"
                 style="display:none;">
 
             <h3>業界最多原創廣告格式 讓創意深入人心大獲品牌與媒體青睞</h3>
@@ -326,7 +326,7 @@
                             enableImpression: false
                         },
                         demoOption: {
-                            'cta:default': 'https://adison.com.tw/landing/',
+                            'cta:default': 'https://www.youtube.com/watch?v=NGUaD8UM69M',
                         }
                     };
                 }
@@ -339,12 +339,12 @@
                         option: {
                             el: self.refs['BannerContainer'].adContainerView,
                             'request_id': self.refs['BannerContainer'].config['request_id'],
-                            'image:background': `https://ad-demo.vmfive.com/demos/showcase/20191205_spies_in_disguise/spies_in_disguise_flyout/spies_in_disguise_conveyor_bg.png`,
+                            'image:background': `https://ad-demo.vmfive.com/demos/showcase/20191205_spies_in_disguise/spies_in_disguise_flyout/spies_in_disguiseconveyor_bg.png`,
                             'text:base_move_duration': `1500`,
                             'text:enter_from': `left`,
                             'text:slide_from': `bottom`,
 
-                            'cta:default': `https://adison.com.tw/landing/`,
+                            'cta:default': `https://www.youtube.com/watch?v=NGUaD8UM69M`,
                             showSlideShow: false,
                             position: {
                                 fore: {
@@ -399,7 +399,7 @@
                         el: self.refs['Conveyor'].slideshowView,
                         'request_id': self.refs['BannerContainer'].config['request_id'],
                         'track_url': self.refs['BannerContainer'].config['track_url'],
-                        'video:video1:mp4': 'https://ad-demo.vmfive.com/demos/showcase/20191203_movie/resource/cut.mp4',
+                        'video:video1:mp4': 'https://ad-demo.vmfive.com/demos/showcase/20191205_spies_in_disguise/spies_in_disguise_flyout/spiesindisguise.mp4',
                         'video:video1:m3u8': '',
                         'image:cover': '',
                         'text:3rd_party_track_url': '',
@@ -430,7 +430,7 @@
                             'text:cta_in_new_window': `[text:cta_in_new_window]`,
                             'dfp_url': `[dfp_url]`,
                             'cta_prefix_url': `[cta_prefix_url]`,
-                            'cta:default': `https://adison.com.tw/landing/`,
+                            'cta:default': `https://www.youtube.com/watch?v=NGUaD8UM69M`,
 
                             'text:embedded': '[text:embedded]',
                             'text:show_close_mode': 'fadein',
@@ -440,8 +440,8 @@
                 },
                 function (self) {
                     //===== Config =====
-                    let SpriteSheetUrl = `https://ad-demo.vmfive.com/demos/showcase/20191205_spies_in_disguise/spies_in_disguise_flyout/spies_in_disguise_flyout_58cut.png`;
-                    let TotalFrame = 58;
+                    let SpriteSheetUrl = `https://ad-demo.vmfive.com/demos/showcase/20191205_spies_in_disguise/spies_in_disguise_flyout/spies_in_disguise_flyout_49c_3s.png`;
+                    let TotalFrame = 49;
                     let TotalAnimationDuring = 3;
                     let SpriteSheetWidth = 480;
                     let SpriteSheetHeight = 854;
@@ -504,13 +504,15 @@
 
                             // Add Classlist make animation start
                             setTimeout(function () {
+                            let triggeredFunc = function (event) {
+                                window.removeEventListener('scroll', triggeredFunc);
                                 monsterEL.style.display = 'block';
                                 monsterEL.classList.add('vmfive-play');
 
                                 anime({
                                     targets: vmfiveAdUnitContainer.overlayView,
                                     opacity: [
-                                        { value: '0', duration: 0, delay: TotalAnimationDuring * 1000 + 1000 },
+                                        { value: '0', duration: 0, delay: TotalAnimationDuring * 1000 + 100 },
                                         { value: '1', duration: 30 },
                                     ],
                                     easing: 'linear',
@@ -518,6 +520,8 @@
                                         animeWrap.style.display = "none";
                                     }
                                 });
+                            }
+                            window.addEventListener('scroll', triggeredFunc, false);
                             }, 500)
                         })
                         .catch(function (err) { });

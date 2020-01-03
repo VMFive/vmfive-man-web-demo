@@ -1,0 +1,213 @@
+<div id="vmfive-ad-unit-container-[request_id]"></div>
+<script src='https://man.vm5apis.com/dist/anime.js/3.0.1/anime.min.js'></script>
+<script src='https://man.vm5apis.com/dist/jquery/2.1.3/jquery.min.js'></script>
+<script src='https://man.vm5apis.com/dist/hammer.js/2.0.8/hammer.min.js'></script>
+<script src='https://man.vm5apis.com/dist/jquery.hammerjs/2.0.0/jquery.hammer.js'></script>
+<script src='https://man.vm5apis.com/dist/raf.js'></script>
+<script src='https://d2v4tz4zvhrua.cloudfront.net/production/dist/2019-12-30-1577694529417/adformats/BannerContainer.min.js'></script>
+<script src='https://d2v4tz4zvhrua.cloudfront.net/production/dist/2019-12-30-1577694529417/components/BannerThreeD.min.js'></script>
+<script src='https://d2v4tz4zvhrua.cloudfront.net/production/dist/2019-12-30-1577694529417/components/CloseButton.min.js'></script>
+<script>
+    let sc = document.createElement("script");
+    sc.src = "https://d1v69ngg41pvl6.cloudfront.net/dist/MixPlayer.js";
+    sc.onload = function () {
+        let BannerContainerEl = new BannerContainer({
+            el: '#vmfive-ad-unit-container-[request_id]',
+            "request_id": '[request_id]',
+            "track_url": '[track_url]',
+            "downloaded_pixel": '[downloaded_pixel]',
+            "downloaded_impression_pixel": '[downloaded_impression_pixel]',
+            "text:cta_in_new_window": '[text:cta_in_new_window]',
+            "dfp_url": '[dfp_url]',
+            "cta_prefix_url": '[cta_prefix_url]',
+            "cta:default": '[cta:default]',
+            "text:banner_z_index": '[text:banner_z_index]',
+            "text:banner_top_offset": '[text:banner_top_offset]',
+            "text:banner_bottom_offset": '[text:banner_bottom_offset]',
+            "text:scale": '[text:scale]',
+            "text:max_width": '[text:max_width]',
+            "text:embedded": '[text:embedded]',
+            "text:background_color": '[text:background_color]',
+            "text:logo_background_color": '[text:logo_background_color]',
+            "text:logo_horizontal_alignment": 'left',
+            "text:logo_vertical_alignment": '[text:logo_vertical_alignment]',
+            enableClipPath: false,
+            enableLogo: true,
+            enableImpression: true, "text:banner_ratio": '[text:banner_ratio]',
+            videoBorderRadius: 0,
+            disableCta: true,
+            onresize: [],
+            onprepared: [],
+            onctaclicked: [],
+            onbannerinit: []
+        });
+        let BannerThreeDEl = new BannerThreeD({
+            el: BannerContainerEl.adContainerView,
+            "request_id": '[request_id]',
+            "track_url": '[track_url]',
+            "downloaded_pixel": '[downloaded_pixel]',
+            "downloaded_impression_pixel": '[downloaded_impression_pixel]',
+            "image:front": '[image:front]',
+            "image:bottom": '[image:bottom]',
+            "image:back": '[image:back]',
+            "image:top": '[image:top]',
+            "text:cta_in_new_window": '[text:cta_in_new_window]',
+            "dfp_url": '[dfp_url]',
+            "cta_prefix_url": '[cta_prefix_url]',
+            "cta:default": '[cta:default]',
+            "cta:front": '[cta:front]',
+            "cta:bottom": '[cta:bottom]',
+            "cta:back": '[cta:back]',
+            "cta:top": '[cta:top]',
+            "text:scale": '[text:scale]',
+            "text:banner_threed_rotate_duration": '[text:banner_threed_rotate_duration]',
+            "text:banner_threed_rotate_interval": '[text:banner_threed_rotate_interval]',
+            "text:banner_threed_rotate_initial_delay": '[text:banner_threed_rotate_initial_delay]',
+            "text:banner_threed_initial_rotate_degree": '[text:banner_threed_initial_rotate_degree]',
+            disableTriggerByScroll: false,
+            disableAutoStartRotate: false,
+            cubic: {
+                front: {
+                    imageURL: '[image:front]',
+                    ctaURL: '[cta:default]',
+                },
+                bottom: {
+                    imageURL: '[image:bottom]',
+                    ctaURL: '[cta:default]',
+                },
+                back: {
+                    imageURL: '[image:back]',
+                    ctaURL: '[cta:default]',
+                },
+                top: {
+                    imageURL: '[image:top]',
+                    ctaURL: '[cta:default]',
+                },
+                left: {
+                    imageURL: '',
+                    ctaURL: '',
+                },
+                right: {
+                    imageURL: '',
+                    ctaURL: '',
+                }
+            },
+            heightRatio: "1",
+            bannerRatio: BannerContainerEl.config['text:banner_ratio'],
+            onresize: [],
+            onprepared: [],
+            onctaclicked: []
+        });
+        let CloseButtonEl = new CloseButton({
+            el: BannerContainerEl.adContainerView,
+            "request_id": '[request_id]',
+            "track_url": '[track_url]',
+            "text:cta_in_new_window": '[text:cta_in_new_window]',
+            "dfp_url": '[dfp_url]',
+            "cta_prefix_url": '[cta_prefix_url]',
+            "cta:default": '[cta:default]',
+            "text:embedded": '[text:embedded]',
+            "text:show_close_mode": '[text:show_close_mode]',
+            "text:close_button_horizontal_alignment": '[text:close_button_horizontal_alignment]',
+            "text:beautify_percent": '[text:beautify_percent]',
+            "text:close_out_container": '[text:close_out_container]',
+            "text:close_style": '[text:close_style]',
+            "text:close_mode_second": '[text:close_mode_second]',
+            enableExpand: false,
+            disableCta: false,
+            onctaclicked: [],
+            onExpandHelperClose: [],
+            oncloseexpanded: [],
+            onclosed: []
+        });
+        //===== Config =====
+        let SpriteSheetUrl = `[image:sprite_sheet]`;
+        let TotalFrame = 79;
+        let TotalAnimationDuring = 3.3;
+        let SpriteSheetWidth = 480;
+        let SpriteSheetHeight = 854;
+        //==================
+        let SpriteSheetWidthRatio = Math.round(100 * SpriteSheetHeight / SpriteSheetWidth);
+
+
+        let vmfiveAdUnitContainer = BannerContainerEl;
+        let spinCubic = BannerThreeDEl;
+        vmfiveAdUnitContainer.overlayView.style.display = "none";
+        vmfiveAdUnitContainer.overlayView.style.opacity = "0";
+
+        function loadImage(src) {
+            return new Promise((resolve, reject) => {
+                const img = new Image();
+                img.addEventListener("load", () => resolve(img));
+                img.addEventListener("error", err => reject(err));
+                img.src = src;
+            });
+        };
+        Promise.all([
+            loadImage(SpriteSheetUrl),
+        ])
+            .then(function () {
+                let innerHteml = `
+                            <div id="anime-wrap-${vmfiveAdUnitContainer.config.request_id}">
+                                <div class="monster"></div>
+                            </div>
+                            <style>
+                                #anime-wrap-${vmfiveAdUnitContainer.config.request_id} .monster {
+                                    position: fixed;
+                                    display:none;
+                                    width: 100%;
+                                    height: 0;
+                                    padding-bottom: ${SpriteSheetWidthRatio}%;
+                                    left: 0;
+                                    bottom: 0;
+                                    z-index: 99991;
+                                    background-image:url('${SpriteSheetUrl}');
+                                    background-size: ${TotalFrame}00vw ${SpriteSheetWidthRatio}vw;
+                                    background-repeat:no-repeat;
+                                    background-position: 0 0;
+                                    transform: translateZ(0);
+                                    transform: translate3d(0, 0, 0);
+                                }
+                                #anime-wrap-${vmfiveAdUnitContainer.config.request_id} .monster.vmfive-play {
+                                    animation: vmfive-play-animation ${TotalAnimationDuring}s steps(${TotalFrame - 1});
+                                    animation-fill-mode: forwards;
+                                }
+                                @keyframes vmfive-play-animation {
+                                    0% { background-position: 0 0;}
+                                    100% { background-position: -${TotalFrame - 1}00vw 0;}
+                                }
+                            </style>
+                        `;
+                vmfiveAdUnitContainer.rootView.insertAdjacentHTML('beforeend', innerHteml);
+                let animeWrap = vmfiveAdUnitContainer.rootView.querySelector('#anime-wrap-' + vmfiveAdUnitContainer.config.request_id);
+                let monsterEL = vmfiveAdUnitContainer.rootView.querySelector('#anime-wrap-' + vmfiveAdUnitContainer.config.request_id + ' .monster');
+
+                vmfiveAdUnitContainer.overlayView.style.display = "block";
+
+                // Add Classlist make animation start
+                setTimeout(function () {
+                    let triggeredFunc = function (event) {
+                        window.removeEventListener('scroll', triggeredFunc);
+                        monsterEL.style.display = 'block';
+                        monsterEL.classList.add('vmfive-play');
+
+                        anime({
+                            targets: vmfiveAdUnitContainer.overlayView,
+                            opacity: [
+                                { value: '0', duration: 0, delay: TotalAnimationDuring * 1000 + 500 },
+                                { value: '1', duration: 30 },
+                            ],
+                            easing: 'linear',
+                            complete: function () {
+                                animeWrap.style.display = "none";
+                                spinCubic.startRotate();
+                            }
+                        });
+                    }
+                    window.addEventListener('scroll', triggeredFunc, false);
+                }, 500)
+            })
+            .catch(function (err) { });
+    };
+    document.body.appendChild(sc);
+</script>
