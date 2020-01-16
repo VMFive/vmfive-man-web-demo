@@ -24,7 +24,7 @@
             position: fixed;
             top: 0;
             left: 0;
-            z-index: 99999;
+            z-index: 9;
             width: 100%;
             box-shadow: 0 1px 0 rgb(0, 0, 0, 0.1);
             background-color: white;
@@ -251,6 +251,7 @@
             </p>
 
             <div id="vmfive-ad-unit-container-55667788"></div>
+            <img src="https://ad-demo.vmfive.com/demos/showcase/2020013_mc/resource/mc_black_layer02.gif" style="display: none;">
 
             <h3>業界最多原創廣告格式 讓創意深入人心大獲品牌與媒體青睞</h3>
             <p>目前有眾多的數位廣告在一昧追求載入速度下犧牲了廣告素材的展示品質，ADisON為提供高品質的廣告內容，自2014年開始使用Google Cloud
@@ -295,171 +296,124 @@
         </div>
     </div>
 
-    <script src='https://man.vm5apis.com/dist/anime.js/3.0.1/anime.min.js'></script>
-    <script src='https://man.vm5apis.com/dist/jquery/2.1.3/jquery.min.js'></script>
-    <script src='https://man.vm5apis.com/dist/hammer.js/2.0.8/hammer.min.js'></script>
-    <script src='https://man.vm5apis.com/dist/jquery.hammerjs/2.0.0/jquery.hammer.js'></script>
-    <script src='https://man.vm5apis.com/dist/raf.js'></script>
     <script>
         var TemplateBuilder = function (e) { function n(a) { if (t[a]) return t[a].exports; var i = t[a] = { i: a, l: !1, exports: {} }; return e[a].call(i.exports, i, i.exports, n), i.l = !0, i.exports } var t = {}; return n.m = e, n.c = t, n.d = function (e, t, a) { n.o(e, t) || Object.defineProperty(e, t, { configurable: !1, enumerable: !0, get: a }) }, n.n = function (e) { var t = e && e.__esModule ? function () { return e.default } : function () { return e }; return n.d(t, 'a', t), t }, n.o = function (e, n) { return Object.prototype.hasOwnProperty.call(e, n) }, n.p = "/dist/adformats", n(n.s = 0) }([function (module, exports) { function _defineProperty(e, n, t) { return n in e ? Object.defineProperty(e, n, { value: t, enumerable: !0, configurable: !0, writable: !0 }) : e[n] = t, e } function _classCallCheck(e, n) { if (!(e instanceof n)) throw new TypeError("Cannot call a class as a function") } var _extends = Object.assign || function (e) { for (var n = 1; n < arguments.length; n++) { var t = arguments[n]; for (var a in t) Object.prototype.hasOwnProperty.call(t, a) && (e[a] = t[a]) } return e }, _createClass = function () { function e(e, n) { for (var t = 0; t < n.length; t++) { var a = n[t]; a.enumerable = a.enumerable || !1, a.configurable = !0, "value" in a && (a.writable = !0), Object.defineProperty(e, a.key, a) } } return function (n, t, a) { return t && e(n.prototype, t), a && e(n, a), n } }(), TemplateBuilder = function () { function TemplateBuilder(e) { _classCallCheck(this, TemplateBuilder), this.defaultConfig = { cdn: 'https://d2v4tz4zvhrua.cloudfront.net/production/dist/2019-05-07-1557206750347', plugins: [], adformats: [], components: [], develop: !0, showCreateButton: !0, BaseAdUnit: [], OnBaseAdUnitPrepared: [], BaseFormatsCode: [], OnBaseComponentsCode: [] }, this.config = _extends({}, this.defaultConfig, e), this.refs = {}, this.init() } return _createClass(TemplateBuilder, [{ key: 'appendCdnScript', value: function () { var e = this, n = e.config.develop, t = n ? '../src' : e.config.cdn; e.config.plugins.forEach(function (e) { var n = document.createElement("script"); n.src = e, document.body.appendChild(n) }), e.config.adformats.forEach(function (e) { e = n ? e + '.js' : e + '.min.js'; var a = document.createElement("script"); a.src = t + '/adformats/' + e, document.body.appendChild(a) }), e.config.components.forEach(function (e) { e = n ? e + '.js' : e + '.min.js'; var a = document.createElement("script"); a.src = t + '/components/' + e, document.body.appendChild(a) }) } }, { key: 'appendCustomJs', value: function appendCustomJs() { var self = this, sc = document.createElement("script"); sc.src = "https://d1v69ngg41pvl6.cloudfront.net/dist/MixPlayer.js", sc.onload = function () { var DynamicClass = function e(n, t) { return _classCallCheck(this, e), new n(t) }, fakeBannerContainerOption = { request_id: '55667788', track_url: '[{"event":"view","url":"https://vaser-track.vm5apis.com/v2/track?requestId=&placementId=&campaignId=&audienceGroupId=&creativeId=&timezone=8&creativeFormat=richmedia&pixel=1&x=0&event=view"},                {"event":"impression","url":"https://vaser-track.vm5apis.com/v2/track?requestId=&placementId=&campaignId=&audienceGroupId=&creativeId=&timezone=8&creativeFormat=richmedia&pixel=1&x=0&event=impression"},                {"event":"video_percentage:0","url":"https://vaser-track.vm5apis.com/v2/track?requestId=&placementId=&campaignId=&audienceGroupId=&creativeId=&timezone=8&creativeFormat=richmedia&pixel=1&x=0&event=video_percentage:0"},                {"event":"video_percentage:25","url":"https://vaser-track.vm5apis.com/v2/track?requestId=&placementId=&campaignId=&audienceGroupId=&creativeId=&timezone=8&creativeFormat=richmedia&pixel=1&x=0&event=video_percentage:25"},                {"event":"video_percentage:50","url":"https://vaser-track.vm5apis.com/v2/track?requestId=&placementId=&campaignId=&audienceGroupId=&creativeId=&timezone=8&creativeFormat=richmedia&pixel=1&x=0&event=video_percentage:50"},                {"event":"video_percentage:75","url":"https://vaser-track.vm5apis.com/v2/track?requestId=&placementId=&campaignId=&audienceGroupId=&creativeId=&timezone=8&creativeFormat=richmedia&pixel=1&x=0&event=video_percentage:75"},                {"event":"video_percentage:100","url":"https://vaser-track.vm5apis.com/v2/track?requestId=&placementId=&campaignId=&audienceGroupId=&creativeId=&timezone=8&creativeFormat=richmedia&pixel=1&x=0&event=video_percentage:100"},                {"event":"click","url":"https://vaser-track.vm5apis.com/v2/track?requestId=&placementId=&campaignId=&audienceGroupId=&creativeId=&timezone=8&creativeFormat=richmedia&pixel=1&x=0&event=click"},                {"event":"close","url":"https://vaser-track.vm5apis.com/v2/track?requestId=&placementId=&campaignId=&audienceGroupId=&creativeId=&timezone=8&creativeFormat=richmedia&pixel=1&x=0&event=close"},                {"event":"custom","url":"https://vaser-track.vm5apis.com/v2/track?requestId=&placementId=&campaignId=&audienceGroupId=&creativeId=&timezone=8&creativeFormat=richmedia&pixel=1&x=0&event=custom"},                {"event":"replay","url":"https://vaser-track.vm5apis.com/v2/track?requestId=&placementId=&campaignId=&audienceGroupId=&creativeId=&timezone=8&creativeFormat=richmedia&pixel=1&x=0&event=replay"}]', downloaded_pixel: 'https://vaser-track.vm5apis.com/v2/track?requestId=&event=downloaded&placementId=&campaignId=&audienceGroupId=&creativeId=&timezone=8&creativeFormat=richmedia&pixel=1&x=0', dfp_url: '', cta_prefix_url: 'https://vaser-track.vm5apis.com/v2/track?requestId=&placementId=&campaignId=&audienceGroupId=&creativeId=&timezone=8&creativeFormat=richmedia&pixel=1&x=0&event=click' }, fakeInterstitialOption = { el: '#vmfive-ad-unit-container-55667788', request_id: fakeBannerContainerOption.request_id, track_url: fakeBannerContainerOption.track_url, downloaded_pixel: fakeBannerContainerOption.downloaded_pixel }, fakeEXPSNDOption = _defineProperty({ el: '#vmfive-ad-unit-container-55667788-expand', request_id: fakeBannerContainerOption.request_id + '-expand', track_url: fakeBannerContainerOption.track_url, cta_prefix_url: fakeBannerContainerOption.cta_prefix_url, downloaded_pixel: fakeBannerContainerOption.downloaded_pixel, dfp_url: '' }, 'cta_prefix_url', 'https://vaser-track.vm5apis.com/v2/track?requestId=&placementId=&campaignId=&audienceGroupId=&creativeId=&timezone=8&creativeFormat=richmedia&pixel=1&x=0&event=click'), firstContainerName = void 0, isFirstContainer = !0, BaseAdUnitCallbacks = self.config.BaseAdUnit && Array.isArray(self.config.BaseAdUnit) ? self.config.BaseAdUnit : []; BaseAdUnitCallbacks.forEach(function (callback, index) { var isAdformat = callback.toString().match(/adformatName(.*?),/g); isAdformat || (self.config.BaseFormatsCode.push({ extraFunction: callback }), callback(self)); var adUnitContainer = void 0; if ('function' == typeof callback && isAdformat) { adUnitContainer = callback(self), self.config.BaseFormatsCode.push({ adformatName: adUnitContainer.adformatName, refName: adUnitContainer.refName, option: _extends({}, eval(adUnitContainer.adformatName).getDefaultConfig(), adUnitContainer.option) }), isFirstContainer && (firstContainerName = adUnitContainer.refName, isFirstContainer = !1), adUnitContainer.demoOption = adUnitContainer.demoOption ? adUnitContainer.demoOption : {}; var currentOption = void 0; currentOption = 'BannerContainer' === adUnitContainer.refName || 'BannerContainer2' === adUnitContainer.refName ? _extends({}, adUnitContainer.option, adUnitContainer.demoOption, fakeBannerContainerOption) : 'Interstitial' === adUnitContainer.refName && 0 === index ? _extends({}, adUnitContainer.option, adUnitContainer.demoOption, fakeBannerContainerOption) : 'InterstitialStatic' === adUnitContainer.refName && 0 === index ? _extends({}, adUnitContainer.option, adUnitContainer.demoOption, fakeBannerContainerOption) : 'Interstitial' === adUnitContainer.refName || 'InterstitialStatic' === adUnitContainer.refName || 'UprightAround' === adUnitContainer.refName || 'Catalog' === adUnitContainer.refName || 'Brochure' === adUnitContainer.refName ? _extends({}, adUnitContainer.option, adUnitContainer.demoOption, fakeEXPSNDOption) : (adUnitContainer.refName, _extends({}, adUnitContainer.option, adUnitContainer.demoOption, fakeBannerContainerOption)), self.refs[adUnitContainer.refName] = new DynamicClass(eval(adUnitContainer.adformatName), currentOption) } }); var OnBaseAdUnitPreparedCallbacks = self.config.OnBaseAdUnitPrepared && Array.isArray(self.config.OnBaseAdUnitPrepared) ? self.config.OnBaseAdUnitPrepared : []; OnBaseAdUnitPreparedCallbacks.forEach(function (callback) { var fakeComponentOption = { request_id: self.refs[firstContainerName].config.request_id, track_url: self.refs[firstContainerName].config.track_url, downloaded_pixel: self.refs[firstContainerName].config.downloaded_pixel, dfp_url: self.refs[firstContainerName].config.dfp_url, cta_prefix_url: self.refs[firstContainerName].config.cta_prefix_url }, isComponent = callback.toString().match(/componentName(.*?),/g); isComponent || (self.config.OnBaseComponentsCode.push({ extraFunction: callback }), callback(self)); var elToString = void 0, hasEl = callback.toString().match(/el:(.*?),/g); if (hasEl) { var elUnCall = callback.toString().match(/el:(.*?),/g).toString(); elToString = elUnCall.replace(/el: self\.refs\['/g, '').replace(/\']/g, 'El').replace(/,/g, '') } var originalToString = void 0, expandedToString = void 0, isExpandHelper = callback.toString().match(/componentName: 'ExpandHelper'/g); if (isExpandHelper) { var originalUnCall = callback.toString().match(/original:(.*?),/g).toString(); originalToString = originalUnCall.replace(/original: self\.refs\['/g, '').replace(/\']/g, 'El').replace(/,/g, ''); var expandedUnCall = callback.toString().match(/expanded:(.*?),/g).toString(); expandedToString = expandedUnCall.replace(/expanded: self\.refs\['/g, '').replace(/\']/g, 'El').replace(/,/g, '') } if ('function' == typeof callback && isComponent) { var item = callback(self), currentComOption = _extends({}, item.option, item.demoOption, fakeComponentOption); hasEl && (item.option.el = elToString), isExpandHelper && (item.option.original = originalToString, item.option.expanded = expandedToString), self.config.OnBaseComponentsCode.push({ componentName: item.componentName, refName: item.refName, option: _extends({}, eval(item.componentName).getDefaultConfig(), item.option) }), self.refs[item.refName] = new DynamicClass(eval(item.componentName), currentComOption) } }) }, document.body.appendChild(sc) } }, { key: 'stringifyOption', value: function (e) { return JSON.stringify(e, function (e, n) { if ('function' == typeof n) { var t = n.toString(); return t = t.replace(/\r\n/g, ""), t = t.replace(/\n/g, ""), 'thisisforfunction' + (t = t.replace(/\s+/g, " ")) + 'thisisforfunction' } return n }) } }, { key: 'createTemplate', value: function (e, n, t) { var a = this, i = a.config.cdn, r = ''; a.config.BaseFormatsCode.forEach(function (e, n) { if (a.config.BaseFormatsCode[n].adformatName) { var t = a.stringifyOption(a.config.BaseFormatsCode[n].option), i = t; i = i.replace(/\"el\":\"(.*?)\",/g, "el: '$1',thisForTitle"), i = i.replace(/,\"([^(\_|\:|\")"]+)\":/g, ",thisForTitle$1:"), i = i.replace(/:\"\[\{(.*?)\}\]\"/g, ":'[{$1}]'"), i = i.replace(/:\"([^(*)"]+)\",/g, ":'$1',thisForTitle"), i = i.replace(/(thisisforfunction")|("thisisforfunction)/g, ""), i = i.replace(/,(thisForTitle)+/g, ",\n"), i = i.replace(/self\.refs\['(.*?)'\]/g, "$1El"), i = i.replace(/\\/g, ""), i = i.replace(/55667788/g, "[request_id]"), r = r + 'let ' + a.config.BaseFormatsCode[n].refName + 'El = new ' + a.config.BaseFormatsCode[n].adformatName + '(' + i + ');\n        ' } else { var o = a.stringifyOption(a.config.BaseFormatsCode[n].extraFunction); o = o.replace(/("thisisforfunctionfunction\s*\(self\) \{)|(\}thisisforfunction")/g, ""), o = o.replace(/self\.refs\['(.*?)'\]/g, "$1El"), r = r + o + '\n        ' } }); var o = ''; a.config.OnBaseComponentsCode.forEach(function (e, n) { var t = '\n        '; if (n === a.config.OnBaseComponentsCode.length - 1 && (t = ''), a.config.OnBaseComponentsCode[n].componentName) { var i = a.stringifyOption(a.config.OnBaseComponentsCode[n].option), r = i; r = r.replace(/\"el\":\"(.*?)\",/g, "\"el\": $1,thisForTitle"), r = r.replace(/,\"([^(\_|\:|\")"]+)\":/g, ",thisForTitle$1:"), r = r.replace(/{\"([^(\_|\:|\")"]+)\":/g, "{$1:"), r = r.replace(/:\"\[\{(.*?)\}\]\"/g, ":'[{$1}]'"), r = r.replace(/:\"([^(*)"]+)\",/g, ":'$1',thisForTitle"), r = r.replace(/(thisisforfunction")|("thisisforfunction)/g, ""), r = r.replace(/,(thisForTitle)+/g, ",\n"), r = r.replace(/self\.refs\['(.*?)'\]/g, "$1El"), 'ExpandHelper' === a.config.OnBaseComponentsCode[n].componentName && (r = r.replace(/original:\s*\"(.*?)\"/g, "original: $1"), r = r.replace(/original:\s*\'(.*?)\'/g, "original: $1"), r = r.replace(/expanded:\s*\"(.*?)\"/g, "expanded: $1"), r = r.replace(/expanded:\s*\'(.*?)\'/g, "expanded: $1")), r = r.replace(/\\/g, ""), r = r.replace(/55667788/g, "[request_id]"), o = o + 'let ' + a.config.OnBaseComponentsCode[n].refName + 'El = new ' + a.config.OnBaseComponentsCode[n].componentName + '(' + r + ');' + t } else { var c = a.stringifyOption(a.config.OnBaseComponentsCode[n].extraFunction); c = c.replace(/("thisisforfunctionfunction\s*\(self\) \{)|(\}thisisforfunction")/g, ""), c = c.replace(/self\.refs\['(.*?)'\]/g, "$1El"), o = o + c + t } }); var c = '<script>\n    let sc = document.createElement("script");\n    sc.src = "https://d1v69ngg41pvl6.cloudfront.net/dist/MixPlayer.js";\n    sc.onload = function () {\n        ' + r + o + '\n    };\n    document.body.appendChild(sc);\n<\/script>'; return function (t, i) { var r = '', o = ''; return r = a.config.BaseFormatsCode.length >= 2 && a.refs.Interstitial ? '<div id="vmfive-ad-unit-container-[request_id]"></div>\n<div id="vmfive-ad-unit-container-[request_id]-interstitial"></div>\n' : '<div id="vmfive-ad-unit-container-[request_id]"></div>\n', e.forEach(function (e) { o = o + '<script src=\'' + e + '\'><\/script>\n' }), n.forEach(function (e) { o = o + '<script src=\'' + t + '/adformats/' + e + '.min.js\'><\/script>\n' }), i.forEach(function (e) { o = o + '<script src=\'' + t + '/components/' + e + '.min.js\'><\/script>\n' }), r + o + c }(i, t) } }, { key: 'createCreateButton', value: function () { function e() { template.created() } var n = document.createElement('div'); n.setAttribute('style', 'position:fixed;top:50px;left:2px;background:red;color: #000;width:60px;height:30px;border-radius: 15px;line-height: 28px;text-align: center;cursor: pointer;'), n.innerHTML = 'Create', document.body.appendChild(n), n.addEventListener('click', e, !1) } }, { key: 'init', value: function () { var e = this; e.appendCdnScript(), setTimeout(function () { e.appendCustomJs() }, 1e3), e.config.showCreateButton && e.createCreateButton() } }, { key: 'created', value: function () { var e = this.createTemplate(this.config.plugins, this.config.adformats, this.config.components); e = e.replace(/>/g, '&gt;'), e = e.replace(/</g, '&lt;'); var n = null; n = window.open('demo-code.html', 'Demo code', 'height=800,width=800,scrollbars=yes'), n.document.write('<figure><pre><code class="language-pascal" style="display: inline-block;">' + e + '</code></pre></figure>') } }]), TemplateBuilder }(); try { module.exports = TemplateBuilder } catch (e) { } }]);
+        var ObservatoryReverse=function(e){function t(r){if(n[r])return n[r].exports;var i=n[r]={i:r,l:!1,exports:{}};return e[r].call(i.exports,i,i.exports,t),i.l=!0,i.exports}var n={};return t.m=e,t.c=n,t.d=function(e,n,r){t.o(e,n)||Object.defineProperty(e,n,{configurable:!1,enumerable:!0,get:r})},t.n=function(e){var n=e&&e.__esModule?function(){return e.default}:function(){return e};return t.d(n,'a',n),n},t.o=function(e,t){return Object.prototype.hasOwnProperty.call(e,t)},t.p="/dist/components",t(t.s=0)}([function(e,t){function n(e,t){if(!(e instanceof t))throw new TypeError("Cannot call a class as a function")}var r=Object.assign||function(e){for(var t=1;t<arguments.length;t++){var n=arguments[t];for(var r in n)Object.prototype.hasOwnProperty.call(n,r)&&(e[r]=n[r])}return e},i=function(){function e(e,t){for(var n=0;n<t.length;n++){var r=t[n];r.enumerable=r.enumerable||!1,r.configurable=!0,"value"in r&&(r.writable=!0),Object.defineProperty(e,r.key,r)}}return function(t,n,r){return n&&e(t.prototype,n),r&&e(t,r),t}}(),a=function(){function e(t){if(n(this,e),this.defaultConfig=this.constructor.getDefaultConfig(t),this.config=r({},this.defaultConfig,t),this.config.el='string'==typeof this.config.el?document.querySelector(this.config.el):this.config.el,null===this.config.el)throw new Error('Something wrong with your el param');this.init=this.init.bind(this),this.config.bannerRatio=0===this.config['text:banner_ratio'].length?'32:15':this.config['text:banner_ratio'],this.initData(),this.config.el.insertAdjacentHTML('beforeend',this.contentTemplate);var i=this;this.rootView=this.config.el,this.observatoryWrap=this.rootView.querySelector('.vmfive-observatory-wrap-'+i.config.request_id),this.outerControlWrap=this.rootView.querySelector('.vmfive-outer-control-wrap-'+i.config.request_id),this.outerItemlWrap=this.rootView.querySelector('.vmfive-outer-item-wrap-'+i.config.request_id),this.controlWrap=this.rootView.querySelector('.vmfive-control-wrap-'+i.config.request_id),this.itemlWrap=this.rootView.querySelector('.vmfive-item-wrap-'+i.config.request_id),this.init()}return i(e,null,[{key:'getDefaultConfig',value:function(e){e=e||{};var t=e.request_id&&''!=e.request_id.trim()?e.request_id:'[request_id]';return{el:'#vmfive-ad-unit-container-'+t,request_id:t,track_url:'[track_url]',dfp_url:'[dfp_url]',cta_prefix_url:'[cta_prefix_url]','cta:default':'[cta:default]','text:cta_in_new_window':'[text:cta_in_new_window]','text:banner_ratio':'[text:banner_ratio]',medias:'',mediasOuter:'',onprepared:[],onctaclicked:[]}}}]),i(e,[{key:'initData',value:function(){var e=this.config,t=e.el,n=e.bannerRatio,i=void 0,a=void 0,o=void 0,l=void 0;try{i=t.getBoundingClientRect().width,l=+n.split(':')[1]/+n.split(':')[0],o=i*l,a=i}catch(e){console.log(e),i=t.getBoundingClientRect().width,l=15/32,o=i*l,a=i}this.data=r({},e,{bannerWidth:a,bannerHeight:o,bannerHeightRate:l})}},{key:'init',value:function(){function e(e,t){e.addEventListener('click',t)}function t(){return''+c.config.dfp_url+c.config.cta_prefix_url+'&url='}function n(){return''+c.config['cta:default']}function r(){return t()+n()}function i(e){return function(n){if(n.target.id=='vmfive-volume-btn-'+c.config.request_id||n.target.id=='vmfive-logo-'+c.config.request_id)return!1;e=e&&''!==e.trim()?t()+e:r(),(c.config.onctaclicked&&Array.isArray(c.config.onctaclicked)?c.config.onctaclicked:[]).forEach(function(e){'function'==typeof e&&e(c)}),"postMessage"===c.config.ctaMode?window.postMessage({ctaUrl:e},'*'):v?window.open(e,'_blank'):window.top.location.href=e}}function a(e,t){for(var n=0;n<5;n++)e[n]={},e[n].element=document.createElement("div"),e[n].element.classList='vmfive-observatory-item-'+c.config.request_id+' vmfive-observatory-item-'+(n+1)+'-'+c.config.request_id,e[n].element.innerHTML="",t.appendChild(e[n].element)}function o(e,t,n){if(0==e&&(t[2].mediaIndex=e,t[2].media=n[e],t[2].element.appendChild(n[e].domElement)),1==e){t[3].mediaIndex=e,t[3].media=n[e];var r=n[e].domElement.cloneNode(!0);t[3].element.appendChild(r)}if(e==n.length-1){t[1].mediaIndex=e,t[1].media=n[e];var i=n[e].domElement.cloneNode(!0);t[1].element.appendChild(i)}}function l(e,t){var n=e.length-2,r=e[n].domElement,i=r.cloneNode(!0),a=r.cloneNode(!0);t[0].mediaIndex=n,t[0].media=e[n],t[0].element.appendChild(i),t[4].mediaIndex=n,t[4].media=e[n],t[4].element.appendChild(a)}function s(t,n){function r(t,n,r){var a=document.createElement("div");a.className="article hasvideo";var o=document.createElement("img");o.src=t.image,a.appendChild(r),a.appendChild(o);var l=a.querySelector('.vmfive-video-cover'),s=t.coverimage;return s&&''!=s?l.src=s:l.style.display='none',c.config.disableCta||(e(l,i(n,'video',t.ctaURL)),e(o,i(n,'video',t.ctaURL))),a}function a(t,n){var r=document.createElement("img");return r.src=t.image,c.config.disableCta||e(r,i(n,'image',t.ctaURL)),r}t.forEach(function(e,i){if(void 0!==e.mp4||void 0!==e.m3u8){noVideoItem=!1;var l=generateAdUnitElForVideo();t[i].domElement=r(e,i,l),o(i,n,t),delayInitList.push(function(){var n=initVideo(l,e,i);t[i].isImpressed=!1,t[i].controller=n})}else void 0!==e.image&&(t[i].domElement=a(e,i),o(i,n,t),t[i].isImpressed=!1)})}function d(e,t,n,r,i,a){var o=t.querySelector('.vmfive-observatory-item-1-'+c.config.request_id),l=t.querySelector('.vmfive-observatory-item-2-'+c.config.request_id),s=t.querySelector('.vmfive-observatory-item-3-'+c.config.request_id),d=t.querySelector('.vmfive-observatory-item-4-'+c.config.request_id),f=t.querySelector('.vmfive-observatory-item-5-'+c.config.request_id),m=c.RotateDeg,v=c.Round;console.log(' 順向self.Round; =====',c.Round),c.animateStillRun=!0,anime({targets:t,translateZ:[{value:n+'px',duration:0},{value:n-50+'px',duration:300,easing:'cubicBezier(0.215, 0.61, 0.355, 1)'},{value:n+'px',duration:300,delay:1e3,easing:'cubicBezier(0.215, 0.61, 0.355, 1)'}],rotateX:[{value:m,duration:0},{value:m-30+'deg',duration:a,delay:300,easing:i}],complete:function(){m-=30;var e=150*Math.floor((m-120)/-150)-60;o.style.transform='rotateX('+e+'deg) translateZ(-'+n+'px)';var t=150*Math.floor((m-90)/-150)-30;l.style.transform='rotateX('+t+'deg) translateZ(-'+n+'px)';var i=150*Math.floor((m-60)/-150);s.style.transform='rotateX('+i+'deg) translateZ(-'+n+'px)';var a=150*Math.floor((m-30)/-150)+30;d.style.transform='rotateX('+a+'deg) translateZ(-'+n+'px)';var g=150*Math.floor(m/-150)+60;if(f.style.transform='rotateX('+g+'deg) translateZ(-'+n+'px)',v>=0){if(v%5==1){o.innerHTML='';var u=(2+v)%r.length;o.appendChild(r[u].domElement)}if(v%5==2){l.innerHTML='';var p=(2+v)%r.length;l.appendChild(r[p].domElement)}if(v%5==3){s.innerHTML='';var h=(2+v)%r.length;s.appendChild(r[h].domElement)}if(v%5==4){d.innerHTML='';var b=(2+v)%r.length;d.appendChild(r[b].domElement)}if(v%5==0){f.innerHTML='';var y=(2+v)%r.length;f.appendChild(r[y].domElement)}}if(v<0){if(v%5==-1){f.innerHTML='';var w=((2+v+1)%r.length+r.length)%r.length;f.appendChild(r[w].domElement)}if(v%5==-2){d.innerHTML='';var _=((2+v+1)%r.length+r.length)%r.length;d.appendChild(r[_].domElement)}if(v%5==-3){s.innerHTML='';var x=((2+v+1)%r.length+r.length)%r.length;s.appendChild(r[x].domElement)}if(v%5==-4){l.innerHTML='';var q=((2+v+1)%r.length+r.length)%r.length;l.appendChild(r[q].domElement)}if(v%5==0){o.innerHTML='';var H=((2+v+1)%r.length+r.length)%r.length;o.appendChild(r[H].domElement)}}c.animateStillRun=!1,c.lastAroundTime=Date.now()}})}function f(e,t,n,r,i,a){var o=t.querySelector('.vmfive-observatory-item-1-'+c.config.request_id),l=t.querySelector('.vmfive-observatory-item-2-'+c.config.request_id),s=t.querySelector('.vmfive-observatory-item-3-'+c.config.request_id),d=t.querySelector('.vmfive-observatory-item-4-'+c.config.request_id),f=t.querySelector('.vmfive-observatory-item-5-'+c.config.request_id),m=c.RotateDeg,v=c.Round;console.log(' 逆向 self.Round; =====',c.Round),c.animateStillRun=!0,anime({targets:t,translateZ:[{value:n+'px',duration:0},{value:n-50+'px',duration:300,easing:'cubicBezier(0.215, 0.61, 0.355, 1)'},{value:n+'px',duration:300,delay:1e3,easing:'cubicBezier(0.215, 0.61, 0.355, 1)'}],rotateX:[{value:m,duration:0},{value:m+30+'deg',duration:a,delay:300,easing:i}],complete:function(){m+=30;var e=-150*Math.floor(m/150)-60;o.style.transform='rotateX('+e+'deg) translateZ(-'+n+'px)';var t=-150*Math.floor((m+30)/150)-30;l.style.transform='rotateX('+t+'deg) translateZ(-'+n+'px)';var i=-150*Math.floor((m+60)/150);s.style.transform='rotateX('+i+'deg) translateZ(-'+n+'px)';var a=-150*Math.floor((m+90)/150)+30;d.style.transform='rotateX('+a+'deg) translateZ(-'+n+'px)';var g=-150*Math.floor((m+120)/150)+60;f.style.transform='rotateX('+g+'deg) translateZ(-'+n+'px)';Math.floor(v/5);if(v>=0){if(v%5==1){o.innerHTML='';var u=(r.length-2+(v-1))%r.length;o.appendChild(r[u].domElement)}if(v%5==2){l.innerHTML='';var p=(r.length-2+(v-1))%r.length;l.appendChild(r[p].domElement)}if(v%5==3){s.innerHTML='';var h=(r.length-2+(v-1))%r.length;s.appendChild(r[h].domElement)}if(v%5==4){d.innerHTML='';var b=(r.length-2+(v-1))%r.length;d.appendChild(r[b].domElement)}if(v%5==0){f.innerHTML='';var y=(r.length-2+(v-1))%r.length;f.appendChild(r[y].domElement)}}if(v<0){if(v%5==-1){f.innerHTML='';var w=((r.length-2+v)%r.length+r.length)%r.length;f.appendChild(r[w].domElement)}if(v%5==-2){d.innerHTML='';var _=((r.length-2+v)%r.length+r.length)%r.length;d.appendChild(r[_].domElement)}if(v%5==-3){s.innerHTML='';var x=((r.length-2+v)%r.length+r.length)%r.length;s.appendChild(r[x].domElement)}if(v%5==-4){l.innerHTML='';var q=((r.length-2+v)%r.length+r.length)%r.length;l.appendChild(r[q].domElement)}if(v%5==0){o.innerHTML='';var H=((r.length-2+v)%r.length+r.length)%r.length;o.appendChild(r[H].domElement)}}c.animateStillRun=!1,c.lastAroundTime=Date.now()}})}var c=this,m=''+c.config['banner:margin'];isNaN(m);try{JSON.parse(c.config.track_url)}catch(e){console.log(e)}var v=''+c.config['text:cta_in_new_window']=='true',g=[];try{g=JSON.parse(c.config.mediasOuter),g=void 0!=g&&Array.isArray(g)?g:[]}catch(e){console.log(e)}var u=[];try{u=JSON.parse(c.config.medias),u=void 0!=u&&Array.isArray(u)?u:[]}catch(e){console.log(e)}c.showList=[],c.showOuterList=[],a(c.showOuterList,c.outerItemlWrap),a(c.showList,c.itemlWrap),s(u,c.showList),s(g,c.showOuterList),l(u,c.showList),l(g,c.showOuterList);var p=75*Math.PI/180,h=Math.floor(Math.tan(p)*(c.data.bannerHeight/2)),b=Math.floor(Math.tan(p)*(c.data.bannerHeight/2));c.RotateDeg=0,c.Round=0;c.GoNext=function(){d(void 0,c.outerControlWrap,h,g,'cubicBezier(.53,0,.26,1)','700'),d(void 0,c.controlWrap,b,u,'cubicBezier(.73,0,.39,1.26)','900'),c.RotateDeg-=30,c.Round+=1},c.GoPrevious=function(){f(void 0,c.outerControlWrap,h,g,'cubicBezier(.53,0,.26,1)','700'),f(void 0,c.controlWrap,b,u,'cubicBezier(.53,0,.32,1)','900'),c.RotateDeg+=30,c.Round-=1},c.playInterval=function(){c.lastAroundTime=Date.now(),c.timer=setInterval(function(){Date.now()-c.lastAroundTime>=3e3&&!c.animateStillRun&&(c.lastAroundTime=Date.now(),c.GoNext())},500)},c.playClearInterval=function(){clearInterval(c.timer)},c.playInterval(),c.lastMove=Date.now();var y=function(e){if(Date.now()-c.lastMove>=750&&!c.animateStillRun){var t=this.scrollY,n=(this.scrollX,Date.now());c.lastScrollY=c.lastScrollY?c.lastScrollY:0,c.lastScrollV=c.lastScrollV?c.lastScrollV:0,c.lastScrollTimestamp=c.lastScrollTimestamp?c.lastScrollTimestamp:n;var r=n-c.lastScrollTimestamp;if(r>0){var i=(t-c.lastScrollY)/r;1e3*(Math.abs(i)-Math.abs(c.lastScrollV))/r>=30&&n-c.lastMove>1&&(c.lastMove=n,i>0?c.GoNext():c.GoPrevious()),c.lastScrollV=i,c.lastScrollY=t,c.lastScrollTimestamp=n}}};window.addEventListener("scroll",y,!1)}},{key:'contentTemplate',get:function(){var e=this,t=75*Math.PI/180,n=Math.floor(Math.tan(t)*(e.data.bannerHeight/2)),r=Math.floor(Math.tan(t)*(e.data.bannerHeight/2));return'\n  <style>\n  .vmfive-observatory-wrap-'+e.config.request_id+' {\n    height: 100%;\n    width: 100%;\n    position: relative;\n    height: '+e.data.bannerHeight+'px;\n    overflow: hidden;\n  } \n  .vmfive-outer-stage-wrap-'+e.config.request_id+' {\n    position:relative;\n\tmargin:0 auto;\n    perspective: '+n+'px;\n    perspective-origin: center '+n/4+'px;\n    transform-style: preserve-3d;\n  }\n  .vmfive-stage-wrap-'+e.config.request_id+' {\n    position:relative;\n\n    top: 0;\n\tbottom: 0;\n    margin: auto;\n    position: absolute;\n    width: 100%;\n    height: '+.8*e.data.bannerHeight+'px;\n\n    perspective: '+r+'px;\n    perspective-origin: center '+r/4+'px;\n    transform-style: preserve-3d;\n  }\n  .vmfive-outer-control-wrap-'+e.config.request_id+' {\n    position:relative;\n    width:100%;\n    height:100%;\n    transform-style: preserve-3d;\n    transform: translateZ('+n+'px) rotateX(0deg);\n    transform-origin: '+e.data.bannerHeight/2+'px '+e.data.bannerHeight/2+'px;\n  }\n  .vmfive-outer-item-wrap-'+e.config.request_id+' {\n    position:absolute;\n    width: 100%;\n    height: 100%;\n    transform-style: preserve-3d;\n  }\n  .vmfive-control-wrap-'+e.config.request_id+' {\n    position:relative;\n    width:100%;\n    height:100%;\n    transform-style: preserve-3d;\n    transform: translateZ('+r+'px) rotateX(0deg);\n    transform-origin: '+e.data.bannerHeight/2+'px '+e.data.bannerHeight/2+'px;\n  }\n  .vmfive-item-wrap-'+e.config.request_id+' {\n    position:absolute;\n    width: 100%;\n    height: 100%;\n    transform-style: preserve-3d;\n  }\n  .vmfive-observatory-item-'+e.config.request_id+' {\n    display: block;\n    bottom: 0;\n    margin: 0;\n    padding: 0;\n    position:absolute;\n    width: 100%;\n    height: 100%;\n    top:0;\n    left:0;\n    transform-style: preserve-3d;\n  }\n  .vmfive-outer-item-wrap-'+e.config.request_id+' .vmfive-observatory-item-1-'+e.config.request_id+' {\n    transform:rotateX(-60deg) translateZ(-'+n+'px);\n    transform-origin: '+e.data.bannerHeight/2+'px '+e.data.bannerHeight/2+'px;\n  }\n  .vmfive-outer-item-wrap-'+e.config.request_id+' .vmfive-observatory-item-2-'+e.config.request_id+' {\n    transform:rotateX(-30deg) translateZ(-'+n+'px);\n    transform-origin: '+e.data.bannerHeight/2+'px '+e.data.bannerHeight/2+'px;\n  }\n  .vmfive-outer-item-wrap-'+e.config.request_id+' .vmfive-observatory-item-3-'+e.config.request_id+' {\n    transform:rotateX(0deg) translateZ(-'+n+'px);\n    transform-origin: '+e.data.bannerHeight/2+'px '+e.data.bannerHeight/2+'px;\n  }\n  .vmfive-outer-item-wrap-'+e.config.request_id+' .vmfive-observatory-item-4-'+e.config.request_id+' {\n    transform:rotateX(30deg) translateZ(-'+n+'px);\n    transform-origin: '+e.data.bannerHeight/2+'px '+e.data.bannerHeight/2+'px;\n  }\n  .vmfive-outer-item-wrap-'+e.config.request_id+' .vmfive-observatory-item-5-'+e.config.request_id+' {\n    transform:rotateX(60deg) translateZ(-'+n+'px);\n    transform-origin: '+e.data.bannerHeight/2+'px '+e.data.bannerHeight/2+'px;\n  }\n  .vmfive-outer-item-wrap-'+e.config.request_id+' .vmfive-observatory-item-'+e.config.request_id+' img {\n    width: 100%;\n    height: '+e.data.bannerHeight+'px;\n    max-width: 100%;\n    display: block;\n    border: 0;\n    outline: none;\n    padding: 0;\n    margin: 0;\n  }\n  .vmfive-item-wrap-'+e.config.request_id+' .vmfive-observatory-item-1-'+e.config.request_id+' {\n    transform:rotateX(-60deg) translateZ(-'+r+'px);\n    transform-origin: '+e.data.bannerHeight/2+'px '+e.data.bannerHeight/2+'px;\n  }\n  .vmfive-item-wrap-'+e.config.request_id+' .vmfive-observatory-item-2-'+e.config.request_id+' {\n    transform:rotateX(-30deg) translateZ(-'+r+'px);\n    transform-origin: '+e.data.bannerHeight/2+'px '+e.data.bannerHeight/2+'px;\n  }\n  .vmfive-item-wrap-'+e.config.request_id+' .vmfive-observatory-item-3-'+e.config.request_id+' {\n    transform:rotateX(0deg) translateZ(-'+r+'px);\n    transform-origin: '+e.data.bannerHeight/2+'px '+e.data.bannerHeight/2+'px;\n  }\n  .vmfive-item-wrap-'+e.config.request_id+' .vmfive-observatory-item-4-'+e.config.request_id+' {\n    transform:rotateX(30deg) translateZ(-'+r+'px);\n    transform-origin: '+e.data.bannerHeight/2+'px '+e.data.bannerHeight/2+'px;\n  }\n  .vmfive-item-wrap-'+e.config.request_id+' .vmfive-observatory-item-5-'+e.config.request_id+' {\n    transform:rotateX(60deg) translateZ(-'+r+'px);\n    transform-origin: '+e.data.bannerHeight/2+'px '+e.data.bannerHeight/2+'px;\n  }\n  .vmfive-item-wrap-'+e.config.request_id+' .vmfive-observatory-item-'+e.config.request_id+' img {\n    width: 100%;\n    height: '+.8*e.data.bannerHeight+'px;\n    max-width: 100%;\n    display: block;\n    border: 0;\n    outline: none;\n    padding: 0;\n    margin: 0;\n  }\n\n  </style>\n  <div class="vmfive-observatory-wrap-'+e.config.request_id+'">\n    <div class="vmfive-outer-stage-wrap-'+e.config.request_id+'">\n        <div class="vmfive-outer-control-wrap-'+e.config.request_id+'">\n            <div class="vmfive-outer-item-wrap-'+e.config.request_id+'">\n            </div>\n        </div>\n    </div>\n    <div class="vmfive-stage-wrap-'+e.config.request_id+'">\n        <div class="vmfive-control-wrap-'+e.config.request_id+'">\n            <div class="vmfive-item-wrap-'+e.config.request_id+'">\n            </div>\n        </div>\n    </div>\n  </div>\n      '}}]),e}();try{e.exports=a}catch(e){}}]);
         let template = new TemplateBuilder({
-            cdn: 'https://d2v4tz4zvhrua.cloudfront.net/production/dist/2019-12-10-1575962776503',
+            cdn: 'https://d2v4tz4zvhrua.cloudfront.net/production/dist/2020-01-07-1578367484671',
             plugins: [
-                'https://man.vm5apis.com/dist/anime.js/3.0.1/anime.min.js',
-                'https://man.vm5apis.com/dist/jquery/2.1.3/jquery.min.js',
-                'https://man.vm5apis.com/dist/hammer.js/2.0.8/hammer.min.js',
-                'https://man.vm5apis.com/dist/jquery.hammerjs/2.0.0/jquery.hammer.js',
-                'https://man.vm5apis.com/dist/raf.js'
+                'https://man.vm5apis.com/dist/anime.js/3.0.1/anime.min.js'
             ],
             adformats: [
-                'BannerContainerBackground'
+                'BannerContainer',
             ],
             components: [
-                'CloseButton'
+                'unit/BVideo', 'CloseButton'
             ],
             develop: false,
             showCreateButton: false,
             BaseAdUnit: [
                 function () {
                     return {
-                        adformatName: 'BannerContainerBackground',
-                        refName: 'BannerContainerBackground',
+                        adformatName: 'BannerContainer',
+                        refName: 'BannerContainer',
                         option: {
                             el: '#vmfive-ad-unit-container-55667788',
+                            'request_id': '[request_id]',
+
+                            'text:close_button_horizontal_alignment': 'left',
+
+                            'text:banner_ratio': '320:284',
                             videoBorderRadius: 0,
                             enableClipPath: false,
-                            enableImpression: true,
-                            disableCta: false,
-                            enableSwipeUp: false,
-                            'text:banner_ratio': '32:10',
-                            'text:swipe_up_color': '',
-                        },
-                        demoOption: {
-                            'downloaded_pixel': 'https://vaser-track.vm5apis.com/v2/track?requestId=&event=downloaded&placementId=&campaignId=&audienceGroupId=&creativeId=&timezone=8&creativeFormat=richmedia&pixel=1&x=0',
-                            'text:cta_in_new_window': '',
-                            'dfp_url': '',
-                            'cta_prefix_url': 'https://vaser-track.vm5apis.com/v2/track?requestId=&placementId=&campaignId=&audienceGroupId=&creativeId=&timezone=8&creativeFormat=richmedia&pixel=1&x=0&event=click',
-                            'cta:default': `https://adison.com.tw/landing/`,
-                            'text:banner_bottom_offset': `0`,
-                            'text:scale': `1`,
-                            'image:container_background': 'https://ad-demo.vmfive.com/demos/showcase/20191220_alinamin/resources/alinamic_dec_banner.png',
-                            'text:container_background_horizontal_alignment': 'left',
+                            enableImpression: false,
+                            disableCta: true,
                         }
                     };
-                }
+                },
             ],
             OnBaseAdUnitPrepared: [
                 function (self) {
                     return {
-                        componentName: 'CloseButton',
-                        refName: 'CloseButton',
+                        componentName: 'ObservatoryReverse',
+                        refName: 'ObservatoryReverse',
                         option: {
-                            el: self.refs['BannerContainerBackground'].adContainerView,
+                            el: self.refs['BannerContainer'].adContainerView,
                             'request_id': '[request_id]',
-                            'track_url': '[track_url]',
+                            'text:cta_in_new_window': 'false',
+                            'text:banner_ratio': '32:15',
                         },
                         demoOption: {
-                            'text:cta_in_new_window': `[text:cta_in_new_window]`,
-                            'dfp_url': `[dfp_url]`,
-                            'cta_prefix_url': `[cta_prefix_url]`,
-                            'cta:default': `https://adison.com.tw/landing/`,
-
-                            'text:embedded': '[text:embedded]',
-                            'text:show_close_mode': 'fadein',
-                            'text:close_button_horizontal_alignment': 'right',
+                            medias:
+                                '[' +
+                                '{"image": "https://ad-demo.vmfive.com/demos/showcase/2020013_mc/resource/mc_black_layer03_360.gif"},' +
+                                '{"image": "https://ad-demo.vmfive.com/demos/showcase/2020013_mc/resource/mc_black_layer02.gif"},' +
+                                '{"image": "https://ad-demo.vmfive.com/demos/showcase/2020013_mc/resource/mc_black_layer01_360.gif"}' +
+                                ']',
+                            mediasOuter:
+                                '[' +
+                                '{"image": "https://ad-demo.vmfive.com/demos/showcase/2020013_mc/resource/mc_black_banner03.gif"},' +
+                                '{"image": "https://ad-demo.vmfive.com/demos/showcase/2020013_mc/resource/mc_black_banner02.png"},' +
+                                '{"image": "https://ad-demo.vmfive.com/demos/showcase/2020013_mc/resource/mc_black_banner01.gif"}' +
+                                ']',
                         }
                     }
                 },
                 function (self) {
-                    //===== Config =====
-                    let SpriteSheetUrl = `https://ad-demo.vmfive.com/demos/showcase/20191220_alinamin/resources/42cuts_2.5s.png`;
-                    let TotalFrame = 42;
-                    let TotalAnimationDuring = 2.5;
-                    let SpriteSheetWidth = 480;
-                    let SpriteSheetHeight = 854;
-                    //==================
-                    let SpriteSheetWidthRatio = Math.round(100 * SpriteSheetHeight / SpriteSheetWidth);
+                    return {
+                        componentName: 'BVideo',
+                        refName: 'BVideo',
+                        option: {
+                            el: self.refs['BannerContainer'].adContainerView,
+                            'request_id': self.refs['BannerContainer'].config['request_id'],
+                            'track_url': self.refs['BannerContainer'].config['track_url'],
+                            'video:video1:mp4': 'https://ad-demo.vmfive.com/demos/showcase/2020013_mc/resource/mc_black_video.mp4',
+                            'video:video1:m3u8': '',
+                            'image:cover': '',
+                            'text:3rd_party_track_url': '',
+                            'text:onlyVideo': 'true',
+                            'text:percentageInViewOption': '50',
 
+                            videoScale: '16:9',
+                            videoBorderRadius: 0,
+                            disableAutoplay: false,
+                            'text:videoLoop': 'true'
+                        }
+                    }
+                },
+                function(self) {
+                    self.refs['BannerContainer'].adContainerView.style.flexWrap = 'wrap';
+                },
+                // function (self) {
+                //     return {
+                //         componentName: 'CloseButton',
+                //         refName: 'CloseButton',
+                //         option: {
+                //             el: self.refs['BannerContainer'].adContainerView,
+                //             'request_id': '[request_id]',
+                //             'track_url': '[track_url]',
 
-                    let vmfiveAdUnitContainer = self.refs['BannerContainerBackground'];
-                    vmfiveAdUnitContainer.overlayView.style.display = "none";
-                    vmfiveAdUnitContainer.overlayView.style.opacity = "0";
+                //             'text:cta_in_new_window': `[text:cta_in_new_window]`,
+                //             'dfp_url': `[dfp_url]`,
+                //             'cta_prefix_url': `[cta_prefix_url]`,
+                //             'cta:default': `[cta:default]`,
 
-                    function loadImage(src) {
-                        return new Promise((resolve, reject) => {
-                            const img = new Image();
-                            img.addEventListener("load", () => resolve(img));
-                            img.addEventListener("error", err => reject(err));
-                            img.src = src;
-                        });
-                    };
-                    Promise.all([
-                        loadImage(SpriteSheetUrl),
-                    ])
-                        .then(function () {
-                            let innerHteml = `
-                            <div id="anime-wrap-${vmfiveAdUnitContainer.config.request_id}">
-                                <div class="monster"></div>
-                            </div>
-                            <style>
-                                #anime-wrap-${vmfiveAdUnitContainer.config.request_id} .monster {
-                                    position: fixed;
-                                    display:none;
-                                    width: 100%;
-                                    height: 0;
-                                    padding-bottom: ${SpriteSheetWidthRatio}%;
-                                    left: 0;
-                                    bottom: 0;
-                                    z-index: 99991;
-                                    background-image:url('${SpriteSheetUrl}');
-                                    background-size: ${TotalFrame}00vw ${SpriteSheetWidthRatio}vw;
-                                    background-repeat:no-repeat;
-                                    background-position: 0 0;
-                                    transform: translateZ(0);
-                                    transform: translate3d(0, 0, 0);
-                                }
-                                #anime-wrap-${vmfiveAdUnitContainer.config.request_id} .monster.vmfive-play {
-                                    animation: vmfive-play-animation ${TotalAnimationDuring}s steps(${TotalFrame - 1});
-                                    animation-fill-mode: forwards;
-                                }
-                                @keyframes vmfive-play-animation {
-                                    0% { background-position: 0 0;}
-                                    100% { background-position: -${TotalFrame - 1}00vw 0;}
-                                }
-                            </style>
-                        `;
-                            vmfiveAdUnitContainer.rootView.insertAdjacentHTML('beforeend', innerHteml);
-                            let animeWrap = vmfiveAdUnitContainer.rootView.querySelector('#anime-wrap-' + vmfiveAdUnitContainer.config.request_id);
-                            let monsterEL = vmfiveAdUnitContainer.rootView.querySelector('#anime-wrap-' + vmfiveAdUnitContainer.config.request_id + ' .monster');
-
-                            vmfiveAdUnitContainer.overlayView.style.display = "block";
-
-                            // Add Classlist make animation start
-                            setTimeout(function () {
-                            let triggeredFunc = function (event) {
-                                window.removeEventListener('scroll', triggeredFunc);
-                                monsterEL.style.display = 'block';
-                                monsterEL.classList.add('vmfive-play');
-
-                                anime({
-                                    targets: vmfiveAdUnitContainer.overlayView,
-                                    opacity: [
-                                        { value: '0', duration: 0, delay: TotalAnimationDuring * 1000 +100 },
-                                        { value: '1', duration: 30 },
-                                    ],
-                                    easing: 'linear',
-                                    complete: function () {
-                                        setTimeout(function(){
-                                            animeWrap.style.display = "none";
-                                        }, 500)
-                                    }
-                                });
-                            }
-                            window.addEventListener('scroll', triggeredFunc, false);
-                            }, 500)
-                        })
-                        .catch(function (err) { });
-                }
+                //             'text:embedded': '[text:embedded]',
+                //             'text:show_close_mode': 'fadein',
+                //             'text:close_button_horizontal_alignment': 'left',
+                //             closeMode: 'fate',
+                //             onctaclicked: [],
+                //             oncloseexpanded: [
+                //                 function () {
+                //                 },
+                //             ],
+                //             onclosed: [
+                //                 function () {
+                //                 },
+                //             ],
+                //         }
+                //     }
+                // }
             ]
         });
     </script>

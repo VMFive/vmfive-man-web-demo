@@ -1,20 +1,17 @@
 <div id="vmfive-ad-unit-container-[request_id]"></div>
-<div id="vmfive-ad-unit-container-[request_id]-expand"></div>
-<script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js"></script>
-<script src='https://man.vm5apis.com/dist/turn.js/turn.min.js'></script>
 <script src='https://man.vm5apis.com/dist/anime.js/3.0.1/anime.min.js'></script>
+<script src='https://man.vm5apis.com/dist/jquery/2.1.3/jquery.min.js'></script>
+<script src='https://man.vm5apis.com/dist/hammer.js/2.0.8/hammer.min.js'></script>
+<script src='https://man.vm5apis.com/dist/jquery.hammerjs/2.0.0/jquery.hammer.js'></script>
 <script src='https://man.vm5apis.com/dist/raf.js'></script>
-<script src='https://d2v4tz4zvhrua.cloudfront.net/production/dist/2019-12-06-1575610479605/adformats/BannerContainerBackground.min.js'></script>
-<script src='https://d2v4tz4zvhrua.cloudfront.net/production/dist/2019-12-06-1575610479605/adformats/Catalog.min.js'></script>
-<script src='https://d2v4tz4zvhrua.cloudfront.net/production/dist/2019-12-06-1575610479605/components/unit/BVideo.min.js'></script>
-<script src='https://d2v4tz4zvhrua.cloudfront.net/production/dist/2019-12-06-1575610479605/components/ExpandHelper.min.js'></script>
-<script src='https://d2v4tz4zvhrua.cloudfront.net/production/dist/2019-12-06-1575610479605/components/CloseButton.min.js'></script>
+<script src='https://d2v4tz4zvhrua.cloudfront.net/production/dist/2019-12-30-1577694529417/adformats/BannerContainer.min.js'></script>
+<script src='https://d2v4tz4zvhrua.cloudfront.net/production/dist/2019-12-30-1577694529417/components/BannerThreeD.min.js'></script>
+<script src='https://d2v4tz4zvhrua.cloudfront.net/production/dist/2019-12-30-1577694529417/components/CloseButton.min.js'></script>
 <script>
     let sc = document.createElement("script");
     sc.src = "https://d1v69ngg41pvl6.cloudfront.net/dist/MixPlayer.js";
     sc.onload = function () {
-        let BannerContainerBackgroundEl = new BannerContainerBackground({
+        let BannerContainerEl = new BannerContainer({
             el: '#vmfive-ad-unit-container-[request_id]',
             "request_id": '[request_id]',
             "track_url": '[track_url]',
@@ -28,72 +25,78 @@
             "text:banner_top_offset": '[text:banner_top_offset]',
             "text:banner_bottom_offset": '[text:banner_bottom_offset]',
             "text:scale": '[text:scale]',
-            "text:expand_scale": '[text:expand_scale]',
             "text:max_width": '[text:max_width]',
             "text:embedded": '[text:embedded]',
+            "text:background_color": '[text:background_color]',
             "text:logo_background_color": '[text:logo_background_color]',
-            "text:logo_horizontal_alignment": '[text:logo_horizontal_alignment]',
+            "text:logo_horizontal_alignment": 'left',
             "text:logo_vertical_alignment": '[text:logo_vertical_alignment]',
-            "image:container_background": '[image:container_background]',
-            "text:container_background_horizontal_alignment": 'left',
             enableClipPath: false,
             enableLogo: true,
             enableImpression: true, "text:banner_ratio": '[text:banner_ratio]',
-            enableExpand: false,
-            enableSwipeUp: false,
-            disableCta: true, "text:swipe_up_color": "",
+            videoBorderRadius: 0,
+            disableCta: false,
             onresize: [],
             onprepared: [],
             onctaclicked: [],
-            onPanMoveUp: [],
-            onexpanded: [],
-            oncloseexpanded: [],
-            videoBorderRadius: 0
+            onbannerinit: []
         });
-        let CatalogEl = new Catalog({
-            el: '#vmfive-ad-unit-container-[request_id]-expand',
-            "request_id": '[request_id]-expand',
+        let BannerThreeDEl = new BannerThreeD({
+            el: BannerContainerEl.adContainerView,
+            "request_id": '[request_id]',
             "track_url": '[track_url]',
             "downloaded_pixel": '[downloaded_pixel]',
+            "downloaded_impression_pixel": '[downloaded_impression_pixel]',
+            "image:front": '[image:front]',
+            "image:bottom": '[image:bottom]',
+            "image:back": '[image:back]',
+            "image:top": '[image:top]',
             "text:cta_in_new_window": '[text:cta_in_new_window]',
             "dfp_url": '[dfp_url]',
             "cta_prefix_url": '[cta_prefix_url]',
             "cta:default": '[cta:default]',
-            "cta:pan_view": '[cta:pan_view]',
-            "text:3rd_party_track_url": '[text:3rd_party_track_url]',
-            medias:
-                '[' +
-                '{"image": "[image:catalog_1]", "ctaURL": "[cta:catalog_1]"},' +
-                '{"image": "[image:catalog_2]", "ctaURL": "[cta:catalog_2]"},' +
-                '{"image": "[image:catalog_3]", "ctaURL": "[cta:catalog_3]"},' +
-                '{"image": "[image:catalog_4]", "ctaURL": "[cta:catalog_4]"}' +
-                ']',
-            disableCta: false,
-            videoScale: "16:9"
+            "cta:front": '[cta:front]',
+            "cta:bottom": '[cta:bottom]',
+            "cta:back": '[cta:back]',
+            "cta:top": '[cta:top]',
+            "text:scale": '[text:scale]',
+            "text:banner_threed_rotate_duration": '[text:banner_threed_rotate_duration]',
+            "text:banner_threed_rotate_interval": '[text:banner_threed_rotate_interval]',
+            "text:banner_threed_rotate_initial_delay": '[text:banner_threed_rotate_initial_delay]',
+            "text:banner_threed_initial_rotate_degree": '[text:banner_threed_initial_rotate_degree]',
+            disableTriggerByScroll: false,
+            disableAutoStartRotate: false,
+            cubic: {
+                front: {
+                    imageURL: '[image:front]',
+                    ctaURL: '[cta:front]',
+                },
+                bottom: {
+                    imageURL: '[image:bottom]',
+                    ctaURL: '[cta:bottom]',
+                },
+                back: {
+                    imageURL: '[image:back]',
+                    ctaURL: '[cta:back]',
+                },
+                top: {
+                    imageURL: '[image:top]',
+                    ctaURL: '[cta:top]',
+                },
+                left: {
+                    imageURL: '',
+                    ctaURL: '',
+                },
+                right: {
+                    imageURL: '',
+                    ctaURL: '',
+                }
+            },
+            heightRatio: "1",
+            bannerRatio: BannerContainerEl.config['text:banner_ratio'],
         });
-        let BVideoEl = new BVideo({
-            el: BannerContainerBackgroundEl.videoOuter,
-            "request_id": '[request_id]',
-            "track_url": '[track_url]',
-            'video:video1:mp4': '[video:video1:mp4]',
-            "video:video1:m3u8": '',
-            "image:cover": '[image:cover]',
-            "text:3rd_party_track_url": '[text:3rd_party_track_url]',
-            videoScale: '16:9',
-            videoBorderRadius: 0,
-            disableAutoplay: false, "text:videoLoop": 'true',
-            "text:onlyVideo": 'false',
-            "text:percentageInViewOption": '50',
-            onSeconds: [],
-            onresize: [],
-            onprepared: [],
-            onplayed: [],
-            onfinished: [],
-            adOnClick: false
-        });
-        BannerContainerBackgroundEl.videoOuter.style.width = '83.5%'; BannerContainerBackgroundEl.adContainerBg.querySelector('img').style.height = '100%';
         let CloseButtonEl = new CloseButton({
-            el: BannerContainerBackgroundEl.adContainerView,
+            el: BannerContainerEl.adContainerView,
             "request_id": '[request_id]',
             "track_url": '[track_url]',
             "text:cta_in_new_window": '[text:cta_in_new_window]',
@@ -114,60 +117,18 @@
             oncloseexpanded: [],
             onclosed: []
         });
-        let CloseButtonCatalogEl = new CloseButton({
-            el: CatalogEl.overlayView,
-            "request_id": '[request_id]-expand',
-            "track_url": '[track_url]',
-            "text:cta_in_new_window": '[text:cta_in_new_window]',
-            "dfp_url": '[dfp_url]',
-            "cta_prefix_url": '[cta_prefix_url]',
-            "cta:default": '[cta:default]',
-            "text:embedded": '[text:embedded]',
-            "text:show_close_mode": '[text:show_close_mode]',
-            "text:close_button_horizontal_alignment": '[text:close_button_horizontal_alignment]',
-            "text:beautify_percent": '[text:beautify_percent]',
-            "text:close_out_container": '[text:close_out_container]',
-            "text:close_style": '[text:close_style]',
-            "text:close_mode_second": '[text:close_mode_second]',
-            enableExpand: false,
-            disableCta: false,
-            onctaclicked: [],
-            onExpandHelperClose: [function (comp) { ExpandHelperEl.expandedVisible('hide'); ExpandHelperEl.originalVisible('show'); }],
-            oncloseexpanded: [],
-            onclosed: []
-        });
-        let ExpandHelperEl = new ExpandHelper({
-            "track_url": '[track_url]',
-            "text:expand_button_horizontal_alignment": '[text:expand_button_horizontal_alignment]',
-            original: BannerContainerBackgroundEl,
-            expanded: CatalogEl,
-            showExpandButton: true,
-            onprepared: [function (comp) { comp.expandedVisible('hide'); comp.originalVisible('show'); }],
-            onctaclicked: []
-        });
-        BannerContainerBackgroundEl.config.onctaclicked = [
-            function () {
-                ExpandHelperEl.expandedVisible('show');
-                ExpandHelperEl.originalVisible('hide');
-                CatalogEl.startTurnPeel();
-            }
-        ];
-        ExpandHelperEl.config.onctaclicked = [
-            function () {
-                CatalogEl.startTurnPeel();
-            }
-        ];
         //===== Config =====
         let SpriteSheetUrl = `[image:sprite_sheet]`;
-        let TotalFrame = 48;
-        let TotalAnimationDuring = 3;
+        let TotalFrame = '[text:total_frame]';
+        let TotalAnimationDuring = '[text:total_animation_during]';
         let SpriteSheetWidth = 480;
         let SpriteSheetHeight = 854;
         //==================
         let SpriteSheetWidthRatio = Math.round(100 * SpriteSheetHeight / SpriteSheetWidth);
 
 
-        let vmfiveAdUnitContainer = BannerContainerBackgroundEl;
+        let vmfiveAdUnitContainer = BannerContainerEl;
+        let spinCubic = BannerThreeDEl;
         vmfiveAdUnitContainer.overlayView.style.display = "none";
         vmfiveAdUnitContainer.overlayView.style.opacity = "0";
 
@@ -223,22 +184,24 @@
                 // Add Classlist make animation start
                 setTimeout(function () {
                     let triggeredFunc = function (event) {
-                    monsterEL.style.display = 'block';
-                    monsterEL.classList.add('vmfive-play');
+                        window.removeEventListener('scroll', triggeredFunc);
+                        monsterEL.style.display = 'block';
+                        monsterEL.classList.add('vmfive-play');
 
-                    anime({
-                        targets: vmfiveAdUnitContainer.overlayView,
-                        opacity: [
-                            { value: '0', duration: 0, delay: TotalAnimationDuring * 1000 + 100 },
-                            { value: '1', duration: 30 },
-                        ],
-                        easing: 'linear',
-                        complete: function () {
-                            animeWrap.style.display = "none";
-                        }
-                    });
-                }
-                window.addEventListener('scroll', triggeredFunc, false);
+                        anime({
+                            targets: vmfiveAdUnitContainer.overlayView,
+                            opacity: [
+                                { value: '0', duration: 0, delay: TotalAnimationDuring * 1000 + 500 },
+                                { value: '1', duration: 30 },
+                            ],
+                            easing: 'linear',
+                            complete: function () {
+                                animeWrap.style.display = "none";
+                                spinCubic.startRotate();
+                            }
+                        });
+                    }
+                    window.addEventListener('scroll', triggeredFunc, false);
                 }, 500)
             })
             .catch(function (err) { });
