@@ -312,28 +312,23 @@
         'BannerContainer',
       ],
       components: [
-        'ObservatoryReverse', 'CloseButton'
+        'Slot', 'CloseButton'
       ],
       develop: false,
       showCreateButton: false,
       BaseAdUnit: [
-        function () {
+        function (self) {
           return {
             adformatName: 'BannerContainer',
             refName: 'BannerContainer',
             option: {
-              el: '#vmfive-ad-unit-container-55667788',
-              'request_id': '[request_id]',
-
-              'text:close_button_horizontal_alignment': 'left',
-
-              'text:banner_ratio': '32:15',
-              videoBorderRadius: 0,
+              disableCta: true,
               enableClipPath: false,
               enableImpression: true,
-              disableCta: true,
             },
             demoOption: {
+              el: '#vmfive-ad-unit-container-55667788',
+              'text:banner_ratio': '32:15',
               'cta:default': 'https://adison.com.tw/landing/',
             }
           };
@@ -342,29 +337,20 @@
       OnBaseAdUnitPrepared: [
         function (self) {
           return {
-            componentName: 'ObservatoryReverse',
-            refName: 'ObservatoryReverse',
+            componentName: 'Slot',
+            refName: 'Slot',
             option: {
               el: self.refs['BannerContainer'].adContainerView,
-              'request_id': '[request_id]',
-              'text:cta_in_new_window': 'false',
-              'text:banner_ratio': '32:15',
             },
             demoOption: {
+              'text:banner_ratio': '32:15',
               'cta:default': 'https://adison.com.tw/landing/',
-              medias:
+              media:
                 '[' +
-                '{"image": "https://ad-demo.vmfive.com/demos/showcase/20191224_Starwalker/resource_0108/starlux_banner04.png"},' +
-                '{"image": "https://ad-demo.vmfive.com/demos/showcase/20191224_Starwalker/resource_0108/starlux_banner03.png"},' +
-                '{"image": "https://ad-demo.vmfive.com/demos/showcase/20191224_Starwalker/resource_0108/starlux_banner02.png"},' +
-                '{"image": "https://ad-demo.vmfive.com/demos/showcase/20191224_Starwalker/resource_0108/starlux_banner01.png"},' +
-                '{}]',
-              mediasOuter:
-                '[' +
-                '{"image": "https://ad-demo.vmfive.com/demos/showcase/20191224_Starwalker/resource_0108/starlux_bg04.png"},' +
-                '{"image": "https://ad-demo.vmfive.com/demos/showcase/20191224_Starwalker/resource_0108/starlux_bg03.png"},' +
-                '{"image": "https://ad-demo.vmfive.com/demos/showcase/20191224_Starwalker/resource_0108/starlux_bg02.png"},' +
-                '{"image": "https://ad-demo.vmfive.com/demos/showcase/20191224_Starwalker/resource_0108/starlux_bg01.png"},' +
+                '{"image": "https://ad-demo.vmfive.com/demos/showcase/20191231_Slot/hot1.png", "ctaURL": "https://adison.com.tw/landing/"},' +
+                '{"image": "https://ad-demo.vmfive.com/demos/showcase/20191231_Slot/hot2.png", "ctaURL": "https://adison.com.tw/landing/"},' +
+                '{"image": "https://ad-demo.vmfive.com/demos/showcase/20191231_Slot/hot3.png", "ctaURL": "https://adison.com.tw/landing/"},' +
+                '{"image": "https://ad-demo.vmfive.com/demos/showcase/20191231_Slot/hot4.png", "ctaURL": "https://adison.com.tw/landing/"},' +
                 '{}]',
             }
           }
@@ -375,17 +361,12 @@
             refName: 'CloseButton',
             option: {
               el: self.refs['BannerContainer'].adContainerView,
-              'request_id': '[request_id]',
-              onclosed: [
-                function () {
-                  self.refs['ObservatoryReverse'].playClearInterval();
-                },
-              ],
             },
             demoOption: {
               "dfp_url": '',
               'cta_prefix_url': 'https://vaser-track.vm5apis.com/v2/track?requestId=&placementId=&campaignId=&audienceGroupId=&creativeId=&timezone=8&creativeFormat=richmedia&pixel=1&x=0&event=click',
               'cta:default': 'https://adison.com.tw/landing/',
+
               'text:show_close_mode': 'fadein',
               'text:close_button_horizontal_alignment': 'left',
             }

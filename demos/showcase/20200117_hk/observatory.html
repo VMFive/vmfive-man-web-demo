@@ -322,8 +322,8 @@
 
                             'text:close_button_horizontal_alignment': 'left',
 
-                            'text:banner_ratio': '320:284',
-                            'cta:default': `https://www.mcdonalds.com.tw/twmobile/ch/index.html`,
+                            'text:banner_ratio': '32:15',
+                            'cta:default': `http://www.discoverhongkong.com/tc/see-do/events-festivals/highlight-events/chinese-new-year-celebrations.jsp`,
                             videoBorderRadius: 0,
                             enableClipPath: false,
                             enableImpression: false,
@@ -344,54 +344,23 @@
                             'text:banner_ratio': '32:15',
                         },
                         demoOption: {
-                            'cta:default': `https://www.mcdonalds.com.tw/twmobile/ch/index.html`,
+                            'cta:default': `http://www.discoverhongkong.com/tc/see-do/events-festivals/highlight-events/chinese-new-year-celebrations.jsp`,
                             medias:
                                 '[' +
-                                '{"image": "https://ad-demo.vmfive.com/demos/showcase/20200113_mc/resource/mc_black_layer03.gif"},' +
-                                '{"image": "https://ad-demo.vmfive.com/demos/showcase/20200113_mc/resource/mc_black_layer02.gif"},' +
-                                '{"image": "https://ad-demo.vmfive.com/demos/showcase/20200113_mc/resource/mc_black_layer01.gif"},' +
-                                '{"image": "https://ad-demo.vmfive.com/demos/showcase/20200113_mc/resource/mc_black_layer03.gif"},' +
-                                '{"image": "https://ad-demo.vmfive.com/demos/showcase/20200113_mc/resource/mc_black_layer02.gif"},' +
-                                '{"image": "https://ad-demo.vmfive.com/demos/showcase/20200113_mc/resource/mc_black_layer01.gif"}' +
+                                '{"image": "https://ad-demo.vmfive.com/demos/showcase/20200117_hongkong/resource/banner_01_fore.gif"},' +
+                                '{"image": "https://ad-demo.vmfive.com/demos/showcase/20200117_hongkong/resource/banner_02_fore.gif"},' +
+                                '{"image": "https://ad-demo.vmfive.com/demos/showcase/20200117_hongkong/resource/banner_03_fore.gif"},' +
+                                '{"image": "https://ad-demo.vmfive.com/demos/showcase/20200117_hongkong/resource/banner_04_fore.gif"}' +
                                 ']',
                             mediasOuter:
                                 '[' +
-                                '{"image": "https://ad-demo.vmfive.com/demos/showcase/20200113_mc/resource/mc_black_banner03.gif"},' +
-                                '{"image": "https://ad-demo.vmfive.com/demos/showcase/20200113_mc/resource/mc_black_banner02.png"},' +
-                                '{"image": "https://ad-demo.vmfive.com/demos/showcase/20200113_mc/resource/mc_black_banner01.gif"},' +
-                                '{"image": "https://ad-demo.vmfive.com/demos/showcase/20200113_mc/resource/mc_black_banner03.gif"},' +
-                                '{"image": "https://ad-demo.vmfive.com/demos/showcase/20200113_mc/resource/mc_black_banner02.png"},' +
-                                '{"image": "https://ad-demo.vmfive.com/demos/showcase/20200113_mc/resource/mc_black_banner01.gif"}' +
+                                '{"image": "https://ad-demo.vmfive.com/demos/showcase/20200117_hongkong/resource/banner_01_bg.gif"},' +
+                                '{"image": "https://ad-demo.vmfive.com/demos/showcase/20200117_hongkong/resource/banner_02_bg.png"},' +
+                                '{"image": "https://ad-demo.vmfive.com/demos/showcase/20200117_hongkong/resource/banner_03_bg.gif"},' +
+                                '{"image": "https://ad-demo.vmfive.com/demos/showcase/20200117_hongkong/resource/banner_04_bg.gif"}' +
                                 ']',
                         }
                     }
-                },
-                function (self) {
-                    return {
-                        componentName: 'BVideo',
-                        refName: 'BVideo',
-                        option: {
-                            el: self.refs['BannerContainer'].adContainerView,
-                            'request_id': self.refs['BannerContainer'].config['request_id'],
-                            'track_url': self.refs['BannerContainer'].config['track_url'],
-                            'video:video1:mp4': 'https://ad-demo.vmfive.com/demos/showcase/20200113_mc/resource/mc_black_video.mp4',
-                            'video:video1:m3u8': '',
-                            'image:cover': 'https://ad-demo.vmfive.com/demos/showcase/20200113_mc/resource/mc_960x402.png',
-                            'text:3rd_party_track_url': '',
-                            'text:onlyVideo': 'false',
-                            'text:percentageInViewOption': '50',
-
-                            videoScale: '16:9',
-                            videoBorderRadius: 0,
-                            disableAutoplay: false,
-                            'text:videoLoop': 'true'
-                        }
-                    }
-                },
-                function(self) {
-                    self.refs['ObservatoryReverse'].observatoryWrap.style.top = '1px';
-                    self.refs['BannerContainer'].adContainerView.style.flexWrap = 'wrap';
-                    self.refs['BVideo'].rootView.querySelector('.vmfive-video-cover').style.bottom = '0';
                 },
                 function (self) {
                     return {
