@@ -211,22 +211,19 @@
                     'SwingDouble', 'ExpandHelper', 'CloseButton'
                 ],
                 develop: false,
-                showCreateButton: false,
+                showCreateButton: true,
                 BaseAdUnit: [
                     function (self) {
                         return {
                             adformatName: 'BannerContainer',
                             refName: 'BannerContainer',
                             option: {
-                                el: '#vmfive-ad-unit-container-55667788',
                                 enableExpand: false,
                                 disableCta: true,
                                 enableClipPath: false,
-
-                                'cta:default': `https://adison.com.tw?utm_source=adison_ad_cta`,
-                                'text:banner_ratio': '32:15',
                             },
                             demoOption: {
+                                'request_id': '55667788',
                                 'cta:default': `https://adison.com.tw?utm_source=adison_ad_cta`,
                                 'text:banner_ratio': '32:15',
                             }
@@ -239,20 +236,6 @@
                             option: {
                                 el: '#vmfive-ad-unit-container-[request_id]-expand',
                                 'request_id': '[request_id]-expand',
-                                // videoScale: '16:9',
-                                videoScale: '9:16',
-
-                                'cta:default': `https://adison.com.tw?utm_source=adison_ad_cta`,
-                                'text:3rd_party_track_url': '',
-                                'dfp_url': ``,
-                                'image:background': 'https://d2v4tz4zvhrua.cloudfront.net/manual_uploads/20191112/resource/mcdonalds/coverimage.png',
-                                medias:
-                                '['+
-                                '{"image": "https://d2v4tz4zvhrua.cloudfront.net/manual_uploads/20191112/resource/mcdonalds/coverimage.png", "mp4": "https://d2v4tz4zvhrua.cloudfront.net/manual_uploads/20191112/resource/mcdonalds/video_9-16_1st_cut.mp4"},'+
-                                '{"image": "https://d2v4tz4zvhrua.cloudfront.net/manual_uploads/20191112/resource/mcdonalds/16-9_2nd_cut.png"},'+
-                                '{"image": "https://d2v4tz4zvhrua.cloudfront.net/manual_uploads/20191112/resource/mcdonalds/16-9_3rd_cut.png"}'+
-                                ']',
-                                'text:banner_around_interval': '5000',
                             },
                             demoOption: {
                                 'cta:default': `https://adison.com.tw?utm_source=adison_ad_cta`,
@@ -284,17 +267,6 @@
                                         self.refs['UprightAround'].stopAllAndPlayCurrentVideo();
                                     }
                                 ],
-
-                                'image:swing_front': 'https://d2v4tz4zvhrua.cloudfront.net/manual_uploads/20191112/resource/mcdonalds/2880x450_front_120201.png',
-                                'image:swing_back': 'https://d2v4tz4zvhrua.cloudfront.net/manual_uploads/20191112/resource/mcdonalds/2880x450_back_120201.jpg',
-                                'cta:swing_url': 'https://adison.com.tw?utm_source=adison_ad_cta',
-                                'text:swing_banner_magin': '0',
-                                'text:swing_img_ratio': '2880:450',
-                                onprepared: [function (comp) {
-                                    // console.log( comp.swingFront,  comp.swingFront.querySelector('img').style.cssText, comp.swingBack.querySelector('img'));
-                                    // comp.swingFront.querySelector('img').style.cssText += 'height: ' + Math.ceil(comp.swing.querySelector('img').clientHeight) + 'px !important;';
-                                    // comp.swingBack.querySelector('img').style.cssText += 'height: ' + Math.ceil(comp.swing.querySelector('img').clientHeight) + 'px !important;';
-                                }],
                             },
                             demoOption: {
                                 'image:swing_front': 'https://d2v4tz4zvhrua.cloudfront.net/manual_uploads/20191112/resource/mcdonalds/2880x450_front_120201.png',
@@ -333,10 +305,6 @@
                                         self.refs['UprightAround'].aroundClearInterval();
                                     }
                                 ],
-
-                                'text:close_button_horizontal_alignment': 'right',
-                                'text:beautify_percent': '80',
-                                'cta:default': `https://adison.com.tw?utm_source=adison_ad_cta`,
                             },
                             demoOption: {
                                 'text:close_button_horizontal_alignment': 'right',
@@ -377,14 +345,11 @@
                             function () {
                                 self.refs['ExpandHelper'].expandedVisible('show');
                                 self.refs['ExpandHelper'].originalVisible('hide');
-                                // self.refs['UprightAround'].aroundInitAndStart();
                                 self.refs['UprightAround'].makeATurnAndStart();
                             }
                         ];
                         self.refs['ExpandHelper'].config.onctaclicked = [
                             function () {
-                                console.log("self.refs['ExpandHelper'].config.onctaclicked");
-                                // self.refs['UprightAround'].aroundInitAndStart();
                                 self.refs['UprightAround'].makeATurnAndStart();
                             }
                         ];
