@@ -251,7 +251,7 @@
             </p>
 
             <div id="vmfive-ad-unit-container-55667788"></div>
-            <img src="https://ad-demo.vmfive.com/demos/showcase/20200122_kfc_abc/resources/kfc_abc_47c_2.7s.png"
+            <img src="https://ad-demo.vmfive.com/demos/showcase/20200122_kfc_abc/resources/kfc_abc_46c_2.5s.png"
                 style="display:none;">
 
             <h3>業界最多原創廣告格式 讓創意深入人心大獲品牌與媒體青睞</h3>
@@ -321,13 +321,13 @@
                         option: {
                             el: '#vmfive-ad-unit-container-55667788',
                             'request_id': '[request_id]',
-                            'text:banner_ratio': '32:10',
                             enableClipPath: false,
-                            enableImpression: false,
+                            enableImpression: true,
                         },
                         demoOption: {
-                            'cta:default': 'https://www.youtube.com/watch?v=NGUaD8UM69M',
+                            'cta:default': 'https://pse.is/PCJEL',
                             'text:logo_horizontal_alignment': 'left',
+                            'text:banner_ratio': '32:10',
                         }
                     };
                 }
@@ -340,19 +340,16 @@
                         option: {
                             el: self.refs['BannerContainer'].adContainerView,
                             'request_id': self.refs['BannerContainer'].config['request_id'],
-
                             onctaclicked: [
                                 self.refs['BannerContainer'].onCtaClicked,
                             ],
+                        },
+                        demoOption: {
                             'image:marquee': 'https://ad-demo.vmfive.com/demos/showcase/20200122_kfc_abc/resources/kfc_abc_marquee.jpg',
                             'text:marquee_duration': `25000`,
-                            'text:marquee_translatex_percentage_to_new_nextone': `2`,
+                            'text:marquee_translatex_percentage_to_new_nextone': `0`,
                             'text:marquee_initial_position_offset_translatex': `40`,
-
-                            // 'text:cta': '甲乙丙丁戊己庚辛壬鬼，子丑寅卯辰巳午未申酉戌亥',
                             'text:cta': '',
-                            // 'text:marquee_ground_height_px': `60`,
-                            // 'text:marquee_ground_color': `#88888888`,
                         }
                     }
                 },
@@ -364,13 +361,12 @@
                             el: self.refs['BannerContainer'].adContainerView,
                             'request_id': '[request_id]',
                             'track_url': '[track_url]',
-
                             'text:cta_in_new_window': `[text:cta_in_new_window]`,
                             'dfp_url': `[dfp_url]`,
                             'cta_prefix_url': `[cta_prefix_url]`,
-                            'cta:default': `https://www.youtube.com/watch?v=NGUaD8UM69M`,
-
-                            'text:embedded': '[text:embedded]',
+                        },
+                        demoOption: {
+                            'cta:default': `https://pse.is/PCJEL`,
                             'text:show_close_mode': 'fadein',
                             'text:close_button_horizontal_alignment': 'right',
                             'text:close_out_container': 'true',
@@ -379,9 +375,9 @@
                 },
                 function (self) {
                     //===== Config =====
-                    let SpriteSheetUrl = `https://ad-demo.vmfive.com/demos/showcase/20200122_kfc_abc/resources/kfc_abc_51c_2.8s.png`;
-                    let TotalFrame = 51;
-                    let TotalAnimationDuring = 2.8;
+                    let SpriteSheetUrl = `https://ad-demo.vmfive.com/demos/showcase/20200122_kfc_abc/resources/kfc_abc_46c_2.5s.png`;
+                    let TotalFrame = 46;
+                    let TotalAnimationDuring = 2.5;
                     let SpriteSheetWidth = 480;
                     let SpriteSheetHeight = 854;
                     //==================
@@ -416,7 +412,7 @@
                                     height: 0;
                                     padding-bottom: ${SpriteSheetWidthRatio}%;
                                     left: 0;
-                                    bottom: 0;
+                                    top: 0;
                                     z-index: 99991;
                                     background-image:url('${SpriteSheetUrl}');
                                     background-size: ${TotalFrame}00vw ${SpriteSheetWidthRatio}vw;

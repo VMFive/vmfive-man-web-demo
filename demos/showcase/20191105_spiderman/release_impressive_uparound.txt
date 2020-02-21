@@ -1,0 +1,71 @@
+<div id="vmfive-ad-unit-container-[request_id]"></div>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+<script src='https://cdn.jsdelivr.net/velocity/1.0.0/velocity.min.js'></script>
+<script src='https://man.vm5apis.com/dist/hammer.js/2.0.8/hammer.min.js'></script>
+<script src='https://man.vm5apis.com/dist/jquery.hammerjs/2.0.0/jquery.hammer.js'></script>
+<script src='https://d2v4tz4zvhrua.cloudfront.net/production/dist/2019-11-05-1572944616967/adformats/ImpressiveContainer.min.js'></script>
+<script src='https://d2v4tz4zvhrua.cloudfront.net/production/dist/2019-11-05-1572944616967/adformats/UprightAround.min.js'></script>
+<script>
+    let sc = document.createElement("script");
+    sc.src = "https://d1v69ngg41pvl6.cloudfront.net/dist/MixPlayer.js";
+    sc.onload = function () {
+        let ImpressiveContainerEl = new ImpressiveContainer({
+            el: '#vmfive-ad-unit-container-[request_id]',
+            "request_id": '[request_id]',
+            "track_url": '[track_url]',
+            "downloaded_pixel": '[downloaded_pixel]',
+            "text:cta_in_new_window": '[text:cta_in_new_window]',
+            "text:top_margin": '[text:top_margin]',
+            "dfp_url": '[dfp_url]',
+            "cta_prefix_url": '[cta_prefix_url]',
+            "cta:default": '[cta:default]',
+            "text:is_fixed": 'true',
+            "text:scale": '[text:scale]',
+            "text:always_display_from_top": '[text:always_display_from_top]',
+            "text:logo_vertical_position": 'right',
+            "text:logo_horizontal_position": 'bottom',
+            "text:click_available_vh_rate": '[text:click_available_vh_rate]',
+            backgroundScale: '2:3',
+            onresize: [],
+            onctaclicked: [],
+            onPositionToImpression: [],
+            enableExpand: false,
+            disableCta: true,
+            enableClipPath: false
+        });
+        let UprightAroundEl = new UprightAround({
+            el: ImpressiveContainerEl.adContainerView,
+            "request_id": '[request_id]',
+            "track_url": '[track_url]',
+            "downloaded_pixel": '[downloaded_pixel]',
+            "text:cta_in_new_window": '[text:cta_in_new_window]',
+            "dfp_url": '[dfp_url]',
+            "cta_prefix_url": '[cta_prefix_url]',
+            "cta:default": '[cta:default]',
+            "text:3rd_party_track_url": '[text:3rd_party_track_url]',
+            medias:
+            '['+
+            '{"image": "", "mp4": ""},'+
+            '{"image": "", "ctaURL": ""},'+
+            '{"image": "", "mp4": ""},'+
+            '{"image": ""}'+
+            ']',
+            "text:autoplay": '[text:autoplay]',
+            "text:view_time": '[text:view_time]',
+            "text:banner_around_interval": '[text:banner_around_interval]',
+            videoScale: '16:9',
+            disableCta: false,
+            isAroundInContainer: true,
+            ctaMode: 'default',
+            onresize: [],
+            onprepared: [],
+            onplayed: [],
+            onfinished: [],
+            onctaclicked: []
+        });
+        UprightAroundEl.overlayView.style.backgroundColor = 'initial';
+        UprightAroundEl.overlayView.style.zIndex = 'initial';
+        ImpressiveContainerEl.config.onPositionToImpression = [function () { setTimeout(function () { UprightAroundEl.makeATurnAndStart(); }, 1000); }]
+    };
+    document.body.appendChild(sc);
+</script>

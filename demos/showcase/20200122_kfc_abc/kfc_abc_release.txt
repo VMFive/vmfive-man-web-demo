@@ -1,12 +1,9 @@
 <div id="vmfive-ad-unit-container-[request_id]"></div>
 <script src='https://man.vm5apis.com/dist/anime.js/3.0.1/anime.min.js'></script>
-<script src='https://man.vm5apis.com/dist/jquery/2.1.3/jquery.min.js'></script>
-<script src='https://man.vm5apis.com/dist/hammer.js/2.0.8/hammer.min.js'></script>
-<script src='https://man.vm5apis.com/dist/jquery.hammerjs/2.0.0/jquery.hammer.js'></script>
 <script src='https://man.vm5apis.com/dist/raf.js'></script>
-<script src='https://d2v4tz4zvhrua.cloudfront.net/production/dist/2019-12-30-1577694529417/adformats/BannerContainer.min.js'></script>
-<script src='https://d2v4tz4zvhrua.cloudfront.net/production/dist/2019-12-30-1577694529417/components/BannerThreeD.min.js'></script>
-<script src='https://d2v4tz4zvhrua.cloudfront.net/production/dist/2019-12-30-1577694529417/components/CloseButton.min.js'></script>
+<script src='https://d2v4tz4zvhrua.cloudfront.net/production/dist/2020-01-14-1578994366707/adformats/BannerContainer.min.js'></script>
+<script src='https://d2v4tz4zvhrua.cloudfront.net/production/dist/2020-01-14-1578994366707/components/Marquee.min.js'></script>
+<script src='https://d2v4tz4zvhrua.cloudfront.net/production/dist/2020-01-14-1578994366707/components/CloseButton.min.js'></script>
 <script>
     let sc = document.createElement("script");
     sc.src = "https://d1v69ngg41pvl6.cloudfront.net/dist/MixPlayer.js";
@@ -29,7 +26,7 @@
             "text:embedded": '[text:embedded]',
             "text:background_color": '[text:background_color]',
             "text:logo_background_color": '[text:logo_background_color]',
-            "text:logo_horizontal_alignment": 'left',
+            "text:logo_horizontal_alignment": '[text:logo_horizontal_alignment]',
             "text:logo_vertical_alignment": '[text:logo_vertical_alignment]',
             enableClipPath: false,
             enableLogo: true,
@@ -41,59 +38,19 @@
             onctaclicked: [],
             onbannerinit: []
         });
-        let BannerThreeDEl = new BannerThreeD({
+        let MarqueeEl = new Marquee({
             el: BannerContainerEl.adContainerView,
             "request_id": '[request_id]',
-            "track_url": '[track_url]',
-            "downloaded_pixel": '[downloaded_pixel]',
-            "downloaded_impression_pixel": '[downloaded_impression_pixel]',
-            "image:front": '[image:front]',
-            "image:bottom": '[image:bottom]',
-            "image:back": '[image:back]',
-            "image:top": '[image:top]',
-            "text:cta_in_new_window": '[text:cta_in_new_window]',
-            "dfp_url": '[dfp_url]',
-            "cta_prefix_url": '[cta_prefix_url]',
-            "cta:default": '[cta:default]',
-            "cta:front": '[cta:front]',
-            "cta:bottom": '[cta:bottom]',
-            "cta:back": '[cta:back]',
-            "cta:top": '[cta:top]',
-            "text:scale": '[text:scale]',
-            "text:banner_threed_rotate_duration": '[text:banner_threed_rotate_duration]',
-            "text:banner_threed_rotate_interval": '[text:banner_threed_rotate_interval]',
-            "text:banner_threed_rotate_initial_delay": '[text:banner_threed_rotate_initial_delay]',
-            "text:banner_threed_initial_rotate_degree": '[text:banner_threed_initial_rotate_degree]',
-            disableTriggerByScroll: false,
-            disableAutoStartRotate: true,
-            cubic: {
-                front: {
-                    imageURL: '[image:front]',
-                    ctaURL: '[cta:front]',
-                },
-                bottom: {
-                    imageURL: '[image:bottom]',
-                    ctaURL: '[cta:bottom]',
-                },
-                back: {
-                    imageURL: '[image:back]',
-                    ctaURL: '[cta:back]',
-                },
-                top: {
-                    imageURL: '[image:top]',
-                    ctaURL: '[cta:top]',
-                },
-                left: {
-                    imageURL: '',
-                    ctaURL: '',
-                },
-                right: {
-                    imageURL: '',
-                    ctaURL: '',
-                }
-            },
-            heightRatio: "1",
-            bannerRatio: BannerContainerEl.config['text:banner_ratio'],
+            "image:marquee": '[image:marquee]',
+            "text:marquee_duration": '[text:marquee_duration]',
+            "text:marquee_translatex_percentage_to_new_nextone": '[text:marquee_translatex_percentage_to_new_nextone]',
+            "text:marquee_initial_position_offset_translatex": '[text:marquee_initial_position_offset_translatex]',
+            "text:cta": '[text:cta]',
+            "text:marquee_ground_height": '[text:marquee_ground_height]',
+            "text:marquee_ground_color": '[text:marquee_ground_color]',
+            onresize: [],
+            onprepared: [],
+            onctaclicked: [function (e) { if (e.target.id == 'vmfive-volume-btn-' + o.config.request_id || e.target.id == 'vmfive-logo-' + o.config.request_id) return !1; var t = '' + o.config.dfp_url + o.config.cta_prefix_url + '&url=' + o.config['cta:default'], n = o.config.onctaclicked && Array.isArray(o.config.onctaclicked) ? o.config.onctaclicked : []; o.callback(n, { e: e }), o.config.disableCta || (f ? window.open(t, '_blank') : window.top.location.href = t) }]
         });
         let CloseButtonEl = new CloseButton({
             el: BannerContainerEl.adContainerView,
@@ -117,7 +74,6 @@
             oncloseexpanded: [],
             onclosed: []
         });
-        //===== Config =====
         let SpriteSheetUrl = `[image:sprite_sheet]`;
         let TotalFrame = '[text:total_frame]';
         let TotalAnimationDuring = '[text:total_animation_during]';
@@ -128,7 +84,6 @@
 
 
         let vmfiveAdUnitContainer = BannerContainerEl;
-        let spinCubic = BannerThreeDEl;
         vmfiveAdUnitContainer.overlayView.style.display = "none";
         vmfiveAdUnitContainer.overlayView.style.opacity = "0";
 
@@ -156,7 +111,7 @@
                                     height: 0;
                                     padding-bottom: ${SpriteSheetWidthRatio}%;
                                     left: 0;
-                                    bottom: 0;
+                                    top: 0;
                                     z-index: 99991;
                                     background-image:url('${SpriteSheetUrl}');
                                     background-size: ${TotalFrame}00vw ${SpriteSheetWidthRatio}vw;
@@ -179,25 +134,24 @@
                 let animeWrap = vmfiveAdUnitContainer.rootView.querySelector('#anime-wrap-' + vmfiveAdUnitContainer.config.request_id);
                 let monsterEL = vmfiveAdUnitContainer.rootView.querySelector('#anime-wrap-' + vmfiveAdUnitContainer.config.request_id + ' .monster');
 
-                vmfiveAdUnitContainer.overlayView.style.display = "block";
-
                 // Add Classlist make animation start
                 setTimeout(function () {
                     let triggeredFunc = function (event) {
                         window.removeEventListener('scroll', triggeredFunc);
+
                         monsterEL.style.display = 'block';
                         monsterEL.classList.add('vmfive-play');
 
                         anime({
                             targets: vmfiveAdUnitContainer.overlayView,
                             opacity: [
-                                { value: '0', duration: 0, delay: TotalAnimationDuring * 1000 + 500 },
+                                { value: '0', duration: 0, delay: TotalAnimationDuring * 1000 + 100 },
                                 { value: '1', duration: 30 },
                             ],
                             easing: 'linear',
                             complete: function () {
                                 animeWrap.style.display = "none";
-                                spinCubic.startRotate();
+                                vmfiveAdUnitContainer.overlayView.style.display = "block";
                             }
                         });
                     }
