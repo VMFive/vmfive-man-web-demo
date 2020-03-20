@@ -295,20 +295,22 @@
             <p>文章來源：<a href="https://money.udn.com/money/story/10860/3751172">經濟日報</a></p>
         </div>
     </div>
-    <script
-        src='https://d2v4tz4zvhrua.cloudfront.net/production/dist/2020-03-11-1583894501949/common/TemplateBuilder.min.js'></script>
+
+
+    <script src="https://d1v69ngg41pvl6.cloudfront.net/dist/odometer.js/0.4.8/odometer.min.js"></script>
+
+    <script src='https://d2v4tz4zvhrua.cloudfront.net/production/dist/2020-02-24-1582531073384/common/TemplateBuilder.min.js'></script>
     <script>
         let template = new TemplateBuilder({
-            cdn: 'https://d2v4tz4zvhrua.cloudfront.net/production/dist/2020-03-11-1583894501949',
+            cdn: 'https://d2v4tz4zvhrua.cloudfront.net/production/dist/2020-02-24-1582531073384',
             plugins: [
-                'https://man.vm5apis.com/dist/anime.js/3.0.1/anime.min.js',
-                'https://man.vm5apis.com/dist/raf.js'
+                'https://man.vm5apis.com/dist/anime.js/2.0.2/anime.min.js'
             ],
             adformats: [
-                'BannerContainer', 'Interstitial'
+                'ImpressiveFlyer',
             ],
             components: [
-                'ConveyorDoubleSlide', 'CloseButton', 'ExpandHelper'
+                'Flyer',
             ],
             develop: false,
             Tracking: [
@@ -332,268 +334,48 @@
             BaseAdUnit: [
                 function (self) {
                     return {
-                        adformatName: 'BannerContainer',
-                        refName: 'BannerContainer',
+                        adformatName: 'ImpressiveFlyer',
+                        refName: 'ImpressiveFlyer',
                         option: {
                             el: '#vmfive-ad-unit-container-55667788',
                             'request_id': '[request_id]',
-                            'text:banner_ratio': '32:15',
-                            enableClipPath: false,
-                            enableImpression: false,
-                            'text:logo_horizontal_alignment': 'left',
-                            disableCta: true,
+                            'track_url': '[track_url]',
+
+                            keepCheckingPosition: false,
+                            setLinkView: true,
+                            onlinkview: [],
                             TrackingHelper: self.TrackingHelper,
                         },
                         demoOption: {
+                            'video:video1:mp4': `https://ad-demo.vmfive.com/demos/showcase/20200224_flyer/resource/onward_30s_03.mp4`,
+                            'downloaded_pixel': '',
+                            'text:cta_in_new_window': '',
+                            'text:top_margin_percentage': '',
+                            'dfp_url': '',
+                            'cta_prefix_url': '',
                             'cta:default': 'https://adison.com.tw/landing/',
-                        }
-                    };
-                },
-                function (self) {
-                    return {
-                        adformatName: 'Interstitial',
-                        refName: 'Interstitial',
-                        option: {
-                            el: `#vmfive-ad-unit-container-55667788`,
-                            'request_id': '[request_id]-interstitial',
-                            'track_url': '[track_url]',
+                            'cta:video1': 'https://adison.com.tw/landing/',
 
-                            'video:video1:mp4': 'https://ad-demo.vmfive.com/demos/showcase/20200214_yuanchi/resources/yuancui_video.mp4',
-                            'video:video1:m3u8': '',
-                            'downloaded_pixel': `[downloaded_pixel]`,
-                            'downloaded_impression_pixel': `[downloaded_impression_pixel]`,
-                            'text:cta_in_new_window': `[text:cta_in_new_window]`,
-                            'text:top_margin': '',
-                            'dfp_url': ``,
-                            'cta_prefix_url': 'https://vaser-track.vm5apis.com/v2/track?requestId=&placementId=&campaignId=&audienceGroupId=&creativeId=&timezone=8&creativeFormat=richmedia&pixel=1&x=0&event=click',
-                            'cta:default': `https://adison.com.tw/landing/`,
-
-                            'image:image1': 'https://ad-demo.vmfive.com/demos/showcase/20200214_yuanchi/resources/yuancui_expand_2020_2.png',
-                            'image:foreground_image': 'https://ad-demo.vmfive.com/demos/showcase/20200214_yuanchi/resources/yuancui_expand_2020_2.png',
+                            'text:enter_direction': 'right',
+                            'image:image1': 'https://ad-demo.vmfive.com/demos/showcase/20200224_flyer/resource/onward_flyer_bg.gif',
+                            'image:foreground_image': `https://ad-demo.vmfive.com/demos/showcase/20200224_flyer/resource/onward_flyer_fore.gif`,
                             'image:cover': '',
-                            'text:align_video': `[text:align_video]`,
-                            'text:video_top_offset_ratio': `[text:video_top_offset_ratio]`,
-                            'text:scale': `0.8`,
-                            'text:richmedia_bg_url': '',
-                            richmedia_bg_offset_top_percentage: 15,
+                            'text:align_video': 'top',
+                            'text:is_fixed': '',
+                            'text:scale': '',
+                            'text:richmedia_bg_url': ``,
+                            richmedia_bg_offset_top_percentage: 0,
 
-                            'text:moatjs_advertiser': '[text:moatjs_advertiser]',
-                            'text:moatjs_partner_code': '[text:moatjs_partner_code]',
-                            'text:moatjs_campaign_id': '[text:moatjs_campaign_id]',
-                            'text:moatjs_audience_group_id': '[text:moatjs_audience_group_id]',
-                            'text:moatjs_creative_id': '[text:moatjs_creative_id]',
-                            'text:moatjs_app_key': '[text:moatjs_app_key]',
-                            'text:moatjs_placement_id': '[text:moatjs_placement_id]',
-                            'text:moatjs_moat_url': '[text:moatjs_moat_url]',
-
-                            'text:view_time': '[text:view_time]',
-
-                            'text:logo_vertical_position': '[text:logo_vertical_position]',
-                            'text:logo_horizontal_position': '[text:logo_horizontal_position]',
-
-                            'text:3rd_party_track_url': '[text:3rd_party_track_url]',
-
-                            videoScale: '16:9',
-                            videoBorderRadius: 0,
-
+                            'text:view_time': '',
+                            'text:view_percentage': '',
                             'text:logo_vertical_position': '',
                             'text:logo_horizontal_position': '',
+                            'text:richmedia_bg_url': ``,
 
-                            'text:3rd_party_track_url': '',
                         }
                     };
                 }
             ],
-            OnBaseAdUnitPrepared: [
-                function (self) {
-                    return {
-                        componentName: 'ConveyorDoubleSlide',
-                        refName: 'ConveyorDoubleSlide',
-                        option: {
-                            el: self.refs['BannerContainer'].adContainerView,
-                            'request_id': '[request_id]',
-                            'image:background': `https://ad-demo.vmfive.com/demos/showcase/20200214_yuanchi/resources/yuancui_drivein_bg_2020.png`,
-                            'text:base_move_duration': `1500`,
-
-                            'cta:default': `https://adison.com.tw/landing/`,
-                            'text:right_slide_from': `right`,
-                            'text:left_slide_from': `left`,
-                            disableAutoStartMove: true,
-
-                            leftProducts:
-                                '[' +
-                                '{"intro": "https://ad-demo.vmfive.com/demos/showcase/20200214_yuanchi/resources/yuancui_drivein_20200220_icon_1.png", "ctaURL": "https://adison.com.tw/landing/"},' +
-                                '{"intro": "https://ad-demo.vmfive.com/demos/showcase/20200214_yuanchi/resources/yuancui_drivein_20200220_icon_2.png", "ctaURL": "https://adison.com.tw/landing/"},' +
-                                '{}]',
-                            rightProducts:
-                                '[' +
-                                '{"intro": "https://ad-demo.vmfive.com/demos/showcase/20200214_yuanchi/resources/yuancui_drivein_20200220_icon_1.png", "ctaURL": "https://adison.com.tw/landing/"},' +
-                                '{"intro": "https://ad-demo.vmfive.com/demos/showcase/20200214_yuanchi/resources/yuancui_drivein_20200220_icon_2.png", "ctaURL": "https://adison.com.tw/landing/"},' +
-                                '{}]',
-                            onctaclicked: [
-                            ],
-                        }
-                    }
-                },
-                function (self) {
-                    let leftSlideshow = self.refs['ConveyorDoubleSlide'].rootView.querySelector(`.vmfive-left-slideshow-${self.refs['ConveyorDoubleSlide'].config['request_id']}`);
-                    let rightSlideshow = self.refs['ConveyorDoubleSlide'].rootView.querySelector(`.vmfive-right-slideshow-${self.refs['ConveyorDoubleSlide'].config['request_id']}`);
-                    leftSlideshow.style.width = Math.floor(leftSlideshow.offsetWidth);
-                    rightSlideshow.style.display = 'none';
-                },
-                function (self) {
-                    return {
-                        componentName: 'CloseButton',
-                        refName: 'CloseButton',
-                        option: {
-                            el: self.refs['BannerContainer'].adContainerView,
-                            'request_id': '[request_id]',
-                            'track_url': '[track_url]',
-                            'cta:default': `https://www.adidas.com.tw/product/35457852?utm_source=VM5&utm_medium=Panorama&utm_campaign=VRCT&utm_content=0905TGOP`,
-                            'text:close_button_horizontal_alignment': 'right',
-                            'text:beautify_percent': '80',
-                            TrackingHelper: self.TrackingHelper,
-                        }
-                    }
-                },
-                function (self) {
-                    return {
-                        componentName: 'CloseButton',
-                        refName: 'CloseButtonIn',
-                        option: {
-                            el: self.refs['Interstitial'].overlayView,
-                            'request_id': '[request_id]',
-                            'track_url': '[track_url]',
-                            'cta:default': `https://www.adidas.com.tw/product/35457852?utm_source=VM5&utm_medium=Panorama&utm_campaign=VRCT&utm_content=0905TGOP`,
-                            'text:show_close_mode': 'fadein',
-                            'text:close_button_horizontal_alignment': 'right',
-                            'text:beautify_percent': '80',
-                            TrackingHelper: self.TrackingHelper,
-                            onExpandHelperClose: [
-                                function (comp) {
-                                    self.refs['ExpandHelper'].expandedVisible('hide');
-                                    self.refs['ExpandHelper'].originalVisible('show');
-                                }
-                            ],
-                        }
-                    }
-                },
-                function (self) {
-                    return {
-                        componentName: 'ExpandHelper',
-                        refName: 'ExpandHelper',
-                        option: {
-                            original: self.refs['BannerContainer'],
-                            expanded: self.refs['Interstitial'],
-                            showExpandButton: true,
-                            TrackingHelper: self.TrackingHelper,
-                            onprepared: [
-                                function (comp) {
-                                    comp.expandedVisible('hide');
-                                    comp.originalVisible('show');
-                                }
-                            ]
-                        }
-                    }
-                },
-                function (self) {
-                    self.refs['BannerContainer'].config.onctaclicked = [
-                        function () {
-                            self.refs['ExpandHelper'].expandedVisible('show');
-                            self.refs['ExpandHelper'].originalVisible('hide');
-                        }
-                    ];
-                },
-                function (self) {
-                    //===== Config =====
-                    let SpriteSheetUrl = `https://ad-demo.vmfive.com/demos/showcase/20200214_yuanchi/resources/yuancui_54c_2.9s_0220_2.png`;
-                    let TotalFrame = 54;
-                    let TotalAnimationDuring = 2.9;
-                    let SpriteSheetWidth = 480;
-                    let SpriteSheetHeight = 854;
-                    //==================
-                    let SpriteSheetWidthRatio = Math.round(100 * SpriteSheetHeight / SpriteSheetWidth);
-
-
-                    let vmfiveAdUnitContainer = self.refs['BannerContainer'];
-                    let conveyorDoubleEL = self.refs['ConveyorDoubleSlide'];
-                    vmfiveAdUnitContainer.overlayView.style.display = "none";
-                    vmfiveAdUnitContainer.overlayView.style.opacity = "0";
-
-                    function loadImage(src) {
-                        return new Promise((resolve, reject) => {
-                            const img = new Image();
-                            img.addEventListener("load", () => resolve(img));
-                            img.addEventListener("error", err => reject(err));
-                            img.src = src;
-                        });
-                    };
-                    Promise.all([
-                        loadImage(SpriteSheetUrl),
-                    ])
-                        .then(function () {
-                            let innerHteml = `
-                            <div id="anime-wrap-${vmfiveAdUnitContainer.config.request_id}">
-                                <div class="monster"></div>
-                            </div>
-                            <style>
-                                #anime-wrap-${vmfiveAdUnitContainer.config.request_id} .monster {
-                                    position: fixed;
-                                    display:none;
-                                    width: 100%;
-                                    height: 0;
-                                    padding-bottom: ${SpriteSheetWidthRatio}%;
-                                    left: 0;
-                                    bottom: 0;
-                                    z-index: 99991;
-                                    background-image:url('${SpriteSheetUrl}');
-                                    background-size: ${TotalFrame}00vw ${SpriteSheetWidthRatio}vw;
-                                    background-repeat:no-repeat;
-                                    background-position: 0 0;
-                                    transform: translateZ(0);
-                                    transform: translate3d(0, 0, 0);
-                                }
-                                #anime-wrap-${vmfiveAdUnitContainer.config.request_id} .monster.vmfive-play {
-                                    animation: vmfive-play-animation ${TotalAnimationDuring}s steps(${TotalFrame - 1});
-                                    animation-fill-mode: forwards;
-                                }
-                                @keyframes vmfive-play-animation {
-                                    0% { background-position: 0 0;}
-                                    100% { background-position: -${TotalFrame - 1}00vw 0;}
-                                }
-                            </style>
-                        `;
-                            vmfiveAdUnitContainer.rootView.insertAdjacentHTML('beforeend', innerHteml);
-                            let animeWrap = vmfiveAdUnitContainer.rootView.querySelector('#anime-wrap-' + vmfiveAdUnitContainer.config.request_id);
-                            let monsterEL = vmfiveAdUnitContainer.rootView.querySelector('#anime-wrap-' + vmfiveAdUnitContainer.config.request_id + ' .monster');
-
-                            vmfiveAdUnitContainer.overlayView.style.display = "block";
-                            // Add Classlist make animation start
-                            setTimeout(function () {
-                                let triggeredFunc = function (event) {
-                                    window.removeEventListener('scroll', triggeredFunc);
-                                    monsterEL.style.display = 'block';
-                                    monsterEL.classList.add('vmfive-play');
-
-                                    anime({
-                                        targets: vmfiveAdUnitContainer.overlayView,
-                                        opacity: [
-                                            { value: '0', duration: 0, delay: TotalAnimationDuring * 1000 + 100 },
-                                            { value: '1', duration: 30 },
-                                        ],
-                                        easing: 'linear',
-                                        complete: function () {
-                                            animeWrap.style.display = "none";
-                                            conveyorDoubleEL.resumeStart();
-                                        }
-                                    });
-                                }
-                                window.addEventListener('scroll', triggeredFunc, false);
-                            }, 500)
-                        })
-                        .catch(function (err) { });
-                }
-            ]
         });
     </script>
 </body>

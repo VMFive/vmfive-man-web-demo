@@ -1,0 +1,143 @@
+<div id="vmfive-ad-unit-container-[request_id]"></div>
+<script src='https://man.vm5apis.com/dist/anime.js/3.0.1/anime.min.js'></script>
+<script src='https://man.vm5apis.com/dist/raf.js'></script>
+<script src='https://d2v4tz4zvhrua.cloudfront.net/production/dist/2020-03-02-1583132605058/common/TrackingHelper.min.js'></script>
+<script src='https://d2v4tz4zvhrua.cloudfront.net/production/dist/2020-03-02-1583132605058/adformats/BannerContainer.min.js'></script>
+<script src='https://d2v4tz4zvhrua.cloudfront.net/production/dist/2020-03-02-1583132605058/components/SpriteDriveIn.min.js'></script>
+<script src='https://d2v4tz4zvhrua.cloudfront.net/production/dist/2020-03-02-1583132605058/components/unit/BVideo.min.js'></script>
+<script src='https://d2v4tz4zvhrua.cloudfront.net/production/dist/2020-03-02-1583132605058/components/CloseButton.min.js'></script>
+<script src='https://d2v4tz4zvhrua.cloudfront.net/production/dist/2020-03-02-1583132605058/components/Leading.min.js'></script>
+<script>
+    let sc = document.createElement("script");
+    sc.src = "https://d1v69ngg41pvl6.cloudfront.net/dist/MixPlayer/1.1.0/MixPlayer.js";
+    sc.onload = function () {
+        let TrackingHelperEl = new TrackingHelper({
+            el: '#vmfive-ad-unit-container-[request_id]',
+            "request_id": '[request_id]',
+            "track_url": '[track_url]',
+            "text:3rd_party_track_url": '[text:3rd_party_track_url]',
+            wantedTrackingList: [
+                'impression', 'close', 'custom', 'video_percentage', 'video_progress', 'view', 
+            ],
+            fbPixelId: "",
+            wantedFbPixelList: []
+        });
+        let BannerContainerEl = new BannerContainer({
+            el: '#vmfive-ad-unit-container-[request_id]',
+            "request_id": '[request_id]',
+            "track_url": '[track_url]',
+            "downloaded_pixel": '[downloaded_pixel]',
+            "downloaded_impression_pixel": '[downloaded_impression_pixel]',
+            "text:cta_in_new_window": '[text:cta_in_new_window]',
+            "dfp_url": '[dfp_url]',
+            "cta_prefix_url": '[cta_prefix_url]',
+            "cta:default": '[cta:default]',
+            "text:banner_z_index": '[text:banner_z_index]',
+            "text:banner_top_offset": '[text:banner_top_offset]',
+            "text:banner_bottom_offset": '[text:banner_bottom_offset]',
+            "text:scale": '[text:scale]',
+            "text:max_width": '[text:max_width]',
+            "text:embedded": '[text:embedded]',
+            "text:background_color": '[text:background_color]',
+            "text:logo_background_color": '[text:logo_background_color]',
+            "text:logo_horizontal_alignment": 'left',
+            "text:logo_vertical_alignment": '[text:logo_vertical_alignment]',
+            enableClipPath: false,
+            enableLogo: true,
+            "text:banner_ratio": '[text:banner_ratio]',
+            videoBorderRadius: 0,
+            disableCta: false,
+            doImpression: false,
+            onresize: [],
+            onprepared: [],
+            onctaclicked: [],
+            onbannerinit: [],
+            TrackingHelper: TrackingHelperEl,
+        });
+        let SpriteDriveInEl = new SpriteDriveIn({
+            el: BannerContainerEl.adContainerView,
+            "request_id": '[request_id]',
+            "image:background": '[image:background]',
+            "text:base_move_duration": '[text:base_move_duration]',
+            "cta:default": '[cta:default]',
+            rightProducts:
+                '[' +
+                '{"intro": "[image:right_products_1]", "ctaURL": "[cta:right_products_1]"},' +
+                '{"intro": "[image:right_products_2]", "ctaURL": "[cta:right_products_2]"},' +
+                '{"intro": "[image:right_products_3]", "ctaURL": "[cta:right_products_3]"},' +
+                '{}]',
+            leftProducts:
+                '[' +
+                '{"intro": "[image:left_products_1]", "ctaURL": "[cta:right_products_1]"},' +
+                '{"intro": "[image:left_products_2]", "ctaURL": "[cta:right_products_2]"},' +
+                '{"intro": "[image:left_products_3]", "ctaURL": "[cta:right_products_3]"},' +
+                '{}]',
+            onresize: [],
+            onprepared: [],
+            onctaclicked: []
+        });
+        let BVideoEl = new BVideo({
+            el: SpriteDriveInEl.rightSlideshowView,
+            "request_id": '[request_id]',
+            'video:video1:mp4': '[video:video1:mp4]',
+            "image:cover": "[image:cover]",
+            videoScale: '16:9',
+            videoBorderRadius: 0,
+            disableAutoplay: true,
+            "text:videoLoop": '[text:videoLoop]',
+            "text:onlyVideo": '[text:onlyVideo]',
+            "text:percentageInViewOption": '50',
+            onSeconds: [],
+            onresize: [],
+            onprepared: [],
+            onplayed: [],
+            onfinished: [],
+            TrackingHelper: TrackingHelperEl,
+        });
+        let videoUnitWrap = SpriteDriveInEl.rightSlideshowView.querySelector(`#vmfive-ad-unit-${SpriteDriveInEl.config.request_id}`);
+        let cover = SpriteDriveInEl.rightSlideshowView.querySelector('.vmfive-video-cover');
+        videoUnitWrap.style.top = '20%';
+        cover.style.top = '20%';
+        let CloseButtonEl = new CloseButton({
+            el: BannerContainerEl.adContainerView,
+            "request_id": '[request_id]',
+            "track_url": '[track_url]',
+            "text:cta_in_new_window": '[text:cta_in_new_window]',
+            "dfp_url": '[dfp_url]',
+            "cta_prefix_url": '[cta_prefix_url]',
+            "cta:default": '[cta:default]',
+            "text:embedded": '[text:embedded]',
+            "text:show_close_mode": 'fadein',
+            "text:close_button_horizontal_alignment": '[text:close_button_horizontal_alignment]',
+            "text:beautify_percent": '[text:beautify_percent]',
+            "text:close_out_container": '[text:close_out_container]',
+            "text:close_style": '[text:close_style]',
+            "text:close_mode_second": '[text:close_mode_second]',
+            enableExpand: false,
+            disableCta: false,
+            onctaclicked: [],
+            onExpandHelperClose: [],
+            oncloseexpanded: [],
+            onclosed: [],
+            TrackingHelper: TrackingHelperEl,
+        });
+        let LeadingEl = new Leading({
+            'request_id': '[request_id]',
+            'image:sprite_sheet': '[image:sprite_sheet]',
+            'text:total_frame': '[text:total_frame]',
+            'text:total_animation_during': '[text:total_animation_during]',
+            'text:anime_delay_offset': '[text:anime_delay_offset]',
+            SpriteSheetWidth: 480,
+            SpriteSheetHeight: 854,
+            containerOverlayRoot: BannerContainerEl.overlayView,
+            containerInsertRoot: BannerContainerEl.rootView,
+            oncomplete: [
+                function() {
+                    BannerContainerEl.doImpression();
+                    BVideoEl.playvideo();
+                }
+            ],
+        });
+    };
+    document.body.appendChild(sc);
+</script>
