@@ -24,7 +24,7 @@
             position: fixed;
             top: 0;
             left: 0;
-            z-index: 9;
+            z-index: 99999;
             width: 100%;
             box-shadow: 0 1px 0 rgb(0, 0, 0, 0.1);
             background-color: white;
@@ -296,22 +296,27 @@
         </div>
     </div>
 
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+    <script src='https://man.vm5apis.com/dist/hammer.js/2.0.8/hammer.min.js'></script>
+    <script src='https://man.vm5apis.com/dist/jquery.hammerjs/2.0.0/jquery.hammer.js'></script>
 
-    <script src="https://d1v69ngg41pvl6.cloudfront.net/dist/odometer.js/0.4.8/odometer.min.js"></script>
-
-    <script
-        src='https://d2v4tz4zvhrua.cloudfront.net/production/dist/2020-04-06-1586158835626/common/TemplateBuilder.min.js'></script>
+    <script src='https://man.vm5apis.com/dist/oridomi-vmfive/oridomi-vmfive2.js'></script>
+    <script src='https://man.vm5apis.com/dist/perfect-scrollbar/perfect-scrollbar.min.js'></script>
+    <script src="https://man.vm5apis.com/dist/raf.js"></script>
+    <script src="https://man.vm5apis.com/dist/anime.js/3.0.1/anime.min.js"></script>
+    <script src='https://d2v4tz4zvhrua.cloudfront.net/production/dist/2020-03-27-1585277087862/common/TemplateBuilder.min.js'></script>
     <script>
         let template = new TemplateBuilder({
-            cdn: 'https://d2v4tz4zvhrua.cloudfront.net/production/dist/2020-04-06-1586158835626',
+            cdn: 'https://d2v4tz4zvhrua.cloudfront.net/production/dist/2020-03-27-1585277087862',
             plugins: [
-                'https://man.vm5apis.com/dist/anime.js/2.0.2/anime.min.js'
+                // 'https://man.vm5apis.com/dist/anime.js/3.0.1/anime.min.js',
+                // 'https://man.vm5apis.com/dist/raf.js'
             ],
             adformats: [
-                'ImpressiveFlyer',
+                'BannerContainer', 'Brochure'
             ],
             components: [
-                'Flyer',
+                'ConveyorDoubleSlide', 'unit/BVideo', 'ExpandHelper', 'CloseButton'
             ],
             develop: false,
             Tracking: [
@@ -321,7 +326,7 @@
                             el: '#vmfive-ad-unit-container-55667788',
                             'request_id': '[request_id]',
                             wantedTrackingList: [
-                                'impression', 'close', 'video_percentage', 'video_progress', 'custom', 'view'
+                                'impression', 'close', 'video_percentage', 'video_progress', 'custom', 'view', 'collapse', 'expand'
                             ],
                             fbPixelId: '',
                             wantedFbPixelList: [],
@@ -333,44 +338,176 @@
                 }
             ],
             BaseAdUnit: [
-                function (self) {
+                function(self) {
                     return {
-                        adformatName: 'ImpressiveFlyer',
-                        refName: 'ImpressiveFlyer',
+                        adformatName: 'BannerContainer',
+                        refName: 'BannerContainer',
                         option: {
                             el: '#vmfive-ad-unit-container-55667788',
                             'request_id': '[request_id]',
-
-                            keepCheckingPosition: false,
-                            setLinkView: true,
-                            onlinkview: [],
+                            enableClipPath: false,
+                            disableCta: false,
                             TrackingHelper: self.TrackingHelper,
                         },
                         demoOption: {
-                            'video:video1:mp4': `https://ad-demo.vmfive.com/demos/showcase/20200224_flyer/resource/onward_30s_03.mp4`,
-                            'cta:default': 'https://www.youtube.com/?gl=TW&hl=zh-TW',
-                            'cta:video1': 'https://www.youtube.com/?gl=TW&hl=zh-TW',
-
-                            'text:enter_direction': 'left',
-                            'image:image1': 'https://ad-demo.vmfive.com/demos/showcase/20200224_flyer/resource/onward_flyer_bg.gif',
-                            'image:foreground_image': `https://ad-demo.vmfive.com/demos/showcase/20200224_flyer/resource/onward_flyer_fore.gif`,
-                            'image:cover': '',
-                            'text:align_video': 'top',
-                            'text:is_fixed': '',
-                            'text:scale': '',
-                            'text:richmedia_bg_url': ``,
-                            richmedia_bg_offset_top_percentage: 0,
-
-                            'text:view_time': '',
-                            'text:view_percentage': '',
-                            'text:logo_vertical_position': '',
-                            'text:logo_horizontal_position': '',
-                            'text:richmedia_bg_url': ``,
-
+                            'cta:default': 'https://www1.kfcclub.com.tw/tw/',
+                            'text:logo_horizontal_alignment': 'left',
+                            'text:banner_ratio': '32:15',
                         }
                     };
+                },
+                function (self) {
+                    return {
+                        adformatName: 'Brochure',
+                        refName: 'Brochure',
+                        option: {
+                            el: '#vmfive-ad-unit-container-[request_id]-expand',
+                            'request_id': '[request_id]-expand',
+                            TrackingHelper: self.TrackingHelper,
+                        },
+                        demoOption: {
+                            'cta:default': `https://www1.kfcclub.com.tw/tw/`,
+                            'cta:pan_view': 'https://www1.kfcclub.com.tw/tw/',
+                            'text:3rd_party_track_url': '',
+                            'dfp_url': ``,
+                            medias:
+                                '[' +
+                                '{"image": "https://ad-demo.vmfive.com/demos/showcase/20200327_kfc_preanutfriedchicken/resorces/kfc_peanut_brochure_banner01.gif"},' +
+                                '{"image": "https://ad-demo.vmfive.com/demos/showcase/20200327_kfc_preanutfriedchicken/resorces/kfc_peanut_brochure_banner02.gif"},' +
+                                '{"image": "https://ad-demo.vmfive.com/demos/showcase/20200327_kfc_preanutfriedchicken/resorces/kfc_peanut_brochure_banner03.gif"},' +
+                                '{"image": "https://ad-demo.vmfive.com/demos/showcase/20200327_kfc_preanutfriedchicken/resorces/kfc_peanut_brochure_banner04.gif"}' +
+                                ']',
+                            'text:brochure_play_interval': '1000'
+                        }
+                    }
                 }
             ],
+            OnBaseAdUnitPrepared: [
+                function (self) {
+                    return {
+                        componentName: 'ConveyorDoubleSlide',
+                        refName: 'ConveyorDoubleSlide',
+                        option: {
+                            el: self.refs['BannerContainer'].adContainerView,
+                            'request_id': '[request_id]',
+                            'image:background': `https://ad-demo.vmfive.com/demos/showcase/20200327_kfc_preanutfriedchicken/resorces/kfc_peanut_drivein.gif`,
+                            'text:base_move_duration': `1500`,
+                            'text:enter_from': `left`,
+                            'text:slide_from': `right`,
+
+                            'cta:default': `https://www1.kfcclub.com.tw/tw/`,
+                            'text:right_slide_from': `right`,
+                            'text:left_slide_from': `left`,
+
+                            rightProducts:
+                                '[' +
+                                '{"intro": "https://ad-demo.vmfive.com/demos/showcase/20200327_kfc_preanutfriedchicken/resorces/transparent.png"},' +
+                                '{"intro": "https://ad-demo.vmfive.com/demos/showcase/20200327_kfc_preanutfriedchicken/resorces/transparent.png"},' +
+                                '{}]',
+                            leftProducts:
+                                '[' +
+                                '{"intro": "https://ad-demo.vmfive.com/demos/showcase/20200327_kfc_preanutfriedchicken/resorces/kfc_peanut_drivein_left_cut01.gif"},' +
+                                '{"intro": "https://ad-demo.vmfive.com/demos/showcase/20200327_kfc_preanutfriedchicken/resorces/kfc_peanut_drivein_left_cut02.gif"},' +
+                                '{}]',
+                        }
+                    }
+                },
+                function (self) {
+                    return {
+                        componentName: 'BVideo',
+                        refName: 'BVideo',
+                        option: {
+                            el: self.refs['ConveyorDoubleSlide'].rightSlideshowView,
+                            videoScale: '16:9',
+                            disableAutoplay: false,
+                            TrackingHelper: self.TrackingHelper,
+                        },
+                        demoOption: {
+                            'video:video1:mp4': 'https://ad-demo.vmfive.com/demos/showcase/20200327_kfc_preanutfriedchicken/resorces/video.mp4',
+                            'video:video1:m3u8': '',
+                            'image:cover': '',
+                            'text:onlyVideo': 'false',
+                            'text:percentageInViewOption': '50',
+                            'text:videoLoop': 'true'
+                        }
+                    }
+                },
+                function(self) {
+                    let videoUnitWrap = self.refs['ConveyorDoubleSlide'].rightSlideshowView.querySelector(`#vmfive-ad-unit-${self.refs['ConveyorDoubleSlide'].config.request_id}`);
+                    let cover = self.refs['ConveyorDoubleSlide'].rightSlideshowView.querySelector('.vmfive-video-cover');
+                    videoUnitWrap.style.top = '28%';
+                    cover.style.top = '28%';
+                },
+                function (self) {
+                    return {
+                        componentName: 'CloseButton',
+                        refName: 'CloseButton',
+                        option: {
+                            el: self.refs['BannerContainer'].adContainerView,
+                            'request_id': '[request_id]',
+                            enableExpand: true,
+                            TrackingHelper: self.TrackingHelper,
+                        },
+                        demoOption: {
+                            'cta:default': `https://www1.kfcclub.com.tw/tw/`,
+                            'text:show_close_mode': 'fadein',
+                            'text:close_button_horizontal_alignment': 'right',
+                            'text:close_out_container': 'true',
+                        }
+                    }
+                },
+                function (self) {
+                    return {
+                        componentName: 'CloseButton',
+                        refName: 'CloseButtonBrochure',
+                        option: {
+                            el: self.refs['Brochure'].overlayView,
+                            'request_id': '[request_id]-expand',
+                            TrackingHelper: self.TrackingHelper,
+                            onExpandHelperClose: [
+                                function (comp) {
+                                    self.refs['ExpandHelper'].expandedVisible('hide');
+                                    self.refs['ExpandHelper'].originalVisible('show');
+                                    self.refs['Brochure'].reset();
+                                }
+                            ],
+                        },
+                        demoOption: {
+                            'text:close_button_horizontal_alignment': 'right',
+                            'text:show_close_mode': 'fadein',
+                            'text:beautify_percent': '80',
+                        }
+                    }
+                },
+                function (self) {
+                    return {
+                        componentName: 'ExpandHelper',
+                        refName: 'ExpandHelper',
+                        option: {
+                            original: self.refs['BannerContainer'],
+                            expanded: self.refs['Brochure'],
+                            showExpandButton: true,
+                            TrackingHelper: self.TrackingHelper,
+                            onprepared: [
+                                function (comp) {
+                                    comp.expandedVisible('hide');
+                                    comp.originalVisible('show');
+                                }
+                            ],
+                            onctaclicked: [
+                                function (comp) {
+                                    comp.expandedVisible('show');
+                                    comp.originalVisible('hide');
+                                    self.refs['Brochure'].startOriDomi();
+                                }
+                            ]
+                        },
+                        demoOption: {
+                            'text:expand_button_horizontal_alignment': '',
+                        }
+                    }
+                },
+            ]
         });
     </script>
 </body>

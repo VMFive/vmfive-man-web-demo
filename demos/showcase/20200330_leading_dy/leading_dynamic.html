@@ -301,20 +301,22 @@
 	</div>
 
 	<script src='https://man.vm5apis.com/dist/anime.js/3.0.1/anime.min.js'></script>
-	<script src="https://d1v69ngg41pvl6.cloudfront.net/dist/odometer.js/0.4.8/odometer.min.js"></script>
-	<script src="https://man.vm5apis.com/dist/raf.js"></script>
-	<script src='https://d2v4tz4zvhrua.cloudfront.net/production/dist/2020-02-24-1582531073384/common/TemplateBuilder.min.js'></script>
-	<script src='https://d2v4tz4zvhrua.cloudfront.net/production/dist/2020-04-14-1586850070704/components/Leading.min.js'></script>
+	<script src='https://man.vm5apis.com/dist/jquery/2.1.3/jquery.min.js'></script>
+	<script src='https://man.vm5apis.com/dist/hammer.js/2.0.8/hammer.min.js'></script>
+	<script src='https://man.vm5apis.com/dist/jquery.hammerjs/2.0.0/jquery.hammer.js'></script>
+	<script src='https://man.vm5apis.com/dist/raf.js'></script>
+	<script
+		src='https://d2v4tz4zvhrua.cloudfront.net/production/dist/2020-02-24-1582531073384/common/TemplateBuilder.min.js'></script>
 	<script>
 		let template = new TemplateBuilder({
-			cdn: 'https://d2v4tz4zvhrua.cloudfront.net/production/dist/2020-03-27-1585277087862',
+			cdn: 'https://d2v4tz4zvhrua.cloudfront.net/production/dist/2020-02-24-1582531073384',
 			plugins: [
 			],
 			adformats: [
-				'BannerContainer',
+				'BannerContainerBackground',
 			],
 			components: [
-				'Slot', 'DynamicCountdown', 'CloseButton',
+			  'CloseButton', 'Leading'
 			],
 			develop: false,
 			Tracking: [
@@ -337,18 +339,22 @@
 			BaseAdUnit: [
 				function (self) {
 					return {
-						adformatName: 'BannerContainer',
-						refName: 'BannerContainer',
+						adformatName: 'BannerContainerBackground',
+						refName: 'BannerContainerBackground',
 						option: {
 							el: '#vmfive-ad-unit-container-55667788',
 							'request_id': '[request_id]',
-							'text:banner_ratio': '32:15',
 							enableClipPath: false,
-							'text:logo_horizontal_alignment': 'left',
 							TrackingHelper: self.TrackingHelper,
 						},
 						demoOption: {
 							'cta:default': 'https://adison.com.tw/landing/',
+							'text:close_button_horizontal_alignment': 'left',
+							'text:background_color': 'rgba(0,0,0,0.7)',
+							'text:banner_ratio': '32:15',
+							'image:container_background': 'https://ad-demo.vmfive.com/demos/showcase/2019Q3_ad_formats/resource/goldhorse/brochure/Best-Action-Choreography_banner.gif',
+							'text:container_background_horizontal_alignment': '',
+							'text:swipe_up_color': 'black',
 						}
 					};
 				}
@@ -356,67 +362,20 @@
 			OnBaseAdUnitPrepared: [
 				function (self) {
 					return {
-						componentName: 'Slot',
-						refName: 'Slot',
-						option: {
-							el: self.refs['BannerContainer'].adContainerView,
-							disableAutoStartMove: true,
-						},
-						demoOption: {
-							'text:banner_ratio': '32:15',
-							'image:background': 'https://ad-demo.vmfive.com/demos/showcase/20200305_yuanchu_prizedraw/resources/yuanchu_prizedraw_bg.png',
-							media:
-								'[' +
-								'{"image": "https://ad-demo.vmfive.com/demos/showcase/20200305_yuanchu_prizedraw/resources/yuanchu_prizedraw_banner_01.png"},' +
-								'{"image": "https://ad-demo.vmfive.com/demos/showcase/20200305_yuanchu_prizedraw/resources/yuanchu_prizedraw_banner_02.png"},' +
-								'{}]',
-						}
-					}
-				},
-				function(self) {
-					return {
-						componentName: 'DynamicCountdown',
-						refName: 'DynamicCountdown',
-						option: {
-							el: self.refs['BannerContainer'].adContainerView,
-						},
-						demoOption: {
-							'text:event_date': '2020/04/20',
-							'text:top_percentage': '0',
-							'text:bottom_percentage': '',
-							'text:left_percentage': '',
-							'text:right_percentage': '5',
-
-							'text:countdown_prefix': '還有',
-							'text:countdown_suffix': '天',
-
-							'text:default_font_size_ratio': '1.5',
-							'text:default_font_color': '#fff448',
-							'text:number_font_size_ratio': '2',
-							'text:number_font_color': '',
-						}
-					}
-				},
-				function(self) {
-					let wording = self.refs['DynamicCountdown'].rootView.querySelectorAll('.countdown-wording');
-					wording.forEach(function(item){
-						item.style.color = "#fff";
-					});
-				},
-				function (self) {
-					return {
 						componentName: 'CloseButton',
 						refName: 'CloseButton',
 						option: {
-							el: self.refs['BannerContainer'].adContainerView,
+							el: self.refs['BannerContainerBackground'].adContainerView,
 							'request_id': '[request_id]',
 							TrackingHelper: self.TrackingHelper,
 						},
 						demoOption: {
+							'text:cta_in_new_window': `[text:cta_in_new_window]`,
 							'dfp_url': `[dfp_url]`,
-							'text:close_out_container': 'true',
+							'cta_prefix_url': `[cta_prefix_url]`,
 							'cta:default': `https://adison.com.tw/`,
 
+							'text:embedded': '[text:embedded]',
 							'text:show_close_mode': 'fadein',
 							'text:close_button_horizontal_alignment': 'right',
 						}
@@ -428,18 +387,16 @@
 						refName: 'Leading',
 						option: {
 							'request_id': '[request_id]',
-							'image:sprite_sheet': 'https://ad-demo.vmfive.com/demos/showcase/20200305_yuanchu_prizedraw/resources/yuanchu_prizedraw_63c_3.4s.png',
-							'text:total_frame': '63',
-							'text:total_animation_during': '3.4',
+							'image:sprite_sheet': 'https://ad-demo.vmfive.com/demos/showcase/20200227_mothersday/leading_drivein/resources/20191203_taishinbank_spritesheet_58cut_3s.png',
+							'text:total_frame': '58',
+							'text:total_animation_during': '3',
 							'text:anime_delay_offset': '100',
-							'text:anime_vertical_align': 'bottom',
 							spriteSheetWidth: 480,
 							spriteSheetHeight: 854,
-							containerOverlayRoot: self.refs['BannerContainer'].overlayView,
-							containerInsertRoot: self.refs['BannerContainer'].rootView,
+							containerOverlayRoot: self.refs['BannerContainerBackground'].overlayView,
+							containerInsertRoot: self.refs['BannerContainerBackground'].rootView,
 							oncomplete: [
 								function (com) {
-									self.refs['Slot'].startSlot();
 								}
 							],
 						}
