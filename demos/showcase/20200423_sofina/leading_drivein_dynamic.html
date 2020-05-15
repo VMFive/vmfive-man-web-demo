@@ -305,13 +305,16 @@
     <script src='https://man.vm5apis.com/dist/hammer.js/2.0.8/hammer.min.js'></script>
     <script src='https://man.vm5apis.com/dist/jquery.hammerjs/2.0.0/jquery.hammer.js'></script>
     <script src='https://d1v69ngg41pvl6.cloudfront.net/dist/odometer.js/0.4.8/odometer.min.js'></script>
-    <script src='https://man.vm5apis.com/dist/raf.js'></script>
+    <script src='https://man.vm5apis.com/dist/raf.jshttps://man.vm5apis.com/dist/raf.js'></script>
     <script
         src='https://d2v4tz4zvhrua.cloudfront.net/production/dist/2020-04-20-1587354435084/common/TemplateBuilder.min.js'></script>
     <script>
         let template = new TemplateBuilder({
             cdn: 'https://d2v4tz4zvhrua.cloudfront.net/production/dist/2020-04-20-1587354435084',
             plugins: [
+              'https://man.vm5apis.com/dist/anime.js/3.0.1/anime.min.js',
+              'https://man.vm5apis.com/dist/raf.js',
+              'https://d1v69ngg41pvl6.cloudfront.net/dist/odometer.js/0.4.8/odometer.min.js'
             ],
             adformats: [
                 'BannerContainer',
@@ -327,7 +330,7 @@
                             el: '#vmfive-ad-unit-container-55667788',
                             'request_id': '[request_id]',
                             wantedTrackingList: [
-                                'impression', 'close', 'custom'
+                                'impression', 'close', 'video_percentage', 'video_progress', 'custom', 'view'
                             ],
                             fbPixelId: '',
                         },
@@ -345,12 +348,13 @@
                         option: {
                             el: '#vmfive-ad-unit-container-55667788',
                             'request_id': '[request_id]',
-                            'text:banner_ratio': '32:15',
                             enableClipPath: false,
                             'text:logo_horizontal_alignment': 'left',
+                            doImpression:false,
                             TrackingHelper: self.TrackingHelper,
                         },
                         demoOption: {
+                            'text:banner_ratio': '32:15',
                             'cta:default': 'https://web.sofina.com/tw/ip/skincare/products/basecareserum/',
                         }
                     };
@@ -363,15 +367,8 @@
                         refName: 'ConveyorDoubleSlide',
                         option: {
                             el: self.refs['BannerContainer'].adContainerView,
-                            "request_id": '[request_id]',
-                            disableAutoStartMove:true
-                        },
-                        demoOption: {
-                            "request_id": '[request_id]',
-                            "image:background": 'https://ad-demo.vmfive.com/demos/showcase/20200423_sofina/resource/sofina_drive-in_bg0430.jpg',
-                            "text:base_move_duration": '',
-                            "text:right_slide_from": 'right',
-                            "text:left_slide_from": 'left',
+                            'request_id': self.refs['BannerContainer'].config['request_id'],
+                            disableAutoStartMove:true,
                             rightProducts:
                                 '[' +
                                 '{"intro": "https://ad-demo.vmfive.com/demos/showcase/20191212_underwater/resource/underwater0001.png"},' +
@@ -382,10 +379,16 @@
                                 '{"intro": "https://ad-demo.vmfive.com/demos/showcase/20191212_underwater/resource/underwater0001.png"},' +
                                 '{"intro": "https://ad-demo.vmfive.com/demos/showcase/20191212_underwater/resource/underwater0001.png"},' +
                                 '{}]',
+                        },
+                        demoOption: {
+                            "image:background": 'https://ad-demo.vmfive.com/demos/showcase/20200423_sofina/resource/sofina_drive-in_bg0430.jpg',
+                            "text:base_move_duration": '',
+                            "text:right_slide_from": 'right',
+                            "text:left_slide_from": 'left'
                         }
                     }
                 },
-                
+
                 function (self) {
                     return {
                         componentName: 'BVideo',
@@ -393,19 +396,19 @@
                         option: {
                             el: self.refs['ConveyorDoubleSlide'].rightSlideshowView,
                             'request_id': self.refs['BannerContainer'].config['request_id'],
-                            'track_url': self.refs['BannerContainer'].config['track_url'],
-                            'video:video1:mp4': 'https://ad-demo.vmfive.com/demos/showcase/20200423_sofina/resource/sofina_tv.mp4',
-                            'video:video1:m3u8': '',
-                            'image:cover': '',
-                            'text:3rd_party_track_url': '',
-                            'text:onlyVideo': '[text:onlyVideo]',
                             'text:percentageInViewOption': '99',
 
                             videoScale: '16:9',
                             videoBorderRadius: 0,
-                            disableAutoplay: false,
+                            disableAutoplay:true,
                             'text:videoLoop': 'true',
                             TrackingHelper: self.TrackingHelper,
+                        },
+                        demoOption: {
+                          'video:video1:mp4': 'https://ad-demo.vmfive.com/demos/showcase/20200423_sofina/resource/sofina_tv.mp4',
+                          'video:video1:m3u8': '',
+                          'image:cover': '',
+                          'text:3rd_party_track_url': '',
                         }
                     }
                 },
@@ -460,7 +463,7 @@
                         refName: 'CloseButton',
                         option: {
                             el: self.refs['BannerContainer'].adContainerView,
-                            'request_id': '[request_id]',
+                            'request_id': self.refs['BannerContainer'].config['request_id'],
                             TrackingHelper: self.TrackingHelper,
                         },
                         demoOption: {
@@ -480,20 +483,24 @@
                         componentName: 'Leading',
                         refName: 'Leading',
                         option: {
-                            'request_id': '[request_id]',
-                            'image:sprite_sheet': 'https://ad-demo.vmfive.com/demos/showcase/20200423_sofina/resource/sofina_55c_3s.png',
-                            'text:total_frame': '55',
-                            'text:total_animation_during': '3',
-                            'text:anime_delay_offset': '100',
-                            'text:anime_vertical_align': 'bottom',
-                            spriteSheetWidth: 480,
-                            spriteSheetHeight: 854,
+                            'request_id': self.refs['BannerContainer'].config['request_id'],
                             containerOverlayRoot: self.refs['BannerContainer'].overlayView,
                             containerInsertRoot: self.refs['BannerContainer'].rootView,
                             oncomplete: [
                                 function (com) {
+                                  self.refs['BannerContainer'].doImpression();
+                                  self.refs['BVideo'].playvideo();
                                 }
                             ],
+                        },
+                        demoOption: {
+                          'image:sprite_sheet': 'https://ad-demo.vmfive.com/demos/showcase/20200423_sofina/resource/sofina_55c_3s.png',
+                          'text:total_frame': '55',
+                          'text:total_animation_during': '3',
+                          'text:anime_delay_offset': '100',
+                          'text:anime_vertical_align': 'bottom',
+                          spriteSheetWidth: 480,
+                          spriteSheetHeight: 854,
                         }
                     }
                 }
