@@ -1,0 +1,176 @@
+<div id="vmfive-ad-unit-container-[request_id]"></div>
+<div id="vmfive-ad-unit-container-[request_id]-expand"></div>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+<script src='https://man.vm5apis.com/dist/hammer.js/2.0.8/hammer.min.js'></script>
+<script src='https://man.vm5apis.com/dist/jquery.hammerjs/2.0.0/jquery.hammer.js'></script>
+<script src='https://man.vm5apis.com/dist/oridomi-vmfive/oridomi-vmfive2.js'></script>
+<script src='https://man.vm5apis.com/dist/perfect-scrollbar/perfect-scrollbar.min.js'></script>
+<script src="https://man.vm5apis.com/dist/raf.js"></script>
+<script src="https://man.vm5apis.com/dist/anime.js/3.0.1/anime.min.js"></script>
+<script src='https://d2v4tz4zvhrua.cloudfront.net/production/dist/2020-03-27-1585277087862/common/TemplateBuilder.min.js'></script>
+<script src='https://d2v4tz4zvhrua.cloudfront.net/production/dist/2020-03-27-1585277087862/common/TrackingHelper.min.js'></script>
+<script src='https://d2v4tz4zvhrua.cloudfront.net/production/dist/2020-03-27-1585277087862/adformats/BannerContainer.min.js'></script>
+<script src='https://d2v4tz4zvhrua.cloudfront.net/production/dist/2020-03-27-1585277087862/adformats/Brochure.min.js'></script>
+<script src='https://d2v4tz4zvhrua.cloudfront.net/production/dist/2020-03-27-1585277087862/components/ConveyorDoubleSlide.min.js'></script>
+<script src='https://d2v4tz4zvhrua.cloudfront.net/production/dist/2020-03-27-1585277087862/components/unit/BVideo.min.js'></script>
+<script src='https://d2v4tz4zvhrua.cloudfront.net/production/dist/2020-03-27-1585277087862/components/ExpandHelper.min.js'></script>
+<script src='https://d2v4tz4zvhrua.cloudfront.net/production/dist/2020-03-27-1585277087862/components/CloseButton.min.js'></script>
+<script>
+    let sc = document.createElement("script");
+    sc.src = "https://d1v69ngg41pvl6.cloudfront.net/dist/MixPlayer/1.1.0/MixPlayer.js";
+    sc.onload = function () {
+        let TrackingHelperEl = new TrackingHelper({
+            el: '#vmfive-ad-unit-container-[request_id]',
+            "request_id": '[request_id]',
+            "track_url": '[track_url]',
+            "text:3rd_party_track_url": '[text:3rd_party_track_url]',
+            wantedTrackingList: ["impression",
+                "close",
+                "video_percentage",
+                "video_progress",
+                "custom",
+                "view",
+                "collapse",
+                "expand"],
+            fbPixelId: "",
+            wantedFbPixelList: []
+        });
+        let BannerContainerEl = new BannerContainer({
+            el: '#vmfive-ad-unit-container-[request_id]',
+            "request_id": '[request_id]',
+            "downloaded_pixel": '[downloaded_pixel]',
+            "downloaded_impression_pixel": '[downloaded_impression_pixel]',
+            "text:cta_in_new_window": '[text:cta_in_new_window]',
+            "dfp_url": '[dfp_url]',
+            "cta_prefix_url": '[cta_prefix_url]',
+            "cta:default": '[cta:default]',
+            "text:banner_z_index": '[text:banner_z_index]',
+            "text:banner_top_offset": '[text:banner_top_offset]',
+            "text:banner_bottom_offset": '[text:banner_bottom_offset]',
+            "text:scale": '[text:scale]',
+            "text:max_width": '[text:max_width]',
+            "text:embedded": '[text:embedded]',
+            "text:background_color": '[text:background_color]',
+            "text:logo_background_color": '[text:logo_background_color]',
+            "text:logo_horizontal_alignment": '[text:logo_horizontal_alignment]',
+            "text:logo_vertical_alignment": '[text:logo_vertical_alignment]',
+            enableClipPath: false,
+            enableLogo: true,
+            "text:banner_ratio": '[text:banner_ratio]',
+            videoBorderRadius: 0,
+            disableCta: true,
+            doImpression: true,
+            onresize: [],
+            onprepared: [],
+            onctaclicked: [],
+            onbannerinit: [],
+            TrackingHelper: TrackingHelperEl
+        });
+        let BrochureEl = new Brochure({
+            el: '#vmfive-ad-unit-container-[request_id]-expand',
+            "request_id": '[request_id]-expand',
+            "downloaded_pixel": '[downloaded_pixel]',
+            "text:cta_in_new_window": '[text:cta_in_new_window]',
+            "dfp_url": '[dfp_url]',
+            "cta_prefix_url": '[cta_prefix_url]',
+            "cta:default": '[cta:default]',
+            "text:brochure_play_interval": '1000',
+            medias: 
+            '[' +
+            '{"image": "[image:brochure_1]"},' +
+            '{"image": "[image:brochure_2]"},' +
+            '{"image": "[image:brochure_3]"},' +
+            '{"image": "[image:brochure_4]"},' +
+            '{"image": "[image:brochure_5]"}' +
+            ']',
+            disableCta: false,
+            TrackingHelper: TrackingHelperEl
+        });
+        let ConveyorDoubleSlideEl = new ConveyorDoubleSlide({
+            el: BannerContainerEl.adContainerView,
+            "request_id": '[request_id]',
+            "image:background": '[image:drivein_background]',
+            "text:base_move_duration": '1500',
+            "text:right_slide_from": 'right',
+            "text:left_slide_from": 'left',
+            "cta:default": '[cta:default]',
+            disableAutoStartMove: false,
+            rightProducts: 
+            '[' +
+            '{"intro": "[image:drivein_r1]"},' +
+            '{"intro": "[image:drivein_r2]"},' +
+            '{}]',
+            leftProducts: 
+            '[' +
+            '{"intro": "[image:drivein_l1]"},' +
+            '{"intro": "[image:drivein_l2]"},' +
+            '{}]',
+            onresize: [],
+            onprepared: [],
+            onctaclicked: [],
+            "text:enter_from": 'left',
+            "text:slide_from": "right"
+        });
+        let CloseButtonEl = new CloseButton({
+            el: BannerContainerEl.adContainerView,
+            "request_id": '[request_id]',
+            "text:cta_in_new_window": '[text:cta_in_new_window]',
+            "dfp_url": '[dfp_url]',
+            "cta_prefix_url": '[cta_prefix_url]',
+            "cta:default": '[cta:default]',
+            "text:embedded": '[text:embedded]',
+            "text:show_close_mode": '[text:show_close_mode]',
+            "text:close_button_horizontal_alignment": '[text:close_button_horizontal_alignment]',
+            "text:beautify_percent": '[text:beautify_percent]',
+            "text:close_out_container": '[text:close_out_container]',
+            "text:close_style": '[text:close_style]',
+            "text:close_mode_second": '[text:close_mode_second]',
+            enableExpand: true,
+            disableCta: false,
+            disableAutoInit: false,
+            onctaclicked: [],
+            onExpandHelperClose: [],
+            oncloseexpanded: [],
+            onclosed: [],
+            TrackingHelper: TrackingHelperEl
+        });
+        let CloseButtonBrochureEl = new CloseButton({
+            el: BrochureEl.overlayView,
+            "request_id": '[request_id]-expand',
+            "text:cta_in_new_window": '[text:cta_in_new_window]',
+            "dfp_url": '[dfp_url]',
+            "cta_prefix_url": '[cta_prefix_url]',
+            "cta:default": '[cta:default]',
+            "text:embedded": '[text:embedded]',
+            "text:show_close_mode": '[text:show_close_mode]',
+            "text:close_button_horizontal_alignment": '[text:Brochure_close_button_horizontal_alignment]',
+            "text:beautify_percent": '[text:beautify_percent]',
+            "text:close_out_container": '[text:Brochure_close_out_container]',
+            "text:close_style": '[text:Brochure_close_style]',
+            "text:close_mode_second": '[text:Brochure_close_mode_second]',
+            enableExpand: false,
+            disableCta: false,
+            disableAutoInit: false,
+            onctaclicked: [],
+            onExpandHelperClose: [function (comp) { 
+                ExpandHelperEl.expandedVisible('hide');
+                ExpandHelperEl.originalVisible('show');
+                BrochureEl.reset();
+            }],
+            oncloseexpanded: [],
+            onclosed: [],
+            TrackingHelper: TrackingHelperEl
+        });
+        let ExpandHelperEl = new ExpandHelper({
+            "text:expand_button_horizontal_alignment": '[text:expand_button_horizontal_alignment]',
+            original: BannerContainerEl,
+            expanded: BrochureEl,
+            showExpandButton: false,
+            onprepared: [function (comp) { comp.expandedVisible('hide'); comp.originalVisible('show'); }],
+            onctaclicked: [function (comp) { comp.expandedVisible('show'); comp.originalVisible('hide'); BrochureEl.startOriDomi(); }],
+            TrackingHelper: TrackingHelperEl
+        });
+        BannerContainerEl.config.onctaclicked = [function () { ExpandHelperEl.expandedVisible('show'); ExpandHelperEl.originalVisible('hide'); BrochureEl.startOriDomi(); }];
+    };
+    document.body.appendChild(sc);
+</script>
