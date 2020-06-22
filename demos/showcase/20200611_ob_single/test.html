@@ -305,7 +305,7 @@
                 'https://man.vm5apis.com/dist/anime.js/3.0.1/anime.min.js'
             ],
             adformats: [
-                'BannerContainer',
+                'BannerContainerBackground',
             ],
             components: [
                 'ObservatoryReverse', 'CloseButton'
@@ -313,27 +313,36 @@
             develop: false,
             showCreateButton: false,
             BaseAdUnit: [
-                function () {
+                function (self) {
                     return {
-                        adformatName: 'BannerContainer',
-                        refName: 'BannerContainer',
+                        adformatName: 'BannerContainerBackground',
+                        refName: 'BannerContainerBackground',
                         option: {
                             el: '#vmfive-ad-unit-container-55667788',
-                            'request_id': '[request_id]',
-
-                            'text:close_button_horizontal_alignment': 'left',
-
-                            'text:banner_ratio': '32:15',
-                            videoBorderRadius: 0,
+                            'text:enableExpand': 'true',
                             enableClipPath: false,
-                            enableImpression: true,
-                            disableCta: true,
+                            enableImpression: false,
+                            disableCta: false,
+                            TrackingHelper: self.TrackingHelper,
+                            onctaclicked: [
+                            ],
                         },
                         demoOption: {
-                            'cta:default': 'https://adison.com.tw/landing/',
+                            'cta:default': 'https://www.tw-style.com/',
+                            'text:embedded': ``,
+                            'text:banner_ratio': '32:15',
+                            'image:container_background': 'https://ad-demo-vmfive-com.s3-ap-northeast-1.amazonaws.com/demos/showcase/20200417_leading_location/resource/banner.png',
+                            'text:container_background_horizontal_alignment': '',
+
+                            'text:swipe_up_color': '',
                         }
                     };
                 },
+                function(self) {
+                    let vmfiveBackground = self.refs['BannerContainerBackground'].rootView.querySelector(`#vmfive-container-background-${self.refs['BannerContainerBackground'].config.request_id}`);
+                    vmfiveBackground.style.position = 'absolute';
+                    vmfiveBackground.style.zIndxe = '-1';
+                }
             ],
             OnBaseAdUnitPrepared: [
                 function (self) {
@@ -341,7 +350,7 @@
                         componentName: 'ObservatoryReverse',
                         refName: 'ObservatoryReverse',
                         option: {
-                            el: self.refs['BannerContainer'].adContainerView,
+                            el: self.refs['BannerContainerBackground'].adContainerView,
                             'request_id': '[request_id]',
                             'text:cta_in_new_window': 'false',
                             'text:banner_ratio': '32:15',
@@ -350,17 +359,15 @@
                             'cta:default': 'https://adison.com.tw/landing/',
                             medias:
                                 '[' +
-                                '{"image": "https://ad-demo.vmfive.com/demos/showcase/20200422_dawho/resource/dawho_cut4.gif", "ctaURL": "https://adison.com.tw/landing/"},' +
-                                '{"image": "https://ad-demo.vmfive.com/demos/showcase/20200422_dawho/resource/dawho_cut1.gif", "ctaURL": "https://adison.com.tw/landing/"},' +
-                                '{"image": "https://ad-demo.vmfive.com/demos/showcase/20200422_dawho/resource/dawho_cut2.gif", "ctaURL": "https://adison.com.tw/landing/"},' +
-                                '{"image": "https://ad-demo.vmfive.com/demos/showcase/20200422_dawho/resource/dawho_cut3.gif", "ctaURL": "https://adison.com.tw/landing/"},' +
+                                '{"image": "https://ad-demo.vmfive.com/demos/showcase/20200113_mc/resource/mc_black_layer03.gif"},' +
+                                '{"image": "https://ad-demo.vmfive.com/demos/showcase/20200113_mc/resource/mc_black_layer02.gif"},' +
+                                '{"image": "https://ad-demo.vmfive.com/demos/showcase/20200113_mc/resource/mc_black_layer01.gif"},' +
                                 '{}]',
                             mediasOuter:
                                 '[' +
-                                '{"image": "https://ad-demo.vmfive.com/demos/showcase/20200422_dawho/resource/dawho_bg4.jpg", "ctaURL": "https://adison.com.tw/landing/"},' +
-                                '{"image": "https://ad-demo.vmfive.com/demos/showcase/20200422_dawho/resource/dawho_bg1.jpg", "ctaURL": "https://adison.com.tw/landing/"},' +
-                                '{"image": "https://ad-demo.vmfive.com/demos/showcase/20200422_dawho/resource/dawho_bg2.jpg", "ctaURL": "https://adison.com.tw/landing/"},' +
-                                '{"image": "https://ad-demo.vmfive.com/demos/showcase/20200422_dawho/resource/dawho_bg3.jpg", "ctaURL": "https://adison.com.tw/landing/"},' +
+                                '{"image": "https://ad-demo.vmfive.com/demos/showcase/20200327_kfc_preanutfriedchicken/resorces/transparent.png"},' +
+                                '{"image": "https://ad-demo.vmfive.com/demos/showcase/20200327_kfc_preanutfriedchicken/resorces/transparent.png"},' +
+                                '{"image": "https://ad-demo.vmfive.com/demos/showcase/20200327_kfc_preanutfriedchicken/resorces/transparent.png"},' +
                                 '{}]',
                         }
                     }
@@ -370,7 +377,7 @@
                         componentName: 'CloseButton',
                         refName: 'CloseButton',
                         option: {
-                            el: self.refs['BannerContainer'].adContainerView,
+                            el: self.refs['BannerContainerBackground'].adContainerView,
                             'request_id': '[request_id]',
                             onclosed: [
                                 function () {
