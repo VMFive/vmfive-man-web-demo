@@ -253,6 +253,7 @@
             </p>
 
             <div id="vmfive-ad-unit-container-55667788"></div>
+            <div id="vmfive-ad-unit-container-55667788-expand"></div>
             <img src="https://ad-demo.vmfive.com/" style="display:none;">
 
             <h3>業界最多原創廣告格式 讓創意深入人心大獲品牌與媒體青睞</h3>
@@ -301,22 +302,19 @@
     </div>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
-    <script src="https://man.vm5apis.com/dist/hammer.js/2.0.8/hammer.min.js"></script>
-    <script src="https://man.vm5apis.com/dist/jquery.hammerjs/2.0.0/jquery.hammer.js"></script>
-    <script src="https://man.vm5apis.com/dist/raf.js"></script>
+    <script src="https://man.vm5apis.com/dist/sk-vmfive.js/sk-vmfive.js"></script>
     <script src="https://man.vm5apis.com/dist/anime.js/3.0.1/anime.min.js"></script>
-    <script
-        src='https://d2v4tz4zvhrua.cloudfront.net/production/dist/2020-04-20-1587354435084/common/TemplateBuilder.min.js'></script>
+    <script src='https://d2v4tz4zvhrua.cloudfront.net/production/dist/2020-02-24-1582531073384/common/TemplateBuilder.min.js'></script>
     <script>
         let template = new TemplateBuilder({
-            cdn: 'https://d2v4tz4zvhrua.cloudfront.net/production/dist/2020-04-20-1587354435084',
+            cdn: 'https://d2v4tz4zvhrua.cloudfront.net/production/dist/2020-07-16-1594871733590',
             plugins: [
             ],
             adformats: [
-                'BannerContainer',
+                'Notification',
             ],
             components: [
-                'Spinning', 'CloseButton', 'Leading'
+                'CloseButton'
             ],
             develop: false,
             Tracking: [
@@ -326,7 +324,7 @@
                             el: '#vmfive-ad-unit-container-55667788',
                             'request_id': '[request_id]',
                             wantedTrackingList: [
-                                'impression', 'close', 'video_percentage', 'video_progress', 'custom', 'view', { expand: '1' }, { collapse: '1' }, { accept_invitation: '1' }
+                                'impression', 'close', 'custom', {accept_invitation: '1'}
                             ],
                             fbPixelId: '',
                             wantedFbPixelList: [],
@@ -337,12 +335,11 @@
                     }
                 }
             ],
-            // {video_percentage:'1'}
             BaseAdUnit: [
                 function (self) {
                     return {
-                        adformatName: 'BannerContainer',
-                        refName: 'BannerContainer',
+                        adformatName: 'Notification',
+                        refName: 'Notification',
                         option: {
                             el: '#vmfive-ad-unit-container-55667788',
                             enableClipPath: false,
@@ -350,79 +347,32 @@
                             TrackingHelper: self.TrackingHelper,
                         },
                         demoOption: {
-                            'cta:default': encodeURIComponent('https://adison.com.tw/'),
-                            'text:banner_ratio': '32:15',
+                            'text:banner_ratio': '',
+                            'cta:default': 'https://adison.com.tw/landing/',
+                            'text:notification_title': '摩斯漢堡 MOS Burger',
+                            'text:notification_intro': '',
+                            // 'image:container_background': 'https://ad-demo.vmfive.com/demos/showcase/2020_Q2/gsk/resources/gsk_banner.png',
+                            'image:container_background': '',
+                            'image:flag': 'https://ad-demo.vmfive.com/demos/showcase/2020_Q3adformats/business/resource/notification_logo.png',
+                            medias:
+                                '[' +
+                                '{"text": "外層酥脆內層多汁的雞腿肉，裹上酸酸甜甜的南洋甘醋醬，再加上獨家特製的南洋沙拉醬及清脆爽口的高麗菜絲是款適合夏季食用爽口開胃的雞腿堡。"},'+
+                                '{"text": "特選小里肌製作成厚實豬排，搭配新鮮蔬菜，淋上微辣的紅咖哩醬，再以清新的檸檬柳橙醬點綴，夾入熱騰騰的薑黃米，每一口都感受滿滿的能量來源！"},'+
+                                '{"text": "香Q美味的米飯，搭配鮮蝦、干貝、墨魚等豐富的美味海鮮。"},'+
+                                '{}]',
                         }
                     };
                 },
             ],
             OnBaseAdUnitPrepared: [
-                // demos/showcase/2020_Q2/gsk/resources/gsk_banner.png
-                function (self) {
-                    return {
-                        componentName: 'Spinning',
-                        refName: 'Spinning',
-                        option: {
-                            el: self.refs['BannerContainer'].adContainerView,
-                            'request_id': '[request_id]',
-                            disableAutoPlay: true,
-                            TrackingHelper: self.TrackingHelper,
-                        },
-                        demoOption: {
-                            'text:banner_ratio': '32:15',
-                            'text:expand_close_button_horizontal_alignment': 'right',
-                            'cta:default': encodeURIComponent('https://adison.com.tw/'),
-                            'text:spinning_media_click_expand': 'false',
-                            hintImage: 'https://ad-demo.vmfive.com/demos/showcase/2020_Q2/kinder/resources/spinning_hint.png',
-                            medias:
-                                '[' +
-                                '{"image": "https://ad-demo.vmfive.com/demos/showcase/20200506nescafe/resources/nescafe_banner_01.gif"},' +
-                                '{"image": "https://ad-demo.vmfive.com/demos/showcase/20200506nescafe/resources/nescafe_banner_02.gif"},' +
-                                '{"image": "https://ad-demo.vmfive.com/demos/showcase/20200506nescafe/resources/nescafe_banner_03.gif"},' +
-                                '{"image": "https://ad-demo.vmfive.com/demos/showcase/20200506nescafe/resources/nescafe_banner_04.gif"},' +
-                                '{}]',
-                            expand:
-                                '[' +
-                                '{"image": "https://ad-demo.vmfive.com/demos/showcase/20200506nescafe/resources/nescafe_expand_01.gif"},' +
-                                '{"image": "https://ad-demo.vmfive.com/demos/showcase/20200506nescafe/resources/nescafe_expand_02.gif"},' +
-                                '{"image": "https://ad-demo.vmfive.com/demos/showcase/20200506nescafe/resources/nescafe_expand_03.gif"},' +
-                                '{"image": "https://ad-demo.vmfive.com/demos/showcase/20200506nescafe/resources/nescafe_expand_04.gif"},' +
-                                '{}]',
-                            onhammer: [
-                                function (com) {
-                                    self.refs['CloseButton'].closeEl.classList.remove('fadein');
-                                    self.refs['CloseButton'].closeBeautify.classList.remove('fadein');
-                                },
-                            ],
-                            onExpandBanner: [
-                                function (com) {
-                                    self.refs['CloseButton'].closeEl.classList.remove('fadein');
-                                    self.refs['CloseButton'].closeBeautify.classList.remove('fadein');
-                                },
-                            ],
-                            oncloseexpanded: [
-                                function (com) {
-                                    self.refs['CloseButton'].closeEl.classList.add('fadein');
-                                    self.refs['CloseButton'].closeBeautify.classList.add('fadein');
-                                },
-                            ],
-                        }
-                    }
-                },
                 function (self) {
                     return {
                         componentName: 'CloseButton',
                         refName: 'CloseButton',
                         option: {
-                            el: self.refs['BannerContainer'].adContainerView,
+                            el: self.refs['Notification'].adCloseWrap,
                             'request_id': '[request_id]',
 
-                            'text:cta_in_new_window': `[text:cta_in_new_window]`,
-                            'dfp_url': `[dfp_url]`,
-                            'cta_prefix_url': `[cta_prefix_url]`,
-                            'cta:default': encodeURIComponent(`https://adison.com.tw/`),
-
-                            'text:embedded': '[text:embedded]',
                             TrackingHelper: self.TrackingHelper,
                         },
                         demoOption: {
@@ -432,30 +382,6 @@
                         }
                     }
                 },
-                function (self) {
-                    return {
-                        componentName: 'Leading',
-                        refName: 'Leading',
-                        option: {
-                            'request_id': '[request_id]',
-                            'image:sprite_sheet': 'https://ad-demo.vmfive.com/demos/showcase/20200506nescafe/resources/nescafe_50c_2.7s.png',
-                            'text:total_frame': '50',
-                            'text:total_animation_during': '2.7',
-                            'text:anime_delay_offset': '100',
-                            spriteSheetWidth: 480,
-                            spriteSheetHeight: 854,
-                            containerOverlayRoot: self.refs['BannerContainer'].overlayView,
-                            containerInsertRoot: self.refs['BannerContainer'].rootView,
-                            oncomplete: [
-                                function (com) {
-                                    self.refs['Spinning'].startHammerOn();
-                                    self.refs['Spinning'].playInterval();
-                                }
-                            ],
-                        }
-                    }
-                }
-
             ]
         });
     </script>

@@ -316,7 +316,7 @@
                 'BannerContainer',
             ],
             components: [
-                'Spinning', 'CloseButton', 'Leading'
+                'Spinning', 'CloseButton'
             ],
             develop: false,
             Tracking: [
@@ -326,7 +326,7 @@
                             el: '#vmfive-ad-unit-container-55667788',
                             'request_id': '[request_id]',
                             wantedTrackingList: [
-                                'impression', 'close', 'video_percentage', 'video_progress', 'custom', 'view', { expand: '1' }, { collapse: '1' }, { accept_invitation: '1' }
+                                'impression', 'close', 'video_percentage', 'video_progress', 'custom', 'view', {expand:'1'}, {collapse:'1'}, {accept_invitation: '1'}
                             ],
                             fbPixelId: '',
                             wantedFbPixelList: [],
@@ -346,11 +346,11 @@
                         option: {
                             el: '#vmfive-ad-unit-container-55667788',
                             enableClipPath: false,
-                            disableCta: false,
+                            disableCta: true,
                             TrackingHelper: self.TrackingHelper,
                         },
                         demoOption: {
-                            'cta:default': encodeURIComponent('https://adison.com.tw/'),
+                            'cta:default': 'https://adison.com.tw/landing/',
                             'text:banner_ratio': '32:15',
                         }
                     };
@@ -365,28 +365,27 @@
                         option: {
                             el: self.refs['BannerContainer'].adContainerView,
                             'request_id': '[request_id]',
-                            disableAutoPlay: true,
                             TrackingHelper: self.TrackingHelper,
                         },
                         demoOption: {
                             'text:banner_ratio': '32:15',
                             'text:expand_close_button_horizontal_alignment': 'right',
-                            'cta:default': encodeURIComponent('https://adison.com.tw/'),
-                            'text:spinning_media_click_expand': 'false',
+                            'cta:default': 'https://adison.com.tw/landing/',
+                            'text:spinning_media_click_expand': 'true',
                             hintImage: 'https://ad-demo.vmfive.com/demos/showcase/2020_Q2/kinder/resources/spinning_hint.png',
                             medias:
                                 '[' +
-                                '{"image": "https://ad-demo.vmfive.com/demos/showcase/20200506nescafe/resources/nescafe_banner_01.gif"},' +
-                                '{"image": "https://ad-demo.vmfive.com/demos/showcase/20200506nescafe/resources/nescafe_banner_02.gif"},' +
-                                '{"image": "https://ad-demo.vmfive.com/demos/showcase/20200506nescafe/resources/nescafe_banner_03.gif"},' +
-                                '{"image": "https://ad-demo.vmfive.com/demos/showcase/20200506nescafe/resources/nescafe_banner_04.gif"},' +
+                                '{"image": "https://ad-demo.vmfive.com/demos/showcase/20200713_lxz/resources/lxz_banner_01.png"},' +
+                                '{"image": "https://ad-demo.vmfive.com/demos/showcase/20200713_lxz/resources/lxz_banner_02.png"},' +
+                                '{"image": "https://ad-demo.vmfive.com/demos/showcase/20200713_lxz/resources/lxz_banner_03.png"},' +
+                                '{"image": "https://ad-demo.vmfive.com/demos/showcase/20200713_lxz/resources/lxz_banner_04.png"},' +
                                 '{}]',
                             expand:
                                 '[' +
-                                '{"image": "https://ad-demo.vmfive.com/demos/showcase/20200506nescafe/resources/nescafe_expand_01.gif"},' +
-                                '{"image": "https://ad-demo.vmfive.com/demos/showcase/20200506nescafe/resources/nescafe_expand_02.gif"},' +
-                                '{"image": "https://ad-demo.vmfive.com/demos/showcase/20200506nescafe/resources/nescafe_expand_03.gif"},' +
-                                '{"image": "https://ad-demo.vmfive.com/demos/showcase/20200506nescafe/resources/nescafe_expand_04.gif"},' +
+                                '{"image": "https://ad-demo.vmfive.com/demos/showcase/20200713_lxz/resources/lxz_expand_01.png"},' +
+                                '{"image": "https://ad-demo.vmfive.com/demos/showcase/20200713_lxz/resources/lxz_expand_02.png"},' +
+                                '{"image": "https://ad-demo.vmfive.com/demos/showcase/20200713_lxz/resources/lxz_expand_03.png"},' +
+                                '{"image": "https://ad-demo.vmfive.com/demos/showcase/20200713_lxz/resources/lxz_expand_04.png"},' +
                                 '{}]',
                             onhammer: [
                                 function (com) {
@@ -420,7 +419,7 @@
                             'text:cta_in_new_window': `[text:cta_in_new_window]`,
                             'dfp_url': `[dfp_url]`,
                             'cta_prefix_url': `[cta_prefix_url]`,
-                            'cta:default': encodeURIComponent(`https://adison.com.tw/`),
+                            'cta:default': `[cta:default]`,
 
                             'text:embedded': '[text:embedded]',
                             TrackingHelper: self.TrackingHelper,
@@ -432,30 +431,6 @@
                         }
                     }
                 },
-                function (self) {
-                    return {
-                        componentName: 'Leading',
-                        refName: 'Leading',
-                        option: {
-                            'request_id': '[request_id]',
-                            'image:sprite_sheet': 'https://ad-demo.vmfive.com/demos/showcase/20200506nescafe/resources/nescafe_50c_2.7s.png',
-                            'text:total_frame': '50',
-                            'text:total_animation_during': '2.7',
-                            'text:anime_delay_offset': '100',
-                            spriteSheetWidth: 480,
-                            spriteSheetHeight: 854,
-                            containerOverlayRoot: self.refs['BannerContainer'].overlayView,
-                            containerInsertRoot: self.refs['BannerContainer'].rootView,
-                            oncomplete: [
-                                function (com) {
-                                    self.refs['Spinning'].startHammerOn();
-                                    self.refs['Spinning'].playInterval();
-                                }
-                            ],
-                        }
-                    }
-                }
-
             ]
         });
     </script>

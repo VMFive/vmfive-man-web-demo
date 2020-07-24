@@ -253,7 +253,6 @@
             </p>
 
             <div id="vmfive-ad-unit-container-55667788"></div>
-            <div id="vmfive-ad-unit-container-55667788-expand"></div>
             <img src="https://ad-demo.vmfive.com/" style="display:none;">
 
             <h3>業界最多原創廣告格式 讓創意深入人心大獲品牌與媒體青睞</h3>
@@ -301,25 +300,23 @@
         </div>
     </div>
 
-    <script src='https://man.vm5apis.com/dist/anime.js/3.0.1/anime.min.js'></script>
-    <script src='https://man.vm5apis.com/dist/jquery/2.1.3/jquery.min.js'></script>
-    <script src='https://man.vm5apis.com/dist/hammer.js/2.0.8/hammer.min.js'></script>
-    <script src='https://man.vm5apis.com/dist/jquery.hammerjs/2.0.0/jquery.hammer.js'></script>
-    <script src='https://man.vm5apis.com/dist/raf.js'></script>
-
-    <script src='https://pixijs.download/v4.5.5/pixi.min.js'></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+    <script src="https://man.vm5apis.com/dist/sk-vmfive.js/sk-vmfive.js"></script>
+    <script src="https://man.vm5apis.com/dist/draggabilly/draggabilly.pkgd.min.js"></script>
+    <script src="https://man.vm5apis.com/dist/raf.js"></script>
+    <script src="https://man.vm5apis.com/dist/anime.js/3.0.1/anime.min.js"></script>
     <script
-    src='https://d2v4tz4zvhrua.cloudfront.net/production/dist/2020-04-20-1587354435084/common/TemplateBuilder.min.js'></script>
+        src='https://d2v4tz4zvhrua.cloudfront.net/production/dist/2020-04-20-1587354435084/common/TemplateBuilder.min.js'></script>
     <script>
         let template = new TemplateBuilder({
-            cdn: 'https://d2v4tz4zvhrua.cloudfront.net/production/dist/2020-06-17-1592377890929',
+            cdn: 'https://d2v4tz4zvhrua.cloudfront.net/production/dist/2020-04-20-1587354435084',
             plugins: [
             ],
             adformats: [
-                'BannerContainerBackground', 'ExpandContainer'
+                'BannerContainerBackground',
             ],
             components: [
-                'unit/BVideo', 'CloseButton', 'Leading', 'ExpandHelper', 'GameTest'
+                'DragTo', 'CloseButton'
             ],
             develop: false,
             Tracking: [
@@ -329,9 +326,10 @@
                             el: '#vmfive-ad-unit-container-55667788',
                             'request_id': '[request_id]',
                             wantedTrackingList: [
-                                'impression', 'close', 'custom', 'video_percentage', 'video_progress', 'view',
+                                'impression', 'close', 'video_percentage', 'video_progress', 'custom', 'view', 'collapse', 'expand', { accept_invitation: '1' }
                             ],
                             fbPixelId: '',
+                            wantedFbPixelList: [],
                         },
                         demoOption: {
                             'text:3rd_party_track_url': '',
@@ -346,79 +344,58 @@
                         refName: 'BannerContainerBackground',
                         option: {
                             el: '#vmfive-ad-unit-container-55667788',
-                            'text:enableExpand': 'true',
                             enableClipPath: false,
-                            enableImpression: false,
-                            disableCta: true,
-                            enableSwipeUp: true,
-                            'text:swipe_up_color': 'gray',
-                            TrackingHelper: self.TrackingHelper
-                        },
-                        demoOption: {
-                            'cta:default': 'https://vmfive.com/?utm_source=vmfive_ad_cta',
-                            'text:embedded': ``,
-                            'text:banner_ratio': '32:15',
-                            'image:container_background': 'https://ad-demo.vmfive.com/demos/showcase/20200527_test_p/resource/banner_sticky.gif',
-                            'text:container_background_horizontal_alignment': '',
-                        }
-                    };
-                },
-                function (self) {
-                    return {
-                        adformatName: 'ExpandContainer',
-                        refName: 'ExpandContainer',
-                        option: {
-                            el: '#vmfive-ad-unit-container-55667788-expand',
-                            'request_id': '55667788-expand',
+                            disableCta: false,
                             TrackingHelper: self.TrackingHelper,
                         },
                         demoOption: {
-                            'cta:default': `https://www.gamer.com.tw/`,
-                            'text:banner_ratio': '',
+                            'cta:default': 'https://www.youtube.com/?gl=TW&hl=zh-TW',
+                            'image:container_background': 'https://ad-demo.vmfive.com/demos/showcase/20200713_brands/resources/brands_banner.png',
                         }
-                    }
-                }
+                    };
+                },
             ],
             OnBaseAdUnitPrepared: [
                 function (self) {
                     return {
-                        componentName: 'BVideo',
-                        refName: 'BVideo',
+                        componentName: 'DragTo',
+                        refName: 'DragTo',
                         option: {
-                            el: self.refs['BannerContainerBackground'].videoOuter,
-                            TrackingHelper: self.TrackingHelper,
-                        },
-                        demoOption: {
-                            'video:video1:mp4': 'https://ad-demo.vmfive.com/demos/showcase/20200527_test_p/resource_new/draw_video.mp4',
-                            'video:video1:m3u8': '',
-                            'image:cover': '',
-                            'text:3rd_party_track_url': '',
-                            'text:percentageInViewOption': '50',
-                            'text:videoLoop': 'true',
-                        }
-                    }
-                },
-                function(self) {
-                    self.refs['BannerContainerBackground'].videoOuter.style.top = '30%';
-                },
-                function (self) {
-                    return {
-                        componentName: 'GameTest',
-                        refName: 'GameTest',
-                        option: {
-                            el: self.refs['ExpandContainer'].container,
-                            'request_id': '55667788-expand',
-                            containerHeight: self.refs['ExpandContainer'].expandContainerHeight,
-                            containerWidth: self.refs['ExpandContainer'].expandContainerWidth,
-                            TrackingHelper: self.TrackingHelper,
-                            onclosed: [
-                                function() {
-                                    self.refs['ExpandContainer'].rootView.removeChild(self.refs['ExpandContainer'].overlayView);
-                                    self.refs['BannerContainerBackground'].rootView.removeChild(self.refs['BannerContainerBackground'].overlayView);
+                            el: self.refs['BannerContainerBackground'].adContainerView,
+                            'request_id': '[request_id]',
+                            wrapBottom: 100,
+                            dragEl: {
+                                url: 'https://ad-demo.vmfive.com/demos/showcase/20200713_brands/resources/brands_drag.png',
+                                width: 30,
+                                positionX: 0,
+                                positionY: 35,
+                                fadeOut: true,
+                            },
+                            targetEl: {
+                                before_url: 'https://ad-demo.vmfive.com/demos/showcase/20200713_brands/resources/brands_old_man_before.png',
+                                after_url: 'https://ad-demo.vmfive.com/demos/showcase/20200713_brands/resources/brands_old_man_after.png',
+                                width: 40,
+                                positionX: 59,
+                                positionY: 6,
+                                fadeOut: true,
+                            },
+                            hintImage: 'https://ad-demo.vmfive.com/demos/showcase/2020_Q2/gsk/resources/drag_icon.png',
+                            interactionEl: {
+                                image: 'https://ad-demo.vmfive.com/demos/showcase/20200713_brands/resources/brands_expand.png',
+                                mp4: '',
+                                coverimage: ''
+                            },
+                            ondragstart: [
+                                function () {
+                                    // 隱藏下方的關閉鍵
+                                    self.refs['CloseButton'].closeEl.classList.remove('fadein');
+                                    self.refs['CloseButton'].closeBeautify.classList.remove('fadein');
                                 }
-                            ]
+                            ],
+                            TrackingHelper: self.TrackingHelper,
                         },
                         demoOption: {
+                            'text:banner_ratio': '32:15',
                         }
                     }
                 },
@@ -429,57 +406,39 @@
                         option: {
                             el: self.refs['BannerContainerBackground'].adContainerView,
                             'request_id': '[request_id]',
+
                             TrackingHelper: self.TrackingHelper,
                         },
                         demoOption: {
-                            'text:cta_in_new_window': `[text:cta_in_new_window]`,
-                            'dfp_url': `[dfp_url]`,
-                            'cta_prefix_url': `[cta_prefix_url]`,
-                            'cta:default': `https://adison.com.tw/`,
-
-                            'text:embedded': '[text:embedded]',
                             'text:show_close_mode': 'fadein',
                             'text:close_button_horizontal_alignment': 'right',
+                            'text:beautify_percent': '80',
                         }
                     }
                 },
                 function (self) {
                     return {
-                        componentName: 'ExpandHelper',
-                        refName: 'ExpandHelper',
+                        componentName: 'CloseButton',
+                        refName: 'CloseButtonInteractionEl',
                         option: {
-                            'track_url': '[track_url]',
-                            original: self.refs['BannerContainerBackground'],
-                            expanded: self.refs['ExpandContainer'],
-                            showExpandButton: false,
-                            TrackingHelper: self.TrackingHelper,
-                            onprepared: [
+                            el: self.refs['DragTo'].dragInteraction,
+                            'request_id': '[request_id]',
+
+                            onExpandHelperClose: [
                                 function (comp) {
-                                    comp.expandedVisible('hide');
-                                    comp.originalVisible('show');
+                                    self.refs['DragTo'].dragInteraction.parentElement.removeChild(self.refs['DragTo'].dragInteraction);
+                                    self.refs['CloseButton'].closeEl.classList.add('fadein');
+                                    self.refs['CloseButton'].closeBeautify.classList.add('fadein');
                                 }
-                            ]
+                            ],
+                            TrackingHelper: self.TrackingHelper,
                         },
                         demoOption: {
-                            'text:expand_button_horizontal_alignment': '',
+                            'text:show_close_mode': 'fadein',
+                            'text:close_button_horizontal_alignment': 'right',
+                            'text:beautify_percent': '80',
                         }
                     }
-                },
-                function (self) {
-                    self.refs['BannerContainerBackground'].config.onctaclicked = [
-                        function () {
-                            self.refs['ExpandHelper'].expandedVisible('show');
-                            self.refs['ExpandHelper'].originalVisible('hide');
-                            self.refs['GameTest'].startPreview();
-                        }
-                    ];
-                    self.refs['BannerContainerBackground'].config.onPanMoveUp = [
-                        function() {
-                            self.refs['ExpandHelper'].expandedVisible('show');
-                            self.refs['ExpandHelper'].originalVisible('hide');
-                            self.refs['GameTest'].startPreview();
-                        }
-                    ];
                 }
             ]
         });

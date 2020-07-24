@@ -253,6 +253,7 @@
             </p>
 
             <div id="vmfive-ad-unit-container-55667788"></div>
+            <div id="vmfive-ad-unit-container-55667788-expand"></div>
             <img src="https://ad-demo.vmfive.com/" style="display:none;">
 
             <h3>業界最多原創廣告格式 讓創意深入人心大獲品牌與媒體青睞</h3>
@@ -300,23 +301,18 @@
         </div>
     </div>
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
-    <script src="https://man.vm5apis.com/dist/hammer.js/2.0.8/hammer.min.js"></script>
-    <script src="https://man.vm5apis.com/dist/jquery.hammerjs/2.0.0/jquery.hammer.js"></script>
-    <script src="https://man.vm5apis.com/dist/raf.js"></script>
     <script src="https://man.vm5apis.com/dist/anime.js/3.0.1/anime.min.js"></script>
-    <script
-        src='https://d2v4tz4zvhrua.cloudfront.net/production/dist/2020-04-20-1587354435084/common/TemplateBuilder.min.js'></script>
+    <script src='https://d2v4tz4zvhrua.cloudfront.net/production/dist/2020-02-24-1582531073384/common/TemplateBuilder.min.js'></script>
     <script>
         let template = new TemplateBuilder({
-            cdn: 'https://d2v4tz4zvhrua.cloudfront.net/production/dist/2020-04-20-1587354435084',
+            cdn: 'https://d2v4tz4zvhrua.cloudfront.net/production/dist/2020-07-16-1594871733590',
             plugins: [
             ],
             adformats: [
-                'BannerContainer',
+                'ImpressiveStatic', 'Question'
             ],
             components: [
-                'Spinning', 'CloseButton', 'Leading'
+                'Flyer', 'DynamicCountdown', 'CloseButton', 'ExpandHelper'
             ],
             develop: false,
             Tracking: [
@@ -326,7 +322,7 @@
                             el: '#vmfive-ad-unit-container-55667788',
                             'request_id': '[request_id]',
                             wantedTrackingList: [
-                                'impression', 'close', 'video_percentage', 'video_progress', 'custom', 'view', { expand: '1' }, { collapse: '1' }, { accept_invitation: '1' }
+                                'impression', 'click', 'close', 'video_percentage', 'video_progress', 'custom', 'view', 'collapse', 'expand', { accept_invitation: '1' }
                             ],
                             fbPixelId: '',
                             wantedFbPixelList: [],
@@ -337,125 +333,143 @@
                     }
                 }
             ],
-            // {video_percentage:'1'}
             BaseAdUnit: [
                 function (self) {
                     return {
-                        adformatName: 'BannerContainer',
-                        refName: 'BannerContainer',
+                        adformatName: 'ImpressiveStatic',
+                        refName: 'ImpressiveStatic',
                         option: {
                             el: '#vmfive-ad-unit-container-55667788',
-                            enableClipPath: false,
+                            'request_id': '[request_id]',
+                            'track_url': '[track_url]',
+
+                            richmedia_bg_offset_top_percentage: 0,
+                            backgroundScale: '2:3',
+                            keepCheckingPosition: false,
+
+                            eightView: true,
+                            oneightview: [
+                                function (com) {
+                                    self.refs['Flyer'].runAnimationTransform('left');
+                                }
+                            ],
+                            TrackingHelper: self.TrackingHelper,
+                        },
+                        demoOption: {
+                            'downloaded_pixel': '',
+                            'text:cta_in_new_window': '',
+                            'text:top_margin': '',
+                            'dfp_url': '',
+                            'cta_prefix_url': '',
+                            'cta:default': '',
+                            'text:logo_vertical_position': '',
+                            'text:logo_horizontal_position': '',
+                            'text:click_available_vh_rate': '',
+
+                            'image:image1': '',
+                            'text:is_fixed': 'true',
+                            'text:scale': '',
+                            'text:always_display_from_top': '',
+                            'text:richmedia_bg_url': ``,
+                        }
+                    };
+                }
+            ],
+            OnBaseAdUnitPrepared: [
+                function (self) {
+                    return {
+                        componentName: 'Flyer',
+                        refName: 'Flyer',
+                        option: {
+                            el: self.refs['ImpressiveStatic'].adContainerView,
+                            'request_id': '[request_id]',
+                            'text:enter_from': 'left',
+                            'dfp_url': '',
+                            'cta_prefix_url': 'https://vaser-track.vm5apis.com/v2/track?requestId=&placementId=&campaignId=&audienceGroupId=&creativeId=&timezone=8&creativeFormat=richmedia&pixel=1&x=0&event=click',
+                            'cta:default': 'https://adison.com.tw/landing/',
+                            'text:cta_in_new_window': 'false',
+                            disableAutoRunAnimationTransform: true,
+                            disableCta: true,
+                            TrackingHelper: self.TrackingHelper,
+                        },
+                        demoOption: {
+                            'image:foreground': `https://ad-demo.vmfive.com/demos/showcase/2019Q3_ad_formats/resource/business/flyer/foreground.gif`,
+                            'image:background': `https://ad-demo.vmfive.com/demos/showcase/2019Q3_ad_formats/resource/business/flyer/hyfoods_background.png`,
+                            'image:video_cover': '',
+                            'video:flyer_video:mp4': `https://ad-demo.vmfive.com/demos/showcase/2019Q3_ad_formats/resource/business/flyer/hyfoods_video.mp4`,
+                            'text:enter_direction': 'left', // right, left, top, bottom, middle
+                            'text:show_length_time': '',
+                            'text:show_collapse_button': 'false',
+                            'text:use_sprite_sheet': 'false',
+                            'text:c3t_time': '500',
+                            'text:collapse_button_horizontal_alignment': '',
+                            'text:total_fram': '',
+                            'text:total_animation_during': '',
+                            'text:view_percentage': '',
+                        }
+                    }
+                },
+                function (self) {
+                    return {
+                        componentName: 'Question',
+                        refName: 'Question',
+                        option: {
+                            el: '#vmfive-ad-unit-container-55667788-expand',
+                            'request_id': '55667788-expand',
+                            'text:banner_ratio': '',
                             disableCta: false,
                             TrackingHelper: self.TrackingHelper,
                         },
                         demoOption: {
-                            'cta:default': encodeURIComponent('https://adison.com.tw/'),
-                            'text:banner_ratio': '32:15',
-                        }
-                    };
-                },
-            ],
-            OnBaseAdUnitPrepared: [
-                // demos/showcase/2020_Q2/gsk/resources/gsk_banner.png
-                function (self) {
-                    return {
-                        componentName: 'Spinning',
-                        refName: 'Spinning',
-                        option: {
-                            el: self.refs['BannerContainer'].adContainerView,
-                            'request_id': '[request_id]',
-                            disableAutoPlay: true,
-                            TrackingHelper: self.TrackingHelper,
-                        },
-                        demoOption: {
-                            'text:banner_ratio': '32:15',
-                            'text:expand_close_button_horizontal_alignment': 'right',
-                            'cta:default': encodeURIComponent('https://adison.com.tw/'),
-                            'text:spinning_media_click_expand': 'false',
-                            hintImage: 'https://ad-demo.vmfive.com/demos/showcase/2020_Q2/kinder/resources/spinning_hint.png',
-                            medias:
-                                '[' +
-                                '{"image": "https://ad-demo.vmfive.com/demos/showcase/20200506nescafe/resources/nescafe_banner_01.gif"},' +
-                                '{"image": "https://ad-demo.vmfive.com/demos/showcase/20200506nescafe/resources/nescafe_banner_02.gif"},' +
-                                '{"image": "https://ad-demo.vmfive.com/demos/showcase/20200506nescafe/resources/nescafe_banner_03.gif"},' +
-                                '{"image": "https://ad-demo.vmfive.com/demos/showcase/20200506nescafe/resources/nescafe_banner_04.gif"},' +
-                                '{}]',
-                            expand:
-                                '[' +
-                                '{"image": "https://ad-demo.vmfive.com/demos/showcase/20200506nescafe/resources/nescafe_expand_01.gif"},' +
-                                '{"image": "https://ad-demo.vmfive.com/demos/showcase/20200506nescafe/resources/nescafe_expand_02.gif"},' +
-                                '{"image": "https://ad-demo.vmfive.com/demos/showcase/20200506nescafe/resources/nescafe_expand_03.gif"},' +
-                                '{"image": "https://ad-demo.vmfive.com/demos/showcase/20200506nescafe/resources/nescafe_expand_04.gif"},' +
-                                '{}]',
-                            onhammer: [
-                                function (com) {
-                                    self.refs['CloseButton'].closeEl.classList.remove('fadein');
-                                    self.refs['CloseButton'].closeBeautify.classList.remove('fadein');
-                                },
-                            ],
-                            onExpandBanner: [
-                                function (com) {
-                                    self.refs['CloseButton'].closeEl.classList.remove('fadein');
-                                    self.refs['CloseButton'].closeBeautify.classList.remove('fadein');
-                                },
-                            ],
-                            oncloseexpanded: [
-                                function (com) {
-                                    self.refs['CloseButton'].closeEl.classList.add('fadein');
-                                    self.refs['CloseButton'].closeBeautify.classList.add('fadein');
-                                },
-                            ],
+                            'cta:default': 'https://adison.com.tw/landing/',
+                            'text:questionText': '你喜歡吃洋芋片嗎</br>你一週吃幾次呢？',
+                            'text:answerText_1': '1~2次',
+                            'text:answerText_2': '3~4次',
+                            'text:answerText_3': '5次以上',
+                            'text:answerTextBack_1': '你需要多多運動！',
+                            'text:answerTextBack_2': '可以再多一點運動！',
+                            'text:answerTextBack_3': '很健康喔！',
+                            'text:answerCta_1': '',
+                            'text:answerCta_2': '',
+                            'text:answerCta_3': '',
                         }
                     }
                 },
                 function (self) {
                     return {
-                        componentName: 'CloseButton',
-                        refName: 'CloseButton',
+                        componentName: 'ExpandHelper',
+                        refName: 'ExpandHelper',
                         option: {
-                            el: self.refs['BannerContainer'].adContainerView,
-                            'request_id': '[request_id]',
-
-                            'text:cta_in_new_window': `[text:cta_in_new_window]`,
-                            'dfp_url': `[dfp_url]`,
-                            'cta_prefix_url': `[cta_prefix_url]`,
-                            'cta:default': encodeURIComponent(`https://adison.com.tw/`),
-
-                            'text:embedded': '[text:embedded]',
+                            original: self.refs['ImpressiveStatic'],
+                            expanded: self.refs['Question'],
+                            showExpandButton: false,
+                            justShowNoHide: true,
                             TrackingHelper: self.TrackingHelper,
-                        },
-                        demoOption: {
-                            'text:show_close_mode': 'fadein',
-                            'text:close_button_horizontal_alignment': 'right',
-                            'text:beautify_percent': '80',
-                        }
-                    }
-                },
-                function (self) {
-                    return {
-                        componentName: 'Leading',
-                        refName: 'Leading',
-                        option: {
-                            'request_id': '[request_id]',
-                            'image:sprite_sheet': 'https://ad-demo.vmfive.com/demos/showcase/20200506nescafe/resources/nescafe_50c_2.7s.png',
-                            'text:total_frame': '50',
-                            'text:total_animation_during': '2.7',
-                            'text:anime_delay_offset': '100',
-                            spriteSheetWidth: 480,
-                            spriteSheetHeight: 854,
-                            containerOverlayRoot: self.refs['BannerContainer'].overlayView,
-                            containerInsertRoot: self.refs['BannerContainer'].rootView,
-                            oncomplete: [
-                                function (com) {
-                                    self.refs['Spinning'].startHammerOn();
-                                    self.refs['Spinning'].playInterval();
+                            onprepared: [
+                                function (comp) {
+                                    comp.expandedVisible('hide');
                                 }
-                            ],
+                            ]
+                        },
+                        demoOption: {
+                            'text:expand_button_horizontal_alignment': '',
                         }
                     }
-                }
+                },
+                function (self) {
+                    self.refs['Flyer'].wrap.querySelector(`.vmfive-video-wrap-${self.refs['Flyer'].config.request_id}`).style.top = '8.8%';
 
+                    self.refs['Flyer'].config.onctaclicked = [
+                        function () {
+                            self.refs['ExpandHelper'].expandedVisible('show');
+                        }
+                    ];
+                    self.refs['Question'].config.onclosed = [
+                        function () {
+                            self.refs['ExpandHelper'].expandedVisible('hide');
+                        }
+                    ];
+                }
             ]
         });
     </script>
