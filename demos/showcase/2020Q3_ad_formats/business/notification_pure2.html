@@ -301,6 +301,8 @@
         </div>
     </div>
 
+    <script src="https://man.vm5apis.com/dist/jquery/2.1.3/jquery.min.js"></script>
+    <script src="https://man.vm5apis.com/dist/sk-vmfive.js/sk-vmfive.js"></script>
     <script src="https://man.vm5apis.com/dist/anime.js/3.0.1/anime.min.js"></script>
     <script src='https://d2v4tz4zvhrua.cloudfront.net/production/dist/2020-02-24-1582531073384/common/TemplateBuilder.min.js'></script>
     <script>
@@ -309,10 +311,10 @@
             plugins: [
             ],
             adformats: [
-                'ImpressiveFlyer', 'Question'
+                'Notification',
             ],
             components: [
-                'CloseButton', 'ExpandHelper'
+                'CloseButton'
             ],
             develop: false,
             Tracking: [
@@ -322,7 +324,7 @@
                             el: '#vmfive-ad-unit-container-55667788',
                             'request_id': '[request_id]',
                             wantedTrackingList: [
-                                'impression', 'close', 'video_percentage', 'video_progress', 'view', {'expand': 1}, {'collapse': 1}
+                                'impression', 'close', 'custom', {accept_invitation: '1'}
                             ],
                             fbPixelId: '',
                             wantedFbPixelList: [],
@@ -336,110 +338,50 @@
             BaseAdUnit: [
                 function (self) {
                     return {
-                        adformatName: 'ImpressiveFlyer',
-                        refName: 'ImpressiveFlyer',
+                        adformatName: 'Notification',
+                        refName: 'Notification',
                         option: {
                             el: '#vmfive-ad-unit-container-55667788',
-                            'request_id': '[request_id]',
-
-                            keepCheckingPosition: false,
-                            onlinkview: [],
-                            TrackingHelper: self.TrackingHelper,
-                            disableCta: true,
-                        },
-                        demoOption: {
-                            'video:video1:mp4': `https://ad-demo.vmfive.com/demos/showcase/2019Q3_ad_formats/resource/business/flyer/hyfoods_video.mp4`,
-                            'downloaded_pixel': '',
-                            'text:cta_in_new_window': '[text:cta_in_new_window]',
-                            'text:top_margin_percentage': '8.8',
-                            'dfp_url': '',
-                            'cta_prefix_url': '',
-                            'cta:default': 'https://adison.com.tw/landing/',
-                            'cta:video1': 'https://ad-demo.vmfive.com/demos/showcase/2019Q3_ad_formats/resource/business/flyer/hyfoods_video.mp4',
-
-                            'text:enter_direction': 'left',
-                            'text:show_length_time': '',
-                            'image:image1': 'https://ad-demo.vmfive.com/demos/showcase/2019Q3_ad_formats/resource/business/flyer/hyfoods_background.png',
-                            'image:foreground_image': `https://ad-demo.vmfive.com/demos/showcase/2019Q3_ad_formats/resource/business/flyer/foreground.gif`,
-                            'image:cover': '',
-                            'text:align_video': 'top',
-                            'text:is_fixed': 'true',
-                            'text:scale': '',
-                            'text:richmedia_bg_url': ``,
-                            richmedia_bg_offset_top_percentage: 0,
-
-                            'text:view_time': '',
-                            'text:view_percentage': '',
-                            'text:logo_vertical_position': '',
-                            'text:logo_horizontal_position': '',
-                            'text:richmedia_bg_url': ``,
-                            'text:notHideInExpand': 'false',
-
-                        }
-                    };
-                }
-            ],
-            OnBaseAdUnitPrepared: [
-                function (self) {
-                    return {
-                        componentName: 'Question',
-                        refName: 'Question',
-                        option: {
-                            el: '#vmfive-ad-unit-container-55667788-expand',
-                            'request_id': '55667788-expand',
-                            'text:banner_ratio': '',
+                            enableClipPath: false,
                             disableCta: false,
                             TrackingHelper: self.TrackingHelper,
                         },
                         demoOption: {
+                            'text:banner_ratio': '',
                             'cta:default': 'https://adison.com.tw/landing/',
-                            'text:questionText': '你喜歡吃洋芋片嗎</br>你一週吃幾次呢？',
-                            'text:answerText_1': '1~2次',
-                            'text:answerText_2': '3~4次',
-                            'text:answerText_3': '5次以上',
-                            'text:answerTextBack_1': '你需要多多運動！',
-                            'text:answerTextBack_2': '可以再多一點運動！',
-                            'text:answerTextBack_3': '很健康喔！',
-                            'cta:answerCta_1': 'https://adison.com.tw/landing/',
-                            'cta:answerCta_2': 'https://adison.com.tw/landing/',
-                            'cta:answerCta_3': 'https://adison.com.tw/landing/',
+                            'text:notification_title': '摩斯漢堡 MOS Burger',
+                            'text:notification_intro': '',
+                            // 'image:container_background': 'https://ad-demo.vmfive.com/demos/showcase/2020_Q2/gsk/resources/gsk_banner.png',
+                            'image:container_background': '',
+                            'image:flag': 'https://ad-demo.vmfive.com/demos/showcase/2020_Q3adformats/business/resource/notification_logo.png',
+                            medias:
+                                '[' +
+                                '{"text": "外層酥脆內層多汁的雞腿肉，裹上酸酸甜甜的南洋甘醋醬，再加上獨家特製的南洋沙拉醬及清脆爽口的高麗菜絲是款適合夏季食用爽口開胃的雞腿堡。"},'+
+                                '{"text": "特選小里肌製作成厚實豬排，搭配新鮮蔬菜，淋上微辣的紅咖哩醬，再以清新的檸檬柳橙醬點綴，夾入熱騰騰的薑黃米，每一口都感受滿滿的能量來源！"},'+
+                                '{"text": "香Q美味的米飯，搭配鮮蝦、干貝、墨魚等豐富的美味海鮮。"},'+
+                                '{}]',
                         }
-                    }
+                    };
                 },
+            ],
+            OnBaseAdUnitPrepared: [
                 function (self) {
                     return {
-                        componentName: 'ExpandHelper',
-                        refName: 'ExpandHelper',
+                        componentName: 'CloseButton',
+                        refName: 'CloseButton',
                         option: {
-                            original: self.refs['ImpressiveFlyer'],
-                            expanded: self.refs['Question'],
-                            showExpandButton: false,
-                            justShowNoHide: true,
+                            el: self.refs['Notification'].adCloseWrap,
+                            'request_id': '[request_id]',
+
                             TrackingHelper: self.TrackingHelper,
-                            onprepared: [
-                                function (comp) {
-                                    comp.expandedVisible('hide');
-                                }
-                            ]
                         },
                         demoOption: {
-                            'text:expand_button_horizontal_alignment': '',
+                            'text:show_close_mode': 'fadein',
+                            'text:close_button_horizontal_alignment': 'right',
+                            'text:beautify_percent': '80',
                         }
                     }
                 },
-                function (self) {
-                  self.refs['ImpressiveFlyer'].config.onctaclicked = [
-                    function () {
-                      self.refs['ExpandHelper'].expandedVisible('show');
-                    }
-                  ];
-
-                  self.refs['Question'].config.onclosed = [
-                    function () {
-                      self.refs['ExpandHelper'].expandedVisible('hide');
-                    }
-                  ];
-                }
             ]
         });
     </script>
