@@ -251,8 +251,7 @@
             </p>
 
             <div id="vmfive-ad-unit-container-55667788"></div>
-            <img src="https://ad-demo.vmfive.com/demos/showcase/20200108_callofthewild/resources/callofthewild_54c_3s.png"
-                style="display:none;">
+            <div id="vmfive-ad-unit-container-55667788-expand"></div>
 
             <h3>業界最多原創廣告格式 讓創意深入人心大獲品牌與媒體青睞</h3>
             <p>目前有眾多的數位廣告在一昧追求載入速度下犧牲了廣告素材的展示品質，ADisON為提供高品質的廣告內容，自2014年開始使用Google Cloud
@@ -301,37 +300,77 @@
         src='https://d2v4tz4zvhrua.cloudfront.net/production/dist/2020-02-24-1582531073384/common/TemplateBuilder.min.js'></script>
     <script>
         let template = new TemplateBuilder({
-            cdn: 'https://d2v4tz4zvhrua.cloudfront.net/production/dist/2020-01-07-1578367484671',
+            cdn: 'https://d2v4tz4zvhrua.cloudfront.net/production/dist/2020-07-24-1595581643476',
             plugins: [
                 'https://man.vm5apis.com/dist/anime.js/3.0.1/anime.min.js',
                 'https://man.vm5apis.com/dist/raf.js'
             ],
             adformats: [
-                'BannerContainer',
+                'BannerContainer', 'Interstitial'
             ],
             components: [
-                'unit/BVideo', 'CloseButton'
+                'ExpandHelper', 'unit/BVideo', 'CloseButton', 'Leading'
             ],
             develop: false,
-            showCreateButton: false,
+            Tracking: [
+                function (self) {
+                    return {
+                        option: {
+                            el: '#vmfive-ad-unit-container-55667788',
+                            'request_id': '[request_id]',
+                            wantedTrackingList: [
+                                'impression', 'close', 'video_percentage', 'video_progress', 'custom', 'view', 'collapse', 'expand', { accept_invitation: '1' }
+                            ],
+                            fbPixelId: '',
+                            wantedFbPixelList: [],
+                        },
+                        demoOption: {
+                            'text:3rd_party_track_url': '',
+                        }
+                    }
+                }
+            ],
             BaseAdUnit: [
-                function () {
+                function (self) {
                     return {
                         adformatName: 'BannerContainer',
                         refName: 'BannerContainer',
                         option: {
                             el: '#vmfive-ad-unit-container-55667788',
                             'request_id': '[request_id]',
-                            'text:banner_ratio': '960:392',
+                            'text:banner_ratio': '960:418',
                             enableClipPath: false,
-                            enableImpression: false,
-                            'text:logo_horizontal_alignment': 'left',
+                            disableCta: true,
+                            'text:logo_horizontal_alignment': 'right',
+                            TrackingHelper: self.TrackingHelper,
                         },
                         demoOption: {
                             'cta:default': 'https://adison.com.tw/landing/',
                         }
                     };
-                }
+                },
+                function () {
+                    return {
+                        adformatName: 'Interstitial',
+                        refName: 'Interstitial',
+                        option: {
+                            el: '#vmfive-ad-unit-container-55667788-expand',
+                            TrackingHelper: self.TrackingHelper
+                        },
+                        demoOption: {
+                            'video:video1:mp4': 'https://ad-demo.vmfive.com/demos/showcase/20200727_forgolory/resource/forgolory2020-video_480p.min.mp4',
+                            'video:video1:m3u8': '',
+                            'cta:default': `https://adison.com.tw/landing/`,
+
+                            'image:image1': 'https://ad-demo.vmfive.com/demos/showcase/20200727_forgolory/resource/forgolory2020_expand.png',
+                            'text:align_video': `top`,
+                            'text:scale': `0.8`,
+                            richmedia_bg_offset_top_percentage: 15,
+
+                            videoScale: '16:9',
+                        }
+                    }
+                },
             ],
             OnBaseAdUnitPrepared: [
                 function (self) {
@@ -340,19 +379,43 @@
                         refName: 'BVideo',
                         option: {
                             el: self.refs['BannerContainer'].adContainerView,
-                            'request_id': self.refs['BannerContainer'].config['request_id'],
-                            'track_url': self.refs['BannerContainer'].config['track_url'],
-                            'video:video1:mp4': 'https://ad-demo.vmfive.com/demos/showcase/20200108_callofthewild/resources/fullvideo392.mp4',
+                            'video:video1:mp4': 'https://ad-demo.vmfive.com/demos/showcase/20200727_forgolory/resource/forgolory2020_stickyvideo_480p.min.mp4',
                             'video:video1:m3u8': '',
                             'image:cover': '',
                             'text:3rd_party_track_url': '',
                             'text:onlyVideo': 'true',
                             'text:percentageInViewOption': '50',
 
-                            videoScale: '960:392',
+                            videoScale: '960:418',
                             videoBorderRadius: 0,
                             disableAutoplay: false,
-                            'text:videoLoop': 'true'
+                            'text:videoLoop': 'true',
+                            TrackingHelper: self.TrackingHelper,
+                        }
+                    }
+                },
+                function(self) {
+                    self.refs['BVideo'].videoContainerView.querySelector(`#vmfive-volume-btn-${self.refs['BVideo'].config.request_id}`).style.left = 'auto';
+                    self.refs['BVideo'].videoContainerView.querySelector(`#vmfive-volume-btn-${self.refs['BVideo'].config.request_id}`).style.right = '20px';
+                },
+                function (self) {
+                    return {
+                        componentName: 'ExpandHelper',
+                        refName: 'ExpandHelper',
+                        option: {
+                            original: self.refs['BannerContainer'],
+                            expanded: self.refs['Interstitial'],
+                            showExpandButton: false,
+                            TrackingHelper: self.TrackingHelper,
+                            onprepared: [
+                                function (comp) {
+                                    comp.expandedVisible('hide');
+                                    comp.originalVisible('show');
+                                }
+                            ]
+                        },
+                        demoOption: {
+                            'text:expand_button_horizontal_alignment': '',
                         }
                     }
                 },
@@ -372,9 +435,62 @@
 
                             'text:embedded': '[text:embedded]',
                             'text:show_close_mode': 'fadein',
-                            'text:close_button_horizontal_alignment': 'left',
+                            'text:close_button_horizontal_alignment': 'right',
                         }
                     }
+                },
+                function (self) {
+                    return {
+                        componentName: 'CloseButton',
+                        refName: 'ExpandCloseButton',
+                        option: {
+                            el: self.refs['Interstitial'].adContainerView,
+                            TrackingHelper: self.TrackingHelper,
+                            onExpandHelperClose: [
+                                function (comp) {
+                                    self.refs['ExpandHelper'].expandedVisible('hide');
+                                    self.refs['ExpandHelper'].originalVisible('show');
+                                }
+                            ],
+                        },
+                        demoOption: {
+                            'text:show_close_mode': 'fadein',
+                            'text:close_button_horizontal_alignment': 'right',
+                            'text:close_out_container': 'true',
+                            'text:beautify_percent': '80',
+                        }
+                    }
+                },
+                function (self) {
+					return {
+						componentName: 'Leading',
+						refName: 'Leading',
+						option: {
+							'request_id': '[request_id]',
+							'image:sprite_sheet': 'https://ad-demo.vmfive.com/demos/showcase/20200727_forgolory/resource/forgolory2020_leading_47c_2.6s.png',
+							'text:total_frame': '47',
+							'text:total_animation_during': '2.6',
+							'text:anime_delay_offset': '100',
+							'text:anime_vertical_align': 'bottom',
+							spriteSheetWidth: 480,
+							spriteSheetHeight: 854,
+							containerOverlayRoot: self.refs['BannerContainer'].overlayView,
+							containerInsertRoot: self.refs['BannerContainer'].rootView,
+							oncomplete: [
+								function (com) {
+									self.refs['BVideo'].playvideo();
+								}
+							],
+						}
+					}
+				},
+                function (self) {
+                    self.refs['BannerContainer'].config.onctaclicked = [
+                        function () {
+                            self.refs['ExpandHelper'].expandedVisible('show');
+                            self.refs['ExpandHelper'].originalVisible('hide');
+                        }
+                    ];
                 }
             ]
         });
