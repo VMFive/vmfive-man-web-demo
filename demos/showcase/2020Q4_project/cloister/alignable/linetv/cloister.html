@@ -79,7 +79,7 @@
         <script src='https://d2v4tz4zvhrua.cloudfront.net/production/dist/2020-04-20-1587354435084/common/TemplateBuilder.min.js'></script>
         <script>
             let template = new TemplateBuilder({
-                cdn: 'https://d2v4tz4zvhrua.cloudfront.net/production/dist/2020-10-20-1603135488280',
+                cdn: 'https://d2v4tz4zvhrua.cloudfront.net/production/dist/2020-10-30-1604051668426',
                 plugins: [
                     'https://man.vm5apis.com/dist/jquery/2.1.3/jquery.min.js',
                     'https://man.vm5apis.com/dist/sk-vmfive.js/sk-vmfive.js',
@@ -89,7 +89,7 @@
                   'ImpressiveContainer'
                 ],
                 components: [
-                  'Interspace', 'unit/BVideo'
+                  'Cloister', 'unit/BVideo'
                 ],
                 develop: false,
                 Tracking: [
@@ -129,7 +129,7 @@
                                 TrackingHelper: self.TrackingHelper,
                                 onPositionToImpression: [
                                   function() {
-                                    self.refs['Interspace'].startAutoPlay();
+                                    self.refs['Cloister'].startAutoPlay();
                                   }
                                 ]
                             },
@@ -145,8 +145,8 @@
                 OnBaseAdUnitPrepared: [
                     function (self) {
                         return {
-                            componentName: 'Interspace',
-                            refName: 'Interspace',
+                            componentName: 'Cloister',
+                            refName: 'Cloister',
                             option: {
                                 el: self.refs['ImpressiveContainer'].adContainerView,
                                 containerRootView: self.refs['ImpressiveContainer'].rootView,
@@ -169,7 +169,7 @@
                                 'cta:default': 'https://adison.com.tw/?utm_source=adison_ad_cta',
                                 'dfp_url': ``,
 
-                                'text:video_top_margin_percentage': '9',
+                                'text:video_top_margin_percentage': '',
                                 'text:view_percentage': '',
                                 'cta:video': 'https://adison.com.tw/?utm_source=adison_ad_cta',
 
@@ -177,10 +177,12 @@
 
                                 medias:
                                 '['+
-                                '{"image": "https://ad-demo.vmfive.com/demos/showcase/2020Q4_project/interspace/themacallan/resource/themacallan_interspace_01_black.png", "foregroundImage": "https://ad-demo.vmfive.com/demos/showcase/2020Q4_project/interspace/themacallan/resource/themacallan_interspace_01_fore.png", "ctaURL": "https://adison.com.tw/?utm_source=adison_ad_cta"},'+
-                                '{"image": "https://ad-demo.vmfive.com/demos/showcase/2020Q4_project/interspace/themacallan/resource/themacallan_interspace_02_black.png", "foregroundImage": "https://ad-demo.vmfive.com/demos/showcase/2020Q4_project/interspace/themacallan/resource/themacallan_interspace_02_fore.png", "ctaURL": "https://adison.com.tw/?utm_source=adison_ad_cta"},'+
-                                '{"image": "https://ad-demo.vmfive.com/demos/showcase/2020Q4_project/interspace/themacallan/resource/themacallan_interspace_03_black.png", "foregroundImage": "https://ad-demo.vmfive.com/demos/showcase/2020Q4_project/interspace/themacallan/resource/themacallan_interspace_03_fore.png", "ctaURL": "https://adison.com.tw/?utm_source=adison_ad_cta"}'+
-                                ']',
+                                '{"image": "https://ad-demo.vmfive.com/demos/showcase/2020Q4_project/interspace/linetv/resource/linetv_banner_01_b.png", "foregroundImage": "https://ad-demo.vmfive.com/demos/showcase/2020Q4_project/interspace/linetv/resource/linetv_banner_01_f.png", "ctaURL": "https://adison.com.tw/?utm_source=adison_ad_cta"},'+
+                                '{"image": "https://ad-demo.vmfive.com/demos/showcase/2020Q4_project/interspace/linetv/resource/linetv_banner_02_b.png", "foregroundImage": "https://ad-demo.vmfive.com/demos/showcase/2020Q4_project/interspace/linetv/resource/linetv_banner_02_f.png", "ctaURL": "https://adison.com.tw/?utm_source=adison_ad_cta"},'+
+                                '{"image": "https://ad-demo.vmfive.com/demos/showcase/2020Q4_project/interspace/linetv/resource/linetv_banner_03_b.png", "foregroundImage": "https://ad-demo.vmfive.com/demos/showcase/2020Q4_project/interspace/linetv/resource/linetv_banner_03_f.png", "ctaURL": "https://adison.com.tw/?utm_source=adison_ad_cta"},'+
+                                '{"image": "https://ad-demo.vmfive.com/demos/showcase/2020Q4_project/interspace/linetv/resource/linetv_banner_04_b.png", "foregroundImage": "https://ad-demo.vmfive.com/demos/showcase/2020Q4_project/interspace/linetv/resource/linetv_banner_04_f.png", "ctaURL": "https://adison.com.tw/?utm_source=adison_ad_cta"},'+
+                                '{"image": "https://ad-demo.vmfive.com/demos/showcase/2020Q4_project/interspace/linetv/resource/linetv_banner_05_b.png", "foregroundImage": "https://ad-demo.vmfive.com/demos/showcase/2020Q4_project/interspace/linetv/resource/linetv_banner_05_f.png", "ctaURL": "https://adison.com.tw/?utm_source=adison_ad_cta"},'+
+                                '{}]',
                             }
                         }
                     },
@@ -189,16 +191,16 @@
                             componentName: 'BVideo',
                             refName: 'BVideo',
                             option: {
-                                el: self.refs['Interspace'].videoContainer,
+                                el: self.refs['Cloister'].videoContainer,
                                 'text:percentageInViewOption': '',
                                 'text:videoLoop': 'true',
                                 disableAutoplay: true,
                                 TrackingHelper: self.TrackingHelper,
                             },
                             demoOption: {
-                                'video:video1:mp4': 'https://ad-demo.vmfive.com/demos/showcase/2020Q4_project/interspace/themacallan/resource/themacallan_video.mp4',
+                                'video:video1:mp4': 'https://ad-demo.vmfive.com/demos/showcase/2020Q4_project/interspace/linetv/resource/linetv_interspace_video.mp4',
                                 'video:video1:m3u8': '',
-                                'image:cover': 'https://ad-demo.vmfive.com/demos/showcase/2020Q4_project/interspace/themacallan/resource/themacallan_coverimage.png',
+                                'image:cover': 'https://ad-demo.vmfive.com/demos/showcase/2020Q4_project/interspace/linetv/resource/linetv_interspace_coverimage.png',
                                 'text:3rd_party_track_url': '',
                             }
                         }
