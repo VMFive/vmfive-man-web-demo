@@ -5,11 +5,20 @@
   <meta charset="utf-8">
   <title>VMFive ADN Web SDK Demo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no">
-  <style>
-    body { font-family: sans-serif; }
-    body { margin: 0; padding: 0; }
-    .page-container { width: 90%; max-width: 500px; margin: 10px auto; }
-  </style>
+  <script>
+    let styleSheetUrl = 'live-demo-v1-style.css';
+    let locationUrl = new URL(window.location.href);
+    if(typeof(locationUrl.searchParams.get('blank')) === 'string') {
+      styleSheetUrl = 'live-demo-v1-style-blank.css';
+    }
+
+    let styleSheet = document.createElement('link');
+    styleSheet.setAttribute('rel', 'stylesheet');
+    styleSheet.setAttribute('type', 'text/css');
+    styleSheet.setAttribute('href', styleSheetUrl);
+    styleSheet.setAttribute('media', 'screen');
+    document.head.appendChild(styleSheet);
+  </script>
 
 </head>
 
@@ -36,7 +45,7 @@
     </script>
     <script src="https://man.vm5apis.com/dist/VM5AdLite.js"></script>
     <vmfive-ad-unit placement-id='5bee4aaa226d52c53a554b01' type='web_native'></vmfive-ad-unit>
- 
+
     <h3>執行長丁俊宏 來場不一樣的創業</h3>
 
     <p>走進第五代虛擬科技（VMFive）位於南京東路上的辦公室，空間設計帶有淡淡的loft風卻讓人備感溫馨，創辦人暨執行長丁俊宏是七年級生，斯文的外表下卻帶有創業的堅定。他說，他想做點與別人不同的事。為什麼想要創業？他說，「我小時候就對科學家有憧憬，喜歡看愛因斯坦、愛迪生的故事，我也喜歡看科幻電影，喜歡回到未來、時光機的那種，創業對我來說是一種憧憬，可以做一些不一樣的事情、甚至作一些創新的東西」。</p>

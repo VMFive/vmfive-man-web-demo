@@ -5,11 +5,20 @@
   <meta charset="utf-8">
   <title>VMFive ADN Web SDK Demo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no">
-  <style>
-    body { font-family: sans-serif; }
-    body { margin: 0; padding: 0; }
-    .page-container { width: 90%; max-width: 500px; margin: 10px auto; }
-  </style>
+  <script>
+    let styleSheetUrl = 'live-demo-v1-style.css';
+    let locationUrl = new URL(window.location.href);
+    if(typeof(locationUrl.searchParams.get('blank')) === 'string') {
+      styleSheetUrl = 'live-demo-v1-style-blank.css';
+    }
+
+    let styleSheet = document.createElement('link');
+    styleSheet.setAttribute('rel', 'stylesheet');
+    styleSheet.setAttribute('type', 'text/css');
+    styleSheet.setAttribute('href', styleSheetUrl);
+    styleSheet.setAttribute('media', 'screen');
+    document.head.appendChild(styleSheet);
+  </script>
 
 </head>
 

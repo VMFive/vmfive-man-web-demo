@@ -22,7 +22,20 @@
       position: absolute; left: 30px; right: 30px; top: 30px; bottom: 30px;
     }
   </style>
+  <script>
+    let styleSheetUrl = 'live-demo-v1-style.css';
+    let locationUrl = new URL(window.location.href);
+    if(typeof(locationUrl.searchParams.get('blank')) === 'string') {
+      styleSheetUrl = 'live-demo-v1-style-blank.css';
+    }
 
+    let styleSheet = document.createElement('link');
+    styleSheet.setAttribute('rel', 'stylesheet');
+    styleSheet.setAttribute('type', 'text/css');
+    styleSheet.setAttribute('href', styleSheetUrl);
+    styleSheet.setAttribute('media', 'screen');
+    document.head.appendChild(styleSheet);
+  </script>
 </head>
 
 <body>
