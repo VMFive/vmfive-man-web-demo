@@ -5,7 +5,20 @@
   <meta charset="utf-8">
   <title>VMFive ADN Web SDK Demo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no">
-  <link rel="stylesheet" type="text/css" href="live-demo-v1-style-blank.css">
+  <script>
+    let styleSheetUrl = 'live-demo-v1-style.css';
+    let locationUrl = new URL(window.location.href);
+    if(typeof(locationUrl.searchParams.get('blank')) === 'string') {
+      styleSheetUrl = 'live-demo-v1-style-blank.css';
+    }
+
+    let styleSheet = document.createElement('link');
+    styleSheet.setAttribute('rel', 'stylesheet');
+    styleSheet.setAttribute('type', 'text/css');
+    styleSheet.setAttribute('href', styleSheetUrl);
+    styleSheet.setAttribute('media', 'screen');
+    document.head.appendChild(styleSheet);
+  </script>
 </head>
 
 <body>
@@ -19,18 +32,18 @@
     <p>原生影音廣告技術含量就稍微低一些，丁俊宏表示，影音廣告著重串流、API（應用程式介面）、資料定向三大類技術，串流技術必須流暢才能降低延遲，並在不到1秒內的時間把廣告載入、完成串流，讓消費者觀看廣告，同時，也要提供API讓開發商組合成需要的格式，提升體驗效果，最後，也要在龐大的廣告資料裡面分析定向受眾，未來才能精準投遞目標客群。</p>
 
     <!--
-    Application : '天堂二專用 demo'
-    Placement : '天堂二專用_interstitial'
+    Application : '富盈 demo'
+    Placement : '富盈_demo_Native'
     Version : '4.12'
     -->
     <script id="vm5ad-js-sdk" src="https://vawpro.vm5apis.com/man.js" data-mode="fast"></script>
     <script>
     window.onVM5AdLiteReady = function() {
-    VM5AdLite.init({ appKey:'605776fd555695000126413d' });
+    VM5AdLite.init({ appKey:'605aff9533dd8400017ef740' });
     };
     </script>
     <script src="https://man.vm5apis.com/dist/VM5AdLite.js"></script>
-    <vmfive-ad-unit style='flex: 1 1 auto; display: block; max-width: 100vw;' placement-id='6057774a33dd8400017ef56b' type='web_interstitial'></vmfive-ad-unit>
+    <vmfive-ad-unit style='flex: 1 1 auto; display: block; max-width: 100vw;' placement-id='605affb333dd8400017ef743' type='web_native'></vmfive-ad-unit>
 
     <h3>執行長丁俊宏 來場不一樣的創業</h3>
 
@@ -41,6 +54,7 @@
     <hr/>
     <p>文章來源：<a href="https://money.udn.com/money/story/11150/2478372">經濟日報</a></p>
   </div>
+
 </body>
 
 </html>

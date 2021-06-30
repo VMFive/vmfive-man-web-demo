@@ -16,3 +16,7 @@ h1, h2, h3, h4, p, hr, a {
   max-width: 500px;
   margin: 10px auto;
 }
+
+vmfive-ad-unit {
+  visibility: visible;
+}

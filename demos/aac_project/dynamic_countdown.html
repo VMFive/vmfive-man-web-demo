@@ -5,7 +5,23 @@
   <meta charset="utf-8">
   <title>VMFive ADN Web SDK Demo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no">
-  <link rel="stylesheet" type="text/css" href="live-demo-v1-style-blank.css">
+  <style>
+    body {
+      font-family: sans-serif;
+    }
+
+    body {
+      margin: 0;
+      padding: 0;
+    }
+
+    .page-container {
+      width: 90%;
+      max-width: 500px;
+      margin: 10px auto;
+    }
+  </style>
+
 </head>
 
 <body>
@@ -18,19 +34,14 @@
     <p>VMFive創辦人暨執行長丁俊宏表示，AdPlay串流到各個網址，可以在PC、NB、手機、平板等各類裝置上使用這個App。然而，這個串流體驗必須相當即時，因為所有的點擊都會在雲端上進行運算，必須在100-200毫秒內完成人機互動，這考驗著串流能力；而雲端也必須模擬手機處理器架構。目前手機處理器架構都是以ARM為主，要雲端來運算ARM架構也有些難度。此外，雖然App架設在雲端上，但最後連結的終端產品性能各有不同，必須因應不同設備去做解碼，甚至必須配合低階手機調整呈現品質，要在偵測用戶手機的同時，進行動態演算調節，在在都有技術難度。</p>
     <p>原生影音廣告技術含量就稍微低一些，丁俊宏表示，影音廣告著重串流、API（應用程式介面）、資料定向三大類技術，串流技術必須流暢才能降低延遲，並在不到1秒內的時間把廣告載入、完成串流，讓消費者觀看廣告，同時，也要提供API讓開發商組合成需要的格式，提升體驗效果，最後，也要在龐大的廣告資料裡面分析定向受眾，未來才能精準投遞目標客群。</p>
 
-    <!--
-    Application : '天堂二專用 demo'
-    Placement : '天堂二專用_interstitial'
-    Version : '4.12'
-    -->
     <script id="vm5ad-js-sdk" src="https://vawpro.vm5apis.com/man.js" data-mode="fast"></script>
     <script>
     window.onVM5AdLiteReady = function() {
-    VM5AdLite.init({ appKey:'605776fd555695000126413d' });
+    VM5AdLite.init({ appKey:'60768c3233dd8400017f0443' });
     };
     </script>
     <script src="https://man.vm5apis.com/dist/VM5AdLite.js"></script>
-    <vmfive-ad-unit style='flex: 1 1 auto; display: block; max-width: 100vw;' placement-id='6057774a33dd8400017ef56b' type='web_interstitial'></vmfive-ad-unit>
+    <vmfive-ad-unit style='flex: 1 1 auto; display: block; max-width: 100vw;' placement-id='6077ad1d33dd8400017f0545' type='web_slider'></vmfive-ad-unit>
 
     <h3>執行長丁俊宏 來場不一樣的創業</h3>
 
