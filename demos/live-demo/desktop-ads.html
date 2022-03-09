@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <script>
+    window.numContentCol = 2;
+  </script>
+  <title>ADisOn Demo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no">
+  <link rel="stylesheet" type="text/css" href="https://man.vm5apis.com/dist/css/reset.min.css">
+  <script>
+    let styleSheetUrl = 'live-demo-pc-v1-style.css';
+    let locationUrl = new URL(window.location.href);
+    if(typeof(locationUrl.searchParams.get('blank')) === 'string') {
+      styleSheetUrl = 'live-demo-pc-v1-style-blank.css';
+    }
+
+    let styleSheet = document.createElement('link');
+    styleSheet.setAttribute('rel', 'stylesheet');
+    styleSheet.setAttribute('type', 'text/css');
+    styleSheet.setAttribute('href', styleSheetUrl);
+    styleSheet.setAttribute('media', 'screen');
+    document.head.appendChild(styleSheet);
+  </script>
+</head>
+
+<body>
+  <div id="page-container">
+    <header id="main-header">
+      <div class="container clearfix header">
+        <div class="logoContainer">
+          <span class="logoHelper"></span>
+          <a href="https://vmfive.com/zh_tw/">
+            <div id="logo" alt="ADisON"></div>
+          </a>
+        </div>
+      </div>
+    </header>
+
+    <div id="main-content">
+
+      <!--
+      Application : 'simple demo 8 (pc)'
+      Placement : 'billboard'
+      Version : 'X'
+      -->
+      <article class="container">
+        <div class="title">
+          <h2> VMFive desktop demo page </h2>
+        </div>
+        <div class="content">
+          <div class="mainBlock">
+            <div class="text-line"></div>
+            <div class="text-line"></div>
+            <div class="text-line"></div>
+            <div class="text-line2"></div>
+            <div class="text-ban1"></div>
+            <div class="text-line"></div>
+            <div class="text-line"></div>
+            <div class="text-line"></div>
+            <div class="text-line"></div>
+            <div class="text-line"></div>
+            <div class="text-line2"></div>
+            <!--
+            Application : 'simple demo 8 (pc)'
+            Placement : 'inread'
+            Version : 'X'
+            -->
+            <br />
+            <div class="text-line"></div>
+            <div class="text-line"></div>
+            <div class="text-line"></div>
+            <div class="text-line"></div>
+            <div class="text-line2"></div>
+            <div class="text-line"></div>
+            <div class="text-line"></div>
+            <div class="text-line"></div>
+            <div class="text-line2"></div>
+            <div class="text-line"></div>
+            <div class="text-line"></div>
+            <div class="text-line"></div>
+            <div class="text-line"></div>
+            <div class="text-line"></div>
+            <div class="text-line"></div>
+            <div class="text-line"></div>
+            <div class="text-line"></div>
+            <div class="text-line"></div>
+            <div class="text-line"></div>
+            <div class="text-line"></div>
+            <div class="text-line"></div>
+            <div class="text-line"></div>
+            <div class="text-line"></div>
+            <div class="text-line"></div>
+            <div class="text-line"></div>
+            <div class="text-line"></div>
+            <div class="text-line"></div>
+            <div class="text-line"></div>
+            <div class="text-line"></div>
+            <div class="text-line2"></div>
+            <div class="text-line"></div>
+            <div class="text-line"></div>
+            <div class="text-line2"></div>
+            <div class="text-line"></div>
+            <div class="text-line"></div>
+            <div class="text-line"></div>
+            <div class="text-line2"></div>
+          </div>
+          <div class="sideBlock">
+            <!--
+            Application : 'simple demo 8 (pc)'
+            Placement : 'side'
+            Version : 'X'
+            -->
+            <br />
+            <div class="text-ban2"></div>
+            <div class="text-line"></div>
+            <div class="text-line"></div>
+            <div class="text-line"></div>
+            <div class="text-line"></div>
+            <div class="text-line2"></div>
+            <div class="text-line"></div>
+            <div class="text-line"></div>
+            <div class="text-line"></div>
+            <div class="text-line"></div>
+            <div class="text-line2"></div>
+            <div class="text-line"></div>
+            <div class="text-line"></div>
+            <div class="text-line"></div>
+            <div class="text-line"></div>
+            <div class="text-line2"></div>
+            <div class="text-line"></div>
+            <div class="text-line"></div>
+            <div class="text-line"></div>
+            <div class="text-line"></div>
+            <div class="text-line"></div>
+            <div class="text-line"></div>
+            <div class="text-line"></div>
+            <div class="text-line"></div>
+            <div class="text-line"></div>
+            <div class="text-line"></div>
+            <div class="text-line"></div>
+            <div class="text-line"></div>
+            <div class="text-line"></div>
+            <div class="text-line"></div>
+            <div class="text-line2"></div>
+            <div class="text-line"></div>
+            <div class="text-line"></div>
+            <div class="text-line"></div>
+            <div class="text-line"></div>
+            <div class="text-line2"></div>
+            <div class="text-line"></div>
+            <div class="text-line"></div>
+            <div class="text-line"></div>
+            <div class="text-line"></div>
+            <div class="text-line2"></div>
+            <div class="text-line"></div>
+            <div class="text-line"></div>
+            <div class="text-line"></div>
+            <div class="text-line"></div>
+            <div class="text-line2"></div>
+          </div>
+        </div>
+      </article>
+    </div>
+
+    <footer id="main-footer"></footer>
+    <script>
+      if (window.numContentCol && window.numContentCol == 1) {
+        document.querySelector('.mainBlock').classList.add('singleCol');
+        document.querySelector('.sideBlock').classList.add('singleCol');
+      } else {
+        document.querySelector('.mainBlock').classList.add('twoCol');
+        document.querySelector('.sideBlock').classList.add('twoCol');
+      }
+    </script>
+  </div>
+
+  <script id="vm5ad-js-sdk" src="https://vawpro.vm5apis.com/man.js" data-mode="fast"></script>
+  <script>
+    let newUrl = new URL(window.location);
+    let position, creativeId;
+
+    position = newUrl.searchParams.get('ct');
+    creativeId = newUrl.searchParams.get('cid');
+
+    // 判斷位置
+    let insertHtml = `
+    <vmfive-ad-unit style='display: block; max-width: 100vw; width: 100%; margin: auto;' placement-id='5c89192894e6ad343ccb5a52' type='web_native' creative-id='${creativeId}'></vmfive-ad-unit>
+    `;
+    if ('web_billboard' === position)  {
+      document.body.querySelector('div#main-content').firstElementChild.insertAdjacentHTML('beforebegin', insertHtml); // div#main-content 的第一個 child
+    } else if ('web_sidekick' === position) {
+      document.body.querySelector('div.sideBlock').firstElementChild.insertAdjacentHTML('beforebegin', insertHtml); // div.sideBlock 的第 1 個 child
+    } else {
+      document.body.querySelector('div.mainBlock').children[11].insertAdjacentHTML('beforebegin', insertHtml); // div.mainBlock 的第 12 個 child node 前
+    }
+  </script>
+  <script>
+    window.onVM5AdLiteReady = function() {
+      VM5AdLite.init({ appKey:'5c88e0e394e6ad343ccb5a3b' });
+    };
+  </script>
+  <script src="https://man.vm5apis.com/dist/VM5AdLite.js"></script>
+</body>
+
+</html>
